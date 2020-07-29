@@ -70,7 +70,7 @@ class ClarifaiTest extends TestCase
         )->wait();
         $this->checkResponseSuccess($response, $status);
 
-        $this->prettyPrintResponse($response);
+        $this->assertNotEquals(0, $response->getOutputs()[0]->getData()->getConcepts()->count());
     }
 
     private function checkResponseSuccess($response, $status)
