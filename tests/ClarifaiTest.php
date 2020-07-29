@@ -21,6 +21,10 @@ class ClarifaiTest extends TestCase
 
         $apiKey = getenv('CLARIFAI_API_KEY');
 
+        if (!$apiKey) {
+            throw new Exception("To run the tests, set the env. variable CLARIFAI_API_KEY");
+        }
+
         $this->client = ClarifaiClient::grpc();
         $this->metadata = ['Authorization' => ["Key $apiKey"]];
     }
