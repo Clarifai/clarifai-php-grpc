@@ -1,0 +1,41 @@
+{
+  "name": "clarifai/clarifai-php-grpc",
+  "description": "Clarifai PHP gRPC client",
+  "keywords": [
+    "clarifai",
+    "api",
+    "artificial intelligence",
+    "image recognition",
+    "video recognition",
+    "text recognition"
+  ],
+  "homepage": "https://clarifai.com/",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Clarifai",
+      "homepage": "https://github.com/Clarifai/clarifai-php-grpc"
+    }
+  ],
+  "require": {
+    "grpc/grpc": ">=1.30.0",
+    "google/protobuf": ">=3.12.2",
+    "google/common-protos": "^1.2",
+    "ext-grpc": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "9.2.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Clarifai\\" : ["src/Clarifai"],
+      "GPBMetadata\\" : ["src/GPBMetadata"]
+    }
+  },
+  "autoload-dev": {
+    "psr-0": {
+      "" : ["tests"]
+    }
+  }
+}
