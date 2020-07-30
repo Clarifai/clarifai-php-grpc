@@ -31,7 +31,7 @@ class ClarifaiTest extends TestCase
 
     public function testGetModel()
     {
-        list($response, $status) = $this->client->GetModel(
+        [$response, $status] = $this->client->GetModel(
             new GetModelRequest(['model_id' => 'aaa03c23b3724a16a56b629203edc62c']),
             $this->metadata
         )->wait();
@@ -42,7 +42,7 @@ class ClarifaiTest extends TestCase
 
     public function testListModelsWithPagination()
     {
-        list($response, $status) = $this->client->ListModels(
+        [$response, $status] = $this->client->ListModels(
             new ListModelsRequest(['per_page' => 2]),
             $this->metadata
         )->wait();
@@ -53,7 +53,7 @@ class ClarifaiTest extends TestCase
 
     public function testPostModelOutputs()
     {
-        list($response, $status) = $this->client->PostModelOutputs(
+        [$response, $status] = $this->client->PostModelOutputs(
             new PostModelOutputsRequest([
                 'model_id' => 'aaa03c23b3724a16a56b629203edc62c',
                 'inputs' => [
