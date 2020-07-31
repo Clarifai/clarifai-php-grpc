@@ -35,7 +35,7 @@ class ClarifaiTest extends TestCase
             new GetModelRequest(['model_id' => 'aaa03c23b3724a16a56b629203edc62c']),
             $this->metadata
         )->wait();
-        $this->checkResponseSuccess($response, $status);
+        $this->raiseOnFailure($response, $status);
 
         $this->assertEquals('general', $response->getModel()->getName());
     }
@@ -46,7 +46,7 @@ class ClarifaiTest extends TestCase
             new ListModelsRequest(['per_page' => 2]),
             $this->metadata
         )->wait();
-        $this->checkResponseSuccess($response, $status);
+        $this->raiseOnFailure($response, $status);
 
         $this->assertEquals(2, $response->getModels()->count());
     }
@@ -68,23 +68,27 @@ class ClarifaiTest extends TestCase
             ]),
             $this->metadata
         )->wait();
-        $this->checkResponseSuccess($response, $status);
+        $this->raiseOnFailure($response, $status);
 
         $this->assertNotEquals(0, $response->getOutputs()[0]->getData()->getConcepts()->count());
     }
 
-    private function checkResponseSuccess($response, $status)
+    private function raiseOnFailure($response, $status)
     {
         $this->assertEquals(0, $status->code, "Response failure: {$status->details}");
 
         if ($response->getStatus()->getCode() != StatusCode::SUCCESS) {
             $this->prettyPrintResponse($response);
-            $this->fail("Failure response.");
+            $this->fail(
+                "Unexpected failure response: " .
+                $response->getStatus()->getCode() . ' ' .
+                $response->getStatus()->getDescription() . ' ' .
+                $response->getStatus()->getDetails());
         }
     }
 
     private function prettyPrintResponse($response)
     {
-        echo json_encode(json_decode($response->serializeToJsonString()), JSON_PRETTY_PRINT);
+        echo json_encode(json_decode($response->serializeToJsonString()), JSON_PRETTY_PRINT) . '\n';
     }
 }
