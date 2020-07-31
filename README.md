@@ -12,6 +12,10 @@ content.
 * Sign up for a free account at: https://portal.clarifai.com/signup
 * Read the documentation at: https://docs.clarifai.com/
 
+
+[![Latest Stable Version](https://poser.pugx.org/clarifai/clarifai-php-grpc/version)](https://packagist.org/packages/clarifai/clarifai-php-grpc)
+
+
 # Installation
 
 ```
