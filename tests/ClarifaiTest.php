@@ -79,6 +79,57 @@ class ClarifaiTest extends TestCase
         $this->assertNotEquals(0, $response->getOutputs()[0]->getData()->getConcepts()->count());
     }
 
+    public function testFailedPostModelOutputs()
+    {
+        [$response, $status] = $this->client->PostModelOutputs(
+            new PostModelOutputsRequest([
+                'model_id' => self::GENERAL_MODEL_ID,
+                'inputs' => [
+                    new Input([
+                        'data' => new Data([
+                            'image' => new Image([
+                                'url' => self::NON_EXISTING_IMAGE_URL
+                            ])
+                        ])
+                    ])
+                ]
+            ]),
+            $this->metadata
+        )->wait();
+        $this->assertEquals(0, $status->code, "Response failure: {$status->details}");
+        $this->assertEquals(StatusCode::FAILURE, $response->getStatus()->getCode());
+    }
+
+    public function testMixedSuccessPostModelOutputs()
+    {
+        [$response, $status] = $this->client->PostModelOutputs(
+            new PostModelOutputsRequest([
+                'model_id' => self::GENERAL_MODEL_ID,
+                'inputs' => [
+                    new Input([
+                        'data' => new Data([
+                            'image' => new Image([
+                                'url' => self::DOG_IMAGE_URL
+                            ])
+                        ])
+                    ]),
+                    new Input([
+                        'data' => new Data([
+                            'image' => new Image([
+                                'url' => self::NON_EXISTING_IMAGE_URL
+                            ])
+                        ])
+                    ])
+                ]
+            ]),
+            $this->metadata
+        )->wait();
+        $this->assertEquals(0, $status->code, "Response failure: {$status->details}");
+        $this->assertEquals(StatusCode::MIXED_STATUS, $response->getStatus()->getCode());
+        $this->assertEquals(StatusCode::SUCCESS, $response->getOutputs()[0]->getStatus()->getCode());
+        $this->assertEquals(StatusCode::INPUT_DOWNLOAD_FAILED, $response->getOutputs()[1]->getStatus()->getCode());
+    }
+
     private function raiseOnFailure($response, $status)
     {
         $this->assertEquals(0, $status->code, "Response failure: {$status->details}");
