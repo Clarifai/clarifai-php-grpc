@@ -22,7 +22,7 @@ content.
 composer require clarifai/clarifai-php-grpc
 ```
 
-See also [how add gRPC to your PHP installaiton](https://grpc.io/docs/languages/php/quickstart/).
+See also [how add gRPC to your PHP installation](https://grpc.io/docs/languages/php/quickstart/).
 
 ## Getting started
 
