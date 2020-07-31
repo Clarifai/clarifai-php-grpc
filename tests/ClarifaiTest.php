@@ -12,6 +12,12 @@ use PHPUnit\Framework\TestCase;
 
 class ClarifaiTest extends TestCase
 {
+    private const DOG_IMAGE_URL = 'https://samples.clarifai.com/dog2.jpeg';
+    private const TRUCK_IMAGE_URL = 'https://samples.clarifai.com/red-truck.png';
+    private const NON_EXISTING_IMAGE_URL = 'http://example.com/non-existing.jpg';
+
+    private const GENERAL_MODEL_ID = 'aaa03c23b3724a16a56b629203edc62c';
+
     private $client;
     private $metadata;
 
@@ -32,7 +38,7 @@ class ClarifaiTest extends TestCase
     public function testGetModel()
     {
         [$response, $status] = $this->client->GetModel(
-            new GetModelRequest(['model_id' => 'aaa03c23b3724a16a56b629203edc62c']),
+            new GetModelRequest(['model_id' => self::GENERAL_MODEL_ID]),
             $this->metadata
         )->wait();
         $this->raiseOnFailure($response, $status);
@@ -55,12 +61,12 @@ class ClarifaiTest extends TestCase
     {
         [$response, $status] = $this->client->PostModelOutputs(
             new PostModelOutputsRequest([
-                'model_id' => 'aaa03c23b3724a16a56b629203edc62c',
+                'model_id' => self::GENERAL_MODEL_ID,
                 'inputs' => [
                     new Input([
                         'data' => new Data([
                             'image' => new Image([
-                                'url' => 'https://clarifai.com/developer/static/images/model-samples/celeb-001.jpg'
+                                'url' => self::DOG_IMAGE_URL
                             ])
                         ])
                     ])
