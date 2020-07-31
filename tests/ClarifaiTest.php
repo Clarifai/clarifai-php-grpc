@@ -1,10 +1,15 @@
 <?php
 
+use Clarifai\Api\Concept;
 use Clarifai\Api\Data;
+use Clarifai\Api\DeleteInputRequest;
+use Clarifai\Api\GetInputRequest;
 use Clarifai\Api\GetModelRequest;
 use Clarifai\Api\Image;
 use Clarifai\Api\Input;
 use Clarifai\Api\ListModelsRequest;
+use Clarifai\Api\PatchInputsRequest;
+use Clarifai\Api\PostInputsRequest;
 use Clarifai\Api\PostModelOutputsRequest;
 use Clarifai\Api\Status\StatusCode;
 use Clarifai\ClarifaiClient;
@@ -128,6 +133,79 @@ class ClarifaiTest extends TestCase
         $this->assertEquals(StatusCode::MIXED_STATUS, $response->getStatus()->getCode());
         $this->assertEquals(StatusCode::SUCCESS, $response->getOutputs()[0]->getStatus()->getCode());
         $this->assertEquals(StatusCode::INPUT_DOWNLOAD_FAILED, $response->getOutputs()[1]->getStatus()->getCode());
+    }
+
+    public function testPostPatchAndDeleteInput()
+    {
+        [$postInputsResponse, $status] = $this->client->PostInputs(
+            new PostInputsRequest([
+                'inputs' => [
+                    new Input([
+                        'data' => new Data([
+                            'image' => new Image([
+                                'url' => self::TRUCK_IMAGE_URL,
+                                'allow_duplicate_url' => true
+                            ]),
+                            'concepts' => [
+                                new Concept([
+                                    'id' => 'red-truck'
+                                ])
+                            ]
+                        ])
+                    ])
+                ]
+            ]),
+            $this->metadata
+        )->wait();
+        $this->raiseOnFailure($postInputsResponse, $status);
+
+        $inputId = $postInputsResponse->getInputs()[0]->getId();
+        try {
+            while (true) {
+                [$getInputResponse, $status] = $this->client->GetInput(
+                    new GetInputRequest(['input_id' => $inputId]),
+                    $this->metadata
+                )->wait();
+                $this->raiseOnFailure($getInputResponse, $status);
+
+                $inputStatusCode = $getInputResponse->getInput()->getStatus()->getCode();
+                if ($inputStatusCode == StatusCode::INPUT_DOWNLOAD_SUCCESS)
+                    break;
+                if ($inputStatusCode != StatusCode::INPUT_DOWNLOAD_PENDING &&
+                    $inputStatusCode != StatusCode::INPUT_DOWNLOAD_IN_PROGRESS)
+                    throw new Exception(
+                        "Waiting for input ID $inputId failed, status code is $inputStatusCode");
+                sleep(1);
+            }
+
+            [$patchInputsResponse, $status] = $this->client->PatchInputs(
+                new PatchInputsRequest([
+                    'action' => 'overwrite',
+                    'inputs' => [
+                        new Input([
+                            'id' => $inputId,
+                            'data' => new Data([
+                                'concepts' => [
+                                    new Concept([
+                                        'id' => 'very-red-truck'
+                                    ])
+                                ]
+                            ])
+                        ])
+                    ]
+                ]),
+                $this->metadata
+            )->wait();
+            $this->raiseOnFailure($patchInputsResponse, $status);
+        } finally {
+            [$deleteInputResponse, $status] = $this->client->DeleteInput(
+                new DeleteInputRequest([
+                    'input_id' => $inputId
+                ]),
+                $this->metadata
+            )->wait();
+            $this->raiseOnFailure($deleteInputResponse, $status);
+        }
     }
 
     private function raiseOnFailure($response, $status)
