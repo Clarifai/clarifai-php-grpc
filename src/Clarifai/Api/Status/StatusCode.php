@@ -1164,6 +1164,16 @@ class StatusCode
      */
     const PASSWORDPOLICY_INVALID_ARGUMENT = 61002;
     /**
+     * Feature flags status code
+     *
+     * Generated from protobuf enum <code>FEATUREFLAG_CONFIG_NOT_FOUND = 62000;</code>
+     */
+    const FEATUREFLAG_CONFIG_NOT_FOUND = 62000;
+    /**
+     * Generated from protobuf enum <code>FEATUREFLAG_INVALID_ARGUMENT = 62001;</code>
+     */
+    const FEATUREFLAG_INVALID_ARGUMENT = 62001;
+    /**
      * Internal issues: 98xxx
      *
      * Generated from protobuf enum <code>INTERNAL_SERVER_ISSUE = 98004;</code>
@@ -1498,6 +1508,8 @@ class StatusCode
         self::PASSWORD_VALIDATION_SUCCESS => 'PASSWORD_VALIDATION_SUCCESS',
         self::PASSWORD_VALIDATION_FAILED => 'PASSWORD_VALIDATION_FAILED',
         self::PASSWORDPOLICY_INVALID_ARGUMENT => 'PASSWORDPOLICY_INVALID_ARGUMENT',
+        self::FEATUREFLAG_CONFIG_NOT_FOUND => 'FEATUREFLAG_CONFIG_NOT_FOUND',
+        self::FEATUREFLAG_INVALID_ARGUMENT => 'FEATUREFLAG_INVALID_ARGUMENT',
         self::INTERNAL_SERVER_ISSUE => 'INTERNAL_SERVER_ISSUE',
         self::INTERNAL_FETCHING_ISSUE => 'INTERNAL_FETCHING_ISSUE',
         self::INTERNAL_DATABASE_ISSUE => 'INTERNAL_DATABASE_ISSUE',

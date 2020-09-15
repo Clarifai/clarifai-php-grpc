@@ -31,6 +31,18 @@ class AnnotationSearchMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.EvalMetrics metrics = 3;</code>
      */
     protected $metrics = null;
+    /**
+     * data is filled out with the concepts used for this evaluation
+     *
+     * Generated from protobuf field <code>.clarifai.api.Data data = 4;</code>
+     */
+    protected $data = null;
+    /**
+     * active_concept_count is the number of concepts for this evaluation
+     *
+     * Generated from protobuf field <code>uint32 active_concept_count = 5;</code>
+     */
+    protected $active_concept_count = 0;
 
     /**
      * Constructor.
@@ -44,6 +56,10 @@ class AnnotationSearchMetrics extends \Google\Protobuf\Internal\Message
      *           The set we are evaluating
      *     @type \Clarifai\Api\EvalMetrics $metrics
      *           The metric result
+     *     @type \Clarifai\Api\Data $data
+     *           data is filled out with the concepts used for this evaluation
+     *     @type int $active_concept_count
+     *           active_concept_count is the number of concepts for this evaluation
      * }
      */
     public function __construct($data = NULL) {
@@ -125,6 +141,58 @@ class AnnotationSearchMetrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\EvalMetrics::class);
         $this->metrics = $var;
+
+        return $this;
+    }
+
+    /**
+     * data is filled out with the concepts used for this evaluation
+     *
+     * Generated from protobuf field <code>.clarifai.api.Data data = 4;</code>
+     * @return \Clarifai\Api\Data
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * data is filled out with the concepts used for this evaluation
+     *
+     * Generated from protobuf field <code>.clarifai.api.Data data = 4;</code>
+     * @param \Clarifai\Api\Data $var
+     * @return $this
+     */
+    public function setData($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Data::class);
+        $this->data = $var;
+
+        return $this;
+    }
+
+    /**
+     * active_concept_count is the number of concepts for this evaluation
+     *
+     * Generated from protobuf field <code>uint32 active_concept_count = 5;</code>
+     * @return int
+     */
+    public function getActiveConceptCount()
+    {
+        return $this->active_concept_count;
+    }
+
+    /**
+     * active_concept_count is the number of concepts for this evaluation
+     *
+     * Generated from protobuf field <code>uint32 active_concept_count = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setActiveConceptCount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->active_concept_count = $var;
 
         return $this;
     }
