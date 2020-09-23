@@ -14,10 +14,11 @@ class ClarifaiClient
      * @return V2Client
      */
     public static function grpc($base = null) {
-        if ($base == null) {
+        if ($base === null) {
             $base = getenv('CLARIFAI_GRPC_URL');
-            if (!$base === null)
+            if ($base === false) {
                 $base = 'api.clarifai.com';
+            }
         }
 
         return new V2Client($base, [
