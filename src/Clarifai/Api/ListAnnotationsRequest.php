@@ -36,6 +36,10 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Only return the annotations that has one of these user IDs, effectively operating as an
      * OR among them to filter down the results.
+     * If model_version_ids are also provided these user_ids are OR'd with them as well since
+     * annotations are either provided by users or model versions and we want the union of any
+     * provided user or model version annotations in the results of ListAnnotations request.
+     * If no user_ids are provided then annotations from all users are returned.
      *
      * Generated from protobuf field <code>repeated string user_ids = 9;</code>
      */
@@ -43,12 +47,17 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Only return the annotations that has one of these model version IDs, effectively operating as an
      * OR among them to filter down the results.
+     * If user_ids are also provided these model_versions_ids are OR'd with them as well since
+     * annotations are either provided by users or model versions and we want the union of any
+     * provided user or model version annotations in the results of ListAnnotations request.
+     * If no model_version_ids are provided then annotations from all model versions are returned.
      *
      * Generated from protobuf field <code>repeated string model_version_ids = 10;</code>
      */
     private $model_version_ids;
     /**
      * Set status to filter by a list of statuses
+     * If not statuses are provided then annotations with any status will be returned.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.status.Status statuses = 5;</code>
      */
@@ -87,11 +96,20 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $user_ids
      *           Only return the annotations that has one of these user IDs, effectively operating as an
      *           OR among them to filter down the results.
+     *           If model_version_ids are also provided these user_ids are OR'd with them as well since
+     *           annotations are either provided by users or model versions and we want the union of any
+     *           provided user or model version annotations in the results of ListAnnotations request.
+     *           If no user_ids are provided then annotations from all users are returned.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $model_version_ids
      *           Only return the annotations that has one of these model version IDs, effectively operating as an
      *           OR among them to filter down the results.
+     *           If user_ids are also provided these model_versions_ids are OR'd with them as well since
+     *           annotations are either provided by users or model versions and we want the union of any
+     *           provided user or model version annotations in the results of ListAnnotations request.
+     *           If no model_version_ids are provided then annotations from all model versions are returned.
      *     @type \Clarifai\Api\Status\Status[]|\Google\Protobuf\Internal\RepeatedField $statuses
      *           Set status to filter by a list of statuses
+     *           If not statuses are provided then annotations with any status will be returned.
      *     @type bool $list_all_annotations
      *           Set this flag to list both trusted and not trusted annotations
      *           by default it's listing only trusted annotations
@@ -189,6 +207,10 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Only return the annotations that has one of these user IDs, effectively operating as an
      * OR among them to filter down the results.
+     * If model_version_ids are also provided these user_ids are OR'd with them as well since
+     * annotations are either provided by users or model versions and we want the union of any
+     * provided user or model version annotations in the results of ListAnnotations request.
+     * If no user_ids are provided then annotations from all users are returned.
      *
      * Generated from protobuf field <code>repeated string user_ids = 9;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -201,6 +223,10 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Only return the annotations that has one of these user IDs, effectively operating as an
      * OR among them to filter down the results.
+     * If model_version_ids are also provided these user_ids are OR'd with them as well since
+     * annotations are either provided by users or model versions and we want the union of any
+     * provided user or model version annotations in the results of ListAnnotations request.
+     * If no user_ids are provided then annotations from all users are returned.
      *
      * Generated from protobuf field <code>repeated string user_ids = 9;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -217,6 +243,10 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Only return the annotations that has one of these model version IDs, effectively operating as an
      * OR among them to filter down the results.
+     * If user_ids are also provided these model_versions_ids are OR'd with them as well since
+     * annotations are either provided by users or model versions and we want the union of any
+     * provided user or model version annotations in the results of ListAnnotations request.
+     * If no model_version_ids are provided then annotations from all model versions are returned.
      *
      * Generated from protobuf field <code>repeated string model_version_ids = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -229,6 +259,10 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Only return the annotations that has one of these model version IDs, effectively operating as an
      * OR among them to filter down the results.
+     * If user_ids are also provided these model_versions_ids are OR'd with them as well since
+     * annotations are either provided by users or model versions and we want the union of any
+     * provided user or model version annotations in the results of ListAnnotations request.
+     * If no model_version_ids are provided then annotations from all model versions are returned.
      *
      * Generated from protobuf field <code>repeated string model_version_ids = 10;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -244,6 +278,7 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Set status to filter by a list of statuses
+     * If not statuses are provided then annotations with any status will be returned.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.status.Status statuses = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -255,6 +290,7 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Set status to filter by a list of statuses
+     * If not statuses are provided then annotations with any status will be returned.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.status.Status statuses = 5;</code>
      * @param \Clarifai\Api\Status\Status[]|\Google\Protobuf\Internal\RepeatedField $var

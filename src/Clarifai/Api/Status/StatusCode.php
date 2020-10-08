@@ -1076,11 +1076,17 @@ class StatusCode
      */
     const TASK_IN_PROGRESS = 54001;
     /**
-     * The task is closed.
+     * The task is completed.
      *
      * Generated from protobuf enum <code>TASK_DONE = 54002;</code>
      */
     const TASK_DONE = 54002;
+    /**
+     * The task is marked as abandoned.
+     *
+     * Generated from protobuf enum <code>TASK_WONT_DO = 54003;</code>
+     */
+    const TASK_WONT_DO = 54003;
     /**
      * An error occurred during add-task-annotations pipeline.
      *
@@ -1173,6 +1179,10 @@ class StatusCode
      * Generated from protobuf enum <code>FEATUREFLAG_INVALID_ARGUMENT = 62001;</code>
      */
     const FEATUREFLAG_INVALID_ARGUMENT = 62001;
+    /**
+     * Generated from protobuf enum <code>FEATUREFLAG_BLOCKED = 62002;</code>
+     */
+    const FEATUREFLAG_BLOCKED = 62002;
     /**
      * Internal issues: 98xxx
      *
@@ -1491,6 +1501,7 @@ class StatusCode
         self::SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST => 'SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST',
         self::TASK_IN_PROGRESS => 'TASK_IN_PROGRESS',
         self::TASK_DONE => 'TASK_DONE',
+        self::TASK_WONT_DO => 'TASK_WONT_DO',
         self::TASK_ADD_ANNOTATIONS_FAILURE => 'TASK_ADD_ANNOTATIONS_FAILURE',
         self::TASK_CONFLICT => 'TASK_CONFLICT',
         self::TASK_NOT_IMPLEMENTED => 'TASK_NOT_IMPLEMENTED',
@@ -1510,6 +1521,7 @@ class StatusCode
         self::PASSWORDPOLICY_INVALID_ARGUMENT => 'PASSWORDPOLICY_INVALID_ARGUMENT',
         self::FEATUREFLAG_CONFIG_NOT_FOUND => 'FEATUREFLAG_CONFIG_NOT_FOUND',
         self::FEATUREFLAG_INVALID_ARGUMENT => 'FEATUREFLAG_INVALID_ARGUMENT',
+        self::FEATUREFLAG_BLOCKED => 'FEATUREFLAG_BLOCKED',
         self::INTERNAL_SERVER_ISSUE => 'INTERNAL_SERVER_ISSUE',
         self::INTERNAL_FETCHING_ISSUE => 'INTERNAL_FETCHING_ISSUE',
         self::INTERNAL_DATABASE_ISSUE => 'INTERNAL_DATABASE_ISSUE',

@@ -16,9 +16,9 @@ class TaskReviewConsensusStrategyInfo extends \Google\Protobuf\Internal\Message
     /**
      * The number of labelers that need to agree in order to automatically approve an annotation.
      *
-     * Generated from protobuf field <code>uint32 quorum_necessary_for_approval = 1;</code>
+     * Generated from protobuf field <code>uint32 approval_threshold = 2;</code>
      */
-    protected $quorum_necessary_for_approval = 0;
+    protected $approval_threshold = 0;
 
     /**
      * Constructor.
@@ -26,7 +26,7 @@ class TaskReviewConsensusStrategyInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $quorum_necessary_for_approval
+     *     @type int $approval_threshold
      *           The number of labelers that need to agree in order to automatically approve an annotation.
      * }
      */
@@ -38,25 +38,25 @@ class TaskReviewConsensusStrategyInfo extends \Google\Protobuf\Internal\Message
     /**
      * The number of labelers that need to agree in order to automatically approve an annotation.
      *
-     * Generated from protobuf field <code>uint32 quorum_necessary_for_approval = 1;</code>
+     * Generated from protobuf field <code>uint32 approval_threshold = 2;</code>
      * @return int
      */
-    public function getQuorumNecessaryForApproval()
+    public function getApprovalThreshold()
     {
-        return $this->quorum_necessary_for_approval;
+        return $this->approval_threshold;
     }
 
     /**
      * The number of labelers that need to agree in order to automatically approve an annotation.
      *
-     * Generated from protobuf field <code>uint32 quorum_necessary_for_approval = 1;</code>
+     * Generated from protobuf field <code>uint32 approval_threshold = 2;</code>
      * @param int $var
      * @return $this
      */
-    public function setQuorumNecessaryForApproval($var)
+    public function setApprovalThreshold($var)
     {
         GPBUtil::checkUint32($var);
-        $this->quorum_necessary_for_approval = $var;
+        $this->approval_threshold = $var;
 
         return $this;
     }
