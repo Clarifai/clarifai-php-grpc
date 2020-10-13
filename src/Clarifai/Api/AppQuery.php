@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class AppQuery extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The name of the field. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Query by application name. This supports wildcard queries like "gen*" to match "general" as an example.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
@@ -27,7 +27,7 @@ class AppQuery extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           The name of the field. This supports wildcard queries like "gen*" to match "general" as an example.
+     *           Query by application name. This supports wildcard queries like "gen*" to match "general" as an example.
      * }
      */
     public function __construct($data = NULL) {
@@ -36,7 +36,7 @@ class AppQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the field. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Query by application name. This supports wildcard queries like "gen*" to match "general" as an example.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @return string
@@ -47,7 +47,7 @@ class AppQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the field. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Query by application name. This supports wildcard queries like "gen*" to match "general" as an example.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var

@@ -43,19 +43,11 @@ class S
      */
     const Predict = 2;
     /**
-     * Generated from protobuf enum <code>Predict_Feedback = 29 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = false];</code>
-     */
-    const Predict_Feedback = 29;
-    /**
      * Make an rpc to our search services.
      *
      * Generated from protobuf enum <code>Search = 3 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const Search = 3;
-    /**
-     * Generated from protobuf enum <code>Search_Feedback = 28 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = false];</code>
-     */
-    const Search_Feedback = 28;
     /**
      * Write to the inputs table in the DB.
      *
@@ -344,42 +336,6 @@ class S
      */
     const PasswordPolicies_Delete = 59;
     /**
-     * Write to password_history table
-     *
-     * Generated from protobuf enum <code>PasswordHistory_Add = 60 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Get];</code>
-     */
-    const PasswordHistory_Add = 60;
-    /**
-     * Read from password_history table
-     *
-     * Generated from protobuf enum <code>PasswordHistory_Get = 61 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
-     */
-    const PasswordHistory_Get = 61;
-    /**
-     * To delete password history we need read/write
-     *
-     * Generated from protobuf enum <code>PasswordHistory_Delete = 62 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Get];</code>
-     */
-    const PasswordHistory_Delete = 62;
-    /**
-     * Read from notifications table
-     *
-     * Generated from protobuf enum <code>Notifications_Get = 64 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
-     */
-    const Notifications_Get = 64;
-    /**
-     * Write to notifications table
-     *
-     * Generated from protobuf enum <code>Notifications_Add = 65 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Get];</code>
-     */
-    const Notifications_Add = 65;
-    /**
-     * To delete notifications we need read/write
-     *
-     * Generated from protobuf enum <code>Notifications_Delete = 66 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Get];</code>
-     */
-    const Notifications_Delete = 66;
-    /**
      * Read from label orders table
      *
      * Generated from protobuf enum <code>LabelOrders_Get = 67 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
@@ -403,26 +359,12 @@ class S
      * Generated from protobuf enum <code>UserFeatureConfigs_Get = 71 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const UserFeatureConfigs_Get = 71;
-    /**
-     * Write to configs table
-     *
-     * Generated from protobuf enum <code>UserFeatureConfigs_Add = 72 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Get];</code>
-     */
-    const UserFeatureConfigs_Add = 72;
-    /**
-     * To delete configs we need read/write
-     *
-     * Generated from protobuf enum <code>UserFeatureConfigs_Delete = 73 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Get];</code>
-     */
-    const UserFeatureConfigs_Delete = 73;
 
     private static $valueToName = [
         self::undef => 'undef',
         self::All => 'All',
         self::Predict => 'Predict',
-        self::Predict_Feedback => 'Predict_Feedback',
         self::Search => 'Search',
-        self::Search_Feedback => 'Search_Feedback',
         self::Inputs_Add => 'Inputs_Add',
         self::Inputs_Get => 'Inputs_Get',
         self::Inputs_Patch => 'Inputs_Patch',
@@ -469,18 +411,10 @@ class S
         self::PasswordPolicies_Add => 'PasswordPolicies_Add',
         self::PasswordPolicies_Get => 'PasswordPolicies_Get',
         self::PasswordPolicies_Delete => 'PasswordPolicies_Delete',
-        self::PasswordHistory_Add => 'PasswordHistory_Add',
-        self::PasswordHistory_Get => 'PasswordHistory_Get',
-        self::PasswordHistory_Delete => 'PasswordHistory_Delete',
-        self::Notifications_Get => 'Notifications_Get',
-        self::Notifications_Add => 'Notifications_Add',
-        self::Notifications_Delete => 'Notifications_Delete',
         self::LabelOrders_Get => 'LabelOrders_Get',
         self::LabelOrders_Add => 'LabelOrders_Add',
         self::LabelOrders_Delete => 'LabelOrders_Delete',
         self::UserFeatureConfigs_Get => 'UserFeatureConfigs_Get',
-        self::UserFeatureConfigs_Add => 'UserFeatureConfigs_Add',
-        self::UserFeatureConfigs_Delete => 'UserFeatureConfigs_Delete',
     ];
 
     public static function name($value)

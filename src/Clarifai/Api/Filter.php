@@ -26,6 +26,13 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
      */
     protected $annotation = null;
+    /**
+     * FILTER by input information.
+     * For example you can filter inputs by status,
+     *
+     * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
+     */
+    protected $input = null;
 
     /**
      * Constructor.
@@ -38,6 +45,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      *           query. This allow for queries such as dog AND ! metadata=={"blah":"value"}
      *     @type \Clarifai\Api\Annotation $annotation
      *           FILTER by annotation information.
+     *     @type \Clarifai\Api\Input $input
+     *           FILTER by input information.
+     *           For example you can filter inputs by status,
      * }
      */
     public function __construct($data = NULL) {
@@ -95,6 +105,34 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Annotation::class);
         $this->annotation = $var;
+
+        return $this;
+    }
+
+    /**
+     * FILTER by input information.
+     * For example you can filter inputs by status,
+     *
+     * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
+     * @return \Clarifai\Api\Input
+     */
+    public function getInput()
+    {
+        return $this->input;
+    }
+
+    /**
+     * FILTER by input information.
+     * For example you can filter inputs by status,
+     *
+     * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
+     * @param \Clarifai\Api\Input $var
+     * @return $this
+     */
+    public function setInput($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Input::class);
+        $this->input = $var;
 
         return $this;
     }

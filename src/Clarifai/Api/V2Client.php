@@ -1094,8 +1094,6 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * Search over the applications to find one or more you're looking for.
-     * This leverage the "body" parameter because we also have page and
-     * per_page as url query param variables in this request.
      * @param \Clarifai\Api\PostAppsSearchesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1129,8 +1127,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
      * //////////////////////////////////////
      * Searches
      * //////////////////////////////////////
@@ -1429,6 +1425,20 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/PostTasks',
         $argument,
         ['\Clarifai\Api\MultiTaskResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Task annotation counts
+     * @param \Clarifai\Api\GetTaskAnnotationsCountRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetTaskAnnotationsCount(\Clarifai\Api\GetTaskAnnotationsCountRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetTaskAnnotationsCount',
+        $argument,
+        ['\Clarifai\Api\SingleTaskAnnotationsCountResponse', 'decode'],
         $metadata, $options);
     }
 

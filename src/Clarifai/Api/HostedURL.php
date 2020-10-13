@@ -32,6 +32,13 @@ class HostedURL extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string sizes = 3;</code>
      */
     private $sizes;
+    /**
+     * The crossorigin property of html media tag
+     * For Secure Data Hosting this needs to be set to 'use-credentials'
+     *
+     * Generated from protobuf field <code>string crossorigin = 4;</code>
+     */
+    protected $crossorigin = '';
 
     /**
      * Constructor.
@@ -46,6 +53,9 @@ class HostedURL extends \Google\Protobuf\Internal\Message
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $sizes
      *           The sizes field lists which images of the different sizes are hosted in our storage. The URL
      *           of each hosted image can be obtained by joining the prefix, one of the sizes and suffix.
+     *     @type string $crossorigin
+     *           The crossorigin property of html media tag
+     *           For Secure Data Hosting this needs to be set to 'use-credentials'
      * }
      */
     public function __construct($data = NULL) {
@@ -129,6 +139,34 @@ class HostedURL extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->sizes = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The crossorigin property of html media tag
+     * For Secure Data Hosting this needs to be set to 'use-credentials'
+     *
+     * Generated from protobuf field <code>string crossorigin = 4;</code>
+     * @return string
+     */
+    public function getCrossorigin()
+    {
+        return $this->crossorigin;
+    }
+
+    /**
+     * The crossorigin property of html media tag
+     * For Secure Data Hosting this needs to be set to 'use-credentials'
+     *
+     * Generated from protobuf field <code>string crossorigin = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCrossorigin($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->crossorigin = $var;
 
         return $this;
     }

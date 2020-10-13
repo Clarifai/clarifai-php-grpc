@@ -86,6 +86,13 @@ class ModelType extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
      */
     private $model_type_fields;
+    /**
+     * For sequence models we need to know when processing that they require temporal time frames
+     * in sequential order. This will be true for model types like trackers as an example.
+     *
+     * Generated from protobuf field <code>bool requires_sequential_frames = 12;</code>
+     */
+    protected $requires_sequential_frames = false;
 
     /**
      * Constructor.
@@ -122,6 +129,9 @@ class ModelType extends \Google\Protobuf\Internal\Message
      *           if it's the Data obejct within the OutputInfo object. We deciddd to not break these up
      *           into input_info, train_info and output_info related parameters and instead use the path
      *           so that they are most flexible.
+     *     @type bool $requires_sequential_frames
+     *           For sequence models we need to know when processing that they require temporal time frames
+     *           in sequential order. This will be true for model types like trackers as an example.
      * }
      */
     public function __construct($data = NULL) {
@@ -403,6 +413,34 @@ class ModelType extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\ModelTypeField::class);
         $this->model_type_fields = $arr;
+
+        return $this;
+    }
+
+    /**
+     * For sequence models we need to know when processing that they require temporal time frames
+     * in sequential order. This will be true for model types like trackers as an example.
+     *
+     * Generated from protobuf field <code>bool requires_sequential_frames = 12;</code>
+     * @return bool
+     */
+    public function getRequiresSequentialFrames()
+    {
+        return $this->requires_sequential_frames;
+    }
+
+    /**
+     * For sequence models we need to know when processing that they require temporal time frames
+     * in sequential order. This will be true for model types like trackers as an example.
+     *
+     * Generated from protobuf field <code>bool requires_sequential_frames = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRequiresSequentialFrames($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->requires_sequential_frames = $var;
 
         return $this;
     }

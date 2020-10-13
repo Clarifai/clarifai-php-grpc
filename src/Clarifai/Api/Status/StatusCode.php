@@ -453,6 +453,10 @@ class StatusCode
      */
     const ANNOTATION_AWAITING_REVIEW = 24157;
     /**
+     * Generated from protobuf enum <code>ANNOTATION_AWAITING_CONSENSUS_REVIEW = 24159;</code>
+     */
+    const ANNOTATION_AWAITING_CONSENSUS_REVIEW = 24159;
+    /**
      * Generated from protobuf enum <code>ANNOTATION_REVIEW_DENIED = 24158;</code>
      */
     const ANNOTATION_REVIEW_DENIED = 24158;
@@ -1003,7 +1007,7 @@ class StatusCode
      */
     const APP_COUNT_INTERNAL_FAILURE = 47004;
     /**
-     * Media processor related errors 471xx
+     * Media processor related errors 471xx -- DEPRECATED
      *
      * Generated from protobuf enum <code>MP_DOWNLOAD_ERROR = 47101;</code>
      */
@@ -1357,6 +1361,7 @@ class StatusCode
         self::ANNOTATION_INVALID_ARGUMENT => 'ANNOTATION_INVALID_ARGUMENT',
         self::ANNOTATION_PERMISSION_DENIED => 'ANNOTATION_PERMISSION_DENIED',
         self::ANNOTATION_AWAITING_REVIEW => 'ANNOTATION_AWAITING_REVIEW',
+        self::ANNOTATION_AWAITING_CONSENSUS_REVIEW => 'ANNOTATION_AWAITING_CONSENSUS_REVIEW',
         self::ANNOTATION_REVIEW_DENIED => 'ANNOTATION_REVIEW_DENIED',
         self::ANNOTATION_MODIFY_SUCCESS => 'ANNOTATION_MODIFY_SUCCESS',
         self::ANNOTATION_MODIFY_PENDING => 'ANNOTATION_MODIFY_PENDING',

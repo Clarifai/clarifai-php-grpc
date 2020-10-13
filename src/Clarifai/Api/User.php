@@ -74,6 +74,18 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
      */
     private $email_addresses;
+    /**
+     * Generated from protobuf field <code>bool is_org_admin = 14;</code>
+     */
+    protected $is_org_admin = false;
+    /**
+     * Generated from protobuf field <code>bool two_factor_auth_enabled = 15;</code>
+     */
+    protected $two_factor_auth_enabled = false;
+    /**
+     * Generated from protobuf field <code>uint32 teams_count = 16;</code>
+     */
+    protected $teams_count = 0;
 
     /**
      * Constructor.
@@ -100,6 +112,9 @@ class User extends \Google\Protobuf\Internal\Message
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *     @type \Clarifai\Api\EmailAddress[]|\Google\Protobuf\Internal\RepeatedField $email_addresses
+     *     @type bool $is_org_admin
+     *     @type bool $two_factor_auth_enabled
+     *     @type int $teams_count
      * }
      */
     public function __construct($data = NULL) {
@@ -385,6 +400,72 @@ class User extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\EmailAddress::class);
         $this->email_addresses = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_org_admin = 14;</code>
+     * @return bool
+     */
+    public function getIsOrgAdmin()
+    {
+        return $this->is_org_admin;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_org_admin = 14;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsOrgAdmin($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_org_admin = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool two_factor_auth_enabled = 15;</code>
+     * @return bool
+     */
+    public function getTwoFactorAuthEnabled()
+    {
+        return $this->two_factor_auth_enabled;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool two_factor_auth_enabled = 15;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setTwoFactorAuthEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->two_factor_auth_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 teams_count = 16;</code>
+     * @return int
+     */
+    public function getTeamsCount()
+    {
+        return $this->teams_count;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 teams_count = 16;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTeamsCount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->teams_count = $var;
 
         return $this;
     }
