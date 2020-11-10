@@ -33,6 +33,10 @@ class TaskAnnotationStatusCountPerUser extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 review_denied = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     protected $review_denied = 0;
+    /**
+     * Generated from protobuf field <code>uint32 awaiting_consensus_review = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    protected $awaiting_consensus_review = 0;
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class TaskAnnotationStatusCountPerUser extends \Google\Protobuf\Internal\Message
      *     @type int $awaiting_review
      *     @type int $success
      *     @type int $review_denied
+     *     @type int $awaiting_consensus_review
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class TaskAnnotationStatusCountPerUser extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->review_denied = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 awaiting_consensus_review = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return int
+     */
+    public function getAwaitingConsensusReview()
+    {
+        return $this->awaiting_consensus_review;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 awaiting_consensus_review = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAwaitingConsensusReview($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->awaiting_consensus_review = $var;
 
         return $this;
     }

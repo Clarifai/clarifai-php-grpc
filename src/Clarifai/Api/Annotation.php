@@ -94,6 +94,14 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool input_level = 17;</code>
      */
     protected $input_level = false;
+    /**
+     * Consensus review related information, e.g.
+     * * annotation group
+     * * id of annotation parent, in case the annotation was split from another annotation
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct consensus_info = 18;</code>
+     */
+    protected $consensus_info = null;
 
     /**
      * Constructor.
@@ -131,6 +139,10 @@ class Annotation extends \Google\Protobuf\Internal\Message
      *           Will be deprecated
      *     @type bool $input_level
      *           Is this the input level annotation.
+     *     @type \Google\Protobuf\Struct $consensus_info
+     *           Consensus review related information, e.g.
+     *           * annotation group
+     *           * id of annotation parent, in case the annotation was split from another annotation
      * }
      */
     public function __construct($data = NULL) {
@@ -456,6 +468,36 @@ class Annotation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->input_level = $var;
+
+        return $this;
+    }
+
+    /**
+     * Consensus review related information, e.g.
+     * * annotation group
+     * * id of annotation parent, in case the annotation was split from another annotation
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct consensus_info = 18;</code>
+     * @return \Google\Protobuf\Struct
+     */
+    public function getConsensusInfo()
+    {
+        return $this->consensus_info;
+    }
+
+    /**
+     * Consensus review related information, e.g.
+     * * annotation group
+     * * id of annotation parent, in case the annotation was split from another annotation
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct consensus_info = 18;</code>
+     * @param \Google\Protobuf\Struct $var
+     * @return $this
+     */
+    public function setConsensusInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->consensus_info = $var;
 
         return $this;
     }

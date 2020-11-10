@@ -789,14 +789,6 @@ class StatusCode
      */
     const DATABASE_CONSTRAINT_VIOLATED = 40017;
     /**
-     * Generated from protobuf enum <code>DATABASE_NO_ONGOING_OPERATIONS = 40018;</code>
-     */
-    const DATABASE_NO_ONGOING_OPERATIONS = 40018;
-    /**
-     * Generated from protobuf enum <code>DATABASE_LOCKED_BY_ONGOING_OPERATION = 40019;</code>
-     */
-    const DATABASE_LOCKED_BY_ONGOING_OPERATION = 40019;
-    /**
      * Generated from protobuf enum <code>ASYNC_WORKER_MULTI_ERRORS = 40020;</code>
      */
     const ASYNC_WORKER_MULTI_ERRORS = 40020;
@@ -975,6 +967,10 @@ class StatusCode
      */
     const REDIS_SCRIPT_EXITED_WITH_FAILURE = 45002;
     /**
+     * Generated from protobuf enum <code>REDIS_STREAM_ERR = 45003;</code>
+     */
+    const REDIS_STREAM_ERR = 45003;
+    /**
      * Sift Science 46xxx
      *
      * Generated from protobuf enum <code>SIGNUP_EVENT_ERROR = 46001;</code>
@@ -1110,6 +1106,12 @@ class StatusCode
      */
     const TASK_NOT_IMPLEMENTED = 54101;
     /**
+     * Task was not found.
+     *
+     * Generated from protobuf enum <code>TASK_MISSING = 54102;</code>
+     */
+    const TASK_MISSING = 54102;
+    /**
      * Label Order Related Status Code 55xxx
      *
      * Generated from protobuf enum <code>LABEL_ORDER_PENDING = 55001;</code>
@@ -1187,6 +1189,16 @@ class StatusCode
      * Generated from protobuf enum <code>FEATUREFLAG_BLOCKED = 62002;</code>
      */
     const FEATUREFLAG_BLOCKED = 62002;
+    /**
+     * Maintenance status code
+     *
+     * Generated from protobuf enum <code>MAINTENANCE_SUCCESS = 63000;</code>
+     */
+    const MAINTENANCE_SUCCESS = 63000;
+    /**
+     * Generated from protobuf enum <code>MAINTENANCE_FAILED = 63001;</code>
+     */
+    const MAINTENANCE_FAILED = 63001;
     /**
      * Internal issues: 98xxx
      *
@@ -1440,8 +1452,6 @@ class StatusCode
         self::DATABASE_FAIL_TO_GET_CONNECTIONS => 'DATABASE_FAIL_TO_GET_CONNECTIONS',
         self::DATABASE_TOO_MANY_CLIENTS => 'DATABASE_TOO_MANY_CLIENTS',
         self::DATABASE_CONSTRAINT_VIOLATED => 'DATABASE_CONSTRAINT_VIOLATED',
-        self::DATABASE_NO_ONGOING_OPERATIONS => 'DATABASE_NO_ONGOING_OPERATIONS',
-        self::DATABASE_LOCKED_BY_ONGOING_OPERATION => 'DATABASE_LOCKED_BY_ONGOING_OPERATION',
         self::ASYNC_WORKER_MULTI_ERRORS => 'ASYNC_WORKER_MULTI_ERRORS',
         self::RPC_REQUEST_QUEUE_FULL => 'RPC_REQUEST_QUEUE_FULL',
         self::RPC_SERVER_UNAVAILABLE => 'RPC_SERVER_UNAVAILABLE',
@@ -1483,6 +1493,7 @@ class StatusCode
         self::STRIPE_EVENT_ERROR => 'STRIPE_EVENT_ERROR',
         self::CACHE_MISS => 'CACHE_MISS',
         self::REDIS_SCRIPT_EXITED_WITH_FAILURE => 'REDIS_SCRIPT_EXITED_WITH_FAILURE',
+        self::REDIS_STREAM_ERR => 'REDIS_STREAM_ERR',
         self::SIGNUP_EVENT_ERROR => 'SIGNUP_EVENT_ERROR',
         self::SIGNUP_FLAGGED => 'SIGNUP_FLAGGED',
         self::FILETYPE_UNSUPPORTED => 'FILETYPE_UNSUPPORTED',
@@ -1510,6 +1521,7 @@ class StatusCode
         self::TASK_ADD_ANNOTATIONS_FAILURE => 'TASK_ADD_ANNOTATIONS_FAILURE',
         self::TASK_CONFLICT => 'TASK_CONFLICT',
         self::TASK_NOT_IMPLEMENTED => 'TASK_NOT_IMPLEMENTED',
+        self::TASK_MISSING => 'TASK_MISSING',
         self::LABEL_ORDER_PENDING => 'LABEL_ORDER_PENDING',
         self::LABEL_ORDER_IN_PROGRESS => 'LABEL_ORDER_IN_PROGRESS',
         self::LABEL_ORDER_SUCCESS => 'LABEL_ORDER_SUCCESS',
@@ -1527,6 +1539,8 @@ class StatusCode
         self::FEATUREFLAG_CONFIG_NOT_FOUND => 'FEATUREFLAG_CONFIG_NOT_FOUND',
         self::FEATUREFLAG_INVALID_ARGUMENT => 'FEATUREFLAG_INVALID_ARGUMENT',
         self::FEATUREFLAG_BLOCKED => 'FEATUREFLAG_BLOCKED',
+        self::MAINTENANCE_SUCCESS => 'MAINTENANCE_SUCCESS',
+        self::MAINTENANCE_FAILED => 'MAINTENANCE_FAILED',
         self::INTERNAL_SERVER_ISSUE => 'INTERNAL_SERVER_ISSUE',
         self::INTERNAL_FETCHING_ISSUE => 'INTERNAL_FETCHING_ISSUE',
         self::INTERNAL_DATABASE_ISSUE => 'INTERNAL_DATABASE_ISSUE',

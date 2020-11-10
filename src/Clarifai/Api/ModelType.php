@@ -93,6 +93,24 @@ class ModelType extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool requires_sequential_frames = 12;</code>
      */
     protected $requires_sequential_frames = false;
+    /**
+     * Can this model be evaluated?
+     *
+     * Generated from protobuf field <code>bool evaluable = 13;</code>
+     */
+    protected $evaluable = false;
+    /**
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     */
+    protected $expected_pretrained_input_fields = null;
+    /**
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     */
+    protected $expected_pretrained_output_fields = null;
 
     /**
      * Constructor.
@@ -132,6 +150,12 @@ class ModelType extends \Google\Protobuf\Internal\Message
      *     @type bool $requires_sequential_frames
      *           For sequence models we need to know when processing that they require temporal time frames
      *           in sequential order. This will be true for model types like trackers as an example.
+     *     @type bool $evaluable
+     *           Can this model be evaluated?
+     *     @type \Google\Protobuf\Struct $expected_pretrained_input_fields
+     *           Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     *     @type \Google\Protobuf\Struct $expected_pretrained_output_fields
+     *           Maps output_fields to the more granular data fields needed to parse a triton models outputs 
      * }
      */
     public function __construct($data = NULL) {
@@ -441,6 +465,84 @@ class ModelType extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->requires_sequential_frames = $var;
+
+        return $this;
+    }
+
+    /**
+     * Can this model be evaluated?
+     *
+     * Generated from protobuf field <code>bool evaluable = 13;</code>
+     * @return bool
+     */
+    public function getEvaluable()
+    {
+        return $this->evaluable;
+    }
+
+    /**
+     * Can this model be evaluated?
+     *
+     * Generated from protobuf field <code>bool evaluable = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEvaluable($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->evaluable = $var;
+
+        return $this;
+    }
+
+    /**
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     * @return \Google\Protobuf\Struct
+     */
+    public function getExpectedPretrainedInputFields()
+    {
+        return $this->expected_pretrained_input_fields;
+    }
+
+    /**
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     * @param \Google\Protobuf\Struct $var
+     * @return $this
+     */
+    public function setExpectedPretrainedInputFields($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->expected_pretrained_input_fields = $var;
+
+        return $this;
+    }
+
+    /**
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     * @return \Google\Protobuf\Struct
+     */
+    public function getExpectedPretrainedOutputFields()
+    {
+        return $this->expected_pretrained_output_fields;
+    }
+
+    /**
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     * @param \Google\Protobuf\Struct $var
+     * @return $this
+     */
+    public function setExpectedPretrainedOutputFields($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->expected_pretrained_output_fields = $var;
 
         return $this;
     }
