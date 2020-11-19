@@ -15,7 +15,7 @@ class ClarifaiClient
      */
     public static function grpc($base = null) {
         if ($base === null) {
-            $base = getenv('CLARIFAI_GRPC_URL');
+            $base = getenv('CLARIFAI_GRPC_BASE');
             if ($base === false) {
                 $base = 'api.clarifai.com';
             }
