@@ -19,4 +19,4 @@ jobs:
       env:
         CLARIFAI_API_KEY: ${{ secrets.CLARIFAI_API_KEY }}
         CLARIFAI_GRPC_BASE: ${{ secrets.CLARIFAI_GRPC_BASE }}
-      run: docker run -it -e CLARIFAI_API_KEY -e CLARIFAI_GRPC_BASE run-test-suite
+      run: docker run -e CLARIFAI_API_KEY -e CLARIFAI_GRPC_BASE run-test-suite
