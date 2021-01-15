@@ -1,0 +1,22 @@
+name: Run tests
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: [ ubuntu-latest]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: docker build -t run-test-suite .
+    - name: Run tests
+      env:
+        CLARIFAI_API_KEY: ${{ secrets.CLARIFAI_API_KEY }}
+        CLARIFAI_GRPC_BASE: ${{ secrets.CLARIFAI_GRPC_BASE }}
+      run: docker run -it -e CLARIFAI_API_KEY -e CLARIFAI_GRPC_BASE run-test-suite
