@@ -371,6 +371,20 @@ class S
      * Generated from protobuf enum <code>UserFeatureConfigs_Get = 71 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const UserFeatureConfigs_Get = 71;
+    /**
+     * CRUD on FindDuplicateAnnotationsJobs table
+     *
+     * Generated from protobuf enum <code>FindDuplicateAnnotationsJobs_Add = 102 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
+     */
+    const FindDuplicateAnnotationsJobs_Add = 102;
+    /**
+     * Generated from protobuf enum <code>FindDuplicateAnnotationsJobs_Get = 103 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const FindDuplicateAnnotationsJobs_Get = 103;
+    /**
+     * Generated from protobuf enum <code>FindDuplicateAnnotationsJobs_Delete = 104 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
+     */
+    const FindDuplicateAnnotationsJobs_Delete = 104;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -430,6 +444,9 @@ class S
         self::LabelOrders_Add => 'LabelOrders_Add',
         self::LabelOrders_Delete => 'LabelOrders_Delete',
         self::UserFeatureConfigs_Get => 'UserFeatureConfigs_Get',
+        self::FindDuplicateAnnotationsJobs_Add => 'FindDuplicateAnnotationsJobs_Add',
+        self::FindDuplicateAnnotationsJobs_Get => 'FindDuplicateAnnotationsJobs_Get',
+        self::FindDuplicateAnnotationsJobs_Delete => 'FindDuplicateAnnotationsJobs_Delete',
     ];
 
     public static function name($value)

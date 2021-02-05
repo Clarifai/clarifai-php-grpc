@@ -36,6 +36,8 @@ class Annotation extends \Google\Protobuf\Internal\Message
      */
     protected $data = null;
     /**
+     * task_id is deprecated in annotation_info. Use task_id
+     *
      * Generated from protobuf field <code>.google.protobuf.Struct annotation_info = 13;</code>
      */
     protected $annotation_info = null;
@@ -52,11 +54,9 @@ class Annotation extends \Google\Protobuf\Internal\Message
      */
     protected $model_version_id = '';
     /**
-     * The embedding model version used make this annotation available for search and training
-     * Note that an annotation always have an 'embed_model_version_id' even if it is For human
-     * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+     * DEPRECATED.
      *
-     * Generated from protobuf field <code>string embed_model_version_id = 14;</code>
+     * Generated from protobuf field <code>string embed_model_version_id = 14 [deprecated = true];</code>
      */
     protected $embed_model_version_id = '';
     /**
@@ -102,6 +102,12 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Struct consensus_info = 18;</code>
      */
     protected $consensus_info = null;
+    /**
+     * The id of the task annotation belongs to
+     *
+     * Generated from protobuf field <code>string task_id = 19;</code>
+     */
+    protected $task_id = '';
 
     /**
      * Constructor.
@@ -116,14 +122,13 @@ class Annotation extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Data $data
      *           The data passed along in this annotation.
      *     @type \Google\Protobuf\Struct $annotation_info
+     *           task_id is deprecated in annotation_info. Use task_id
      *     @type string $user_id
      *           ID of the user this annotation is created by
      *     @type string $model_version_id
      *           ID of the model version this annotation is created by
      *     @type string $embed_model_version_id
-     *           The embedding model version used make this annotation available for search and training
-     *           Note that an annotation always have an 'embed_model_version_id' even if it is For human
-     *           produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+     *           DEPRECATED.
      *     @type \Clarifai\Api\Status\Status $status
      *           Annotation Status
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -143,6 +148,8 @@ class Annotation extends \Google\Protobuf\Internal\Message
      *           Consensus review related information, e.g.
      *           * annotation group
      *           * id of annotation parent, in case the annotation was split from another annotation
+     *     @type string $task_id
+     *           The id of the task annotation belongs to
      * }
      */
     public function __construct($data = NULL) {
@@ -229,6 +236,8 @@ class Annotation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * task_id is deprecated in annotation_info. Use task_id
+     *
      * Generated from protobuf field <code>.google.protobuf.Struct annotation_info = 13;</code>
      * @return \Google\Protobuf\Struct
      */
@@ -238,6 +247,8 @@ class Annotation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * task_id is deprecated in annotation_info. Use task_id
+     *
      * Generated from protobuf field <code>.google.protobuf.Struct annotation_info = 13;</code>
      * @param \Google\Protobuf\Struct $var
      * @return $this
@@ -303,11 +314,9 @@ class Annotation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The embedding model version used make this annotation available for search and training
-     * Note that an annotation always have an 'embed_model_version_id' even if it is For human
-     * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+     * DEPRECATED.
      *
-     * Generated from protobuf field <code>string embed_model_version_id = 14;</code>
+     * Generated from protobuf field <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @return string
      */
     public function getEmbedModelVersionId()
@@ -316,11 +325,9 @@ class Annotation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The embedding model version used make this annotation available for search and training
-     * Note that an annotation always have an 'embed_model_version_id' even if it is For human
-     * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+     * DEPRECATED.
      *
-     * Generated from protobuf field <code>string embed_model_version_id = 14;</code>
+     * Generated from protobuf field <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @param string $var
      * @return $this
      */
@@ -498,6 +505,32 @@ class Annotation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->consensus_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * The id of the task annotation belongs to
+     *
+     * Generated from protobuf field <code>string task_id = 19;</code>
+     * @return string
+     */
+    public function getTaskId()
+    {
+        return $this->task_id;
+    }
+
+    /**
+     * The id of the task annotation belongs to
+     *
+     * Generated from protobuf field <code>string task_id = 19;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTaskId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->task_id = $var;
 
         return $this;
     }

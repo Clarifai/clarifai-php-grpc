@@ -527,6 +527,10 @@ class StatusCode
      */
     const DATA_DUMP_IN_PROGRESS = 25153;
     /**
+     * Generated from protobuf enum <code>DATA_DUMP_NO_DATA = 25154;</code>
+     */
+    const DATA_DUMP_NO_DATA = 25154;
+    /**
      * Duplicate related 252xx
      *
      * Generated from protobuf enum <code>APP_DUPLICATION_SUCCESS = 25200;</code>
@@ -1220,6 +1224,24 @@ class StatusCode
      */
     const MAINTENANCE_FAILED = 63001;
     /**
+     * Generic Job status codes
+     *
+     * Generated from protobuf enum <code>JOB_QUEUED = 6400;</code>
+     */
+    const JOB_QUEUED = 6400;
+    /**
+     * Generated from protobuf enum <code>JOB_RUNNING = 6401;</code>
+     */
+    const JOB_RUNNING = 6401;
+    /**
+     * Generated from protobuf enum <code>JOB_COMPLETED = 6402;</code>
+     */
+    const JOB_COMPLETED = 6402;
+    /**
+     * Generated from protobuf enum <code>JOB_FAILED = 6403;</code>
+     */
+    const JOB_FAILED = 6403;
+    /**
      * Internal issues: 98xxx
      *
      * Generated from protobuf enum <code>INTERNAL_SERVER_ISSUE = 98004;</code>
@@ -1410,6 +1432,7 @@ class StatusCode
         self::DATA_DUMP_PENDING => 'DATA_DUMP_PENDING',
         self::DATA_DUMP_FAILED => 'DATA_DUMP_FAILED',
         self::DATA_DUMP_IN_PROGRESS => 'DATA_DUMP_IN_PROGRESS',
+        self::DATA_DUMP_NO_DATA => 'DATA_DUMP_NO_DATA',
         self::APP_DUPLICATION_SUCCESS => 'APP_DUPLICATION_SUCCESS',
         self::APP_DUPLICATION_FAILED => 'APP_DUPLICATION_FAILED',
         self::APP_DUPLICATION_PENDING => 'APP_DUPLICATION_PENDING',
@@ -1566,6 +1589,10 @@ class StatusCode
         self::FEATUREFLAG_BLOCKED => 'FEATUREFLAG_BLOCKED',
         self::MAINTENANCE_SUCCESS => 'MAINTENANCE_SUCCESS',
         self::MAINTENANCE_FAILED => 'MAINTENANCE_FAILED',
+        self::JOB_QUEUED => 'JOB_QUEUED',
+        self::JOB_RUNNING => 'JOB_RUNNING',
+        self::JOB_COMPLETED => 'JOB_COMPLETED',
+        self::JOB_FAILED => 'JOB_FAILED',
         self::INTERNAL_SERVER_ISSUE => 'INTERNAL_SERVER_ISSUE',
         self::INTERNAL_FETCHING_ISSUE => 'INTERNAL_FETCHING_ISSUE',
         self::INTERNAL_DATABASE_ISSUE => 'INTERNAL_DATABASE_ISSUE',

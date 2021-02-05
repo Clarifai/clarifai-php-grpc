@@ -39,6 +39,10 @@ class Cluster extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.Hit hits = 4;</code>
      */
     private $hits;
+    /**
+     * Generated from protobuf field <code>repeated float projection = 5;</code>
+     */
+    private $projection;
 
     /**
      * Constructor.
@@ -53,6 +57,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      *           The score assigned to this cluster
      *     @type \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $hits
      *           Representative hits for cluster (for now we only return 1)
+     *     @type float[]|\Google\Protobuf\Internal\RepeatedField $projection
      * }
      */
     public function __construct($data = NULL) {
@@ -156,6 +161,28 @@ class Cluster extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Hit::class);
         $this->hits = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated float projection = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getProjection()
+    {
+        return $this->projection;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated float projection = 5;</code>
+     * @param float[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setProjection($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::FLOAT);
+        $this->projection = $arr;
 
         return $this;
     }

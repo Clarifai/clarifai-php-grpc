@@ -53,6 +53,10 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.BinaryMetrics metrics_by_class = 9;</code>
      */
     private $metrics_by_class;
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    private $tracker_metrics;
 
     /**
      * Constructor.
@@ -70,6 +74,7 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\EvalTestSetEntry[]|\Google\Protobuf\Internal\RepeatedField $test_set
      *     @type \Clarifai\Api\BinaryMetrics[]|\Google\Protobuf\Internal\RepeatedField $metrics_by_area
      *     @type \Clarifai\Api\BinaryMetrics[]|\Google\Protobuf\Internal\RepeatedField $metrics_by_class
+     *     @type \Clarifai\Api\TrackerMetrics[]|\Google\Protobuf\Internal\RepeatedField $tracker_metrics
      * }
      */
     public function __construct($data = NULL) {
@@ -293,6 +298,28 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\BinaryMetrics::class);
         $this->metrics_by_class = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTrackerMetrics()
+    {
+        return $this->tracker_metrics;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     * @param \Clarifai\Api\TrackerMetrics[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTrackerMetrics($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\TrackerMetrics::class);
+        $this->tracker_metrics = $arr;
 
         return $this;
     }
