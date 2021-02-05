@@ -53,6 +53,12 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp completed_at = 10;</code>
      */
     protected $completed_at = null;
+    /**
+     * Description about this version
+     *
+     * Generated from protobuf field <code>string description = 11;</code>
+     */
+    protected $description = '';
 
     /**
      * Constructor.
@@ -71,6 +77,8 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *           number of inputs in the model version
      *     @type \Google\Protobuf\Timestamp $completed_at
      *           When training of this version was completed.
+     *     @type string $description
+     *           Description about this version
      * }
      */
     public function __construct($data = NULL) {
@@ -244,6 +252,32 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->completed_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Description about this version
+     *
+     * Generated from protobuf field <code>string description = 11;</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Description about this version
+     *
+     * Generated from protobuf field <code>string description = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
 
         return $this;
     }

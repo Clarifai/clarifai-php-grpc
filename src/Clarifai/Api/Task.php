@@ -97,6 +97,10 @@ class Task extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 13;</code>
      */
     protected $name = '';
+    /**
+     * Generated from protobuf field <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+     */
+    protected $ai_assist_params = null;
 
     /**
      * Constructor.
@@ -134,6 +138,7 @@ class Task extends \Google\Protobuf\Internal\Message
      *           Status of this task.
      *     @type string $name
      *           Add a title for this task to quickly recognise it in a list of tasks.
+     *     @type \Clarifai\Api\AiAssistParameters $ai_assist_params
      * }
      */
     public function __construct($data = NULL) {
@@ -483,6 +488,28 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+     * @return \Clarifai\Api\AiAssistParameters
+     */
+    public function getAiAssistParams()
+    {
+        return $this->ai_assist_params;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+     * @param \Clarifai\Api\AiAssistParameters $var
+     * @return $this
+     */
+    public function setAiAssistParams($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\AiAssistParameters::class);
+        $this->ai_assist_params = $var;
 
         return $this;
     }

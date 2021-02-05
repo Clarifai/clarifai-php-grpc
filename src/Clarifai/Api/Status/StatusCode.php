@@ -813,6 +813,10 @@ class StatusCode
      */
     const RPC_CANCELED = 40035;
     /**
+     * Generated from protobuf enum <code>RPC_UNKNOWN_METHOD = 40036;</code>
+     */
+    const RPC_UNKNOWN_METHOD = 40036;
+    /**
      * Generated from protobuf enum <code>CLUSTER_INTERNAL_FAILURE = 43040;</code>
      */
     const CLUSTER_INTERNAL_FAILURE = 43040;
@@ -927,29 +931,41 @@ class StatusCode
      */
     const SAVED_SEARCH_MODIFY_FAILED = 43005;
     /**
-     * Generated from protobuf enum <code>ANNOTATION_SEARCH_METRICS_QUEUED_FOR_EVALUATION = 43100;</code>
+     * Generated from protobuf enum <code>EVALUATION_QUEUED = 43100;</code>
      */
-    const ANNOTATION_SEARCH_METRICS_QUEUED_FOR_EVALUATION = 43100;
+    const EVALUATION_QUEUED = 43100;
     /**
-     * Generated from protobuf enum <code>ANNOTATION_SEARCH_METRICS_EVALUATING = 43101;</code>
+     * Generated from protobuf enum <code>EVALUATION_IN_PROGRESS = 43101;</code>
      */
-    const ANNOTATION_SEARCH_METRICS_EVALUATING = 43101;
+    const EVALUATION_IN_PROGRESS = 43101;
     /**
-     * Generated from protobuf enum <code>ANNOTATION_SEARCH_METRICS_EVALUATED = 43102;</code>
+     * Generated from protobuf enum <code>EVALUATION_SUCCESS = 43102;</code>
      */
-    const ANNOTATION_SEARCH_METRICS_EVALUATED = 43102;
+    const EVALUATION_SUCCESS = 43102;
     /**
-     * Generated from protobuf enum <code>ANNOTATION_SEARCH_METRICS_FAILED_TO_RETRIEVE_DATA = 43103;</code>
+     * Generated from protobuf enum <code>EVALUATION_FAILED_TO_RETRIEVE_DATA = 43103;</code>
      */
-    const ANNOTATION_SEARCH_METRICS_FAILED_TO_RETRIEVE_DATA = 43103;
+    const EVALUATION_FAILED_TO_RETRIEVE_DATA = 43103;
     /**
-     * Generated from protobuf enum <code>ANNOTATION_SEARCH_METRICS_INVALID_ARGUMENT = 43104;</code>
+     * Generated from protobuf enum <code>EVALUATION_INVALID_ARGUMENT = 43104;</code>
      */
-    const ANNOTATION_SEARCH_METRICS_INVALID_ARGUMENT = 43104;
+    const EVALUATION_INVALID_ARGUMENT = 43104;
     /**
-     * Generated from protobuf enum <code>ANNOTATION_SEARCH_METRICS_FAILED = 43105;</code>
+     * Generated from protobuf enum <code>EVALUATION_FAILED = 43105;</code>
      */
-    const ANNOTATION_SEARCH_METRICS_FAILED = 43105;
+    const EVALUATION_FAILED = 43105;
+    /**
+     * Generated from protobuf enum <code>EVALUATION_PENDING = 43106;</code>
+     */
+    const EVALUATION_PENDING = 43106;
+    /**
+     * Generated from protobuf enum <code>EVALUATION_TIMED_OUT = 43107;</code>
+     */
+    const EVALUATION_TIMED_OUT = 43107;
+    /**
+     * Generated from protobuf enum <code>EVALUATION_UNEXPECTED_ERROR = 43108;</code>
+     */
+    const EVALUATION_UNEXPECTED_ERROR = 43108;
     /**
      * Stripe 44xxx
      *
@@ -970,6 +986,10 @@ class StatusCode
      * Generated from protobuf enum <code>REDIS_STREAM_ERR = 45003;</code>
      */
     const REDIS_STREAM_ERR = 45003;
+    /**
+     * Generated from protobuf enum <code>REDIS_NO_CONSUMERS = 45004;</code>
+     */
+    const REDIS_NO_CONSUMERS = 45004;
     /**
      * Sift Science 46xxx
      *
@@ -1458,6 +1478,7 @@ class StatusCode
         self::RPC_REQUEST_TIMEOUT => 'RPC_REQUEST_TIMEOUT',
         self::RPC_MAX_MESSAGE_SIZE_EXCEEDED => 'RPC_MAX_MESSAGE_SIZE_EXCEEDED',
         self::RPC_CANCELED => 'RPC_CANCELED',
+        self::RPC_UNKNOWN_METHOD => 'RPC_UNKNOWN_METHOD',
         self::CLUSTER_INTERNAL_FAILURE => 'CLUSTER_INTERNAL_FAILURE',
         self::EXTERNAL_CONNECTION_ERROR => 'EXTERNAL_CONNECTION_ERROR',
         self::QUEUE_CONN_ERROR => 'QUEUE_CONN_ERROR',
@@ -1484,16 +1505,20 @@ class StatusCode
         self::SEARCH_PREDICTION_FAILURE => 'SEARCH_PREDICTION_FAILURE',
         self::SEARCH_BY_NOT_FULLY_INDEXED_INPUT => 'SEARCH_BY_NOT_FULLY_INDEXED_INPUT',
         self::SAVED_SEARCH_MODIFY_FAILED => 'SAVED_SEARCH_MODIFY_FAILED',
-        self::ANNOTATION_SEARCH_METRICS_QUEUED_FOR_EVALUATION => 'ANNOTATION_SEARCH_METRICS_QUEUED_FOR_EVALUATION',
-        self::ANNOTATION_SEARCH_METRICS_EVALUATING => 'ANNOTATION_SEARCH_METRICS_EVALUATING',
-        self::ANNOTATION_SEARCH_METRICS_EVALUATED => 'ANNOTATION_SEARCH_METRICS_EVALUATED',
-        self::ANNOTATION_SEARCH_METRICS_FAILED_TO_RETRIEVE_DATA => 'ANNOTATION_SEARCH_METRICS_FAILED_TO_RETRIEVE_DATA',
-        self::ANNOTATION_SEARCH_METRICS_INVALID_ARGUMENT => 'ANNOTATION_SEARCH_METRICS_INVALID_ARGUMENT',
-        self::ANNOTATION_SEARCH_METRICS_FAILED => 'ANNOTATION_SEARCH_METRICS_FAILED',
+        self::EVALUATION_QUEUED => 'EVALUATION_QUEUED',
+        self::EVALUATION_IN_PROGRESS => 'EVALUATION_IN_PROGRESS',
+        self::EVALUATION_SUCCESS => 'EVALUATION_SUCCESS',
+        self::EVALUATION_FAILED_TO_RETRIEVE_DATA => 'EVALUATION_FAILED_TO_RETRIEVE_DATA',
+        self::EVALUATION_INVALID_ARGUMENT => 'EVALUATION_INVALID_ARGUMENT',
+        self::EVALUATION_FAILED => 'EVALUATION_FAILED',
+        self::EVALUATION_PENDING => 'EVALUATION_PENDING',
+        self::EVALUATION_TIMED_OUT => 'EVALUATION_TIMED_OUT',
+        self::EVALUATION_UNEXPECTED_ERROR => 'EVALUATION_UNEXPECTED_ERROR',
         self::STRIPE_EVENT_ERROR => 'STRIPE_EVENT_ERROR',
         self::CACHE_MISS => 'CACHE_MISS',
         self::REDIS_SCRIPT_EXITED_WITH_FAILURE => 'REDIS_SCRIPT_EXITED_WITH_FAILURE',
         self::REDIS_STREAM_ERR => 'REDIS_STREAM_ERR',
+        self::REDIS_NO_CONSUMERS => 'REDIS_NO_CONSUMERS',
         self::SIGNUP_EVENT_ERROR => 'SIGNUP_EVENT_ERROR',
         self::SIGNUP_FLAGGED => 'SIGNUP_FLAGGED',
         self::FILETYPE_UNSUPPORTED => 'FILETYPE_UNSUPPORTED',

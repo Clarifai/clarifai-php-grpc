@@ -90,6 +90,12 @@ class Data extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Audio audio = 14;</code>
      */
     protected $audio = null;
+    /**
+     * Track information.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    private $tracks;
 
     /**
      * Constructor.
@@ -122,6 +128,8 @@ class Data extends \Google\Protobuf\Internal\Message
      *           Input and output text.
      *     @type \Clarifai\Api\Audio $audio
      *           Input and output audio.
+     *     @type \Clarifai\Api\Track[]|\Google\Protobuf\Internal\RepeatedField $tracks
+     *           Track information.
      * }
      */
     public function __construct($data = NULL) {
@@ -439,6 +447,32 @@ class Data extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Audio::class);
         $this->audio = $var;
+
+        return $this;
+    }
+
+    /**
+     * Track information.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Track tracks = 15;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTracks()
+    {
+        return $this->tracks;
+    }
+
+    /**
+     * Track information.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Track tracks = 15;</code>
+     * @param \Clarifai\Api\Track[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTracks($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Track::class);
+        $this->tracks = $arr;
 
         return $this;
     }

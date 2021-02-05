@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>clarifai.api.TaskAnnotationStatusCountPerUser</code>
+ * Generated from protobuf message <code>clarifai.api.TaskStatusCountPerUser</code>
  */
-class TaskAnnotationStatusCountPerUser extends \Google\Protobuf\Internal\Message
+class TaskStatusCountPerUser extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string user_id = 1;</code>

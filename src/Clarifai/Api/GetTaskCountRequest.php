@@ -9,11 +9,13 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request to get tasks annotations count per user per status
+ * GetTaskCountRequest can be used for fetching -
+ * 1. Task annotation count per user, per status
+ * 1. Task input (anchor annotations) count per user, per status
  *
- * Generated from protobuf message <code>clarifai.api.GetTaskAnnotationsCountRequest</code>
+ * Generated from protobuf message <code>clarifai.api.GetTaskCountRequest</code>
  */
-class GetTaskAnnotationsCountRequest extends \Google\Protobuf\Internal\Message
+class GetTaskCountRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -26,7 +28,7 @@ class GetTaskAnnotationsCountRequest extends \Google\Protobuf\Internal\Message
      */
     protected $task_id = '';
     /**
-     * for given task_id, user_ids to filter on
+     * for given task_id, user_ids to filter on (optional)
      *
      * Generated from protobuf field <code>repeated string user_ids = 3;</code>
      */
@@ -42,7 +44,7 @@ class GetTaskAnnotationsCountRequest extends \Google\Protobuf\Internal\Message
      *     @type string $task_id
      *           task_id for which count per user per status is needed
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $user_ids
-     *           for given task_id, user_ids to filter on
+     *           for given task_id, user_ids to filter on (optional)
      * }
      */
     public function __construct($data = NULL) {
@@ -99,7 +101,7 @@ class GetTaskAnnotationsCountRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * for given task_id, user_ids to filter on
+     * for given task_id, user_ids to filter on (optional)
      *
      * Generated from protobuf field <code>repeated string user_ids = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -110,7 +112,7 @@ class GetTaskAnnotationsCountRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * for given task_id, user_ids to filter on
+     * for given task_id, user_ids to filter on (optional)
      *
      * Generated from protobuf field <code>repeated string user_ids = 3;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var

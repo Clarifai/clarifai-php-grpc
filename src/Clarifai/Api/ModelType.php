@@ -100,13 +100,13 @@ class ModelType extends \Google\Protobuf\Internal\Message
      */
     protected $evaluable = false;
     /**
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
      *
      * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
      */
     protected $expected_pretrained_input_fields = null;
     /**
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
      *
      * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
      */
@@ -153,9 +153,9 @@ class ModelType extends \Google\Protobuf\Internal\Message
      *     @type bool $evaluable
      *           Can this model be evaluated?
      *     @type \Google\Protobuf\Struct $expected_pretrained_input_fields
-     *           Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     *           Maps input_fields to the more granular data fields needed to parse a triton models inputs
      *     @type \Google\Protobuf\Struct $expected_pretrained_output_fields
-     *           Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     *           Maps output_fields to the more granular data fields needed to parse a triton models outputs
      * }
      */
     public function __construct($data = NULL) {
@@ -496,7 +496,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
      *
      * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
      * @return \Google\Protobuf\Struct
@@ -507,7 +507,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
      *
      * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
      * @param \Google\Protobuf\Struct $var
@@ -522,7 +522,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
      *
      * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
      * @return \Google\Protobuf\Struct
@@ -533,7 +533,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
      *
      * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
      * @param \Google\Protobuf\Struct $var

@@ -25,6 +25,12 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string language = 2;</code>
      */
     protected $language = '';
+    /**
+     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     *
+     * Generated from protobuf field <code>string workflow_id = 3;</code>
+     */
+    protected $workflow_id = '';
 
     /**
      * Constructor.
@@ -36,6 +42,8 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
      *           The name of the concept to search.
      *     @type string $language
      *           (optional) The language of the concept name in a search. Defaults to English.
+     *     @type string $workflow_id
+     *           (optional) The id of workflow. If no id is provided, then application base workflow is used.
      * }
      */
     public function __construct($data = NULL) {
@@ -91,6 +99,32 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->language = $var;
+
+        return $this;
+    }
+
+    /**
+     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     *
+     * Generated from protobuf field <code>string workflow_id = 3;</code>
+     * @return string
+     */
+    public function getWorkflowId()
+    {
+        return $this->workflow_id;
+    }
+
+    /**
+     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     *
+     * Generated from protobuf field <code>string workflow_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWorkflowId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->workflow_id = $var;
 
         return $this;
     }

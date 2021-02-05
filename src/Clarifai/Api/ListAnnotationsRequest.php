@@ -77,6 +77,12 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 per_page = 8;</code>
      */
     protected $per_page = 0;
+    /**
+     * Flag to filter annotations by task_id
+     *
+     * Generated from protobuf field <code>string task_id = 11;</code>
+     */
+    protected $task_id = '';
 
     /**
      * Constructor.
@@ -115,6 +121,8 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
      *           by default it's listing only trusted annotations
      *     @type int $page
      *     @type int $per_page
+     *     @type string $task_id
+     *           Flag to filter annotations by task_id
      * }
      */
     public function __construct($data = NULL) {
@@ -372,6 +380,32 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->per_page = $var;
+
+        return $this;
+    }
+
+    /**
+     * Flag to filter annotations by task_id
+     *
+     * Generated from protobuf field <code>string task_id = 11;</code>
+     * @return string
+     */
+    public function getTaskId()
+    {
+        return $this->task_id;
+    }
+
+    /**
+     * Flag to filter annotations by task_id
+     *
+     * Generated from protobuf field <code>string task_id = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTaskId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->task_id = $var;
 
         return $this;
     }

@@ -54,6 +54,12 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool evaluate_after_training = 7;</code>
      */
     protected $evaluate_after_training = false;
+    /**
+     * Description about this training run
+     *
+     * Generated from protobuf field <code>string description = 8;</code>
+     */
+    protected $description = '';
 
     /**
      * Constructor.
@@ -74,6 +80,8 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
      *          test_search is used to specify what data to test on.
      *     @type bool $evaluate_after_training
      *           whether to evaluate the transfer trained model after training
+     *     @type string $description
+     *           Description about this training run
      * }
      */
     public function __construct($data = NULL) {
@@ -253,6 +261,32 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->evaluate_after_training = $var;
+
+        return $this;
+    }
+
+    /**
+     * Description about this training run
+     *
+     * Generated from protobuf field <code>string description = 8;</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Description about this training run
+     *
+     * Generated from protobuf field <code>string description = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
 
         return $this;
     }

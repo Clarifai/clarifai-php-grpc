@@ -41,6 +41,13 @@ class Audio extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool allow_duplicate_url = 4;</code>
      */
     protected $allow_duplicate_url = false;
+    /**
+     * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+     * only in response.
+     *
+     * Generated from protobuf field <code>.clarifai.api.HostedURL hosted = 5;</code>
+     */
+    protected $hosted = null;
 
     /**
      * Constructor.
@@ -60,6 +67,9 @@ class Audio extends \Google\Protobuf\Internal\Message
      *           base64 encoding if they send a binary request.
      *     @type bool $allow_duplicate_url
      *           If True then you will be allowed to have multiple urls.
+     *     @type \Clarifai\Api\HostedURL $hosted
+     *           The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+     *           only in response.
      * }
      */
     public function __construct($data = NULL) {
@@ -153,6 +163,34 @@ class Audio extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->allow_duplicate_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+     * only in response.
+     *
+     * Generated from protobuf field <code>.clarifai.api.HostedURL hosted = 5;</code>
+     * @return \Clarifai\Api\HostedURL
+     */
+    public function getHosted()
+    {
+        return $this->hosted;
+    }
+
+    /**
+     * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+     * only in response.
+     *
+     * Generated from protobuf field <code>.clarifai.api.HostedURL hosted = 5;</code>
+     * @param \Clarifai\Api\HostedURL $var
+     * @return $this
+     */
+    public function setHosted($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\HostedURL::class);
+        $this->hosted = $var;
 
         return $this;
     }

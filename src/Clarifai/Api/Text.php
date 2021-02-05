@@ -35,7 +35,7 @@ class Text extends \Google\Protobuf\Internal\Message
     protected $allow_duplicate_url = false;
     /**
      * The hosted field lists original text hosted in Clarifai storage. This field is currently used
-     * only in response..
+     * only in response.
      *
      * Generated from protobuf field <code>.clarifai.api.HostedURL hosted = 4;</code>
      */
@@ -54,7 +54,7 @@ class Text extends \Google\Protobuf\Internal\Message
      *     @type bool $allow_duplicate_url
      *     @type \Clarifai\Api\HostedURL $hosted
      *           The hosted field lists original text hosted in Clarifai storage. This field is currently used
-     *           only in response..
+     *           only in response.
      * }
      */
     public function __construct($data = NULL) {
@@ -138,7 +138,7 @@ class Text extends \Google\Protobuf\Internal\Message
 
     /**
      * The hosted field lists original text hosted in Clarifai storage. This field is currently used
-     * only in response..
+     * only in response.
      *
      * Generated from protobuf field <code>.clarifai.api.HostedURL hosted = 4;</code>
      * @return \Clarifai\Api\HostedURL
@@ -150,7 +150,7 @@ class Text extends \Google\Protobuf\Internal\Message
 
     /**
      * The hosted field lists original text hosted in Clarifai storage. This field is currently used
-     * only in response..
+     * only in response.
      *
      * Generated from protobuf field <code>.clarifai.api.HostedURL hosted = 4;</code>
      * @param \Clarifai\Api\HostedURL $var

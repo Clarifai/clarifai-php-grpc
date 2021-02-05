@@ -9,9 +9,11 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>clarifai.api.SingleTaskAnnotationsCountResponse</code>
+ * SingleTaskCountResponse represent counts of annotations or inputs(anchor annotations) for labelers in given task
+ *
+ * Generated from protobuf message <code>clarifai.api.SingleTaskCountResponse</code>
  */
-class SingleTaskAnnotationsCountResponse extends \Google\Protobuf\Internal\Message
+class SingleTaskCountResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
@@ -26,7 +28,7 @@ class SingleTaskAnnotationsCountResponse extends \Google\Protobuf\Internal\Messa
      */
     protected $task_id = '';
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.TaskAnnotationStatusCountPerUser counts = 4;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.TaskStatusCountPerUser counts = 4;</code>
      */
     private $counts;
 
@@ -39,7 +41,7 @@ class SingleTaskAnnotationsCountResponse extends \Google\Protobuf\Internal\Messa
      *     @type \Clarifai\Api\Status\Status $status
      *     @type string $app_id
      *     @type string $task_id
-     *     @type \Clarifai\Api\TaskAnnotationStatusCountPerUser[]|\Google\Protobuf\Internal\RepeatedField $counts
+     *     @type \Clarifai\Api\TaskStatusCountPerUser[]|\Google\Protobuf\Internal\RepeatedField $counts
      * }
      */
     public function __construct($data = NULL) {
@@ -114,7 +116,7 @@ class SingleTaskAnnotationsCountResponse extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.TaskAnnotationStatusCountPerUser counts = 4;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.TaskStatusCountPerUser counts = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getCounts()
@@ -123,13 +125,13 @@ class SingleTaskAnnotationsCountResponse extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.TaskAnnotationStatusCountPerUser counts = 4;</code>
-     * @param \Clarifai\Api\TaskAnnotationStatusCountPerUser[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .clarifai.api.TaskStatusCountPerUser counts = 4;</code>
+     * @param \Clarifai\Api\TaskStatusCountPerUser[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCounts($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\TaskAnnotationStatusCountPerUser::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\TaskStatusCountPerUser::class);
         $this->counts = $arr;
 
         return $this;

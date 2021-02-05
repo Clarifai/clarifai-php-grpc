@@ -37,6 +37,7 @@ class PostAnnotationSearchMetricsRequest extends \Google\Protobuf\Internal\Messa
     protected $search_to_eval = null;
     /**
      * List of concepts to evaluate are expected to be in data.concepts
+     * If nil, then all app concepts are used
      *
      * Generated from protobuf field <code>.clarifai.api.Data data = 5;</code>
      */
@@ -63,6 +64,7 @@ class PostAnnotationSearchMetricsRequest extends \Google\Protobuf\Internal\Messa
      *           The set we are evaluating
      *     @type \Clarifai\Api\Data $data
      *           List of concepts to evaluate are expected to be in data.concepts
+     *           If nil, then all app concepts are used
      *     @type int $evaluation_type
      *           The type of evaluation to use
      * }
@@ -174,6 +176,7 @@ class PostAnnotationSearchMetricsRequest extends \Google\Protobuf\Internal\Messa
 
     /**
      * List of concepts to evaluate are expected to be in data.concepts
+     * If nil, then all app concepts are used
      *
      * Generated from protobuf field <code>.clarifai.api.Data data = 5;</code>
      * @return \Clarifai\Api\Data
@@ -185,6 +188,7 @@ class PostAnnotationSearchMetricsRequest extends \Google\Protobuf\Internal\Messa
 
     /**
      * List of concepts to evaluate are expected to be in data.concepts
+     * If nil, then all app concepts are used
      *
      * Generated from protobuf field <code>.clarifai.api.Data data = 5;</code>
      * @param \Clarifai\Api\Data $var

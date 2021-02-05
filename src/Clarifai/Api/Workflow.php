@@ -43,6 +43,10 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     private $nodes;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 5;</code>
+     */
+    protected $metadata = null;
 
     /**
      * Constructor.
@@ -61,6 +65,7 @@ class Workflow extends \Google\Protobuf\Internal\Message
      *           the following from the API:
      *           "2017-04-11T21:50:50.223962Z"
      *     @type \Clarifai\Api\WorkflowNode[]|\Google\Protobuf\Internal\RepeatedField $nodes
+     *     @type \Google\Protobuf\Struct $metadata
      * }
      */
     public function __construct($data = NULL) {
@@ -172,6 +177,28 @@ class Workflow extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\WorkflowNode::class);
         $this->nodes = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 5;</code>
+     * @return \Google\Protobuf\Struct
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 5;</code>
+     * @param \Google\Protobuf\Struct $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->metadata = $var;
 
         return $this;
     }

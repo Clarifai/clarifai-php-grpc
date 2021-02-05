@@ -31,6 +31,18 @@ class ListConceptRelationsRequest extends \Google\Protobuf\Internal\Message
     protected $user_app_id = null;
     /**
      * The subject concept id in your app to get all the relationships for.
+     * Leave as an empty string (GET /concepts/relations) to list ALL the relations in the app.
+     * When listing all the relations it will only return one direction of the relationship
+     * with the predicate acting on the subject and not the inverse like is done when providing a
+     * concept_id so that we can return a reliable page size always.
+     * When providing a concept_id, if a hyponym is present in the DB such as:
+     * 'honey' (subject), 'hyponym' (predict for "is a kind of"), 'food' (object)
+     * then you can list the concept relations for 'honey' and get hyponym predicate with 'food'
+     * object.
+     * But you can also list the concept relations for 'food' and it will return the same hyponym
+     * relationship with 'honey' as subject and 'food' as predicate.
+     * Synonyms by nature are symmetrical relationships so either side can be the concept_id (subject)
+     * when listing the relations.
      *
      * Generated from protobuf field <code>string concept_id = 2;</code>
      */
@@ -45,7 +57,9 @@ class ListConceptRelationsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $predicate = '';
     /**
-     * This identifies the subgraph you want to search over, if any.
+     * If knowledge_graph_id is provided then just list relations from that knowledge graph.
+     * If not provided then list relations from all knowledge graphs including the global one for this
+     * app one (ie. knowledge_graph "") and any specific ones in the app.
      *
      * Generated from protobuf field <code>string knowledge_graph_id = 4;</code>
      */
@@ -75,13 +89,27 @@ class ListConceptRelationsRequest extends \Google\Protobuf\Internal\Message
      *           The user_id and app_id information.
      *     @type string $concept_id
      *           The subject concept id in your app to get all the relationships for.
+     *           Leave as an empty string (GET /concepts/relations) to list ALL the relations in the app.
+     *           When listing all the relations it will only return one direction of the relationship
+     *           with the predicate acting on the subject and not the inverse like is done when providing a
+     *           concept_id so that we can return a reliable page size always.
+     *           When providing a concept_id, if a hyponym is present in the DB such as:
+     *           'honey' (subject), 'hyponym' (predict for "is a kind of"), 'food' (object)
+     *           then you can list the concept relations for 'honey' and get hyponym predicate with 'food'
+     *           object.
+     *           But you can also list the concept relations for 'food' and it will return the same hyponym
+     *           relationship with 'honey' as subject and 'food' as predicate.
+     *           Synonyms by nature are symmetrical relationships so either side can be the concept_id (subject)
+     *           when listing the relations.
      *     @type string $predicate
      *           This is part of the url so we can extend to multiple link types in the future.
      *           Valid predicates are:
      *           'hypernyms'
      *           'hyponyms'
      *     @type string $knowledge_graph_id
-     *           This identifies the subgraph you want to search over, if any.
+     *           If knowledge_graph_id is provided then just list relations from that knowledge graph.
+     *           If not provided then list relations from all knowledge graphs including the global one for this
+     *           app one (ie. knowledge_graph "") and any specific ones in the app.
      *     @type int $page
      *           (optional URL parameter) The page number. Pagination is used to split the results into chunks.
      *           Defaults to 1.
@@ -123,6 +151,18 @@ class ListConceptRelationsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The subject concept id in your app to get all the relationships for.
+     * Leave as an empty string (GET /concepts/relations) to list ALL the relations in the app.
+     * When listing all the relations it will only return one direction of the relationship
+     * with the predicate acting on the subject and not the inverse like is done when providing a
+     * concept_id so that we can return a reliable page size always.
+     * When providing a concept_id, if a hyponym is present in the DB such as:
+     * 'honey' (subject), 'hyponym' (predict for "is a kind of"), 'food' (object)
+     * then you can list the concept relations for 'honey' and get hyponym predicate with 'food'
+     * object.
+     * But you can also list the concept relations for 'food' and it will return the same hyponym
+     * relationship with 'honey' as subject and 'food' as predicate.
+     * Synonyms by nature are symmetrical relationships so either side can be the concept_id (subject)
+     * when listing the relations.
      *
      * Generated from protobuf field <code>string concept_id = 2;</code>
      * @return string
@@ -134,6 +174,18 @@ class ListConceptRelationsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The subject concept id in your app to get all the relationships for.
+     * Leave as an empty string (GET /concepts/relations) to list ALL the relations in the app.
+     * When listing all the relations it will only return one direction of the relationship
+     * with the predicate acting on the subject and not the inverse like is done when providing a
+     * concept_id so that we can return a reliable page size always.
+     * When providing a concept_id, if a hyponym is present in the DB such as:
+     * 'honey' (subject), 'hyponym' (predict for "is a kind of"), 'food' (object)
+     * then you can list the concept relations for 'honey' and get hyponym predicate with 'food'
+     * object.
+     * But you can also list the concept relations for 'food' and it will return the same hyponym
+     * relationship with 'honey' as subject and 'food' as predicate.
+     * Synonyms by nature are symmetrical relationships so either side can be the concept_id (subject)
+     * when listing the relations.
      *
      * Generated from protobuf field <code>string concept_id = 2;</code>
      * @param string $var
@@ -180,7 +232,9 @@ class ListConceptRelationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This identifies the subgraph you want to search over, if any.
+     * If knowledge_graph_id is provided then just list relations from that knowledge graph.
+     * If not provided then list relations from all knowledge graphs including the global one for this
+     * app one (ie. knowledge_graph "") and any specific ones in the app.
      *
      * Generated from protobuf field <code>string knowledge_graph_id = 4;</code>
      * @return string
@@ -191,7 +245,9 @@ class ListConceptRelationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This identifies the subgraph you want to search over, if any.
+     * If knowledge_graph_id is provided then just list relations from that knowledge graph.
+     * If not provided then list relations from all knowledge graphs including the global one for this
+     * app one (ie. knowledge_graph "") and any specific ones in the app.
      *
      * Generated from protobuf field <code>string knowledge_graph_id = 4;</code>
      * @param string $var

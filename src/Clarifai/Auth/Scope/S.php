@@ -171,6 +171,18 @@ class S
      */
     const Workflows_Delete = 21;
     /**
+     * Generated from protobuf enum <code>WorkflowMetrics_Get = 96 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const WorkflowMetrics_Get = 96;
+    /**
+     * Generated from protobuf enum <code>WorkflowMetrics_Add = 97 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowMetrics_Get];</code>
+     */
+    const WorkflowMetrics_Add = 97;
+    /**
+     * Generated from protobuf enum <code>WorkflowMetrics_Delete = 98 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowMetrics_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowMetrics_Get];</code>
+     */
+    const WorkflowMetrics_Delete = 98;
+    /**
      * Write to the visualizations DB table.
      * Deprecated
      *
@@ -384,6 +396,9 @@ class S
         self::Workflows_Get => 'Workflows_Get',
         self::Workflows_Patch => 'Workflows_Patch',
         self::Workflows_Delete => 'Workflows_Delete',
+        self::WorkflowMetrics_Get => 'WorkflowMetrics_Get',
+        self::WorkflowMetrics_Add => 'WorkflowMetrics_Add',
+        self::WorkflowMetrics_Delete => 'WorkflowMetrics_Delete',
         self::TSNEVisualizations_Add => 'TSNEVisualizations_Add',
         self::TSNEVisualizations_Get => 'TSNEVisualizations_Get',
         self::Annotations_Add => 'Annotations_Add',

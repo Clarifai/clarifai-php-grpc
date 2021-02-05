@@ -24,6 +24,54 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * //////////////////////////////////////
+     * Concept Relationships
+     * //////////////////////////////////////
+     *
+     * List concept relations between concepts in the platform.
+     * MUST be above ListConcepts so that if concept_id is empty this will still match
+     * /concepts/relations to list all the concept relations in the app.
+     * @param \Clarifai\Api\ListConceptRelationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListConceptRelations(\Clarifai\Api\ListConceptRelationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListConceptRelations',
+        $argument,
+        ['\Clarifai\Api\MultiConceptRelationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Post concept relations to create relations between concepts in the platform.
+     * @param \Clarifai\Api\PostConceptRelationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function PostConceptRelations(\Clarifai\Api\PostConceptRelationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostConceptRelations',
+        $argument,
+        ['\Clarifai\Api\MultiConceptRelationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Post concept relations to create relations between concepts in the platform.
+     * @param \Clarifai\Api\DeleteConceptRelationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function DeleteConceptRelations(\Clarifai\Api\DeleteConceptRelationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteConceptRelations',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * //////////////////////////////////////
      * Concepts
      * //////////////////////////////////////
      *
@@ -177,52 +225,6 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * //////////////////////////////////////
-     * Concept Relationships
-     * //////////////////////////////////////
-     *
-     * List concept relations between concepts in the platform.
-     * @param \Clarifai\Api\ListConceptRelationsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function ListConceptRelations(\Clarifai\Api\ListConceptRelationsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/ListConceptRelations',
-        $argument,
-        ['\Clarifai\Api\MultiConceptRelationResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Post concept relations to create relations between concepts in the platform.
-     * @param \Clarifai\Api\PostConceptRelationsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function PostConceptRelations(\Clarifai\Api\PostConceptRelationsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PostConceptRelations',
-        $argument,
-        ['\Clarifai\Api\MultiConceptRelationResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Post concept relations to create relations between concepts in the platform.
-     * @param \Clarifai\Api\DeleteConceptRelationsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     */
-    public function DeleteConceptRelations(\Clarifai\Api\DeleteConceptRelationsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/DeleteConceptRelations',
-        $argument,
-        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * //////////////////////////////////////
      * Knowledge Graph
      * //////////////////////////////////////
      *
@@ -328,6 +330,20 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Patch annotations status by worker id and task id.
+     * @param \Clarifai\Api\PatchAnnotationsStatusRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function PatchAnnotationsStatus(\Clarifai\Api\PatchAnnotationsStatusRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchAnnotationsStatus',
+        $argument,
+        ['\Clarifai\Api\PatchAnnotationsStatusResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Delete a single annotation.
      * @param \Clarifai\Api\DeleteAnnotationRequest $argument input argument
      * @param array $metadata metadata
@@ -374,7 +390,7 @@ class V2Client extends \Grpc\BaseStub {
      * Inputs
      * //////////////////////////////////////
      *
-     * Patch one or more inputs.
+     * Get input count per status.
      * @param \Clarifai\Api\GetInputCountRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -398,6 +414,20 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/StreamInputs',
         $argument,
         ['\Clarifai\Api\MultiInputResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get a specific input from an app.
+     * @param \Clarifai\Api\GetInputSamplesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetInputSamples(\Clarifai\Api\GetInputSamplesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetInputSamples',
+        $argument,
+        ['\Clarifai\Api\MultiInputAnnotationResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -538,6 +568,7 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * List all the model types available in the platform.
+     * This MUST be above ListModels so that the /models/types endpoint takes precedence.
      * @param \Clarifai\Api\ListModelTypesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -893,8 +924,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
      * //////////////////////////////////////
      * API Keys
      * //////////////////////////////////////
@@ -1429,16 +1458,30 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Task annotation counts
-     * @param \Clarifai\Api\GetTaskAnnotationsCountRequest $argument input argument
+     * Task annotation count
+     * @param \Clarifai\Api\GetTaskCountRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function GetTaskAnnotationsCount(\Clarifai\Api\GetTaskAnnotationsCountRequest $argument,
+    public function GetTaskAnnotationCount(\Clarifai\Api\GetTaskCountRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/GetTaskAnnotationsCount',
+        return $this->_simpleRequest('/clarifai.api.V2/GetTaskAnnotationCount',
         $argument,
-        ['\Clarifai\Api\SingleTaskAnnotationsCountResponse', 'decode'],
+        ['\Clarifai\Api\SingleTaskCountResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Task Input count
+     * @param \Clarifai\Api\GetTaskCountRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetTaskInputCount(\Clarifai\Api\GetTaskCountRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetTaskInputCount',
+        $argument,
+        ['\Clarifai\Api\SingleTaskCountResponse', 'decode'],
         $metadata, $options);
     }
 
