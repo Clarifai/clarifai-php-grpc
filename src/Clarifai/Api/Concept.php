@@ -74,6 +74,14 @@ class Concept extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string vocab_id = 8;</code>
      */
     protected $vocab_id = '';
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 9;</code>
+     */
+    protected $visibility = null;
 
     /**
      * Constructor.
@@ -106,6 +114,10 @@ class Concept extends \Google\Protobuf\Internal\Message
      *           The vocabulary that this concept belongs to. This is useful if you have different unique sets
      *           of concepts that you can separate out based on this field. For example "age_appearance" vs
      *           "gender_appearance" in a list of concept returned from the demographics model.
+     *     @type \Clarifai\Api\Visibility $visibility
+     *           The visibility field represents whether this message is privately/publicly visible.
+     *           To be visible to the public the App that contains it AND the User that contains the App must
+     *           also be publicly visible.
      * }
      */
     public function __construct($data = NULL) {
@@ -335,6 +347,36 @@ class Concept extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->vocab_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 9;</code>
+     * @return \Clarifai\Api\Visibility
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 9;</code>
+     * @param \Clarifai\Api\Visibility $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }

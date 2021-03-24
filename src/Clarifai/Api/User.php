@@ -22,7 +22,7 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string primary_email = 2;</code>
+     * Generated from protobuf field <code>string primary_email = 2 [deprecated = true];</code>
      */
     protected $primary_email = '';
     /**
@@ -38,7 +38,7 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $company_name = '';
     /**
-     * Generated from protobuf field <code>string bill_type = 7;</code>
+     * Generated from protobuf field <code>string bill_type = 7 [deprecated = true];</code>
      */
     protected $bill_type = '';
     /**
@@ -52,40 +52,56 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $created_at = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
      */
     protected $date_gdpr_consent = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
      */
     protected $date_tos_consent = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
      */
     protected $date_marketing_consent = null;
     /**
      * To handle arbitrary json metadata you can use a struct field:
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
      */
     protected $metadata = null;
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
     private $email_addresses;
     /**
-     * Generated from protobuf field <code>bool is_org_admin = 14;</code>
+     * Generated from protobuf field <code>bool is_org_admin = 14 [deprecated = true];</code>
      */
     protected $is_org_admin = false;
     /**
-     * Generated from protobuf field <code>bool two_factor_auth_enabled = 15;</code>
+     * Generated from protobuf field <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
      */
     protected $two_factor_auth_enabled = false;
     /**
-     * Generated from protobuf field <code>uint32 teams_count = 16;</code>
+     * Generated from protobuf field <code>uint32 teams_count = 16 [deprecated = true];</code>
      */
     protected $teams_count = 0;
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 17;</code>
+     */
+    protected $visibility = null;
+    /**
+     * This is all the personal information of a user. GetUser/ListUsers will not return this
+     * information unless the caller has the UserAccounts_Get scope on their key or is the user
+     * themselves.
+     *
+     * Generated from protobuf field <code>.clarifai.api.UserDetail user_detail = 18;</code>
+     */
+    protected $user_detail = null;
 
     /**
      * Constructor.
@@ -115,6 +131,14 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type bool $is_org_admin
      *     @type bool $two_factor_auth_enabled
      *     @type int $teams_count
+     *     @type \Clarifai\Api\Visibility $visibility
+     *           The visibility field represents whether this message is privately/publicly visible.
+     *           To be visible to the public the App that contains it AND the User that contains the App must
+     *           also be publicly visible.
+     *     @type \Clarifai\Api\UserDetail $user_detail
+     *           This is all the personal information of a user. GetUser/ListUsers will not return this
+     *           information unless the caller has the UserAccounts_Get scope on their key or is the user
+     *           themselves.
      * }
      */
     public function __construct($data = NULL) {
@@ -145,7 +169,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string primary_email = 2;</code>
+     * Generated from protobuf field <code>string primary_email = 2 [deprecated = true];</code>
      * @return string
      */
     public function getPrimaryEmail()
@@ -154,7 +178,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string primary_email = 2;</code>
+     * Generated from protobuf field <code>string primary_email = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
      */
@@ -233,7 +257,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string bill_type = 7;</code>
+     * Generated from protobuf field <code>string bill_type = 7 [deprecated = true];</code>
      * @return string
      */
     public function getBillType()
@@ -242,7 +266,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string bill_type = 7;</code>
+     * Generated from protobuf field <code>string bill_type = 7 [deprecated = true];</code>
      * @param string $var
      * @return $this
      */
@@ -289,7 +313,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
      * @return \Google\Protobuf\Timestamp
      */
     public function getDateGdprConsent()
@@ -298,7 +322,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -311,7 +335,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
      * @return \Google\Protobuf\Timestamp
      */
     public function getDateTosConsent()
@@ -320,7 +344,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -333,7 +357,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
      * @return \Google\Protobuf\Timestamp
      */
     public function getDateMarketingConsent()
@@ -342,7 +366,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -358,7 +382,7 @@ class User extends \Google\Protobuf\Internal\Message
      * To handle arbitrary json metadata you can use a struct field:
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
      * @return \Google\Protobuf\Struct
      */
     public function getMetadata()
@@ -370,7 +394,7 @@ class User extends \Google\Protobuf\Internal\Message
      * To handle arbitrary json metadata you can use a struct field:
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
      * @param \Google\Protobuf\Struct $var
      * @return $this
      */
@@ -383,7 +407,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getEmailAddresses()
@@ -392,7 +416,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      * @param \Clarifai\Api\EmailAddress[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -405,7 +429,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_org_admin = 14;</code>
+     * Generated from protobuf field <code>bool is_org_admin = 14 [deprecated = true];</code>
      * @return bool
      */
     public function getIsOrgAdmin()
@@ -414,7 +438,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_org_admin = 14;</code>
+     * Generated from protobuf field <code>bool is_org_admin = 14 [deprecated = true];</code>
      * @param bool $var
      * @return $this
      */
@@ -427,7 +451,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool two_factor_auth_enabled = 15;</code>
+     * Generated from protobuf field <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
      * @return bool
      */
     public function getTwoFactorAuthEnabled()
@@ -436,7 +460,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool two_factor_auth_enabled = 15;</code>
+     * Generated from protobuf field <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
      * @param bool $var
      * @return $this
      */
@@ -449,7 +473,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 teams_count = 16;</code>
+     * Generated from protobuf field <code>uint32 teams_count = 16 [deprecated = true];</code>
      * @return int
      */
     public function getTeamsCount()
@@ -458,7 +482,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 teams_count = 16;</code>
+     * Generated from protobuf field <code>uint32 teams_count = 16 [deprecated = true];</code>
      * @param int $var
      * @return $this
      */
@@ -466,6 +490,66 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->teams_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 17;</code>
+     * @return \Clarifai\Api\Visibility
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 17;</code>
+     * @param \Clarifai\Api\Visibility $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
+        $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * This is all the personal information of a user. GetUser/ListUsers will not return this
+     * information unless the caller has the UserAccounts_Get scope on their key or is the user
+     * themselves.
+     *
+     * Generated from protobuf field <code>.clarifai.api.UserDetail user_detail = 18;</code>
+     * @return \Clarifai\Api\UserDetail
+     */
+    public function getUserDetail()
+    {
+        return $this->user_detail;
+    }
+
+    /**
+     * This is all the personal information of a user. GetUser/ListUsers will not return this
+     * information unless the caller has the UserAccounts_Get scope on their key or is the user
+     * themselves.
+     *
+     * Generated from protobuf field <code>.clarifai.api.UserDetail user_detail = 18;</code>
+     * @param \Clarifai\Api\UserDetail $var
+     * @return $this
+     */
+    public function setUserDetail($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\UserDetail::class);
+        $this->user_detail = $var;
 
         return $this;
     }

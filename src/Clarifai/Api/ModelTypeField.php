@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * For each field in ModelType.model_type_fields we defined them with ModelTypeField
+ * ModelTypeField stores a field value of a configurable type.
  *
  * Generated from protobuf message <code>clarifai.api.ModelTypeField</code>
  */
 class ModelTypeField extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The path to the field within the Model proto.
+     * The path where the value of the field will be stored.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -87,7 +87,7 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $path
-     *           The path to the field within the Model proto.
+     *           The path where the value of the field will be stored.
      *           Example:
      *           "output_info.data" would be the Data message in the OutputInfo message.
      *           "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -122,7 +122,7 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The path to the field within the Model proto.
+     * The path where the value of the field will be stored.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -140,7 +140,7 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The path to the field within the Model proto.
+     * The path where the value of the field will be stored.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo

@@ -26,7 +26,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     protected $page = 0;
     /**
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 10.
+     * to 128.
      *
      * Generated from protobuf field <code>uint32 per_page = 3;</code>
      */
@@ -44,7 +44,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      *           Defaults to 1.
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
-     *           to 10.
+     *           to 128.
      * }
      */
     public function __construct($data = NULL) {
@@ -104,7 +104,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 10.
+     * to 128.
      *
      * Generated from protobuf field <code>uint32 per_page = 3;</code>
      * @return int
@@ -116,7 +116,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 10.
+     * to 128.
      *
      * Generated from protobuf field <code>uint32 per_page = 3;</code>
      * @param int $var

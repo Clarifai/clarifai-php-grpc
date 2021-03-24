@@ -25,6 +25,7 @@ class Collaborator extends \Google\Protobuf\Internal\Message
     protected $id = '';
     /**
      *the app this collaborator has access to
+     * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      *
      * Generated from protobuf field <code>.clarifai.api.App app = 2;</code>
      */
@@ -78,6 +79,7 @@ class Collaborator extends \Google\Protobuf\Internal\Message
      *          id of this collaborator
      *     @type \Clarifai\Api\App $app
      *          the app this collaborator has access to
+     *           FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      *     @type \Clarifai\Api\User $user
      *          who is this collaborator
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $scopes
@@ -128,6 +130,7 @@ class Collaborator extends \Google\Protobuf\Internal\Message
 
     /**
      *the app this collaborator has access to
+     * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      *
      * Generated from protobuf field <code>.clarifai.api.App app = 2;</code>
      * @return \Clarifai\Api\App
@@ -139,6 +142,7 @@ class Collaborator extends \Google\Protobuf\Internal\Message
 
     /**
      *the app this collaborator has access to
+     * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      *
      * Generated from protobuf field <code>.clarifai.api.App app = 2;</code>
      * @param \Clarifai\Api\App $var

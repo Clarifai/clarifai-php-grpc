@@ -70,10 +70,16 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $list_all_annotations = false;
     /**
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     *
      * Generated from protobuf field <code>uint32 page = 7;</code>
      */
     protected $page = 0;
     /**
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     *
      * Generated from protobuf field <code>uint32 per_page = 8;</code>
      */
     protected $per_page = 0;
@@ -120,7 +126,11 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
      *           Set this flag to list both trusted and not trusted annotations
      *           by default it's listing only trusted annotations
      *     @type int $page
+     *           (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     *           Defaults to 1.
      *     @type int $per_page
+     *           (optional URL parameter) The number of results that will be contained in each page. Defaults
+     *           to 128.
      *     @type string $task_id
      *           Flag to filter annotations by task_id
      * }
@@ -341,6 +351,9 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     *
      * Generated from protobuf field <code>uint32 page = 7;</code>
      * @return int
      */
@@ -350,6 +363,9 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     *
      * Generated from protobuf field <code>uint32 page = 7;</code>
      * @param int $var
      * @return $this
@@ -363,6 +379,9 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     *
      * Generated from protobuf field <code>uint32 per_page = 8;</code>
      * @return int
      */
@@ -372,6 +391,9 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     *
      * Generated from protobuf field <code>uint32 per_page = 8;</code>
      * @param int $var
      * @return $this

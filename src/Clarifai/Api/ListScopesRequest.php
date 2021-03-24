@@ -24,6 +24,12 @@ class ListScopesRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string key_type = 1;</code>
      */
     protected $key_type = '';
+    /**
+     * For all user specific information we include user_app_id to get the user_id in a consistent way
+     *
+     * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+     */
+    protected $user_app_id = null;
 
     /**
      * Constructor.
@@ -34,6 +40,8 @@ class ListScopesRequest extends \Google\Protobuf\Internal\Message
      *     @type string $key_type
      *           If "personal_access_token" include scopes and endpoints available to personal access tokens.
      *           If "api_key" include scopes and endpoints available to app-specific keys. (default)
+     *     @type \Clarifai\Api\UserAppIDSet $user_app_id
+     *           For all user specific information we include user_app_id to get the user_id in a consistent way
      * }
      */
     public function __construct($data = NULL) {
@@ -65,6 +73,32 @@ class ListScopesRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->key_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * For all user specific information we include user_app_id to get the user_id in a consistent way
+     *
+     * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+     * @return \Clarifai\Api\UserAppIDSet
+     */
+    public function getUserAppId()
+    {
+        return $this->user_app_id;
+    }
+
+    /**
+     * For all user specific information we include user_app_id to get the user_id in a consistent way
+     *
+     * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+     * @param \Clarifai\Api\UserAppIDSet $var
+     * @return $this
+     */
+    public function setUserAppId($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\UserAppIDSet::class);
+        $this->user_app_id = $var;
 
         return $this;
     }
