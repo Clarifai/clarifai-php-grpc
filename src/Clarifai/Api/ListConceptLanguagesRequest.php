@@ -32,7 +32,7 @@ class ListConceptLanguagesRequest extends \Google\Protobuf\Internal\Message
     protected $page = 0;
     /**
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 10.
+     * to 128.
      *
      * Generated from protobuf field <code>uint32 per_page = 4;</code>
      */
@@ -51,7 +51,7 @@ class ListConceptLanguagesRequest extends \Google\Protobuf\Internal\Message
      *           Defaults to 1.
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
-     *           to 10.
+     *           to 128.
      * }
      */
     public function __construct($data = NULL) {
@@ -133,7 +133,7 @@ class ListConceptLanguagesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 10.
+     * to 128.
      *
      * Generated from protobuf field <code>uint32 per_page = 4;</code>
      * @return int
@@ -145,7 +145,7 @@ class ListConceptLanguagesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 10.
+     * to 128.
      *
      * Generated from protobuf field <code>uint32 per_page = 4;</code>
      * @param int $var

@@ -49,9 +49,9 @@ class StatusCode
      */
     const CONN_ACCOUNT_ISSUES = 11000;
     /**
-     * invalid auth token used
+     * invalid auth token used. Deprecated: we should return CONN_KEY_INVALID instead now in all cases.
      *
-     * Generated from protobuf enum <code>CONN_TOKEN_INVALID = 11001;</code>
+     * Generated from protobuf enum <code>CONN_TOKEN_INVALID = 11001 [deprecated = true];</code>
      */
     const CONN_TOKEN_INVALID = 11001;
     /**
@@ -971,6 +971,10 @@ class StatusCode
      */
     const EVALUATION_UNEXPECTED_ERROR = 43108;
     /**
+     * Generated from protobuf enum <code>EVALUATION_MIXED = 43109;</code>
+     */
+    const EVALUATION_MIXED = 43109;
+    /**
      * Stripe 44xxx
      *
      * Generated from protobuf enum <code>STRIPE_EVENT_ERROR = 44001;</code>
@@ -994,6 +998,10 @@ class StatusCode
      * Generated from protobuf enum <code>REDIS_NO_CONSUMERS = 45004;</code>
      */
     const REDIS_NO_CONSUMERS = 45004;
+    /**
+     * Generated from protobuf enum <code>REDIS_STREAM_BACKOFF = 45005;</code>
+     */
+    const REDIS_STREAM_BACKOFF = 45005;
     /**
      * Sift Science 46xxx
      *
@@ -1318,12 +1326,14 @@ class StatusCode
      */
     const INTERNAL_UNCATEGORIZED = 99009;
     /**
-     * Depreciated codes: migrate off these to one of the internal issues
+     * Deprecated: migrate off to one of the internal issues
      *
      * Generated from protobuf enum <code>BAD_REQUEST = 90400;</code>
      */
     const BAD_REQUEST = 90400;
     /**
+     * Deprecated: migrate off to one of the internal issues
+     *
      * Generated from protobuf enum <code>SERVER_ERROR = 90500;</code>
      */
     const SERVER_ERROR = 90500;
@@ -1537,11 +1547,13 @@ class StatusCode
         self::EVALUATION_PENDING => 'EVALUATION_PENDING',
         self::EVALUATION_TIMED_OUT => 'EVALUATION_TIMED_OUT',
         self::EVALUATION_UNEXPECTED_ERROR => 'EVALUATION_UNEXPECTED_ERROR',
+        self::EVALUATION_MIXED => 'EVALUATION_MIXED',
         self::STRIPE_EVENT_ERROR => 'STRIPE_EVENT_ERROR',
         self::CACHE_MISS => 'CACHE_MISS',
         self::REDIS_SCRIPT_EXITED_WITH_FAILURE => 'REDIS_SCRIPT_EXITED_WITH_FAILURE',
         self::REDIS_STREAM_ERR => 'REDIS_STREAM_ERR',
         self::REDIS_NO_CONSUMERS => 'REDIS_NO_CONSUMERS',
+        self::REDIS_STREAM_BACKOFF => 'REDIS_STREAM_BACKOFF',
         self::SIGNUP_EVENT_ERROR => 'SIGNUP_EVENT_ERROR',
         self::SIGNUP_FLAGGED => 'SIGNUP_FLAGGED',
         self::FILETYPE_UNSUPPORTED => 'FILETYPE_UNSUPPORTED',

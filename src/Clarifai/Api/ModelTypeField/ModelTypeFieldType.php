@@ -30,13 +30,13 @@ class ModelTypeFieldType
      */
     const NUMBER = 3;
     /**
-     * For auto-completting to concepts in the app. This goes into an data.concepts field.
+     * For auto-completing to concepts in the app. This goes into an data.concepts field.
      *
      * Generated from protobuf enum <code>ARRAY_OF_CONCEPTS = 4;</code>
      */
     const ARRAY_OF_CONCEPTS = 4;
     /**
-     * For auto-completting to concepts in the app. This goes into an data.concepts field.
+     * For auto-completing to concepts in the app. This goes into an data.concepts field.
      *
      * Generated from protobuf enum <code>ARRAY_OF_CONCEPTS_WITH_THRESHOLD = 5;</code>
      */
@@ -79,6 +79,12 @@ class ModelTypeFieldType
      * Generated from protobuf enum <code>WORKFLOW_EMBED_MODELS = 12;</code>
      */
     const WORKFLOW_EMBED_MODELS = 12;
+    /**
+     * Such as ['a', 'b', 'cantaloupe']
+     *
+     * Generated from protobuf enum <code>ARRAY_OF_STRINGS = 13;</code>
+     */
+    const ARRAY_OF_STRINGS = 13;
 
     private static $valueToName = [
         self::INVALID_MODEL_TYPE_FIELD_TYPE => 'INVALID_MODEL_TYPE_FIELD_TYPE',
@@ -93,6 +99,7 @@ class ModelTypeFieldType
         self::JSON => 'JSON',
         self::ARRAY_OF_NUMBERS => 'ARRAY_OF_NUMBERS',
         self::WORKFLOW_EMBED_MODELS => 'WORKFLOW_EMBED_MODELS',
+        self::ARRAY_OF_STRINGS => 'ARRAY_OF_STRINGS',
     ];
 
     public static function name($value)

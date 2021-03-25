@@ -40,13 +40,27 @@ class Workflow extends \Google\Protobuf\Internal\Message
      */
     protected $created_at = null;
     /**
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     private $nodes;
     /**
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 5;</code>
      */
     protected $metadata = null;
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 6;</code>
+     */
+    protected $visibility = null;
 
     /**
      * Constructor.
@@ -65,7 +79,15 @@ class Workflow extends \Google\Protobuf\Internal\Message
      *           the following from the API:
      *           "2017-04-11T21:50:50.223962Z"
      *     @type \Clarifai\Api\WorkflowNode[]|\Google\Protobuf\Internal\RepeatedField $nodes
+     *           The list of nodes that make up the workflow. Each node can specify an input node
+     *           that it connects to in order to define the graph.
      *     @type \Google\Protobuf\Struct $metadata
+     *           To handle arbitrary json metadata you can use a struct field:
+     *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *     @type \Clarifai\Api\Visibility $visibility
+     *           The visibility field represents whether this message is privately/publicly visible.
+     *           To be visible to the public the App that contains it AND the User that contains the App must
+     *           also be publicly visible.
      * }
      */
     public function __construct($data = NULL) {
@@ -160,6 +182,9 @@ class Workflow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -169,6 +194,9 @@ class Workflow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      * @param \Clarifai\Api\WorkflowNode[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -182,6 +210,9 @@ class Workflow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 5;</code>
      * @return \Google\Protobuf\Struct
      */
@@ -191,6 +222,9 @@ class Workflow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 5;</code>
      * @param \Google\Protobuf\Struct $var
      * @return $this
@@ -199,6 +233,36 @@ class Workflow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 6;</code>
+     * @return \Clarifai\Api\Visibility
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 6;</code>
+     * @param \Clarifai\Api\Visibility $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }

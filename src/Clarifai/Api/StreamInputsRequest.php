@@ -18,6 +18,9 @@ class StreamInputsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_app_id = null;
     /**
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 20.
+     *
      * Generated from protobuf field <code>uint32 per_page = 2;</code>
      */
     protected $per_page = 0;
@@ -38,6 +41,8 @@ class StreamInputsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type int $per_page
+     *           (optional URL parameter) The number of results that will be contained in each page. Defaults
+     *           to 20.
      *     @type string $last_id
      *     @type bool $descending
      * }
@@ -70,6 +75,9 @@ class StreamInputsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 20.
+     *
      * Generated from protobuf field <code>uint32 per_page = 2;</code>
      * @return int
      */
@@ -79,6 +87,9 @@ class StreamInputsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 20.
+     *
      * Generated from protobuf field <code>uint32 per_page = 2;</code>
      * @param int $var
      * @return $this

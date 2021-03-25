@@ -26,7 +26,7 @@ class ListInputsRequest extends \Google\Protobuf\Internal\Message
     protected $page = 0;
     /**
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 10.
+     * to 128.
      *
      * Generated from protobuf field <code>uint32 per_page = 3;</code>
      */
@@ -54,7 +54,7 @@ class ListInputsRequest extends \Google\Protobuf\Internal\Message
      *           Defaults to 1.
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
-     *           to 10.
+     *           to 128.
      *     @type \Clarifai\Api\Status\Status $status
      *           Set status to filter by status
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
@@ -117,7 +117,7 @@ class ListInputsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 10.
+     * to 128.
      *
      * Generated from protobuf field <code>uint32 per_page = 3;</code>
      * @return int
@@ -129,7 +129,7 @@ class ListInputsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 10.
+     * to 128.
      *
      * Generated from protobuf field <code>uint32 per_page = 3;</code>
      * @param int $var

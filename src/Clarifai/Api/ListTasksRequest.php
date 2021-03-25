@@ -20,10 +20,16 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_app_id = null;
     /**
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     *
      * Generated from protobuf field <code>uint32 page = 2;</code>
      */
     protected $page = 0;
     /**
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     *
      * Generated from protobuf field <code>uint32 per_page = 3;</code>
      */
     protected $per_page = 0;
@@ -54,7 +60,11 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type int $page
+     *           (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     *           Defaults to 1.
      *     @type int $per_page
+     *           (optional URL parameter) The number of results that will be contained in each page. Defaults
+     *           to 128.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $worker_user_ids
      *           Get tasks that have ANY user from this list assigned as worker.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $review_user_ids
@@ -91,6 +101,9 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     *
      * Generated from protobuf field <code>uint32 page = 2;</code>
      * @return int
      */
@@ -100,6 +113,9 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     *
      * Generated from protobuf field <code>uint32 page = 2;</code>
      * @param int $var
      * @return $this
@@ -113,6 +129,9 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     *
      * Generated from protobuf field <code>uint32 per_page = 3;</code>
      * @return int
      */
@@ -122,6 +141,9 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     *
      * Generated from protobuf field <code>uint32 per_page = 3;</code>
      * @param int $var
      * @return $this

@@ -23,10 +23,6 @@ class DeleteInputsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string ids = 2;</code>
      */
     private $ids;
-    /**
-     * Generated from protobuf field <code>bool delete_all = 3;</code>
-     */
-    protected $delete_all = false;
 
     /**
      * Constructor.
@@ -36,7 +32,6 @@ class DeleteInputsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
-     *     @type bool $delete_all
      * }
      */
     public function __construct($data = NULL) {
@@ -84,28 +79,6 @@ class DeleteInputsRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->ids = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool delete_all = 3;</code>
-     * @return bool
-     */
-    public function getDeleteAll()
-    {
-        return $this->delete_all;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool delete_all = 3;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setDeleteAll($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->delete_all = $var;
 
         return $this;
     }

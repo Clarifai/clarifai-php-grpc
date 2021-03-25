@@ -59,6 +59,14 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string description = 11;</code>
      */
     protected $description = '';
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 12;</code>
+     */
+    protected $visibility = null;
 
     /**
      * Constructor.
@@ -79,6 +87,10 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *           When training of this version was completed.
      *     @type string $description
      *           Description about this version
+     *     @type \Clarifai\Api\Visibility $visibility
+     *           The visibility field represents whether this message is privately/publicly visible.
+     *           To be visible to the public the App that contains it AND the User that contains the App must
+     *           also be publicly visible.
      * }
      */
     public function __construct($data = NULL) {
@@ -278,6 +290,36 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 12;</code>
+     * @return \Clarifai\Api\Visibility
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 12;</code>
+     * @param \Clarifai\Api\Visibility $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }

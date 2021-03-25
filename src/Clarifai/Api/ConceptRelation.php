@@ -73,6 +73,14 @@ class ConceptRelation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string knowledge_graph_id = 5;</code>
      */
     protected $knowledge_graph_id = '';
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 6;</code>
+     */
+    protected $visibility = null;
 
     /**
      * Constructor.
@@ -115,6 +123,10 @@ class ConceptRelation extends \Google\Protobuf\Internal\Message
      *     @type string $knowledge_graph_id
      *           The knowledge graph id that this edge belongs to. If using the app's global knowledge graph
      *           and not a specific one then this should be the empty string "".
+     *     @type \Clarifai\Api\Visibility $visibility
+     *           The visibility field represents whether this message is privately/publicly visible.
+     *           To be visible to the public the App that contains it AND the User that contains the App must
+     *           also be publicly visible.
      * }
      */
     public function __construct($data = NULL) {
@@ -298,6 +310,36 @@ class ConceptRelation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->knowledge_graph_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 6;</code>
+     * @return \Clarifai\Api\Visibility
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 6;</code>
+     * @param \Clarifai\Api\Visibility $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }

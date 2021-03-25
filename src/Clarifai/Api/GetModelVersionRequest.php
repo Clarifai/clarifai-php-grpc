@@ -9,9 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Requests / Responses from /proto/clarifai/api/model_version.proto
- * //////////////////////////////////////////////////////////////////////////////
  * NOTE: this is same as GetModelRequest but backend doesn't support sharing same
  * request for different endpoints currently.
  *

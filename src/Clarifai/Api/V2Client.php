@@ -490,7 +490,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Delete a single input.  This call is synchronous.
+     * Delete a single input asynchronously.
      * @param \Clarifai\Api\DeleteInputRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -505,7 +505,7 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * Delete multiple inputs in one request.
-     * This call is asynchronous. Use DeleteInput if you want a synchronous version.
+     * This call is asynchronous.
      * @param \Clarifai\Api\DeleteInputsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -759,6 +759,19 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/PostModelVersions',
         $argument,
         ['\Clarifai\Api\SingleModelResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PatchModelVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function PatchModelVersions(\Clarifai\Api\PatchModelVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchModelVersions',
+        $argument,
+        ['\Clarifai\Api\MultiModelVersionResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -1030,7 +1043,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * List all auth scopes available.
+     * List all auth scopes available to me as a user.
      * @param \Clarifai\Api\ListScopesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

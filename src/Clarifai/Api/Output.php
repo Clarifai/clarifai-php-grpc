@@ -44,6 +44,12 @@ class Output extends \Google\Protobuf\Internal\Message
      */
     protected $model = null;
     /**
+     * The operator that created this Output.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Operator operator = 7;</code>
+     */
+    protected $operator = null;
+    /**
      * The input that was passed to the model to create this Output. For example if we have an image
      * model then it will take as input here an Input object with Image filled in.
      *
@@ -75,6 +81,8 @@ class Output extends \Google\Protobuf\Internal\Message
      *           "2017-04-11T21:50:50.223962Z"
      *     @type \Clarifai\Api\Model $model
      *           The model that created this Output.
+     *     @type \Clarifai\Api\Operator $operator
+     *           The operator that created this Output.
      *     @type \Clarifai\Api\Input $input
      *           The input that was passed to the model to create this Output. For example if we have an image
      *           model then it will take as input here an Input object with Image filled in.
@@ -192,6 +200,32 @@ class Output extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Model::class);
         $this->model = $var;
+
+        return $this;
+    }
+
+    /**
+     * The operator that created this Output.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Operator operator = 7;</code>
+     * @return \Clarifai\Api\Operator
+     */
+    public function getOperator()
+    {
+        return $this->operator;
+    }
+
+    /**
+     * The operator that created this Output.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Operator operator = 7;</code>
+     * @param \Clarifai\Api\Operator $var
+     * @return $this
+     */
+    public function setOperator($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Operator::class);
+        $this->operator = $var;
 
         return $this;
     }
