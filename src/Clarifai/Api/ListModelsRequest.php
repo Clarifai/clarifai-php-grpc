@@ -35,6 +35,39 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string ids = 4;</code>
      */
     private $ids;
+    /**
+     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     *
+     * Generated from protobuf field <code>string name = 5;</code>
+     */
+    protected $name = '';
+    /**
+     * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
+     * supported.
+     *
+     * Generated from protobuf field <code>string model_type_id = 6;</code>
+     */
+    protected $model_type_id = '';
+    /**
+     * If true, we only return models that have the status MODEL_TRAINED, which includes non-trainable model types.
+     *
+     * Generated from protobuf field <code>bool trained_only = 7;</code>
+     */
+    protected $trained_only = false;
+    /**
+     * The list of input fields to the model.
+     * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+     *
+     * Generated from protobuf field <code>repeated string input_fields = 8;</code>
+     */
+    private $input_fields;
+    /**
+     * The list of output fields to the model.
+     * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+     *
+     * Generated from protobuf field <code>repeated string output_fields = 9;</code>
+     */
+    private $output_fields;
 
     /**
      * Constructor.
@@ -50,6 +83,19 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type string $name
+     *           Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     *     @type string $model_type_id
+     *           Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
+     *           supported.
+     *     @type bool $trained_only
+     *           If true, we only return models that have the status MODEL_TRAINED, which includes non-trainable model types.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $input_fields
+     *           The list of input fields to the model.
+     *           For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $output_fields
+     *           The list of output fields to the model.
+     *           For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
      * }
      */
     public function __construct($data = NULL) {
@@ -153,6 +199,142 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     *
+     * Generated from protobuf field <code>string name = 5;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     *
+     * Generated from protobuf field <code>string name = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
+     * supported.
+     *
+     * Generated from protobuf field <code>string model_type_id = 6;</code>
+     * @return string
+     */
+    public function getModelTypeId()
+    {
+        return $this->model_type_id;
+    }
+
+    /**
+     * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
+     * supported.
+     *
+     * Generated from protobuf field <code>string model_type_id = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setModelTypeId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->model_type_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, we only return models that have the status MODEL_TRAINED, which includes non-trainable model types.
+     *
+     * Generated from protobuf field <code>bool trained_only = 7;</code>
+     * @return bool
+     */
+    public function getTrainedOnly()
+    {
+        return $this->trained_only;
+    }
+
+    /**
+     * If true, we only return models that have the status MODEL_TRAINED, which includes non-trainable model types.
+     *
+     * Generated from protobuf field <code>bool trained_only = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setTrainedOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->trained_only = $var;
+
+        return $this;
+    }
+
+    /**
+     * The list of input fields to the model.
+     * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+     *
+     * Generated from protobuf field <code>repeated string input_fields = 8;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getInputFields()
+    {
+        return $this->input_fields;
+    }
+
+    /**
+     * The list of input fields to the model.
+     * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+     *
+     * Generated from protobuf field <code>repeated string input_fields = 8;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setInputFields($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->input_fields = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The list of output fields to the model.
+     * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+     *
+     * Generated from protobuf field <code>repeated string output_fields = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOutputFields()
+    {
+        return $this->output_fields;
+    }
+
+    /**
+     * The list of output fields to the model.
+     * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+     *
+     * Generated from protobuf field <code>repeated string output_fields = 9;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setOutputFields($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->output_fields = $arr;
 
         return $this;
     }

@@ -82,6 +82,12 @@ class Concept extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 9;</code>
      */
     protected $visibility = null;
+    /**
+     * The user the concept belongs to.
+     *
+     * Generated from protobuf field <code>string user_id = 10;</code>
+     */
+    protected $user_id = '';
 
     /**
      * Constructor.
@@ -118,6 +124,8 @@ class Concept extends \Google\Protobuf\Internal\Message
      *           The visibility field represents whether this message is privately/publicly visible.
      *           To be visible to the public the App that contains it AND the User that contains the App must
      *           also be publicly visible.
+     *     @type string $user_id
+     *           The user the concept belongs to.
      * }
      */
     public function __construct($data = NULL) {
@@ -377,6 +385,32 @@ class Concept extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * The user the concept belongs to.
+     *
+     * Generated from protobuf field <code>string user_id = 10;</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * The user the concept belongs to.
+     *
+     * Generated from protobuf field <code>string user_id = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
 
         return $this;
     }

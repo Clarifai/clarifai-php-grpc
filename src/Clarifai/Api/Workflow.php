@@ -18,13 +18,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class Workflow extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The concept's unique id.
+     * The workflows's unique id.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
     /**
-     * The name of the concept in the given language.
+     * The app the workflow belongs to
      *
      * Generated from protobuf field <code>string app_id = 2;</code>
      */
@@ -61,6 +61,12 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 6;</code>
      */
     protected $visibility = null;
+    /**
+     * The user the workflow belongs to
+     *
+     * Generated from protobuf field <code>string user_id = 7;</code>
+     */
+    protected $user_id = '';
 
     /**
      * Constructor.
@@ -69,9 +75,9 @@ class Workflow extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *           The concept's unique id.
+     *           The workflows's unique id.
      *     @type string $app_id
-     *           The name of the concept in the given language.
+     *           The app the workflow belongs to
      *     @type \Google\Protobuf\Timestamp $created_at
      *           When the workflow was created. We follow the XXXX timestamp
      *           format. We use https://www.ietf.org/rfc/rfc3339.txt format:
@@ -88,6 +94,8 @@ class Workflow extends \Google\Protobuf\Internal\Message
      *           The visibility field represents whether this message is privately/publicly visible.
      *           To be visible to the public the App that contains it AND the User that contains the App must
      *           also be publicly visible.
+     *     @type string $user_id
+     *           The user the workflow belongs to
      * }
      */
     public function __construct($data = NULL) {
@@ -96,7 +104,7 @@ class Workflow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The concept's unique id.
+     * The workflows's unique id.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @return string
@@ -107,7 +115,7 @@ class Workflow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The concept's unique id.
+     * The workflows's unique id.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
@@ -122,7 +130,7 @@ class Workflow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the concept in the given language.
+     * The app the workflow belongs to
      *
      * Generated from protobuf field <code>string app_id = 2;</code>
      * @return string
@@ -133,7 +141,7 @@ class Workflow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the concept in the given language.
+     * The app the workflow belongs to
      *
      * Generated from protobuf field <code>string app_id = 2;</code>
      * @param string $var
@@ -263,6 +271,32 @@ class Workflow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * The user the workflow belongs to
+     *
+     * Generated from protobuf field <code>string user_id = 7;</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * The user the workflow belongs to
+     *
+     * Generated from protobuf field <code>string user_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
 
         return $this;
     }

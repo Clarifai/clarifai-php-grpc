@@ -104,6 +104,12 @@ class Model extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 15;</code>
      */
     protected $visibility = null;
+    /**
+     * Description about this model
+     *
+     * Generated from protobuf field <code>string description = 16;</code>
+     */
+    protected $description = '';
 
     /**
      * Constructor.
@@ -139,6 +145,8 @@ class Model extends \Google\Protobuf\Internal\Message
      *           The visibility field represents whether this message is privately/publicly visible.
      *           To be visible to the public the App that contains it AND the User that contains the App must
      *           also be publicly visible.
+     *     @type string $description
+     *           Description about this model
      * }
      */
     public function __construct($data = NULL) {
@@ -462,6 +470,32 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * Description about this model
+     *
+     * Generated from protobuf field <code>string description = 16;</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Description about this model
+     *
+     * Generated from protobuf field <code>string description = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
 
         return $this;
     }

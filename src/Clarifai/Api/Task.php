@@ -109,6 +109,18 @@ class Task extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 15;</code>
      */
     protected $visibility = null;
+    /**
+     * The app the task belongs to.
+     *
+     * Generated from protobuf field <code>string app_id = 16;</code>
+     */
+    protected $app_id = '';
+    /**
+     * The user the task belongs to.
+     *
+     * Generated from protobuf field <code>string user_id = 17;</code>
+     */
+    protected $user_id = '';
 
     /**
      * Constructor.
@@ -151,6 +163,10 @@ class Task extends \Google\Protobuf\Internal\Message
      *           The visibility field represents whether this message is privately/publicly visible.
      *           To be visible to the public the App that contains it AND the User that contains the App must
      *           also be publicly visible.
+     *     @type string $app_id
+     *           The app the task belongs to.
+     *     @type string $user_id
+     *           The user the task belongs to.
      * }
      */
     public function __construct($data = NULL) {
@@ -552,6 +568,58 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * The app the task belongs to.
+     *
+     * Generated from protobuf field <code>string app_id = 16;</code>
+     * @return string
+     */
+    public function getAppId()
+    {
+        return $this->app_id;
+    }
+
+    /**
+     * The app the task belongs to.
+     *
+     * Generated from protobuf field <code>string app_id = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAppId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->app_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * The user the task belongs to.
+     *
+     * Generated from protobuf field <code>string user_id = 17;</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * The user the task belongs to.
+     *
+     * Generated from protobuf field <code>string user_id = 17;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
 
         return $this;
     }

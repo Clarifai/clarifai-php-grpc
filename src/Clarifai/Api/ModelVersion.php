@@ -67,6 +67,18 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 12;</code>
      */
     protected $visibility = null;
+    /**
+     * The app the model version belongs to.
+     *
+     * Generated from protobuf field <code>string app_id = 13;</code>
+     */
+    protected $app_id = '';
+    /**
+     * The user the model version belongs to.
+     *
+     * Generated from protobuf field <code>string user_id = 14;</code>
+     */
+    protected $user_id = '';
 
     /**
      * Constructor.
@@ -91,6 +103,10 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *           The visibility field represents whether this message is privately/publicly visible.
      *           To be visible to the public the App that contains it AND the User that contains the App must
      *           also be publicly visible.
+     *     @type string $app_id
+     *           The app the model version belongs to.
+     *     @type string $user_id
+     *           The user the model version belongs to.
      * }
      */
     public function __construct($data = NULL) {
@@ -320,6 +336,58 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * The app the model version belongs to.
+     *
+     * Generated from protobuf field <code>string app_id = 13;</code>
+     * @return string
+     */
+    public function getAppId()
+    {
+        return $this->app_id;
+    }
+
+    /**
+     * The app the model version belongs to.
+     *
+     * Generated from protobuf field <code>string app_id = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAppId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->app_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * The user the model version belongs to.
+     *
+     * Generated from protobuf field <code>string user_id = 14;</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * The user the model version belongs to.
+     *
+     * Generated from protobuf field <code>string user_id = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
 
         return $this;
     }
