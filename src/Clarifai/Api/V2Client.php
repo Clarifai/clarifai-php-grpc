@@ -821,6 +821,58 @@ class V2Client extends \Grpc\BaseStub {
      * //////////////////////////////////////
      *
      * //////////////////////////////////////
+     * Model References
+     * //////////////////////////////////////
+     *
+     * Lists model references tied to a particular model id.
+     * @param \Clarifai\Api\ListModelReferencesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListModelReferences(\Clarifai\Api\ListModelReferencesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListModelReferences',
+        $argument,
+        ['\Clarifai\Api\MultiModelReferenceResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * //////////////////////////////////////
+     *
+     * //////////////////////////////////////
+     * Model Version Input Examples
+     * //////////////////////////////////////
+     *
+     * @param \Clarifai\Api\GetModelVersionInputExampleRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetModelVersionInputExample(\Clarifai\Api\GetModelVersionInputExampleRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetModelVersionInputExample',
+        $argument,
+        ['\Clarifai\Api\SingleModelVersionInputExampleResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\ListModelVersionInputExamplesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListModelVersionInputExamples(\Clarifai\Api\ListModelVersionInputExamplesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListModelVersionInputExamples',
+        $argument,
+        ['\Clarifai\Api\MultiModelVersionInputExampleResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * //////////////////////////////////////
+     *
+     * //////////////////////////////////////
      * Workflows
      * //////////////////////////////////////
      *

@@ -46,6 +46,14 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool favor_clarifai_workflows = 5;</code>
      */
     protected $favor_clarifai_workflows = false;
+    /**
+     * A workflow state to be maintained across PostWorkflowResults requests/responses.
+     * If it is not sent in the initial request with workflow_state.id = "init" then no
+     * state will be saved or returned in PostWorkflowResultsResponse.
+     *
+     * Generated from protobuf field <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+     */
+    protected $workflow_state = null;
 
     /**
      * Constructor.
@@ -68,6 +76,10 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
      *           and then it's more consistent we just don't support the OutputConfig on workflows.
      *     @type bool $favor_clarifai_workflows
      *           Use this flag to look into clarifai published workflows first for a Workflow ID
+     *     @type \Clarifai\Api\WorkflowState $workflow_state
+     *           A workflow state to be maintained across PostWorkflowResults requests/responses.
+     *           If it is not sent in the initial request with workflow_state.id = "init" then no
+     *           state will be saved or returned in PostWorkflowResultsResponse.
      * }
      */
     public function __construct($data = NULL) {
@@ -207,6 +219,36 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->favor_clarifai_workflows = $var;
+
+        return $this;
+    }
+
+    /**
+     * A workflow state to be maintained across PostWorkflowResults requests/responses.
+     * If it is not sent in the initial request with workflow_state.id = "init" then no
+     * state will be saved or returned in PostWorkflowResultsResponse.
+     *
+     * Generated from protobuf field <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+     * @return \Clarifai\Api\WorkflowState
+     */
+    public function getWorkflowState()
+    {
+        return $this->workflow_state;
+    }
+
+    /**
+     * A workflow state to be maintained across PostWorkflowResults requests/responses.
+     * If it is not sent in the initial request with workflow_state.id = "init" then no
+     * state will be saved or returned in PostWorkflowResultsResponse.
+     *
+     * Generated from protobuf field <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+     * @param \Clarifai\Api\WorkflowState $var
+     * @return $this
+     */
+    public function setWorkflowState($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\WorkflowState::class);
+        $this->workflow_state = $var;
 
         return $this;
     }

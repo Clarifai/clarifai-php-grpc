@@ -31,6 +31,12 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 per_page = 3;</code>
      */
     protected $per_page = 0;
+    /**
+     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     *
+     * Generated from protobuf field <code>string id = 4;</code>
+     */
+    protected $id = '';
 
     /**
      * Constructor.
@@ -45,6 +51,8 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
+     *     @type string $id
+     *           Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
      * }
      */
     public function __construct($data = NULL) {
@@ -126,6 +134,32 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->per_page = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     *
+     * Generated from protobuf field <code>string id = 4;</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     *
+     * Generated from protobuf field <code>string id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
 
         return $this;
     }

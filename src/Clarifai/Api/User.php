@@ -38,6 +38,14 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $company_name = '';
     /**
+     * Generated from protobuf field <code>string job_title = 19;</code>
+     */
+    protected $job_title = '';
+    /**
+     * Generated from protobuf field <code>string job_role = 20;</code>
+     */
+    protected $job_role = '';
+    /**
      * Generated from protobuf field <code>string bill_type = 7 [deprecated = true];</code>
      */
     protected $bill_type = '';
@@ -114,6 +122,8 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type string $first_name
      *     @type string $last_name
      *     @type string $company_name
+     *     @type string $job_title
+     *     @type string $job_role
      *     @type string $bill_type
      *     @type \Google\Protobuf\Timestamp $created_at
      *           When the user was created. We follow the XXXX timestamp
@@ -252,6 +262,50 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->company_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string job_title = 19;</code>
+     * @return string
+     */
+    public function getJobTitle()
+    {
+        return $this->job_title;
+    }
+
+    /**
+     * Generated from protobuf field <code>string job_title = 19;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setJobTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->job_title = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string job_role = 20;</code>
+     * @return string
+     */
+    public function getJobRole()
+    {
+        return $this->job_role;
+    }
+
+    /**
+     * Generated from protobuf field <code>string job_role = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setJobRole($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->job_role = $var;
 
         return $this;
     }

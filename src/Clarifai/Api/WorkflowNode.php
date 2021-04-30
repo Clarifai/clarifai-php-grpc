@@ -28,12 +28,6 @@ class WorkflowNode extends \Google\Protobuf\Internal\Message
      */
     protected $model = null;
     /**
-     * An operator will process this node.
-     *
-     * Generated from protobuf field <code>.clarifai.api.Operator operator = 5;</code>
-     */
-    protected $operator = null;
-    /**
      * Each WorkflowNode can connect to multiple input nodes so that we can handle multi-model data
      * and more complex workflow operations.
      *
@@ -59,8 +53,6 @@ class WorkflowNode extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Model $model
      *           The model that will do the processing at this node. We only vlidate the model.id and
      *           model.model_version.id fields.
-     *     @type \Clarifai\Api\Operator $operator
-     *           An operator will process this node.
      *     @type \Clarifai\Api\NodeInput[]|\Google\Protobuf\Internal\RepeatedField $node_inputs
      *           Each WorkflowNode can connect to multiple input nodes so that we can handle multi-model data
      *           and more complex workflow operations.
@@ -125,32 +117,6 @@ class WorkflowNode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Model::class);
         $this->model = $var;
-
-        return $this;
-    }
-
-    /**
-     * An operator will process this node.
-     *
-     * Generated from protobuf field <code>.clarifai.api.Operator operator = 5;</code>
-     * @return \Clarifai\Api\Operator
-     */
-    public function getOperator()
-    {
-        return $this->operator;
-    }
-
-    /**
-     * An operator will process this node.
-     *
-     * Generated from protobuf field <code>.clarifai.api.Operator operator = 5;</code>
-     * @param \Clarifai\Api\Operator $var
-     * @return $this
-     */
-    public function setOperator($var)
-    {
-        GPBUtil::checkMessage($var, \Clarifai\Api\Operator::class);
-        $this->operator = $var;
 
         return $this;
     }
