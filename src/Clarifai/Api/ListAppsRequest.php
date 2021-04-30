@@ -31,6 +31,12 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 per_page = 3;</code>
      */
     protected $per_page = 0;
+    /**
+     * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     *
+     * Generated from protobuf field <code>string name = 4;</code>
+     */
+    protected $name = '';
 
     /**
      * Constructor.
@@ -45,6 +51,8 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
+     *     @type string $name
+     *           Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
      * }
      */
     public function __construct($data = NULL) {
@@ -126,6 +134,32 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->per_page = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     *
+     * Generated from protobuf field <code>string name = 4;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     *
+     * Generated from protobuf field <code>string name = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
 
         return $this;
     }

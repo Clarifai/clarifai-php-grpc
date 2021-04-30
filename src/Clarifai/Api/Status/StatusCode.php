@@ -337,6 +337,18 @@ class StatusCode
      */
     const MODEL_NOT_DEPLOYED = 21353;
     /**
+     * Used when a model reference field is not set properly
+     *
+     * Generated from protobuf enum <code>MODEL_REFERENCE_INVALID_ARGUMENT = 21400;</code>
+     */
+    const MODEL_REFERENCE_INVALID_ARGUMENT = 21400;
+    /**
+     * Used when a model example input field is not set properly
+     *
+     * Generated from protobuf enum <code>MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT = 21420;</code>
+     */
+    const MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT = 21420;
+    /**
      * specified model input not in workflow
      *
      * Generated from protobuf enum <code>WORKFLOW_NO_MATCHING_INPUT = 22001;</code>
@@ -1250,6 +1262,12 @@ class StatusCode
      */
     const JOB_FAILED = 6403;
     /**
+     *auth issues
+     *
+     * Generated from protobuf enum <code>AUTH_MISSING_IDP_ASSOC = 65000;</code>
+     */
+    const AUTH_MISSING_IDP_ASSOC = 65000;
+    /**
      * Internal issues: 98xxx
      *
      * Generated from protobuf enum <code>INTERNAL_SERVER_ISSUE = 98004;</code>
@@ -1399,6 +1417,8 @@ class StatusCode
         self::MODEL_DEPLOYING => 'MODEL_DEPLOYING',
         self::MODEL_QUEUED_FOR_DEPLOYMENT => 'MODEL_QUEUED_FOR_DEPLOYMENT',
         self::MODEL_NOT_DEPLOYED => 'MODEL_NOT_DEPLOYED',
+        self::MODEL_REFERENCE_INVALID_ARGUMENT => 'MODEL_REFERENCE_INVALID_ARGUMENT',
+        self::MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT => 'MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT',
         self::WORKFLOW_NO_MATCHING_INPUT => 'WORKFLOW_NO_MATCHING_INPUT',
         self::WORKFLOW_REQUIRE_TRAINED_MODEL => 'WORKFLOW_REQUIRE_TRAINED_MODEL',
         self::WORKFLOW_DUPLICATE => 'WORKFLOW_DUPLICATE',
@@ -1605,6 +1625,7 @@ class StatusCode
         self::JOB_RUNNING => 'JOB_RUNNING',
         self::JOB_COMPLETED => 'JOB_COMPLETED',
         self::JOB_FAILED => 'JOB_FAILED',
+        self::AUTH_MISSING_IDP_ASSOC => 'AUTH_MISSING_IDP_ASSOC',
         self::INTERNAL_SERVER_ISSUE => 'INTERNAL_SERVER_ISSUE',
         self::INTERNAL_FETCHING_ISSUE => 'INTERNAL_FETCHING_ISSUE',
         self::INTERNAL_DATABASE_ISSUE => 'INTERNAL_DATABASE_ISSUE',

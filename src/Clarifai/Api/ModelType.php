@@ -111,12 +111,6 @@ class ModelType extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
      */
     protected $expected_pretrained_output_fields = null;
-    /**
-     * Can this model type be used as an operator type in workflows?
-     *
-     * Generated from protobuf field <code>bool is_operator = 16;</code>
-     */
-    protected $is_operator = false;
 
     /**
      * Constructor.
@@ -162,8 +156,6 @@ class ModelType extends \Google\Protobuf\Internal\Message
      *           Maps input_fields to the more granular data fields needed to parse a triton models inputs
      *     @type \Google\Protobuf\Struct $expected_pretrained_output_fields
      *           Maps output_fields to the more granular data fields needed to parse a triton models outputs
-     *     @type bool $is_operator
-     *           Can this model type be used as an operator type in workflows?
      * }
      */
     public function __construct($data = NULL) {
@@ -551,32 +543,6 @@ class ModelType extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->expected_pretrained_output_fields = $var;
-
-        return $this;
-    }
-
-    /**
-     * Can this model type be used as an operator type in workflows?
-     *
-     * Generated from protobuf field <code>bool is_operator = 16;</code>
-     * @return bool
-     */
-    public function getIsOperator()
-    {
-        return $this->is_operator;
-    }
-
-    /**
-     * Can this model type be used as an operator type in workflows?
-     *
-     * Generated from protobuf field <code>bool is_operator = 16;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setIsOperator($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->is_operator = $var;
 
         return $this;
     }
