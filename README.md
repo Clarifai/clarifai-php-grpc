@@ -36,6 +36,7 @@ The third version number (`Z` out of `X.Y.Z`) is used by this library for any in
 Construct the client and setup your API key or Personal Access Token in the metadata variable.
 
 ```php
+require ‘vendor/autoload.php’;
 use Clarifai\ClarifaiClient;
 
 $client = ClarifaiClient::grpc();
