@@ -567,6 +567,20 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * List all the supported open source licenses in the platform.
+     * @param \Clarifai\Api\ListOpenSourceLicensesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListOpenSourceLicenses(\Clarifai\Api\ListOpenSourceLicensesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListOpenSourceLicenses',
+        $argument,
+        ['\Clarifai\Api\ListOpenSourceLicensesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * List all the model types available in the platform.
      * This MUST be above ListModels so that the /models/types endpoint takes precedence.
      * @param \Clarifai\Api\ListModelTypesRequest $argument input argument
@@ -985,6 +999,68 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/PostWorkflowResultsSimilarity',
         $argument,
         ['\Clarifai\Api\PostWorkflowResultsSimilarityResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * //////////////////////////////////////
+     *
+     * //////////////////////////////////////
+     * Workflow Versions
+     * //////////////////////////////////////
+     *
+     * List workflow versions.
+     * @param \Clarifai\Api\ListWorkflowVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListWorkflowVersions(\Clarifai\Api\ListWorkflowVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListWorkflowVersions',
+        $argument,
+        ['\Clarifai\Api\MultiWorkflowVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get single workflow version.
+     * @param \Clarifai\Api\GetWorkflowVersionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetWorkflowVersion(\Clarifai\Api\GetWorkflowVersionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetWorkflowVersion',
+        $argument,
+        ['\Clarifai\Api\SingleWorkflowVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete workflow versions.
+     * @param \Clarifai\Api\DeleteWorkflowVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function DeleteWorkflowVersions(\Clarifai\Api\DeleteWorkflowVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteWorkflowVersions',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Patch workflow versions.
+     * @param \Clarifai\Api\PatchWorkflowVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function PatchWorkflowVersions(\Clarifai\Api\PatchWorkflowVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchWorkflowVersions',
+        $argument,
+        ['\Clarifai\Api\MultiWorkflowVersionResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -1713,6 +1789,40 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/PostStatValuesAggregate',
         $argument,
         ['\Clarifai\Api\MultiStatValueAggregateResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * //////////////////////////////////////
+     *
+     * //////////////////////////////////////
+     * Trending Metrics
+     * //////////////////////////////////////
+     *
+     * Increase the view metric for a detail view
+     * @param \Clarifai\Api\PostTrendingMetricsViewRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function PostTrendingMetricsView(\Clarifai\Api\PostTrendingMetricsViewRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostTrendingMetricsView',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List the view metrics for a detail view
+     * @param \Clarifai\Api\ListTrendingMetricsViewsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListTrendingMetricsViews(\Clarifai\Api\ListTrendingMetricsViewsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListTrendingMetricsViews',
+        $argument,
+        ['\Clarifai\Api\MultiTrendingMetricsViewResponse', 'decode'],
         $metadata, $options);
     }
 

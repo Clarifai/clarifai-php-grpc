@@ -40,8 +40,8 @@ class Workflow extends \Google\Protobuf\Internal\Message
      */
     protected $created_at = null;
     /**
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
@@ -67,6 +67,18 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string user_id = 7;</code>
      */
     protected $user_id = '';
+    /**
+     * When the workflow was last modified
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    protected $modified_at = null;
+    /**
+     * Info about the workflow version
+     *
+     * Generated from protobuf field <code>.clarifai.api.WorkflowVersion version = 9;</code>
+     */
+    protected $version = null;
 
     /**
      * Constructor.
@@ -85,8 +97,8 @@ class Workflow extends \Google\Protobuf\Internal\Message
      *           the following from the API:
      *           "2017-04-11T21:50:50.223962Z"
      *     @type \Clarifai\Api\WorkflowNode[]|\Google\Protobuf\Internal\RepeatedField $nodes
-     *           The list of nodes that make up the workflow. Each node can specify an input node
-     *           that it connects to in order to define the graph.
+     *           The list of nodes retrieved from latest workflow version.
+     *           Each node can specify an input node that it connects to in order to define the graph.
      *     @type \Google\Protobuf\Struct $metadata
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
@@ -96,6 +108,10 @@ class Workflow extends \Google\Protobuf\Internal\Message
      *           also be publicly visible.
      *     @type string $user_id
      *           The user the workflow belongs to
+     *     @type \Google\Protobuf\Timestamp $modified_at
+     *           When the workflow was last modified
+     *     @type \Clarifai\Api\WorkflowVersion $version
+     *           Info about the workflow version
      * }
      */
     public function __construct($data = NULL) {
@@ -190,8 +206,8 @@ class Workflow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -202,8 +218,8 @@ class Workflow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      * @param \Clarifai\Api\WorkflowNode[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -297,6 +313,58 @@ class Workflow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * When the workflow was last modified
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getModifiedAt()
+    {
+        return $this->modified_at;
+    }
+
+    /**
+     * When the workflow was last modified
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setModifiedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->modified_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Info about the workflow version
+     *
+     * Generated from protobuf field <code>.clarifai.api.WorkflowVersion version = 9;</code>
+     * @return \Clarifai\Api\WorkflowVersion
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * Info about the workflow version
+     *
+     * Generated from protobuf field <code>.clarifai.api.WorkflowVersion version = 9;</code>
+     * @param \Clarifai\Api\WorkflowVersion $var
+     * @return $this
+     */
+    public function setVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\WorkflowVersion::class);
+        $this->version = $var;
 
         return $this;
     }

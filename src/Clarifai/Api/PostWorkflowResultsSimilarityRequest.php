@@ -22,6 +22,13 @@ class PostWorkflowResultsSimilarityRequest extends \Google\Protobuf\Internal\Mes
      */
     protected $workflow_id = '';
     /**
+     * Workflow version ID to retrieve
+     * If no ID is specified, latest workflow version is used
+     *
+     * Generated from protobuf field <code>string version_id = 7;</code>
+     */
+    protected $version_id = '';
+    /**
      * The specific model version whose outputs we are comparing
      *
      * Generated from protobuf field <code>string model_version_id = 3;</code>
@@ -54,6 +61,9 @@ class PostWorkflowResultsSimilarityRequest extends \Google\Protobuf\Internal\Mes
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $workflow_id
+     *     @type string $version_id
+     *           Workflow version ID to retrieve
+     *           If no ID is specified, latest workflow version is used
      *     @type string $model_version_id
      *           The specific model version whose outputs we are comparing
      *     @type \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $probe_inputs
@@ -109,6 +119,34 @@ class PostWorkflowResultsSimilarityRequest extends \Google\Protobuf\Internal\Mes
     {
         GPBUtil::checkString($var, True);
         $this->workflow_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Workflow version ID to retrieve
+     * If no ID is specified, latest workflow version is used
+     *
+     * Generated from protobuf field <code>string version_id = 7;</code>
+     * @return string
+     */
+    public function getVersionId()
+    {
+        return $this->version_id;
+    }
+
+    /**
+     * Workflow version ID to retrieve
+     * If no ID is specified, latest workflow version is used
+     *
+     * Generated from protobuf field <code>string version_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVersionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->version_id = $var;
 
         return $this;
     }

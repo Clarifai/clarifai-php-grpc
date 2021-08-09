@@ -16,13 +16,19 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
     /**
      * Input CFID
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [deprecated = true];</code>
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>string url = 2 [deprecated = true];</code>
      */
     protected $url = '';
+    /**
+     * the input information
+     *
+     * Generated from protobuf field <code>.clarifai.api.Input input = 6;</code>
+     */
+    protected $input = null;
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Concept predicted_concepts = 3;</code>
      */
@@ -51,6 +57,8 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           Input CFID
      *     @type string $url
+     *     @type \Clarifai\Api\Input $input
+     *           the input information
      *     @type \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $predicted_concepts
      *     @type \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $ground_truth_concepts
      *           All the ground truth concepts will be show on the top level
@@ -68,7 +76,7 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
     /**
      * Input CFID
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [deprecated = true];</code>
      * @return string
      */
     public function getId()
@@ -79,7 +87,7 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
     /**
      * Input CFID
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
      */
@@ -92,7 +100,7 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>string url = 2 [deprecated = true];</code>
      * @return string
      */
     public function getUrl()
@@ -101,7 +109,7 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>string url = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
      */
@@ -109,6 +117,32 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->url = $var;
+
+        return $this;
+    }
+
+    /**
+     * the input information
+     *
+     * Generated from protobuf field <code>.clarifai.api.Input input = 6;</code>
+     * @return \Clarifai\Api\Input
+     */
+    public function getInput()
+    {
+        return $this->input;
+    }
+
+    /**
+     * the input information
+     *
+     * Generated from protobuf field <code>.clarifai.api.Input input = 6;</code>
+     * @param \Clarifai\Api\Input $var
+     * @return $this
+     */
+    public function setInput($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Input::class);
+        $this->input = $var;
 
         return $this;
     }
