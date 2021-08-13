@@ -32,11 +32,27 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $per_page = 0;
     /**
-     * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Sorting opitons:
+     * Whether to sort in ascending order. If false, will order in descending order. 
      *
-     * Generated from protobuf field <code>string name = 4;</code>
+     * Generated from protobuf field <code>bool sort_ascending = 5;</code>
+     */
+    protected $sort_ascending = false;
+    /**
+     * Filtering options:
+     * Query various text fields that can contain the words in the query string
+     *
+     * Generated from protobuf field <code>string query = 8;</code>
+     */
+    protected $query = '';
+    /**
+     * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
+     *
+     * Generated from protobuf field <code>string name = 4 [deprecated = true];</code>
      */
     protected $name = '';
+    protected $sort_by;
 
     /**
      * Constructor.
@@ -51,8 +67,20 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
+     *     @type bool $sort_ascending
+     *           Sorting opitons:
+     *           Whether to sort in ascending order. If false, will order in descending order. 
+     *     @type bool $sort_by_name
+     *           Whether to order by the name
+     *     @type bool $sort_by_modified_at
+     *           Whether to order by the modified_at time.
+     *           If neither sort option is set to true, will sort by modified_at.
+     *     @type string $query
+     *           Filtering options:
+     *           Query various text fields that can contain the words in the query string
      *     @type string $name
      *           Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     *           Deprecated in favor of query
      * }
      */
     public function __construct($data = NULL) {
@@ -139,9 +167,120 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Sorting opitons:
+     * Whether to sort in ascending order. If false, will order in descending order. 
      *
-     * Generated from protobuf field <code>string name = 4;</code>
+     * Generated from protobuf field <code>bool sort_ascending = 5;</code>
+     * @return bool
+     */
+    public function getSortAscending()
+    {
+        return $this->sort_ascending;
+    }
+
+    /**
+     * Sorting opitons:
+     * Whether to sort in ascending order. If false, will order in descending order. 
+     *
+     * Generated from protobuf field <code>bool sort_ascending = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortAscending($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->sort_ascending = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the name
+     *
+     * Generated from protobuf field <code>bool sort_by_name = 6;</code>
+     * @return bool
+     */
+    public function getSortByName()
+    {
+        return $this->readOneof(6);
+    }
+
+    /**
+     * Whether to order by the name
+     *
+     * Generated from protobuf field <code>bool sort_by_name = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByName($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the modified_at time.
+     * If neither sort option is set to true, will sort by modified_at.
+     *
+     * Generated from protobuf field <code>bool sort_by_modified_at = 7;</code>
+     * @return bool
+     */
+    public function getSortByModifiedAt()
+    {
+        return $this->readOneof(7);
+    }
+
+    /**
+     * Whether to order by the modified_at time.
+     * If neither sort option is set to true, will sort by modified_at.
+     *
+     * Generated from protobuf field <code>bool sort_by_modified_at = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByModifiedAt($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Filtering options:
+     * Query various text fields that can contain the words in the query string
+     *
+     * Generated from protobuf field <code>string query = 8;</code>
+     * @return string
+     */
+    public function getQuery()
+    {
+        return $this->query;
+    }
+
+    /**
+     * Filtering options:
+     * Query various text fields that can contain the words in the query string
+     *
+     * Generated from protobuf field <code>string query = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setQuery($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->query = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
+     *
+     * Generated from protobuf field <code>string name = 4 [deprecated = true];</code>
      * @return string
      */
     public function getName()
@@ -151,8 +290,9 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
      *
-     * Generated from protobuf field <code>string name = 4;</code>
+     * Generated from protobuf field <code>string name = 4 [deprecated = true];</code>
      * @param string $var
      * @return $this
      */
@@ -162,6 +302,14 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
         $this->name = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSortBy()
+    {
+        return $this->whichOneof("sort_by");
     }
 
 }

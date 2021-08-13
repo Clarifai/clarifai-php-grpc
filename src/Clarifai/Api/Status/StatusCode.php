@@ -209,7 +209,7 @@ class StatusCode
     /**
      * Training message was redelivered.
      *
-     * Generated from protobuf enum <code>MODEL_TRAINING_MSG_REDELIVER = 21116;</code>
+     * Generated from protobuf enum <code>MODEL_TRAINING_MSG_REDELIVER = 21116 [deprecated = true];</code>
      */
     const MODEL_TRAINING_MSG_REDELIVER = 21116;
     /**
@@ -297,7 +297,7 @@ class StatusCode
     /**
      * Eval message was redelivered.
      *
-     * Generated from protobuf enum <code>MODEL_EVALUATION_MSG_REDELIVER = 21314;</code>
+     * Generated from protobuf enum <code>MODEL_EVALUATION_MSG_REDELIVER = 21314 [deprecated = true];</code>
      */
     const MODEL_EVALUATION_MSG_REDELIVER = 21314;
     /**
@@ -903,28 +903,6 @@ class StatusCode
      */
     const SQS_UNKNOWN = 41102;
     /**
-     * KAFKA related errros 412xx
-     *
-     * Generated from protobuf enum <code>KAFKA_UNKNOW = 41200;</code>
-     */
-    const KAFKA_UNKNOW = 41200;
-    /**
-     * Generated from protobuf enum <code>KAFKA_MISSING_TOPIC = 41201;</code>
-     */
-    const KAFKA_MISSING_TOPIC = 41201;
-    /**
-     * Generated from protobuf enum <code>KAFKA_ADMIN_ERR = 41202;</code>
-     */
-    const KAFKA_ADMIN_ERR = 41202;
-    /**
-     * Generated from protobuf enum <code>KAFKA_CONSUMER_ERR = 41203;</code>
-     */
-    const KAFKA_CONSUMER_ERR = 41203;
-    /**
-     * Generated from protobuf enum <code>KAFKA_PUBLISHER_ERR = 41204;</code>
-     */
-    const KAFKA_PUBLISHER_ERR = 41204;
-    /**
      *Search related errors 43xxxx
      *
      * Generated from protobuf enum <code>SEARCH_INTERNAL_FAILURE = 43001;</code>
@@ -1073,6 +1051,12 @@ class StatusCode
      */
     const MP_IMAGE_PROCESSING_ERROR = 47106;
     /**
+     * DataTier related error 472xx
+     *
+     * Generated from protobuf enum <code>DATATIER_CONN_ERROR = 47201;</code>
+     */
+    const DATATIER_CONN_ERROR = 47201;
+    /**
      * User legal consent stauts related 50xxx
      *
      * Generated from protobuf enum <code>USER_CONSENT_FACE = 50001;</code>
@@ -1106,6 +1090,10 @@ class StatusCode
      * Generated from protobuf enum <code>COLLECTOR_INACTIVE = 52002;</code>
      */
     const COLLECTOR_INACTIVE = 52002;
+    /**
+     * Generated from protobuf enum <code>COLLECTOR_POST_INPUT_FAILED = 52003;</code>
+     */
+    const COLLECTOR_POST_INPUT_FAILED = 52003;
     /**
      * SSO 53xxx
      *
@@ -1548,11 +1536,6 @@ class StatusCode
         self::SQS_OVERLIMIT => 'SQS_OVERLIMIT',
         self::SQS_INVALID_RECEIPT_HANDLE => 'SQS_INVALID_RECEIPT_HANDLE',
         self::SQS_UNKNOWN => 'SQS_UNKNOWN',
-        self::KAFKA_UNKNOW => 'KAFKA_UNKNOW',
-        self::KAFKA_MISSING_TOPIC => 'KAFKA_MISSING_TOPIC',
-        self::KAFKA_ADMIN_ERR => 'KAFKA_ADMIN_ERR',
-        self::KAFKA_CONSUMER_ERR => 'KAFKA_CONSUMER_ERR',
-        self::KAFKA_PUBLISHER_ERR => 'KAFKA_PUBLISHER_ERR',
         self::SEARCH_INTERNAL_FAILURE => 'SEARCH_INTERNAL_FAILURE',
         self::SEARCH_PROJECTION_FAILURE => 'SEARCH_PROJECTION_FAILURE',
         self::SEARCH_PREDICTION_FAILURE => 'SEARCH_PREDICTION_FAILURE',
@@ -1587,6 +1570,7 @@ class StatusCode
         self::MP_IMAGE_DECODE_ERROR => 'MP_IMAGE_DECODE_ERROR',
         self::MP_INVALID_ARGUMENT => 'MP_INVALID_ARGUMENT',
         self::MP_IMAGE_PROCESSING_ERROR => 'MP_IMAGE_PROCESSING_ERROR',
+        self::DATATIER_CONN_ERROR => 'DATATIER_CONN_ERROR',
         self::USER_CONSENT_FACE => 'USER_CONSENT_FACE',
         self::WORKER_MISSING => 'WORKER_MISSING',
         self::WORKER_ACTIVE => 'WORKER_ACTIVE',
@@ -1594,6 +1578,7 @@ class StatusCode
         self::COLLECTOR_MISSING => 'COLLECTOR_MISSING',
         self::COLLECTOR_ACTIVE => 'COLLECTOR_ACTIVE',
         self::COLLECTOR_INACTIVE => 'COLLECTOR_INACTIVE',
+        self::COLLECTOR_POST_INPUT_FAILED => 'COLLECTOR_POST_INPUT_FAILED',
         self::SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST => 'SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST',
         self::TASK_IN_PROGRESS => 'TASK_IN_PROGRESS',
         self::TASK_DONE => 'TASK_DONE',

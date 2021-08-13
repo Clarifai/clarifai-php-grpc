@@ -32,11 +32,26 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $per_page = 0;
     /**
-     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order. 
      *
-     * Generated from protobuf field <code>string id = 4;</code>
+     * Generated from protobuf field <code>bool sort_ascending = 5;</code>
+     */
+    protected $sort_ascending = false;
+    /**
+     * Query various text fields that can contain the words in the query string.
+     *
+     * Generated from protobuf field <code>string query = 8;</code>
+     */
+    protected $query = '';
+    /**
+     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
+     *
+     * Generated from protobuf field <code>string id = 4 [deprecated = true];</code>
      */
     protected $id = '';
+    protected $sort_by;
 
     /**
      * Constructor.
@@ -51,8 +66,19 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
+     *     @type bool $sort_ascending
+     *           Sorting options:
+     *           Whether to sort in ascending order. If false, will order in descending order. 
+     *     @type bool $sort_by_id
+     *           Whether to order by the name
+     *     @type bool $sort_by_modified_at
+     *           Whether to order by the modified_at time.
+     *           If neither sort option is set to true, will sort by modified_at.
+     *     @type string $query
+     *           Query various text fields that can contain the words in the query string.
      *     @type string $id
      *           Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     *           Deprecated in favor of query
      * }
      */
     public function __construct($data = NULL) {
@@ -139,9 +165,118 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order. 
      *
-     * Generated from protobuf field <code>string id = 4;</code>
+     * Generated from protobuf field <code>bool sort_ascending = 5;</code>
+     * @return bool
+     */
+    public function getSortAscending()
+    {
+        return $this->sort_ascending;
+    }
+
+    /**
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order. 
+     *
+     * Generated from protobuf field <code>bool sort_ascending = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortAscending($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->sort_ascending = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the name
+     *
+     * Generated from protobuf field <code>bool sort_by_id = 6;</code>
+     * @return bool
+     */
+    public function getSortById()
+    {
+        return $this->readOneof(6);
+    }
+
+    /**
+     * Whether to order by the name
+     *
+     * Generated from protobuf field <code>bool sort_by_id = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortById($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the modified_at time.
+     * If neither sort option is set to true, will sort by modified_at.
+     *
+     * Generated from protobuf field <code>bool sort_by_modified_at = 7;</code>
+     * @return bool
+     */
+    public function getSortByModifiedAt()
+    {
+        return $this->readOneof(7);
+    }
+
+    /**
+     * Whether to order by the modified_at time.
+     * If neither sort option is set to true, will sort by modified_at.
+     *
+     * Generated from protobuf field <code>bool sort_by_modified_at = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByModifiedAt($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Query various text fields that can contain the words in the query string.
+     *
+     * Generated from protobuf field <code>string query = 8;</code>
+     * @return string
+     */
+    public function getQuery()
+    {
+        return $this->query;
+    }
+
+    /**
+     * Query various text fields that can contain the words in the query string.
+     *
+     * Generated from protobuf field <code>string query = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setQuery($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->query = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
+     *
+     * Generated from protobuf field <code>string id = 4 [deprecated = true];</code>
      * @return string
      */
     public function getId()
@@ -151,8 +286,9 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
      *
-     * Generated from protobuf field <code>string id = 4;</code>
+     * Generated from protobuf field <code>string id = 4 [deprecated = true];</code>
      * @param string $var
      * @return $this
      */
@@ -162,6 +298,14 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
         $this->id = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSortBy()
+    {
+        return $this->whichOneof("sort_by");
     }
 
 }

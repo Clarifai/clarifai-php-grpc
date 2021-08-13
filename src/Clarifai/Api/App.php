@@ -51,6 +51,12 @@ class App extends \Google\Protobuf\Internal\Message
      */
     protected $created_at = null;
     /**
+     * When the app was last modified
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 17;</code>
+     */
+    protected $modified_at = null;
+    /**
      * if user accept legal consent for face recognition
      *
      * Generated from protobuf field <code>uint32 legal_consent_status = 7;</code>
@@ -103,6 +109,8 @@ class App extends \Google\Protobuf\Internal\Message
      *           "2006-01-02T15:04:05.999999Z" so you can expect results like
      *           the following from the API:
      *           "2017-04-11T21:50:50.223962Z"
+     *     @type \Google\Protobuf\Timestamp $modified_at
+     *           When the app was last modified
      *     @type int $legal_consent_status
      *           if user accept legal consent for face recognition
      *     @type \Google\Protobuf\Struct $metadata
@@ -269,6 +277,32 @@ class App extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * When the app was last modified
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 17;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getModifiedAt()
+    {
+        return $this->modified_at;
+    }
+
+    /**
+     * When the app was last modified
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 17;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setModifiedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->modified_at = $var;
 
         return $this;
     }

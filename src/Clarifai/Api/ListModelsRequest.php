@@ -32,13 +32,24 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $per_page = 0;
     /**
-     * Generated from protobuf field <code>repeated string ids = 4;</code>
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order. 
+     *
+     * Generated from protobuf field <code>bool sort_ascending = 10;</code>
      */
-    private $ids;
+    protected $sort_ascending = false;
+    /**
+     * Filtering options:
+     * // Query various text fields that can contain the words in the query string
+     *
+     * Generated from protobuf field <code>string query = 14;</code>
+     */
+    protected $query = '';
     /**
      * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
      *
-     * Generated from protobuf field <code>string name = 5;</code>
+     * Generated from protobuf field <code>string name = 5 [deprecated = true];</code>
      */
     protected $name = '';
     /**
@@ -68,6 +79,13 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string output_fields = 9;</code>
      */
     private $output_fields;
+    /**
+     * Filter by the license of the model version
+     *
+     * Generated from protobuf field <code>string license = 15;</code>
+     */
+    protected $license = '';
+    protected $sort_by;
 
     /**
      * Constructor.
@@ -82,9 +100,22 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type bool $sort_ascending
+     *           Sorting options:
+     *           Whether to sort in ascending order. If false, will order in descending order. 
+     *     @type bool $sort_by_name
+     *           Whether to order by the name
+     *     @type bool $sort_by_num_inputs
+     *           Whether to order by the number of training inputs
+     *     @type bool $sort_by_modified_at
+     *           Whether to order by the modified_at time of the latest model version.
+     *           If neither sort option is set to true, will sort by modified_at.
+     *     @type string $query
+     *           Filtering options:
+     *           // Query various text fields that can contain the words in the query string
      *     @type string $name
      *           Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     *           Deprecated in favor of query
      *     @type string $model_type_id
      *           Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
      *           supported.
@@ -96,6 +127,8 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $output_fields
      *           The list of output fields to the model.
      *           For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+     *     @type string $license
+     *           Filter by the license of the model version
      * }
      */
     public function __construct($data = NULL) {
@@ -182,31 +215,146 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string ids = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order. 
+     *
+     * Generated from protobuf field <code>bool sort_ascending = 10;</code>
+     * @return bool
      */
-    public function getIds()
+    public function getSortAscending()
     {
-        return $this->ids;
+        return $this->sort_ascending;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string ids = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order. 
+     *
+     * Generated from protobuf field <code>bool sort_ascending = 10;</code>
+     * @param bool $var
      * @return $this
      */
-    public function setIds($var)
+    public function setSortAscending($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->ids = $arr;
+        GPBUtil::checkBool($var);
+        $this->sort_ascending = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the name
+     *
+     * Generated from protobuf field <code>bool sort_by_name = 11;</code>
+     * @return bool
+     */
+    public function getSortByName()
+    {
+        return $this->readOneof(11);
+    }
+
+    /**
+     * Whether to order by the name
+     *
+     * Generated from protobuf field <code>bool sort_by_name = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByName($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the number of training inputs
+     *
+     * Generated from protobuf field <code>bool sort_by_num_inputs = 12;</code>
+     * @return bool
+     */
+    public function getSortByNumInputs()
+    {
+        return $this->readOneof(12);
+    }
+
+    /**
+     * Whether to order by the number of training inputs
+     *
+     * Generated from protobuf field <code>bool sort_by_num_inputs = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByNumInputs($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(12, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the modified_at time of the latest model version.
+     * If neither sort option is set to true, will sort by modified_at.
+     *
+     * Generated from protobuf field <code>bool sort_by_modified_at = 13;</code>
+     * @return bool
+     */
+    public function getSortByModifiedAt()
+    {
+        return $this->readOneof(13);
+    }
+
+    /**
+     * Whether to order by the modified_at time of the latest model version.
+     * If neither sort option is set to true, will sort by modified_at.
+     *
+     * Generated from protobuf field <code>bool sort_by_modified_at = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByModifiedAt($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(13, $var);
+
+        return $this;
+    }
+
+    /**
+     * Filtering options:
+     * // Query various text fields that can contain the words in the query string
+     *
+     * Generated from protobuf field <code>string query = 14;</code>
+     * @return string
+     */
+    public function getQuery()
+    {
+        return $this->query;
+    }
+
+    /**
+     * Filtering options:
+     * // Query various text fields that can contain the words in the query string
+     *
+     * Generated from protobuf field <code>string query = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setQuery($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->query = $var;
 
         return $this;
     }
 
     /**
      * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
      *
-     * Generated from protobuf field <code>string name = 5;</code>
+     * Generated from protobuf field <code>string name = 5 [deprecated = true];</code>
      * @return string
      */
     public function getName()
@@ -216,8 +364,9 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
      *
-     * Generated from protobuf field <code>string name = 5;</code>
+     * Generated from protobuf field <code>string name = 5 [deprecated = true];</code>
      * @param string $var
      * @return $this
      */
@@ -337,6 +486,40 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
         $this->output_fields = $arr;
 
         return $this;
+    }
+
+    /**
+     * Filter by the license of the model version
+     *
+     * Generated from protobuf field <code>string license = 15;</code>
+     * @return string
+     */
+    public function getLicense()
+    {
+        return $this->license;
+    }
+
+    /**
+     * Filter by the license of the model version
+     *
+     * Generated from protobuf field <code>string license = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLicense($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->license = $var;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSortBy()
+    {
+        return $this->whichOneof("sort_by");
     }
 
 }

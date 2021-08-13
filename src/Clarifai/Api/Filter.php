@@ -33,6 +33,12 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
      */
     protected $input = null;
+    /**
+     * Filter by annotation last updated time range.
+     *
+     * Generated from protobuf field <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+     */
+    protected $last_updated_time_range = null;
 
     /**
      * Constructor.
@@ -48,6 +54,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Input $input
      *           FILTER by input information.
      *           For example you can filter inputs by status,
+     *     @type \Clarifai\Api\TimeRange $last_updated_time_range
+     *           Filter by annotation last updated time range.
      * }
      */
     public function __construct($data = NULL) {
@@ -133,6 +141,32 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Input::class);
         $this->input = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by annotation last updated time range.
+     *
+     * Generated from protobuf field <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+     * @return \Clarifai\Api\TimeRange
+     */
+    public function getLastUpdatedTimeRange()
+    {
+        return $this->last_updated_time_range;
+    }
+
+    /**
+     * Filter by annotation last updated time range.
+     *
+     * Generated from protobuf field <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+     * @param \Clarifai\Api\TimeRange $var
+     * @return $this
+     */
+    public function setLastUpdatedTimeRange($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\TimeRange::class);
+        $this->last_updated_time_range = $var;
 
         return $this;
     }

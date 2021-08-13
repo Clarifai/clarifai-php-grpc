@@ -567,6 +567,20 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * List all the supported open source licenses in the platform.
+     * @param \Clarifai\Api\ListOpenSourceLicensesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListOpenSourceLicenses(\Clarifai\Api\ListOpenSourceLicensesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListOpenSourceLicenses',
+        $argument,
+        ['\Clarifai\Api\ListOpenSourceLicensesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * List all the model types available in the platform.
      * This MUST be above ListModels so that the /models/types endpoint takes precedence.
      * @param \Clarifai\Api\ListModelTypesRequest $argument input argument

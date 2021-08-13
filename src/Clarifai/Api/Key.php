@@ -70,6 +70,12 @@ class Key extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 6;</code>
      */
     protected $expires_at = null;
+    /**
+     * list of idp ids at which key is currently authorized
+     *
+     * Generated from protobuf field <code>repeated string authorized_idp_ids = 9;</code>
+     */
+    private $authorized_idp_ids;
 
     /**
      * Constructor.
@@ -98,6 +104,8 @@ class Key extends \Google\Protobuf\Internal\Message
      *           "2017-04-11T21:50:50.223962Z"
      *     @type \Google\Protobuf\Timestamp $expires_at
      *           When does the key expires, the key won't expire if this is empty
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $authorized_idp_ids
+     *           list of idp ids at which key is currently authorized
      * }
      */
     public function __construct($data = NULL) {
@@ -319,6 +327,32 @@ class Key extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->expires_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * list of idp ids at which key is currently authorized
+     *
+     * Generated from protobuf field <code>repeated string authorized_idp_ids = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAuthorizedIdpIds()
+    {
+        return $this->authorized_idp_ids;
+    }
+
+    /**
+     * list of idp ids at which key is currently authorized
+     *
+     * Generated from protobuf field <code>repeated string authorized_idp_ids = 9;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAuthorizedIdpIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->authorized_idp_ids = $arr;
 
         return $this;
     }

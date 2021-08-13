@@ -110,6 +110,13 @@ class Model extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string description = 16;</code>
      */
     protected $description = '';
+    /**
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 17;</code>
+     */
+    protected $metadata = null;
 
     /**
      * Constructor.
@@ -147,6 +154,9 @@ class Model extends \Google\Protobuf\Internal\Message
      *           also be publicly visible.
      *     @type string $description
      *           Description about this model
+     *     @type \Google\Protobuf\Struct $metadata
+     *           To handle arbitrary json metadata you can use a struct field:
+     *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      * }
      */
     public function __construct($data = NULL) {
@@ -496,6 +506,34 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 17;</code>
+     * @return \Google\Protobuf\Struct
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 17;</code>
+     * @param \Google\Protobuf\Struct $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->metadata = $var;
 
         return $this;
     }

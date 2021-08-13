@@ -67,6 +67,12 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string user_id = 7;</code>
      */
     protected $user_id = '';
+    /**
+     * When the workflow was last modified
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    protected $modified_at = null;
 
     /**
      * Constructor.
@@ -96,6 +102,8 @@ class Workflow extends \Google\Protobuf\Internal\Message
      *           also be publicly visible.
      *     @type string $user_id
      *           The user the workflow belongs to
+     *     @type \Google\Protobuf\Timestamp $modified_at
+     *           When the workflow was last modified
      * }
      */
     public function __construct($data = NULL) {
@@ -297,6 +305,32 @@ class Workflow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * When the workflow was last modified
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getModifiedAt()
+    {
+        return $this->modified_at;
+    }
+
+    /**
+     * When the workflow was last modified
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setModifiedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->modified_at = $var;
 
         return $this;
     }
