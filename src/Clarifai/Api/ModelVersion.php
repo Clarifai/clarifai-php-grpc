@@ -79,6 +79,23 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string user_id = 14;</code>
      */
     protected $user_id = '';
+    /**
+     * When this model version was last modified
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 15;</code>
+     */
+    protected $modified_at = null;
+    /**
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 16;</code>
+     */
+    protected $metadata = null;
+    /**
+     * Generated from protobuf field <code>string license = 17;</code>
+     */
+    protected $license = '';
 
     /**
      * Constructor.
@@ -107,6 +124,12 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *           The app the model version belongs to.
      *     @type string $user_id
      *           The user the model version belongs to.
+     *     @type \Google\Protobuf\Timestamp $modified_at
+     *           When this model version was last modified
+     *     @type \Google\Protobuf\Struct $metadata
+     *           To handle arbitrary json metadata you can use a struct field:
+     *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *     @type string $license
      * }
      */
     public function __construct($data = NULL) {
@@ -388,6 +411,82 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * When this model version was last modified
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 15;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getModifiedAt()
+    {
+        return $this->modified_at;
+    }
+
+    /**
+     * When this model version was last modified
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 15;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setModifiedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->modified_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 16;</code>
+     * @return \Google\Protobuf\Struct
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 16;</code>
+     * @param \Google\Protobuf\Struct $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string license = 17;</code>
+     * @return string
+     */
+    public function getLicense()
+    {
+        return $this->license;
+    }
+
+    /**
+     * Generated from protobuf field <code>string license = 17;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLicense($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->license = $var;
 
         return $this;
     }
