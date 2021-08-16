@@ -26,6 +26,13 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $workflow_id = '';
     /**
+     * Workflow version ID to retrieve
+     * If no ID is specified, latest workflow version is used
+     *
+     * Generated from protobuf field <code>string version_id = 7;</code>
+     */
+    protected $version_id = '';
+    /**
      * Generated from protobuf field <code>repeated .clarifai.api.Input inputs = 3;</code>
      */
     private $inputs;
@@ -66,6 +73,9 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
      *           Workflow ID to retrieve
      *           If no ID is specified we return default workflow of the application
      *           If an ID is specified by default we first looks into Clarifai workflows for a Workflow ID
+     *     @type string $version_id
+     *           Workflow version ID to retrieve
+     *           If no ID is specified, latest workflow version is used
      *     @type \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $inputs
      *     @type \Clarifai\Api\OutputConfig $output_config
      *           FIXME(zeiler): the request for post workflows is using an outputconfig object that is supposed
@@ -135,6 +145,34 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->workflow_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Workflow version ID to retrieve
+     * If no ID is specified, latest workflow version is used
+     *
+     * Generated from protobuf field <code>string version_id = 7;</code>
+     * @return string
+     */
+    public function getVersionId()
+    {
+        return $this->version_id;
+    }
+
+    /**
+     * Workflow version ID to retrieve
+     * If no ID is specified, latest workflow version is used
+     *
+     * Generated from protobuf field <code>string version_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVersionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->version_id = $var;
 
         return $this;
     }

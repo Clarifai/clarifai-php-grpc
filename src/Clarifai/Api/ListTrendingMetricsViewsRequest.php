@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>clarifai.api.PostTrendingMetricsViewRequest</code>
+ * Generated from protobuf message <code>clarifai.api.ListTrendingMetricsViewsRequest</code>
  */
-class PostTrendingMetricsViewRequest extends \Google\Protobuf\Internal\Message
+class ListTrendingMetricsViewsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The user_id and app_id information.
@@ -26,11 +26,19 @@ class PostTrendingMetricsViewRequest extends \Google\Protobuf\Internal\Message
      */
     protected $view_type = '';
     /**
-     * ID of the views object.
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
      *
-     * Generated from protobuf field <code>string object_id = 3;</code>
+     * Generated from protobuf field <code>uint32 page = 3;</code>
      */
-    protected $object_id = '';
+    protected $page = 0;
+    /**
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     *
+     * Generated from protobuf field <code>uint32 per_page = 4;</code>
+     */
+    protected $per_page = 0;
 
     /**
      * Constructor.
@@ -42,8 +50,12 @@ class PostTrendingMetricsViewRequest extends \Google\Protobuf\Internal\Message
      *           The user_id and app_id information.
      *     @type string $view_type
      *           For now view types 'apps', 'workflows', and 'models' are supported.
-     *     @type string $object_id
-     *           ID of the views object.
+     *     @type int $page
+     *           (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     *           Defaults to 1.
+     *     @type int $per_page
+     *           (optional URL parameter) The number of results that will be contained in each page. Defaults
+     *           to 128.
      * }
      */
     public function __construct($data = NULL) {
@@ -104,27 +116,57 @@ class PostTrendingMetricsViewRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ID of the views object.
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
      *
-     * Generated from protobuf field <code>string object_id = 3;</code>
-     * @return string
+     * Generated from protobuf field <code>uint32 page = 3;</code>
+     * @return int
      */
-    public function getObjectId()
+    public function getPage()
     {
-        return $this->object_id;
+        return $this->page;
     }
 
     /**
-     * ID of the views object.
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
      *
-     * Generated from protobuf field <code>string object_id = 3;</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint32 page = 3;</code>
+     * @param int $var
      * @return $this
      */
-    public function setObjectId($var)
+    public function setPage($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->object_id = $var;
+        GPBUtil::checkUint32($var);
+        $this->page = $var;
+
+        return $this;
+    }
+
+    /**
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     *
+     * Generated from protobuf field <code>uint32 per_page = 4;</code>
+     * @return int
+     */
+    public function getPerPage()
+    {
+        return $this->per_page;
+    }
+
+    /**
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     *
+     * Generated from protobuf field <code>uint32 per_page = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPerPage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->per_page = $var;
 
         return $this;
     }

@@ -51,6 +51,12 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string id = 4 [deprecated = true];</code>
      */
     protected $id = '';
+    /**
+     * If true, we only return workflows that are handpicked by clarifai staff
+     *
+     * Generated from protobuf field <code>bool featured_only = 9;</code>
+     */
+    protected $featured_only = false;
     protected $sort_by;
 
     /**
@@ -79,6 +85,8 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
      *           Deprecated in favor of query
+     *     @type bool $featured_only
+     *           If true, we only return workflows that are handpicked by clarifai staff
      * }
      */
     public function __construct($data = NULL) {
@@ -296,6 +304,32 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, we only return workflows that are handpicked by clarifai staff
+     *
+     * Generated from protobuf field <code>bool featured_only = 9;</code>
+     * @return bool
+     */
+    public function getFeaturedOnly()
+    {
+        return $this->featured_only;
+    }
+
+    /**
+     * If true, we only return workflows that are handpicked by clarifai staff
+     *
+     * Generated from protobuf field <code>bool featured_only = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFeaturedOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->featured_only = $var;
 
         return $this;
     }
