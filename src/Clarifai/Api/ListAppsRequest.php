@@ -52,6 +52,12 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 4 [deprecated = true];</code>
      */
     protected $name = '';
+    /**
+     * If true, we only return workflows that are handpicked by clarifai staff
+     *
+     * Generated from protobuf field <code>bool featured_only = 9;</code>
+     */
+    protected $featured_only = false;
     protected $sort_by;
 
     /**
@@ -81,6 +87,8 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
      *           Deprecated in favor of query
+     *     @type bool $featured_only
+     *           If true, we only return workflows that are handpicked by clarifai staff
      * }
      */
     public function __construct($data = NULL) {
@@ -300,6 +308,32 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, we only return workflows that are handpicked by clarifai staff
+     *
+     * Generated from protobuf field <code>bool featured_only = 9;</code>
+     * @return bool
+     */
+    public function getFeaturedOnly()
+    {
+        return $this->featured_only;
+    }
+
+    /**
+     * If true, we only return workflows that are handpicked by clarifai staff
+     *
+     * Generated from protobuf field <code>bool featured_only = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFeaturedOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->featured_only = $var;
 
         return $this;
     }

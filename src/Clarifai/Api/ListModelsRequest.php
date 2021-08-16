@@ -85,6 +85,12 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string license = 15;</code>
      */
     protected $license = '';
+    /**
+     * If true, we only return models that are handpicked by clarifai staff
+     *
+     * Generated from protobuf field <code>bool featured_only = 16;</code>
+     */
+    protected $featured_only = false;
     protected $sort_by;
 
     /**
@@ -129,6 +135,8 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
      *     @type string $license
      *           Filter by the license of the model version
+     *     @type bool $featured_only
+     *           If true, we only return models that are handpicked by clarifai staff
      * }
      */
     public function __construct($data = NULL) {
@@ -510,6 +518,32 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->license = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, we only return models that are handpicked by clarifai staff
+     *
+     * Generated from protobuf field <code>bool featured_only = 16;</code>
+     * @return bool
+     */
+    public function getFeaturedOnly()
+    {
+        return $this->featured_only;
+    }
+
+    /**
+     * If true, we only return models that are handpicked by clarifai staff
+     *
+     * Generated from protobuf field <code>bool featured_only = 16;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFeaturedOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->featured_only = $var;
 
         return $this;
     }
