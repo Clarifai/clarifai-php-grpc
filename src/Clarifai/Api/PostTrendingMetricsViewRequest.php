@@ -20,13 +20,13 @@ class PostTrendingMetricsViewRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_app_id = null;
     /**
-     * For now view types 'apps', 'workflows', and 'models' are supported.
+     * For now view types 'apps', 'workflows', and 'models' are supported
      *
      * Generated from protobuf field <code>string view_type = 2;</code>
      */
     protected $view_type = '';
     /**
-     * ID of the views object.
+     * ID of the views object
      *
      * Generated from protobuf field <code>string object_id = 3;</code>
      */
@@ -41,9 +41,9 @@ class PostTrendingMetricsViewRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *           The user_id and app_id information.
      *     @type string $view_type
-     *           For now view types 'apps', 'workflows', and 'models' are supported.
+     *           For now view types 'apps', 'workflows', and 'models' are supported
      *     @type string $object_id
-     *           ID of the views object.
+     *           ID of the views object
      * }
      */
     public function __construct($data = NULL) {
@@ -78,7 +78,7 @@ class PostTrendingMetricsViewRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * For now view types 'apps', 'workflows', and 'models' are supported.
+     * For now view types 'apps', 'workflows', and 'models' are supported
      *
      * Generated from protobuf field <code>string view_type = 2;</code>
      * @return string
@@ -89,7 +89,7 @@ class PostTrendingMetricsViewRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * For now view types 'apps', 'workflows', and 'models' are supported.
+     * For now view types 'apps', 'workflows', and 'models' are supported
      *
      * Generated from protobuf field <code>string view_type = 2;</code>
      * @param string $var
@@ -104,7 +104,7 @@ class PostTrendingMetricsViewRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ID of the views object.
+     * ID of the views object
      *
      * Generated from protobuf field <code>string object_id = 3;</code>
      * @return string
@@ -115,7 +115,7 @@ class PostTrendingMetricsViewRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ID of the views object.
+     * ID of the views object
      *
      * Generated from protobuf field <code>string object_id = 3;</code>
      * @param string $var

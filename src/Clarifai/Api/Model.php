@@ -105,7 +105,7 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = null;
     /**
-     * Short description about this model
+     * Description about this model
      *
      * Generated from protobuf field <code>string description = 16;</code>
      */
@@ -117,14 +117,6 @@ class Model extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 17;</code>
      */
     protected $metadata = null;
-    /**
-     * Notes about a model (should support markdown)
-     * This field should be used for in-depth notes about
-     * about a model and supports up to 64Kbs.
-     *
-     * Generated from protobuf field <code>string notes = 18;</code>
-     */
-    protected $notes = '';
 
     /**
      * Constructor.
@@ -161,14 +153,10 @@ class Model extends \Google\Protobuf\Internal\Message
      *           To be visible to the public the App that contains it AND the User that contains the App must
      *           also be publicly visible.
      *     @type string $description
-     *           Short description about this model
+     *           Description about this model
      *     @type \Google\Protobuf\Struct $metadata
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
-     *     @type string $notes
-     *           Notes about a model (should support markdown)
-     *           This field should be used for in-depth notes about
-     *           about a model and supports up to 64Kbs.
      * }
      */
     public function __construct($data = NULL) {
@@ -497,7 +485,7 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Short description about this model
+     * Description about this model
      *
      * Generated from protobuf field <code>string description = 16;</code>
      * @return string
@@ -508,7 +496,7 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Short description about this model
+     * Description about this model
      *
      * Generated from protobuf field <code>string description = 16;</code>
      * @param string $var
@@ -546,36 +534,6 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->metadata = $var;
-
-        return $this;
-    }
-
-    /**
-     * Notes about a model (should support markdown)
-     * This field should be used for in-depth notes about
-     * about a model and supports up to 64Kbs.
-     *
-     * Generated from protobuf field <code>string notes = 18;</code>
-     * @return string
-     */
-    public function getNotes()
-    {
-        return $this->notes;
-    }
-
-    /**
-     * Notes about a model (should support markdown)
-     * This field should be used for in-depth notes about
-     * about a model and supports up to 64Kbs.
-     *
-     * Generated from protobuf field <code>string notes = 18;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setNotes($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->notes = $var;
 
         return $this;
     }
