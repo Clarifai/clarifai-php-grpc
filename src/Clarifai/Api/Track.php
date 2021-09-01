@@ -34,6 +34,10 @@ class Track extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
      */
     protected $track_info = null;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.TimeInfo time_info = 4;</code>
+     */
+    protected $time_info = null;
 
     /**
      * Constructor.
@@ -48,6 +52,7 @@ class Track extends \Google\Protobuf\Internal\Message
      *           embeddings, etc. that are computed within this track.
      *     @type \Clarifai\Api\Track\TrackInfo $track_info
      *           The track information.
+     *     @type \Clarifai\Api\TimeInfo $time_info
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class Track extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Track_TrackInfo::class);
         $this->track_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.TimeInfo time_info = 4;</code>
+     * @return \Clarifai\Api\TimeInfo
+     */
+    public function getTimeInfo()
+    {
+        return $this->time_info;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.TimeInfo time_info = 4;</code>
+     * @param \Clarifai\Api\TimeInfo $var
+     * @return $this
+     */
+    public function setTimeInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\TimeInfo::class);
+        $this->time_info = $var;
 
         return $this;
     }

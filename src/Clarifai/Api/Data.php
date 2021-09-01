@@ -96,6 +96,12 @@ class Data extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.Track tracks = 15;</code>
      */
     private $tracks;
+    /**
+     * Time segments information.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    private $time_segments;
 
     /**
      * Constructor.
@@ -130,6 +136,8 @@ class Data extends \Google\Protobuf\Internal\Message
      *           Input and output audio.
      *     @type \Clarifai\Api\Track[]|\Google\Protobuf\Internal\RepeatedField $tracks
      *           Track information.
+     *     @type \Clarifai\Api\TimeSegment[]|\Google\Protobuf\Internal\RepeatedField $time_segments
+     *           Time segments information.
      * }
      */
     public function __construct($data = NULL) {
@@ -473,6 +481,32 @@ class Data extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Track::class);
         $this->tracks = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Time segments information.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTimeSegments()
+    {
+        return $this->time_segments;
+    }
+
+    /**
+     * Time segments information.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     * @param \Clarifai\Api\TimeSegment[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTimeSegments($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\TimeSegment::class);
+        $this->time_segments = $arr;
 
         return $this;
     }

@@ -89,6 +89,12 @@ class App extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 16;</code>
      */
     protected $visibility = null;
+    /**
+     * data tier id this app is using.
+     *
+     * Generated from protobuf field <code>string data_tier_id = 18;</code>
+     */
+    protected $data_tier_id = '';
 
     /**
      * Constructor.
@@ -124,6 +130,8 @@ class App extends \Google\Protobuf\Internal\Message
      *           The visibility field represents whether this message is privately/publicly visible.
      *           To be visible to the public the App that contains it AND the User that contains the App must
      *           also be publicly visible.
+     *     @type string $data_tier_id
+     *           data tier id this app is using.
      * }
      */
     public function __construct($data = NULL) {
@@ -439,6 +447,32 @@ class App extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * data tier id this app is using.
+     *
+     * Generated from protobuf field <code>string data_tier_id = 18;</code>
+     * @return string
+     */
+    public function getDataTierId()
+    {
+        return $this->data_tier_id;
+    }
+
+    /**
+     * data tier id this app is using.
+     *
+     * Generated from protobuf field <code>string data_tier_id = 18;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDataTierId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->data_tier_id = $var;
 
         return $this;
     }
