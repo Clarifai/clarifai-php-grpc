@@ -16,13 +16,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class Mask extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The color of the segmentation mask that was created. This is used in visualizing masks next to
-     * each other.
-     *
-     * Generated from protobuf field <code>.clarifai.api.Color color = 1;</code>
-     */
-    protected $color = null;
-    /**
      * The image of the mask in a non-raster format.
      *
      * Generated from protobuf field <code>.clarifai.api.Image image = 2;</code>
@@ -35,9 +28,6 @@ class Mask extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Clarifai\Api\Color $color
-     *           The color of the segmentation mask that was created. This is used in visualizing masks next to
-     *           each other.
      *     @type \Clarifai\Api\Image $image
      *           The image of the mask in a non-raster format.
      * }
@@ -45,34 +35,6 @@ class Mask extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Proto\Clarifai\Api\Resources::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * The color of the segmentation mask that was created. This is used in visualizing masks next to
-     * each other.
-     *
-     * Generated from protobuf field <code>.clarifai.api.Color color = 1;</code>
-     * @return \Clarifai\Api\Color
-     */
-    public function getColor()
-    {
-        return $this->color;
-    }
-
-    /**
-     * The color of the segmentation mask that was created. This is used in visualizing masks next to
-     * each other.
-     *
-     * Generated from protobuf field <code>.clarifai.api.Color color = 1;</code>
-     * @param \Clarifai\Api\Color $var
-     * @return $this
-     */
-    public function setColor($var)
-    {
-        GPBUtil::checkMessage($var, \Clarifai\Api\Color::class);
-        $this->color = $var;
-
-        return $this;
     }
 
     /**
