@@ -95,6 +95,20 @@ class App extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string data_tier_id = 18;</code>
      */
     protected $data_tier_id = '';
+    /**
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostAppStars/DeleteAppStars endpoints to star/unstar an app
+     *
+     * Generated from protobuf field <code>bool is_starred = 19;</code>
+     */
+    protected $is_starred = false;
+    /**
+     * How many users have starred the app (only showed on get/list requests)
+     * Computed value, not editable
+     *
+     * Generated from protobuf field <code>int32 star_count = 20;</code>
+     */
+    protected $star_count = 0;
 
     /**
      * Constructor.
@@ -132,6 +146,12 @@ class App extends \Google\Protobuf\Internal\Message
      *           also be publicly visible.
      *     @type string $data_tier_id
      *           data tier id this app is using.
+     *     @type bool $is_starred
+     *           Is starred by the requesting user (only showed on get/list requests)
+     *           Please use PostAppStars/DeleteAppStars endpoints to star/unstar an app
+     *     @type int $star_count
+     *           How many users have starred the app (only showed on get/list requests)
+     *           Computed value, not editable
      * }
      */
     public function __construct($data = NULL) {
@@ -473,6 +493,62 @@ class App extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->data_tier_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostAppStars/DeleteAppStars endpoints to star/unstar an app
+     *
+     * Generated from protobuf field <code>bool is_starred = 19;</code>
+     * @return bool
+     */
+    public function getIsStarred()
+    {
+        return $this->is_starred;
+    }
+
+    /**
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostAppStars/DeleteAppStars endpoints to star/unstar an app
+     *
+     * Generated from protobuf field <code>bool is_starred = 19;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsStarred($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_starred = $var;
+
+        return $this;
+    }
+
+    /**
+     * How many users have starred the app (only showed on get/list requests)
+     * Computed value, not editable
+     *
+     * Generated from protobuf field <code>int32 star_count = 20;</code>
+     * @return int
+     */
+    public function getStarCount()
+    {
+        return $this->star_count;
+    }
+
+    /**
+     * How many users have starred the app (only showed on get/list requests)
+     * Computed value, not editable
+     *
+     * Generated from protobuf field <code>int32 star_count = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStarCount($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->star_count = $var;
 
         return $this;
     }

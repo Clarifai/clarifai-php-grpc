@@ -23,7 +23,7 @@ class PatchCollectorsRequest extends \Google\Protobuf\Internal\Message
     private $collectors;
     /**
      * The action to perform on the patched objects
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * Only 'overwrite' is supported
      *
      * Generated from protobuf field <code>string action = 3;</code>
      */
@@ -39,7 +39,7 @@ class PatchCollectorsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Collector[]|\Google\Protobuf\Internal\RepeatedField $collectors
      *     @type string $action
      *           The action to perform on the patched objects
-     *           For now actions 'merge', 'overwrite', and 'remove' are supported
+     *           Only 'overwrite' is supported
      * }
      */
     public function __construct($data = NULL) {
@@ -93,7 +93,7 @@ class PatchCollectorsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The action to perform on the patched objects
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * Only 'overwrite' is supported
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @return string
@@ -105,7 +105,7 @@ class PatchCollectorsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The action to perform on the patched objects
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * Only 'overwrite' is supported
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @param string $var

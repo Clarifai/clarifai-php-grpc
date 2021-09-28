@@ -758,6 +758,32 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Clarifai\Api\PostModelVersionsPublishRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function PostModelVersionsPublish(\Clarifai\Api\PostModelVersionsPublishRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostModelVersionsPublish',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\DeleteModelVersionsUnpublishRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function DeleteModelVersionsUnPublish(\Clarifai\Api\DeleteModelVersionsUnpublishRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteModelVersionsUnPublish',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * NOTE: inconsistency: do we want this to return a SingleModelResponse?
      *
      * Create a new model version to trigger training of the model.
@@ -1165,6 +1191,32 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/MyScopes',
         $argument,
         ['\Clarifai\Api\MultiScopeResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\MyScopesUserRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function MyScopesUser(\Clarifai\Api\MyScopesUserRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/MyScopesUser',
+        $argument,
+        ['\Clarifai\Api\MultiScopeUserResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\MyScopesRootRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function MyScopesRoot(\Clarifai\Api\MyScopesRootRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/MyScopesRoot',
+        $argument,
+        ['\Clarifai\Api\MultiScopeRootResponse', 'decode'],
         $metadata, $options);
     }
 

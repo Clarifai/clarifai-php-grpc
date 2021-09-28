@@ -52,6 +52,13 @@ class Input extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 6;</code>
      */
     protected $status = null;
+    /**
+     * List of dataset IDs that this input is part of
+     * Currently, this field is ONLY used in search.
+     *
+     * Generated from protobuf field <code>repeated string dataset_ids = 7;</code>
+     */
+    private $dataset_ids;
 
     /**
      * Constructor.
@@ -74,6 +81,9 @@ class Input extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Status\Status $status
      *           This is the status at a per Input level which allows for
      *           partial failures.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $dataset_ids
+     *           List of dataset IDs that this input is part of
+     *           Currently, this field is ONLY used in search.
      * }
      */
     public function __construct($data = NULL) {
@@ -217,6 +227,34 @@ class Input extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Status\Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * List of dataset IDs that this input is part of
+     * Currently, this field is ONLY used in search.
+     *
+     * Generated from protobuf field <code>repeated string dataset_ids = 7;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getDatasetIds()
+    {
+        return $this->dataset_ids;
+    }
+
+    /**
+     * List of dataset IDs that this input is part of
+     * Currently, this field is ONLY used in search.
+     *
+     * Generated from protobuf field <code>repeated string dataset_ids = 7;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setDatasetIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->dataset_ids = $arr;
 
         return $this;
     }

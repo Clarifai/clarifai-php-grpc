@@ -95,6 +95,20 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $teams_count = 0;
     /**
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostUserStars/DeleteUserStars endpoints to star/unstar an user
+     *
+     * Generated from protobuf field <code>bool is_starred = 21;</code>
+     */
+    protected $is_starred = false;
+    /**
+     * How many users have starred the user (only showed on get/list requests)
+     * Computed value, not editable
+     *
+     * Generated from protobuf field <code>int32 star_count = 22;</code>
+     */
+    protected $star_count = 0;
+    /**
      * The visibility field represents whether this message is privately/publicly visible.
      * To be visible to the public the App that contains it AND the User that contains the App must
      * also be publicly visible.
@@ -141,6 +155,12 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type bool $is_org_admin
      *     @type bool $two_factor_auth_enabled
      *     @type int $teams_count
+     *     @type bool $is_starred
+     *           Is starred by the requesting user (only showed on get/list requests)
+     *           Please use PostUserStars/DeleteUserStars endpoints to star/unstar an user
+     *     @type int $star_count
+     *           How many users have starred the user (only showed on get/list requests)
+     *           Computed value, not editable
      *     @type \Clarifai\Api\Visibility $visibility
      *           The visibility field represents whether this message is privately/publicly visible.
      *           To be visible to the public the App that contains it AND the User that contains the App must
@@ -544,6 +564,62 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->teams_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostUserStars/DeleteUserStars endpoints to star/unstar an user
+     *
+     * Generated from protobuf field <code>bool is_starred = 21;</code>
+     * @return bool
+     */
+    public function getIsStarred()
+    {
+        return $this->is_starred;
+    }
+
+    /**
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostUserStars/DeleteUserStars endpoints to star/unstar an user
+     *
+     * Generated from protobuf field <code>bool is_starred = 21;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsStarred($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_starred = $var;
+
+        return $this;
+    }
+
+    /**
+     * How many users have starred the user (only showed on get/list requests)
+     * Computed value, not editable
+     *
+     * Generated from protobuf field <code>int32 star_count = 22;</code>
+     * @return int
+     */
+    public function getStarCount()
+    {
+        return $this->star_count;
+    }
+
+    /**
+     * How many users have starred the user (only showed on get/list requests)
+     * Computed value, not editable
+     *
+     * Generated from protobuf field <code>int32 star_count = 22;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStarCount($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->star_count = $var;
 
         return $this;
     }

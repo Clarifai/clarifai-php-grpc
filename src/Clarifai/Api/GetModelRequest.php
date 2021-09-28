@@ -40,6 +40,12 @@ class GetModelRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool trained_before = 5;</code>
      */
     protected $trained_before = false;
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
+     */
+    private $additional_fields;
 
     /**
      * Constructor.
@@ -54,6 +60,8 @@ class GetModelRequest extends \Google\Protobuf\Internal\Message
      *           rpcs with and without the version_id.
      *     @type string $language
      *     @type bool $trained_before
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
      * }
      */
     public function __construct($data = NULL) {
@@ -173,6 +181,32 @@ class GetModelRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->trained_before = $var;
+
+        return $this;
+    }
+
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAdditionalFields()
+    {
+        return $this->additional_fields;
+    }
+
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAdditionalFields($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->additional_fields = $arr;
 
         return $this;
     }

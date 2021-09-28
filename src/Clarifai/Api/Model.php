@@ -135,6 +135,32 @@ class Model extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string notes = 18;</code>
      */
     protected $notes = '';
+    /**
+     * Tags from toolkits category
+     *
+     * Generated from protobuf field <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    private $toolkits;
+    /**
+     * Tags from use_cases category
+     *
+     * Generated from protobuf field <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    private $use_cases;
+    /**
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
+     *
+     * Generated from protobuf field <code>bool is_starred = 22;</code>
+     */
+    protected $is_starred = false;
+    /**
+     * How many users have starred the model (only showed on get/list requests)
+     * Computed value, not editable
+     *
+     * Generated from protobuf field <code>int32 star_count = 23;</code>
+     */
+    protected $star_count = 0;
 
     /**
      * Constructor.
@@ -185,6 +211,16 @@ class Model extends \Google\Protobuf\Internal\Message
      *           Notes about a model (should support markdown)
      *           This field should be used for in-depth notes about
      *           about a model and supports up to 64Kbs.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $toolkits
+     *           Tags from toolkits category
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $use_cases
+     *           Tags from use_cases category
+     *     @type bool $is_starred
+     *           Is starred by the requesting user (only showed on get/list requests)
+     *           Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
+     *     @type int $star_count
+     *           How many users have starred the model (only showed on get/list requests)
+     *           Computed value, not editable
      * }
      */
     public function __construct($data = NULL) {
@@ -626,6 +662,114 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->notes = $var;
+
+        return $this;
+    }
+
+    /**
+     * Tags from toolkits category
+     *
+     * Generated from protobuf field <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getToolkits()
+    {
+        return $this->toolkits;
+    }
+
+    /**
+     * Tags from toolkits category
+     *
+     * Generated from protobuf field <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setToolkits($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->toolkits = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Tags from use_cases category
+     *
+     * Generated from protobuf field <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUseCases()
+    {
+        return $this->use_cases;
+    }
+
+    /**
+     * Tags from use_cases category
+     *
+     * Generated from protobuf field <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUseCases($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->use_cases = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
+     *
+     * Generated from protobuf field <code>bool is_starred = 22;</code>
+     * @return bool
+     */
+    public function getIsStarred()
+    {
+        return $this->is_starred;
+    }
+
+    /**
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
+     *
+     * Generated from protobuf field <code>bool is_starred = 22;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsStarred($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_starred = $var;
+
+        return $this;
+    }
+
+    /**
+     * How many users have starred the model (only showed on get/list requests)
+     * Computed value, not editable
+     *
+     * Generated from protobuf field <code>int32 star_count = 23;</code>
+     * @return int
+     */
+    public function getStarCount()
+    {
+        return $this->star_count;
+    }
+
+    /**
+     * How many users have starred the model (only showed on get/list requests)
+     * Computed value, not editable
+     *
+     * Generated from protobuf field <code>int32 star_count = 23;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStarCount($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->star_count = $var;
 
         return $this;
     }

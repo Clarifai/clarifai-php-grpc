@@ -79,6 +79,20 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.WorkflowVersion version = 9;</code>
      */
     protected $version = null;
+    /**
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostWorkflowStars/DeleteWorkflowStars endpoints to star/unstar a workflow
+     *
+     * Generated from protobuf field <code>bool is_starred = 10;</code>
+     */
+    protected $is_starred = false;
+    /**
+     * How many users have starred the workflow (only showed on get/list requests)
+     * Computed value, not editable
+     *
+     * Generated from protobuf field <code>int32 star_count = 11;</code>
+     */
+    protected $star_count = 0;
 
     /**
      * Constructor.
@@ -112,6 +126,12 @@ class Workflow extends \Google\Protobuf\Internal\Message
      *           When the workflow was last modified
      *     @type \Clarifai\Api\WorkflowVersion $version
      *           Info about the workflow version
+     *     @type bool $is_starred
+     *           Is starred by the requesting user (only showed on get/list requests)
+     *           Please use PostWorkflowStars/DeleteWorkflowStars endpoints to star/unstar a workflow
+     *     @type int $star_count
+     *           How many users have starred the workflow (only showed on get/list requests)
+     *           Computed value, not editable
      * }
      */
     public function __construct($data = NULL) {
@@ -365,6 +385,62 @@ class Workflow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\WorkflowVersion::class);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostWorkflowStars/DeleteWorkflowStars endpoints to star/unstar a workflow
+     *
+     * Generated from protobuf field <code>bool is_starred = 10;</code>
+     * @return bool
+     */
+    public function getIsStarred()
+    {
+        return $this->is_starred;
+    }
+
+    /**
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostWorkflowStars/DeleteWorkflowStars endpoints to star/unstar a workflow
+     *
+     * Generated from protobuf field <code>bool is_starred = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsStarred($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_starred = $var;
+
+        return $this;
+    }
+
+    /**
+     * How many users have starred the workflow (only showed on get/list requests)
+     * Computed value, not editable
+     *
+     * Generated from protobuf field <code>int32 star_count = 11;</code>
+     * @return int
+     */
+    public function getStarCount()
+    {
+        return $this->star_count;
+    }
+
+    /**
+     * How many users have starred the workflow (only showed on get/list requests)
+     * Computed value, not editable
+     *
+     * Generated from protobuf field <code>int32 star_count = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStarCount($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->star_count = $var;
 
         return $this;
     }

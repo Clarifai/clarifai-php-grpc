@@ -22,15 +22,15 @@ class TimeInfo extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp where track begins.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp begin_time = 2;</code>
+     * Generated from protobuf field <code>uint32 begin_time = 2;</code>
      */
-    protected $begin_time = null;
+    protected $begin_time = 0;
     /**
      * Timestamp where track ends.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 3;</code>
+     * Generated from protobuf field <code>uint32 end_time = 3;</code>
      */
-    protected $end_time = null;
+    protected $end_time = 0;
 
     /**
      * Constructor.
@@ -40,9 +40,9 @@ class TimeInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type int $num_frames
      *           Number of frames
-     *     @type \Google\Protobuf\Timestamp $begin_time
+     *     @type int $begin_time
      *           Timestamp where track begins.
-     *     @type \Google\Protobuf\Timestamp $end_time
+     *     @type int $end_time
      *           Timestamp where track ends.
      * }
      */
@@ -80,8 +80,8 @@ class TimeInfo extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp where track begins.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp begin_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * Generated from protobuf field <code>uint32 begin_time = 2;</code>
+     * @return int
      */
     public function getBeginTime()
     {
@@ -91,13 +91,13 @@ class TimeInfo extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp where track begins.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp begin_time = 2;</code>
-     * @param \Google\Protobuf\Timestamp $var
+     * Generated from protobuf field <code>uint32 begin_time = 2;</code>
+     * @param int $var
      * @return $this
      */
     public function setBeginTime($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        GPBUtil::checkUint32($var);
         $this->begin_time = $var;
 
         return $this;
@@ -106,8 +106,8 @@ class TimeInfo extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp where track ends.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * Generated from protobuf field <code>uint32 end_time = 3;</code>
+     * @return int
      */
     public function getEndTime()
     {
@@ -117,13 +117,13 @@ class TimeInfo extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp where track ends.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 3;</code>
-     * @param \Google\Protobuf\Timestamp $var
+     * Generated from protobuf field <code>uint32 end_time = 3;</code>
+     * @param int $var
      * @return $this
      */
     public function setEndTime($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        GPBUtil::checkUint32($var);
         $this->end_time = $var;
 
         return $this;

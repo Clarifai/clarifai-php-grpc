@@ -48,8 +48,8 @@ class ModelTypeFieldType
      */
     const RANGE = 7;
     /**
-     * If ENUM is used then the "enum_options" field should also be filled in which allows for
-     * additional ModelTypeFields too depending on the enum choice.
+     * If ENUM is used then the "enum_options" field should also be filled in with the respective ID and description
+     * for the different ENUM options.
      *
      * Generated from protobuf enum <code>ENUM = 8;</code>
      */
@@ -85,6 +85,13 @@ class ModelTypeFieldType
      * Generated from protobuf enum <code>ARRAY_OF_STRINGS = 13;</code>
      */
     const ARRAY_OF_STRINGS = 13;
+    /**
+     * If RECURSIVE_ENUM is used then the "enum_options" field should also be filled in with the respective ID and description
+     * for the different RECURSIVE_ENUM options, as well as model_type_fields for each enum choice.
+     *
+     * Generated from protobuf enum <code>RECURSIVE_ENUM = 14;</code>
+     */
+    const RECURSIVE_ENUM = 14;
 
     private static $valueToName = [
         self::INVALID_MODEL_TYPE_FIELD_TYPE => 'INVALID_MODEL_TYPE_FIELD_TYPE',
@@ -100,6 +107,7 @@ class ModelTypeFieldType
         self::ARRAY_OF_NUMBERS => 'ARRAY_OF_NUMBERS',
         self::WORKFLOW_EMBED_MODELS => 'WORKFLOW_EMBED_MODELS',
         self::ARRAY_OF_STRINGS => 'ARRAY_OF_STRINGS',
+        self::RECURSIVE_ENUM => 'RECURSIVE_ENUM',
     ];
 
     public static function name($value)
