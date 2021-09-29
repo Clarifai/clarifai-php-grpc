@@ -35,6 +35,12 @@ class GetWorkflowRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool favor_clarifai_workflows = 3;</code>
      */
     protected $favor_clarifai_workflows = false;
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 4;</code>
+     */
+    private $additional_fields;
 
     /**
      * Constructor.
@@ -49,6 +55,8 @@ class GetWorkflowRequest extends \Google\Protobuf\Internal\Message
      *           If an ID is specified by default we first looks into Clarifai workflows for a Workflow ID
      *     @type bool $favor_clarifai_workflows
      *           Use this flag to look into clarifai published workflows first for a Workflow ID
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
      * }
      */
     public function __construct($data = NULL) {
@@ -130,6 +138,32 @@ class GetWorkflowRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->favor_clarifai_workflows = $var;
+
+        return $this;
+    }
+
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAdditionalFields()
+    {
+        return $this->additional_fields;
+    }
+
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 4;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAdditionalFields($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->additional_fields = $arr;
 
         return $this;
     }

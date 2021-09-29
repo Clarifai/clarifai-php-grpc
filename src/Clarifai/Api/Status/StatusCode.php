@@ -833,6 +833,10 @@ class StatusCode
      */
     const RPC_UNKNOWN_METHOD = 40036;
     /**
+     * Generated from protobuf enum <code>REQUEST_CANCELED_BY_USER = 40037;</code>
+     */
+    const REQUEST_CANCELED_BY_USER = 40037;
+    /**
      * Generated from protobuf enum <code>CLUSTER_INTERNAL_FAILURE = 43040;</code>
      */
     const CLUSTER_INTERNAL_FAILURE = 43040;
@@ -1232,23 +1236,54 @@ class StatusCode
      */
     const MAINTENANCE_FAILED = 63001;
     /**
+     * Datasets 64xxx
+     * The dataset version is pending to be processed.
+     *
+     * Generated from protobuf enum <code>DATASET_VERSION_PENDING = 64005;</code>
+     */
+    const DATASET_VERSION_PENDING = 64005;
+    /**
+     * The dataset version is currently being processed.
+     *
+     * Generated from protobuf enum <code>DATASET_VERSION_IN_PROGRESS = 64010;</code>
+     */
+    const DATASET_VERSION_IN_PROGRESS = 64010;
+    /**
+     * The dataset version is ready to be used.
+     *
+     * Generated from protobuf enum <code>DATASET_VERSION_READY = 64015;</code>
+     */
+    const DATASET_VERSION_READY = 64015;
+    /**
+     * An error occurred during the dataset version processing.
+     *
+     * Generated from protobuf enum <code>DATASET_VERSION_FAILURE = 64020;</code>
+     */
+    const DATASET_VERSION_FAILURE = 64020;
+    /**
+     * An unexpected error occurred during the dataset version processing.
+     *
+     * Generated from protobuf enum <code>DATASET_VERSION_UNEXPECTED_ERROR = 64025;</code>
+     */
+    const DATASET_VERSION_UNEXPECTED_ERROR = 64025;
+    /**
      * Generic Job status codes
      *
-     * Generated from protobuf enum <code>JOB_QUEUED = 6400;</code>
+     * Generated from protobuf enum <code>JOB_QUEUED = 64000;</code>
      */
-    const JOB_QUEUED = 6400;
+    const JOB_QUEUED = 64000;
     /**
-     * Generated from protobuf enum <code>JOB_RUNNING = 6401;</code>
+     * Generated from protobuf enum <code>JOB_RUNNING = 64001;</code>
      */
-    const JOB_RUNNING = 6401;
+    const JOB_RUNNING = 64001;
     /**
-     * Generated from protobuf enum <code>JOB_COMPLETED = 6402;</code>
+     * Generated from protobuf enum <code>JOB_COMPLETED = 64002;</code>
      */
-    const JOB_COMPLETED = 6402;
+    const JOB_COMPLETED = 64002;
     /**
-     * Generated from protobuf enum <code>JOB_FAILED = 6403;</code>
+     * Generated from protobuf enum <code>JOB_FAILED = 64003;</code>
      */
-    const JOB_FAILED = 6403;
+    const JOB_FAILED = 64003;
     /**
      *auth issues
      *
@@ -1520,6 +1555,7 @@ class StatusCode
         self::RPC_MAX_MESSAGE_SIZE_EXCEEDED => 'RPC_MAX_MESSAGE_SIZE_EXCEEDED',
         self::RPC_CANCELED => 'RPC_CANCELED',
         self::RPC_UNKNOWN_METHOD => 'RPC_UNKNOWN_METHOD',
+        self::REQUEST_CANCELED_BY_USER => 'REQUEST_CANCELED_BY_USER',
         self::CLUSTER_INTERNAL_FAILURE => 'CLUSTER_INTERNAL_FAILURE',
         self::EXTERNAL_CONNECTION_ERROR => 'EXTERNAL_CONNECTION_ERROR',
         self::QUEUE_CONN_ERROR => 'QUEUE_CONN_ERROR',
@@ -1606,6 +1642,11 @@ class StatusCode
         self::FEATUREFLAG_BLOCKED => 'FEATUREFLAG_BLOCKED',
         self::MAINTENANCE_SUCCESS => 'MAINTENANCE_SUCCESS',
         self::MAINTENANCE_FAILED => 'MAINTENANCE_FAILED',
+        self::DATASET_VERSION_PENDING => 'DATASET_VERSION_PENDING',
+        self::DATASET_VERSION_IN_PROGRESS => 'DATASET_VERSION_IN_PROGRESS',
+        self::DATASET_VERSION_READY => 'DATASET_VERSION_READY',
+        self::DATASET_VERSION_FAILURE => 'DATASET_VERSION_FAILURE',
+        self::DATASET_VERSION_UNEXPECTED_ERROR => 'DATASET_VERSION_UNEXPECTED_ERROR',
         self::JOB_QUEUED => 'JOB_QUEUED',
         self::JOB_RUNNING => 'JOB_RUNNING',
         self::JOB_COMPLETED => 'JOB_COMPLETED',

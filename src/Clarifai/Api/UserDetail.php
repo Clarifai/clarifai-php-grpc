@@ -59,6 +59,14 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 teams_count = 10;</code>
      */
     protected $teams_count = 0;
+    /**
+     * Generated from protobuf field <code>string country = 11;</code>
+     */
+    protected $country = '';
+    /**
+     * Generated from protobuf field <code>string state = 12;</code>
+     */
+    protected $state = '';
 
     /**
      * Constructor.
@@ -78,6 +86,8 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      *     @type bool $is_org_admin
      *     @type bool $two_factor_auth_enabled
      *     @type int $teams_count
+     *     @type string $country
+     *     @type string $state
      * }
      */
     public function __construct($data = NULL) {
@@ -307,6 +317,50 @@ class UserDetail extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->teams_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string country = 11;</code>
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Generated from protobuf field <code>string country = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCountry($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->country = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string state = 12;</code>
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Generated from protobuf field <code>string state = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setState($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->state = $var;
 
         return $this;
     }

@@ -91,6 +91,24 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool featured_only = 16;</code>
      */
     protected $featured_only = false;
+    /**
+     * List of toolkit tags to filter by
+     *
+     * Generated from protobuf field <code>repeated string toolkits = 17;</code>
+     */
+    private $toolkits;
+    /**
+     * List of use_case tags to filter by
+     *
+     * Generated from protobuf field <code>repeated string use_cases = 18;</code>
+     */
+    private $use_cases;
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
+     */
+    private $additional_fields;
     protected $sort_by;
 
     /**
@@ -137,6 +155,12 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           Filter by the license of the model version
      *     @type bool $featured_only
      *           If true, we only return models that are handpicked by clarifai staff
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $toolkits
+     *           List of toolkit tags to filter by
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $use_cases
+     *           List of use_case tags to filter by
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
      * }
      */
     public function __construct($data = NULL) {
@@ -544,6 +568,84 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->featured_only = $var;
+
+        return $this;
+    }
+
+    /**
+     * List of toolkit tags to filter by
+     *
+     * Generated from protobuf field <code>repeated string toolkits = 17;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getToolkits()
+    {
+        return $this->toolkits;
+    }
+
+    /**
+     * List of toolkit tags to filter by
+     *
+     * Generated from protobuf field <code>repeated string toolkits = 17;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setToolkits($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->toolkits = $arr;
+
+        return $this;
+    }
+
+    /**
+     * List of use_case tags to filter by
+     *
+     * Generated from protobuf field <code>repeated string use_cases = 18;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUseCases()
+    {
+        return $this->use_cases;
+    }
+
+    /**
+     * List of use_case tags to filter by
+     *
+     * Generated from protobuf field <code>repeated string use_cases = 18;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUseCases($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->use_cases = $arr;
+
+        return $this;
+    }
+
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAdditionalFields()
+    {
+        return $this->additional_fields;
+    }
+
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAdditionalFields($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->additional_fields = $arr;
 
         return $this;
     }

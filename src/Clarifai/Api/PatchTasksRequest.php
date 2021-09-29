@@ -25,7 +25,7 @@ class PatchTasksRequest extends \Google\Protobuf\Internal\Message
     private $tasks;
     /**
      * The action to perform on the patched objects
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * For now only 'overwrite' action is supported
      *
      * Generated from protobuf field <code>string action = 3;</code>
      */
@@ -41,7 +41,7 @@ class PatchTasksRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Task[]|\Google\Protobuf\Internal\RepeatedField $tasks
      *     @type string $action
      *           The action to perform on the patched objects
-     *           For now actions 'merge', 'overwrite', and 'remove' are supported
+     *           For now only 'overwrite' action is supported
      * }
      */
     public function __construct($data = NULL) {
@@ -95,7 +95,7 @@ class PatchTasksRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The action to perform on the patched objects
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * For now only 'overwrite' action is supported
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @return string
@@ -107,7 +107,7 @@ class PatchTasksRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The action to perform on the patched objects
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * For now only 'overwrite' action is supported
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @param string $var
