@@ -45,6 +45,12 @@ class Image extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.HostedURL hosted = 5;</code>
      */
     protected $hosted = null;
+    /**
+     * image info
+     *
+     * Generated from protobuf field <code>.clarifai.api.ImageInfo image_info = 6;</code>
+     */
+    protected $image_info = null;
 
     /**
      * Constructor.
@@ -65,6 +71,8 @@ class Image extends \Google\Protobuf\Internal\Message
      *     @type bool $allow_duplicate_url
      *     @type \Clarifai\Api\HostedURL $hosted
      *           The hosted field lists images in different sizes hosted in Clarifai storage.
+     *     @type \Clarifai\Api\ImageInfo $image_info
+     *           image info
      * }
      */
     public function __construct($data = NULL) {
@@ -180,6 +188,32 @@ class Image extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\HostedURL::class);
         $this->hosted = $var;
+
+        return $this;
+    }
+
+    /**
+     * image info
+     *
+     * Generated from protobuf field <code>.clarifai.api.ImageInfo image_info = 6;</code>
+     * @return \Clarifai\Api\ImageInfo
+     */
+    public function getImageInfo()
+    {
+        return $this->image_info;
+    }
+
+    /**
+     * image info
+     *
+     * Generated from protobuf field <code>.clarifai.api.ImageInfo image_info = 6;</code>
+     * @param \Clarifai\Api\ImageInfo $var
+     * @return $this
+     */
+    public function setImageInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ImageInfo::class);
+        $this->image_info = $var;
 
         return $this;
     }

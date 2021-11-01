@@ -53,6 +53,12 @@ class Video extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.HostedURL hosted = 6;</code>
      */
     protected $hosted = null;
+    /**
+     * video info
+     *
+     * Generated from protobuf field <code>.clarifai.api.VideoInfo video_info = 7;</code>
+     */
+    protected $video_info = null;
 
     /**
      * Constructor.
@@ -77,6 +83,8 @@ class Video extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\HostedURL $hosted
      *           The hosted field lists original video hosted in Clarifai storage. This field is currently used
      *           only in response.
+     *     @type \Clarifai\Api\VideoInfo $video_info
+     *           video info
      * }
      */
     public function __construct($data = NULL) {
@@ -222,6 +230,32 @@ class Video extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\HostedURL::class);
         $this->hosted = $var;
+
+        return $this;
+    }
+
+    /**
+     * video info
+     *
+     * Generated from protobuf field <code>.clarifai.api.VideoInfo video_info = 7;</code>
+     * @return \Clarifai\Api\VideoInfo
+     */
+    public function getVideoInfo()
+    {
+        return $this->video_info;
+    }
+
+    /**
+     * video info
+     *
+     * Generated from protobuf field <code>.clarifai.api.VideoInfo video_info = 7;</code>
+     * @param \Clarifai\Api\VideoInfo $var
+     * @return $this
+     */
+    public function setVideoInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\VideoInfo::class);
+        $this->video_info = $var;
 
         return $this;
     }

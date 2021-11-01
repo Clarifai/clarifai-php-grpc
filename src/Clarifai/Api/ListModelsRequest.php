@@ -46,7 +46,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $query = '';
     /**
-     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Filter by the name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      * Deprecated in favor of query
      *
      * Generated from protobuf field <code>string name = 5 [deprecated = true];</code>
@@ -92,6 +92,12 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $featured_only = false;
     /**
+     * If true, we only return models that are starred by the requesting user
+     *
+     * Generated from protobuf field <code>bool starred_only = 20;</code>
+     */
+    protected $starred_only = false;
+    /**
      * List of toolkit tags to filter by
      *
      * Generated from protobuf field <code>repeated string toolkits = 17;</code>
@@ -103,6 +109,12 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string use_cases = 18;</code>
      */
     private $use_cases;
+    /**
+     * List of language tags to filter by
+     *
+     * Generated from protobuf field <code>repeated string languages = 21;</code>
+     */
+    private $languages;
     /**
      * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
      *
@@ -138,7 +150,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           Filtering options:
      *           // Query various text fields that can contain the words in the query string
      *     @type string $name
-     *           Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     *           Filter by the name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      *           Deprecated in favor of query
      *     @type string $model_type_id
      *           Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
@@ -155,10 +167,14 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           Filter by the license of the model version
      *     @type bool $featured_only
      *           If true, we only return models that are handpicked by clarifai staff
+     *     @type bool $starred_only
+     *           If true, we only return models that are starred by the requesting user
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $toolkits
      *           List of toolkit tags to filter by
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $use_cases
      *           List of use_case tags to filter by
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $languages
+     *           List of language tags to filter by
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
      * }
@@ -383,7 +399,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Filter by the name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      * Deprecated in favor of query
      *
      * Generated from protobuf field <code>string name = 5 [deprecated = true];</code>
@@ -395,7 +411,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Filter by the name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      * Deprecated in favor of query
      *
      * Generated from protobuf field <code>string name = 5 [deprecated = true];</code>
@@ -573,6 +589,32 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * If true, we only return models that are starred by the requesting user
+     *
+     * Generated from protobuf field <code>bool starred_only = 20;</code>
+     * @return bool
+     */
+    public function getStarredOnly()
+    {
+        return $this->starred_only;
+    }
+
+    /**
+     * If true, we only return models that are starred by the requesting user
+     *
+     * Generated from protobuf field <code>bool starred_only = 20;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setStarredOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->starred_only = $var;
+
+        return $this;
+    }
+
+    /**
      * List of toolkit tags to filter by
      *
      * Generated from protobuf field <code>repeated string toolkits = 17;</code>
@@ -620,6 +662,32 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->use_cases = $arr;
+
+        return $this;
+    }
+
+    /**
+     * List of language tags to filter by
+     *
+     * Generated from protobuf field <code>repeated string languages = 21;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLanguages()
+    {
+        return $this->languages;
+    }
+
+    /**
+     * List of language tags to filter by
+     *
+     * Generated from protobuf field <code>repeated string languages = 21;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLanguages($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->languages = $arr;
 
         return $this;
     }

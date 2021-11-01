@@ -58,6 +58,12 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $featured_only = false;
     /**
+     * If true, we only return workflows that are starred by the requesting user
+     *
+     * Generated from protobuf field <code>bool starred_only = 11;</code>
+     */
+    protected $starred_only = false;
+    /**
      * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
      *
      * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
@@ -93,6 +99,8 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      *           Deprecated in favor of query
      *     @type bool $featured_only
      *           If true, we only return workflows that are handpicked by clarifai staff
+     *     @type bool $starred_only
+     *           If true, we only return workflows that are starred by the requesting user
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
      * }
@@ -338,6 +346,32 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->featured_only = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, we only return workflows that are starred by the requesting user
+     *
+     * Generated from protobuf field <code>bool starred_only = 11;</code>
+     * @return bool
+     */
+    public function getStarredOnly()
+    {
+        return $this->starred_only;
+    }
+
+    /**
+     * If true, we only return workflows that are starred by the requesting user
+     *
+     * Generated from protobuf field <code>bool starred_only = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setStarredOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->starred_only = $var;
 
         return $this;
     }

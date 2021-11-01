@@ -32,18 +32,21 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
     private $model_versions;
     /**
      * Use this to filter inputs that are used in training
+     * Alternatively, use train_search & test_search fields OR dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
      */
     protected $search = null;
     /**
      *train_search is used to specify what data to train on.
+     * Alternatively, use dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search train_search = 5;</code>
      */
     protected $train_search = null;
     /**
      *test_search is used to specify what data to test on.
+     * Alternatively, use dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search test_search = 6;</code>
      */
@@ -60,6 +63,17 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string description = 8;</code>
      */
     protected $description = '';
+    /**
+     * Use the data from this dataset version for training.
+     * Set dataset_version.dataset_id to identify the dataset that you would like to use.
+     * When dataset_version.id field is set,
+     * the system will reuse the data from provided dataset version.
+     * When dataset_version.id is not set,
+     * a new dataset version will be created in the dataset using provided dataset_version fields.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 9;</code>
+     */
+    protected $dataset_version = null;
 
     /**
      * Constructor.
@@ -74,14 +88,24 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
      *           For internal Clarifai use only to start.
      *     @type \Clarifai\Api\Search $search
      *           Use this to filter inputs that are used in training
+     *           Alternatively, use train_search & test_search fields OR dataset_version field.
      *     @type \Clarifai\Api\Search $train_search
      *          train_search is used to specify what data to train on.
+     *           Alternatively, use dataset_version field.
      *     @type \Clarifai\Api\Search $test_search
      *          test_search is used to specify what data to test on.
+     *           Alternatively, use dataset_version field.
      *     @type bool $evaluate_after_training
      *           whether to evaluate the transfer trained model after training
      *     @type string $description
      *           Description about this training run
+     *     @type \Clarifai\Api\DatasetVersion $dataset_version
+     *           Use the data from this dataset version for training.
+     *           Set dataset_version.dataset_id to identify the dataset that you would like to use.
+     *           When dataset_version.id field is set,
+     *           the system will reuse the data from provided dataset version.
+     *           When dataset_version.id is not set,
+     *           a new dataset version will be created in the dataset using provided dataset_version fields.
      * }
      */
     public function __construct($data = NULL) {
@@ -163,6 +187,7 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Use this to filter inputs that are used in training
+     * Alternatively, use train_search & test_search fields OR dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
      * @return \Clarifai\Api\Search
@@ -174,6 +199,7 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Use this to filter inputs that are used in training
+     * Alternatively, use train_search & test_search fields OR dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
      * @param \Clarifai\Api\Search $var
@@ -189,6 +215,7 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      *train_search is used to specify what data to train on.
+     * Alternatively, use dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search train_search = 5;</code>
      * @return \Clarifai\Api\Search
@@ -200,6 +227,7 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      *train_search is used to specify what data to train on.
+     * Alternatively, use dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search train_search = 5;</code>
      * @param \Clarifai\Api\Search $var
@@ -215,6 +243,7 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      *test_search is used to specify what data to test on.
+     * Alternatively, use dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search test_search = 6;</code>
      * @return \Clarifai\Api\Search
@@ -226,6 +255,7 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      *test_search is used to specify what data to test on.
+     * Alternatively, use dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search test_search = 6;</code>
      * @param \Clarifai\Api\Search $var
@@ -287,6 +317,42 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Use the data from this dataset version for training.
+     * Set dataset_version.dataset_id to identify the dataset that you would like to use.
+     * When dataset_version.id field is set,
+     * the system will reuse the data from provided dataset version.
+     * When dataset_version.id is not set,
+     * a new dataset version will be created in the dataset using provided dataset_version fields.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 9;</code>
+     * @return \Clarifai\Api\DatasetVersion
+     */
+    public function getDatasetVersion()
+    {
+        return $this->dataset_version;
+    }
+
+    /**
+     * Use the data from this dataset version for training.
+     * Set dataset_version.dataset_id to identify the dataset that you would like to use.
+     * When dataset_version.id field is set,
+     * the system will reuse the data from provided dataset version.
+     * When dataset_version.id is not set,
+     * a new dataset version will be created in the dataset using provided dataset_version fields.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 9;</code>
+     * @param \Clarifai\Api\DatasetVersion $var
+     * @return $this
+     */
+    public function setDatasetVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersion::class);
+        $this->dataset_version = $var;
 
         return $this;
     }

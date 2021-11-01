@@ -710,6 +710,48 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Update model toolkits tags
+     * @param \Clarifai\Api\PatchModelToolkitsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function PatchModelToolkits(\Clarifai\Api\PatchModelToolkitsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchModelToolkits',
+        $argument,
+        ['\Clarifai\Api\MultiModelToolkitResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Update model use_cases tags
+     * @param \Clarifai\Api\PatchModelUseCasesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function PatchModelUseCases(\Clarifai\Api\PatchModelUseCasesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchModelUseCases',
+        $argument,
+        ['\Clarifai\Api\MultiModelUseCaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Update model languages tags
+     * @param \Clarifai\Api\PatchModelLanguagesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function PatchModelLanguages(\Clarifai\Api\PatchModelLanguagesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchModelLanguages',
+        $argument,
+        ['\Clarifai\Api\MultiModelLanguageResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * List all the inputs.
      * @param \Clarifai\Api\ListModelInputsRequest $argument input argument
      * @param array $metadata metadata
@@ -771,13 +813,13 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Clarifai\Api\DeleteModelVersionsUnpublishRequest $argument input argument
+     * @param \Clarifai\Api\PostModelVersionsUnPublishRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function DeleteModelVersionsUnPublish(\Clarifai\Api\DeleteModelVersionsUnpublishRequest $argument,
+    public function PostModelVersionsUnPublish(\Clarifai\Api\PostModelVersionsUnPublishRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/DeleteModelVersionsUnPublish',
+        return $this->_simpleRequest('/clarifai.api.V2/PostModelVersionsUnPublish',
         $argument,
         ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);

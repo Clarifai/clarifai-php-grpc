@@ -75,6 +75,18 @@ class WorkflowVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string user_id = 9;</code>
      */
     protected $user_id = '';
+    /**
+     * Short description about this workflow version
+     *
+     * Generated from protobuf field <code>string description = 10;</code>
+     */
+    protected $description = '';
+    /**
+     * License associated to this workflow version
+     *
+     * Generated from protobuf field <code>string license = 11;</code>
+     */
+    protected $license = '';
 
     /**
      * Constructor.
@@ -108,6 +120,10 @@ class WorkflowVersion extends \Google\Protobuf\Internal\Message
      *           The app the workflow version belongs to.
      *     @type string $user_id
      *           The user the workflow version belongs to.
+     *     @type string $description
+     *           Short description about this workflow version
+     *     @type string $license
+     *           License associated to this workflow version
      * }
      */
     public function __construct($data = NULL) {
@@ -361,6 +377,58 @@ class WorkflowVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Short description about this workflow version
+     *
+     * Generated from protobuf field <code>string description = 10;</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Short description about this workflow version
+     *
+     * Generated from protobuf field <code>string description = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * License associated to this workflow version
+     *
+     * Generated from protobuf field <code>string license = 11;</code>
+     * @return string
+     */
+    public function getLicense()
+    {
+        return $this->license;
+    }
+
+    /**
+     * License associated to this workflow version
+     *
+     * Generated from protobuf field <code>string license = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLicense($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->license = $var;
 
         return $this;
     }
