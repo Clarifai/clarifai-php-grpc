@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * StreamInputsRequest
+ *
  * Generated from protobuf message <code>clarifai.api.StreamInputsRequest</code>
  */
 class StreamInputsRequest extends \Google\Protobuf\Internal\Message

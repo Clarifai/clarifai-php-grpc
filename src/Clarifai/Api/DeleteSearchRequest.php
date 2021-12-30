@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * DeleteSearchRequest
+ *
  * Generated from protobuf message <code>clarifai.api.DeleteSearchRequest</code>
  */
 class DeleteSearchRequest extends \Google\Protobuf\Internal\Message

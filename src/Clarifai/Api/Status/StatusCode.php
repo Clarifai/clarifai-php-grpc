@@ -565,6 +565,24 @@ class StatusCode
      */
     const APP_DUPLICATION_INVALID_REQUEST = 25204;
     /**
+     * Module related codes 253xx
+     *
+     * Generated from protobuf enum <code>MODULE_DOES_NOT_EXIST = 25300;</code>
+     */
+    const MODULE_DOES_NOT_EXIST = 25300;
+    /**
+     * Generated from protobuf enum <code>MODULE_PERMISSION_DENIED = 25301;</code>
+     */
+    const MODULE_PERMISSION_DENIED = 25301;
+    /**
+     * Generated from protobuf enum <code>MODULE_INVALID_ARGUMENT = 25302;</code>
+     */
+    const MODULE_INVALID_ARGUMENT = 25302;
+    /**
+     * Generated from protobuf enum <code>MODULE_INVALID_REQUEST = 25303;</code>
+     */
+    const MODULE_INVALID_REQUEST = 25303;
+    /**
      * Input:Image related 30xxx
      *
      * Generated from protobuf enum <code>INPUT_DOWNLOAD_SUCCESS = 30000;</code>
@@ -1491,6 +1509,10 @@ class StatusCode
         self::APP_DUPLICATION_PENDING => 'APP_DUPLICATION_PENDING',
         self::APP_DUPLICATION_IN_PROGRESS => 'APP_DUPLICATION_IN_PROGRESS',
         self::APP_DUPLICATION_INVALID_REQUEST => 'APP_DUPLICATION_INVALID_REQUEST',
+        self::MODULE_DOES_NOT_EXIST => 'MODULE_DOES_NOT_EXIST',
+        self::MODULE_PERMISSION_DENIED => 'MODULE_PERMISSION_DENIED',
+        self::MODULE_INVALID_ARGUMENT => 'MODULE_INVALID_ARGUMENT',
+        self::MODULE_INVALID_REQUEST => 'MODULE_INVALID_REQUEST',
         self::INPUT_DOWNLOAD_SUCCESS => 'INPUT_DOWNLOAD_SUCCESS',
         self::INPUT_DOWNLOAD_PENDING => 'INPUT_DOWNLOAD_PENDING',
         self::INPUT_DOWNLOAD_FAILED => 'INPUT_DOWNLOAD_FAILED',

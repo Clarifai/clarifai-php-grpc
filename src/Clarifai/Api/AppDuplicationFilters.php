@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * AppDuplicationFilters
+ *
  * Generated from protobuf message <code>clarifai.api.AppDuplicationFilters</code>
  */
 class AppDuplicationFilters extends \Google\Protobuf\Internal\Message

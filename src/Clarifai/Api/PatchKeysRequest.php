@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * PatchKeysRequest
+ *
  * Generated from protobuf message <code>clarifai.api.PatchKeysRequest</code>
  */
 class PatchKeysRequest extends \Google\Protobuf\Internal\Message

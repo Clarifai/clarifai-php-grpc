@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * EvalTestSetEntry
+ *
  * Generated from protobuf message <code>clarifai.api.EvalTestSetEntry</code>
  */
 class EvalTestSetEntry extends \Google\Protobuf\Internal\Message

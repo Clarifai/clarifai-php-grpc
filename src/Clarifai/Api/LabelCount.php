@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * LabelCount
+ *
  * Generated from protobuf message <code>clarifai.api.LabelCount</code>
  */
 class LabelCount extends \Google\Protobuf\Internal\Message

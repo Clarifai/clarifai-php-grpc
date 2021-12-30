@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * EvalMetrics
+ *
  * Generated from protobuf message <code>clarifai.api.EvalMetrics</code>
  */
 class EvalMetrics extends \Google\Protobuf\Internal\Message

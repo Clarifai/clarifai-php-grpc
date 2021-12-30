@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * ConfusionMatrixEntry
+ *
  * Generated from protobuf message <code>clarifai.api.ConfusionMatrixEntry</code>
  */
 class ConfusionMatrixEntry extends \Google\Protobuf\Internal\Message

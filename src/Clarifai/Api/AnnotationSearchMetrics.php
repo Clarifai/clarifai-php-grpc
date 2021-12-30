@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * AnnotationSearchMetrics
+ *
  * Generated from protobuf message <code>clarifai.api.AnnotationSearchMetrics</code>
  */
 class AnnotationSearchMetrics extends \Google\Protobuf\Internal\Message

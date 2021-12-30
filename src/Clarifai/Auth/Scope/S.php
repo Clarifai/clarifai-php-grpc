@@ -12,11 +12,11 @@ use UnexpectedValueException;
  * update the TestScopes function in main_key_test.go and TestGetExposedScopes function in
  * scope_test.go
  * The dependencies listed for each scope are simply recommendations so that a user
- * cannot make a key that would be useless. Beyond the key creation they are not enforcee
+ * cannot make a key that would be useless. Beyond the key creation they are not enforced
  * but rather the scopes are enforce when data is accessed.
- * There is the following conventions in place, make sure you add them to the socpes for all new
+ * There is the following conventions in place, make sure you add them to the scopes for all new
  * resource types:
- * 1. *_Add required the corresponding _Get.
+ * 1. *_Add requires the corresponding _Get.
  * 2. *_Delete requires the corresponding _Add and _Get.
  * 3. *_Patch is deprecated and not check anywhere.
  *

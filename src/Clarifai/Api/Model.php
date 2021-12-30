@@ -9,9 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/model.proto
- * //////////////////////////////////////////////////////////////////////////////
  * This is the Model object which represents a created model in the platform.
  * Each model has a particular type denoted by the model_type_id.
  * When creating a Model with PostModels the following happens:
@@ -35,9 +32,9 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * A nicer-to-read name for the model. Can have spaces and special characters.
+     * DEPRECATED: Please use the model id to name the model.
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 2 [deprecated = true];</code>
      */
     protected $name = '';
     /**
@@ -75,10 +72,9 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     protected $model_version = null;
     /**
-     * An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-     * need a temporary workaround while we check what depends on these names.
+     * DEPRECATED: Please use the model id to name the model.
      *
-     * Generated from protobuf field <code>string display_name = 7;</code>
+     * Generated from protobuf field <code>string display_name = 7 [deprecated = true];</code>
      */
     protected $display_name = '';
     /**
@@ -128,9 +124,8 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     protected $metadata = null;
     /**
-     * Notes about a model (should support markdown)
-     * This field should be used for in-depth notes about
-     * about a model and supports up to 64Kbs.
+     * Notes for the model
+     * This field should be used for in-depth notes and supports up to 64Kbs.
      *
      * Generated from protobuf field <code>string notes = 18;</code>
      */
@@ -148,6 +143,12 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     private $use_cases;
     /**
+     * Tags from languages category.
+     *
+     * Generated from protobuf field <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    private $languages;
+    /**
      * Is starred by the requesting user (only showed on get/list requests)
      * Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
      *
@@ -161,6 +162,12 @@ class Model extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 star_count = 23;</code>
      */
     protected $star_count = 0;
+    /**
+     * Configuration used to import model from third-party toolkits
+     *
+     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     */
+    protected $import_info = null;
 
     /**
      * Constructor.
@@ -171,7 +178,7 @@ class Model extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           The model's ID. Must be unique within a particular app and URL-friendly.
      *     @type string $name
-     *           A nicer-to-read name for the model. Can have spaces and special characters.
+     *           DEPRECATED: Please use the model id to name the model.
      *     @type \Google\Protobuf\Timestamp $created_at
      *           When the model was created. We follow the XXXX timestamp
      *           format. We use https://www.ietf.org/rfc/rfc3339.txt format:
@@ -187,8 +194,7 @@ class Model extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\ModelVersion $model_version
      *           A particular version of the model, e.g., to specify the version when creating a workflow.
      *     @type string $display_name
-     *           An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-     *           need a temporary workaround while we check what depends on these names.
+     *           DEPRECATED: Please use the model id to name the model.
      *     @type string $user_id
      *           The user id that the model belongs to.
      *     @type \Clarifai\Api\InputInfo $input_info
@@ -208,19 +214,22 @@ class Model extends \Google\Protobuf\Internal\Message
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *     @type string $notes
-     *           Notes about a model (should support markdown)
-     *           This field should be used for in-depth notes about
-     *           about a model and supports up to 64Kbs.
+     *           Notes for the model
+     *           This field should be used for in-depth notes and supports up to 64Kbs.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $toolkits
      *           Tags from toolkits category
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $use_cases
      *           Tags from use_cases category
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $languages
+     *           Tags from languages category.
      *     @type bool $is_starred
      *           Is starred by the requesting user (only showed on get/list requests)
      *           Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
      *     @type int $star_count
      *           How many users have starred the model (only showed on get/list requests)
      *           Computed value, not editable
+     *     @type \Clarifai\Api\ImportInfo $import_info
+     *           Configuration used to import model from third-party toolkits
      * }
      */
     public function __construct($data = NULL) {
@@ -255,9 +264,9 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A nicer-to-read name for the model. Can have spaces and special characters.
+     * DEPRECATED: Please use the model id to name the model.
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 2 [deprecated = true];</code>
      * @return string
      */
     public function getName()
@@ -266,9 +275,9 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A nicer-to-read name for the model. Can have spaces and special characters.
+     * DEPRECATED: Please use the model id to name the model.
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
      */
@@ -419,10 +428,9 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-     * need a temporary workaround while we check what depends on these names.
+     * DEPRECATED: Please use the model id to name the model.
      *
-     * Generated from protobuf field <code>string display_name = 7;</code>
+     * Generated from protobuf field <code>string display_name = 7 [deprecated = true];</code>
      * @return string
      */
     public function getDisplayName()
@@ -431,10 +439,9 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-     * need a temporary workaround while we check what depends on these names.
+     * DEPRECATED: Please use the model id to name the model.
      *
-     * Generated from protobuf field <code>string display_name = 7;</code>
+     * Generated from protobuf field <code>string display_name = 7 [deprecated = true];</code>
      * @param string $var
      * @return $this
      */
@@ -637,9 +644,8 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Notes about a model (should support markdown)
-     * This field should be used for in-depth notes about
-     * about a model and supports up to 64Kbs.
+     * Notes for the model
+     * This field should be used for in-depth notes and supports up to 64Kbs.
      *
      * Generated from protobuf field <code>string notes = 18;</code>
      * @return string
@@ -650,9 +656,8 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Notes about a model (should support markdown)
-     * This field should be used for in-depth notes about
-     * about a model and supports up to 64Kbs.
+     * Notes for the model
+     * This field should be used for in-depth notes and supports up to 64Kbs.
      *
      * Generated from protobuf field <code>string notes = 18;</code>
      * @param string $var
@@ -719,6 +724,32 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Tags from languages category.
+     *
+     * Generated from protobuf field <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLanguages()
+    {
+        return $this->languages;
+    }
+
+    /**
+     * Tags from languages category.
+     *
+     * Generated from protobuf field <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLanguages($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->languages = $arr;
+
+        return $this;
+    }
+
+    /**
      * Is starred by the requesting user (only showed on get/list requests)
      * Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
      *
@@ -770,6 +801,32 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->star_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Configuration used to import model from third-party toolkits
+     *
+     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     * @return \Clarifai\Api\ImportInfo
+     */
+    public function getImportInfo()
+    {
+        return $this->import_info;
+    }
+
+    /**
+     * Configuration used to import model from third-party toolkits
+     *
+     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     * @param \Clarifai\Api\ImportInfo $var
+     * @return $this
+     */
+    public function setImportInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ImportInfo::class);
+        $this->import_info = $var;
 
         return $this;
     }

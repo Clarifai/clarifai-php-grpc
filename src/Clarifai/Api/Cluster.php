@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/cluster.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Cluster data
  *
  * Generated from protobuf message <code>clarifai.api.Cluster</code>
  */

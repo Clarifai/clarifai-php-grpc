@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * PasswordViolations
+ *
  * Generated from protobuf message <code>clarifai.api.PasswordViolations</code>
  */
 class PasswordViolations extends \Google\Protobuf\Internal\Message

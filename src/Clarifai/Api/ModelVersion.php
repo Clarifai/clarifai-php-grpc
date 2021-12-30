@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/model_version.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * ModelVersion
  *
  * Generated from protobuf message <code>clarifai.api.ModelVersion</code>
  */
@@ -96,6 +94,12 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string license = 17;</code>
      */
     protected $license = '';
+    /**
+     * Dataset version used to create this model version.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+     */
+    protected $dataset_version = null;
 
     /**
      * Constructor.
@@ -130,6 +134,8 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *     @type string $license
+     *     @type \Clarifai\Api\DatasetVersion $dataset_version
+     *           Dataset version used to create this model version.
      * }
      */
     public function __construct($data = NULL) {
@@ -487,6 +493,32 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->license = $var;
+
+        return $this;
+    }
+
+    /**
+     * Dataset version used to create this model version.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+     * @return \Clarifai\Api\DatasetVersion
+     */
+    public function getDatasetVersion()
+    {
+        return $this->dataset_version;
+    }
+
+    /**
+     * Dataset version used to create this model version.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+     * @param \Clarifai\Api\DatasetVersion $var
+     * @return $this
+     */
+    public function setDatasetVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersion::class);
+        $this->dataset_version = $var;
 
         return $this;
     }

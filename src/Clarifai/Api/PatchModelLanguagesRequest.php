@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>clarifai.api.DeleteModelVersionsUnpublishRequest</code>
+ * Generated from protobuf message <code>clarifai.api.PatchModelLanguagesRequest</code>
  */
-class DeleteModelVersionsUnpublishRequest extends \Google\Protobuf\Internal\Message
+class PatchModelLanguagesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -22,9 +22,15 @@ class DeleteModelVersionsUnpublishRequest extends \Google\Protobuf\Internal\Mess
      */
     protected $model_id = '';
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
+     * Generated from protobuf field <code>repeated string languages = 3;</code>
      */
-    private $publications;
+    private $languages;
+    /**
+     * Only overwrite supported
+     *
+     * Generated from protobuf field <code>string action = 4;</code>
+     */
+    protected $action = '';
 
     /**
      * Constructor.
@@ -34,7 +40,9 @@ class DeleteModelVersionsUnpublishRequest extends \Google\Protobuf\Internal\Mess
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $model_id
-     *     @type \Clarifai\Api\ModelVersionUnpublishRequest[]|\Google\Protobuf\Internal\RepeatedField $publications
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $languages
+     *     @type string $action
+     *           Only overwrite supported
      * }
      */
     public function __construct($data = NULL) {
@@ -87,23 +95,49 @@ class DeleteModelVersionsUnpublishRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
+     * Generated from protobuf field <code>repeated string languages = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getPublications()
+    public function getLanguages()
     {
-        return $this->publications;
+        return $this->languages;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     * @param \Clarifai\Api\ModelVersionUnpublishRequest[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated string languages = 3;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setPublications($var)
+    public function setLanguages($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\ModelVersionUnpublishRequest::class);
-        $this->publications = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->languages = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Only overwrite supported
+     *
+     * Generated from protobuf field <code>string action = 4;</code>
+     * @return string
+     */
+    public function getAction()
+    {
+        return $this->action;
+    }
+
+    /**
+     * Only overwrite supported
+     *
+     * Generated from protobuf field <code>string action = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAction($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->action = $var;
 
         return $this;
     }

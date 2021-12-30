@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * MultiScopeRootResponse
+ *
  * Generated from protobuf message <code>clarifai.api.MultiScopeRootResponse</code>
  */
 class MultiScopeRootResponse extends \Google\Protobuf\Internal\Message

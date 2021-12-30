@@ -23,10 +23,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Concept Relationships
-     * //////////////////////////////////////
-     *
      * List concept relations between concepts in the platform.
      * MUST be above ListConcepts so that if concept_id is empty this will still match
      * /concepts/relations to list all the concept relations in the app.
@@ -71,10 +67,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Concepts
-     * //////////////////////////////////////
-     *
      * List all the concepts with their positive and negative counts
      * @param \Clarifai\Api\GetConceptCountsRequest $argument input argument
      * @param array $metadata metadata
@@ -161,12 +153,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
-     * //////////////////////////////////////
-     * Concept Languages
-     * //////////////////////////////////////
-     *
      * Get a specific concept from an app.
      * @param \Clarifai\Api\GetConceptLanguageRequest $argument input argument
      * @param array $metadata metadata
@@ -195,7 +181,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Add a new tranlsation for this concept.
+     * Add a new translation for this concept.
      * @param \Clarifai\Api\PostConceptLanguagesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -224,10 +210,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Knowledge Graph
-     * //////////////////////////////////////
-     *
      * List all domain graphs.
      * @param \Clarifai\Api\ListKnowledgeGraphsRequest $argument input argument
      * @param array $metadata metadata
@@ -270,10 +252,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * annotations
-     * //////////////////////////////////////
-     *
      * Get a specific annotation from an app.
      * @param \Clarifai\Api\GetAnnotationRequest $argument input argument
      * @param array $metadata metadata
@@ -386,10 +364,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Inputs
-     * //////////////////////////////////////
-     *
      * Get input count per status.
      * @param \Clarifai\Api\GetInputCountRequest $argument input argument
      * @param array $metadata metadata
@@ -654,7 +628,6 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * Add a models to an app.
-     * FIXME(zeiler): this should have been a plural response.
      * @param \Clarifai\Api\PostModelsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -710,6 +683,48 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Update model toolkits tags
+     * @param \Clarifai\Api\PatchModelToolkitsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function PatchModelToolkits(\Clarifai\Api\PatchModelToolkitsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchModelToolkits',
+        $argument,
+        ['\Clarifai\Api\MultiModelToolkitResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Update model use_cases tags
+     * @param \Clarifai\Api\PatchModelUseCasesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function PatchModelUseCases(\Clarifai\Api\PatchModelUseCasesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchModelUseCases',
+        $argument,
+        ['\Clarifai\Api\MultiModelUseCaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Update model languages tags
+     * @param \Clarifai\Api\PatchModelLanguagesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function PatchModelLanguages(\Clarifai\Api\PatchModelLanguagesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchModelLanguages',
+        $argument,
+        ['\Clarifai\Api\MultiModelLanguageResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * List all the inputs.
      * @param \Clarifai\Api\ListModelInputsRequest $argument input argument
      * @param array $metadata metadata
@@ -724,12 +739,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
-     * //////////////////////////////////////
-     * Model versions
-     * //////////////////////////////////////
-     *
      * Get a specific model from an app.
      * @param \Clarifai\Api\GetModelVersionRequest $argument input argument
      * @param array $metadata metadata
@@ -758,6 +767,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * PostModelVersionsPublish
      * @param \Clarifai\Api\PostModelVersionsPublishRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -771,13 +781,14 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Clarifai\Api\DeleteModelVersionsUnpublishRequest $argument input argument
+     * PostModelVersionsUnPublish
+     * @param \Clarifai\Api\PostModelVersionsUnPublishRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function DeleteModelVersionsUnPublish(\Clarifai\Api\DeleteModelVersionsUnpublishRequest $argument,
+    public function PostModelVersionsUnPublish(\Clarifai\Api\PostModelVersionsUnPublishRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/DeleteModelVersionsUnPublish',
+        return $this->_simpleRequest('/clarifai.api.V2/PostModelVersionsUnPublish',
         $argument,
         ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);
@@ -787,7 +798,6 @@ class V2Client extends \Grpc\BaseStub {
      * NOTE: inconsistency: do we want this to return a SingleModelResponse?
      *
      * Create a new model version to trigger training of the model.
-     * FIXME(zeiler): this should have been a plural response.
      * @param \Clarifai\Api\PostModelVersionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -801,6 +811,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * PatchModelVersions
      * @param \Clarifai\Api\PatchModelVersionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -856,12 +867,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
-     * //////////////////////////////////////
-     * Model References
-     * //////////////////////////////////////
-     *
      * Lists model references tied to a particular model id.
      * @param \Clarifai\Api\ListModelReferencesRequest $argument input argument
      * @param array $metadata metadata
@@ -876,12 +881,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
-     * //////////////////////////////////////
-     * Model Version Input Examples
-     * //////////////////////////////////////
-     *
+     * GetModelVersionInputExample
      * @param \Clarifai\Api\GetModelVersionInputExampleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -895,6 +895,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * ListModelVersionInputExamples
      * @param \Clarifai\Api\ListModelVersionInputExamplesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1013,7 +1014,6 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * Compare embeddings distances using a workflow
-     *
      * @param \Clarifai\Api\PostWorkflowResultsSimilarityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1027,12 +1027,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
-     * //////////////////////////////////////
-     * Workflow Versions
-     * //////////////////////////////////////
-     *
      * List workflow versions.
      * @param \Clarifai\Api\ListWorkflowVersionsRequest $argument input argument
      * @param array $metadata metadata
@@ -1089,10 +1083,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * API Keys
-     * //////////////////////////////////////
-     *
      * Get a specific key from an app.
      * @param \Clarifai\Api\GetKeyRequest $argument input argument
      * @param array $metadata metadata
@@ -1235,10 +1225,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Apps
-     * //////////////////////////////////////
-     *
      * Get a specific app from an app.
      * @param \Clarifai\Api\GetAppRequest $argument input argument
      * @param array $metadata metadata
@@ -1327,12 +1313,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
-     * //////////////////////////////////////
-     * Password
-     * //////////////////////////////////////
-     *
      * Validate new password in real-time for a user
      * @param \Clarifai\Api\PostValidatePasswordRequest $argument input argument
      * @param array $metadata metadata
@@ -1347,10 +1327,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Searches
-     * //////////////////////////////////////
-     *
      * Get a saved search.
      * @param \Clarifai\Api\GetSearchRequest $argument input argument
      * @param array $metadata metadata
@@ -1449,6 +1425,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * DeleteAnnotationSearchMetrics
      * @param \Clarifai\Api\DeleteAnnotationSearchMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1476,12 +1453,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
-     * //////////////////////////////////////
-     * Status Codes
-     * //////////////////////////////////////
-     *
      * List all status codes.
      * @param \Clarifai\Api\ListStatusCodesRequest $argument input argument
      * @param array $metadata metadata
@@ -1510,10 +1481,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * App Sharing
-     * //////////////////////////////////////
-     *
      * owner list users who the app is shared with
      * @param \Clarifai\Api\ListCollaboratorsRequest $argument input argument
      * @param array $metadata metadata
@@ -1584,10 +1551,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * App duplication
-     * //////////////////////////////////////
-     *
      * start to duplicate an app which copies all the inputs, annotations, models, concepts etc. to a new app.
      * this is an async process, you should use ListAppDuplications or GetAppDuplication to check the status.
      * @param \Clarifai\Api\PostAppDuplicationsRequest $argument input argument
@@ -1631,10 +1594,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Tasks
-     * //////////////////////////////////////
-     *
      * Add tasks to an app.
      * @param \Clarifai\Api\PostTasksRequest $argument input argument
      * @param array $metadata metadata
@@ -1733,10 +1692,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Collectors
-     * //////////////////////////////////////
-     *
      * Add a list of Collectors to an app.
      * In the handler of this endpoint we also check for all the scopes of the  POST /inputs
      * endpoint.
@@ -1813,10 +1768,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////////////////////////////////////////////
-     * Stats Collection Endpoints.
-     * //////////////////////////////////////////////////////////////////////////////
-     *
+     * PostStatValues
      * @param \Clarifai\Api\PostStatValuesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1830,6 +1782,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * PostStatValuesAggregate
      * @param \Clarifai\Api\PostStatValuesAggregateRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1843,10 +1796,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Trending Metrics
-     * //////////////////////////////////////
-     *
      * Increase the view metric for a detail view
      * @param \Clarifai\Api\PostTrendingMetricsViewRequest $argument input argument
      * @param array $metadata metadata

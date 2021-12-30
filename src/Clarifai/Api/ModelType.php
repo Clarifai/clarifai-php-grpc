@@ -38,12 +38,6 @@ class ModelType extends \Google\Protobuf\Internal\Message
      */
     protected $description = '';
     /**
-     * The type of the model to create. This is currently stored in output_info.type.
-     *
-     * Generated from protobuf field <code>string type = 4;</code>
-     */
-    protected $type = '';
-    /**
      * The list of input fields that this model accepts. These are the keys of the Model's
      * InputInfo.fields_map
      *
@@ -126,8 +120,6 @@ class ModelType extends \Google\Protobuf\Internal\Message
      *           title for this model in model gallery
      *     @type string $description
      *           Description of this model type.
-     *     @type string $type
-     *           The type of the model to create. This is currently stored in output_info.type.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $input_fields
      *           The list of input fields that this model accepts. These are the keys of the Model's
      *           InputInfo.fields_map
@@ -241,32 +233,6 @@ class ModelType extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
-
-        return $this;
-    }
-
-    /**
-     * The type of the model to create. This is currently stored in output_info.type.
-     *
-     * Generated from protobuf field <code>string type = 4;</code>
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * The type of the model to create. This is currently stored in output_info.type.
-     *
-     * Generated from protobuf field <code>string type = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setType($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->type = $var;
 
         return $this;
     }

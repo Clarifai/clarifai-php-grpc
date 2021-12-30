@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * TimeSegment
+ *
  * Generated from protobuf message <code>clarifai.api.TimeSegment</code>
  */
 class TimeSegment extends \Google\Protobuf\Internal\Message
