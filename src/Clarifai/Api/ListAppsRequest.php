@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * ListAppsRequest
+ *
  * Generated from protobuf message <code>clarifai.api.ListAppsRequest</code>
  */
 class ListAppsRequest extends \Google\Protobuf\Internal\Message
@@ -53,11 +55,17 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * If true, we only return workflows that are handpicked by clarifai staff
+     * If true, we only return apps that are handpicked by clarifai staff
      *
      * Generated from protobuf field <code>bool featured_only = 9;</code>
      */
     protected $featured_only = false;
+    /**
+     * If true, we only return apps that are starred by the requesting user
+     *
+     * Generated from protobuf field <code>bool starred_only = 11;</code>
+     */
+    protected $starred_only = false;
     /**
      * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
      *
@@ -94,7 +102,9 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      *           Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
      *           Deprecated in favor of query
      *     @type bool $featured_only
-     *           If true, we only return workflows that are handpicked by clarifai staff
+     *           If true, we only return apps that are handpicked by clarifai staff
+     *     @type bool $starred_only
+     *           If true, we only return apps that are starred by the requesting user
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
      * }
@@ -321,7 +331,7 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If true, we only return workflows that are handpicked by clarifai staff
+     * If true, we only return apps that are handpicked by clarifai staff
      *
      * Generated from protobuf field <code>bool featured_only = 9;</code>
      * @return bool
@@ -332,7 +342,7 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If true, we only return workflows that are handpicked by clarifai staff
+     * If true, we only return apps that are handpicked by clarifai staff
      *
      * Generated from protobuf field <code>bool featured_only = 9;</code>
      * @param bool $var
@@ -342,6 +352,32 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->featured_only = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, we only return apps that are starred by the requesting user
+     *
+     * Generated from protobuf field <code>bool starred_only = 11;</code>
+     * @return bool
+     */
+    public function getStarredOnly()
+    {
+        return $this->starred_only;
+    }
+
+    /**
+     * If true, we only return apps that are starred by the requesting user
+     *
+     * Generated from protobuf field <code>bool starred_only = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setStarredOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->starred_only = $var;
 
         return $this;
     }

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * MultiKnowledgeGraphResponse
+ *
  * Generated from protobuf message <code>clarifai.api.MultiKnowledgeGraphResponse</code>
  */
 class MultiKnowledgeGraphResponse extends \Google\Protobuf\Internal\Message

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * DeleteModelVersionRequest
+ *
  * Generated from protobuf message <code>clarifai.api.DeleteModelVersionRequest</code>
  */
 class DeleteModelVersionRequest extends \Google\Protobuf\Internal\Message

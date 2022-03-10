@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * TaskWorkerPartitionedStrategyInfo
+ *
  * Generated from protobuf message <code>clarifai.api.TaskWorkerPartitionedStrategyInfo</code>
  */
 class TaskWorkerPartitionedStrategyInfo extends \Google\Protobuf\Internal\Message

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * ModelVersionInputExample
+ *
  * Generated from protobuf message <code>clarifai.api.ModelVersionInputExample</code>
  */
 class ModelVersionInputExample extends \Google\Protobuf\Internal\Message

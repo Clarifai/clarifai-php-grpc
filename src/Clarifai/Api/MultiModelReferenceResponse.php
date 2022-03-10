@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * MultiModelReferenceResponse
+ *
  * Generated from protobuf message <code>clarifai.api.MultiModelReferenceResponse</code>
  */
 class MultiModelReferenceResponse extends \Google\Protobuf\Internal\Message

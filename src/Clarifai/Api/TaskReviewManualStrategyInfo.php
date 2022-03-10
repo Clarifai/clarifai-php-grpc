@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * TaskReviewManualStrategyInfo
+ *
  * Generated from protobuf message <code>clarifai.api.TaskReviewManualStrategyInfo</code>
  */
 class TaskReviewManualStrategyInfo extends \Google\Protobuf\Internal\Message

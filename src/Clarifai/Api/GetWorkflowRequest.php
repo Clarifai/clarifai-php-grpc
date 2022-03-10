@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Requests / Responses from /proto/clarifai/api/workflow.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * GetWorkflowRequest
  *
  * Generated from protobuf message <code>clarifai.api.GetWorkflowRequest</code>
  */
@@ -41,6 +39,12 @@ class GetWorkflowRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string additional_fields = 4;</code>
      */
     private $additional_fields;
+    /**
+     * if true will not expand search to clarifai workflows
+     *
+     * Generated from protobuf field <code>bool exclude_clarifai_workflows = 5;</code>
+     */
+    protected $exclude_clarifai_workflows = false;
 
     /**
      * Constructor.
@@ -57,6 +61,8 @@ class GetWorkflowRequest extends \Google\Protobuf\Internal\Message
      *           Use this flag to look into clarifai published workflows first for a Workflow ID
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     *     @type bool $exclude_clarifai_workflows
+     *           if true will not expand search to clarifai workflows
      * }
      */
     public function __construct($data = NULL) {
@@ -164,6 +170,32 @@ class GetWorkflowRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->additional_fields = $arr;
+
+        return $this;
+    }
+
+    /**
+     * if true will not expand search to clarifai workflows
+     *
+     * Generated from protobuf field <code>bool exclude_clarifai_workflows = 5;</code>
+     * @return bool
+     */
+    public function getExcludeClarifaiWorkflows()
+    {
+        return $this->exclude_clarifai_workflows;
+    }
+
+    /**
+     * if true will not expand search to clarifai workflows
+     *
+     * Generated from protobuf field <code>bool exclude_clarifai_workflows = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setExcludeClarifaiWorkflows($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->exclude_clarifai_workflows = $var;
 
         return $this;
     }

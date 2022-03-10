@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/search.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Hit
  *
  * Generated from protobuf message <code>clarifai.api.Hit</code>
  */
@@ -49,6 +47,18 @@ class Hit extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 3;</code>
      */
     protected $annotation = null;
+    /**
+     * The customer-facing id of the user who owns the app the asset came from.
+     *
+     * Generated from protobuf field <code>string user_id = 4;</code>
+     */
+    protected $user_id = '';
+    /**
+     * The cfid of the app the asset came from.
+     *
+     * Generated from protobuf field <code>string app_id = 5;</code>
+     */
+    protected $app_id = '';
 
     /**
      * Constructor.
@@ -76,6 +86,10 @@ class Hit extends \Google\Protobuf\Internal\Message
      *           the search results to a region in your input, or a frame in a video input, this annotation
      *           field will be that matched annotation info and the input will be the image/video that the user
      *           originally added which contains those regions / frames.
+     *     @type string $user_id
+     *           The customer-facing id of the user who owns the app the asset came from.
+     *     @type string $app_id
+     *           The cfid of the app the asset came from.
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +199,58 @@ class Hit extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Annotation::class);
         $this->annotation = $var;
+
+        return $this;
+    }
+
+    /**
+     * The customer-facing id of the user who owns the app the asset came from.
+     *
+     * Generated from protobuf field <code>string user_id = 4;</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * The customer-facing id of the user who owns the app the asset came from.
+     *
+     * Generated from protobuf field <code>string user_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * The cfid of the app the asset came from.
+     *
+     * Generated from protobuf field <code>string app_id = 5;</code>
+     * @return string
+     */
+    public function getAppId()
+    {
+        return $this->app_id;
+    }
+
+    /**
+     * The cfid of the app the asset came from.
+     *
+     * Generated from protobuf field <code>string app_id = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAppId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->app_id = $var;
 
         return $this;
     }

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * PrecisionRecallCurve
+ *
  * Generated from protobuf message <code>clarifai.api.PrecisionRecallCurve</code>
  */
 class PrecisionRecallCurve extends \Google\Protobuf\Internal\Message

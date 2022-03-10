@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/audio.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Audio asset struct
  *
  * Generated from protobuf message <code>clarifai.api.Audio</code>
  */
@@ -48,6 +46,12 @@ class Audio extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.HostedURL hosted = 5;</code>
      */
     protected $hosted = null;
+    /**
+     * audio info
+     *
+     * Generated from protobuf field <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+     */
+    protected $audio_info = null;
 
     /**
      * Constructor.
@@ -70,6 +74,8 @@ class Audio extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\HostedURL $hosted
      *           The hosted field lists original audio hosted in Clarifai storage. This field is currently used
      *           only in response.
+     *     @type \Clarifai\Api\AudioInfo $audio_info
+     *           audio info
      * }
      */
     public function __construct($data = NULL) {
@@ -191,6 +197,32 @@ class Audio extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\HostedURL::class);
         $this->hosted = $var;
+
+        return $this;
+    }
+
+    /**
+     * audio info
+     *
+     * Generated from protobuf field <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+     * @return \Clarifai\Api\AudioInfo
+     */
+    public function getAudioInfo()
+    {
+        return $this->audio_info;
+    }
+
+    /**
+     * audio info
+     *
+     * Generated from protobuf field <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+     * @param \Clarifai\Api\AudioInfo $var
+     * @return $this
+     */
+    public function setAudioInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\AudioInfo::class);
+        $this->audio_info = $var;
 
         return $this;
     }

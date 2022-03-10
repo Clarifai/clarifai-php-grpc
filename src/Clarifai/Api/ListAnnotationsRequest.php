@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * ListAnnotationsRequest
+ *
  * Generated from protobuf message <code>clarifai.api.ListAnnotationsRequest</code>
  */
 class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
@@ -70,6 +72,12 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $list_all_annotations = false;
     /**
+     * Set this flag to return the model output for model annotations in the response.
+     *
+     * Generated from protobuf field <code>bool return_model_output = 12;</code>
+     */
+    protected $return_model_output = false;
+    /**
      * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
      * Defaults to 1.
      *
@@ -125,6 +133,8 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
      *     @type bool $list_all_annotations
      *           Set this flag to list both trusted and not trusted annotations
      *           by default it's listing only trusted annotations
+     *     @type bool $return_model_output
+     *           Set this flag to return the model output for model annotations in the response.
      *     @type int $page
      *           (optional URL parameter) The page number. Pagination is used to split the results into chunks.
      *           Defaults to 1.
@@ -346,6 +356,32 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->list_all_annotations = $var;
+
+        return $this;
+    }
+
+    /**
+     * Set this flag to return the model output for model annotations in the response.
+     *
+     * Generated from protobuf field <code>bool return_model_output = 12;</code>
+     * @return bool
+     */
+    public function getReturnModelOutput()
+    {
+        return $this->return_model_output;
+    }
+
+    /**
+     * Set this flag to return the model output for model annotations in the response.
+     *
+     * Generated from protobuf field <code>bool return_model_output = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setReturnModelOutput($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->return_model_output = $var;
 
         return $this;
     }

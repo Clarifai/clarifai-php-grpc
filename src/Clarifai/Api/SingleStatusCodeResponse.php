@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * SingleStatusCodeResponse
+ *
  * Generated from protobuf message <code>clarifai.api.SingleStatusCodeResponse</code>
  */
 class SingleStatusCodeResponse extends \Google\Protobuf\Internal\Message

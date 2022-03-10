@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/data.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Data
  *
  * Generated from protobuf message <code>clarifai.api.Data</code>
  */
@@ -102,6 +100,12 @@ class Data extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
      */
     private $time_segments;
+    /**
+     * Holds score, rank, and user, app, input IDs and search hit data
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    private $hits;
 
     /**
      * Constructor.
@@ -138,6 +142,8 @@ class Data extends \Google\Protobuf\Internal\Message
      *           Track information.
      *     @type \Clarifai\Api\TimeSegment[]|\Google\Protobuf\Internal\RepeatedField $time_segments
      *           Time segments information.
+     *     @type \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $hits
+     *           Holds score, rank, and user, app, input IDs and search hit data
      * }
      */
     public function __construct($data = NULL) {
@@ -507,6 +513,32 @@ class Data extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\TimeSegment::class);
         $this->time_segments = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Holds score, rank, and user, app, input IDs and search hit data
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Hit hits = 17;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getHits()
+    {
+        return $this->hits;
+    }
+
+    /**
+     * Holds score, rank, and user, app, input IDs and search hit data
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Hit hits = 17;</code>
+     * @param \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setHits($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Hit::class);
+        $this->hits = $arr;
 
         return $this;
     }

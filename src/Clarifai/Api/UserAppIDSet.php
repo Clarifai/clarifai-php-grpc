@@ -9,9 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/common.proto
- * //////////////////////////////////////////////////////////////////////////////
  * Common message to identify the app in a url endpoint.
  *
  * Generated from protobuf message <code>clarifai.api.UserAppIDSet</code>

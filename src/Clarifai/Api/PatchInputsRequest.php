@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * PatchInputsRequest
+ *
  * Generated from protobuf message <code>clarifai.api.PatchInputsRequest</code>
  */
 class PatchInputsRequest extends \Google\Protobuf\Internal\Message
@@ -18,6 +20,11 @@ class PatchInputsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_app_id = null;
     /**
+     * List of inputs to patch.
+     * Inputs are identified by id field.
+     * For each input, the following fields are patchable:
+     * * data
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     private $inputs;
@@ -37,6 +44,10 @@ class PatchInputsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $inputs
+     *           List of inputs to patch.
+     *           Inputs are identified by id field.
+     *           For each input, the following fields are patchable:
+     *           * data
      *     @type string $action
      *           The action to perform on the patched objects
      *           For now actions 'merge', 'overwrite', and 'remove' are supported
@@ -70,6 +81,11 @@ class PatchInputsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * List of inputs to patch.
+     * Inputs are identified by id field.
+     * For each input, the following fields are patchable:
+     * * data
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.Input inputs = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -79,6 +95,11 @@ class PatchInputsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * List of inputs to patch.
+     * Inputs are identified by id field.
+     * For each input, the following fields are patchable:
+     * * data
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.Input inputs = 2;</code>
      * @param \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this

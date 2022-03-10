@@ -42,20 +42,6 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
      */
     protected $message = '';
     /**
-     * To help clients know what type of Data to expect out of the model.
-     * TO BE DEPRECATED
-     *
-     * Generated from protobuf field <code>string type = 4;</code>
-     */
-    protected $type = '';
-    /**
-     * Extra metadata about the Type data.
-     * TO BE DEPRECATED
-     *
-     * Generated from protobuf field <code>string type_ext = 5;</code>
-     */
-    protected $type_ext = '';
-    /**
      * Map from the api.Data field names to the underlying model graph's outputs. When using a
      * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
      *
@@ -84,12 +70,6 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
      *           TO BE DEPRECATED
      *     @type string $message
      *           For returning where to look for the Output info if not returning it.
-     *     @type string $type
-     *           To help clients know what type of Data to expect out of the model.
-     *           TO BE DEPRECATED
-     *     @type string $type_ext
-     *           Extra metadata about the Type data.
-     *           TO BE DEPRECATED
      *     @type \Google\Protobuf\Struct $fields_map
      *           Map from the api.Data field names to the underlying model graph's outputs. When using a
      *           PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
@@ -180,62 +160,6 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->message = $var;
-
-        return $this;
-    }
-
-    /**
-     * To help clients know what type of Data to expect out of the model.
-     * TO BE DEPRECATED
-     *
-     * Generated from protobuf field <code>string type = 4;</code>
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * To help clients know what type of Data to expect out of the model.
-     * TO BE DEPRECATED
-     *
-     * Generated from protobuf field <code>string type = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setType($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Extra metadata about the Type data.
-     * TO BE DEPRECATED
-     *
-     * Generated from protobuf field <code>string type_ext = 5;</code>
-     * @return string
-     */
-    public function getTypeExt()
-    {
-        return $this->type_ext;
-    }
-
-    /**
-     * Extra metadata about the Type data.
-     * TO BE DEPRECATED
-     *
-     * Generated from protobuf field <code>string type_ext = 5;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTypeExt($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->type_ext = $var;
 
         return $this;
     }

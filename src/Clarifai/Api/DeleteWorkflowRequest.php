@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * DeleteWorkflowRequest
+ *
  * Generated from protobuf message <code>clarifai.api.DeleteWorkflowRequest</code>
  */
 class DeleteWorkflowRequest extends \Google\Protobuf\Internal\Message

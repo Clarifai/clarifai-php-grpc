@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/app.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Application with tasks and datasets
  *
  * Generated from protobuf message <code>clarifai.api.App</code>
  */
@@ -109,6 +107,13 @@ class App extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 star_count = 20;</code>
      */
     protected $star_count = 0;
+    /**
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     *
+     * Generated from protobuf field <code>string notes = 21;</code>
+     */
+    protected $notes = '';
 
     /**
      * Constructor.
@@ -152,6 +157,9 @@ class App extends \Google\Protobuf\Internal\Message
      *     @type int $star_count
      *           How many users have starred the app (only showed on get/list requests)
      *           Computed value, not editable
+     *     @type string $notes
+     *           Notes for the application
+     *           This field should be used for in-depth notes and supports up to 64Kbs.
      * }
      */
     public function __construct($data = NULL) {
@@ -549,6 +557,34 @@ class App extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->star_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     *
+     * Generated from protobuf field <code>string notes = 21;</code>
+     * @return string
+     */
+    public function getNotes()
+    {
+        return $this->notes;
+    }
+
+    /**
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     *
+     * Generated from protobuf field <code>string notes = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNotes($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->notes = $var;
 
         return $this;
     }

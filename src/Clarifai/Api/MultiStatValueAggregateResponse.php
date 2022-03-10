@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * MultiStatValueAggregateResponse
+ *
  * Generated from protobuf message <code>clarifai.api.MultiStatValueAggregateResponse</code>
  */
 class MultiStatValueAggregateResponse extends \Google\Protobuf\Internal\Message

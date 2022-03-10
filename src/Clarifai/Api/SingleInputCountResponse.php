@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * SingleInputCountResponse
+ *
  * Generated from protobuf message <code>clarifai.api.SingleInputCountResponse</code>
  */
 class SingleInputCountResponse extends \Google\Protobuf\Internal\Message
@@ -18,8 +20,6 @@ class SingleInputCountResponse extends \Google\Protobuf\Internal\Message
      */
     protected $status = null;
     /**
-     * NOTE: inconsistency: not named after the object name.
-     *
      * Generated from protobuf field <code>.clarifai.api.InputCount counts = 2;</code>
      */
     protected $counts = null;
@@ -32,7 +32,6 @@ class SingleInputCountResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *     @type \Clarifai\Api\InputCount $counts
-     *           NOTE: inconsistency: not named after the object name.
      * }
      */
     public function __construct($data = NULL) {
@@ -63,8 +62,6 @@ class SingleInputCountResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * NOTE: inconsistency: not named after the object name.
-     *
      * Generated from protobuf field <code>.clarifai.api.InputCount counts = 2;</code>
      * @return \Clarifai\Api\InputCount
      */
@@ -74,8 +71,6 @@ class SingleInputCountResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * NOTE: inconsistency: not named after the object name.
-     *
      * Generated from protobuf field <code>.clarifai.api.InputCount counts = 2;</code>
      * @param \Clarifai\Api\InputCount $var
      * @return $this

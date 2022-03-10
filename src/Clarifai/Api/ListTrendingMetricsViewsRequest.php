@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * ListTrendingMetricsViewsRequest
+ *
  * Generated from protobuf message <code>clarifai.api.ListTrendingMetricsViewsRequest</code>
  */
 class ListTrendingMetricsViewsRequest extends \Google\Protobuf\Internal\Message

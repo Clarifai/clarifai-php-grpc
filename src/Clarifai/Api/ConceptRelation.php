@@ -9,9 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/concept_graph.proto
- * //////////////////////////////////////////////////////////////////////////////
  * This represents a relation (i.e. edge) between the subject concept and the object concept
  *
  * Generated from protobuf message <code>clarifai.api.ConceptRelation</code>
