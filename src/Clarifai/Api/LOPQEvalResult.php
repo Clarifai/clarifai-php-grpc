@@ -9,8 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * NOTE(Janvier): We copy this from proto/utils/lopq_service.proto instead of importing it because
- * we should not import internal protos in public protos.
+ * LOPQEvalResult
  *
  * Generated from protobuf message <code>clarifai.api.LOPQEvalResult</code>
  */

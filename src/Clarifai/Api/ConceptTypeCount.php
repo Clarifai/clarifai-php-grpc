@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * ConceptTypeCount
+ *
  * Generated from protobuf message <code>clarifai.api.ConceptTypeCount</code>
  */
 class ConceptTypeCount extends \Google\Protobuf\Internal\Message

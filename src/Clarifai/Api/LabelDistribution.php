@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * LabelDistribution
+ *
  * Generated from protobuf message <code>clarifai.api.LabelDistribution</code>
  */
 class LabelDistribution extends \Google\Protobuf\Internal\Message

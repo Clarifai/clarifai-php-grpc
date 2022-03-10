@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * ListSearchesRequest
+ *
  * Generated from protobuf message <code>clarifai.api.ListSearchesRequest</code>
  */
 class ListSearchesRequest extends \Google\Protobuf\Internal\Message

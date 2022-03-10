@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Stats Collection Objects.
- * //////////////////////////////////////////////////////////////////////////////
+ * StatValue
  *
  * Generated from protobuf message <code>clarifai.api.StatValue</code>
  */

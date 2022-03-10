@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * ModelQuery
+ *
  * Generated from protobuf message <code>clarifai.api.ModelQuery</code>
  */
 class ModelQuery extends \Google\Protobuf\Internal\Message
@@ -19,12 +21,6 @@ class ModelQuery extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 1;</code>
      */
     protected $name = '';
-    /**
-     * This is the legacy model type. Do not use, only kept for support in old API clients.
-     *
-     * Generated from protobuf field <code>string type = 2 [deprecated = true];</code>
-     */
-    protected $type = '';
     /**
      * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
      * supported.
@@ -41,8 +37,6 @@ class ModelQuery extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           The name ofthe field. This supports wilcard queries like "gen*" to match "general" as an example.
-     *     @type string $type
-     *           This is the legacy model type. Do not use, only kept for support in old API clients.
      *     @type string $model_type_id
      *           Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
      *           supported.
@@ -75,32 +69,6 @@ class ModelQuery extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * This is the legacy model type. Do not use, only kept for support in old API clients.
-     *
-     * Generated from protobuf field <code>string type = 2 [deprecated = true];</code>
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * This is the legacy model type. Do not use, only kept for support in old API clients.
-     *
-     * Generated from protobuf field <code>string type = 2 [deprecated = true];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setType($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->type = $var;
 
         return $this;
     }

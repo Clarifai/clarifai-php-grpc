@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * PostValidatePasswordRequest
+ *
  * Generated from protobuf message <code>clarifai.api.PostValidatePasswordRequest</code>
  */
 class PostValidatePasswordRequest extends \Google\Protobuf\Internal\Message

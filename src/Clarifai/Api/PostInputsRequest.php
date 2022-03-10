@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * PostInputsRequest
+ *
  * Generated from protobuf message <code>clarifai.api.PostInputsRequest</code>
  */
 class PostInputsRequest extends \Google\Protobuf\Internal\Message
@@ -18,6 +20,12 @@ class PostInputsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_app_id = null;
     /**
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     private $inputs;
@@ -30,6 +38,11 @@ class PostInputsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $inputs
+     *           List of inputs to post.
+     *           For each input, the following fields are used:
+     *           * id
+     *           * data
+     *           * dataset_ids
      * }
      */
     public function __construct($data = NULL) {
@@ -60,6 +73,12 @@ class PostInputsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.Input inputs = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -69,6 +88,12 @@ class PostInputsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.Input inputs = 2;</code>
      * @param \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this

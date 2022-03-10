@@ -9,8 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A link to a html/markdown/text file that stores reference material
- * tied to a model.
+ * A link to a html/markdown/text file that stores reference material tied to a model.
  *
  * Generated from protobuf message <code>clarifai.api.ModelReference</code>
  */

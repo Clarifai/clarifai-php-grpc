@@ -39,6 +39,18 @@ class RegionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Point point = 6;</code>
      */
     protected $point = null;
+    /**
+     * Span char sequence for NLP.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Span span = 7;</code>
+     */
+    protected $span = null;
+    /**
+     * Token char sequence for NLP.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Token token = 8;</code>
+     */
+    protected $token = null;
 
     /**
      * Constructor.
@@ -54,6 +66,10 @@ class RegionInfo extends \Google\Protobuf\Internal\Message
      *           A polygon of points.
      *     @type \Clarifai\Api\Point $point
      *           A landmark point location.
+     *     @type \Clarifai\Api\Span $span
+     *           Span char sequence for NLP.
+     *     @type \Clarifai\Api\Token $token
+     *           Token char sequence for NLP.
      * }
      */
     public function __construct($data = NULL) {
@@ -161,6 +177,58 @@ class RegionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Point::class);
         $this->point = $var;
+
+        return $this;
+    }
+
+    /**
+     * Span char sequence for NLP.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Span span = 7;</code>
+     * @return \Clarifai\Api\Span
+     */
+    public function getSpan()
+    {
+        return $this->span;
+    }
+
+    /**
+     * Span char sequence for NLP.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Span span = 7;</code>
+     * @param \Clarifai\Api\Span $var
+     * @return $this
+     */
+    public function setSpan($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Span::class);
+        $this->span = $var;
+
+        return $this;
+    }
+
+    /**
+     * Token char sequence for NLP.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Token token = 8;</code>
+     * @return \Clarifai\Api\Token
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
+     * Token char sequence for NLP.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Token token = 8;</code>
+     * @param \Clarifai\Api\Token $var
+     * @return $this
+     */
+    public function setToken($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Token::class);
+        $this->token = $var;
 
         return $this;
     }

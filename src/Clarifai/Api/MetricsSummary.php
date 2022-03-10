@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * FIXME: copy this into an internal proto since it is stored in DB and field names can't change.
+ * MetricsSummary
  *
  * Generated from protobuf message <code>clarifai.api.MetricsSummary</code>
  */

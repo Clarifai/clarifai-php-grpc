@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * GeoLimit
+ *
  * Generated from protobuf message <code>clarifai.api.GeoLimit</code>
  */
 class GeoLimit extends \Google\Protobuf\Internal\Message

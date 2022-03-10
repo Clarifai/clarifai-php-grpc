@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * ListOpenSourceLicensesResponse
+ *
  * Generated from protobuf message <code>clarifai.api.ListOpenSourceLicensesResponse</code>
  */
 class ListOpenSourceLicensesResponse extends \Google\Protobuf\Internal\Message

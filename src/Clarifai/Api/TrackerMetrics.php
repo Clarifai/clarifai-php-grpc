@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * TrackerMetrics
+ *
  * Generated from protobuf message <code>clarifai.api.TrackerMetrics</code>
  */
 class TrackerMetrics extends \Google\Protobuf\Internal\Message

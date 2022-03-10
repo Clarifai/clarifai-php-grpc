@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * AppDuplication
+ *
  * Generated from protobuf message <code>clarifai.api.AppDuplication</code>
  */
 class AppDuplication extends \Google\Protobuf\Internal\Message
@@ -20,13 +22,16 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      *
      * Generated from protobuf field <code>string new_app_id = 2;</code>
      */
     protected $new_app_id = '';
     /**
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      *
      * Generated from protobuf field <code>string new_app_name = 3;</code>
      */
@@ -55,6 +60,14 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
      */
     protected $filter = null;
+    /**
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     *
+     * Generated from protobuf field <code>string existing_app_id = 8;</code>
+     */
+    protected $existing_app_id = '';
 
     /**
      * Constructor.
@@ -65,9 +78,12 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *          the id of app duplication
      *     @type string $new_app_id
-     *          the id of new app
+     *           the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     *           if new_app_name is empty, the name will be the same as this id.
+     *           You can not set this if existing_app_id is set.
      *     @type string $new_app_name
-     *          the name of new app
+     *          the name of new app. If provided, we will create a new application with this name.
+     *           You can not set this if existing_app_id is set.
      *     @type \Clarifai\Api\Status\Status $status
      *          the status of app duplication
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -76,6 +92,10 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *          The last time when is the status got updated
      *     @type \Clarifai\Api\AppDuplicationFilters $filter
      *           Only copy resources depending on the filters
+     *     @type string $existing_app_id
+     *           the id of existing app you want to copy data into.
+     *           you can not set this if either new_app_id or new_app_name is set.
+     *           if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
      * }
      */
     public function __construct($data = NULL) {
@@ -110,7 +130,9 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      *
      * Generated from protobuf field <code>string new_app_id = 2;</code>
      * @return string
@@ -121,7 +143,9 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      *
      * Generated from protobuf field <code>string new_app_id = 2;</code>
      * @param string $var
@@ -136,7 +160,8 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      *
      * Generated from protobuf field <code>string new_app_name = 3;</code>
      * @return string
@@ -147,7 +172,8 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      *
      * Generated from protobuf field <code>string new_app_name = 3;</code>
      * @param string $var
@@ -261,6 +287,36 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\AppDuplicationFilters::class);
         $this->filter = $var;
+
+        return $this;
+    }
+
+    /**
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     *
+     * Generated from protobuf field <code>string existing_app_id = 8;</code>
+     * @return string
+     */
+    public function getExistingAppId()
+    {
+        return $this->existing_app_id;
+    }
+
+    /**
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     *
+     * Generated from protobuf field <code>string existing_app_id = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExistingAppId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->existing_app_id = $var;
 
         return $this;
     }

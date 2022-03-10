@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/annotation.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Annotation of an asset with metadata
  *
  * Generated from protobuf message <code>clarifai.api.Annotation</code>
  */

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * GeoBoxedPoint
+ *
  * Generated from protobuf message <code>clarifai.api.GeoBoxedPoint</code>
  */
 class GeoBoxedPoint extends \Google\Protobuf\Internal\Message

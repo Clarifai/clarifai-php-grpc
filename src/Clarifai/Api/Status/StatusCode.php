@@ -543,6 +543,10 @@ class StatusCode
      */
     const DATA_DUMP_NO_DATA = 25154;
     /**
+     * Generated from protobuf enum <code>DATA_DUMP_UNEXPECTED_ERROR = 25155;</code>
+     */
+    const DATA_DUMP_UNEXPECTED_ERROR = 25155;
+    /**
      * Duplicate related 252xx
      *
      * Generated from protobuf enum <code>APP_DUPLICATION_SUCCESS = 25200;</code>
@@ -564,6 +568,24 @@ class StatusCode
      * Generated from protobuf enum <code>APP_DUPLICATION_INVALID_REQUEST = 25204;</code>
      */
     const APP_DUPLICATION_INVALID_REQUEST = 25204;
+    /**
+     * Module related codes 253xx
+     *
+     * Generated from protobuf enum <code>MODULE_DOES_NOT_EXIST = 25300;</code>
+     */
+    const MODULE_DOES_NOT_EXIST = 25300;
+    /**
+     * Generated from protobuf enum <code>MODULE_PERMISSION_DENIED = 25301;</code>
+     */
+    const MODULE_PERMISSION_DENIED = 25301;
+    /**
+     * Generated from protobuf enum <code>MODULE_INVALID_ARGUMENT = 25302;</code>
+     */
+    const MODULE_INVALID_ARGUMENT = 25302;
+    /**
+     * Generated from protobuf enum <code>MODULE_INVALID_REQUEST = 25303;</code>
+     */
+    const MODULE_INVALID_REQUEST = 25303;
     /**
      * Input:Image related 30xxx
      *
@@ -1486,11 +1508,16 @@ class StatusCode
         self::DATA_DUMP_FAILED => 'DATA_DUMP_FAILED',
         self::DATA_DUMP_IN_PROGRESS => 'DATA_DUMP_IN_PROGRESS',
         self::DATA_DUMP_NO_DATA => 'DATA_DUMP_NO_DATA',
+        self::DATA_DUMP_UNEXPECTED_ERROR => 'DATA_DUMP_UNEXPECTED_ERROR',
         self::APP_DUPLICATION_SUCCESS => 'APP_DUPLICATION_SUCCESS',
         self::APP_DUPLICATION_FAILED => 'APP_DUPLICATION_FAILED',
         self::APP_DUPLICATION_PENDING => 'APP_DUPLICATION_PENDING',
         self::APP_DUPLICATION_IN_PROGRESS => 'APP_DUPLICATION_IN_PROGRESS',
         self::APP_DUPLICATION_INVALID_REQUEST => 'APP_DUPLICATION_INVALID_REQUEST',
+        self::MODULE_DOES_NOT_EXIST => 'MODULE_DOES_NOT_EXIST',
+        self::MODULE_PERMISSION_DENIED => 'MODULE_PERMISSION_DENIED',
+        self::MODULE_INVALID_ARGUMENT => 'MODULE_INVALID_ARGUMENT',
+        self::MODULE_INVALID_REQUEST => 'MODULE_INVALID_REQUEST',
         self::INPUT_DOWNLOAD_SUCCESS => 'INPUT_DOWNLOAD_SUCCESS',
         self::INPUT_DOWNLOAD_PENDING => 'INPUT_DOWNLOAD_PENDING',
         self::INPUT_DOWNLOAD_FAILED => 'INPUT_DOWNLOAD_FAILED',

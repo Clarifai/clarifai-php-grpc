@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/text.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Text
  *
  * Generated from protobuf message <code>clarifai.api.Text</code>
  */
@@ -40,6 +38,12 @@ class Text extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.HostedURL hosted = 4;</code>
      */
     protected $hosted = null;
+    /**
+     * text info
+     *
+     * Generated from protobuf field <code>.clarifai.api.TextInfo text_info = 5;</code>
+     */
+    protected $text_info = null;
 
     /**
      * Constructor.
@@ -55,6 +59,8 @@ class Text extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\HostedURL $hosted
      *           The hosted field lists original text hosted in Clarifai storage. This field is currently used
      *           only in response.
+     *     @type \Clarifai\Api\TextInfo $text_info
+     *           text info
      * }
      */
     public function __construct($data = NULL) {
@@ -160,6 +166,32 @@ class Text extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\HostedURL::class);
         $this->hosted = $var;
+
+        return $this;
+    }
+
+    /**
+     * text info
+     *
+     * Generated from protobuf field <code>.clarifai.api.TextInfo text_info = 5;</code>
+     * @return \Clarifai\Api\TextInfo
+     */
+    public function getTextInfo()
+    {
+        return $this->text_info;
+    }
+
+    /**
+     * text info
+     *
+     * Generated from protobuf field <code>.clarifai.api.TextInfo text_info = 5;</code>
+     * @param \Clarifai\Api\TextInfo $var
+     * @return $this
+     */
+    public function setTextInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\TextInfo::class);
+        $this->text_info = $var;
 
         return $this;
     }

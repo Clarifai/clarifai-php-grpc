@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * PostWorkflowsRequest
+ *
  * Generated from protobuf message <code>clarifai.api.PostWorkflowsRequest</code>
  */
 class PostWorkflowsRequest extends \Google\Protobuf\Internal\Message

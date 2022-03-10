@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * MultiInputResponse
+ *
  * Generated from protobuf message <code>clarifai.api.MultiInputResponse</code>
  */
 class MultiInputResponse extends \Google\Protobuf\Internal\Message

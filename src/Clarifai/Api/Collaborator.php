@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/app_sharing.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Collaborator - invited user, who shares an access to an application
  *
  * Generated from protobuf message <code>clarifai.api.Collaborator</code>
  */
