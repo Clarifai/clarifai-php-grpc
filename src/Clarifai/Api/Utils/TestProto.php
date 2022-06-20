@@ -148,6 +148,11 @@ class TestProto extends \Google\Protobuf\Internal\Message
         return $this->readOneof(5);
     }
 
+    public function hasStringOneof()
+    {
+        return $this->hasOneof(5);
+    }
+
     /**
      * Generated from protobuf field <code>string string_oneof = 5;</code>
      * @param string $var
@@ -170,6 +175,11 @@ class TestProto extends \Google\Protobuf\Internal\Message
         return $this->readOneof(6);
     }
 
+    public function hasBoolOneof()
+    {
+        return $this->hasOneof(6);
+    }
+
     /**
      * Generated from protobuf field <code>bool bool_oneof = 6;</code>
      * @param bool $var
@@ -185,11 +195,16 @@ class TestProto extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.utils.TestProto2 message_oneof = 7;</code>
-     * @return \Clarifai\Api\Utils\TestProto2
+     * @return \Clarifai\Api\Utils\TestProto2|null
      */
     public function getMessageOneof()
     {
         return $this->readOneof(7);
+    }
+
+    public function hasMessageOneof()
+    {
+        return $this->hasOneof(7);
     }
 
     /**

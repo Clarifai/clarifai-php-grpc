@@ -42,20 +42,6 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
      */
     protected $message = '';
     /**
-     * To help clients know what type of Data to expect out of the model.
-     * TO BE DEPRECATED
-     *
-     * Generated from protobuf field <code>string type = 4;</code>
-     */
-    protected $type = '';
-    /**
-     * Extra metadata about the Type data.
-     * TO BE DEPRECATED
-     *
-     * Generated from protobuf field <code>string type_ext = 5;</code>
-     */
-    protected $type_ext = '';
-    /**
      * Map from the api.Data field names to the underlying model graph's outputs. When using a
      * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
      *
@@ -84,12 +70,6 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
      *           TO BE DEPRECATED
      *     @type string $message
      *           For returning where to look for the Output info if not returning it.
-     *     @type string $type
-     *           To help clients know what type of Data to expect out of the model.
-     *           TO BE DEPRECATED
-     *     @type string $type_ext
-     *           Extra metadata about the Type data.
-     *           TO BE DEPRECATED
      *     @type \Google\Protobuf\Struct $fields_map
      *           Map from the api.Data field names to the underlying model graph's outputs. When using a
      *           PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
@@ -108,11 +88,21 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
      * List of concepts or other output related data for the model.
      *
      * Generated from protobuf field <code>.clarifai.api.Data data = 1;</code>
-     * @return \Clarifai\Api\Data
+     * @return \Clarifai\Api\Data|null
      */
     public function getData()
     {
         return $this->data;
+    }
+
+    public function hasData()
+    {
+        return isset($this->data);
+    }
+
+    public function clearData()
+    {
+        unset($this->data);
     }
 
     /**
@@ -135,11 +125,21 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
      * TO BE DEPRECATED
      *
      * Generated from protobuf field <code>.clarifai.api.OutputConfig output_config = 2;</code>
-     * @return \Clarifai\Api\OutputConfig
+     * @return \Clarifai\Api\OutputConfig|null
      */
     public function getOutputConfig()
     {
         return $this->output_config;
+    }
+
+    public function hasOutputConfig()
+    {
+        return isset($this->output_config);
+    }
+
+    public function clearOutputConfig()
+    {
+        unset($this->output_config);
     }
 
     /**
@@ -185,71 +185,25 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * To help clients know what type of Data to expect out of the model.
-     * TO BE DEPRECATED
-     *
-     * Generated from protobuf field <code>string type = 4;</code>
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * To help clients know what type of Data to expect out of the model.
-     * TO BE DEPRECATED
-     *
-     * Generated from protobuf field <code>string type = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setType($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Extra metadata about the Type data.
-     * TO BE DEPRECATED
-     *
-     * Generated from protobuf field <code>string type_ext = 5;</code>
-     * @return string
-     */
-    public function getTypeExt()
-    {
-        return $this->type_ext;
-    }
-
-    /**
-     * Extra metadata about the Type data.
-     * TO BE DEPRECATED
-     *
-     * Generated from protobuf field <code>string type_ext = 5;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTypeExt($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->type_ext = $var;
-
-        return $this;
-    }
-
-    /**
      * Map from the api.Data field names to the underlying model graph's outputs. When using a
      * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct fields_map = 6;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getFieldsMap()
     {
         return $this->fields_map;
+    }
+
+    public function hasFieldsMap()
+    {
+        return isset($this->fields_map);
+    }
+
+    public function clearFieldsMap()
+    {
+        unset($this->fields_map);
     }
 
     /**
@@ -274,11 +228,21 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
      * to the model predictor to alter predictions from this Model.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct params = 7;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getParams()
     {
         return $this->params;
+    }
+
+    public function hasParams()
+    {
+        return isset($this->params);
+    }
+
+    public function clearParams()
+    {
+        unset($this->params);
     }
 
     /**

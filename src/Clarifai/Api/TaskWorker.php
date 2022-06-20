@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * TaskWorker
+ *
  * Generated from protobuf message <code>clarifai.api.TaskWorker</code>
  */
 class TaskWorker extends \Google\Protobuf\Internal\Message
@@ -21,10 +23,20 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
     protected $strategy = 0;
     /**
      * Who will work on this task.
+     * DEPRECATED: Use users.id instead.
      *
-     * Generated from protobuf field <code>repeated string user_ids = 2;</code>
+     * Generated from protobuf field <code>repeated string user_ids = 2 [deprecated = true];</code>
+     * @deprecated
      */
     private $user_ids;
+    /**
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    private $users;
     protected $strategy_info;
 
     /**
@@ -37,6 +49,11 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
      *           Worker strategy.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $user_ids
      *           Who will work on this task.
+     *           DEPRECATED: Use users.id instead.
+     *     @type \Clarifai\Api\User[]|\Google\Protobuf\Internal\RepeatedField $users
+     *           Users who will work on this task.
+     *           When the 'worker.users' field is additionally requested, then all user
+     *           info is filled for the workers. Otherwise, only the user 'id' is filled.
      *     @type \Clarifai\Api\TaskWorkerPartitionedStrategyInfo $partitioned_strategy_info
      * }
      */
@@ -65,7 +82,7 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
      */
     public function setStrategy($var)
     {
-        GPBUtil::checkEnum($var, \Clarifai\Api\TaskWorker_TaskWorkerStrategy::class);
+        GPBUtil::checkEnum($var, \Clarifai\Api\TaskWorker\TaskWorkerStrategy::class);
         $this->strategy = $var;
 
         return $this;
@@ -73,24 +90,30 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
 
     /**
      * Who will work on this task.
+     * DEPRECATED: Use users.id instead.
      *
-     * Generated from protobuf field <code>repeated string user_ids = 2;</code>
+     * Generated from protobuf field <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getUserIds()
     {
+        @trigger_error('user_ids is deprecated.', E_USER_DEPRECATED);
         return $this->user_ids;
     }
 
     /**
      * Who will work on this task.
+     * DEPRECATED: Use users.id instead.
      *
-     * Generated from protobuf field <code>repeated string user_ids = 2;</code>
+     * Generated from protobuf field <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setUserIds($var)
     {
+        @trigger_error('user_ids is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->user_ids = $arr;
 
@@ -98,12 +121,47 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.User users = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    /**
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.User users = 4;</code>
+     * @param \Clarifai\Api\User[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUsers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\User::class);
+        $this->users = $arr;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
-     * @return \Clarifai\Api\TaskWorkerPartitionedStrategyInfo
+     * @return \Clarifai\Api\TaskWorkerPartitionedStrategyInfo|null
      */
     public function getPartitionedStrategyInfo()
     {
         return $this->readOneof(3);
+    }
+
+    public function hasPartitionedStrategyInfo()
+    {
+        return $this->hasOneof(3);
     }
 
     /**

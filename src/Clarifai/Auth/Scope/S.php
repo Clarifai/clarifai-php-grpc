@@ -12,11 +12,11 @@ use UnexpectedValueException;
  * update the TestScopes function in main_key_test.go and TestGetExposedScopes function in
  * scope_test.go
  * The dependencies listed for each scope are simply recommendations so that a user
- * cannot make a key that would be useless. Beyond the key creation they are not enforcee
+ * cannot make a key that would be useless. Beyond the key creation they are not enforced
  * but rather the scopes are enforce when data is accessed.
- * There is the following conventions in place, make sure you add them to the socpes for all new
+ * There is the following conventions in place, make sure you add them to the scopes for all new
  * resource types:
- * 1. *_Add required the corresponding _Get.
+ * 1. *_Add requires the corresponding _Get.
  * 2. *_Delete requires the corresponding _Add and _Get.
  * 3. *_Patch is deprecated and not check anywhere.
  *
@@ -42,12 +42,6 @@ class S
      * Generated from protobuf enum <code>Predict = 2 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const Predict = 2;
-    /**
-     * Make an rpc to our search services.
-     *
-     * Generated from protobuf enum <code>Search = 3 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
-     */
-    const Search = 3;
     /**
      * Write to the inputs table in the DB.
      *
@@ -385,12 +379,82 @@ class S
      * Generated from protobuf enum <code>FindDuplicateAnnotationsJobs_Delete = 104 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
      */
     const FindDuplicateAnnotationsJobs_Delete = 104;
+    /**
+     * Generated from protobuf enum <code>Datasets_Get = 105 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const Datasets_Get = 105;
+    /**
+     * Generated from protobuf enum <code>Datasets_Add = 106 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Datasets_Get];</code>
+     */
+    const Datasets_Add = 106;
+    /**
+     * Generated from protobuf enum <code>Datasets_Delete = 107 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Datasets_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Datasets_Add];</code>
+     */
+    const Datasets_Delete = 107;
+    /**
+     * Make an rpc to our search services.
+     *
+     * Generated from protobuf enum <code>Search = 3 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const Search = 3;
+    /**
+     * To get a saved search.
+     *
+     * Generated from protobuf enum <code>SavedSearch_Get = 114 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const SavedSearch_Get = 114;
+    /**
+     * To add a saved search
+     *
+     * Generated from protobuf enum <code>SavedSearch_Add = 115 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = SavedSearch_Get];</code>
+     */
+    const SavedSearch_Add = 115;
+    /**
+     * To delete a saved search
+     *
+     * Generated from protobuf enum <code>SavedSearch_Delete = 116 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = SavedSearch_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = SavedSearch_Add];</code>
+     */
+    const SavedSearch_Delete = 116;
+    /**
+     * Generated from protobuf enum <code>ModelVersionPublications_Add = 117 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const ModelVersionPublications_Add = 117;
+    /**
+     * Generated from protobuf enum <code>ModelVersionPublications_Delete = 118 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const ModelVersionPublications_Delete = 118;
+    /**
+     * Generated from protobuf enum <code>WorkflowPublications_Add = 119 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const WorkflowPublications_Add = 119;
+    /**
+     * Generated from protobuf enum <code>WorkflowPublications_Delete = 120 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const WorkflowPublications_Delete = 120;
+    /**
+     * TODO(Hemanth): Expose Bulk Operation endpoints only after implementation
+     * To write bulk operations to the DB
+     *
+     * Generated from protobuf enum <code>BulkOperation_Add = 121 [(.clarifai.auth.scope.clarifai_depending_scopes) = BulkOperation_Get];</code>
+     */
+    const BulkOperation_Add = 121;
+    /**
+     * To Read Bulk Operations from the DB
+     *
+     * Generated from protobuf enum <code>BulkOperation_Get = 122;</code>
+     */
+    const BulkOperation_Get = 122;
+    /**
+     * To Delete Bulk Operations from the DB
+     *
+     * Generated from protobuf enum <code>BulkOperation_Delete = 123 [(.clarifai.auth.scope.clarifai_depending_scopes) = BulkOperation_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = BulkOperation_Get];</code>
+     */
+    const BulkOperation_Delete = 123;
 
     private static $valueToName = [
         self::undef => 'undef',
         self::All => 'All',
         self::Predict => 'Predict',
-        self::Search => 'Search',
         self::Inputs_Add => 'Inputs_Add',
         self::Inputs_Get => 'Inputs_Get',
         self::Inputs_Patch => 'Inputs_Patch',
@@ -447,6 +511,20 @@ class S
         self::FindDuplicateAnnotationsJobs_Add => 'FindDuplicateAnnotationsJobs_Add',
         self::FindDuplicateAnnotationsJobs_Get => 'FindDuplicateAnnotationsJobs_Get',
         self::FindDuplicateAnnotationsJobs_Delete => 'FindDuplicateAnnotationsJobs_Delete',
+        self::Datasets_Get => 'Datasets_Get',
+        self::Datasets_Add => 'Datasets_Add',
+        self::Datasets_Delete => 'Datasets_Delete',
+        self::Search => 'Search',
+        self::SavedSearch_Get => 'SavedSearch_Get',
+        self::SavedSearch_Add => 'SavedSearch_Add',
+        self::SavedSearch_Delete => 'SavedSearch_Delete',
+        self::ModelVersionPublications_Add => 'ModelVersionPublications_Add',
+        self::ModelVersionPublications_Delete => 'ModelVersionPublications_Delete',
+        self::WorkflowPublications_Add => 'WorkflowPublications_Add',
+        self::WorkflowPublications_Delete => 'WorkflowPublications_Delete',
+        self::BulkOperation_Add => 'BulkOperation_Add',
+        self::BulkOperation_Get => 'BulkOperation_Get',
+        self::BulkOperation_Delete => 'BulkOperation_Delete',
     ];
 
     public static function name($value)

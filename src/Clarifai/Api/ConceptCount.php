@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * ConceptCount
+ *
  * Generated from protobuf message <code>clarifai.api.ConceptCount</code>
  */
 class ConceptCount extends \Google\Protobuf\Internal\Message
@@ -115,11 +117,21 @@ class ConceptCount extends \Google\Protobuf\Internal\Message
      * The total count for concepts labeled for all asset statues (processing, to_process, processed, error)
      *
      * Generated from protobuf field <code>.clarifai.api.ConceptTypeCount concept_type_count = 3;</code>
-     * @return \Clarifai\Api\ConceptTypeCount
+     * @return \Clarifai\Api\ConceptTypeCount|null
      */
     public function getConceptTypeCount()
     {
         return $this->concept_type_count;
+    }
+
+    public function hasConceptTypeCount()
+    {
+        return isset($this->concept_type_count);
+    }
+
+    public function clearConceptTypeCount()
+    {
+        unset($this->concept_type_count);
     }
 
     /**
@@ -141,11 +153,21 @@ class ConceptCount extends \Google\Protobuf\Internal\Message
      * The detail count for different assets status
      *
      * Generated from protobuf field <code>.clarifai.api.DetailConceptCount detail_concept_count = 4;</code>
-     * @return \Clarifai\Api\DetailConceptCount
+     * @return \Clarifai\Api\DetailConceptCount|null
      */
     public function getDetailConceptCount()
     {
         return $this->detail_concept_count;
+    }
+
+    public function hasDetailConceptCount()
+    {
+        return isset($this->detail_concept_count);
+    }
+
+    public function clearDetailConceptCount()
+    {
+        unset($this->detail_concept_count);
     }
 
     /**

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * WorkflowVersion
+ *
  * Generated from protobuf message <code>clarifai.api.WorkflowVersion</code>
  */
 class WorkflowVersion extends \Google\Protobuf\Internal\Message
@@ -75,6 +77,18 @@ class WorkflowVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string user_id = 9;</code>
      */
     protected $user_id = '';
+    /**
+     * Short description about this workflow version
+     *
+     * Generated from protobuf field <code>string description = 10;</code>
+     */
+    protected $description = '';
+    /**
+     * License associated to this workflow version
+     *
+     * Generated from protobuf field <code>string license = 11;</code>
+     */
+    protected $license = '';
 
     /**
      * Constructor.
@@ -108,6 +122,10 @@ class WorkflowVersion extends \Google\Protobuf\Internal\Message
      *           The app the workflow version belongs to.
      *     @type string $user_id
      *           The user the workflow version belongs to.
+     *     @type string $description
+     *           Short description about this workflow version
+     *     @type string $license
+     *           License associated to this workflow version
      * }
      */
     public function __construct($data = NULL) {
@@ -173,11 +191,21 @@ class WorkflowVersion extends \Google\Protobuf\Internal\Message
      * Example: "2006-01-02T15:04:05.999999Z".
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -203,11 +231,21 @@ class WorkflowVersion extends \Google\Protobuf\Internal\Message
      * Example: "2006-01-02T15:04:05.999999Z".
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getModifiedAt()
     {
         return $this->modified_at;
+    }
+
+    public function hasModifiedAt()
+    {
+        return isset($this->modified_at);
+    }
+
+    public function clearModifiedAt()
+    {
+        unset($this->modified_at);
     }
 
     /**
@@ -233,11 +271,21 @@ class WorkflowVersion extends \Google\Protobuf\Internal\Message
      * also be publicly visible.
      *
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 5;</code>
-     * @return \Clarifai\Api\Visibility
+     * @return \Clarifai\Api\Visibility|null
      */
     public function getVisibility()
     {
         return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
     }
 
     /**
@@ -290,11 +338,21 @@ class WorkflowVersion extends \Google\Protobuf\Internal\Message
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 7;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getMetadata()
     {
         return $this->metadata;
+    }
+
+    public function hasMetadata()
+    {
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        unset($this->metadata);
     }
 
     /**
@@ -361,6 +419,58 @@ class WorkflowVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Short description about this workflow version
+     *
+     * Generated from protobuf field <code>string description = 10;</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Short description about this workflow version
+     *
+     * Generated from protobuf field <code>string description = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * License associated to this workflow version
+     *
+     * Generated from protobuf field <code>string license = 11;</code>
+     * @return string
+     */
+    public function getLicense()
+    {
+        return $this->license;
+    }
+
+    /**
+     * License associated to this workflow version
+     *
+     * Generated from protobuf field <code>string license = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLicense($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->license = $var;
 
         return $this;
     }

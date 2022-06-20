@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * ModelTypeEnumOption
+ *
  * Generated from protobuf message <code>clarifai.api.ModelTypeEnumOption</code>
  */
 class ModelTypeEnumOption extends \Google\Protobuf\Internal\Message
@@ -19,6 +21,16 @@ class ModelTypeEnumOption extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
+    /**
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    private $aliases;
     /**
      * Optional description for this enum option.
      *
@@ -47,6 +59,12 @@ class ModelTypeEnumOption extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           The unique value of the enum option.
+     *     @type \Clarifai\Api\ModelTypeEnumOptionAlias[]|\Google\Protobuf\Internal\RepeatedField $aliases
+     *           List of other ID values that are equivalent with this ID.
+     *           This allows the user to choose this option by multiple IDs.
+     *           Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     *           1. ID: "Estonia"
+     *           2. Alias: 37
      *     @type string $description
      *           Optional description for this enum option.
      *     @type \Clarifai\Api\ModelTypeField[]|\Google\Protobuf\Internal\RepeatedField $model_type_fields
@@ -83,6 +101,40 @@ class ModelTypeEnumOption extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAliases()
+    {
+        return $this->aliases;
+    }
+
+    /**
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     * @param \Clarifai\Api\ModelTypeEnumOptionAlias[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAliases($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\ModelTypeEnumOptionAlias::class);
+        $this->aliases = $arr;
 
         return $this;
     }

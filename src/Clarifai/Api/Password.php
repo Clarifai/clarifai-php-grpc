@@ -9,12 +9,13 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Password
+ *
  * Generated from protobuf message <code>clarifai.api.Password</code>
  */
 class Password extends \Google\Protobuf\Internal\Message
 {
     /**
-     * TODO(lawrence): merge this with message UserPassword above
      * unencrypted password string
      *
      * Generated from protobuf field <code>string plaintext = 1;</code>
@@ -28,7 +29,6 @@ class Password extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $plaintext
-     *           TODO(lawrence): merge this with message UserPassword above
      *           unencrypted password string
      * }
      */
@@ -38,7 +38,6 @@ class Password extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * TODO(lawrence): merge this with message UserPassword above
      * unencrypted password string
      *
      * Generated from protobuf field <code>string plaintext = 1;</code>
@@ -50,7 +49,6 @@ class Password extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * TODO(lawrence): merge this with message UserPassword above
      * unencrypted password string
      *
      * Generated from protobuf field <code>string plaintext = 1;</code>

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * PostModelsRequest
+ *
  * Generated from protobuf message <code>clarifai.api.PostModelsRequest</code>
  */
 class PostModelsRequest extends \Google\Protobuf\Internal\Message
@@ -24,6 +26,7 @@ class PostModelsRequest extends \Google\Protobuf\Internal\Message
      * that this endpoint is consistent with the rest of our API.
      *
      * Generated from protobuf field <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $model = null;
     /**
@@ -56,11 +59,21 @@ class PostModelsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -83,11 +96,25 @@ class PostModelsRequest extends \Google\Protobuf\Internal\Message
      * that this endpoint is consistent with the rest of our API.
      *
      * Generated from protobuf field <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
-     * @return \Clarifai\Api\Model
+     * @return \Clarifai\Api\Model|null
+     * @deprecated
      */
     public function getModel()
     {
+        @trigger_error('model is deprecated.', E_USER_DEPRECATED);
         return $this->model;
+    }
+
+    public function hasModel()
+    {
+        @trigger_error('model is deprecated.', E_USER_DEPRECATED);
+        return isset($this->model);
+    }
+
+    public function clearModel()
+    {
+        @trigger_error('model is deprecated.', E_USER_DEPRECATED);
+        unset($this->model);
     }
 
     /**
@@ -99,9 +126,11 @@ class PostModelsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
      * @param \Clarifai\Api\Model $var
      * @return $this
+     * @deprecated
      */
     public function setModel($var)
     {
+        @trigger_error('model is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Clarifai\Api\Model::class);
         $this->model = $var;
 

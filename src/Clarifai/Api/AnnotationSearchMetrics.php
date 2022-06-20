@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * AnnotationSearchMetrics
+ *
  * Generated from protobuf message <code>clarifai.api.AnnotationSearchMetrics</code>
  */
 class AnnotationSearchMetrics extends \Google\Protobuf\Internal\Message
@@ -83,11 +85,21 @@ class AnnotationSearchMetrics extends \Google\Protobuf\Internal\Message
      * The ground truth we are evaluating against
      *
      * Generated from protobuf field <code>.clarifai.api.Search ground_truth = 1;</code>
-     * @return \Clarifai\Api\Search
+     * @return \Clarifai\Api\Search|null
      */
     public function getGroundTruth()
     {
         return $this->ground_truth;
+    }
+
+    public function hasGroundTruth()
+    {
+        return isset($this->ground_truth);
+    }
+
+    public function clearGroundTruth()
+    {
+        unset($this->ground_truth);
     }
 
     /**
@@ -109,11 +121,21 @@ class AnnotationSearchMetrics extends \Google\Protobuf\Internal\Message
      * The set we are evaluating
      *
      * Generated from protobuf field <code>.clarifai.api.Search search_to_eval = 2;</code>
-     * @return \Clarifai\Api\Search
+     * @return \Clarifai\Api\Search|null
      */
     public function getSearchToEval()
     {
         return $this->search_to_eval;
+    }
+
+    public function hasSearchToEval()
+    {
+        return isset($this->search_to_eval);
+    }
+
+    public function clearSearchToEval()
+    {
+        unset($this->search_to_eval);
     }
 
     /**
@@ -135,11 +157,21 @@ class AnnotationSearchMetrics extends \Google\Protobuf\Internal\Message
      * The metric result
      *
      * Generated from protobuf field <code>.clarifai.api.EvalMetrics metrics = 3;</code>
-     * @return \Clarifai\Api\EvalMetrics
+     * @return \Clarifai\Api\EvalMetrics|null
      */
     public function getMetrics()
     {
         return $this->metrics;
+    }
+
+    public function hasMetrics()
+    {
+        return isset($this->metrics);
+    }
+
+    public function clearMetrics()
+    {
+        unset($this->metrics);
     }
 
     /**
@@ -161,11 +193,21 @@ class AnnotationSearchMetrics extends \Google\Protobuf\Internal\Message
      * data is filled out with the concepts used for this evaluation
      *
      * Generated from protobuf field <code>.clarifai.api.Data data = 4;</code>
-     * @return \Clarifai\Api\Data
+     * @return \Clarifai\Api\Data|null
      */
     public function getData()
     {
         return $this->data;
+    }
+
+    public function hasData()
+    {
+        return isset($this->data);
+    }
+
+    public function clearData()
+    {
+        unset($this->data);
     }
 
     /**
@@ -215,11 +257,21 @@ class AnnotationSearchMetrics extends \Google\Protobuf\Internal\Message
      * also be publicly visible.
      *
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 6;</code>
-     * @return \Clarifai\Api\Visibility
+     * @return \Clarifai\Api\Visibility|null
      */
     public function getVisibility()
     {
         return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
     }
 
     /**

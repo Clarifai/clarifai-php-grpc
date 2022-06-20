@@ -9,9 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;//////////////////////////
- * Visibilty of the resource.
- * ///////////////////////////
  * Visibility represents how visible the given resource is to other users.
  * When authenticating a request we can tell if a user is a collaborator or a teammate for the
  * the app that contains the resource and set their allowed visibility. We use that to restrict
@@ -59,7 +56,7 @@ class Visibility extends \Google\Protobuf\Internal\Message
      */
     public function setGettable($var)
     {
-        GPBUtil::checkEnum($var, \Clarifai\Api\Visibility_Gettable::class);
+        GPBUtil::checkEnum($var, \Clarifai\Api\Visibility\Gettable::class);
         $this->gettable = $var;
 
         return $this;

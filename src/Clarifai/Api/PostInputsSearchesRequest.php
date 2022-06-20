@@ -57,11 +57,21 @@ class PostInputsSearchesRequest extends \Google\Protobuf\Internal\Message
      * The user_id and app_id to query from.
      *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -109,11 +119,21 @@ class PostInputsSearchesRequest extends \Google\Protobuf\Internal\Message
      * Pagination information to paginate through search result Hits.
      *
      * Generated from protobuf field <code>.clarifai.api.Pagination pagination = 3;</code>
-     * @return \Clarifai\Api\Pagination
+     * @return \Clarifai\Api\Pagination|null
      */
     public function getPagination()
     {
         return $this->pagination;
+    }
+
+    public function hasPagination()
+    {
+        return isset($this->pagination);
+    }
+
+    public function clearPagination()
+    {
+        unset($this->pagination);
     }
 
     /**

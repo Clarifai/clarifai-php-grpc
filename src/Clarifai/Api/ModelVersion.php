@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/model_version.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * ModelVersion
  *
  * Generated from protobuf message <code>clarifai.api.ModelVersion</code>
  */
@@ -47,6 +45,10 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 total_input_count = 6;</code>
      */
     protected $total_input_count = 0;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+     */
+    protected $pretrained_model_config = null;
     /**
      * When training of this version was completed.
      *
@@ -96,6 +98,12 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string license = 17;</code>
      */
     protected $license = '';
+    /**
+     * Dataset version used to create this model version.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+     */
+    protected $dataset_version = null;
 
     /**
      * Constructor.
@@ -112,6 +120,7 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\EvalMetrics $metrics
      *     @type int $total_input_count
      *           number of inputs in the model version
+     *     @type \Clarifai\Api\PretrainedModelConfig $pretrained_model_config
      *     @type \Google\Protobuf\Timestamp $completed_at
      *           When training of this version was completed.
      *     @type string $description
@@ -130,6 +139,8 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *     @type string $license
+     *     @type \Clarifai\Api\DatasetVersion $dataset_version
+     *           Dataset version used to create this model version.
      * }
      */
     public function __construct($data = NULL) {
@@ -163,11 +174,21 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * When the version was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -189,11 +210,21 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * The status of the version (whether it's untrained, training, trained, etc.).
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 3;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -235,11 +266,21 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.EvalMetrics metrics = 5;</code>
-     * @return \Clarifai\Api\EvalMetrics
+     * @return \Clarifai\Api\EvalMetrics|null
      */
     public function getMetrics()
     {
         return $this->metrics;
+    }
+
+    public function hasMetrics()
+    {
+        return isset($this->metrics);
+    }
+
+    public function clearMetrics()
+    {
+        unset($this->metrics);
     }
 
     /**
@@ -282,14 +323,56 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+     * @return \Clarifai\Api\PretrainedModelConfig|null
+     */
+    public function getPretrainedModelConfig()
+    {
+        return $this->pretrained_model_config;
+    }
+
+    public function hasPretrainedModelConfig()
+    {
+        return isset($this->pretrained_model_config);
+    }
+
+    public function clearPretrainedModelConfig()
+    {
+        unset($this->pretrained_model_config);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+     * @param \Clarifai\Api\PretrainedModelConfig $var
+     * @return $this
+     */
+    public function setPretrainedModelConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\PretrainedModelConfig::class);
+        $this->pretrained_model_config = $var;
+
+        return $this;
+    }
+
+    /**
      * When training of this version was completed.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp completed_at = 10;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCompletedAt()
     {
         return $this->completed_at;
+    }
+
+    public function hasCompletedAt()
+    {
+        return isset($this->completed_at);
+    }
+
+    public function clearCompletedAt()
+    {
+        unset($this->completed_at);
     }
 
     /**
@@ -339,11 +422,21 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * also be publicly visible.
      *
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 12;</code>
-     * @return \Clarifai\Api\Visibility
+     * @return \Clarifai\Api\Visibility|null
      */
     public function getVisibility()
     {
         return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
     }
 
     /**
@@ -419,11 +512,21 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * When this model version was last modified
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 15;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getModifiedAt()
     {
         return $this->modified_at;
+    }
+
+    public function hasModifiedAt()
+    {
+        return isset($this->modified_at);
+    }
+
+    public function clearModifiedAt()
+    {
+        unset($this->modified_at);
     }
 
     /**
@@ -446,11 +549,21 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 16;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getMetadata()
     {
         return $this->metadata;
+    }
+
+    public function hasMetadata()
+    {
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        unset($this->metadata);
     }
 
     /**
@@ -487,6 +600,42 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->license = $var;
+
+        return $this;
+    }
+
+    /**
+     * Dataset version used to create this model version.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+     * @return \Clarifai\Api\DatasetVersion|null
+     */
+    public function getDatasetVersion()
+    {
+        return $this->dataset_version;
+    }
+
+    public function hasDatasetVersion()
+    {
+        return isset($this->dataset_version);
+    }
+
+    public function clearDatasetVersion()
+    {
+        unset($this->dataset_version);
+    }
+
+    /**
+     * Dataset version used to create this model version.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+     * @param \Clarifai\Api\DatasetVersion $var
+     * @return $this
+     */
+    public function setDatasetVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersion::class);
+        $this->dataset_version = $var;
 
         return $this;
     }

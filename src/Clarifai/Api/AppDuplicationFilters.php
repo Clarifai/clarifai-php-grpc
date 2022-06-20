@@ -9,12 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * AppDuplicationFilters
+ *
  * Generated from protobuf message <code>clarifai.api.AppDuplicationFilters</code>
  */
 class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Copy only inputs and default annotations
+     * Copy inputs what what it depends on: input level annotation and concepts
      *
      * Generated from protobuf field <code>bool copy_inputs = 1;</code>
      */
@@ -51,7 +53,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $copy_inputs
-     *           Copy only inputs and default annotations
+     *           Copy inputs what what it depends on: input level annotation and concepts
      *     @type bool $copy_concepts
      *           Copy only concepts
      *     @type bool $copy_annotations
@@ -68,7 +70,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy only inputs and default annotations
+     * Copy inputs what what it depends on: input level annotation and concepts
      *
      * Generated from protobuf field <code>bool copy_inputs = 1;</code>
      * @return bool
@@ -79,7 +81,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy only inputs and default annotations
+     * Copy inputs what what it depends on: input level annotation and concepts
      *
      * Generated from protobuf field <code>bool copy_inputs = 1;</code>
      * @param bool $var

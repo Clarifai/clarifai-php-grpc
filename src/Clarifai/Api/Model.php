@@ -9,9 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/model.proto
- * //////////////////////////////////////////////////////////////////////////////
  * This is the Model object which represents a created model in the platform.
  * Each model has a particular type denoted by the model_type_id.
  * When creating a Model with PostModels the following happens:
@@ -35,9 +32,10 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * A nicer-to-read name for the model. Can have spaces and special characters.
+     * DEPRECATED: Please use the model id to name the model.
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $name = '';
     /**
@@ -75,10 +73,10 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     protected $model_version = null;
     /**
-     * An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-     * need a temporary workaround while we check what depends on these names.
+     * DEPRECATED: Please use the model id to name the model.
      *
-     * Generated from protobuf field <code>string display_name = 7;</code>
+     * Generated from protobuf field <code>string display_name = 7 [deprecated = true];</code>
+     * @deprecated
      */
     protected $display_name = '';
     /**
@@ -100,12 +98,24 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     protected $train_info = null;
     /**
+     * The default evaluation info. Can be overwritten by eval request.
+     *
+     * Generated from protobuf field <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+     */
+    protected $default_eval_info = null;
+    /**
      * The ModelType.Id that is used for this model. This is used for all versions and you cannot
      * change model_type_id between versions of the same model.
      *
      * Generated from protobuf field <code>string model_type_id = 14;</code>
      */
     protected $model_type_id = '';
+    /**
+     * The task the model was trained to do
+     *
+     * Generated from protobuf field <code>string task = 26;</code>
+     */
+    protected $task = '';
     /**
      * The visibility field represents whether this message is privately/publicly visible.
      * To be visible to the public the App that contains it AND the User that contains the App must
@@ -128,9 +138,12 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     protected $metadata = null;
     /**
-     * Notes about a model (should support markdown)
-     * This field should be used for in-depth notes about
-     * about a model and supports up to 64Kbs.
+     * Generated from protobuf field <code>.google.protobuf.Struct presets = 27;</code>
+     */
+    protected $presets = null;
+    /**
+     * Notes for the model
+     * This field should be used for in-depth notes and supports up to 64Kbs.
      *
      * Generated from protobuf field <code>string notes = 18;</code>
      */
@@ -148,6 +161,12 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     private $use_cases;
     /**
+     * Tags from languages category.
+     *
+     * Generated from protobuf field <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    private $languages;
+    /**
      * Is starred by the requesting user (only showed on get/list requests)
      * Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
      *
@@ -161,6 +180,18 @@ class Model extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 star_count = 23;</code>
      */
     protected $star_count = 0;
+    /**
+     * Configuration used to import model from third-party toolkits
+     *
+     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     */
+    protected $import_info = null;
+    /**
+     * Whether it's recommended that this model is used within a workflow
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+     */
+    protected $workflow_recommended = null;
 
     /**
      * Constructor.
@@ -171,7 +202,7 @@ class Model extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           The model's ID. Must be unique within a particular app and URL-friendly.
      *     @type string $name
-     *           A nicer-to-read name for the model. Can have spaces and special characters.
+     *           DEPRECATED: Please use the model id to name the model.
      *     @type \Google\Protobuf\Timestamp $created_at
      *           When the model was created. We follow the XXXX timestamp
      *           format. We use https://www.ietf.org/rfc/rfc3339.txt format:
@@ -187,17 +218,20 @@ class Model extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\ModelVersion $model_version
      *           A particular version of the model, e.g., to specify the version when creating a workflow.
      *     @type string $display_name
-     *           An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-     *           need a temporary workaround while we check what depends on these names.
+     *           DEPRECATED: Please use the model id to name the model.
      *     @type string $user_id
      *           The user id that the model belongs to.
      *     @type \Clarifai\Api\InputInfo $input_info
      *           Info about the models' input and configuration of them.
      *     @type \Clarifai\Api\TrainInfo $train_info
      *           Configuration for the training process of this model.
+     *     @type \Clarifai\Api\EvalInfo $default_eval_info
+     *           The default evaluation info. Can be overwritten by eval request.
      *     @type string $model_type_id
      *           The ModelType.Id that is used for this model. This is used for all versions and you cannot
      *           change model_type_id between versions of the same model.
+     *     @type string $task
+     *           The task the model was trained to do
      *     @type \Clarifai\Api\Visibility $visibility
      *           The visibility field represents whether this message is privately/publicly visible.
      *           To be visible to the public the App that contains it AND the User that contains the App must
@@ -207,20 +241,26 @@ class Model extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Struct $metadata
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *     @type \Google\Protobuf\Struct $presets
      *     @type string $notes
-     *           Notes about a model (should support markdown)
-     *           This field should be used for in-depth notes about
-     *           about a model and supports up to 64Kbs.
+     *           Notes for the model
+     *           This field should be used for in-depth notes and supports up to 64Kbs.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $toolkits
      *           Tags from toolkits category
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $use_cases
      *           Tags from use_cases category
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $languages
+     *           Tags from languages category.
      *     @type bool $is_starred
      *           Is starred by the requesting user (only showed on get/list requests)
      *           Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
      *     @type int $star_count
      *           How many users have starred the model (only showed on get/list requests)
      *           Computed value, not editable
+     *     @type \Clarifai\Api\ImportInfo $import_info
+     *           Configuration used to import model from third-party toolkits
+     *     @type \Google\Protobuf\BoolValue $workflow_recommended
+     *           Whether it's recommended that this model is used within a workflow
      * }
      */
     public function __construct($data = NULL) {
@@ -255,25 +295,29 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A nicer-to-read name for the model. Can have spaces and special characters.
+     * DEPRECATED: Please use the model id to name the model.
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getName()
     {
+        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
         return $this->name;
     }
 
     /**
-     * A nicer-to-read name for the model. Can have spaces and special characters.
+     * DEPRECATED: Please use the model id to name the model.
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setName($var)
     {
+        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->name = $var;
 
@@ -288,11 +332,21 @@ class Model extends \Google\Protobuf\Internal\Message
      *  "2017-04-11T21:50:50.223962Z"
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -318,11 +372,21 @@ class Model extends \Google\Protobuf\Internal\Message
      * When was the most recent model version created at
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 19;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getModifiedAt()
     {
         return $this->modified_at;
+    }
+
+    public function hasModifiedAt()
+    {
+        return isset($this->modified_at);
+    }
+
+    public function clearModifiedAt()
+    {
+        unset($this->modified_at);
     }
 
     /**
@@ -370,11 +434,21 @@ class Model extends \Google\Protobuf\Internal\Message
      * Info about the model's output and configuration.
      *
      * Generated from protobuf field <code>.clarifai.api.OutputInfo output_info = 5;</code>
-     * @return \Clarifai\Api\OutputInfo
+     * @return \Clarifai\Api\OutputInfo|null
      */
     public function getOutputInfo()
     {
         return $this->output_info;
+    }
+
+    public function hasOutputInfo()
+    {
+        return isset($this->output_info);
+    }
+
+    public function clearOutputInfo()
+    {
+        unset($this->output_info);
     }
 
     /**
@@ -396,11 +470,21 @@ class Model extends \Google\Protobuf\Internal\Message
      * A particular version of the model, e.g., to specify the version when creating a workflow.
      *
      * Generated from protobuf field <code>.clarifai.api.ModelVersion model_version = 6;</code>
-     * @return \Clarifai\Api\ModelVersion
+     * @return \Clarifai\Api\ModelVersion|null
      */
     public function getModelVersion()
     {
         return $this->model_version;
+    }
+
+    public function hasModelVersion()
+    {
+        return isset($this->model_version);
+    }
+
+    public function clearModelVersion()
+    {
+        unset($this->model_version);
     }
 
     /**
@@ -419,27 +503,29 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-     * need a temporary workaround while we check what depends on these names.
+     * DEPRECATED: Please use the model id to name the model.
      *
-     * Generated from protobuf field <code>string display_name = 7;</code>
+     * Generated from protobuf field <code>string display_name = 7 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getDisplayName()
     {
+        @trigger_error('display_name is deprecated.', E_USER_DEPRECATED);
         return $this->display_name;
     }
 
     /**
-     * An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-     * need a temporary workaround while we check what depends on these names.
+     * DEPRECATED: Please use the model id to name the model.
      *
-     * Generated from protobuf field <code>string display_name = 7;</code>
+     * Generated from protobuf field <code>string display_name = 7 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setDisplayName($var)
     {
+        @trigger_error('display_name is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->display_name = $var;
 
@@ -476,11 +562,21 @@ class Model extends \Google\Protobuf\Internal\Message
      * Info about the models' input and configuration of them.
      *
      * Generated from protobuf field <code>.clarifai.api.InputInfo input_info = 12;</code>
-     * @return \Clarifai\Api\InputInfo
+     * @return \Clarifai\Api\InputInfo|null
      */
     public function getInputInfo()
     {
         return $this->input_info;
+    }
+
+    public function hasInputInfo()
+    {
+        return isset($this->input_info);
+    }
+
+    public function clearInputInfo()
+    {
+        unset($this->input_info);
     }
 
     /**
@@ -502,11 +598,21 @@ class Model extends \Google\Protobuf\Internal\Message
      * Configuration for the training process of this model.
      *
      * Generated from protobuf field <code>.clarifai.api.TrainInfo train_info = 13;</code>
-     * @return \Clarifai\Api\TrainInfo
+     * @return \Clarifai\Api\TrainInfo|null
      */
     public function getTrainInfo()
     {
         return $this->train_info;
+    }
+
+    public function hasTrainInfo()
+    {
+        return isset($this->train_info);
+    }
+
+    public function clearTrainInfo()
+    {
+        unset($this->train_info);
     }
 
     /**
@@ -520,6 +626,42 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\TrainInfo::class);
         $this->train_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * The default evaluation info. Can be overwritten by eval request.
+     *
+     * Generated from protobuf field <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+     * @return \Clarifai\Api\EvalInfo|null
+     */
+    public function getDefaultEvalInfo()
+    {
+        return $this->default_eval_info;
+    }
+
+    public function hasDefaultEvalInfo()
+    {
+        return isset($this->default_eval_info);
+    }
+
+    public function clearDefaultEvalInfo()
+    {
+        unset($this->default_eval_info);
+    }
+
+    /**
+     * The default evaluation info. Can be overwritten by eval request.
+     *
+     * Generated from protobuf field <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+     * @param \Clarifai\Api\EvalInfo $var
+     * @return $this
+     */
+    public function setDefaultEvalInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\EvalInfo::class);
+        $this->default_eval_info = $var;
 
         return $this;
     }
@@ -553,16 +695,52 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The task the model was trained to do
+     *
+     * Generated from protobuf field <code>string task = 26;</code>
+     * @return string
+     */
+    public function getTask()
+    {
+        return $this->task;
+    }
+
+    /**
+     * The task the model was trained to do
+     *
+     * Generated from protobuf field <code>string task = 26;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTask($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->task = $var;
+
+        return $this;
+    }
+
+    /**
      * The visibility field represents whether this message is privately/publicly visible.
      * To be visible to the public the App that contains it AND the User that contains the App must
      * also be publicly visible.
      *
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 15;</code>
-     * @return \Clarifai\Api\Visibility
+     * @return \Clarifai\Api\Visibility|null
      */
     public function getVisibility()
     {
         return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
     }
 
     /**
@@ -613,11 +791,21 @@ class Model extends \Google\Protobuf\Internal\Message
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 17;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getMetadata()
     {
         return $this->metadata;
+    }
+
+    public function hasMetadata()
+    {
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        unset($this->metadata);
     }
 
     /**
@@ -637,9 +825,40 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Notes about a model (should support markdown)
-     * This field should be used for in-depth notes about
-     * about a model and supports up to 64Kbs.
+     * Generated from protobuf field <code>.google.protobuf.Struct presets = 27;</code>
+     * @return \Google\Protobuf\Struct|null
+     */
+    public function getPresets()
+    {
+        return $this->presets;
+    }
+
+    public function hasPresets()
+    {
+        return isset($this->presets);
+    }
+
+    public function clearPresets()
+    {
+        unset($this->presets);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Struct presets = 27;</code>
+     * @param \Google\Protobuf\Struct $var
+     * @return $this
+     */
+    public function setPresets($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->presets = $var;
+
+        return $this;
+    }
+
+    /**
+     * Notes for the model
+     * This field should be used for in-depth notes and supports up to 64Kbs.
      *
      * Generated from protobuf field <code>string notes = 18;</code>
      * @return string
@@ -650,9 +869,8 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Notes about a model (should support markdown)
-     * This field should be used for in-depth notes about
-     * about a model and supports up to 64Kbs.
+     * Notes for the model
+     * This field should be used for in-depth notes and supports up to 64Kbs.
      *
      * Generated from protobuf field <code>string notes = 18;</code>
      * @param string $var
@@ -719,6 +937,32 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Tags from languages category.
+     *
+     * Generated from protobuf field <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLanguages()
+    {
+        return $this->languages;
+    }
+
+    /**
+     * Tags from languages category.
+     *
+     * Generated from protobuf field <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLanguages($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->languages = $arr;
+
+        return $this;
+    }
+
+    /**
      * Is starred by the requesting user (only showed on get/list requests)
      * Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
      *
@@ -773,6 +1017,105 @@ class Model extends \Google\Protobuf\Internal\Message
 
         return $this;
     }
+
+    /**
+     * Configuration used to import model from third-party toolkits
+     *
+     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     * @return \Clarifai\Api\ImportInfo|null
+     */
+    public function getImportInfo()
+    {
+        return $this->import_info;
+    }
+
+    public function hasImportInfo()
+    {
+        return isset($this->import_info);
+    }
+
+    public function clearImportInfo()
+    {
+        unset($this->import_info);
+    }
+
+    /**
+     * Configuration used to import model from third-party toolkits
+     *
+     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     * @param \Clarifai\Api\ImportInfo $var
+     * @return $this
+     */
+    public function setImportInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ImportInfo::class);
+        $this->import_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether it's recommended that this model is used within a workflow
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+     * @return \Google\Protobuf\BoolValue|null
+     */
+    public function getWorkflowRecommended()
+    {
+        return $this->workflow_recommended;
+    }
+
+    public function hasWorkflowRecommended()
+    {
+        return isset($this->workflow_recommended);
+    }
+
+    public function clearWorkflowRecommended()
+    {
+        unset($this->workflow_recommended);
+    }
+
+    /**
+     * Returns the unboxed value from <code>getWorkflowRecommended()</code>
+
+     * Whether it's recommended that this model is used within a workflow
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+     * @return bool|null
+     */
+    public function getWorkflowRecommendedUnwrapped()
+    {
+        return $this->readWrapperValue("workflow_recommended");
+    }
+
+    /**
+     * Whether it's recommended that this model is used within a workflow
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+     * @param \Google\Protobuf\BoolValue $var
+     * @return $this
+     */
+    public function setWorkflowRecommended($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\BoolValue::class);
+        $this->workflow_recommended = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether it's recommended that this model is used within a workflow
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setWorkflowRecommendedUnwrapped($var)
+    {
+        $this->writeWrapperValue("workflow_recommended", $var);
+        return $this;}
 
 }
 

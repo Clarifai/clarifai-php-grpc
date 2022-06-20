@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * DetailConceptCount
+ *
  * Generated from protobuf message <code>clarifai.api.DetailConceptCount</code>
  */
 class DetailConceptCount extends \Google\Protobuf\Internal\Message
@@ -63,11 +65,21 @@ class DetailConceptCount extends \Google\Protobuf\Internal\Message
      * The concept count for processed assets
      *
      * Generated from protobuf field <code>.clarifai.api.ConceptTypeCount processed = 1;</code>
-     * @return \Clarifai\Api\ConceptTypeCount
+     * @return \Clarifai\Api\ConceptTypeCount|null
      */
     public function getProcessed()
     {
         return $this->processed;
+    }
+
+    public function hasProcessed()
+    {
+        return isset($this->processed);
+    }
+
+    public function clearProcessed()
+    {
+        unset($this->processed);
     }
 
     /**
@@ -89,11 +101,21 @@ class DetailConceptCount extends \Google\Protobuf\Internal\Message
      * The concept count for to process assets
      *
      * Generated from protobuf field <code>.clarifai.api.ConceptTypeCount to_process = 2;</code>
-     * @return \Clarifai\Api\ConceptTypeCount
+     * @return \Clarifai\Api\ConceptTypeCount|null
      */
     public function getToProcess()
     {
         return $this->to_process;
+    }
+
+    public function hasToProcess()
+    {
+        return isset($this->to_process);
+    }
+
+    public function clearToProcess()
+    {
+        unset($this->to_process);
     }
 
     /**
@@ -115,11 +137,21 @@ class DetailConceptCount extends \Google\Protobuf\Internal\Message
      * The concept count for assets with status error
      *
      * Generated from protobuf field <code>.clarifai.api.ConceptTypeCount errors = 3;</code>
-     * @return \Clarifai\Api\ConceptTypeCount
+     * @return \Clarifai\Api\ConceptTypeCount|null
      */
     public function getErrors()
     {
         return $this->errors;
+    }
+
+    public function hasErrors()
+    {
+        return isset($this->errors);
+    }
+
+    public function clearErrors()
+    {
+        unset($this->errors);
     }
 
     /**
@@ -141,11 +173,21 @@ class DetailConceptCount extends \Google\Protobuf\Internal\Message
      * The concept count for processing assets
      *
      * Generated from protobuf field <code>.clarifai.api.ConceptTypeCount processing = 4;</code>
-     * @return \Clarifai\Api\ConceptTypeCount
+     * @return \Clarifai\Api\ConceptTypeCount|null
      */
     public function getProcessing()
     {
         return $this->processing;
+    }
+
+    public function hasProcessing()
+    {
+        return isset($this->processing);
+    }
+
+    public function clearProcessing()
+    {
+        unset($this->processing);
     }
 
     /**

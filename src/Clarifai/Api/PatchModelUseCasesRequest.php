@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>clarifai.api.DeleteModelVersionsUnpublishRequest</code>
+ * Generated from protobuf message <code>clarifai.api.PatchModelUseCasesRequest</code>
  */
-class DeleteModelVersionsUnpublishRequest extends \Google\Protobuf\Internal\Message
+class PatchModelUseCasesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -22,9 +22,15 @@ class DeleteModelVersionsUnpublishRequest extends \Google\Protobuf\Internal\Mess
      */
     protected $model_id = '';
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
+     * Generated from protobuf field <code>repeated string usecases = 3;</code>
      */
-    private $publications;
+    private $usecases;
+    /**
+     *overwrite supported
+     *
+     * Generated from protobuf field <code>string action = 4;</code>
+     */
+    protected $action = '';
 
     /**
      * Constructor.
@@ -34,7 +40,9 @@ class DeleteModelVersionsUnpublishRequest extends \Google\Protobuf\Internal\Mess
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $model_id
-     *     @type \Clarifai\Api\ModelVersionUnpublishRequest[]|\Google\Protobuf\Internal\RepeatedField $publications
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $usecases
+     *     @type string $action
+     *          overwrite supported
      * }
      */
     public function __construct($data = NULL) {
@@ -44,11 +52,21 @@ class DeleteModelVersionsUnpublishRequest extends \Google\Protobuf\Internal\Mess
 
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -87,23 +105,49 @@ class DeleteModelVersionsUnpublishRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
+     * Generated from protobuf field <code>repeated string usecases = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getPublications()
+    public function getUsecases()
     {
-        return $this->publications;
+        return $this->usecases;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     * @param \Clarifai\Api\ModelVersionUnpublishRequest[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated string usecases = 3;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setPublications($var)
+    public function setUsecases($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\ModelVersionUnpublishRequest::class);
-        $this->publications = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->usecases = $arr;
+
+        return $this;
+    }
+
+    /**
+     *overwrite supported
+     *
+     * Generated from protobuf field <code>string action = 4;</code>
+     * @return string
+     */
+    public function getAction()
+    {
+        return $this->action;
+    }
+
+    /**
+     *overwrite supported
+     *
+     * Generated from protobuf field <code>string action = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAction($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->action = $var;
 
         return $this;
     }

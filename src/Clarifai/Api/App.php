@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/app.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Application with tasks and datasets
  *
  * Generated from protobuf message <code>clarifai.api.App</code>
  */
@@ -109,6 +107,13 @@ class App extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 star_count = 20;</code>
      */
     protected $star_count = 0;
+    /**
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     *
+     * Generated from protobuf field <code>string notes = 21;</code>
+     */
+    protected $notes = '';
 
     /**
      * Constructor.
@@ -152,6 +157,9 @@ class App extends \Google\Protobuf\Internal\Message
      *     @type int $star_count
      *           How many users have starred the app (only showed on get/list requests)
      *           Computed value, not editable
+     *     @type string $notes
+     *           Notes for the application
+     *           This field should be used for in-depth notes and supports up to 64Kbs.
      * }
      */
     public function __construct($data = NULL) {
@@ -283,11 +291,21 @@ class App extends \Google\Protobuf\Internal\Message
      * "2017-04-11T21:50:50.223962Z"
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -313,11 +331,21 @@ class App extends \Google\Protobuf\Internal\Message
      * When the app was last modified
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 17;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getModifiedAt()
     {
         return $this->modified_at;
+    }
+
+    public function hasModifiedAt()
+    {
+        return isset($this->modified_at);
+    }
+
+    public function clearModifiedAt()
+    {
+        unset($this->modified_at);
     }
 
     /**
@@ -366,11 +394,21 @@ class App extends \Google\Protobuf\Internal\Message
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 13;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getMetadata()
     {
         return $this->metadata;
+    }
+
+    public function hasMetadata()
+    {
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        unset($this->metadata);
     }
 
     /**
@@ -447,11 +485,21 @@ class App extends \Google\Protobuf\Internal\Message
      * also be publicly visible.
      *
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 16;</code>
-     * @return \Clarifai\Api\Visibility
+     * @return \Clarifai\Api\Visibility|null
      */
     public function getVisibility()
     {
         return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
     }
 
     /**
@@ -549,6 +597,34 @@ class App extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->star_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     *
+     * Generated from protobuf field <code>string notes = 21;</code>
+     * @return string
+     */
+    public function getNotes()
+    {
+        return $this->notes;
+    }
+
+    /**
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     *
+     * Generated from protobuf field <code>string notes = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNotes($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->notes = $var;
 
         return $this;
     }

@@ -9,8 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A link to a html/markdown/text file that stores reference material
- * tied to a model.
+ * A link to a html/markdown/text file that stores reference material tied to a model.
  *
  * Generated from protobuf message <code>clarifai.api.ModelReference</code>
  */
@@ -181,11 +180,21 @@ class ModelReference extends \Google\Protobuf\Internal\Message
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 5;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getMetadata()
     {
         return $this->metadata;
+    }
+
+    public function hasMetadata()
+    {
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        unset($this->metadata);
     }
 
     /**

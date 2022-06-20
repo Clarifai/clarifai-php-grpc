@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * TimeRange
+ *
  * Generated from protobuf message <code>clarifai.api.TimeRange</code>
  */
 class TimeRange extends \Google\Protobuf\Internal\Message
@@ -47,11 +49,21 @@ class TimeRange extends \Google\Protobuf\Internal\Message
      * Begin of the time range, optional, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 1;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
         return $this->start_time;
+    }
+
+    public function hasStartTime()
+    {
+        return isset($this->start_time);
+    }
+
+    public function clearStartTime()
+    {
+        unset($this->start_time);
     }
 
     /**
@@ -73,11 +85,21 @@ class TimeRange extends \Google\Protobuf\Internal\Message
      * End of the time range, optional, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {
         return $this->end_time;
+    }
+
+    public function hasEndTime()
+    {
+        return isset($this->end_time);
+    }
+
+    public function clearEndTime()
+    {
+        unset($this->end_time);
     }
 
     /**

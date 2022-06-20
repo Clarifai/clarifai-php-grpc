@@ -116,11 +116,21 @@ class PBAnd extends \Google\Protobuf\Internal\Message
      * app. To search by more specific annotation fields use the Annotation object here.
      *
      * Generated from protobuf field <code>.clarifai.api.Input input = 1;</code>
-     * @return \Clarifai\Api\Input
+     * @return \Clarifai\Api\Input|null
      */
     public function getInput()
     {
         return $this->input;
+    }
+
+    public function hasInput()
+    {
+        return isset($this->input);
+    }
+
+    public function clearInput()
+    {
+        unset($this->input);
     }
 
     /**
@@ -155,11 +165,21 @@ class PBAnd extends \Google\Protobuf\Internal\Message
      * is used when ANDing multiple of these types of RANK by Output queries together as well.
      *
      * Generated from protobuf field <code>.clarifai.api.Output output = 2;</code>
-     * @return \Clarifai\Api\Output
+     * @return \Clarifai\Api\Output|null
      */
     public function getOutput()
     {
         return $this->output;
+    }
+
+    public function hasOutput()
+    {
+        return isset($this->output);
+    }
+
+    public function clearOutput()
+    {
+        unset($this->output);
     }
 
     /**
@@ -227,11 +247,21 @@ class PBAnd extends \Google\Protobuf\Internal\Message
      * combinable with queries like visual search (a query with Output filled in).
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
-     * @return \Clarifai\Api\Annotation
+     * @return \Clarifai\Api\Annotation|null
      */
     public function getAnnotation()
     {
         return $this->annotation;
+    }
+
+    public function hasAnnotation()
+    {
+        return isset($this->annotation);
+    }
+
+    public function clearAnnotation()
+    {
+        unset($this->annotation);
     }
 
     /**

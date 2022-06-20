@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/output.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Output
  *
  * Generated from protobuf message <code>clarifai.api.Output</code>
  */
@@ -116,11 +114,21 @@ class Output extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 2;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -144,11 +152,21 @@ class Output extends \Google\Protobuf\Internal\Message
      * "2017-04-11T21:50:50.223962Z"
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -174,11 +192,21 @@ class Output extends \Google\Protobuf\Internal\Message
      * The model that created this Output.
      *
      * Generated from protobuf field <code>.clarifai.api.Model model = 4;</code>
-     * @return \Clarifai\Api\Model
+     * @return \Clarifai\Api\Model|null
      */
     public function getModel()
     {
         return $this->model;
+    }
+
+    public function hasModel()
+    {
+        return isset($this->model);
+    }
+
+    public function clearModel()
+    {
+        unset($this->model);
     }
 
     /**
@@ -201,11 +229,21 @@ class Output extends \Google\Protobuf\Internal\Message
      * model then it will take as input here an Input object with Image filled in.
      *
      * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
-     * @return \Clarifai\Api\Input
+     * @return \Clarifai\Api\Input|null
      */
     public function getInput()
     {
         return $this->input;
+    }
+
+    public function hasInput()
+    {
+        return isset($this->input);
+    }
+
+    public function clearInput()
+    {
+        unset($this->input);
     }
 
     /**
@@ -229,11 +267,21 @@ class Output extends \Google\Protobuf\Internal\Message
      * concepts will appear here.
      *
      * Generated from protobuf field <code>.clarifai.api.Data data = 6;</code>
-     * @return \Clarifai\Api\Data
+     * @return \Clarifai\Api\Data|null
      */
     public function getData()
     {
         return $this->data;
+    }
+
+    public function hasData()
+    {
+        return isset($this->data);
+    }
+
+    public function clearData()
+    {
+        unset($this->data);
     }
 
     /**

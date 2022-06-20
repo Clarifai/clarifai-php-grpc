@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * SingleModelTypeResponse
+ *
  * Generated from protobuf message <code>clarifai.api.SingleModelTypeResponse</code>
  */
 class SingleModelTypeResponse extends \Google\Protobuf\Internal\Message
@@ -47,11 +49,21 @@ class SingleModelTypeResponse extends \Google\Protobuf\Internal\Message
      * Status of the response.
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -73,11 +85,21 @@ class SingleModelTypeResponse extends \Google\Protobuf\Internal\Message
      * The retrieved ModelType object. .
      *
      * Generated from protobuf field <code>.clarifai.api.ModelType model_type = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @return \Clarifai\Api\ModelType
+     * @return \Clarifai\Api\ModelType|null
      */
     public function getModelType()
     {
         return $this->model_type;
+    }
+
+    public function hasModelType()
+    {
+        return isset($this->model_type);
+    }
+
+    public function clearModelType()
+    {
+        unset($this->model_type);
     }
 
     /**

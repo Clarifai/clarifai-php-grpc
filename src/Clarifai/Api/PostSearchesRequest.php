@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * PostSearchesRequest
+ *
  * Generated from protobuf message <code>clarifai.api.PostSearchesRequest</code>
  */
 class PostSearchesRequest extends \Google\Protobuf\Internal\Message
@@ -24,6 +26,7 @@ class PostSearchesRequest extends \Google\Protobuf\Internal\Message
      * this will be replaced by "Searches"
      *
      * Generated from protobuf field <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $query = null;
     /**
@@ -67,11 +70,21 @@ class PostSearchesRequest extends \Google\Protobuf\Internal\Message
      * The user_id and app_id to query from.
      *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -94,11 +107,25 @@ class PostSearchesRequest extends \Google\Protobuf\Internal\Message
      * this will be replaced by "Searches"
      *
      * Generated from protobuf field <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
-     * @return \Clarifai\Api\Query
+     * @return \Clarifai\Api\Query|null
+     * @deprecated
      */
     public function getQuery()
     {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
         return $this->query;
+    }
+
+    public function hasQuery()
+    {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
+        return isset($this->query);
+    }
+
+    public function clearQuery()
+    {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
+        unset($this->query);
     }
 
     /**
@@ -108,9 +135,11 @@ class PostSearchesRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
      * @param \Clarifai\Api\Query $var
      * @return $this
+     * @deprecated
      */
     public function setQuery($var)
     {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Clarifai\Api\Query::class);
         $this->query = $var;
 
@@ -149,11 +178,21 @@ class PostSearchesRequest extends \Google\Protobuf\Internal\Message
      * Pagination information to paginate through search result Hits.
      *
      * Generated from protobuf field <code>.clarifai.api.Pagination pagination = 4;</code>
-     * @return \Clarifai\Api\Pagination
+     * @return \Clarifai\Api\Pagination|null
      */
     public function getPagination()
     {
         return $this->pagination;
+    }
+
+    public function hasPagination()
+    {
+        return isset($this->pagination);
+    }
+
+    public function clearPagination()
+    {
+        unset($this->pagination);
     }
 
     /**

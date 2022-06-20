@@ -39,6 +39,18 @@ class RegionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Point point = 6;</code>
      */
     protected $point = null;
+    /**
+     * Span char sequence for NLP.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Span span = 7;</code>
+     */
+    protected $span = null;
+    /**
+     * Token char sequence for NLP.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Token token = 8;</code>
+     */
+    protected $token = null;
 
     /**
      * Constructor.
@@ -54,6 +66,10 @@ class RegionInfo extends \Google\Protobuf\Internal\Message
      *           A polygon of points.
      *     @type \Clarifai\Api\Point $point
      *           A landmark point location.
+     *     @type \Clarifai\Api\Span $span
+     *           Span char sequence for NLP.
+     *     @type \Clarifai\Api\Token $token
+     *           Token char sequence for NLP.
      * }
      */
     public function __construct($data = NULL) {
@@ -65,11 +81,21 @@ class RegionInfo extends \Google\Protobuf\Internal\Message
      * Details of the region's rectangular bounding box.
      *
      * Generated from protobuf field <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
-     * @return \Clarifai\Api\BoundingBox
+     * @return \Clarifai\Api\BoundingBox|null
      */
     public function getBoundingBox()
     {
         return $this->bounding_box;
+    }
+
+    public function hasBoundingBox()
+    {
+        return isset($this->bounding_box);
+    }
+
+    public function clearBoundingBox()
+    {
+        unset($this->bounding_box);
     }
 
     /**
@@ -91,11 +117,21 @@ class RegionInfo extends \Google\Protobuf\Internal\Message
      * Details of the region's segmentation mask.
      *
      * Generated from protobuf field <code>.clarifai.api.Mask mask = 4;</code>
-     * @return \Clarifai\Api\Mask
+     * @return \Clarifai\Api\Mask|null
      */
     public function getMask()
     {
         return $this->mask;
+    }
+
+    public function hasMask()
+    {
+        return isset($this->mask);
+    }
+
+    public function clearMask()
+    {
+        unset($this->mask);
     }
 
     /**
@@ -117,11 +153,21 @@ class RegionInfo extends \Google\Protobuf\Internal\Message
      * A polygon of points.
      *
      * Generated from protobuf field <code>.clarifai.api.Polygon polygon = 5;</code>
-     * @return \Clarifai\Api\Polygon
+     * @return \Clarifai\Api\Polygon|null
      */
     public function getPolygon()
     {
         return $this->polygon;
+    }
+
+    public function hasPolygon()
+    {
+        return isset($this->polygon);
+    }
+
+    public function clearPolygon()
+    {
+        unset($this->polygon);
     }
 
     /**
@@ -143,11 +189,21 @@ class RegionInfo extends \Google\Protobuf\Internal\Message
      * A landmark point location.
      *
      * Generated from protobuf field <code>.clarifai.api.Point point = 6;</code>
-     * @return \Clarifai\Api\Point
+     * @return \Clarifai\Api\Point|null
      */
     public function getPoint()
     {
         return $this->point;
+    }
+
+    public function hasPoint()
+    {
+        return isset($this->point);
+    }
+
+    public function clearPoint()
+    {
+        unset($this->point);
     }
 
     /**
@@ -161,6 +217,78 @@ class RegionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Point::class);
         $this->point = $var;
+
+        return $this;
+    }
+
+    /**
+     * Span char sequence for NLP.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Span span = 7;</code>
+     * @return \Clarifai\Api\Span|null
+     */
+    public function getSpan()
+    {
+        return $this->span;
+    }
+
+    public function hasSpan()
+    {
+        return isset($this->span);
+    }
+
+    public function clearSpan()
+    {
+        unset($this->span);
+    }
+
+    /**
+     * Span char sequence for NLP.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Span span = 7;</code>
+     * @param \Clarifai\Api\Span $var
+     * @return $this
+     */
+    public function setSpan($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Span::class);
+        $this->span = $var;
+
+        return $this;
+    }
+
+    /**
+     * Token char sequence for NLP.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Token token = 8;</code>
+     * @return \Clarifai\Api\Token|null
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    public function hasToken()
+    {
+        return isset($this->token);
+    }
+
+    public function clearToken()
+    {
+        unset($this->token);
+    }
+
+    /**
+     * Token char sequence for NLP.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Token token = 8;</code>
+     * @param \Clarifai\Api\Token $var
+     * @return $this
+     */
+    public function setToken($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Token::class);
+        $this->token = $var;
 
         return $this;
     }

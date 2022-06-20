@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * PostConceptsSearchesRequest
+ *
  * Generated from protobuf message <code>clarifai.api.PostConceptsSearchesRequest</code>
  */
 class PostConceptsSearchesRequest extends \Google\Protobuf\Internal\Message
@@ -57,11 +59,21 @@ class PostConceptsSearchesRequest extends \Google\Protobuf\Internal\Message
      * Ids present in the url of the request.
      *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -83,11 +95,21 @@ class PostConceptsSearchesRequest extends \Google\Protobuf\Internal\Message
      * The body of the request.
      *
      * Generated from protobuf field <code>.clarifai.api.ConceptQuery concept_query = 2;</code>
-     * @return \Clarifai\Api\ConceptQuery
+     * @return \Clarifai\Api\ConceptQuery|null
      */
     public function getConceptQuery()
     {
         return $this->concept_query;
+    }
+
+    public function hasConceptQuery()
+    {
+        return isset($this->concept_query);
+    }
+
+    public function clearConceptQuery()
+    {
+        unset($this->concept_query);
     }
 
     /**
@@ -110,11 +132,21 @@ class PostConceptsSearchesRequest extends \Google\Protobuf\Internal\Message
      * POST request.
      *
      * Generated from protobuf field <code>.clarifai.api.Pagination pagination = 3;</code>
-     * @return \Clarifai\Api\Pagination
+     * @return \Clarifai\Api\Pagination|null
      */
     public function getPagination()
     {
         return $this->pagination;
+    }
+
+    public function hasPagination()
+    {
+        return isset($this->pagination);
+    }
+
+    public function clearPagination()
+    {
+        unset($this->pagination);
     }
 
     /**

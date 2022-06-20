@@ -63,11 +63,21 @@ class Frame extends \Google\Protobuf\Internal\Message
      * Information aboue frame such as number and time.
      *
      * Generated from protobuf field <code>.clarifai.api.FrameInfo frame_info = 1;</code>
-     * @return \Clarifai\Api\FrameInfo
+     * @return \Clarifai\Api\FrameInfo|null
      */
     public function getFrameInfo()
     {
         return $this->frame_info;
+    }
+
+    public function hasFrameInfo()
+    {
+        return isset($this->frame_info);
+    }
+
+    public function clearFrameInfo()
+    {
+        unset($this->frame_info);
     }
 
     /**
@@ -92,11 +102,21 @@ class Frame extends \Google\Protobuf\Internal\Message
      * then recursively have their data field filled in as well.
      *
      * Generated from protobuf field <code>.clarifai.api.Data data = 2;</code>
-     * @return \Clarifai\Api\Data
+     * @return \Clarifai\Api\Data|null
      */
     public function getData()
     {
         return $this->data;
+    }
+
+    public function hasData()
+    {
+        return isset($this->data);
+    }
+
+    public function clearData()
+    {
+        unset($this->data);
     }
 
     /**

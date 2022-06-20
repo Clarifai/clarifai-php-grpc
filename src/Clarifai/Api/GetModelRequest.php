@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Requests / Responses from /proto/clarifai/api/model.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * GetModelRequest
  *
  * Generated from protobuf message <code>clarifai.api.GetModelRequest</code>
  */
@@ -41,7 +39,7 @@ class GetModelRequest extends \Google\Protobuf\Internal\Message
      */
     protected $trained_before = false;
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      *
      * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
      */
@@ -61,7 +59,7 @@ class GetModelRequest extends \Google\Protobuf\Internal\Message
      *     @type string $language
      *     @type bool $trained_before
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
-     *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * }
      */
     public function __construct($data = NULL) {
@@ -71,11 +69,21 @@ class GetModelRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -186,7 +194,7 @@ class GetModelRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      *
      * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -197,7 +205,7 @@ class GetModelRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      *
      * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var

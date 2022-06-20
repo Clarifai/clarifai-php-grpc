@@ -73,11 +73,21 @@ class Collaboration extends \Google\Protobuf\Internal\Message
      *the application
      *
      * Generated from protobuf field <code>.clarifai.api.App app = 1;</code>
-     * @return \Clarifai\Api\App
+     * @return \Clarifai\Api\App|null
      */
     public function getApp()
     {
         return $this->app;
+    }
+
+    public function hasApp()
+    {
+        return isset($this->app);
+    }
+
+    public function clearApp()
+    {
+        unset($this->app);
     }
 
     /**
@@ -99,11 +109,21 @@ class Collaboration extends \Google\Protobuf\Internal\Message
      *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
      *
      * Generated from protobuf field <code>.clarifai.api.User app_owner = 2;</code>
-     * @return \Clarifai\Api\User
+     * @return \Clarifai\Api\User|null
      */
     public function getAppOwner()
     {
         return $this->app_owner;
+    }
+
+    public function hasAppOwner()
+    {
+        return isset($this->app_owner);
+    }
+
+    public function clearAppOwner()
+    {
+        unset($this->app_owner);
     }
 
     /**
@@ -177,11 +197,21 @@ class Collaboration extends \Google\Protobuf\Internal\Message
      *when is the collaboration created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**

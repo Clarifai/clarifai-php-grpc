@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Filter
+ *
  * Generated from protobuf message <code>clarifai.api.Filter</code>
  */
 class Filter extends \Google\Protobuf\Internal\Message
@@ -95,11 +97,21 @@ class Filter extends \Google\Protobuf\Internal\Message
      * FILTER by annotation information.
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
-     * @return \Clarifai\Api\Annotation
+     * @return \Clarifai\Api\Annotation|null
      */
     public function getAnnotation()
     {
         return $this->annotation;
+    }
+
+    public function hasAnnotation()
+    {
+        return isset($this->annotation);
+    }
+
+    public function clearAnnotation()
+    {
+        unset($this->annotation);
     }
 
     /**
@@ -122,11 +134,21 @@ class Filter extends \Google\Protobuf\Internal\Message
      * For example you can filter inputs by status,
      *
      * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
-     * @return \Clarifai\Api\Input
+     * @return \Clarifai\Api\Input|null
      */
     public function getInput()
     {
         return $this->input;
+    }
+
+    public function hasInput()
+    {
+        return isset($this->input);
+    }
+
+    public function clearInput()
+    {
+        unset($this->input);
     }
 
     /**
@@ -149,11 +171,21 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Filter by annotation last updated time range.
      *
      * Generated from protobuf field <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
-     * @return \Clarifai\Api\TimeRange
+     * @return \Clarifai\Api\TimeRange|null
      */
     public function getLastUpdatedTimeRange()
     {
         return $this->last_updated_time_range;
+    }
+
+    public function hasLastUpdatedTimeRange()
+    {
+        return isset($this->last_updated_time_range);
+    }
+
+    public function clearLastUpdatedTimeRange()
+    {
+        unset($this->last_updated_time_range);
     }
 
     /**

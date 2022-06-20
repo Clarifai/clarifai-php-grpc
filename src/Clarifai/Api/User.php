@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/user.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * User
  *
  * Generated from protobuf message <code>clarifai.api.User</code>
  */
@@ -23,6 +21,7 @@ class User extends \Google\Protobuf\Internal\Message
     protected $id = '';
     /**
      * Generated from protobuf field <code>string primary_email = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $primary_email = '';
     /**
@@ -47,6 +46,7 @@ class User extends \Google\Protobuf\Internal\Message
     protected $job_role = '';
     /**
      * Generated from protobuf field <code>string bill_type = 7 [deprecated = true];</code>
+     * @deprecated
      */
     protected $bill_type = '';
     /**
@@ -61,14 +61,17 @@ class User extends \Google\Protobuf\Internal\Message
     protected $created_at = null;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
+     * @deprecated
      */
     protected $date_gdpr_consent = null;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
+     * @deprecated
      */
     protected $date_tos_consent = null;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
+     * @deprecated
      */
     protected $date_marketing_consent = null;
     /**
@@ -76,22 +79,27 @@ class User extends \Google\Protobuf\Internal\Message
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
+     * @deprecated
      */
     protected $metadata = null;
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
+     * @deprecated
      */
     private $email_addresses;
     /**
      * Generated from protobuf field <code>bool is_org_admin = 14 [deprecated = true];</code>
+     * @deprecated
      */
     protected $is_org_admin = false;
     /**
      * Generated from protobuf field <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
+     * @deprecated
      */
     protected $two_factor_auth_enabled = false;
     /**
      * Generated from protobuf field <code>uint32 teams_count = 16 [deprecated = true];</code>
+     * @deprecated
      */
     protected $teams_count = 0;
     /**
@@ -201,9 +209,11 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string primary_email = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getPrimaryEmail()
     {
+        @trigger_error('primary_email is deprecated.', E_USER_DEPRECATED);
         return $this->primary_email;
     }
 
@@ -211,9 +221,11 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string primary_email = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setPrimaryEmail($var)
     {
+        @trigger_error('primary_email is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->primary_email = $var;
 
@@ -333,9 +345,11 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string bill_type = 7 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getBillType()
     {
+        @trigger_error('bill_type is deprecated.', E_USER_DEPRECATED);
         return $this->bill_type;
     }
 
@@ -343,9 +357,11 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string bill_type = 7 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setBillType($var)
     {
+        @trigger_error('bill_type is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->bill_type = $var;
 
@@ -360,11 +376,21 @@ class User extends \Google\Protobuf\Internal\Message
      * "2017-04-11T21:50:50.223962Z"
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -388,20 +414,36 @@ class User extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
+     * @deprecated
      */
     public function getDateGdprConsent()
     {
+        @trigger_error('date_gdpr_consent is deprecated.', E_USER_DEPRECATED);
         return $this->date_gdpr_consent;
+    }
+
+    public function hasDateGdprConsent()
+    {
+        @trigger_error('date_gdpr_consent is deprecated.', E_USER_DEPRECATED);
+        return isset($this->date_gdpr_consent);
+    }
+
+    public function clearDateGdprConsent()
+    {
+        @trigger_error('date_gdpr_consent is deprecated.', E_USER_DEPRECATED);
+        unset($this->date_gdpr_consent);
     }
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
+     * @deprecated
      */
     public function setDateGdprConsent($var)
     {
+        @trigger_error('date_gdpr_consent is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->date_gdpr_consent = $var;
 
@@ -410,20 +452,36 @@ class User extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
+     * @deprecated
      */
     public function getDateTosConsent()
     {
+        @trigger_error('date_tos_consent is deprecated.', E_USER_DEPRECATED);
         return $this->date_tos_consent;
+    }
+
+    public function hasDateTosConsent()
+    {
+        @trigger_error('date_tos_consent is deprecated.', E_USER_DEPRECATED);
+        return isset($this->date_tos_consent);
+    }
+
+    public function clearDateTosConsent()
+    {
+        @trigger_error('date_tos_consent is deprecated.', E_USER_DEPRECATED);
+        unset($this->date_tos_consent);
     }
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
+     * @deprecated
      */
     public function setDateTosConsent($var)
     {
+        @trigger_error('date_tos_consent is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->date_tos_consent = $var;
 
@@ -432,20 +490,36 @@ class User extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
+     * @deprecated
      */
     public function getDateMarketingConsent()
     {
+        @trigger_error('date_marketing_consent is deprecated.', E_USER_DEPRECATED);
         return $this->date_marketing_consent;
+    }
+
+    public function hasDateMarketingConsent()
+    {
+        @trigger_error('date_marketing_consent is deprecated.', E_USER_DEPRECATED);
+        return isset($this->date_marketing_consent);
+    }
+
+    public function clearDateMarketingConsent()
+    {
+        @trigger_error('date_marketing_consent is deprecated.', E_USER_DEPRECATED);
+        unset($this->date_marketing_consent);
     }
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
+     * @deprecated
      */
     public function setDateMarketingConsent($var)
     {
+        @trigger_error('date_marketing_consent is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->date_marketing_consent = $var;
 
@@ -457,11 +531,25 @@ class User extends \Google\Protobuf\Internal\Message
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
+     * @deprecated
      */
     public function getMetadata()
     {
+        @trigger_error('metadata is deprecated.', E_USER_DEPRECATED);
         return $this->metadata;
+    }
+
+    public function hasMetadata()
+    {
+        @trigger_error('metadata is deprecated.', E_USER_DEPRECATED);
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        @trigger_error('metadata is deprecated.', E_USER_DEPRECATED);
+        unset($this->metadata);
     }
 
     /**
@@ -471,9 +559,11 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
      * @param \Google\Protobuf\Struct $var
      * @return $this
+     * @deprecated
      */
     public function setMetadata($var)
     {
+        @trigger_error('metadata is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->metadata = $var;
 
@@ -483,9 +573,11 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getEmailAddresses()
     {
+        @trigger_error('email_addresses is deprecated.', E_USER_DEPRECATED);
         return $this->email_addresses;
     }
 
@@ -493,9 +585,11 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      * @param \Clarifai\Api\EmailAddress[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setEmailAddresses($var)
     {
+        @trigger_error('email_addresses is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\EmailAddress::class);
         $this->email_addresses = $arr;
 
@@ -505,9 +599,11 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bool is_org_admin = 14 [deprecated = true];</code>
      * @return bool
+     * @deprecated
      */
     public function getIsOrgAdmin()
     {
+        @trigger_error('is_org_admin is deprecated.', E_USER_DEPRECATED);
         return $this->is_org_admin;
     }
 
@@ -515,9 +611,11 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_org_admin = 14 [deprecated = true];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setIsOrgAdmin($var)
     {
+        @trigger_error('is_org_admin is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->is_org_admin = $var;
 
@@ -527,9 +625,11 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
      * @return bool
+     * @deprecated
      */
     public function getTwoFactorAuthEnabled()
     {
+        @trigger_error('two_factor_auth_enabled is deprecated.', E_USER_DEPRECATED);
         return $this->two_factor_auth_enabled;
     }
 
@@ -537,9 +637,11 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setTwoFactorAuthEnabled($var)
     {
+        @trigger_error('two_factor_auth_enabled is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->two_factor_auth_enabled = $var;
 
@@ -549,9 +651,11 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint32 teams_count = 16 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getTeamsCount()
     {
+        @trigger_error('teams_count is deprecated.', E_USER_DEPRECATED);
         return $this->teams_count;
     }
 
@@ -559,9 +663,11 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 teams_count = 16 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setTeamsCount($var)
     {
+        @trigger_error('teams_count is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkUint32($var);
         $this->teams_count = $var;
 
@@ -630,11 +736,21 @@ class User extends \Google\Protobuf\Internal\Message
      * also be publicly visible.
      *
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 17;</code>
-     * @return \Clarifai\Api\Visibility
+     * @return \Clarifai\Api\Visibility|null
      */
     public function getVisibility()
     {
         return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
     }
 
     /**
@@ -660,11 +776,21 @@ class User extends \Google\Protobuf\Internal\Message
      * themselves.
      *
      * Generated from protobuf field <code>.clarifai.api.UserDetail user_detail = 18;</code>
-     * @return \Clarifai\Api\UserDetail
+     * @return \Clarifai\Api\UserDetail|null
      */
     public function getUserDetail()
     {
         return $this->user_detail;
+    }
+
+    public function hasUserDetail()
+    {
+        return isset($this->user_detail);
+    }
+
+    public function clearUserDetail()
+    {
+        unset($this->user_detail);
     }
 
     /**

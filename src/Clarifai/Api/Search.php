@@ -151,11 +151,21 @@ class Search extends \Google\Protobuf\Internal\Message
      * Search query.
      *
      * Generated from protobuf field <code>.clarifai.api.Query query = 1;</code>
-     * @return \Clarifai\Api\Query
+     * @return \Clarifai\Api\Query|null
      */
     public function getQuery()
     {
         return $this->query;
+    }
+
+    public function hasQuery()
+    {
+        return isset($this->query);
+    }
+
+    public function clearQuery()
+    {
+        unset($this->query);
     }
 
     /**
@@ -258,11 +268,21 @@ class Search extends \Google\Protobuf\Internal\Message
      * retrieve the annotations satisfying the query.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp as_of = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getAsOf()
     {
         return $this->as_of;
+    }
+
+    public function hasAsOf()
+    {
+        return isset($this->as_of);
+    }
+
+    public function clearAsOf()
+    {
+        unset($this->as_of);
     }
 
     /**
@@ -311,11 +331,21 @@ class Search extends \Google\Protobuf\Internal\Message
      * When the saved search was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 7;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -337,11 +367,21 @@ class Search extends \Google\Protobuf\Internal\Message
      * When the saved search was updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 8;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getModifiedAt()
     {
         return $this->modified_at;
+    }
+
+    public function hasModifiedAt()
+    {
+        return isset($this->modified_at);
+    }
+
+    public function clearModifiedAt()
+    {
+        unset($this->modified_at);
     }
 
     /**
@@ -457,11 +497,21 @@ class Search extends \Google\Protobuf\Internal\Message
      * also be publicly visible.
      *
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 12;</code>
-     * @return \Clarifai\Api\Visibility
+     * @return \Clarifai\Api\Visibility|null
      */
     public function getVisibility()
     {
         return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
     }
 
     /**

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * StatValueAggregateQuery
+ *
  * Generated from protobuf message <code>clarifai.api.StatValueAggregateQuery</code>
  */
 class StatValueAggregateQuery extends \Google\Protobuf\Internal\Message
@@ -244,11 +246,21 @@ class StatValueAggregateQuery extends \Google\Protobuf\Internal\Message
      * all values will be used back to start of time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
     {
         return $this->start_time;
+    }
+
+    public function hasStartTime()
+    {
+        return isset($this->start_time);
+    }
+
+    public function clearStartTime()
+    {
+        unset($this->start_time);
     }
 
     /**
@@ -272,11 +284,21 @@ class StatValueAggregateQuery extends \Google\Protobuf\Internal\Message
      * values will be used up until now().
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
     {
         return $this->end_time;
+    }
+
+    public function hasEndTime()
+    {
+        return isset($this->end_time);
+    }
+
+    public function clearEndTime()
+    {
+        unset($this->end_time);
     }
 
     /**

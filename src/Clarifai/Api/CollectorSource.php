@@ -45,11 +45,21 @@ class CollectorSource extends \Google\Protobuf\Internal\Message
      * This does not apply to models used within workflows, only PostModelOutputs calls.
      *
      * Generated from protobuf field <code>.clarifai.api.APIPostModelOutputsCollectorSource api_post_model_outputs_collector_source = 2;</code>
-     * @return \Clarifai\Api\APIPostModelOutputsCollectorSource
+     * @return \Clarifai\Api\APIPostModelOutputsCollectorSource|null
      */
     public function getApiPostModelOutputsCollectorSource()
     {
         return $this->api_post_model_outputs_collector_source;
+    }
+
+    public function hasApiPostModelOutputsCollectorSource()
+    {
+        return isset($this->api_post_model_outputs_collector_source);
+    }
+
+    public function clearApiPostModelOutputsCollectorSource()
+    {
+        unset($this->api_post_model_outputs_collector_source);
     }
 
     /**

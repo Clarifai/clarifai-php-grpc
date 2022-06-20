@@ -45,11 +45,21 @@ class TrainInfo extends \Google\Protobuf\Internal\Message
      * contained within are sent to the training processor to alter the training process.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct params = 1;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getParams()
     {
         return $this->params;
+    }
+
+    public function hasParams()
+    {
+        return isset($this->params);
+    }
+
+    public function clearParams()
+    {
+        unset($this->params);
     }
 
     /**

@@ -206,11 +206,21 @@ class Task extends \Google\Protobuf\Internal\Message
      * Example: "2006-01-02T15:04:05.999999Z".
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -236,11 +246,21 @@ class Task extends \Google\Protobuf\Internal\Message
      * Example: "2006-01-02T15:04:05.999999Z".
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getModifiedAt()
     {
         return $this->modified_at;
+    }
+
+    public function hasModifiedAt()
+    {
+        return isset($this->modified_at);
+    }
+
+    public function clearModifiedAt()
+    {
+        unset($this->modified_at);
     }
 
     /**
@@ -280,7 +300,7 @@ class Task extends \Google\Protobuf\Internal\Message
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Clarifai\Api\Task_TaskType::class);
+        GPBUtil::checkEnum($var, \Clarifai\Api\Task\TaskType::class);
         $this->type = $var;
 
         return $this;
@@ -316,11 +336,21 @@ class Task extends \Google\Protobuf\Internal\Message
      * Worker details.
      *
      * Generated from protobuf field <code>.clarifai.api.TaskWorker worker = 6;</code>
-     * @return \Clarifai\Api\TaskWorker
+     * @return \Clarifai\Api\TaskWorker|null
      */
     public function getWorker()
     {
         return $this->worker;
+    }
+
+    public function hasWorker()
+    {
+        return isset($this->worker);
+    }
+
+    public function clearWorker()
+    {
+        unset($this->worker);
     }
 
     /**
@@ -368,11 +398,21 @@ class Task extends \Google\Protobuf\Internal\Message
      * List of inputs used in this task will be taken from this source.
      *
      * Generated from protobuf field <code>.clarifai.api.TaskInputSource input_source = 8;</code>
-     * @return \Clarifai\Api\TaskInputSource
+     * @return \Clarifai\Api\TaskInputSource|null
      */
     public function getInputSource()
     {
         return $this->input_source;
+    }
+
+    public function hasInputSource()
+    {
+        return isset($this->input_source);
+    }
+
+    public function clearInputSource()
+    {
+        unset($this->input_source);
     }
 
     /**
@@ -420,11 +460,21 @@ class Task extends \Google\Protobuf\Internal\Message
      * AI assistant details.
      *
      * Generated from protobuf field <code>.clarifai.api.TaskAIAssistant ai_assistant = 10;</code>
-     * @return \Clarifai\Api\TaskAIAssistant
+     * @return \Clarifai\Api\TaskAIAssistant|null
      */
     public function getAiAssistant()
     {
         return $this->ai_assistant;
+    }
+
+    public function hasAiAssistant()
+    {
+        return isset($this->ai_assistant);
+    }
+
+    public function clearAiAssistant()
+    {
+        unset($this->ai_assistant);
     }
 
     /**
@@ -446,11 +496,21 @@ class Task extends \Google\Protobuf\Internal\Message
      * Review details.
      *
      * Generated from protobuf field <code>.clarifai.api.TaskReview review = 11;</code>
-     * @return \Clarifai\Api\TaskReview
+     * @return \Clarifai\Api\TaskReview|null
      */
     public function getReview()
     {
         return $this->review;
+    }
+
+    public function hasReview()
+    {
+        return isset($this->review);
+    }
+
+    public function clearReview()
+    {
+        unset($this->review);
     }
 
     /**
@@ -472,11 +532,21 @@ class Task extends \Google\Protobuf\Internal\Message
      * Status of this task.
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 12;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -522,11 +592,21 @@ class Task extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
-     * @return \Clarifai\Api\AiAssistParameters
+     * @return \Clarifai\Api\AiAssistParameters|null
      */
     public function getAiAssistParams()
     {
         return $this->ai_assist_params;
+    }
+
+    public function hasAiAssistParams()
+    {
+        return isset($this->ai_assist_params);
+    }
+
+    public function clearAiAssistParams()
+    {
+        unset($this->ai_assist_params);
     }
 
     /**
@@ -548,11 +628,21 @@ class Task extends \Google\Protobuf\Internal\Message
      * also be publicly visible.
      *
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 15;</code>
-     * @return \Clarifai\Api\Visibility
+     * @return \Clarifai\Api\Visibility|null
      */
     public function getVisibility()
     {
         return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
     }
 
     /**

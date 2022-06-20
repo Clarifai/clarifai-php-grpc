@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * SingleModelVersionInputExampleResponse
+ *
  * Generated from protobuf message <code>clarifai.api.SingleModelVersionInputExampleResponse</code>
  */
 class SingleModelVersionInputExampleResponse extends \Google\Protobuf\Internal\Message
@@ -47,11 +49,21 @@ class SingleModelVersionInputExampleResponse extends \Google\Protobuf\Internal\M
      * status of response
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -73,11 +85,21 @@ class SingleModelVersionInputExampleResponse extends \Google\Protobuf\Internal\M
      * model input example message
      *
      * Generated from protobuf field <code>.clarifai.api.ModelVersionInputExample model_version_input_example = 2;</code>
-     * @return \Clarifai\Api\ModelVersionInputExample
+     * @return \Clarifai\Api\ModelVersionInputExample|null
      */
     public function getModelVersionInputExample()
     {
         return $this->model_version_input_example;
+    }
+
+    public function hasModelVersionInputExample()
+    {
+        return isset($this->model_version_input_example);
+    }
+
+    public function clearModelVersionInputExample()
+    {
+        unset($this->model_version_input_example);
     }
 
     /**

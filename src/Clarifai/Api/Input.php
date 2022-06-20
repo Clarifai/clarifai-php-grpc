@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/input.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Input
  *
  * Generated from protobuf message <code>clarifai.api.Input</code>
  */
@@ -121,11 +119,21 @@ class Input extends \Google\Protobuf\Internal\Message
      * The data passed along in this input.
      *
      * Generated from protobuf field <code>.clarifai.api.Data data = 2;</code>
-     * @return \Clarifai\Api\Data
+     * @return \Clarifai\Api\Data|null
      */
     public function getData()
     {
         return $this->data;
+    }
+
+    public function hasData()
+    {
+        return isset($this->data);
+    }
+
+    public function clearData()
+    {
+        unset($this->data);
     }
 
     /**
@@ -151,11 +159,21 @@ class Input extends \Google\Protobuf\Internal\Message
      * "2017-04-11T21:50:50.223962Z"
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -181,11 +199,21 @@ class Input extends \Google\Protobuf\Internal\Message
      * When the input was modified.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getModifiedAt()
     {
         return $this->modified_at;
+    }
+
+    public function hasModifiedAt()
+    {
+        return isset($this->modified_at);
+    }
+
+    public function clearModifiedAt()
+    {
+        unset($this->modified_at);
     }
 
     /**
@@ -208,11 +236,21 @@ class Input extends \Google\Protobuf\Internal\Message
      * partial failures.
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 6;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**

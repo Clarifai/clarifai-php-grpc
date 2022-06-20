@@ -48,7 +48,7 @@ class ClarifaiTest extends TestCase
         )->wait();
         $this->raiseOnFailure($response, $status);
 
-        $this->assertEquals('general', $response->getModel()->getName());
+        $this->assertEquals('Image Recognition', $response->getModel()->getName());
     }
 
     public function testListModelsWithPagination()

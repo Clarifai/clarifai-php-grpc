@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * WorkflowResult
+ *
  * Generated from protobuf message <code>clarifai.api.WorkflowResult</code>
  */
 class WorkflowResult extends \Google\Protobuf\Internal\Message
@@ -100,11 +102,21 @@ class WorkflowResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 2;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -128,11 +140,21 @@ class WorkflowResult extends \Google\Protobuf\Internal\Message
      * "2017-04-11T21:50:50.223962Z"
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -156,11 +178,21 @@ class WorkflowResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.Model model = 4;</code>
-     * @return \Clarifai\Api\Model
+     * @return \Clarifai\Api\Model|null
      */
     public function getModel()
     {
         return $this->model;
+    }
+
+    public function hasModel()
+    {
+        return isset($this->model);
+    }
+
+    public function clearModel()
+    {
+        unset($this->model);
     }
 
     /**
@@ -178,11 +210,21 @@ class WorkflowResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
-     * @return \Clarifai\Api\Input
+     * @return \Clarifai\Api\Input|null
      */
     public function getInput()
     {
         return $this->input;
+    }
+
+    public function hasInput()
+    {
+        return isset($this->input);
+    }
+
+    public function clearInput()
+    {
+        unset($this->input);
     }
 
     /**

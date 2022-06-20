@@ -38,12 +38,6 @@ class ModelType extends \Google\Protobuf\Internal\Message
      */
     protected $description = '';
     /**
-     * The type of the model to create. This is currently stored in output_info.type.
-     *
-     * Generated from protobuf field <code>string type = 4;</code>
-     */
-    protected $type = '';
-    /**
      * The list of input fields that this model accepts. These are the keys of the Model's
      * InputInfo.fields_map
      *
@@ -100,17 +94,17 @@ class ModelType extends \Google\Protobuf\Internal\Message
      */
     protected $evaluable = false;
     /**
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
+     * Expected input layers of an uploaded model
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
      */
-    protected $expected_pretrained_input_fields = null;
+    private $expected_input_layers;
     /**
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
+     * Expected output layers of an uploaded model
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
      */
-    protected $expected_pretrained_output_fields = null;
+    private $expected_output_layers;
 
     /**
      * Constructor.
@@ -126,8 +120,6 @@ class ModelType extends \Google\Protobuf\Internal\Message
      *           title for this model in model gallery
      *     @type string $description
      *           Description of this model type.
-     *     @type string $type
-     *           The type of the model to create. This is currently stored in output_info.type.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $input_fields
      *           The list of input fields that this model accepts. These are the keys of the Model's
      *           InputInfo.fields_map
@@ -152,10 +144,10 @@ class ModelType extends \Google\Protobuf\Internal\Message
      *           in sequential order. This will be true for model types like trackers as an example.
      *     @type bool $evaluable
      *           Can this model be evaluated?
-     *     @type \Google\Protobuf\Struct $expected_pretrained_input_fields
-     *           Maps input_fields to the more granular data fields needed to parse a triton models inputs
-     *     @type \Google\Protobuf\Struct $expected_pretrained_output_fields
-     *           Maps output_fields to the more granular data fields needed to parse a triton models outputs
+     *     @type \Clarifai\Api\ModelLayerInfo[]|\Google\Protobuf\Internal\RepeatedField $expected_input_layers
+     *           Expected input layers of an uploaded model
+     *     @type \Clarifai\Api\ModelLayerInfo[]|\Google\Protobuf\Internal\RepeatedField $expected_output_layers
+     *           Expected output layers of an uploaded model
      * }
      */
     public function __construct($data = NULL) {
@@ -241,32 +233,6 @@ class ModelType extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
-
-        return $this;
-    }
-
-    /**
-     * The type of the model to create. This is currently stored in output_info.type.
-     *
-     * Generated from protobuf field <code>string type = 4;</code>
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * The type of the model to create. This is currently stored in output_info.type.
-     *
-     * Generated from protobuf field <code>string type = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setType($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->type = $var;
 
         return $this;
     }
@@ -496,53 +462,53 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
+     * Expected input layers of an uploaded model
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
-     * @return \Google\Protobuf\Struct
+     * Generated from protobuf field <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getExpectedPretrainedInputFields()
+    public function getExpectedInputLayers()
     {
-        return $this->expected_pretrained_input_fields;
+        return $this->expected_input_layers;
     }
 
     /**
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
+     * Expected input layers of an uploaded model
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
-     * @param \Google\Protobuf\Struct $var
+     * Generated from protobuf field <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+     * @param \Clarifai\Api\ModelLayerInfo[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setExpectedPretrainedInputFields($var)
+    public function setExpectedInputLayers($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
-        $this->expected_pretrained_input_fields = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\ModelLayerInfo::class);
+        $this->expected_input_layers = $arr;
 
         return $this;
     }
 
     /**
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
+     * Expected output layers of an uploaded model
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
-     * @return \Google\Protobuf\Struct
+     * Generated from protobuf field <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getExpectedPretrainedOutputFields()
+    public function getExpectedOutputLayers()
     {
-        return $this->expected_pretrained_output_fields;
+        return $this->expected_output_layers;
     }
 
     /**
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
+     * Expected output layers of an uploaded model
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
-     * @param \Google\Protobuf\Struct $var
+     * Generated from protobuf field <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     * @param \Clarifai\Api\ModelLayerInfo[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setExpectedPretrainedOutputFields($var)
+    public function setExpectedOutputLayers($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
-        $this->expected_pretrained_output_fields = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\ModelLayerInfo::class);
+        $this->expected_output_layers = $arr;
 
         return $this;
     }

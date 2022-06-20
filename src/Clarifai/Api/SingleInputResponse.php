@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * SingleInputResponse
+ *
  * Generated from protobuf message <code>clarifai.api.SingleInputResponse</code>
  */
 class SingleInputResponse extends \Google\Protobuf\Internal\Message
@@ -39,11 +41,21 @@ class SingleInputResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -61,11 +73,21 @@ class SingleInputResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.Input input = 2;</code>
-     * @return \Clarifai\Api\Input
+     * @return \Clarifai\Api\Input|null
      */
     public function getInput()
     {
         return $this->input;
+    }
+
+    public function hasInput()
+    {
+        return isset($this->input);
+    }
+
+    public function clearInput()
+    {
+        unset($this->input);
     }
 
     /**

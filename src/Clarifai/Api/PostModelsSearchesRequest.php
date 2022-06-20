@@ -59,11 +59,21 @@ class PostModelsSearchesRequest extends \Google\Protobuf\Internal\Message
      * Ids present in the url of the request.
      *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -85,11 +95,21 @@ class PostModelsSearchesRequest extends \Google\Protobuf\Internal\Message
      * The body of the request.
      *
      * Generated from protobuf field <code>.clarifai.api.ModelQuery model_query = 2;</code>
-     * @return \Clarifai\Api\ModelQuery
+     * @return \Clarifai\Api\ModelQuery|null
      */
     public function getModelQuery()
     {
         return $this->model_query;
+    }
+
+    public function hasModelQuery()
+    {
+        return isset($this->model_query);
+    }
+
+    public function clearModelQuery()
+    {
+        unset($this->model_query);
     }
 
     /**
@@ -112,11 +132,21 @@ class PostModelsSearchesRequest extends \Google\Protobuf\Internal\Message
      * POST request.
      *
      * Generated from protobuf field <code>.clarifai.api.Pagination pagination = 3;</code>
-     * @return \Clarifai\Api\Pagination
+     * @return \Clarifai\Api\Pagination|null
      */
     public function getPagination()
     {
         return $this->pagination;
+    }
+
+    public function hasPagination()
+    {
+        return isset($this->pagination);
+    }
+
+    public function clearPagination()
+    {
+        unset($this->pagination);
     }
 
     /**

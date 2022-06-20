@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * ModelTypeRangeInfo
+ *
  * Generated from protobuf message <code>clarifai.api.ModelTypeRangeInfo</code>
  */
 class ModelTypeRangeInfo extends \Google\Protobuf\Internal\Message

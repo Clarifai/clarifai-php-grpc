@@ -35,6 +35,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * Default is general model.
      *
      * Generated from protobuf field <code>string existing_model_id = 3 [deprecated = true];</code>
+     * @deprecated
      */
     protected $existing_model_id = '';
     /**
@@ -48,6 +49,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * Use new hyper_params field instead.
      *
      * Generated from protobuf field <code>string hyper_parameters = 5 [deprecated = true];</code>
+     * @deprecated
      */
     protected $hyper_parameters = '';
     /**
@@ -113,6 +115,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * TODO(zeiler): remove this field after Portal is updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
+     * @deprecated
      */
     protected $model_metadata = null;
 
@@ -231,9 +234,11 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string existing_model_id = 3 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getExistingModelId()
     {
+        @trigger_error('existing_model_id is deprecated.', E_USER_DEPRECATED);
         return $this->existing_model_id;
     }
 
@@ -244,9 +249,11 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string existing_model_id = 3 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setExistingModelId($var)
     {
+        @trigger_error('existing_model_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->existing_model_id = $var;
 
@@ -285,9 +292,11 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string hyper_parameters = 5 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getHyperParameters()
     {
+        @trigger_error('hyper_parameters is deprecated.', E_USER_DEPRECATED);
         return $this->hyper_parameters;
     }
 
@@ -298,9 +307,11 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string hyper_parameters = 5 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setHyperParameters($var)
     {
+        @trigger_error('hyper_parameters is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->hyper_parameters = $var;
 
@@ -449,11 +460,21 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * For custom model training: Hyperparameters for custom training
      *
      * Generated from protobuf field <code>.google.protobuf.Struct hyper_params = 13;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getHyperParams()
     {
         return $this->hyper_params;
+    }
+
+    public function hasHyperParams()
+    {
+        return isset($this->hyper_params);
+    }
+
+    public function clearHyperParams()
+    {
+        unset($this->hyper_params);
     }
 
     /**
@@ -536,11 +557,25 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * TODO(zeiler): remove this field after Portal is updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
+     * @deprecated
      */
     public function getModelMetadata()
     {
+        @trigger_error('model_metadata is deprecated.', E_USER_DEPRECATED);
         return $this->model_metadata;
+    }
+
+    public function hasModelMetadata()
+    {
+        @trigger_error('model_metadata is deprecated.', E_USER_DEPRECATED);
+        return isset($this->model_metadata);
+    }
+
+    public function clearModelMetadata()
+    {
+        @trigger_error('model_metadata is deprecated.', E_USER_DEPRECATED);
+        unset($this->model_metadata);
     }
 
     /**
@@ -554,9 +589,11 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
      * @param \Google\Protobuf\Struct $var
      * @return $this
+     * @deprecated
      */
     public function setModelMetadata($var)
     {
+        @trigger_error('model_metadata is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->model_metadata = $var;
 

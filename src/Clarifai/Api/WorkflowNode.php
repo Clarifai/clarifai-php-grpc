@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * WorkflowNode
+ *
  * Generated from protobuf message <code>clarifai.api.WorkflowNode</code>
  */
 class WorkflowNode extends \Google\Protobuf\Internal\Message
@@ -98,11 +100,21 @@ class WorkflowNode extends \Google\Protobuf\Internal\Message
      * model.model_version.id fields.
      *
      * Generated from protobuf field <code>.clarifai.api.Model model = 2;</code>
-     * @return \Clarifai\Api\Model
+     * @return \Clarifai\Api\Model|null
      */
     public function getModel()
     {
         return $this->model;
+    }
+
+    public function hasModel()
+    {
+        return isset($this->model);
+    }
+
+    public function clearModel()
+    {
+        unset($this->model);
     }
 
     /**

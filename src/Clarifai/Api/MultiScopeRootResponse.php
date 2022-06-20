@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * MultiScopeRootResponse
+ *
  * Generated from protobuf message <code>clarifai.api.MultiScopeRootResponse</code>
  */
 class MultiScopeRootResponse extends \Google\Protobuf\Internal\Message
@@ -31,6 +33,10 @@ class MultiScopeRootResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string endpoints = 4;</code>
      */
     private $endpoints;
+    /**
+     * Generated from protobuf field <code>string user_feature_flags = 5;</code>
+     */
+    protected $user_feature_flags = '';
 
     /**
      * Constructor.
@@ -44,6 +50,7 @@ class MultiScopeRootResponse extends \Google\Protobuf\Internal\Message
      *           This is a list of the scopes that your key has.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $endpoints
      *           This is a list of endpoint permissions that your key has.
+     *     @type string $user_feature_flags
      * }
      */
     public function __construct($data = NULL) {
@@ -55,11 +62,21 @@ class MultiScopeRootResponse extends \Google\Protobuf\Internal\Message
      * The status of the request.
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -125,6 +142,28 @@ class MultiScopeRootResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->endpoints = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_feature_flags = 5;</code>
+     * @return string
+     */
+    public function getUserFeatureFlags()
+    {
+        return $this->user_feature_flags;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_feature_flags = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserFeatureFlags($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_feature_flags = $var;
 
         return $this;
     }

@@ -37,6 +37,12 @@ class PostModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Search test_search = 5;</code>
      */
     protected $test_search = null;
+    /**
+     * evaluation info. Such as dataset used for evaluation.
+     *
+     * Generated from protobuf field <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+     */
+    protected $eval_info = null;
 
     /**
      * Constructor.
@@ -50,6 +56,8 @@ class PostModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $max_examples
      *     @type \Clarifai\Api\Search $test_search
      *           Use this to filter inputs that are used in evaluation
+     *     @type \Clarifai\Api\EvalInfo $eval_info
+     *           evaluation info. Such as dataset used for evaluation.
      * }
      */
     public function __construct($data = NULL) {
@@ -59,11 +67,21 @@ class PostModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -149,11 +167,21 @@ class PostModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
      * Use this to filter inputs that are used in evaluation
      *
      * Generated from protobuf field <code>.clarifai.api.Search test_search = 5;</code>
-     * @return \Clarifai\Api\Search
+     * @return \Clarifai\Api\Search|null
      */
     public function getTestSearch()
     {
         return $this->test_search;
+    }
+
+    public function hasTestSearch()
+    {
+        return isset($this->test_search);
+    }
+
+    public function clearTestSearch()
+    {
+        unset($this->test_search);
     }
 
     /**
@@ -167,6 +195,42 @@ class PostModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Search::class);
         $this->test_search = $var;
+
+        return $this;
+    }
+
+    /**
+     * evaluation info. Such as dataset used for evaluation.
+     *
+     * Generated from protobuf field <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+     * @return \Clarifai\Api\EvalInfo|null
+     */
+    public function getEvalInfo()
+    {
+        return $this->eval_info;
+    }
+
+    public function hasEvalInfo()
+    {
+        return isset($this->eval_info);
+    }
+
+    public function clearEvalInfo()
+    {
+        unset($this->eval_info);
+    }
+
+    /**
+     * evaluation info. Such as dataset used for evaluation.
+     *
+     * Generated from protobuf field <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+     * @param \Clarifai\Api\EvalInfo $var
+     * @return $this
+     */
+    public function setEvalInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\EvalInfo::class);
+        $this->eval_info = $var;
 
         return $this;
     }

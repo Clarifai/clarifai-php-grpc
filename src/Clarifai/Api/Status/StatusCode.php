@@ -36,12 +36,15 @@ class StatusCode
      */
     const TRY_AGAIN = 10030;
     /**
-     *SUCCESS_WARNING_API_DEPRECATED = 10001;
-     *SUCCESS_WARNING_CLIENT_DEPRECATED = 10002;
-     *
      * Generated from protobuf enum <code>NOT_IMPLEMENTED = 10040;</code>
      */
     const NOT_IMPLEMENTED = 10040;
+    /**
+     * Resource moved. Respond with Http status 307 and add new Location header to response
+     *
+     * Generated from protobuf enum <code>MOVED = 10050;</code>
+     */
+    const MOVED = 10050;
     /**
      * Clarifai Connection Codes: 11xxx
      *
@@ -543,6 +546,10 @@ class StatusCode
      */
     const DATA_DUMP_NO_DATA = 25154;
     /**
+     * Generated from protobuf enum <code>DATA_DUMP_UNEXPECTED_ERROR = 25155;</code>
+     */
+    const DATA_DUMP_UNEXPECTED_ERROR = 25155;
+    /**
      * Duplicate related 252xx
      *
      * Generated from protobuf enum <code>APP_DUPLICATION_SUCCESS = 25200;</code>
@@ -564,6 +571,58 @@ class StatusCode
      * Generated from protobuf enum <code>APP_DUPLICATION_INVALID_REQUEST = 25204;</code>
      */
     const APP_DUPLICATION_INVALID_REQUEST = 25204;
+    /**
+     * Module related codes 253xx
+     *
+     * Generated from protobuf enum <code>MODULE_DOES_NOT_EXIST = 25300;</code>
+     */
+    const MODULE_DOES_NOT_EXIST = 25300;
+    /**
+     * Generated from protobuf enum <code>MODULE_PERMISSION_DENIED = 25301;</code>
+     */
+    const MODULE_PERMISSION_DENIED = 25301;
+    /**
+     * Generated from protobuf enum <code>MODULE_INVALID_ARGUMENT = 25302;</code>
+     */
+    const MODULE_INVALID_ARGUMENT = 25302;
+    /**
+     * Generated from protobuf enum <code>MODULE_INVALID_REQUEST = 25303;</code>
+     */
+    const MODULE_INVALID_REQUEST = 25303;
+    /**
+     * Bulk Operation related codes 254xx
+     *
+     * Generated from protobuf enum <code>BULK_OPERATION_SUCCESS = 25400;</code>
+     */
+    const BULK_OPERATION_SUCCESS = 25400;
+    /**
+     * Generated from protobuf enum <code>BULK_OPERATION_FAILED = 25401;</code>
+     */
+    const BULK_OPERATION_FAILED = 25401;
+    /**
+     * Generated from protobuf enum <code>BULK_OPERATION_PENDING = 25402;</code>
+     */
+    const BULK_OPERATION_PENDING = 25402;
+    /**
+     * Generated from protobuf enum <code>BULK_OPERATION_IN_PROGRESS = 25403;</code>
+     */
+    const BULK_OPERATION_IN_PROGRESS = 25403;
+    /**
+     * Generated from protobuf enum <code>BULK_OPERATION_INVALID_REQUEST = 25404;</code>
+     */
+    const BULK_OPERATION_INVALID_REQUEST = 25404;
+    /**
+     * Generated from protobuf enum <code>BULK_OPERATION_CANCELLED = 25405;</code>
+     */
+    const BULK_OPERATION_CANCELLED = 25405;
+    /**
+     * Generated from protobuf enum <code>BULK_OPERATION_UNEXPECTED_ERROR = 25406;</code>
+     */
+    const BULK_OPERATION_UNEXPECTED_ERROR = 25406;
+    /**
+     * Generated from protobuf enum <code>BULK_OPERATION_DELETED = 25407;</code>
+     */
+    const BULK_OPERATION_DELETED = 25407;
     /**
      * Input:Image related 30xxx
      *
@@ -1267,6 +1326,24 @@ class StatusCode
      */
     const DATASET_VERSION_UNEXPECTED_ERROR = 64025;
     /**
+     * An alteration to dataset version would create a conflict
+     *
+     * Generated from protobuf enum <code>DATASET_VERSION_CONFLICT = 64030;</code>
+     */
+    const DATASET_VERSION_CONFLICT = 64030;
+    /**
+     * The dataset input was successfully added.
+     *
+     * Generated from protobuf enum <code>DATASET_INPUT_SUCCESS = 64100;</code>
+     */
+    const DATASET_INPUT_SUCCESS = 64100;
+    /**
+     * The dataset input is a duplicate.
+     *
+     * Generated from protobuf enum <code>DATASET_INPUT_DUPLICATE = 64101;</code>
+     */
+    const DATASET_INPUT_DUPLICATE = 64101;
+    /**
      * Generic Job status codes
      *
      * Generated from protobuf enum <code>JOB_QUEUED = 64000;</code>
@@ -1386,6 +1463,7 @@ class StatusCode
         self::FAILURE => 'FAILURE',
         self::TRY_AGAIN => 'TRY_AGAIN',
         self::NOT_IMPLEMENTED => 'NOT_IMPLEMENTED',
+        self::MOVED => 'MOVED',
         self::CONN_ACCOUNT_ISSUES => 'CONN_ACCOUNT_ISSUES',
         self::CONN_TOKEN_INVALID => 'CONN_TOKEN_INVALID',
         self::CONN_CREDENTIALS_INVALID => 'CONN_CREDENTIALS_INVALID',
@@ -1486,11 +1564,24 @@ class StatusCode
         self::DATA_DUMP_FAILED => 'DATA_DUMP_FAILED',
         self::DATA_DUMP_IN_PROGRESS => 'DATA_DUMP_IN_PROGRESS',
         self::DATA_DUMP_NO_DATA => 'DATA_DUMP_NO_DATA',
+        self::DATA_DUMP_UNEXPECTED_ERROR => 'DATA_DUMP_UNEXPECTED_ERROR',
         self::APP_DUPLICATION_SUCCESS => 'APP_DUPLICATION_SUCCESS',
         self::APP_DUPLICATION_FAILED => 'APP_DUPLICATION_FAILED',
         self::APP_DUPLICATION_PENDING => 'APP_DUPLICATION_PENDING',
         self::APP_DUPLICATION_IN_PROGRESS => 'APP_DUPLICATION_IN_PROGRESS',
         self::APP_DUPLICATION_INVALID_REQUEST => 'APP_DUPLICATION_INVALID_REQUEST',
+        self::MODULE_DOES_NOT_EXIST => 'MODULE_DOES_NOT_EXIST',
+        self::MODULE_PERMISSION_DENIED => 'MODULE_PERMISSION_DENIED',
+        self::MODULE_INVALID_ARGUMENT => 'MODULE_INVALID_ARGUMENT',
+        self::MODULE_INVALID_REQUEST => 'MODULE_INVALID_REQUEST',
+        self::BULK_OPERATION_SUCCESS => 'BULK_OPERATION_SUCCESS',
+        self::BULK_OPERATION_FAILED => 'BULK_OPERATION_FAILED',
+        self::BULK_OPERATION_PENDING => 'BULK_OPERATION_PENDING',
+        self::BULK_OPERATION_IN_PROGRESS => 'BULK_OPERATION_IN_PROGRESS',
+        self::BULK_OPERATION_INVALID_REQUEST => 'BULK_OPERATION_INVALID_REQUEST',
+        self::BULK_OPERATION_CANCELLED => 'BULK_OPERATION_CANCELLED',
+        self::BULK_OPERATION_UNEXPECTED_ERROR => 'BULK_OPERATION_UNEXPECTED_ERROR',
+        self::BULK_OPERATION_DELETED => 'BULK_OPERATION_DELETED',
         self::INPUT_DOWNLOAD_SUCCESS => 'INPUT_DOWNLOAD_SUCCESS',
         self::INPUT_DOWNLOAD_PENDING => 'INPUT_DOWNLOAD_PENDING',
         self::INPUT_DOWNLOAD_FAILED => 'INPUT_DOWNLOAD_FAILED',
@@ -1647,6 +1738,9 @@ class StatusCode
         self::DATASET_VERSION_READY => 'DATASET_VERSION_READY',
         self::DATASET_VERSION_FAILURE => 'DATASET_VERSION_FAILURE',
         self::DATASET_VERSION_UNEXPECTED_ERROR => 'DATASET_VERSION_UNEXPECTED_ERROR',
+        self::DATASET_VERSION_CONFLICT => 'DATASET_VERSION_CONFLICT',
+        self::DATASET_INPUT_SUCCESS => 'DATASET_INPUT_SUCCESS',
+        self::DATASET_INPUT_DUPLICATE => 'DATASET_INPUT_DUPLICATE',
         self::JOB_QUEUED => 'JOB_QUEUED',
         self::JOB_RUNNING => 'JOB_RUNNING',
         self::JOB_COMPLETED => 'JOB_COMPLETED',

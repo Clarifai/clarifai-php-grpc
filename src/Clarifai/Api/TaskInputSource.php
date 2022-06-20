@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * TaskInputSource
+ *
  * Generated from protobuf message <code>clarifai.api.TaskInputSource</code>
  */
 class TaskInputSource extends \Google\Protobuf\Internal\Message
@@ -63,7 +65,7 @@ class TaskInputSource extends \Google\Protobuf\Internal\Message
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Clarifai\Api\TaskInputSource_TaskInputSourceType::class);
+        GPBUtil::checkEnum($var, \Clarifai\Api\TaskInputSource\TaskInputSourceType::class);
         $this->type = $var;
 
         return $this;

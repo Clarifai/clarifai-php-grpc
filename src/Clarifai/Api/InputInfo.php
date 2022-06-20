@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * InputInfo
+ *
  * Generated from protobuf message <code>clarifai.api.InputInfo</code>
  */
 class InputInfo extends \Google\Protobuf\Internal\Message
@@ -54,11 +56,21 @@ class InputInfo extends \Google\Protobuf\Internal\Message
      * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt input names.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct fields_map = 1;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getFieldsMap()
     {
         return $this->fields_map;
+    }
+
+    public function hasFieldsMap()
+    {
+        return isset($this->fields_map);
+    }
+
+    public function clearFieldsMap()
+    {
+        unset($this->fields_map);
     }
 
     /**
@@ -83,11 +95,21 @@ class InputInfo extends \Google\Protobuf\Internal\Message
      * settings contained within are sent to the training processor to alter the training process.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct params = 2;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getParams()
     {
         return $this->params;
+    }
+
+    public function hasParams()
+    {
+        return isset($this->params);
+    }
+
+    public function clearParams()
+    {
+        unset($this->params);
     }
 
     /**

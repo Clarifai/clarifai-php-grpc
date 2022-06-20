@@ -9,12 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Requests / Responses from /proto/clarifai/api/output.proto
- * //////////////////////////////////////////////////////////////////////////////
- * //////////////////////////////////////////////////
- * Outputs related requests
- * //////////////////////////////////////////////////
+ * MultiOutputResponse
  *
  * Generated from protobuf message <code>clarifai.api.MultiOutputResponse</code>
  */
@@ -46,11 +41,21 @@ class MultiOutputResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**

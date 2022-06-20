@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/data.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Data
  *
  * Generated from protobuf message <code>clarifai.api.Data</code>
  */
@@ -79,7 +77,7 @@ class Data extends \Google\Protobuf\Internal\Message
      */
     private $frames;
     /**
-     * Input and output text.
+     * Input, output or annotation text.
      *
      * Generated from protobuf field <code>.clarifai.api.Text text = 13;</code>
      */
@@ -102,6 +100,18 @@ class Data extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
      */
     private $time_segments;
+    /**
+     * Holds score, rank, and user, app, input IDs and search hit data
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    private $hits;
+    /**
+     * Heatmap as 2d image
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    private $heatmaps;
 
     /**
      * Constructor.
@@ -131,13 +141,17 @@ class Data extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Frame[]|\Google\Protobuf\Internal\RepeatedField $frames
      *           For temporal content like video.
      *     @type \Clarifai\Api\Text $text
-     *           Input and output text.
+     *           Input, output or annotation text.
      *     @type \Clarifai\Api\Audio $audio
      *           Input and output audio.
      *     @type \Clarifai\Api\Track[]|\Google\Protobuf\Internal\RepeatedField $tracks
      *           Track information.
      *     @type \Clarifai\Api\TimeSegment[]|\Google\Protobuf\Internal\RepeatedField $time_segments
      *           Time segments information.
+     *     @type \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $hits
+     *           Holds score, rank, and user, app, input IDs and search hit data
+     *     @type \Clarifai\Api\Image[]|\Google\Protobuf\Internal\RepeatedField $heatmaps
+     *           Heatmap as 2d image
      * }
      */
     public function __construct($data = NULL) {
@@ -149,11 +163,21 @@ class Data extends \Google\Protobuf\Internal\Message
      * Input and output images.
      *
      * Generated from protobuf field <code>.clarifai.api.Image image = 1;</code>
-     * @return \Clarifai\Api\Image
+     * @return \Clarifai\Api\Image|null
      */
     public function getImage()
     {
         return $this->image;
+    }
+
+    public function hasImage()
+    {
+        return isset($this->image);
+    }
+
+    public function clearImage()
+    {
+        unset($this->image);
     }
 
     /**
@@ -175,11 +199,21 @@ class Data extends \Google\Protobuf\Internal\Message
      * Input and output videos.
      *
      * Generated from protobuf field <code>.clarifai.api.Video video = 2;</code>
-     * @return \Clarifai\Api\Video
+     * @return \Clarifai\Api\Video|null
      */
     public function getVideo()
     {
         return $this->video;
+    }
+
+    public function hasVideo()
+    {
+        return isset($this->video);
+    }
+
+    public function clearVideo()
+    {
+        unset($this->video);
     }
 
     /**
@@ -228,11 +262,21 @@ class Data extends \Google\Protobuf\Internal\Message
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 5;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getMetadata()
     {
         return $this->metadata;
+    }
+
+    public function hasMetadata()
+    {
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        unset($this->metadata);
     }
 
     /**
@@ -255,11 +299,21 @@ class Data extends \Google\Protobuf\Internal\Message
      * Geography information.
      *
      * Generated from protobuf field <code>.clarifai.api.Geo geo = 6;</code>
-     * @return \Clarifai\Api\Geo
+     * @return \Clarifai\Api\Geo|null
      */
     public function getGeo()
     {
         return $this->geo;
+    }
+
+    public function hasGeo()
+    {
+        return isset($this->geo);
+    }
+
+    public function clearGeo()
+    {
+        unset($this->geo);
     }
 
     /**
@@ -408,18 +462,28 @@ class Data extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input and output text.
+     * Input, output or annotation text.
      *
      * Generated from protobuf field <code>.clarifai.api.Text text = 13;</code>
-     * @return \Clarifai\Api\Text
+     * @return \Clarifai\Api\Text|null
      */
     public function getText()
     {
         return $this->text;
     }
 
+    public function hasText()
+    {
+        return isset($this->text);
+    }
+
+    public function clearText()
+    {
+        unset($this->text);
+    }
+
     /**
-     * Input and output text.
+     * Input, output or annotation text.
      *
      * Generated from protobuf field <code>.clarifai.api.Text text = 13;</code>
      * @param \Clarifai\Api\Text $var
@@ -437,11 +501,21 @@ class Data extends \Google\Protobuf\Internal\Message
      * Input and output audio.
      *
      * Generated from protobuf field <code>.clarifai.api.Audio audio = 14;</code>
-     * @return \Clarifai\Api\Audio
+     * @return \Clarifai\Api\Audio|null
      */
     public function getAudio()
     {
         return $this->audio;
+    }
+
+    public function hasAudio()
+    {
+        return isset($this->audio);
+    }
+
+    public function clearAudio()
+    {
+        unset($this->audio);
     }
 
     /**
@@ -507,6 +581,58 @@ class Data extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\TimeSegment::class);
         $this->time_segments = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Holds score, rank, and user, app, input IDs and search hit data
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Hit hits = 17;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getHits()
+    {
+        return $this->hits;
+    }
+
+    /**
+     * Holds score, rank, and user, app, input IDs and search hit data
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Hit hits = 17;</code>
+     * @param \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setHits($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Hit::class);
+        $this->hits = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Heatmap as 2d image
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getHeatmaps()
+    {
+        return $this->heatmaps;
+    }
+
+    /**
+     * Heatmap as 2d image
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     * @param \Clarifai\Api\Image[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setHeatmaps($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Image::class);
+        $this->heatmaps = $arr;
 
         return $this;
     }

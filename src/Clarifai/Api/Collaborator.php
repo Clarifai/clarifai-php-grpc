@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/app_sharing.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Collaborator - invited user, who shares an access to an application
  *
  * Generated from protobuf message <code>clarifai.api.Collaborator</code>
  */
@@ -133,11 +131,21 @@ class Collaborator extends \Google\Protobuf\Internal\Message
      * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      *
      * Generated from protobuf field <code>.clarifai.api.App app = 2;</code>
-     * @return \Clarifai\Api\App
+     * @return \Clarifai\Api\App|null
      */
     public function getApp()
     {
         return $this->app;
+    }
+
+    public function hasApp()
+    {
+        return isset($this->app);
+    }
+
+    public function clearApp()
+    {
+        unset($this->app);
     }
 
     /**
@@ -160,11 +168,21 @@ class Collaborator extends \Google\Protobuf\Internal\Message
      *who is this collaborator
      *
      * Generated from protobuf field <code>.clarifai.api.User user = 3;</code>
-     * @return \Clarifai\Api\User
+     * @return \Clarifai\Api\User|null
      */
     public function getUser()
     {
         return $this->user;
+    }
+
+    public function hasUser()
+    {
+        return isset($this->user);
+    }
+
+    public function clearUser()
+    {
+        unset($this->user);
     }
 
     /**
@@ -238,11 +256,21 @@ class Collaborator extends \Google\Protobuf\Internal\Message
      * "2017-04-11T21:50:50.223962Z"
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -268,11 +296,21 @@ class Collaborator extends \Google\Protobuf\Internal\Message
      * When the collaborator was updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 7;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getModifiedAt()
     {
         return $this->modified_at;
+    }
+
+    public function hasModifiedAt()
+    {
+        return isset($this->modified_at);
+    }
+
+    public function clearModifiedAt()
+    {
+        unset($this->modified_at);
     }
 
     /**
@@ -294,11 +332,21 @@ class Collaborator extends \Google\Protobuf\Internal\Message
      * When the collaborator was removed from app.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getDeletedAt()
     {
         return $this->deleted_at;
+    }
+
+    public function hasDeletedAt()
+    {
+        return isset($this->deleted_at);
+    }
+
+    public function clearDeletedAt()
+    {
+        unset($this->deleted_at);
     }
 
     /**
