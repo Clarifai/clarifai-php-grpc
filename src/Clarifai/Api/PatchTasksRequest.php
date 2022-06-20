@@ -25,7 +25,7 @@ class PatchTasksRequest extends \Google\Protobuf\Internal\Message
     private $tasks;
     /**
      * The action to perform on the patched objects
-     * For now only 'overwrite' action is supported
+     * For now actions 'merge', 'overwrite', and 'remove' are supported
      *
      * Generated from protobuf field <code>string action = 3;</code>
      */
@@ -41,7 +41,7 @@ class PatchTasksRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Task[]|\Google\Protobuf\Internal\RepeatedField $tasks
      *     @type string $action
      *           The action to perform on the patched objects
-     *           For now only 'overwrite' action is supported
+     *           For now actions 'merge', 'overwrite', and 'remove' are supported
      * }
      */
     public function __construct($data = NULL) {
@@ -51,11 +51,21 @@ class PatchTasksRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -95,7 +105,7 @@ class PatchTasksRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The action to perform on the patched objects
-     * For now only 'overwrite' action is supported
+     * For now actions 'merge', 'overwrite', and 'remove' are supported
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @return string
@@ -107,7 +117,7 @@ class PatchTasksRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The action to perform on the patched objects
-     * For now only 'overwrite' action is supported
+     * For now actions 'merge', 'overwrite', and 'remove' are supported
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @param string $var

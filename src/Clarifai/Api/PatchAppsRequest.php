@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * PatchAppsRequest
+ *
  * Generated from protobuf message <code>clarifai.api.PatchAppsRequest</code>
  */
 class PatchAppsRequest extends \Google\Protobuf\Internal\Message
@@ -65,11 +67,21 @@ class PatchAppsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -139,11 +151,21 @@ class PatchAppsRequest extends \Google\Protobuf\Internal\Message
      * The action to perform on the patched App.Metadata
      *
      * Generated from protobuf field <code>.clarifai.api.PatchAction metadata_action = 4;</code>
-     * @return \Clarifai\Api\PatchAction
+     * @return \Clarifai\Api\PatchAction|null
      */
     public function getMetadataAction()
     {
         return $this->metadata_action;
+    }
+
+    public function hasMetadataAction()
+    {
+        return isset($this->metadata_action);
+    }
+
+    public function clearMetadataAction()
+    {
+        unset($this->metadata_action);
     }
 
     /**

@@ -23,16 +23,13 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Concept Relationships
-     * //////////////////////////////////////
-     *
      * List concept relations between concepts in the platform.
      * MUST be above ListConcepts so that if concept_id is empty this will still match
      * /concepts/relations to list all the concept relations in the app.
      * @param \Clarifai\Api\ListConceptRelationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListConceptRelations(\Clarifai\Api\ListConceptRelationsRequest $argument,
       $metadata = [], $options = []) {
@@ -47,6 +44,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostConceptRelationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostConceptRelations(\Clarifai\Api\PostConceptRelationsRequest $argument,
       $metadata = [], $options = []) {
@@ -61,6 +59,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteConceptRelationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteConceptRelations(\Clarifai\Api\DeleteConceptRelationsRequest $argument,
       $metadata = [], $options = []) {
@@ -71,14 +70,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Concepts
-     * //////////////////////////////////////
-     *
      * List all the concepts with their positive and negative counts
      * @param \Clarifai\Api\GetConceptCountsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetConceptCounts(\Clarifai\Api\GetConceptCountsRequest $argument,
       $metadata = [], $options = []) {
@@ -93,6 +89,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetConceptRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetConcept(\Clarifai\Api\GetConceptRequest $argument,
       $metadata = [], $options = []) {
@@ -107,6 +104,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListConceptsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListConcepts(\Clarifai\Api\ListConceptsRequest $argument,
       $metadata = [], $options = []) {
@@ -123,6 +121,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostConceptsSearchesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostConceptsSearches(\Clarifai\Api\PostConceptsSearchesRequest $argument,
       $metadata = [], $options = []) {
@@ -137,6 +136,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostConceptsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostConcepts(\Clarifai\Api\PostConceptsRequest $argument,
       $metadata = [], $options = []) {
@@ -151,6 +151,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PatchConceptsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PatchConcepts(\Clarifai\Api\PatchConceptsRequest $argument,
       $metadata = [], $options = []) {
@@ -161,16 +162,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
-     * //////////////////////////////////////
-     * Concept Languages
-     * //////////////////////////////////////
-     *
      * Get a specific concept from an app.
      * @param \Clarifai\Api\GetConceptLanguageRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetConceptLanguage(\Clarifai\Api\GetConceptLanguageRequest $argument,
       $metadata = [], $options = []) {
@@ -185,6 +181,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListConceptLanguagesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListConceptLanguages(\Clarifai\Api\ListConceptLanguagesRequest $argument,
       $metadata = [], $options = []) {
@@ -195,10 +192,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Add a new tranlsation for this concept.
+     * Add a new translation for this concept.
      * @param \Clarifai\Api\PostConceptLanguagesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostConceptLanguages(\Clarifai\Api\PostConceptLanguagesRequest $argument,
       $metadata = [], $options = []) {
@@ -214,6 +212,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PatchConceptLanguagesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PatchConceptLanguages(\Clarifai\Api\PatchConceptLanguagesRequest $argument,
       $metadata = [], $options = []) {
@@ -224,14 +223,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Knowledge Graph
-     * //////////////////////////////////////
-     *
      * List all domain graphs.
      * @param \Clarifai\Api\ListKnowledgeGraphsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListKnowledgeGraphs(\Clarifai\Api\ListKnowledgeGraphsRequest $argument,
       $metadata = [], $options = []) {
@@ -246,6 +242,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostKnowledgeGraphsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostKnowledgeGraphs(\Clarifai\Api\PostKnowledgeGraphsRequest $argument,
       $metadata = [], $options = []) {
@@ -260,6 +257,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostConceptMappingJobsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostConceptMappingJobs(\Clarifai\Api\PostConceptMappingJobsRequest $argument,
       $metadata = [], $options = []) {
@@ -270,14 +268,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * annotations
-     * //////////////////////////////////////
-     *
      * Get a specific annotation from an app.
      * @param \Clarifai\Api\GetAnnotationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetAnnotation(\Clarifai\Api\GetAnnotationRequest $argument,
       $metadata = [], $options = []) {
@@ -292,6 +287,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListAnnotationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListAnnotations(\Clarifai\Api\ListAnnotationsRequest $argument,
       $metadata = [], $options = []) {
@@ -306,6 +302,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostAnnotationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostAnnotations(\Clarifai\Api\PostAnnotationsRequest $argument,
       $metadata = [], $options = []) {
@@ -320,6 +317,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PatchAnnotationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PatchAnnotations(\Clarifai\Api\PatchAnnotationsRequest $argument,
       $metadata = [], $options = []) {
@@ -334,6 +332,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PatchAnnotationsStatusRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PatchAnnotationsStatus(\Clarifai\Api\PatchAnnotationsStatusRequest $argument,
       $metadata = [], $options = []) {
@@ -348,6 +347,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteAnnotationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteAnnotation(\Clarifai\Api\DeleteAnnotationRequest $argument,
       $metadata = [], $options = []) {
@@ -362,6 +362,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteAnnotationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteAnnotations(\Clarifai\Api\DeleteAnnotationsRequest $argument,
       $metadata = [], $options = []) {
@@ -372,10 +373,26 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Execute a search over annotation
+     * Patch saved annotations searches by ids.
+     * @param \Clarifai\Api\PatchAnnotationsSearchesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchAnnotationsSearches(\Clarifai\Api\PatchAnnotationsSearchesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchAnnotationsSearches',
+        $argument,
+        ['\Clarifai\Api\MultiSearchResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Execute a search over annotations
      * @param \Clarifai\Api\PostAnnotationsSearchesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostAnnotationsSearches(\Clarifai\Api\PostAnnotationsSearchesRequest $argument,
       $metadata = [], $options = []) {
@@ -386,14 +403,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Inputs
-     * //////////////////////////////////////
-     *
      * Get input count per status.
      * @param \Clarifai\Api\GetInputCountRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetInputCount(\Clarifai\Api\GetInputCountRequest $argument,
       $metadata = [], $options = []) {
@@ -408,6 +422,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\StreamInputsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function StreamInputs(\Clarifai\Api\StreamInputsRequest $argument,
       $metadata = [], $options = []) {
@@ -422,6 +437,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetInputSamplesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetInputSamples(\Clarifai\Api\GetInputSamplesRequest $argument,
       $metadata = [], $options = []) {
@@ -436,6 +452,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetInputRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetInput(\Clarifai\Api\GetInputRequest $argument,
       $metadata = [], $options = []) {
@@ -450,6 +467,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListInputsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListInputs(\Clarifai\Api\ListInputsRequest $argument,
       $metadata = [], $options = []) {
@@ -466,6 +484,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostInputsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostInputs(\Clarifai\Api\PostInputsRequest $argument,
       $metadata = [], $options = []) {
@@ -480,6 +499,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PatchInputsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PatchInputs(\Clarifai\Api\PatchInputsRequest $argument,
       $metadata = [], $options = []) {
@@ -494,6 +514,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteInputRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteInput(\Clarifai\Api\DeleteInputRequest $argument,
       $metadata = [], $options = []) {
@@ -509,6 +530,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteInputsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteInputs(\Clarifai\Api\DeleteInputsRequest $argument,
       $metadata = [], $options = []) {
@@ -519,10 +541,26 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Execute a search over input
+     * Patch saved inputs searches by ids.
+     * @param \Clarifai\Api\PatchInputsSearchesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchInputsSearches(\Clarifai\Api\PatchInputsSearchesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchInputsSearches',
+        $argument,
+        ['\Clarifai\Api\MultiSearchResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Execute a search over inputs
      * @param \Clarifai\Api\PostInputsSearchesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostInputsSearches(\Clarifai\Api\PostInputsSearchesRequest $argument,
       $metadata = [], $options = []) {
@@ -537,12 +575,250 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostModelOutputsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostModelOutputs(\Clarifai\Api\PostModelOutputsRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/clarifai.api.V2/PostModelOutputs',
         $argument,
         ['\Clarifai\Api\MultiOutputResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all the datasets.
+     * @param \Clarifai\Api\ListDatasetsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListDatasets(\Clarifai\Api\ListDatasetsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListDatasets',
+        $argument,
+        ['\Clarifai\Api\MultiDatasetResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get a specific dataset.
+     * @param \Clarifai\Api\GetDatasetRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetDataset(\Clarifai\Api\GetDatasetRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetDataset',
+        $argument,
+        ['\Clarifai\Api\SingleDatasetResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add datasets to an app.
+     * The process is atomic, i.e. either all or no datasets are added.
+     * If there is an error for one dataset,
+     * the process will stop, revert the transaction and return the error.
+     * @param \Clarifai\Api\PostDatasetsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostDatasets(\Clarifai\Api\PostDatasetsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostDatasets',
+        $argument,
+        ['\Clarifai\Api\MultiDatasetResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Patch one or more datasets.
+     * The process is atomic, i.e. either all or no datasets are patched.
+     * If there is an error for one dataset,
+     * the process will stop, revert the transaction and return the error.
+     * @param \Clarifai\Api\PatchDatasetsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchDatasets(\Clarifai\Api\PatchDatasetsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchDatasets',
+        $argument,
+        ['\Clarifai\Api\MultiDatasetResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete one or more datasets in a single request.
+     * @param \Clarifai\Api\DeleteDatasetsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteDatasets(\Clarifai\Api\DeleteDatasetsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteDatasets',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all the dataset inputs in a dataset.
+     * @param \Clarifai\Api\ListDatasetInputsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListDatasetInputs(\Clarifai\Api\ListDatasetInputsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListDatasetInputs',
+        $argument,
+        ['\Clarifai\Api\MultiDatasetInputResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get a specific dataset input.
+     * @param \Clarifai\Api\GetDatasetInputRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetDatasetInput(\Clarifai\Api\GetDatasetInputRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetDatasetInput',
+        $argument,
+        ['\Clarifai\Api\SingleDatasetInputResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add dataset inputs to a dataset.
+     * The process is not atomic, i.e. if there are errors with some dataset
+     * inputs, others might still be added. The response reports
+     *   - SUCCESS if all dataset inputs were added,
+     *   - MIXED_STATUS if only some dataset inputs were added, and
+     *   - FAILURE if no dataset inputs were added.
+     * Each individual dataset input in the response has the status set to
+     * indicate if it was successful or if there was an error.
+     * @param \Clarifai\Api\PostDatasetInputsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostDatasetInputs(\Clarifai\Api\PostDatasetInputsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostDatasetInputs',
+        $argument,
+        ['\Clarifai\Api\MultiDatasetInputResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete one or more dataset inputs in a single request.
+     * @param \Clarifai\Api\DeleteDatasetInputsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteDatasetInputs(\Clarifai\Api\DeleteDatasetInputsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteDatasetInputs',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all the dataset versions.
+     * @param \Clarifai\Api\ListDatasetVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListDatasetVersions(\Clarifai\Api\ListDatasetVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListDatasetVersions',
+        $argument,
+        ['\Clarifai\Api\MultiDatasetVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get a specific dataset version.
+     * @param \Clarifai\Api\GetDatasetVersionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetDatasetVersion(\Clarifai\Api\GetDatasetVersionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetDatasetVersion',
+        $argument,
+        ['\Clarifai\Api\SingleDatasetVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\ListDatasetVersionMetricsGroupsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListDatasetVersionMetricsGroups(\Clarifai\Api\ListDatasetVersionMetricsGroupsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListDatasetVersionMetricsGroups',
+        $argument,
+        ['\Clarifai\Api\MultiDatasetVersionMetricsGroupResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add dataset versions to a dataset.
+     * @param \Clarifai\Api\PostDatasetVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostDatasetVersions(\Clarifai\Api\PostDatasetVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostDatasetVersions',
+        $argument,
+        ['\Clarifai\Api\MultiDatasetVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Patch one or more dataset versions.
+     * @param \Clarifai\Api\PatchDatasetVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchDatasetVersions(\Clarifai\Api\PatchDatasetVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchDatasetVersions',
+        $argument,
+        ['\Clarifai\Api\MultiDatasetVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete one or more dataset versions in a single request.
+     * @param \Clarifai\Api\DeleteDatasetVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteDatasetVersions(\Clarifai\Api\DeleteDatasetVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteDatasetVersions',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -555,6 +831,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetModelTypeRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetModelType(\Clarifai\Api\GetModelTypeRequest $argument,
       $metadata = [], $options = []) {
@@ -569,6 +846,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListOpenSourceLicensesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListOpenSourceLicenses(\Clarifai\Api\ListOpenSourceLicensesRequest $argument,
       $metadata = [], $options = []) {
@@ -584,6 +862,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListModelTypesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListModelTypes(\Clarifai\Api\ListModelTypesRequest $argument,
       $metadata = [], $options = []) {
@@ -598,6 +877,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetModelRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetModel(\Clarifai\Api\GetModelRequest $argument,
       $metadata = [], $options = []) {
@@ -613,6 +893,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetModelRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetModelOutputInfo(\Clarifai\Api\GetModelRequest $argument,
       $metadata = [], $options = []) {
@@ -627,6 +908,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListModelsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListModels(\Clarifai\Api\ListModelsRequest $argument,
       $metadata = [], $options = []) {
@@ -643,6 +925,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostModelsSearchesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostModelsSearches(\Clarifai\Api\PostModelsSearchesRequest $argument,
       $metadata = [], $options = []) {
@@ -654,10 +937,10 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * Add a models to an app.
-     * FIXME(zeiler): this should have been a plural response.
      * @param \Clarifai\Api\PostModelsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostModels(\Clarifai\Api\PostModelsRequest $argument,
       $metadata = [], $options = []) {
@@ -672,6 +955,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PatchModelsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PatchModels(\Clarifai\Api\PatchModelsRequest $argument,
       $metadata = [], $options = []) {
@@ -682,10 +966,26 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Patch one or more models.
+     * @param \Clarifai\Api\PatchModelIdsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchModelIds(\Clarifai\Api\PatchModelIdsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchModelIds',
+        $argument,
+        ['\Clarifai\Api\MultiModelResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Delete a single model.
      * @param \Clarifai\Api\DeleteModelRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteModel(\Clarifai\Api\DeleteModelRequest $argument,
       $metadata = [], $options = []) {
@@ -700,6 +1000,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteModelsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteModels(\Clarifai\Api\DeleteModelsRequest $argument,
       $metadata = [], $options = []) {
@@ -710,10 +1011,56 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Update model toolkits tags
+     * @param \Clarifai\Api\PatchModelToolkitsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchModelToolkits(\Clarifai\Api\PatchModelToolkitsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchModelToolkits',
+        $argument,
+        ['\Clarifai\Api\MultiModelToolkitResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Update model use_cases tags
+     * @param \Clarifai\Api\PatchModelUseCasesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchModelUseCases(\Clarifai\Api\PatchModelUseCasesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchModelUseCases',
+        $argument,
+        ['\Clarifai\Api\MultiModelUseCaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Update model languages tags
+     * @param \Clarifai\Api\PatchModelLanguagesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchModelLanguages(\Clarifai\Api\PatchModelLanguagesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchModelLanguages',
+        $argument,
+        ['\Clarifai\Api\MultiModelLanguageResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * List all the inputs.
      * @param \Clarifai\Api\ListModelInputsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListModelInputs(\Clarifai\Api\ListModelInputsRequest $argument,
       $metadata = [], $options = []) {
@@ -724,16 +1071,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
-     * //////////////////////////////////////
-     * Model versions
-     * //////////////////////////////////////
-     *
      * Get a specific model from an app.
      * @param \Clarifai\Api\GetModelVersionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetModelVersion(\Clarifai\Api\GetModelVersionRequest $argument,
       $metadata = [], $options = []) {
@@ -748,6 +1090,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListModelVersionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListModelVersions(\Clarifai\Api\ListModelVersionsRequest $argument,
       $metadata = [], $options = []) {
@@ -758,9 +1101,39 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Clarifai\Api\PostWorkflowVersionsUnPublishRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostWorkflowVersionsUnPublish(\Clarifai\Api\PostWorkflowVersionsUnPublishRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostWorkflowVersionsUnPublish',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PostWorkflowVersionsPublishRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostWorkflowVersionsPublish(\Clarifai\Api\PostWorkflowVersionsPublishRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostWorkflowVersionsPublish',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * PostModelVersionsPublish
      * @param \Clarifai\Api\PostModelVersionsPublishRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostModelVersionsPublish(\Clarifai\Api\PostModelVersionsPublishRequest $argument,
       $metadata = [], $options = []) {
@@ -771,13 +1144,15 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Clarifai\Api\DeleteModelVersionsUnpublishRequest $argument input argument
+     * PostModelVersionsUnPublish
+     * @param \Clarifai\Api\PostModelVersionsUnPublishRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
-    public function DeleteModelVersionsUnPublish(\Clarifai\Api\DeleteModelVersionsUnpublishRequest $argument,
+    public function PostModelVersionsUnPublish(\Clarifai\Api\PostModelVersionsUnPublishRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/DeleteModelVersionsUnPublish',
+        return $this->_simpleRequest('/clarifai.api.V2/PostModelVersionsUnPublish',
         $argument,
         ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);
@@ -787,10 +1162,10 @@ class V2Client extends \Grpc\BaseStub {
      * NOTE: inconsistency: do we want this to return a SingleModelResponse?
      *
      * Create a new model version to trigger training of the model.
-     * FIXME(zeiler): this should have been a plural response.
      * @param \Clarifai\Api\PostModelVersionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostModelVersions(\Clarifai\Api\PostModelVersionsRequest $argument,
       $metadata = [], $options = []) {
@@ -801,9 +1176,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * PatchModelVersions
      * @param \Clarifai\Api\PatchModelVersionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PatchModelVersions(\Clarifai\Api\PatchModelVersionsRequest $argument,
       $metadata = [], $options = []) {
@@ -818,6 +1195,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteModelVersionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteModelVersion(\Clarifai\Api\DeleteModelVersionRequest $argument,
       $metadata = [], $options = []) {
@@ -832,6 +1210,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetModelVersionMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetModelVersionMetrics(\Clarifai\Api\GetModelVersionMetricsRequest $argument,
       $metadata = [], $options = []) {
@@ -846,6 +1225,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostModelVersionMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostModelVersionMetrics(\Clarifai\Api\PostModelVersionMetricsRequest $argument,
       $metadata = [], $options = []) {
@@ -856,16 +1236,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
-     * //////////////////////////////////////
-     * Model References
-     * //////////////////////////////////////
-     *
      * Lists model references tied to a particular model id.
      * @param \Clarifai\Api\ListModelReferencesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListModelReferences(\Clarifai\Api\ListModelReferencesRequest $argument,
       $metadata = [], $options = []) {
@@ -876,15 +1251,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
-     * //////////////////////////////////////
-     * Model Version Input Examples
-     * //////////////////////////////////////
-     *
+     * GetModelVersionInputExample
      * @param \Clarifai\Api\GetModelVersionInputExampleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetModelVersionInputExample(\Clarifai\Api\GetModelVersionInputExampleRequest $argument,
       $metadata = [], $options = []) {
@@ -895,9 +1266,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * ListModelVersionInputExamples
      * @param \Clarifai\Api\ListModelVersionInputExamplesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListModelVersionInputExamples(\Clarifai\Api\ListModelVersionInputExamplesRequest $argument,
       $metadata = [], $options = []) {
@@ -918,6 +1291,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetWorkflowRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetWorkflow(\Clarifai\Api\GetWorkflowRequest $argument,
       $metadata = [], $options = []) {
@@ -932,6 +1306,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListWorkflowsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListWorkflows(\Clarifai\Api\ListWorkflowsRequest $argument,
       $metadata = [], $options = []) {
@@ -946,6 +1321,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostWorkflowsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostWorkflows(\Clarifai\Api\PostWorkflowsRequest $argument,
       $metadata = [], $options = []) {
@@ -960,6 +1336,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PatchWorkflowsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PatchWorkflows(\Clarifai\Api\PatchWorkflowsRequest $argument,
       $metadata = [], $options = []) {
@@ -974,6 +1351,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteWorkflowRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteWorkflow(\Clarifai\Api\DeleteWorkflowRequest $argument,
       $metadata = [], $options = []) {
@@ -988,6 +1366,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteWorkflowsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteWorkflows(\Clarifai\Api\DeleteWorkflowsRequest $argument,
       $metadata = [], $options = []) {
@@ -1002,6 +1381,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostWorkflowResultsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostWorkflowResults(\Clarifai\Api\PostWorkflowResultsRequest $argument,
       $metadata = [], $options = []) {
@@ -1013,10 +1393,10 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * Compare embeddings distances using a workflow
-     *
      * @param \Clarifai\Api\PostWorkflowResultsSimilarityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostWorkflowResultsSimilarity(\Clarifai\Api\PostWorkflowResultsSimilarityRequest $argument,
       $metadata = [], $options = []) {
@@ -1027,16 +1407,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
-     * //////////////////////////////////////
-     * Workflow Versions
-     * //////////////////////////////////////
-     *
      * List workflow versions.
      * @param \Clarifai\Api\ListWorkflowVersionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListWorkflowVersions(\Clarifai\Api\ListWorkflowVersionsRequest $argument,
       $metadata = [], $options = []) {
@@ -1051,6 +1426,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetWorkflowVersionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetWorkflowVersion(\Clarifai\Api\GetWorkflowVersionRequest $argument,
       $metadata = [], $options = []) {
@@ -1065,6 +1441,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteWorkflowVersionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteWorkflowVersions(\Clarifai\Api\DeleteWorkflowVersionsRequest $argument,
       $metadata = [], $options = []) {
@@ -1079,6 +1456,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PatchWorkflowVersionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PatchWorkflowVersions(\Clarifai\Api\PatchWorkflowVersionsRequest $argument,
       $metadata = [], $options = []) {
@@ -1089,14 +1467,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * API Keys
-     * //////////////////////////////////////
-     *
      * Get a specific key from an app.
      * @param \Clarifai\Api\GetKeyRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetKey(\Clarifai\Api\GetKeyRequest $argument,
       $metadata = [], $options = []) {
@@ -1111,6 +1486,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListKeysRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListKeys(\Clarifai\Api\ListKeysRequest $argument,
       $metadata = [], $options = []) {
@@ -1125,6 +1501,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListAppKeysRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListAppKeys(\Clarifai\Api\ListAppKeysRequest $argument,
       $metadata = [], $options = []) {
@@ -1141,6 +1518,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteKeyRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteKey(\Clarifai\Api\DeleteKeyRequest $argument,
       $metadata = [], $options = []) {
@@ -1155,6 +1533,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostKeysRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostKeys(\Clarifai\Api\PostKeysRequest $argument,
       $metadata = [], $options = []) {
@@ -1169,6 +1548,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PatchKeysRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PatchKeys(\Clarifai\Api\PatchKeysRequest $argument,
       $metadata = [], $options = []) {
@@ -1185,6 +1565,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\MyScopesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function MyScopes(\Clarifai\Api\MyScopesRequest $argument,
       $metadata = [], $options = []) {
@@ -1198,6 +1579,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\MyScopesUserRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function MyScopesUser(\Clarifai\Api\MyScopesUserRequest $argument,
       $metadata = [], $options = []) {
@@ -1211,6 +1593,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\MyScopesRootRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function MyScopesRoot(\Clarifai\Api\MyScopesRootRequest $argument,
       $metadata = [], $options = []) {
@@ -1225,6 +1608,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListScopesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListScopes(\Clarifai\Api\ListScopesRequest $argument,
       $metadata = [], $options = []) {
@@ -1235,14 +1619,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Apps
-     * //////////////////////////////////////
-     *
      * Get a specific app from an app.
      * @param \Clarifai\Api\GetAppRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetApp(\Clarifai\Api\GetAppRequest $argument,
       $metadata = [], $options = []) {
@@ -1257,6 +1638,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListAppsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListApps(\Clarifai\Api\ListAppsRequest $argument,
       $metadata = [], $options = []) {
@@ -1273,6 +1655,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteAppRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteApp(\Clarifai\Api\DeleteAppRequest $argument,
       $metadata = [], $options = []) {
@@ -1289,6 +1672,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostAppsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostApps(\Clarifai\Api\PostAppsRequest $argument,
       $metadata = [], $options = []) {
@@ -1303,6 +1687,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PatchAppsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PatchApps(\Clarifai\Api\PatchAppsRequest $argument,
       $metadata = [], $options = []) {
@@ -1313,10 +1698,41 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Patch one app.
+     * @param \Clarifai\Api\PatchAppRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchApp(\Clarifai\Api\PatchAppRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchApp',
+        $argument,
+        ['\Clarifai\Api\SingleAppResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Patch apps ids.
+     * @param \Clarifai\Api\PatchAppsIdsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchAppsIds(\Clarifai\Api\PatchAppsIdsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchAppsIds',
+        $argument,
+        ['\Clarifai\Api\MultiAppResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Search over the applications to find one or more you're looking for.
      * @param \Clarifai\Api\PostAppsSearchesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostAppsSearches(\Clarifai\Api\PostAppsSearchesRequest $argument,
       $metadata = [], $options = []) {
@@ -1327,16 +1743,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
-     * //////////////////////////////////////
-     * Password
-     * //////////////////////////////////////
-     *
      * Validate new password in real-time for a user
      * @param \Clarifai\Api\PostValidatePasswordRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostValidatePassword(\Clarifai\Api\PostValidatePasswordRequest $argument,
       $metadata = [], $options = []) {
@@ -1347,14 +1758,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Searches
-     * //////////////////////////////////////
-     *
-     * Get a saved search.
+     * Get a saved legacy search.
      * @param \Clarifai\Api\GetSearchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetSearch(\Clarifai\Api\GetSearchRequest $argument,
       $metadata = [], $options = []) {
@@ -1365,10 +1773,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * List all saved searches.
+     * List all saved legacy searches.
      * @param \Clarifai\Api\ListSearchesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListSearches(\Clarifai\Api\ListSearchesRequest $argument,
       $metadata = [], $options = []) {
@@ -1379,10 +1788,26 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Patch saved legacy searches by ids.
+     * @param \Clarifai\Api\PatchSearchesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchSearches(\Clarifai\Api\PatchSearchesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchSearches',
+        $argument,
+        ['\Clarifai\Api\MultiSearchResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Execute a new search and optionally save it.
      * @param \Clarifai\Api\PostSearchesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostSearches(\Clarifai\Api\PostSearchesRequest $argument,
       $metadata = [], $options = []) {
@@ -1393,10 +1818,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Execute a previously saved search.
+     * Execute a previously saved legacy search.
      * @param \Clarifai\Api\PostSearchesByIDRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostSearchesByID(\Clarifai\Api\PostSearchesByIDRequest $argument,
       $metadata = [], $options = []) {
@@ -1411,6 +1837,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostAnnotationSearchMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostAnnotationSearchMetrics(\Clarifai\Api\PostAnnotationSearchMetricsRequest $argument,
       $metadata = [], $options = []) {
@@ -1425,6 +1852,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetAnnotationSearchMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetAnnotationSearchMetrics(\Clarifai\Api\GetAnnotationSearchMetricsRequest $argument,
       $metadata = [], $options = []) {
@@ -1439,6 +1867,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListAnnotationSearchMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListAnnotationSearchMetrics(\Clarifai\Api\ListAnnotationSearchMetricsRequest $argument,
       $metadata = [], $options = []) {
@@ -1449,9 +1878,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * DeleteAnnotationSearchMetrics
      * @param \Clarifai\Api\DeleteAnnotationSearchMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteAnnotationSearchMetrics(\Clarifai\Api\DeleteAnnotationSearchMetricsRequest $argument,
       $metadata = [], $options = []) {
@@ -1466,6 +1897,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteSearchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteSearch(\Clarifai\Api\DeleteSearchRequest $argument,
       $metadata = [], $options = []) {
@@ -1476,16 +1908,86 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
-     * //////////////////////////////////////
-     * Status Codes
-     * //////////////////////////////////////
-     *
+     * List all the annotation filters.
+     * @param \Clarifai\Api\ListAnnotationFiltersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListAnnotationFilters(\Clarifai\Api\ListAnnotationFiltersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListAnnotationFilters',
+        $argument,
+        ['\Clarifai\Api\MultiAnnotationFilterResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get a specific annotation filter.
+     * @param \Clarifai\Api\GetAnnotationFilterRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetAnnotationFilter(\Clarifai\Api\GetAnnotationFilterRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetAnnotationFilter',
+        $argument,
+        ['\Clarifai\Api\SingleAnnotationFilterResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add annotation filters.
+     * @param \Clarifai\Api\PostAnnotationFiltersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostAnnotationFilters(\Clarifai\Api\PostAnnotationFiltersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostAnnotationFilters',
+        $argument,
+        ['\Clarifai\Api\MultiAnnotationFilterResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Patch one or more annotation filters.
+     * @param \Clarifai\Api\PatchAnnotationFiltersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchAnnotationFilters(\Clarifai\Api\PatchAnnotationFiltersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchAnnotationFilters',
+        $argument,
+        ['\Clarifai\Api\MultiAnnotationFilterResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete one or more annotation filters in a single request.
+     * @param \Clarifai\Api\DeleteAnnotationFiltersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteAnnotationFilters(\Clarifai\Api\DeleteAnnotationFiltersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteAnnotationFilters',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * List all status codes.
      * @param \Clarifai\Api\ListStatusCodesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListStatusCodes(\Clarifai\Api\ListStatusCodesRequest $argument,
       $metadata = [], $options = []) {
@@ -1500,6 +2002,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetStatusCodeRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetStatusCode(\Clarifai\Api\GetStatusCodeRequest $argument,
       $metadata = [], $options = []) {
@@ -1510,14 +2013,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * App Sharing
-     * //////////////////////////////////////
-     *
      * owner list users who the app is shared with
      * @param \Clarifai\Api\ListCollaboratorsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListCollaborators(\Clarifai\Api\ListCollaboratorsRequest $argument,
       $metadata = [], $options = []) {
@@ -1532,6 +2032,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostCollaboratorsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostCollaborators(\Clarifai\Api\PostCollaboratorsRequest $argument,
       $metadata = [], $options = []) {
@@ -1546,6 +2047,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PatchCollaboratorsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PatchCollaborators(\Clarifai\Api\PatchCollaboratorsRequest $argument,
       $metadata = [], $options = []) {
@@ -1560,6 +2062,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteCollaboratorsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteCollaborators(\Clarifai\Api\DeleteCollaboratorsRequest $argument,
       $metadata = [], $options = []) {
@@ -1574,6 +2077,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListCollaborationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListCollaborations(\Clarifai\Api\ListCollaborationsRequest $argument,
       $metadata = [], $options = []) {
@@ -1584,15 +2088,12 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * App duplication
-     * //////////////////////////////////////
-     *
      * start to duplicate an app which copies all the inputs, annotations, models, concepts etc. to a new app.
      * this is an async process, you should use ListAppDuplications or GetAppDuplication to check the status.
      * @param \Clarifai\Api\PostAppDuplicationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostAppDuplications(\Clarifai\Api\PostAppDuplicationsRequest $argument,
       $metadata = [], $options = []) {
@@ -1607,6 +2108,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListAppDuplicationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListAppDuplications(\Clarifai\Api\ListAppDuplicationsRequest $argument,
       $metadata = [], $options = []) {
@@ -1621,6 +2123,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetAppDuplicationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetAppDuplication(\Clarifai\Api\GetAppDuplicationRequest $argument,
       $metadata = [], $options = []) {
@@ -1631,14 +2134,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Tasks
-     * //////////////////////////////////////
-     *
      * Add tasks to an app.
      * @param \Clarifai\Api\PostTasksRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostTasks(\Clarifai\Api\PostTasksRequest $argument,
       $metadata = [], $options = []) {
@@ -1653,6 +2153,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetTaskCountRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetTaskAnnotationCount(\Clarifai\Api\GetTaskCountRequest $argument,
       $metadata = [], $options = []) {
@@ -1667,6 +2168,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetTaskCountRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetTaskInputCount(\Clarifai\Api\GetTaskCountRequest $argument,
       $metadata = [], $options = []) {
@@ -1681,6 +2183,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetTaskRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetTask(\Clarifai\Api\GetTaskRequest $argument,
       $metadata = [], $options = []) {
@@ -1695,6 +2198,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListTasksRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListTasks(\Clarifai\Api\ListTasksRequest $argument,
       $metadata = [], $options = []) {
@@ -1709,6 +2213,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PatchTasksRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PatchTasks(\Clarifai\Api\PatchTasksRequest $argument,
       $metadata = [], $options = []) {
@@ -1723,6 +2228,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteTasksRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteTasks(\Clarifai\Api\DeleteTasksRequest $argument,
       $metadata = [], $options = []) {
@@ -1734,9 +2240,85 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * //////////////////////////////////////
-     * Collectors
+     * Label Order
      * //////////////////////////////////////
      *
+     * Add Label orders.
+     * @param \Clarifai\Api\PostLabelOrdersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostLabelOrders(\Clarifai\Api\PostLabelOrdersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostLabelOrders',
+        $argument,
+        ['\Clarifai\Api\MultiLabelOrderResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get a label order.
+     * @param \Clarifai\Api\GetLabelOrderRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetLabelOrder(\Clarifai\Api\GetLabelOrderRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetLabelOrder',
+        $argument,
+        ['\Clarifai\Api\SingleLabelOrderResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List label orders.
+     * @param \Clarifai\Api\ListLabelOrdersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListLabelOrders(\Clarifai\Api\ListLabelOrdersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListLabelOrders',
+        $argument,
+        ['\Clarifai\Api\MultiLabelOrderResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Patch one or more label orders.
+     * @param \Clarifai\Api\PatchLabelOrdersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchLabelOrders(\Clarifai\Api\PatchLabelOrdersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchLabelOrders',
+        $argument,
+        ['\Clarifai\Api\MultiLabelOrderResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete multiple label orders in one request.
+     * this do not change task status
+     * @param \Clarifai\Api\DeleteLabelOrdersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteLabelOrders(\Clarifai\Api\DeleteLabelOrdersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteLabelOrders',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Add a list of Collectors to an app.
      * In the handler of this endpoint we also check for all the scopes of the  POST /inputs
      * endpoint.
@@ -1746,6 +2328,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PostCollectorsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostCollectors(\Clarifai\Api\PostCollectorsRequest $argument,
       $metadata = [], $options = []) {
@@ -1760,6 +2343,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\GetCollectorRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function GetCollector(\Clarifai\Api\GetCollectorRequest $argument,
       $metadata = [], $options = []) {
@@ -1774,6 +2358,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListCollectorsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListCollectors(\Clarifai\Api\ListCollectorsRequest $argument,
       $metadata = [], $options = []) {
@@ -1788,6 +2373,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\PatchCollectorsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PatchCollectors(\Clarifai\Api\PatchCollectorsRequest $argument,
       $metadata = [], $options = []) {
@@ -1803,6 +2389,7 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\DeleteCollectorsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function DeleteCollectors(\Clarifai\Api\DeleteCollectorsRequest $argument,
       $metadata = [], $options = []) {
@@ -1813,13 +2400,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////////////////////////////////////////////
-     * Stats Collection Endpoints.
-     * //////////////////////////////////////////////////////////////////////////////
-     *
+     * PostStatValues
      * @param \Clarifai\Api\PostStatValuesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostStatValues(\Clarifai\Api\PostStatValuesRequest $argument,
       $metadata = [], $options = []) {
@@ -1830,9 +2415,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * PostStatValuesAggregate
      * @param \Clarifai\Api\PostStatValuesAggregateRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostStatValuesAggregate(\Clarifai\Api\PostStatValuesAggregateRequest $argument,
       $metadata = [], $options = []) {
@@ -1843,14 +2430,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     * Trending Metrics
-     * //////////////////////////////////////
-     *
      * Increase the view metric for a detail view
      * @param \Clarifai\Api\PostTrendingMetricsViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function PostTrendingMetricsView(\Clarifai\Api\PostTrendingMetricsViewRequest $argument,
       $metadata = [], $options = []) {
@@ -1865,12 +2449,28 @@ class V2Client extends \Grpc\BaseStub {
      * @param \Clarifai\Api\ListTrendingMetricsViewsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Grpc\UnaryCall
      */
     public function ListTrendingMetricsViews(\Clarifai\Api\ListTrendingMetricsViewsRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/clarifai.api.V2/ListTrendingMetricsViews',
         $argument,
         ['\Clarifai\Api\MultiTrendingMetricsViewResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get a specific job.
+     * @param \Clarifai\Api\GetDatasetInputsSearchAddJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetDatasetInputsSearchAddJob(\Clarifai\Api\GetDatasetInputsSearchAddJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetDatasetInputsSearchAddJob',
+        $argument,
+        ['\Clarifai\Api\SingleDatasetInputsSearchAddJobResponse', 'decode'],
         $metadata, $options);
     }
 

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * WorkflowResultsSimilarity
+ *
  * Generated from protobuf message <code>clarifai.api.WorkflowResultsSimilarity</code>
  */
 class WorkflowResultsSimilarity extends \Google\Protobuf\Internal\Message
@@ -44,11 +46,21 @@ class WorkflowResultsSimilarity extends \Google\Protobuf\Internal\Message
      * The input with the specific data compare against all pool results
      *
      * Generated from protobuf field <code>.clarifai.api.Input probe_input = 1;</code>
-     * @return \Clarifai\Api\Input
+     * @return \Clarifai\Api\Input|null
      */
     public function getProbeInput()
     {
         return $this->probe_input;
+    }
+
+    public function hasProbeInput()
+    {
+        return isset($this->probe_input);
+    }
+
+    public function clearProbeInput()
+    {
+        unset($this->probe_input);
     }
 
     /**

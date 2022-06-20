@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * BinaryMetrics
+ *
  * Generated from protobuf message <code>clarifai.api.BinaryMetrics</code>
  */
 class BinaryMetrics extends \Google\Protobuf\Internal\Message
@@ -204,11 +206,21 @@ class BinaryMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.Concept concept = 6;</code>
-     * @return \Clarifai\Api\Concept
+     * @return \Clarifai\Api\Concept|null
      */
     public function getConcept()
     {
         return $this->concept;
+    }
+
+    public function hasConcept()
+    {
+        return isset($this->concept);
+    }
+
+    public function clearConcept()
+    {
+        unset($this->concept);
     }
 
     /**
@@ -226,11 +238,21 @@ class BinaryMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.ROC roc_curve = 7;</code>
-     * @return \Clarifai\Api\ROC
+     * @return \Clarifai\Api\ROC|null
      */
     public function getRocCurve()
     {
         return $this->roc_curve;
+    }
+
+    public function hasRocCurve()
+    {
+        return isset($this->roc_curve);
+    }
+
+    public function clearRocCurve()
+    {
+        unset($this->roc_curve);
     }
 
     /**
@@ -248,11 +270,21 @@ class BinaryMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.PrecisionRecallCurve precision_recall_curve = 8;</code>
-     * @return \Clarifai\Api\PrecisionRecallCurve
+     * @return \Clarifai\Api\PrecisionRecallCurve|null
      */
     public function getPrecisionRecallCurve()
     {
         return $this->precision_recall_curve;
+    }
+
+    public function hasPrecisionRecallCurve()
+    {
+        return isset($this->precision_recall_curve);
+    }
+
+    public function clearPrecisionRecallCurve()
+    {
+        unset($this->precision_recall_curve);
     }
 
     /**

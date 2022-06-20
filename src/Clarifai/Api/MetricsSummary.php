@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * FIXME: copy this into an internal proto since it is stored in DB and field names can't change.
+ * MetricsSummary
  *
  * Generated from protobuf message <code>clarifai.api.MetricsSummary</code>
  */
@@ -17,10 +17,12 @@ class MetricsSummary extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>float top1_accuracy = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $top1_accuracy = 0.0;
     /**
      * Generated from protobuf field <code>float top5_accuracy = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $top5_accuracy = 0.0;
     /**
@@ -87,9 +89,11 @@ class MetricsSummary extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>float top1_accuracy = 1 [deprecated = true];</code>
      * @return float
+     * @deprecated
      */
     public function getTop1Accuracy()
     {
+        @trigger_error('top1_accuracy is deprecated.', E_USER_DEPRECATED);
         return $this->top1_accuracy;
     }
 
@@ -97,9 +101,11 @@ class MetricsSummary extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>float top1_accuracy = 1 [deprecated = true];</code>
      * @param float $var
      * @return $this
+     * @deprecated
      */
     public function setTop1Accuracy($var)
     {
+        @trigger_error('top1_accuracy is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkFloat($var);
         $this->top1_accuracy = $var;
 
@@ -109,9 +115,11 @@ class MetricsSummary extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>float top5_accuracy = 2 [deprecated = true];</code>
      * @return float
+     * @deprecated
      */
     public function getTop5Accuracy()
     {
+        @trigger_error('top5_accuracy is deprecated.', E_USER_DEPRECATED);
         return $this->top5_accuracy;
     }
 
@@ -119,9 +127,11 @@ class MetricsSummary extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>float top5_accuracy = 2 [deprecated = true];</code>
      * @param float $var
      * @return $this
+     * @deprecated
      */
     public function setTop5Accuracy($var)
     {
+        @trigger_error('top5_accuracy is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkFloat($var);
         $this->top5_accuracy = $var;
 

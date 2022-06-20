@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * MultiSearchResponse
+ *
  * Generated from protobuf message <code>clarifai.api.MultiSearchResponse</code>
  */
 class MultiSearchResponse extends \Google\Protobuf\Internal\Message
@@ -71,11 +73,21 @@ class MultiSearchResponse extends \Google\Protobuf\Internal\Message
      * Status of whether the search was successful.
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -149,11 +161,21 @@ class MultiSearchResponse extends \Google\Protobuf\Internal\Message
      * The original query provided in the request.
      *
      * Generated from protobuf field <code>.clarifai.api.Query query = 4;</code>
-     * @return \Clarifai\Api\Query
+     * @return \Clarifai\Api\Query|null
      */
     public function getQuery()
     {
         return $this->query;
+    }
+
+    public function hasQuery()
+    {
+        return isset($this->query);
+    }
+
+    public function clearQuery()
+    {
+        unset($this->query);
     }
 
     /**

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * SinglePasswordValidationResponse
+ *
  * Generated from protobuf message <code>clarifai.api.SinglePasswordValidationResponse</code>
  */
 class SinglePasswordValidationResponse extends \Google\Protobuf\Internal\Message
@@ -44,11 +46,21 @@ class SinglePasswordValidationResponse extends \Google\Protobuf\Internal\Message
      * Standard clarifai status code
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -68,11 +80,21 @@ class SinglePasswordValidationResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.PasswordViolations password_violations = 2;</code>
-     * @return \Clarifai\Api\PasswordViolations
+     * @return \Clarifai\Api\PasswordViolations|null
      */
     public function getPasswordViolations()
     {
         return $this->password_violations;
+    }
+
+    public function hasPasswordViolations()
+    {
+        return isset($this->password_violations);
+    }
+
+    public function clearPasswordViolations()
+    {
+        unset($this->password_violations);
     }
 
     /**

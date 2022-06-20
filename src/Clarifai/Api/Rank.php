@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Rank
+ *
  * Generated from protobuf message <code>clarifai.api.Rank</code>
  */
 class Rank extends \Google\Protobuf\Internal\Message
@@ -77,11 +79,21 @@ class Rank extends \Google\Protobuf\Internal\Message
      * RANK by annotation information.
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
-     * @return \Clarifai\Api\Annotation
+     * @return \Clarifai\Api\Annotation|null
      */
     public function getAnnotation()
     {
         return $this->annotation;
+    }
+
+    public function hasAnnotation()
+    {
+        return isset($this->annotation);
+    }
+
+    public function clearAnnotation()
+    {
+        unset($this->annotation);
     }
 
     /**

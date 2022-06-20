@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * ListModelTypesRequest
+ *
  * Generated from protobuf message <code>clarifai.api.ListModelTypesRequest</code>
  */
 class ListModelTypesRequest extends \Google\Protobuf\Internal\Message
@@ -59,11 +61,21 @@ class ListModelTypesRequest extends \Google\Protobuf\Internal\Message
      * use and app combo. Not really used for this endpoint at this time so may go away in future.
      *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**

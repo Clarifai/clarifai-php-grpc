@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * StatValueAggregate
+ *
  * Generated from protobuf message <code>clarifai.api.StatValueAggregate</code>
  */
 class StatValueAggregate extends \Google\Protobuf\Internal\Message
@@ -71,11 +73,21 @@ class StatValueAggregate extends \Google\Protobuf\Internal\Message
      * a StatValueAggregate with the time filled into that hour.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp time = 1;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getTime()
     {
         return $this->time;
+    }
+
+    public function hasTime()
+    {
+        return isset($this->time);
+    }
+
+    public function clearTime()
+    {
+        unset($this->time);
     }
 
     /**

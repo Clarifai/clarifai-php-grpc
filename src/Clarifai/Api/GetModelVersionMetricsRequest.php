@@ -55,11 +55,21 @@ class GetModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -123,11 +133,21 @@ class GetModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
      * Any of the fields you wish to return from multiclass_metrics
      *
      * Generated from protobuf field <code>.clarifai.api.FieldsValue fields = 4;</code>
-     * @return \Clarifai\Api\FieldsValue
+     * @return \Clarifai\Api\FieldsValue|null
      */
     public function getFields()
     {
         return $this->fields;
+    }
+
+    public function hasFields()
+    {
+        return isset($this->fields);
+    }
+
+    public function clearFields()
+    {
+        unset($this->fields);
     }
 
     /**

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * StreamInputsRequest
+ *
  * Generated from protobuf message <code>clarifai.api.StreamInputsRequest</code>
  */
 class StreamInputsRequest extends \Google\Protobuf\Internal\Message
@@ -29,6 +31,13 @@ class StreamInputsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $last_id = '';
     /**
+     * By default, the endpoint return inputs by the time when it is added.
+     * If this is set to true, we will return inputs by id.
+     *
+     * Generated from protobuf field <code>bool order_by_id = 5;</code>
+     */
+    protected $order_by_id = false;
+    /**
      * Generated from protobuf field <code>bool descending = 4;</code>
      */
     protected $descending = false;
@@ -44,6 +53,9 @@ class StreamInputsRequest extends \Google\Protobuf\Internal\Message
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 20.
      *     @type string $last_id
+     *     @type bool $order_by_id
+     *           By default, the endpoint return inputs by the time when it is added.
+     *           If this is set to true, we will return inputs by id.
      *     @type bool $descending
      * }
      */
@@ -54,11 +66,21 @@ class StreamInputsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -120,6 +142,34 @@ class StreamInputsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->last_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * By default, the endpoint return inputs by the time when it is added.
+     * If this is set to true, we will return inputs by id.
+     *
+     * Generated from protobuf field <code>bool order_by_id = 5;</code>
+     * @return bool
+     */
+    public function getOrderById()
+    {
+        return $this->order_by_id;
+    }
+
+    /**
+     * By default, the endpoint return inputs by the time when it is added.
+     * If this is set to true, we will return inputs by id.
+     *
+     * Generated from protobuf field <code>bool order_by_id = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOrderById($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->order_by_id = $var;
 
         return $this;
     }

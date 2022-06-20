@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/annotation.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Annotation of an asset with metadata
  *
  * Generated from protobuf message <code>clarifai.api.Annotation</code>
  */
@@ -57,6 +55,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * DEPRECATED.
      *
      * Generated from protobuf field <code>string embed_model_version_id = 14 [deprecated = true];</code>
+     * @deprecated
      */
     protected $embed_model_version_id = '';
     /**
@@ -86,6 +85,7 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * Will be deprecated
      *
      * Generated from protobuf field <code>bool trusted = 10 [deprecated = true];</code>
+     * @deprecated
      */
     protected $trusted = false;
     /**
@@ -213,11 +213,21 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * The data passed along in this annotation.
      *
      * Generated from protobuf field <code>.clarifai.api.Data data = 3;</code>
-     * @return \Clarifai\Api\Data
+     * @return \Clarifai\Api\Data|null
      */
     public function getData()
     {
         return $this->data;
+    }
+
+    public function hasData()
+    {
+        return isset($this->data);
+    }
+
+    public function clearData()
+    {
+        unset($this->data);
     }
 
     /**
@@ -239,11 +249,21 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * task_id is deprecated in annotation_info. Use task_id
      *
      * Generated from protobuf field <code>.google.protobuf.Struct annotation_info = 13;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getAnnotationInfo()
     {
         return $this->annotation_info;
+    }
+
+    public function hasAnnotationInfo()
+    {
+        return isset($this->annotation_info);
+    }
+
+    public function clearAnnotationInfo()
+    {
+        unset($this->annotation_info);
     }
 
     /**
@@ -318,9 +338,11 @@ class Annotation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getEmbedModelVersionId()
     {
+        @trigger_error('embed_model_version_id is deprecated.', E_USER_DEPRECATED);
         return $this->embed_model_version_id;
     }
 
@@ -330,9 +352,11 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setEmbedModelVersionId($var)
     {
+        @trigger_error('embed_model_version_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->embed_model_version_id = $var;
 
@@ -343,11 +367,21 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * Annotation Status
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 7;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -373,11 +407,21 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * "2017-04-11T21:50:50.223962Z"
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 8;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -403,11 +447,21 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * When the annotation was modified.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 9;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getModifiedAt()
     {
         return $this->modified_at;
+    }
+
+    public function hasModifiedAt()
+    {
+        return isset($this->modified_at);
+    }
+
+    public function clearModifiedAt()
+    {
+        unset($this->modified_at);
     }
 
     /**
@@ -431,9 +485,11 @@ class Annotation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool trusted = 10 [deprecated = true];</code>
      * @return bool
+     * @deprecated
      */
     public function getTrusted()
     {
+        @trigger_error('trusted is deprecated.', E_USER_DEPRECATED);
         return $this->trusted;
     }
 
@@ -444,9 +500,11 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool trusted = 10 [deprecated = true];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setTrusted($var)
     {
+        @trigger_error('trusted is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->trusted = $var;
 
@@ -485,11 +543,21 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * * id of annotation parent, in case the annotation was split from another annotation
      *
      * Generated from protobuf field <code>.google.protobuf.Struct consensus_info = 18;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getConsensusInfo()
     {
         return $this->consensus_info;
+    }
+
+    public function hasConsensusInfo()
+    {
+        return isset($this->consensus_info);
+    }
+
+    public function clearConsensusInfo()
+    {
+        unset($this->consensus_info);
     }
 
     /**

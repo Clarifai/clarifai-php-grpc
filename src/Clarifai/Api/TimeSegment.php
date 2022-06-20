@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * TimeSegment
+ *
  * Generated from protobuf message <code>clarifai.api.TimeSegment</code>
  */
 class TimeSegment extends \Google\Protobuf\Internal\Message
@@ -73,11 +75,21 @@ class TimeSegment extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.Data data = 2;</code>
-     * @return \Clarifai\Api\Data
+     * @return \Clarifai\Api\Data|null
      */
     public function getData()
     {
         return $this->data;
+    }
+
+    public function hasData()
+    {
+        return isset($this->data);
+    }
+
+    public function clearData()
+    {
+        unset($this->data);
     }
 
     /**
@@ -95,11 +107,21 @@ class TimeSegment extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.TimeInfo time_info = 3;</code>
-     * @return \Clarifai\Api\TimeInfo
+     * @return \Clarifai\Api\TimeInfo|null
      */
     public function getTimeInfo()
     {
         return $this->time_info;
+    }
+
+    public function hasTimeInfo()
+    {
+        return isset($this->time_info);
+    }
+
+    public function clearTimeInfo()
+    {
+        unset($this->time_info);
     }
 
     /**

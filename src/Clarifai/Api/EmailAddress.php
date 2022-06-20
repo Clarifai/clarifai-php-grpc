@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * EmailAddress
+ *
  * Generated from protobuf message <code>clarifai.api.EmailAddress</code>
  */
 class EmailAddress extends \Google\Protobuf\Internal\Message

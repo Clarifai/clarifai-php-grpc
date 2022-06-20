@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * PostAnnotationSearchMetricsRequest
+ *
  * Generated from protobuf message <code>clarifai.api.PostAnnotationSearchMetricsRequest</code>
  */
 class PostAnnotationSearchMetricsRequest extends \Google\Protobuf\Internal\Message
@@ -76,11 +78,21 @@ class PostAnnotationSearchMetricsRequest extends \Google\Protobuf\Internal\Messa
 
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -126,11 +138,21 @@ class PostAnnotationSearchMetricsRequest extends \Google\Protobuf\Internal\Messa
      * The ground truth we are evaluating against
      *
      * Generated from protobuf field <code>.clarifai.api.Search ground_truth = 3;</code>
-     * @return \Clarifai\Api\Search
+     * @return \Clarifai\Api\Search|null
      */
     public function getGroundTruth()
     {
         return $this->ground_truth;
+    }
+
+    public function hasGroundTruth()
+    {
+        return isset($this->ground_truth);
+    }
+
+    public function clearGroundTruth()
+    {
+        unset($this->ground_truth);
     }
 
     /**
@@ -152,11 +174,21 @@ class PostAnnotationSearchMetricsRequest extends \Google\Protobuf\Internal\Messa
      * The set we are evaluating
      *
      * Generated from protobuf field <code>.clarifai.api.Search search_to_eval = 4;</code>
-     * @return \Clarifai\Api\Search
+     * @return \Clarifai\Api\Search|null
      */
     public function getSearchToEval()
     {
         return $this->search_to_eval;
+    }
+
+    public function hasSearchToEval()
+    {
+        return isset($this->search_to_eval);
+    }
+
+    public function clearSearchToEval()
+    {
+        unset($this->search_to_eval);
     }
 
     /**
@@ -179,11 +211,21 @@ class PostAnnotationSearchMetricsRequest extends \Google\Protobuf\Internal\Messa
      * If nil, then all app concepts are used
      *
      * Generated from protobuf field <code>.clarifai.api.Data data = 5;</code>
-     * @return \Clarifai\Api\Data
+     * @return \Clarifai\Api\Data|null
      */
     public function getData()
     {
         return $this->data;
+    }
+
+    public function hasData()
+    {
+        return isset($this->data);
+    }
+
+    public function clearData()
+    {
+        unset($this->data);
     }
 
     /**

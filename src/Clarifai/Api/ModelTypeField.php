@@ -181,7 +181,7 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
      */
     public function setFieldType($var)
     {
-        GPBUtil::checkEnum($var, \Clarifai\Api\ModelTypeField_ModelTypeFieldType::class);
+        GPBUtil::checkEnum($var, \Clarifai\Api\ModelTypeField\ModelTypeFieldType::class);
         $this->field_type = $var;
 
         return $this;
@@ -192,11 +192,21 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
      * google.protobuf.Struct but this is just a single value).
      *
      * Generated from protobuf field <code>.google.protobuf.Value default_value = 3;</code>
-     * @return \Google\Protobuf\Value
+     * @return \Google\Protobuf\Value|null
      */
     public function getDefaultValue()
     {
         return $this->default_value;
+    }
+
+    public function hasDefaultValue()
+    {
+        return isset($this->default_value);
+    }
+
+    public function clearDefaultValue()
+    {
+        unset($this->default_value);
     }
 
     /**
@@ -353,11 +363,21 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
      * If the field_type is RANGE, this must be filled in.
      *
      * Generated from protobuf field <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
-     * @return \Clarifai\Api\ModelTypeRangeInfo
+     * @return \Clarifai\Api\ModelTypeRangeInfo|null
      */
     public function getModelTypeRangeInfo()
     {
         return $this->model_type_range_info;
+    }
+
+    public function hasModelTypeRangeInfo()
+    {
+        return isset($this->model_type_range_info);
+    }
+
+    public function clearModelTypeRangeInfo()
+    {
+        unset($this->model_type_range_info);
     }
 
     /**

@@ -32,18 +32,22 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
     private $model_versions;
     /**
      * Use this to filter inputs that are used in training
+     * Alternatively, use train_search & test_search fields OR dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
+     * @deprecated
      */
     protected $search = null;
     /**
      *train_search is used to specify what data to train on.
+     * Alternatively, use dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search train_search = 5;</code>
      */
     protected $train_search = null;
     /**
      *test_search is used to specify what data to test on.
+     * Alternatively, use dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search test_search = 6;</code>
      */
@@ -60,6 +64,24 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string description = 8;</code>
      */
     protected $description = '';
+    /**
+     * Use the data from this dataset version for training.
+     * Set dataset_version.dataset_id to identify the dataset that you would like to use.
+     * When dataset_version.id field is set,
+     * the system will reuse the data from provided dataset version.
+     * When dataset_version.id is not set,
+     * a new dataset version will be created in the dataset using provided dataset_version fields.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 9;</code>
+     */
+    protected $dataset_version = null;
+    /**
+     * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+     * We will merge this with default_eval_info.
+     *
+     * Generated from protobuf field <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+     */
+    protected $eval_info = null;
 
     /**
      * Constructor.
@@ -74,14 +96,27 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
      *           For internal Clarifai use only to start.
      *     @type \Clarifai\Api\Search $search
      *           Use this to filter inputs that are used in training
+     *           Alternatively, use train_search & test_search fields OR dataset_version field.
      *     @type \Clarifai\Api\Search $train_search
      *          train_search is used to specify what data to train on.
+     *           Alternatively, use dataset_version field.
      *     @type \Clarifai\Api\Search $test_search
      *          test_search is used to specify what data to test on.
+     *           Alternatively, use dataset_version field.
      *     @type bool $evaluate_after_training
      *           whether to evaluate the transfer trained model after training
      *     @type string $description
      *           Description about this training run
+     *     @type \Clarifai\Api\DatasetVersion $dataset_version
+     *           Use the data from this dataset version for training.
+     *           Set dataset_version.dataset_id to identify the dataset that you would like to use.
+     *           When dataset_version.id field is set,
+     *           the system will reuse the data from provided dataset version.
+     *           When dataset_version.id is not set,
+     *           a new dataset version will be created in the dataset using provided dataset_version fields.
+     *     @type \Clarifai\Api\EvalInfo $eval_info
+     *           When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+     *           We will merge this with default_eval_info.
      * }
      */
     public function __construct($data = NULL) {
@@ -91,11 +126,21 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -163,24 +208,42 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Use this to filter inputs that are used in training
+     * Alternatively, use train_search & test_search fields OR dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
-     * @return \Clarifai\Api\Search
+     * @return \Clarifai\Api\Search|null
+     * @deprecated
      */
     public function getSearch()
     {
+        @trigger_error('search is deprecated.', E_USER_DEPRECATED);
         return $this->search;
+    }
+
+    public function hasSearch()
+    {
+        @trigger_error('search is deprecated.', E_USER_DEPRECATED);
+        return isset($this->search);
+    }
+
+    public function clearSearch()
+    {
+        @trigger_error('search is deprecated.', E_USER_DEPRECATED);
+        unset($this->search);
     }
 
     /**
      * Use this to filter inputs that are used in training
+     * Alternatively, use train_search & test_search fields OR dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
      * @param \Clarifai\Api\Search $var
      * @return $this
+     * @deprecated
      */
     public function setSearch($var)
     {
+        @trigger_error('search is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Clarifai\Api\Search::class);
         $this->search = $var;
 
@@ -189,17 +252,29 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      *train_search is used to specify what data to train on.
+     * Alternatively, use dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search train_search = 5;</code>
-     * @return \Clarifai\Api\Search
+     * @return \Clarifai\Api\Search|null
      */
     public function getTrainSearch()
     {
         return $this->train_search;
     }
 
+    public function hasTrainSearch()
+    {
+        return isset($this->train_search);
+    }
+
+    public function clearTrainSearch()
+    {
+        unset($this->train_search);
+    }
+
     /**
      *train_search is used to specify what data to train on.
+     * Alternatively, use dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search train_search = 5;</code>
      * @param \Clarifai\Api\Search $var
@@ -215,17 +290,29 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      *test_search is used to specify what data to test on.
+     * Alternatively, use dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search test_search = 6;</code>
-     * @return \Clarifai\Api\Search
+     * @return \Clarifai\Api\Search|null
      */
     public function getTestSearch()
     {
         return $this->test_search;
     }
 
+    public function hasTestSearch()
+    {
+        return isset($this->test_search);
+    }
+
+    public function clearTestSearch()
+    {
+        unset($this->test_search);
+    }
+
     /**
      *test_search is used to specify what data to test on.
+     * Alternatively, use dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search test_search = 6;</code>
      * @param \Clarifai\Api\Search $var
@@ -287,6 +374,90 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Use the data from this dataset version for training.
+     * Set dataset_version.dataset_id to identify the dataset that you would like to use.
+     * When dataset_version.id field is set,
+     * the system will reuse the data from provided dataset version.
+     * When dataset_version.id is not set,
+     * a new dataset version will be created in the dataset using provided dataset_version fields.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 9;</code>
+     * @return \Clarifai\Api\DatasetVersion|null
+     */
+    public function getDatasetVersion()
+    {
+        return $this->dataset_version;
+    }
+
+    public function hasDatasetVersion()
+    {
+        return isset($this->dataset_version);
+    }
+
+    public function clearDatasetVersion()
+    {
+        unset($this->dataset_version);
+    }
+
+    /**
+     * Use the data from this dataset version for training.
+     * Set dataset_version.dataset_id to identify the dataset that you would like to use.
+     * When dataset_version.id field is set,
+     * the system will reuse the data from provided dataset version.
+     * When dataset_version.id is not set,
+     * a new dataset version will be created in the dataset using provided dataset_version fields.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 9;</code>
+     * @param \Clarifai\Api\DatasetVersion $var
+     * @return $this
+     */
+    public function setDatasetVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersion::class);
+        $this->dataset_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+     * We will merge this with default_eval_info.
+     *
+     * Generated from protobuf field <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+     * @return \Clarifai\Api\EvalInfo|null
+     */
+    public function getEvalInfo()
+    {
+        return $this->eval_info;
+    }
+
+    public function hasEvalInfo()
+    {
+        return isset($this->eval_info);
+    }
+
+    public function clearEvalInfo()
+    {
+        unset($this->eval_info);
+    }
+
+    /**
+     * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+     * We will merge this with default_eval_info.
+     *
+     * Generated from protobuf field <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+     * @param \Clarifai\Api\EvalInfo $var
+     * @return $this
+     */
+    public function setEvalInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\EvalInfo::class);
+        $this->eval_info = $var;
 
         return $this;
     }

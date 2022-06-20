@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * SingleWorkflowVersionResponse
+ *
  * Generated from protobuf message <code>clarifai.api.SingleWorkflowVersionResponse</code>
  */
 class SingleWorkflowVersionResponse extends \Google\Protobuf\Internal\Message
@@ -39,11 +41,21 @@ class SingleWorkflowVersionResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -61,11 +73,21 @@ class SingleWorkflowVersionResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
-     * @return \Clarifai\Api\WorkflowVersion
+     * @return \Clarifai\Api\WorkflowVersion|null
      */
     public function getWorkflowVersion()
     {
         return $this->workflow_version;
+    }
+
+    public function hasWorkflowVersion()
+    {
+        return isset($this->workflow_version);
+    }
+
+    public function clearWorkflowVersion()
+    {
+        unset($this->workflow_version);
     }
 
     /**

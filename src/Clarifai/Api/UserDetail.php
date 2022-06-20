@@ -141,11 +141,21 @@ class UserDetail extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp date_gdpr_consent = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getDateGdprConsent()
     {
         return $this->date_gdpr_consent;
+    }
+
+    public function hasDateGdprConsent()
+    {
+        return isset($this->date_gdpr_consent);
+    }
+
+    public function clearDateGdprConsent()
+    {
+        unset($this->date_gdpr_consent);
     }
 
     /**
@@ -163,11 +173,21 @@ class UserDetail extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp date_tos_consent = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getDateTosConsent()
     {
         return $this->date_tos_consent;
+    }
+
+    public function hasDateTosConsent()
+    {
+        return isset($this->date_tos_consent);
+    }
+
+    public function clearDateTosConsent()
+    {
+        unset($this->date_tos_consent);
     }
 
     /**
@@ -185,11 +205,21 @@ class UserDetail extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp date_marketing_consent = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getDateMarketingConsent()
     {
         return $this->date_marketing_consent;
+    }
+
+    public function hasDateMarketingConsent()
+    {
+        return isset($this->date_marketing_consent);
+    }
+
+    public function clearDateMarketingConsent()
+    {
+        unset($this->date_marketing_consent);
     }
 
     /**
@@ -210,11 +240,21 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 6;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getMetadata()
     {
         return $this->metadata;
+    }
+
+    public function hasMetadata()
+    {
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        unset($this->metadata);
     }
 
     /**

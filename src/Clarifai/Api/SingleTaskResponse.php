@@ -41,11 +41,21 @@ class SingleTaskResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -63,11 +73,21 @@ class SingleTaskResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.Task task = 2;</code>
-     * @return \Clarifai\Api\Task
+     * @return \Clarifai\Api\Task|null
      */
     public function getTask()
     {
         return $this->task;
+    }
+
+    public function hasTask()
+    {
+        return isset($this->task);
+    }
+
+    public function clearTask()
+    {
+        unset($this->task);
     }
 
     /**

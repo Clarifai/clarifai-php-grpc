@@ -186,11 +186,21 @@ class Collector extends \Google\Protobuf\Internal\Message
      * "2017-04-11T21:50:50.223962Z"
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -294,11 +304,21 @@ class Collector extends \Google\Protobuf\Internal\Message
      * more than one collector in the same app anyways.
      *
      * Generated from protobuf field <code>.clarifai.api.CollectorSource collector_source = 6;</code>
-     * @return \Clarifai\Api\CollectorSource
+     * @return \Clarifai\Api\CollectorSource|null
      */
     public function getCollectorSource()
     {
         return $this->collector_source;
+    }
+
+    public function hasCollectorSource()
+    {
+        return isset($this->collector_source);
+    }
+
+    public function clearCollectorSource()
+    {
+        unset($this->collector_source);
     }
 
     /**
@@ -325,11 +345,21 @@ class Collector extends \Google\Protobuf\Internal\Message
      * an example.
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 7;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**

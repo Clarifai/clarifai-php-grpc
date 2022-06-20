@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * MultiScopeResponse
+ *
  * Generated from protobuf message <code>clarifai.api.MultiScopeResponse</code>
  */
 class MultiScopeResponse extends \Google\Protobuf\Internal\Message
@@ -37,6 +39,10 @@ class MultiScopeResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string endpoints = 4;</code>
      */
     private $endpoints;
+    /**
+     * Generated from protobuf field <code>string user_feature_flags = 5;</code>
+     */
+    protected $user_feature_flags = '';
 
     /**
      * Constructor.
@@ -52,6 +58,7 @@ class MultiScopeResponse extends \Google\Protobuf\Internal\Message
      *           The app that the key has access to.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $endpoints
      *           This is a list of endpoint permissions that your key has.
+     *     @type string $user_feature_flags
      * }
      */
     public function __construct($data = NULL) {
@@ -63,11 +70,21 @@ class MultiScopeResponse extends \Google\Protobuf\Internal\Message
      * The status of the request.
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -115,11 +132,21 @@ class MultiScopeResponse extends \Google\Protobuf\Internal\Message
      * The app that the key has access to.
      *
      * Generated from protobuf field <code>.clarifai.api.App app = 3;</code>
-     * @return \Clarifai\Api\App
+     * @return \Clarifai\Api\App|null
      */
     public function getApp()
     {
         return $this->app;
+    }
+
+    public function hasApp()
+    {
+        return isset($this->app);
+    }
+
+    public function clearApp()
+    {
+        unset($this->app);
     }
 
     /**
@@ -159,6 +186,28 @@ class MultiScopeResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->endpoints = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_feature_flags = 5;</code>
+     * @return string
+     */
+    public function getUserFeatureFlags()
+    {
+        return $this->user_feature_flags;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_feature_flags = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserFeatureFlags($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_feature_flags = $var;
 
         return $this;
     }

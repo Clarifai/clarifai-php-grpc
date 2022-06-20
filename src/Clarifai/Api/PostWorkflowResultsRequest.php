@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * PostWorkflowResultsRequest
+ *
  * Generated from protobuf message <code>clarifai.api.PostWorkflowResultsRequest</code>
  */
 class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
@@ -99,11 +101,21 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -208,11 +220,21 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
      * and then it's more consistent we just don't support the OutputConfig on workflows.
      *
      * Generated from protobuf field <code>.clarifai.api.OutputConfig output_config = 4;</code>
-     * @return \Clarifai\Api\OutputConfig
+     * @return \Clarifai\Api\OutputConfig|null
      */
     public function getOutputConfig()
     {
         return $this->output_config;
+    }
+
+    public function hasOutputConfig()
+    {
+        return isset($this->output_config);
+    }
+
+    public function clearOutputConfig()
+    {
+        unset($this->output_config);
     }
 
     /**
@@ -267,11 +289,21 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
      * state will be saved or returned in PostWorkflowResultsResponse.
      *
      * Generated from protobuf field <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
-     * @return \Clarifai\Api\WorkflowState
+     * @return \Clarifai\Api\WorkflowState|null
      */
     public function getWorkflowState()
     {
         return $this->workflow_state;
+    }
+
+    public function hasWorkflowState()
+    {
+        return isset($this->workflow_state);
+    }
+
+    public function clearWorkflowState()
+    {
+        unset($this->workflow_state);
     }
 
     /**

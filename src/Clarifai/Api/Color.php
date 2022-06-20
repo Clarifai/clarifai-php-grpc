@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/color.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Color data
  *
  * Generated from protobuf message <code>clarifai.api.Color</code>
  */
@@ -70,11 +68,21 @@ class Color extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.W3C w3c = 2;</code>
-     * @return \Clarifai\Api\W3C
+     * @return \Clarifai\Api\W3C|null
      */
     public function getW3C()
     {
         return $this->w3c;
+    }
+
+    public function hasW3C()
+    {
+        return isset($this->w3c);
+    }
+
+    public function clearW3C()
+    {
+        unset($this->w3c);
     }
 
     /**

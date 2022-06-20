@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * EvalTestSetEntry
+ *
  * Generated from protobuf message <code>clarifai.api.EvalTestSetEntry</code>
  */
 class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
@@ -17,10 +19,12 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
      * Input CFID
      *
      * Generated from protobuf field <code>string id = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $id = '';
     /**
      * Generated from protobuf field <code>string url = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $url = '';
     /**
@@ -78,9 +82,11 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string id = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getId()
     {
+        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
         return $this->id;
     }
 
@@ -90,9 +96,11 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string id = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setId($var)
     {
+        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->id = $var;
 
@@ -102,9 +110,11 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string url = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getUrl()
     {
+        @trigger_error('url is deprecated.', E_USER_DEPRECATED);
         return $this->url;
     }
 
@@ -112,9 +122,11 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string url = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setUrl($var)
     {
+        @trigger_error('url is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->url = $var;
 
@@ -125,11 +137,21 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
      * the input information
      *
      * Generated from protobuf field <code>.clarifai.api.Input input = 6;</code>
-     * @return \Clarifai\Api\Input
+     * @return \Clarifai\Api\Input|null
      */
     public function getInput()
     {
         return $this->input;
+    }
+
+    public function hasInput()
+    {
+        return isset($this->input);
+    }
+
+    public function clearInput()
+    {
+        unset($this->input);
     }
 
     /**
@@ -201,11 +223,21 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
      * And the concepts is in ground_truth_concepts instead of this annotation
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 5;</code>
-     * @return \Clarifai\Api\Annotation
+     * @return \Clarifai\Api\Annotation|null
      */
     public function getAnnotation()
     {
         return $this->annotation;
+    }
+
+    public function hasAnnotation()
+    {
+        return isset($this->annotation);
+    }
+
+    public function clearAnnotation()
+    {
+        unset($this->annotation);
     }
 
     /**

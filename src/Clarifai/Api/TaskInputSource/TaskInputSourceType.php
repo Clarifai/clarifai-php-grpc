@@ -27,11 +27,18 @@ class TaskInputSourceType
      * Generated from protobuf enum <code>SAVED_SEARCH = 2;</code>
      */
     const SAVED_SEARCH = 2;
+    /**
+     * Inputs from a dataset.
+     *
+     * Generated from protobuf enum <code>DATASET = 3;</code>
+     */
+    const DATASET = 3;
 
     private static $valueToName = [
         self::INPUT_SOURCE_TYPE_NOT_SET => 'INPUT_SOURCE_TYPE_NOT_SET',
         self::ALL_INPUTS => 'ALL_INPUTS',
         self::SAVED_SEARCH => 'SAVED_SEARCH',
+        self::DATASET => 'DATASET',
     ];
 
     public static function name($value)

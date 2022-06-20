@@ -185,11 +185,21 @@ class LabelOrder extends \Google\Protobuf\Internal\Message
      * success (released)
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 3;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -267,11 +277,21 @@ class LabelOrder extends \Google\Protobuf\Internal\Message
      * User desired estimation when the task should be done
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp desired_fulfill_time = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getDesiredFulfillTime()
     {
         return $this->desired_fulfill_time;
+    }
+
+    public function hasDesiredFulfillTime()
+    {
+        return isset($this->desired_fulfill_time);
+    }
+
+    public function clearDesiredFulfillTime()
+    {
+        unset($this->desired_fulfill_time);
     }
 
     /**
@@ -293,11 +313,21 @@ class LabelOrder extends \Google\Protobuf\Internal\Message
      * Clarifai estimation when the task should be done .
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp estimate_fulfill_time = 7;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEstimateFulfillTime()
     {
         return $this->estimate_fulfill_time;
+    }
+
+    public function hasEstimateFulfillTime()
+    {
+        return isset($this->estimate_fulfill_time);
+    }
+
+    public function clearEstimateFulfillTime()
+    {
+        unset($this->estimate_fulfill_time);
     }
 
     /**
@@ -319,11 +349,21 @@ class LabelOrder extends \Google\Protobuf\Internal\Message
      * task for this label order
      *
      * Generated from protobuf field <code>.clarifai.api.Task task = 8;</code>
-     * @return \Clarifai\Api\Task
+     * @return \Clarifai\Api\Task|null
      */
     public function getTask()
     {
         return $this->task;
+    }
+
+    public function hasTask()
+    {
+        return isset($this->task);
+    }
+
+    public function clearTask()
+    {
+        unset($this->task);
     }
 
     /**
@@ -347,11 +387,21 @@ class LabelOrder extends \Google\Protobuf\Internal\Message
      * Example: "2006-01-02T15:04:05.999999Z".
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 9;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -377,11 +427,21 @@ class LabelOrder extends \Google\Protobuf\Internal\Message
      * Example: "2006-01-02T15:04:05.999999Z".
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 10;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getModifiedAt()
     {
         return $this->modified_at;
+    }
+
+    public function hasModifiedAt()
+    {
+        return isset($this->modified_at);
+    }
+
+    public function clearModifiedAt()
+    {
+        unset($this->modified_at);
     }
 
     /**

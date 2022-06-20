@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/cluster.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Cluster data
  *
  * Generated from protobuf message <code>clarifai.api.Cluster</code>
  */
@@ -28,7 +26,8 @@ class Cluster extends \Google\Protobuf\Internal\Message
      */
     protected $count = 0;
     /**
-     * The score assigned to this cluster
+     * The score assigned to this cluster.
+     * For List Clusters endpoint, this represents percentage of inputs in the app assigned to this cluster.
      *
      * Generated from protobuf field <code>float score = 3;</code>
      */
@@ -54,7 +53,8 @@ class Cluster extends \Google\Protobuf\Internal\Message
      *     @type int $count
      *           Number of annotations tied to the cluster in the app
      *     @type float $score
-     *           The score assigned to this cluster
+     *           The score assigned to this cluster.
+     *           For List Clusters endpoint, this represents percentage of inputs in the app assigned to this cluster.
      *     @type \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $hits
      *           Representative hits for cluster (for now we only return 1)
      *     @type float[]|\Google\Protobuf\Internal\RepeatedField $projection
@@ -114,7 +114,8 @@ class Cluster extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The score assigned to this cluster
+     * The score assigned to this cluster.
+     * For List Clusters endpoint, this represents percentage of inputs in the app assigned to this cluster.
      *
      * Generated from protobuf field <code>float score = 3;</code>
      * @return float
@@ -125,7 +126,8 @@ class Cluster extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The score assigned to this cluster
+     * The score assigned to this cluster.
+     * For List Clusters endpoint, this represents percentage of inputs in the app assigned to this cluster.
      *
      * Generated from protobuf field <code>float score = 3;</code>
      * @param float $var

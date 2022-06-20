@@ -9,6 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * TaskStatusCountPerUser can represents count of human created annotations for a user for each valid status,
+ * count of inputs (anchor annotation) for a user for each valid status
+ *
  * Generated from protobuf message <code>clarifai.api.TaskStatusCountPerUser</code>
  */
 class TaskStatusCountPerUser extends \Google\Protobuf\Internal\Message

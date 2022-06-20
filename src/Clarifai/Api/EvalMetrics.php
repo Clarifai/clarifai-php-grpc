@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * EvalMetrics
+ *
  * Generated from protobuf message <code>clarifai.api.EvalMetrics</code>
  */
 class EvalMetrics extends \Google\Protobuf\Internal\Message
@@ -57,6 +59,10 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
      */
     private $tracker_metrics;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+     */
+    protected $eval_info = null;
 
     /**
      * Constructor.
@@ -75,6 +81,7 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\BinaryMetrics[]|\Google\Protobuf\Internal\RepeatedField $metrics_by_area
      *     @type \Clarifai\Api\BinaryMetrics[]|\Google\Protobuf\Internal\RepeatedField $metrics_by_class
      *     @type \Clarifai\Api\TrackerMetrics[]|\Google\Protobuf\Internal\RepeatedField $tracker_metrics
+     *     @type \Clarifai\Api\EvalInfo $eval_info
      * }
      */
     public function __construct($data = NULL) {
@@ -84,11 +91,21 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -128,11 +145,21 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.MetricsSummary summary = 2;</code>
-     * @return \Clarifai\Api\MetricsSummary
+     * @return \Clarifai\Api\MetricsSummary|null
      */
     public function getSummary()
     {
         return $this->summary;
+    }
+
+    public function hasSummary()
+    {
+        return isset($this->summary);
+    }
+
+    public function clearSummary()
+    {
+        unset($this->summary);
     }
 
     /**
@@ -150,11 +177,21 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.ConfusionMatrix confusion_matrix = 3;</code>
-     * @return \Clarifai\Api\ConfusionMatrix
+     * @return \Clarifai\Api\ConfusionMatrix|null
      */
     public function getConfusionMatrix()
     {
         return $this->confusion_matrix;
+    }
+
+    public function hasConfusionMatrix()
+    {
+        return isset($this->confusion_matrix);
+    }
+
+    public function clearConfusionMatrix()
+    {
+        unset($this->confusion_matrix);
     }
 
     /**
@@ -172,11 +209,21 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.CooccurrenceMatrix cooccurrence_matrix = 4;</code>
-     * @return \Clarifai\Api\CooccurrenceMatrix
+     * @return \Clarifai\Api\CooccurrenceMatrix|null
      */
     public function getCooccurrenceMatrix()
     {
         return $this->cooccurrence_matrix;
+    }
+
+    public function hasCooccurrenceMatrix()
+    {
+        return isset($this->cooccurrence_matrix);
+    }
+
+    public function clearCooccurrenceMatrix()
+    {
+        unset($this->cooccurrence_matrix);
     }
 
     /**
@@ -194,11 +241,21 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.LabelDistribution label_counts = 5;</code>
-     * @return \Clarifai\Api\LabelDistribution
+     * @return \Clarifai\Api\LabelDistribution|null
      */
     public function getLabelCounts()
     {
         return $this->label_counts;
+    }
+
+    public function hasLabelCounts()
+    {
+        return isset($this->label_counts);
+    }
+
+    public function clearLabelCounts()
+    {
+        unset($this->label_counts);
     }
 
     /**
@@ -320,6 +377,38 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\TrackerMetrics::class);
         $this->tracker_metrics = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+     * @return \Clarifai\Api\EvalInfo|null
+     */
+    public function getEvalInfo()
+    {
+        return $this->eval_info;
+    }
+
+    public function hasEvalInfo()
+    {
+        return isset($this->eval_info);
+    }
+
+    public function clearEvalInfo()
+    {
+        unset($this->eval_info);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+     * @param \Clarifai\Api\EvalInfo $var
+     * @return $this
+     */
+    public function setEvalInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\EvalInfo::class);
+        $this->eval_info = $var;
 
         return $this;
     }

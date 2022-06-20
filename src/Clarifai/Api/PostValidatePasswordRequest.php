@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * PostValidatePasswordRequest
+ *
  * Generated from protobuf message <code>clarifai.api.PostValidatePasswordRequest</code>
  */
 class PostValidatePasswordRequest extends \Google\Protobuf\Internal\Message
@@ -42,11 +44,21 @@ class PostValidatePasswordRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -66,11 +78,21 @@ class PostValidatePasswordRequest extends \Google\Protobuf\Internal\Message
      * password to be validated
      *
      * Generated from protobuf field <code>.clarifai.api.Password password = 2;</code>
-     * @return \Clarifai\Api\Password
+     * @return \Clarifai\Api\Password|null
      */
     public function getPassword()
     {
         return $this->password;
+    }
+
+    public function hasPassword()
+    {
+        return isset($this->password);
+    }
+
+    public function clearPassword()
+    {
+        unset($this->password);
     }
 
     /**

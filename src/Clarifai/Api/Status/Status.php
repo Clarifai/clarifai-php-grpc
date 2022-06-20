@@ -62,6 +62,12 @@ class Status extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string internal_details = 8 [(.clarifai.auth.util.cl_private_field) = true];</code>
      */
     protected $internal_details = '';
+    /**
+     * Resource location info for redirect, when resource location has been changed.
+     *
+     * Generated from protobuf field <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     */
+    protected $redirect_info = null;
 
     /**
      * Constructor.
@@ -86,6 +92,8 @@ class Status extends \Google\Protobuf\Internal\Message
      *           If we want to return a request id in the base status field
      *     @type string $internal_details
      *           Internal Annotation (do not set in production, for internal Clarifai use only).
+     *     @type \Clarifai\Api\Status\RedirectInfo $redirect_info
+     *           Resource location info for redirect, when resource location has been changed.
      * }
      */
     public function __construct($data = NULL) {
@@ -299,6 +307,42 @@ class Status extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->internal_details = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource location info for redirect, when resource location has been changed.
+     *
+     * Generated from protobuf field <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @return \Clarifai\Api\Status\RedirectInfo|null
+     */
+    public function getRedirectInfo()
+    {
+        return $this->redirect_info;
+    }
+
+    public function hasRedirectInfo()
+    {
+        return isset($this->redirect_info);
+    }
+
+    public function clearRedirectInfo()
+    {
+        unset($this->redirect_info);
+    }
+
+    /**
+     * Resource location info for redirect, when resource location has been changed.
+     *
+     * Generated from protobuf field <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @param \Clarifai\Api\Status\RedirectInfo $var
+     * @return $this
+     */
+    public function setRedirectInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Status\RedirectInfo::class);
+        $this->redirect_info = $var;
 
         return $this;
     }

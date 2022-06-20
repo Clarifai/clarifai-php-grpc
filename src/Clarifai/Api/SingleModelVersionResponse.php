@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * SingleModelVersionResponse
+ *
  * Generated from protobuf message <code>clarifai.api.SingleModelVersionResponse</code>
  */
 class SingleModelVersionResponse extends \Google\Protobuf\Internal\Message
@@ -39,11 +41,21 @@ class SingleModelVersionResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -61,11 +73,21 @@ class SingleModelVersionResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.ModelVersion model_version = 2;</code>
-     * @return \Clarifai\Api\ModelVersion
+     * @return \Clarifai\Api\ModelVersion|null
      */
     public function getModelVersion()
     {
         return $this->model_version;
+    }
+
+    public function hasModelVersion()
+    {
+        return isset($this->model_version);
+    }
+
+    public function clearModelVersion()
+    {
+        unset($this->model_version);
     }
 
     /**

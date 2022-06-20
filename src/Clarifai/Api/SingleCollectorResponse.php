@@ -41,11 +41,21 @@ class SingleCollectorResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -63,11 +73,21 @@ class SingleCollectorResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.Collector collector = 2;</code>
-     * @return \Clarifai\Api\Collector
+     * @return \Clarifai\Api\Collector|null
      */
     public function getCollector()
     {
         return $this->collector;
+    }
+
+    public function hasCollector()
+    {
+        return isset($this->collector);
+    }
+
+    public function clearCollector()
+    {
+        unset($this->collector);
     }
 
     /**

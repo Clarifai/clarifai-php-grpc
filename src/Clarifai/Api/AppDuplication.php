@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * AppDuplication
+ *
  * Generated from protobuf message <code>clarifai.api.AppDuplication</code>
  */
 class AppDuplication extends \Google\Protobuf\Internal\Message
@@ -20,13 +22,16 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      *
      * Generated from protobuf field <code>string new_app_id = 2;</code>
      */
     protected $new_app_id = '';
     /**
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      *
      * Generated from protobuf field <code>string new_app_name = 3;</code>
      */
@@ -55,6 +60,20 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
      */
     protected $filter = null;
+    /**
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     *
+     * Generated from protobuf field <code>string existing_app_id = 8;</code>
+     */
+    protected $existing_app_id = '';
+    /**
+     * contains progress for each requested filter
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    private $progress;
 
     /**
      * Constructor.
@@ -65,9 +84,12 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *          the id of app duplication
      *     @type string $new_app_id
-     *          the id of new app
+     *           the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     *           if new_app_name is empty, the name will be the same as this id.
+     *           You can not set this if existing_app_id is set.
      *     @type string $new_app_name
-     *          the name of new app
+     *          the name of new app. If provided, we will create a new application with this name.
+     *           You can not set this if existing_app_id is set.
      *     @type \Clarifai\Api\Status\Status $status
      *          the status of app duplication
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -76,6 +98,12 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *          The last time when is the status got updated
      *     @type \Clarifai\Api\AppDuplicationFilters $filter
      *           Only copy resources depending on the filters
+     *     @type string $existing_app_id
+     *           the id of existing app you want to copy data into.
+     *           you can not set this if either new_app_id or new_app_name is set.
+     *           if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     *     @type \Clarifai\Api\AppCopyProgress[]|\Google\Protobuf\Internal\RepeatedField $progress
+     *           contains progress for each requested filter
      * }
      */
     public function __construct($data = NULL) {
@@ -110,7 +138,9 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      *
      * Generated from protobuf field <code>string new_app_id = 2;</code>
      * @return string
@@ -121,7 +151,9 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      *
      * Generated from protobuf field <code>string new_app_id = 2;</code>
      * @param string $var
@@ -136,7 +168,8 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      *
      * Generated from protobuf field <code>string new_app_name = 3;</code>
      * @return string
@@ -147,7 +180,8 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      *
      * Generated from protobuf field <code>string new_app_name = 3;</code>
      * @param string $var
@@ -165,11 +199,21 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *the status of app duplication
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 4;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -191,11 +235,21 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *when is the app duplication triggered
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -217,11 +271,21 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *The last time when is the status got updated
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastModifiedAt()
     {
         return $this->last_modified_at;
+    }
+
+    public function hasLastModifiedAt()
+    {
+        return isset($this->last_modified_at);
+    }
+
+    public function clearLastModifiedAt()
+    {
+        unset($this->last_modified_at);
     }
 
     /**
@@ -243,11 +307,21 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      * Only copy resources depending on the filters
      *
      * Generated from protobuf field <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
-     * @return \Clarifai\Api\AppDuplicationFilters
+     * @return \Clarifai\Api\AppDuplicationFilters|null
      */
     public function getFilter()
     {
         return $this->filter;
+    }
+
+    public function hasFilter()
+    {
+        return isset($this->filter);
+    }
+
+    public function clearFilter()
+    {
+        unset($this->filter);
     }
 
     /**
@@ -261,6 +335,62 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\AppDuplicationFilters::class);
         $this->filter = $var;
+
+        return $this;
+    }
+
+    /**
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     *
+     * Generated from protobuf field <code>string existing_app_id = 8;</code>
+     * @return string
+     */
+    public function getExistingAppId()
+    {
+        return $this->existing_app_id;
+    }
+
+    /**
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     *
+     * Generated from protobuf field <code>string existing_app_id = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExistingAppId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->existing_app_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * contains progress for each requested filter
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getProgress()
+    {
+        return $this->progress;
+    }
+
+    /**
+     * contains progress for each requested filter
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     * @param \Clarifai\Api\AppCopyProgress[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setProgress($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\AppCopyProgress::class);
+        $this->progress = $arr;
 
         return $this;
     }

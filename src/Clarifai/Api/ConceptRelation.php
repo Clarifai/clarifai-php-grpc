@@ -9,9 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/concept_graph.proto
- * //////////////////////////////////////////////////////////////////////////////
  * This represents a relation (i.e. edge) between the subject concept and the object concept
  *
  * Generated from protobuf message <code>clarifai.api.ConceptRelation</code>
@@ -164,11 +161,21 @@ class ConceptRelation extends \Google\Protobuf\Internal\Message
      * The subject concept (i.e. source) of the concept relation
      *
      * Generated from protobuf field <code>.clarifai.api.Concept subject_concept = 2;</code>
-     * @return \Clarifai\Api\Concept
+     * @return \Clarifai\Api\Concept|null
      */
     public function getSubjectConcept()
     {
         return $this->subject_concept;
+    }
+
+    public function hasSubjectConcept()
+    {
+        return isset($this->subject_concept);
+    }
+
+    public function clearSubjectConcept()
+    {
+        unset($this->subject_concept);
     }
 
     /**
@@ -190,11 +197,21 @@ class ConceptRelation extends \Google\Protobuf\Internal\Message
      * The subject concept (i.e. destination) of the concept relation
      *
      * Generated from protobuf field <code>.clarifai.api.Concept object_concept = 3;</code>
-     * @return \Clarifai\Api\Concept
+     * @return \Clarifai\Api\Concept|null
      */
     public function getObjectConcept()
     {
         return $this->object_concept;
+    }
+
+    public function hasObjectConcept()
+    {
+        return isset($this->object_concept);
+    }
+
+    public function clearObjectConcept()
+    {
+        unset($this->object_concept);
     }
 
     /**
@@ -320,11 +337,21 @@ class ConceptRelation extends \Google\Protobuf\Internal\Message
      * also be publicly visible.
      *
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 6;</code>
-     * @return \Clarifai\Api\Visibility
+     * @return \Clarifai\Api\Visibility|null
      */
     public function getVisibility()
     {
         return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
     }
 
     /**

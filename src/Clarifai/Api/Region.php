@@ -101,11 +101,21 @@ class Region extends \Google\Protobuf\Internal\Message
      * The details about the location of the region.
      *
      * Generated from protobuf field <code>.clarifai.api.RegionInfo region_info = 2;</code>
-     * @return \Clarifai\Api\RegionInfo
+     * @return \Clarifai\Api\RegionInfo|null
      */
     public function getRegionInfo()
     {
         return $this->region_info;
+    }
+
+    public function hasRegionInfo()
+    {
+        return isset($this->region_info);
+    }
+
+    public function clearRegionInfo()
+    {
+        unset($this->region_info);
     }
 
     /**
@@ -128,11 +138,21 @@ class Region extends \Google\Protobuf\Internal\Message
      * data.concepts if the region also has annotations or predictions of concepts within it.
      *
      * Generated from protobuf field <code>.clarifai.api.Data data = 3;</code>
-     * @return \Clarifai\Api\Data
+     * @return \Clarifai\Api\Data|null
      */
     public function getData()
     {
         return $this->data;
+    }
+
+    public function hasData()
+    {
+        return isset($this->data);
+    }
+
+    public function clearData()
+    {
+        unset($this->data);
     }
 
     /**

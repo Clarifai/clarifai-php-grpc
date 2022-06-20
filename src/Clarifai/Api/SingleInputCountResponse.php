@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * SingleInputCountResponse
+ *
  * Generated from protobuf message <code>clarifai.api.SingleInputCountResponse</code>
  */
 class SingleInputCountResponse extends \Google\Protobuf\Internal\Message
@@ -18,8 +20,6 @@ class SingleInputCountResponse extends \Google\Protobuf\Internal\Message
      */
     protected $status = null;
     /**
-     * NOTE: inconsistency: not named after the object name.
-     *
      * Generated from protobuf field <code>.clarifai.api.InputCount counts = 2;</code>
      */
     protected $counts = null;
@@ -32,7 +32,6 @@ class SingleInputCountResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *     @type \Clarifai\Api\InputCount $counts
-     *           NOTE: inconsistency: not named after the object name.
      * }
      */
     public function __construct($data = NULL) {
@@ -42,11 +41,21 @@ class SingleInputCountResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -63,19 +72,25 @@ class SingleInputCountResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * NOTE: inconsistency: not named after the object name.
-     *
      * Generated from protobuf field <code>.clarifai.api.InputCount counts = 2;</code>
-     * @return \Clarifai\Api\InputCount
+     * @return \Clarifai\Api\InputCount|null
      */
     public function getCounts()
     {
         return $this->counts;
     }
 
+    public function hasCounts()
+    {
+        return isset($this->counts);
+    }
+
+    public function clearCounts()
+    {
+        unset($this->counts);
+    }
+
     /**
-     * NOTE: inconsistency: not named after the object name.
-     *
      * Generated from protobuf field <code>.clarifai.api.InputCount counts = 2;</code>
      * @param \Clarifai\Api\InputCount $var
      * @return $this

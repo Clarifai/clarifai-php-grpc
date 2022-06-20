@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * StatValueAggregateResult
+ *
  * Generated from protobuf message <code>clarifai.api.StatValueAggregateResult</code>
  */
 class StatValueAggregateResult extends \Google\Protobuf\Internal\Message
@@ -73,11 +75,21 @@ class StatValueAggregateResult extends \Google\Protobuf\Internal\Message
      * The query that created these results.
      *
      * Generated from protobuf field <code>.clarifai.api.StatValueAggregateQuery stat_value_aggregate_query = 2;</code>
-     * @return \Clarifai\Api\StatValueAggregateQuery
+     * @return \Clarifai\Api\StatValueAggregateQuery|null
      */
     public function getStatValueAggregateQuery()
     {
         return $this->stat_value_aggregate_query;
+    }
+
+    public function hasStatValueAggregateQuery()
+    {
+        return isset($this->stat_value_aggregate_query);
+    }
+
+    public function clearStatValueAggregateQuery()
+    {
+        unset($this->stat_value_aggregate_query);
     }
 
     /**

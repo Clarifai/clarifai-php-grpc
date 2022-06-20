@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Stats Collection Objects.
- * //////////////////////////////////////////////////////////////////////////////
+ * StatValue
  *
  * Generated from protobuf message <code>clarifai.api.StatValue</code>
  */
@@ -65,11 +63,21 @@ class StatValue extends \Google\Protobuf\Internal\Message
      * The time of the event. Defaults to now().
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp time = 1;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getTime()
     {
         return $this->time;
+    }
+
+    public function hasTime()
+    {
+        return isset($this->time);
+    }
+
+    public function clearTime()
+    {
+        unset($this->time);
     }
 
     /**

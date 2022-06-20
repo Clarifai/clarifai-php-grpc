@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * TrainStats
+ *
  * Generated from protobuf message <code>clarifai.api.TrainStats</code>
  */
 class TrainStats extends \Google\Protobuf\Internal\Message

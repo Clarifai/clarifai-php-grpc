@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * MultiModelTypeResponse
+ *
  * Generated from protobuf message <code>clarifai.api.MultiModelTypeResponse</code>
  */
 class MultiModelTypeResponse extends \Google\Protobuf\Internal\Message
@@ -25,6 +27,12 @@ class MultiModelTypeResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     private $model_types;
+    /**
+     * List of model importers
+     *
+     * Generated from protobuf field <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+     */
+    protected $model_importers = null;
 
     /**
      * Constructor.
@@ -36,6 +44,8 @@ class MultiModelTypeResponse extends \Google\Protobuf\Internal\Message
      *           Status of the response.
      *     @type \Clarifai\Api\ModelType[]|\Google\Protobuf\Internal\RepeatedField $model_types
      *           List of ModelType objects.
+     *     @type \Clarifai\Api\ModelTypeField $model_importers
+     *           List of model importers
      * }
      */
     public function __construct($data = NULL) {
@@ -47,11 +57,21 @@ class MultiModelTypeResponse extends \Google\Protobuf\Internal\Message
      * Status of the response.
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -91,6 +111,42 @@ class MultiModelTypeResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\ModelType::class);
         $this->model_types = $arr;
+
+        return $this;
+    }
+
+    /**
+     * List of model importers
+     *
+     * Generated from protobuf field <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+     * @return \Clarifai\Api\ModelTypeField|null
+     */
+    public function getModelImporters()
+    {
+        return $this->model_importers;
+    }
+
+    public function hasModelImporters()
+    {
+        return isset($this->model_importers);
+    }
+
+    public function clearModelImporters()
+    {
+        unset($this->model_importers);
+    }
+
+    /**
+     * List of model importers
+     *
+     * Generated from protobuf field <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+     * @param \Clarifai\Api\ModelTypeField $var
+     * @return $this
+     */
+    public function setModelImporters($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ModelTypeField::class);
+        $this->model_importers = $var;
 
         return $this;
     }

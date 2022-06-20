@@ -41,11 +41,21 @@ class Mask extends \Google\Protobuf\Internal\Message
      * The image of the mask in a non-raster format.
      *
      * Generated from protobuf field <code>.clarifai.api.Image image = 2;</code>
-     * @return \Clarifai\Api\Image
+     * @return \Clarifai\Api\Image|null
      */
     public function getImage()
     {
         return $this->image;
+    }
+
+    public function hasImage()
+    {
+        return isset($this->image);
+    }
+
+    public function clearImage()
+    {
+        unset($this->image);
     }
 
     /**

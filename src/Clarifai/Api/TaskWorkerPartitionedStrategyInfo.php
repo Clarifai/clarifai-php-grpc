@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * TaskWorkerPartitionedStrategyInfo
+ *
  * Generated from protobuf message <code>clarifai.api.TaskWorkerPartitionedStrategyInfo</code>
  */
 class TaskWorkerPartitionedStrategyInfo extends \Google\Protobuf\Internal\Message
@@ -109,7 +111,7 @@ class TaskWorkerPartitionedStrategyInfo extends \Google\Protobuf\Internal\Messag
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Clarifai\Api\TaskWorkerPartitionedStrategyInfo_TaskWorkerPartitionedStrategy::class);
+        GPBUtil::checkEnum($var, \Clarifai\Api\TaskWorkerPartitionedStrategyInfo\TaskWorkerPartitionedStrategy::class);
         $this->type = $var;
 
         return $this;
@@ -164,11 +166,21 @@ class TaskWorkerPartitionedStrategyInfo extends \Google\Protobuf\Internal\Messag
      * This means the remaining 2 inputs will be labeled only by worker 1. This contradicts the worker_per_input = 2 requirement.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct weights = 3;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getWeights()
     {
         return $this->weights;
+    }
+
+    public function hasWeights()
+    {
+        return isset($this->weights);
+    }
+
+    public function clearWeights()
+    {
+        unset($this->weights);
     }
 
     /**

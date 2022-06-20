@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/workflow.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Workflow
  *
  * Generated from protobuf message <code>clarifai.api.Workflow</code>
  */
@@ -93,6 +91,25 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 star_count = 11;</code>
      */
     protected $star_count = 0;
+    /**
+     * Short description about this workflow
+     *
+     * Generated from protobuf field <code>string description = 12;</code>
+     */
+    protected $description = '';
+    /**
+     * Notes for the workflow
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     *
+     * Generated from protobuf field <code>string notes = 13;</code>
+     */
+    protected $notes = '';
+    /**
+     * Tags from use_cases category
+     *
+     * Generated from protobuf field <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    private $use_cases;
 
     /**
      * Constructor.
@@ -132,6 +149,13 @@ class Workflow extends \Google\Protobuf\Internal\Message
      *     @type int $star_count
      *           How many users have starred the workflow (only showed on get/list requests)
      *           Computed value, not editable
+     *     @type string $description
+     *           Short description about this workflow
+     *     @type string $notes
+     *           Notes for the workflow
+     *           This field should be used for in-depth notes and supports up to 64Kbs.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $use_cases
+     *           Tags from use_cases category
      * }
      */
     public function __construct($data = NULL) {
@@ -199,11 +223,21 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * "2017-04-11T21:50:50.223962Z"
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -258,11 +292,21 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 5;</code>
-     * @return \Google\Protobuf\Struct
+     * @return \Google\Protobuf\Struct|null
      */
     public function getMetadata()
     {
         return $this->metadata;
+    }
+
+    public function hasMetadata()
+    {
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        unset($this->metadata);
     }
 
     /**
@@ -287,11 +331,21 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * also be publicly visible.
      *
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 6;</code>
-     * @return \Clarifai\Api\Visibility
+     * @return \Clarifai\Api\Visibility|null
      */
     public function getVisibility()
     {
         return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
     }
 
     /**
@@ -341,11 +395,21 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * When the workflow was last modified
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 8;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getModifiedAt()
     {
         return $this->modified_at;
+    }
+
+    public function hasModifiedAt()
+    {
+        return isset($this->modified_at);
+    }
+
+    public function clearModifiedAt()
+    {
+        unset($this->modified_at);
     }
 
     /**
@@ -367,11 +431,21 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * Info about the workflow version
      *
      * Generated from protobuf field <code>.clarifai.api.WorkflowVersion version = 9;</code>
-     * @return \Clarifai\Api\WorkflowVersion
+     * @return \Clarifai\Api\WorkflowVersion|null
      */
     public function getVersion()
     {
         return $this->version;
+    }
+
+    public function hasVersion()
+    {
+        return isset($this->version);
+    }
+
+    public function clearVersion()
+    {
+        unset($this->version);
     }
 
     /**
@@ -441,6 +515,86 @@ class Workflow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->star_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Short description about this workflow
+     *
+     * Generated from protobuf field <code>string description = 12;</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Short description about this workflow
+     *
+     * Generated from protobuf field <code>string description = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Notes for the workflow
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     *
+     * Generated from protobuf field <code>string notes = 13;</code>
+     * @return string
+     */
+    public function getNotes()
+    {
+        return $this->notes;
+    }
+
+    /**
+     * Notes for the workflow
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     *
+     * Generated from protobuf field <code>string notes = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNotes($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->notes = $var;
+
+        return $this;
+    }
+
+    /**
+     * Tags from use_cases category
+     *
+     * Generated from protobuf field <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUseCases()
+    {
+        return $this->use_cases;
+    }
+
+    /**
+     * Tags from use_cases category
+     *
+     * Generated from protobuf field <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUseCases($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->use_cases = $arr;
 
         return $this;
     }

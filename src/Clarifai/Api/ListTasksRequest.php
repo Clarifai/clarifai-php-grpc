@@ -51,6 +51,13 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool including_label_order_tasks = 6;</code>
      */
     protected $including_label_order_tasks = false;
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 7;</code>
+     */
+    private $additional_fields;
 
     /**
      * Constructor.
@@ -71,6 +78,9 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      *           Get tasks that have ANY user from this list assigned as reviewer.
      *     @type bool $including_label_order_tasks
      *           Get label order tasks as well
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *           (optional URL parameter) List of additional fields to be included in the response.
+     *           Currently supported: all, worker.users, review.users.
      * }
      */
     public function __construct($data = NULL) {
@@ -80,11 +90,21 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return \Clarifai\Api\UserAppIDSet
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
     public function getUserAppId()
     {
         return $this->user_app_id;
+    }
+
+    public function hasUserAppId()
+    {
+        return isset($this->user_app_id);
+    }
+
+    public function clearUserAppId()
+    {
+        unset($this->user_app_id);
     }
 
     /**
@@ -230,6 +250,34 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->including_label_order_tasks = $var;
+
+        return $this;
+    }
+
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 7;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAdditionalFields()
+    {
+        return $this->additional_fields;
+    }
+
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 7;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAdditionalFields($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->additional_fields = $arr;
 
         return $this;
     }

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * SingleConceptResponse
+ *
  * Generated from protobuf message <code>clarifai.api.SingleConceptResponse</code>
  */
 class SingleConceptResponse extends \Google\Protobuf\Internal\Message
@@ -47,11 +49,21 @@ class SingleConceptResponse extends \Google\Protobuf\Internal\Message
      * The response status.
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -73,11 +85,21 @@ class SingleConceptResponse extends \Google\Protobuf\Internal\Message
      * The returned concept.
      *
      * Generated from protobuf field <code>.clarifai.api.Concept concept = 2;</code>
-     * @return \Clarifai\Api\Concept
+     * @return \Clarifai\Api\Concept|null
      */
     public function getConcept()
     {
         return $this->concept;
+    }
+
+    public function hasConcept()
+    {
+        return isset($this->concept);
+    }
+
+    public function clearConcept()
+    {
+        unset($this->concept);
     }
 
     /**

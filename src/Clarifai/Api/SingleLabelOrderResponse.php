@@ -41,11 +41,21 @@ class SingleLabelOrderResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status
+     * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**
@@ -63,11 +73,21 @@ class SingleLabelOrderResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.LabelOrder label_order = 2;</code>
-     * @return \Clarifai\Api\LabelOrder
+     * @return \Clarifai\Api\LabelOrder|null
      */
     public function getLabelOrder()
     {
         return $this->label_order;
+    }
+
+    public function hasLabelOrder()
+    {
+        return isset($this->label_order);
+    }
+
+    public function clearLabelOrder()
+    {
+        unset($this->label_order);
     }
 
     /**

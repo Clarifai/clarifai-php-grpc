@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Geo
+ *
  * Generated from protobuf message <code>clarifai.api.Geo</code>
  */
 class Geo extends \Google\Protobuf\Internal\Message
@@ -47,11 +49,21 @@ class Geo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.GeoPoint geo_point = 1;</code>
-     * @return \Clarifai\Api\GeoPoint
+     * @return \Clarifai\Api\GeoPoint|null
      */
     public function getGeoPoint()
     {
         return $this->geo_point;
+    }
+
+    public function hasGeoPoint()
+    {
+        return isset($this->geo_point);
+    }
+
+    public function clearGeoPoint()
+    {
+        unset($this->geo_point);
     }
 
     /**
@@ -69,11 +81,21 @@ class Geo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.GeoLimit geo_limit = 2;</code>
-     * @return \Clarifai\Api\GeoLimit
+     * @return \Clarifai\Api\GeoLimit|null
      */
     public function getGeoLimit()
     {
         return $this->geo_limit;
+    }
+
+    public function hasGeoLimit()
+    {
+        return isset($this->geo_limit);
+    }
+
+    public function clearGeoLimit()
+    {
+        unset($this->geo_limit);
     }
 
     /**

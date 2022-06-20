@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * TaskReview
+ *
  * Generated from protobuf message <code>clarifai.api.TaskReview</code>
  */
 class TaskReview extends \Google\Protobuf\Internal\Message
@@ -21,10 +23,20 @@ class TaskReview extends \Google\Protobuf\Internal\Message
     protected $strategy = 0;
     /**
      * Who will review this task.
+     * DEPRECATED: Use users.id instead.
      *
-     * Generated from protobuf field <code>repeated string user_ids = 2;</code>
+     * Generated from protobuf field <code>repeated string user_ids = 2 [deprecated = true];</code>
+     * @deprecated
      */
     private $user_ids;
+    /**
+     * Users who will review this task.
+     * When the 'review.users' field is additionally requested, then all user
+     * info is filled for the reviewers. Otherwise, only the user 'id' is filled.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.User users = 5;</code>
+     */
+    private $users;
     protected $strategy_info;
 
     /**
@@ -37,6 +49,11 @@ class TaskReview extends \Google\Protobuf\Internal\Message
      *           Task review strategy.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $user_ids
      *           Who will review this task.
+     *           DEPRECATED: Use users.id instead.
+     *     @type \Clarifai\Api\User[]|\Google\Protobuf\Internal\RepeatedField $users
+     *           Users who will review this task.
+     *           When the 'review.users' field is additionally requested, then all user
+     *           info is filled for the reviewers. Otherwise, only the user 'id' is filled.
      *     @type \Clarifai\Api\TaskReviewManualStrategyInfo $manual_strategy_info
      *     @type \Clarifai\Api\TaskReviewConsensusStrategyInfo $consensus_strategy_info
      * }
@@ -66,7 +83,7 @@ class TaskReview extends \Google\Protobuf\Internal\Message
      */
     public function setStrategy($var)
     {
-        GPBUtil::checkEnum($var, \Clarifai\Api\TaskReview_TaskReviewStrategy::class);
+        GPBUtil::checkEnum($var, \Clarifai\Api\TaskReview\TaskReviewStrategy::class);
         $this->strategy = $var;
 
         return $this;
@@ -74,24 +91,30 @@ class TaskReview extends \Google\Protobuf\Internal\Message
 
     /**
      * Who will review this task.
+     * DEPRECATED: Use users.id instead.
      *
-     * Generated from protobuf field <code>repeated string user_ids = 2;</code>
+     * Generated from protobuf field <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getUserIds()
     {
+        @trigger_error('user_ids is deprecated.', E_USER_DEPRECATED);
         return $this->user_ids;
     }
 
     /**
      * Who will review this task.
+     * DEPRECATED: Use users.id instead.
      *
-     * Generated from protobuf field <code>repeated string user_ids = 2;</code>
+     * Generated from protobuf field <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setUserIds($var)
     {
+        @trigger_error('user_ids is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->user_ids = $arr;
 
@@ -99,12 +122,47 @@ class TaskReview extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Users who will review this task.
+     * When the 'review.users' field is additionally requested, then all user
+     * info is filled for the reviewers. Otherwise, only the user 'id' is filled.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.User users = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    /**
+     * Users who will review this task.
+     * When the 'review.users' field is additionally requested, then all user
+     * info is filled for the reviewers. Otherwise, only the user 'id' is filled.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.User users = 5;</code>
+     * @param \Clarifai\Api\User[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUsers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\User::class);
+        $this->users = $arr;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.clarifai.api.TaskReviewManualStrategyInfo manual_strategy_info = 3;</code>
-     * @return \Clarifai\Api\TaskReviewManualStrategyInfo
+     * @return \Clarifai\Api\TaskReviewManualStrategyInfo|null
      */
     public function getManualStrategyInfo()
     {
         return $this->readOneof(3);
+    }
+
+    public function hasManualStrategyInfo()
+    {
+        return $this->hasOneof(3);
     }
 
     /**
@@ -122,11 +180,16 @@ class TaskReview extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.clarifai.api.TaskReviewConsensusStrategyInfo consensus_strategy_info = 4;</code>
-     * @return \Clarifai\Api\TaskReviewConsensusStrategyInfo
+     * @return \Clarifai\Api\TaskReviewConsensusStrategyInfo|null
      */
     public function getConsensusStrategyInfo()
     {
         return $this->readOneof(4);
+    }
+
+    public function hasConsensusStrategyInfo()
+    {
+        return $this->hasOneof(4);
     }
 
     /**
