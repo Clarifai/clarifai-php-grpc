@@ -9,20 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request to delete a list of label orders.
+ * PostInstalledModuleVersionsRequest to install a module version into the app in the URL
  *
- * Generated from protobuf message <code>clarifai.api.DeleteLabelOrdersRequest</code>
+ * Generated from protobuf message <code>clarifai.api.PostInstalledModuleVersionsRequest</code>
  */
-class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
+class PostInstalledModuleVersionsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
+     * This allows you to create one or more module by posting it to the API.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
      */
-    private $ids;
+    private $installed_module_versions;
 
     /**
      * Constructor.
@@ -31,7 +33,8 @@ class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type \Clarifai\Api\InstalledModuleVersion[]|\Google\Protobuf\Internal\RepeatedField $installed_module_versions
+     *           This allows you to create one or more module by posting it to the API.
      * }
      */
     public function __construct($data = NULL) {
@@ -72,23 +75,27 @@ class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
+     * This allows you to create one or more module by posting it to the API.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getIds()
+    public function getInstalledModuleVersions()
     {
-        return $this->ids;
+        return $this->installed_module_versions;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * This allows you to create one or more module by posting it to the API.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * @param \Clarifai\Api\InstalledModuleVersion[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setIds($var)
+    public function setInstalledModuleVersions($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->ids = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\InstalledModuleVersion::class);
+        $this->installed_module_versions = $arr;
 
         return $this;
     }

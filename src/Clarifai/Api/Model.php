@@ -167,6 +167,16 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     private $languages;
     /**
+     * Tags from languages category with names, only used in responses.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    private $languages_full;
+    /**
+     * Generated from protobuf field <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    private $check_consents;
+    /**
      * Is starred by the requesting user (only showed on get/list requests)
      * Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
      *
@@ -251,6 +261,9 @@ class Model extends \Google\Protobuf\Internal\Message
      *           Tags from use_cases category
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $languages
      *           Tags from languages category.
+     *     @type \Clarifai\Api\FullTag[]|\Google\Protobuf\Internal\RepeatedField $languages_full
+     *           Tags from languages category with names, only used in responses.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $check_consents
      *     @type bool $is_starred
      *           Is starred by the requesting user (only showed on get/list requests)
      *           Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
@@ -958,6 +971,54 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->languages = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Tags from languages category with names, only used in responses.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLanguagesFull()
+    {
+        return $this->languages_full;
+    }
+
+    /**
+     * Tags from languages category with names, only used in responses.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param \Clarifai\Api\FullTag[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLanguagesFull($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\FullTag::class);
+        $this->languages_full = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCheckConsents()
+    {
+        return $this->check_consents;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCheckConsents($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->check_consents = $arr;
 
         return $this;
     }

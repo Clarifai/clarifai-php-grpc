@@ -35,6 +35,10 @@ class Point extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>float z = 3;</code>
      */
     protected $z = 0.0;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Point.Visibility visibility = 4;</code>
+     */
+    protected $visibility = 0;
 
     /**
      * Constructor.
@@ -50,6 +54,7 @@ class Point extends \Google\Protobuf\Internal\Message
      *           being the right col.
      *     @type float $z
      *           Depth if applicable for the point.
+     *     @type int $visibility
      * }
      */
     public function __construct($data = NULL) {
@@ -135,6 +140,28 @@ class Point extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->z = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Point.Visibility visibility = 4;</code>
+     * @return int
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Point.Visibility visibility = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\Point\Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }

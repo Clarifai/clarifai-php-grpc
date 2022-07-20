@@ -9,11 +9,11 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request to delete a list of label orders.
+ * Request to delete several things by the list of ids.
  *
- * Generated from protobuf message <code>clarifai.api.DeleteLabelOrdersRequest</code>
+ * Generated from protobuf message <code>clarifai.api.DeleteModulesRequest</code>
  */
-class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
+class DeleteModulesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>

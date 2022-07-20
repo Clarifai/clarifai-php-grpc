@@ -9,17 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request to delete a list of label orders.
+ * Request to delete the terminated bulk operations by ID
+ * Only operations in terminated state can be deleted.
  *
- * Generated from protobuf message <code>clarifai.api.DeleteLabelOrdersRequest</code>
+ * Generated from protobuf message <code>clarifai.api.DeleteBulkOperationRequest</code>
  */
-class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
+class DeleteBulkOperationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
+     * List of bulk operation ids to be deleted
+     *
      * Generated from protobuf field <code>repeated string ids = 2;</code>
      */
     private $ids;
@@ -32,6 +35,7 @@ class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
+     *           List of bulk operation ids to be deleted
      * }
      */
     public function __construct($data = NULL) {
@@ -72,6 +76,8 @@ class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * List of bulk operation ids to be deleted
+     *
      * Generated from protobuf field <code>repeated string ids = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -81,6 +87,8 @@ class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * List of bulk operation ids to be deleted
+     *
      * Generated from protobuf field <code>repeated string ids = 2;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this

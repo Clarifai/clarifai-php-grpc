@@ -86,6 +86,12 @@ class Concept extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string user_id = 10;</code>
      */
     protected $user_id = '';
+    /**
+     * Information about keypoints for this concept
+     *
+     * Generated from protobuf field <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+     */
+    protected $keypoint_info = null;
 
     /**
      * Constructor.
@@ -124,6 +130,8 @@ class Concept extends \Google\Protobuf\Internal\Message
      *           also be publicly visible.
      *     @type string $user_id
      *           The user the concept belongs to.
+     *     @type \Clarifai\Api\KeypointInfo $keypoint_info
+     *           Information about keypoints for this concept
      * }
      */
     public function __construct($data = NULL) {
@@ -429,6 +437,42 @@ class Concept extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Information about keypoints for this concept
+     *
+     * Generated from protobuf field <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+     * @return \Clarifai\Api\KeypointInfo|null
+     */
+    public function getKeypointInfo()
+    {
+        return $this->keypoint_info;
+    }
+
+    public function hasKeypointInfo()
+    {
+        return isset($this->keypoint_info);
+    }
+
+    public function clearKeypointInfo()
+    {
+        unset($this->keypoint_info);
+    }
+
+    /**
+     * Information about keypoints for this concept
+     *
+     * Generated from protobuf field <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+     * @param \Clarifai\Api\KeypointInfo $var
+     * @return $this
+     */
+    public function setKeypointInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\KeypointInfo::class);
+        $this->keypoint_info = $var;
 
         return $this;
     }

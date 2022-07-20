@@ -9,18 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request to delete a list of label orders.
+ * Request to delete several module versions by the list of ids.
  *
- * Generated from protobuf message <code>clarifai.api.DeleteLabelOrdersRequest</code>
+ * Generated from protobuf message <code>clarifai.api.DeleteModuleVersionsRequest</code>
  */
-class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
+class DeleteModuleVersionsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
+     * Generated from protobuf field <code>string module_id = 2;</code>
+     */
+    protected $module_id = '';
+    /**
+     * Generated from protobuf field <code>repeated string ids = 3;</code>
      */
     private $ids;
 
@@ -31,6 +35,7 @@ class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
+     *     @type string $module_id
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
      * }
      */
@@ -72,7 +77,29 @@ class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
+     * Generated from protobuf field <code>string module_id = 2;</code>
+     * @return string
+     */
+    public function getModuleId()
+    {
+        return $this->module_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string module_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setModuleId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->module_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string ids = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getIds()
@@ -81,7 +108,7 @@ class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
+     * Generated from protobuf field <code>repeated string ids = 3;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
