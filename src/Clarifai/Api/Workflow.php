@@ -110,6 +110,12 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     private $use_cases;
+    /**
+     * Tags for check consents
+     *
+     * Generated from protobuf field <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    private $check_consents;
 
     /**
      * Constructor.
@@ -156,6 +162,8 @@ class Workflow extends \Google\Protobuf\Internal\Message
      *           This field should be used for in-depth notes and supports up to 64Kbs.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $use_cases
      *           Tags from use_cases category
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $check_consents
+     *           Tags for check consents
      * }
      */
     public function __construct($data = NULL) {
@@ -595,6 +603,32 @@ class Workflow extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->use_cases = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Tags for check consents
+     *
+     * Generated from protobuf field <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCheckConsents()
+    {
+        return $this->check_consents;
+    }
+
+    /**
+     * Tags for check consents
+     *
+     * Generated from protobuf field <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCheckConsents($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->check_consents = $arr;
 
         return $this;
     }

@@ -1011,6 +1011,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Update model check consents
+     * @param \Clarifai\Api\PatchModelCheckConsentsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchModelCheckConsents(\Clarifai\Api\PatchModelCheckConsentsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchModelCheckConsents',
+        $argument,
+        ['\Clarifai\Api\MultiModelCheckConsentResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Update model toolkits tags
      * @param \Clarifai\Api\PatchModelToolkitsRequest $argument input argument
      * @param array $metadata metadata
@@ -1698,21 +1713,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Patch one app.
-     * @param \Clarifai\Api\PatchAppRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PatchApp(\Clarifai\Api\PatchAppRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PatchApp',
-        $argument,
-        ['\Clarifai\Api\SingleAppResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * Patch apps ids.
      * @param \Clarifai\Api\PatchAppsIdsRequest $argument input argument
      * @param array $metadata metadata
@@ -1724,6 +1724,21 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/PatchAppsIds',
         $argument,
         ['\Clarifai\Api\MultiAppResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Patch one app.
+     * @param \Clarifai\Api\PatchAppRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchApp(\Clarifai\Api\PatchAppRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchApp',
+        $argument,
+        ['\Clarifai\Api\SingleAppResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -2456,6 +2471,263 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/ListTrendingMetricsViews',
         $argument,
         ['\Clarifai\Api\MultiTrendingMetricsViewResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get a specific module from an app.
+     * @param \Clarifai\Api\GetModuleRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetModule(\Clarifai\Api\GetModuleRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetModule',
+        $argument,
+        ['\Clarifai\Api\SingleModuleResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all the modules in community, by user or by app.
+     * @param \Clarifai\Api\ListModulesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListModules(\Clarifai\Api\ListModulesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListModules',
+        $argument,
+        ['\Clarifai\Api\MultiModuleResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add a modules to an app.
+     * @param \Clarifai\Api\PostModulesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostModules(\Clarifai\Api\PostModulesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostModules',
+        $argument,
+        ['\Clarifai\Api\MultiModuleResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Patch one or more modules.
+     * @param \Clarifai\Api\PatchModulesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchModules(\Clarifai\Api\PatchModulesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchModules',
+        $argument,
+        ['\Clarifai\Api\MultiModuleResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete multiple modules in one request.
+     * @param \Clarifai\Api\DeleteModulesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteModules(\Clarifai\Api\DeleteModulesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteModules',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get a specific module version for a module.
+     * @param \Clarifai\Api\GetModuleVersionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetModuleVersion(\Clarifai\Api\GetModuleVersionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetModuleVersion',
+        $argument,
+        ['\Clarifai\Api\SingleModuleVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all the modules versions for a given module.
+     * @param \Clarifai\Api\ListModuleVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListModuleVersions(\Clarifai\Api\ListModuleVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListModuleVersions',
+        $argument,
+        ['\Clarifai\Api\MultiModuleVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Create a new module version to trigger training of the module.
+     * @param \Clarifai\Api\PostModuleVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostModuleVersions(\Clarifai\Api\PostModuleVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostModuleVersions',
+        $argument,
+        ['\Clarifai\Api\MultiModuleVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete a multiple module version.
+     * @param \Clarifai\Api\DeleteModuleVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteModuleVersions(\Clarifai\Api\DeleteModuleVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteModuleVersions',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List installed modules vesrions for an app.
+     * @param \Clarifai\Api\ListInstalledModuleVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListInstalledModuleVersions(\Clarifai\Api\ListInstalledModuleVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListInstalledModuleVersions',
+        $argument,
+        ['\Clarifai\Api\MultiInstalledModuleVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Install a new module version which will deploy the specific ModuleVersion to the app in the url.
+     * @param \Clarifai\Api\PostInstalledModuleVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostInstalledModuleVersions(\Clarifai\Api\PostInstalledModuleVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostInstalledModuleVersions',
+        $argument,
+        ['\Clarifai\Api\MultiInstalledModuleVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Uninstall an installed module version which will deploy the specific ModuleVersion to the app in the url.
+     * @param \Clarifai\Api\DeleteInstalledModuleVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteInstalledModuleVersions(\Clarifai\Api\DeleteInstalledModuleVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteInstalledModuleVersions',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Perform bulk operations on a list of inputs based on input source.
+     * Operation include add, update, delete of concepts, metadata and geo data.
+     * This is an Asynchronous process. Use ListBulkOperations or GetBulkOperation to check the status.
+     * @param \Clarifai\Api\PostBulkOperationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostBulkOperations(\Clarifai\Api\PostBulkOperationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostBulkOperations',
+        $argument,
+        ['\Clarifai\Api\MultiBulkOperationsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all the bulk operations
+     * @param \Clarifai\Api\ListBulkOperationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListBulkOperations(\Clarifai\Api\ListBulkOperationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListBulkOperations',
+        $argument,
+        ['\Clarifai\Api\MultiBulkOperationsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get the bulk operation details by ID
+     * @param \Clarifai\Api\GetBulkOperationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetBulkOperation(\Clarifai\Api\GetBulkOperationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetBulkOperation',
+        $argument,
+        ['\Clarifai\Api\SingleBulkOperationsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Cancel one or more bulk operations
+     * @param \Clarifai\Api\CancelBulkOperationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CancelBulkOperations(\Clarifai\Api\CancelBulkOperationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/CancelBulkOperations',
+        $argument,
+        ['\Clarifai\Api\MultiBulkOperationsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * delete one or more terminated bulk operations
+     * @param \Clarifai\Api\DeleteBulkOperationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteBulkOperations(\Clarifai\Api\DeleteBulkOperationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteBulkOperations',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);
     }
 

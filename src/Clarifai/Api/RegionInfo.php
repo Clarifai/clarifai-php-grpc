@@ -51,6 +51,13 @@ class RegionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Token token = 8;</code>
      */
     protected $token = null;
+    /**
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    private $keypoint_locations;
 
     /**
      * Constructor.
@@ -70,6 +77,9 @@ class RegionInfo extends \Google\Protobuf\Internal\Message
      *           Span char sequence for NLP.
      *     @type \Clarifai\Api\Token $token
      *           Token char sequence for NLP.
+     *     @type \Clarifai\Api\Point[]|\Google\Protobuf\Internal\RepeatedField $keypoint_locations
+     *           The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     *           These will be in the same order as the respective keypoint_names inside the concept.
      * }
      */
     public function __construct($data = NULL) {
@@ -289,6 +299,34 @@ class RegionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Token::class);
         $this->token = $var;
+
+        return $this;
+    }
+
+    /**
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getKeypointLocations()
+    {
+        return $this->keypoint_locations;
+    }
+
+    /**
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     * @param \Clarifai\Api\Point[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setKeypointLocations($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Point::class);
+        $this->keypoint_locations = $arr;
 
         return $this;
     }

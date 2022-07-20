@@ -9,20 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request to delete a list of label orders.
+ * PostModulesRequest
  *
- * Generated from protobuf message <code>clarifai.api.DeleteLabelOrdersRequest</code>
+ * Generated from protobuf message <code>clarifai.api.PostModulesRequest</code>
  */
-class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
+class PostModulesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
+     * This allows you to create one or more module by posting it to the API.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Module modules = 3;</code>
      */
-    private $ids;
+    private $modules;
 
     /**
      * Constructor.
@@ -31,7 +33,8 @@ class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type \Clarifai\Api\Module[]|\Google\Protobuf\Internal\RepeatedField $modules
+     *           This allows you to create one or more module by posting it to the API.
      * }
      */
     public function __construct($data = NULL) {
@@ -72,23 +75,27 @@ class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
+     * This allows you to create one or more module by posting it to the API.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Module modules = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getIds()
+    public function getModules()
     {
-        return $this->ids;
+        return $this->modules;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * This allows you to create one or more module by posting it to the API.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Module modules = 3;</code>
+     * @param \Clarifai\Api\Module[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setIds($var)
+    public function setModules($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->ids = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Module::class);
+        $this->modules = $arr;
 
         return $this;
     }

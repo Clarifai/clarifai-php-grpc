@@ -392,6 +392,42 @@ class S
      */
     const Datasets_Delete = 107;
     /**
+     * Write to the modules DB tables.
+     *
+     * Generated from protobuf enum <code>Modules_Add = 108 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+     */
+    const Modules_Add = 108;
+    /**
+     * Read from the modules and modules versions DB tables.
+     *
+     * Generated from protobuf enum <code>Modules_Get = 109 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const Modules_Get = 109;
+    /**
+     * To delete we need read/write.
+     *
+     * Generated from protobuf enum <code>Modules_Delete = 110 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+     */
+    const Modules_Delete = 110;
+    /**
+     * Write to the InstalledModuleVersions DB tables.
+     *
+     * Generated from protobuf enum <code>InstalledModuleVersions_Add = 111 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+     */
+    const InstalledModuleVersions_Add = 111;
+    /**
+     * Read from the InstalledModuleVersions and InstalledModuleVersions versions DB tables.
+     *
+     * Generated from protobuf enum <code>InstalledModuleVersions_Get = 112 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+     */
+    const InstalledModuleVersions_Get = 112;
+    /**
+     * To delete we need read/write.
+     *
+     * Generated from protobuf enum <code>InstalledModuleVersions_Delete = 113 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+     */
+    const InstalledModuleVersions_Delete = 113;
+    /**
      * Make an rpc to our search services.
      *
      * Generated from protobuf enum <code>Search = 3 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
@@ -432,24 +468,42 @@ class S
      */
     const WorkflowPublications_Delete = 120;
     /**
-     * TODO(Hemanth): Expose Bulk Operation endpoints only after implementation
      * To write bulk operations to the DB
      *
-     * Generated from protobuf enum <code>BulkOperation_Add = 121 [(.clarifai.auth.scope.clarifai_depending_scopes) = BulkOperation_Get];</code>
+     * Generated from protobuf enum <code>BulkOperation_Add = 121 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = BulkOperation_Get];</code>
      */
     const BulkOperation_Add = 121;
     /**
      * To Read Bulk Operations from the DB
      *
-     * Generated from protobuf enum <code>BulkOperation_Get = 122;</code>
+     * Generated from protobuf enum <code>BulkOperation_Get = 122 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const BulkOperation_Get = 122;
     /**
      * To Delete Bulk Operations from the DB
      *
-     * Generated from protobuf enum <code>BulkOperation_Delete = 123 [(.clarifai.auth.scope.clarifai_depending_scopes) = BulkOperation_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = BulkOperation_Get];</code>
+     * Generated from protobuf enum <code>BulkOperation_Delete = 123 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = BulkOperation_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = BulkOperation_Get];</code>
      */
     const BulkOperation_Delete = 123;
+    /**
+     * To read historical usage from usage.dashboard_items table
+     *
+     * Generated from protobuf enum <code>HistoricalUsage_Get = 124;</code>
+     */
+    const HistoricalUsage_Get = 124;
+    /**
+     * TODO(Hemanth): Expose scope after endpoints implementation
+     * To write Ingest cloud inputs jobs to the DB
+     *
+     * Generated from protobuf enum <code>InputsAddJobs_Add = 125 [(.clarifai.auth.scope.clarifai_depending_scopes) = InputsAddJobs_Get];</code>
+     */
+    const InputsAddJobs_Add = 125;
+    /**
+     * To Read Ingest cloud inputs jobs to the DB
+     *
+     * Generated from protobuf enum <code>InputsAddJobs_Get = 126;</code>
+     */
+    const InputsAddJobs_Get = 126;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -514,6 +568,12 @@ class S
         self::Datasets_Get => 'Datasets_Get',
         self::Datasets_Add => 'Datasets_Add',
         self::Datasets_Delete => 'Datasets_Delete',
+        self::Modules_Add => 'Modules_Add',
+        self::Modules_Get => 'Modules_Get',
+        self::Modules_Delete => 'Modules_Delete',
+        self::InstalledModuleVersions_Add => 'InstalledModuleVersions_Add',
+        self::InstalledModuleVersions_Get => 'InstalledModuleVersions_Get',
+        self::InstalledModuleVersions_Delete => 'InstalledModuleVersions_Delete',
         self::Search => 'Search',
         self::SavedSearch_Get => 'SavedSearch_Get',
         self::SavedSearch_Add => 'SavedSearch_Add',
@@ -525,6 +585,9 @@ class S
         self::BulkOperation_Add => 'BulkOperation_Add',
         self::BulkOperation_Get => 'BulkOperation_Get',
         self::BulkOperation_Delete => 'BulkOperation_Delete',
+        self::HistoricalUsage_Get => 'HistoricalUsage_Get',
+        self::InputsAddJobs_Add => 'InputsAddJobs_Add',
+        self::InputsAddJobs_Get => 'InputsAddJobs_Get',
     ];
 
     public static function name($value)

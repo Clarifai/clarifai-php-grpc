@@ -37,6 +37,10 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      */
     protected $date_marketing_consent = null;
     /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+     */
+    protected $date_pii_consent = null;
+    /**
      * To handle arbitrary json metadata you can use a struct field:
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *
@@ -79,6 +83,7 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $date_gdpr_consent
      *     @type \Google\Protobuf\Timestamp $date_tos_consent
      *     @type \Google\Protobuf\Timestamp $date_marketing_consent
+     *     @type \Google\Protobuf\Timestamp $date_pii_consent
      *     @type \Google\Protobuf\Struct $metadata
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
@@ -231,6 +236,38 @@ class UserDetail extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->date_marketing_consent = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getDatePiiConsent()
+    {
+        return $this->date_pii_consent;
+    }
+
+    public function hasDatePiiConsent()
+    {
+        return isset($this->date_pii_consent);
+    }
+
+    public function clearDatePiiConsent()
+    {
+        unset($this->date_pii_consent);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setDatePiiConsent($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->date_pii_consent = $var;
 
         return $this;
     }

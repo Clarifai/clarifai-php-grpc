@@ -93,7 +93,7 @@ class ModelTypeFieldType
      */
     const RECURSIVE_ENUM = 14;
     /**
-     * For blocks of code that need to be specified by the user for setup or execution during workflow runs. 
+     * For blocks of code that need to be specified by the user for setup or execution during workflow runs.
      *
      * Generated from protobuf enum <code>PYTHON_CODE = 15;</code>
      */
@@ -104,6 +104,12 @@ class ModelTypeFieldType
      * Generated from protobuf enum <code>DATASET_ID = 16;</code>
      */
     const DATASET_ID = 16;
+    /**
+     * For selecting a dataset version id. String.
+     *
+     * Generated from protobuf enum <code>DATASET_VERSION_ID = 17;</code>
+     */
+    const DATASET_VERSION_ID = 17;
 
     private static $valueToName = [
         self::INVALID_MODEL_TYPE_FIELD_TYPE => 'INVALID_MODEL_TYPE_FIELD_TYPE',
@@ -122,6 +128,7 @@ class ModelTypeFieldType
         self::RECURSIVE_ENUM => 'RECURSIVE_ENUM',
         self::PYTHON_CODE => 'PYTHON_CODE',
         self::DATASET_ID => 'DATASET_ID',
+        self::DATASET_VERSION_ID => 'DATASET_VERSION_ID',
     ];
 
     public static function name($value)

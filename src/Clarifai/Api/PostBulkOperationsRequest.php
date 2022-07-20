@@ -9,20 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request to delete a list of label orders.
+ * Request to perform bulk operations on a list of inputs based on input source.
  *
- * Generated from protobuf message <code>clarifai.api.DeleteLabelOrdersRequest</code>
+ * Generated from protobuf message <code>clarifai.api.PostBulkOperationsRequest</code>
  */
-class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
+class PostBulkOperationsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
+     * List of bulk operation(s) to be performed e.g bulk update metadata or tags or labels etc.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.BulkOperation bulk_operations = 2;</code>
      */
-    private $ids;
+    private $bulk_operations;
 
     /**
      * Constructor.
@@ -31,7 +33,8 @@ class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type \Clarifai\Api\BulkOperation[]|\Google\Protobuf\Internal\RepeatedField $bulk_operations
+     *           List of bulk operation(s) to be performed e.g bulk update metadata or tags or labels etc.
      * }
      */
     public function __construct($data = NULL) {
@@ -72,23 +75,27 @@ class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
+     * List of bulk operation(s) to be performed e.g bulk update metadata or tags or labels etc.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.BulkOperation bulk_operations = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getIds()
+    public function getBulkOperations()
     {
-        return $this->ids;
+        return $this->bulk_operations;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * List of bulk operation(s) to be performed e.g bulk update metadata or tags or labels etc.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.BulkOperation bulk_operations = 2;</code>
+     * @param \Clarifai\Api\BulkOperation[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setIds($var)
+    public function setBulkOperations($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->ids = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\BulkOperation::class);
+        $this->bulk_operations = $arr;
 
         return $this;
     }

@@ -9,20 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request to delete a list of label orders.
+ * Request to get the details of a bulk operation by ID.
  *
- * Generated from protobuf message <code>clarifai.api.DeleteLabelOrdersRequest</code>
+ * Generated from protobuf message <code>clarifai.api.GetBulkOperationRequest</code>
  */
-class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
+class GetBulkOperationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
+     * The bulk operation id
+     *
+     * Generated from protobuf field <code>string id = 2;</code>
      */
-    private $ids;
+    protected $id = '';
 
     /**
      * Constructor.
@@ -31,7 +33,8 @@ class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type string $id
+     *           The bulk operation id
      * }
      */
     public function __construct($data = NULL) {
@@ -72,23 +75,27 @@ class DeleteLabelOrdersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * The bulk operation id
+     *
+     * Generated from protobuf field <code>string id = 2;</code>
+     * @return string
      */
-    public function getIds()
+    public function getId()
     {
-        return $this->ids;
+        return $this->id;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * The bulk operation id
+     *
+     * Generated from protobuf field <code>string id = 2;</code>
+     * @param string $var
      * @return $this
      */
-    public function setIds($var)
+    public function setId($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->ids = $arr;
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
 
         return $this;
     }

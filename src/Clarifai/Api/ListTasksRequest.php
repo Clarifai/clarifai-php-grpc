@@ -46,7 +46,14 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      */
     private $review_user_ids;
     /**
+     * Get tasks that are associated to ANY label order from this list.
+     *
+     * Generated from protobuf field <code>repeated string label_order_ids = 8;</code>
+     */
+    private $label_order_ids;
+    /**
      * Get label order tasks as well
+     * It is automatically set to true if label_order_ids is set.
      *
      * Generated from protobuf field <code>bool including_label_order_tasks = 6;</code>
      */
@@ -76,8 +83,11 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      *           Get tasks that have ANY user from this list assigned as worker.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $review_user_ids
      *           Get tasks that have ANY user from this list assigned as reviewer.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $label_order_ids
+     *           Get tasks that are associated to ANY label order from this list.
      *     @type bool $including_label_order_tasks
      *           Get label order tasks as well
+     *           It is automatically set to true if label_order_ids is set.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response.
      *           Currently supported: all, worker.users, review.users.
@@ -229,7 +239,34 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Get tasks that are associated to ANY label order from this list.
+     *
+     * Generated from protobuf field <code>repeated string label_order_ids = 8;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLabelOrderIds()
+    {
+        return $this->label_order_ids;
+    }
+
+    /**
+     * Get tasks that are associated to ANY label order from this list.
+     *
+     * Generated from protobuf field <code>repeated string label_order_ids = 8;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLabelOrderIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->label_order_ids = $arr;
+
+        return $this;
+    }
+
+    /**
      * Get label order tasks as well
+     * It is automatically set to true if label_order_ids is set.
      *
      * Generated from protobuf field <code>bool including_label_order_tasks = 6;</code>
      * @return bool
@@ -241,6 +278,7 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Get label order tasks as well
+     * It is automatically set to true if label_order_ids is set.
      *
      * Generated from protobuf field <code>bool including_label_order_tasks = 6;</code>
      * @param bool $var

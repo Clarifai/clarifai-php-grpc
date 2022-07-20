@@ -174,31 +174,37 @@ class StatusCode
      */
     const MODEL_UPLOADING_FAILED = 21105;
     /**
-     * Custom model training had no data.
+     * generic err msg for any type of model training err.
+     *
+     * Generated from protobuf enum <code>MODEL_TRAINING_FAILED = 21106;</code>
+     */
+    const MODEL_TRAINING_FAILED = 21106;
+    /**
+     * Custom model training had no data.  FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
      *
      * Generated from protobuf enum <code>MODEL_TRAINING_NO_DATA = 21110;</code>
      */
     const MODEL_TRAINING_NO_DATA = 21110;
     /**
-     * Custom model training had no positive examples.
+     * Custom model training had no positive examples. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
      *
      * Generated from protobuf enum <code>MODEL_TRAINING_NO_POSITIVES = 21111;</code>
      */
     const MODEL_TRAINING_NO_POSITIVES = 21111;
     /**
-     * Custom model training was ONE_VS_N but with a single class.
+     * Custom model training was ONE_VS_N but with a single class. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
      *
      * Generated from protobuf enum <code>MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS = 21112;</code>
      */
     const MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS = 21112;
     /**
-     * Training took longer than hard coded timeouts.
+     * Training took longer than hard coded timeouts. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
      *
      * Generated from protobuf enum <code>MODEL_TRAINING_TIMED_OUT = 21113;</code>
      */
     const MODEL_TRAINING_TIMED_OUT = 21113;
     /**
-     * Training got error waiting on asset pipeline to finish.
+     * Training got error waiting on asset pipeline to finish. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
      *
      * Generated from protobuf enum <code>MODEL_TRAINING_WAITING_ERROR = 21114;</code>
      */
@@ -210,23 +216,25 @@ class StatusCode
      */
     const MODEL_TRAINING_UNKNOWN_ERROR = 21115;
     /**
-     * Training message was redelivered.
+     * Training message was redelivered. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
      *
      * Generated from protobuf enum <code>MODEL_TRAINING_MSG_REDELIVER = 21116 [deprecated = true];</code>
      */
     const MODEL_TRAINING_MSG_REDELIVER = 21116;
     /**
-     * Training got error due to insufficient labelled data
+     * Training got error due to insufficient labelled data. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
      *
      * Generated from protobuf enum <code>MODEL_TRAINING_INSUFFICIENT_DATA = 21117;</code>
      */
     const MODEL_TRAINING_INSUFFICIENT_DATA = 21117;
     /**
+     * FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
+     *
      * Generated from protobuf enum <code>MODEL_TRAINING_INVALID_PARAMS = 21118;</code>
      */
     const MODEL_TRAINING_INVALID_PARAMS = 21118;
     /**
-     * Training is stopped because too much data was dropped
+     * Training is stopped because too much data was dropped. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
      *
      * Generated from protobuf enum <code>MODEL_TRAINING_INVALID_DATA_TOLERANCE_EXCEEDED = 21119;</code>
      */
@@ -276,13 +284,13 @@ class StatusCode
      */
     const MODEL_QUEUED_FOR_EVALUATION = 21303;
     /**
-     * Evaluation took longer than hard coded timeouts.
+     * Evaluation took longer than hard coded timeouts. FIXME(yang): deprecate this. Use the 21317 + errStatusMsg
      *
      * Generated from protobuf enum <code>MODEL_EVALUATION_TIMED_OUT = 21310;</code>
      */
     const MODEL_EVALUATION_TIMED_OUT = 21310;
     /**
-     * Evaluation got error waiting on asset pipeline to finish.
+     * Evaluation got error waiting on asset pipeline to finish.FIXME(yang): deprecate this. Use the 21317 + errStatusMsg
      *
      * Generated from protobuf enum <code>MODEL_EVALUATION_WAITING_ERROR = 21311;</code>
      */
@@ -298,23 +306,29 @@ class StatusCode
      */
     const MODEL_PREDICTION_FAILED = 21313;
     /**
-     * Eval message was redelivered.
+     * Eval message was redelivered. FIXME(yang): deprecate this. Use the 21317 + errStatusMsg
      *
      * Generated from protobuf enum <code>MODEL_EVALUATION_MSG_REDELIVER = 21314 [deprecated = true];</code>
      */
     const MODEL_EVALUATION_MSG_REDELIVER = 21314;
     /**
-     * Don't have enough concepts labelled to perform evaluation
+     * Don't have enough concepts labelled to perform evaluation. FIXME(yang): deprecate this. Use the 21317 + errStatusMsg
      *
      * Generated from protobuf enum <code>MODEL_EVALUATION_NEED_LABELS = 21315;</code>
      */
     const MODEL_EVALUATION_NEED_LABELS = 21315;
     /**
-     * Don't have enough inputs per concept to perform evaluation
+     * Don't have enough inputs per concept to perform evaluation. FIXME(yang): deprecate this. Use the 21317 + errStatusMsg
      *
      * Generated from protobuf enum <code>MODEL_EVALUATION_NEED_INPUTS = 21316;</code>
      */
     const MODEL_EVALUATION_NEED_INPUTS = 21316;
+    /**
+     * Generic err code for eval failure.
+     *
+     * Generated from protobuf enum <code>MODEL_EVALUATION_FAILED = 21317;</code>
+     */
+    const MODEL_EVALUATION_FAILED = 21317;
     /**
      * Used when inference coordinator failed to deploy spire and throws an error
      *
@@ -988,6 +1002,8 @@ class StatusCode
      */
     const SAVED_SEARCH_MODIFY_FAILED = 43005;
     /**
+     * Workflow evaluation err code
+     *
      * Generated from protobuf enum <code>EVALUATION_QUEUED = 43100;</code>
      */
     const EVALUATION_QUEUED = 43100;
@@ -1368,6 +1384,10 @@ class StatusCode
      */
     const AUTH_MISSING_IDP_ASSOC = 65000;
     /**
+     * Generated from protobuf enum <code>LIST_OBJECTS_FAILED = 66000;</code>
+     */
+    const LIST_OBJECTS_FAILED = 66000;
+    /**
      * Internal issues: 98xxx
      *
      * Generated from protobuf enum <code>INTERNAL_SERVER_ISSUE = 98004;</code>
@@ -1486,6 +1506,7 @@ class StatusCode
         self::MODEL_QUEUED_FOR_TRAINING => 'MODEL_QUEUED_FOR_TRAINING',
         self::MODEL_UPLOADING => 'MODEL_UPLOADING',
         self::MODEL_UPLOADING_FAILED => 'MODEL_UPLOADING_FAILED',
+        self::MODEL_TRAINING_FAILED => 'MODEL_TRAINING_FAILED',
         self::MODEL_TRAINING_NO_DATA => 'MODEL_TRAINING_NO_DATA',
         self::MODEL_TRAINING_NO_POSITIVES => 'MODEL_TRAINING_NO_POSITIVES',
         self::MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS => 'MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS',
@@ -1514,6 +1535,7 @@ class StatusCode
         self::MODEL_EVALUATION_MSG_REDELIVER => 'MODEL_EVALUATION_MSG_REDELIVER',
         self::MODEL_EVALUATION_NEED_LABELS => 'MODEL_EVALUATION_NEED_LABELS',
         self::MODEL_EVALUATION_NEED_INPUTS => 'MODEL_EVALUATION_NEED_INPUTS',
+        self::MODEL_EVALUATION_FAILED => 'MODEL_EVALUATION_FAILED',
         self::MODEL_DEPLOYMENT_FAILED => 'MODEL_DEPLOYMENT_FAILED',
         self::MODEL_DEPLOYING => 'MODEL_DEPLOYING',
         self::MODEL_QUEUED_FOR_DEPLOYMENT => 'MODEL_QUEUED_FOR_DEPLOYMENT',
@@ -1746,6 +1768,7 @@ class StatusCode
         self::JOB_COMPLETED => 'JOB_COMPLETED',
         self::JOB_FAILED => 'JOB_FAILED',
         self::AUTH_MISSING_IDP_ASSOC => 'AUTH_MISSING_IDP_ASSOC',
+        self::LIST_OBJECTS_FAILED => 'LIST_OBJECTS_FAILED',
         self::INTERNAL_SERVER_ISSUE => 'INTERNAL_SERVER_ISSUE',
         self::INTERNAL_FETCHING_ISSUE => 'INTERNAL_FETCHING_ISSUE',
         self::INTERNAL_DATABASE_ISSUE => 'INTERNAL_DATABASE_ISSUE',

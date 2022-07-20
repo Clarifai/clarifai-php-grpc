@@ -121,6 +121,12 @@ class Task extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string user_id = 17;</code>
      */
     protected $user_id = '';
+    /**
+     * The label order the task belongs to.
+     *
+     * Generated from protobuf field <code>string label_order_id = 18;</code>
+     */
+    protected $label_order_id = '';
 
     /**
      * Constructor.
@@ -167,6 +173,8 @@ class Task extends \Google\Protobuf\Internal\Message
      *           The app the task belongs to.
      *     @type string $user_id
      *           The user the task belongs to.
+     *     @type string $label_order_id
+     *           The label order the task belongs to.
      * }
      */
     public function __construct($data = NULL) {
@@ -710,6 +718,32 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * The label order the task belongs to.
+     *
+     * Generated from protobuf field <code>string label_order_id = 18;</code>
+     * @return string
+     */
+    public function getLabelOrderId()
+    {
+        return $this->label_order_id;
+    }
+
+    /**
+     * The label order the task belongs to.
+     *
+     * Generated from protobuf field <code>string label_order_id = 18;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLabelOrderId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->label_order_id = $var;
 
         return $this;
     }
