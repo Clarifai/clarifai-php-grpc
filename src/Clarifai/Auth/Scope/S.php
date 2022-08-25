@@ -19,6 +19,16 @@ use UnexpectedValueException;
  * 1. *_Add requires the corresponding _Get.
  * 2. *_Delete requires the corresponding _Add and _Get.
  * 3. *_Patch is deprecated and not check anywhere.
+ * Think of the dependencies in this file at the DB level. If you cannot make a DB call to Get, Add
+ * or Delete a resource without having access to another resource then you should add it here. That
+ * should for the most part be the same resource type. In service.proto for the API level you will
+ * also specify cl_depending_scopes for each API endpoint. Those cover cases where an endpoint
+ * might need to access more than just that one resource type in order to operate (ie. API handlers
+ * that make multiple DB calls of various resource types likely have more cl_depending_scopes than
+ * the ones listed below). For example: PostCollectors to create a collector we make sure that you
+ * can do model predictions, get concepts, etc. so that you don't have a collector that would be
+ * useless at the end of that API handler but below you can see that the dependencies of Collector
+ * scopes are only on other Collector scopes.
  *
  * Protobuf type <code>clarifai.auth.scope.S</code>
  */
@@ -504,6 +514,22 @@ class S
      * Generated from protobuf enum <code>InputsAddJobs_Get = 126;</code>
      */
     const InputsAddJobs_Get = 126;
+    /**
+     * To read uploaded files and archives info from Uploads endpoints
+     *
+     * Generated from protobuf enum <code>Uploads_Get = 128 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const Uploads_Get = 128;
+    /**
+     * To upload files or archives through the Uploads endpoints
+     *
+     * Generated from protobuf enum <code>Uploads_Add = 129 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Uploads_Get];</code>
+     */
+    const Uploads_Add = 129;
+    /**
+     * Generated from protobuf enum <code>Uploads_Delete = 130 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Uploads_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Uploads_Add];</code>
+     */
+    const Uploads_Delete = 130;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -588,6 +614,9 @@ class S
         self::HistoricalUsage_Get => 'HistoricalUsage_Get',
         self::InputsAddJobs_Add => 'InputsAddJobs_Add',
         self::InputsAddJobs_Get => 'InputsAddJobs_Get',
+        self::Uploads_Get => 'Uploads_Get',
+        self::Uploads_Add => 'Uploads_Add',
+        self::Uploads_Delete => 'Uploads_Delete',
     ];
 
     public static function name($value)

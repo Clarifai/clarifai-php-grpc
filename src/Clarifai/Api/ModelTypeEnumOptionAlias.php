@@ -19,6 +19,12 @@ class ModelTypeEnumOptionAlias extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 id_int = 1;</code>
      */
     protected $id_int = 0;
+    /**
+     * String that can contain wild cards and the regex needs to match.
+     *
+     * Generated from protobuf field <code>string wildcard_string = 2;</code>
+     */
+    protected $wildcard_string = '';
 
     /**
      * Constructor.
@@ -28,6 +34,8 @@ class ModelTypeEnumOptionAlias extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $id_int
      *           Integer alias for id.
+     *     @type string $wildcard_string
+     *           String that can contain wild cards and the regex needs to match.
      * }
      */
     public function __construct($data = NULL) {
@@ -57,6 +65,32 @@ class ModelTypeEnumOptionAlias extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->id_int = $var;
+
+        return $this;
+    }
+
+    /**
+     * String that can contain wild cards and the regex needs to match.
+     *
+     * Generated from protobuf field <code>string wildcard_string = 2;</code>
+     * @return string
+     */
+    public function getWildcardString()
+    {
+        return $this->wildcard_string;
+    }
+
+    /**
+     * String that can contain wild cards and the regex needs to match.
+     *
+     * Generated from protobuf field <code>string wildcard_string = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWildcardString($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->wildcard_string = $var;
 
         return $this;
     }

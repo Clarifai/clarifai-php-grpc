@@ -48,7 +48,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $query = '';
     /**
-     * Filter by the name, description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      *
      * Generated from protobuf field <code>string name = 5;</code>
      */
@@ -157,7 +157,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           Filtering options:
      *           Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
      *     @type string $name
-     *           Filter by the name, description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     *           Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      *     @type bool $filter_by_user_id
      *           Extends the name filter to include the user_id of the application owner that the model belongs to.
      *     @type string $model_type_id
@@ -432,7 +432,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Filter by the name, description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      *
      * Generated from protobuf field <code>string name = 5;</code>
      * @return string
@@ -443,7 +443,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Filter by the name, description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      *
      * Generated from protobuf field <code>string name = 5;</code>
      * @param string $var

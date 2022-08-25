@@ -74,6 +74,12 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
      */
     private $metrics;
     /**
+     * Dataset version exports
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionExportInfo export_info = 17;</code>
+     */
+    protected $export_info = null;
+    /**
      * To handle arbitrary json metadata you can use a struct field:
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *
@@ -126,6 +132,8 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
      *           Description of the dataset version
      *     @type array|\Google\Protobuf\Internal\MapField $metrics
      *           Dataset version metrics
+     *     @type \Clarifai\Api\DatasetVersionExportInfo $export_info
+     *           Dataset version exports
      *     @type \Google\Protobuf\Struct $metadata
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
@@ -441,6 +449,42 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\DatasetVersionMetrics::class);
         $this->metrics = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Dataset version exports
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionExportInfo export_info = 17;</code>
+     * @return \Clarifai\Api\DatasetVersionExportInfo|null
+     */
+    public function getExportInfo()
+    {
+        return $this->export_info;
+    }
+
+    public function hasExportInfo()
+    {
+        return isset($this->export_info);
+    }
+
+    public function clearExportInfo()
+    {
+        unset($this->export_info);
+    }
+
+    /**
+     * Dataset version exports
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionExportInfo export_info = 17;</code>
+     * @param \Clarifai\Api\DatasetVersionExportInfo $var
+     * @return $this
+     */
+    public function setExportInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersionExportInfo::class);
+        $this->export_info = $var;
 
         return $this;
     }

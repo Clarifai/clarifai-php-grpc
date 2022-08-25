@@ -10,6 +10,18 @@ namespace Clarifai\Api;
  * for the API.
  * https://cloud.google.com/service-management/reference/rpc/google.api#google.api.HttpRule
  *
+ * For the cl_depending_scopes in this file, see the docstring that explains the two types of
+ * scope dependencies in clarifai/auth/scope/scope.proto
+ *
+ * For new endpoints you should typically only add the fully qualified url that includes the user_id
+ * and app_id.
+ *
+ * You should typicaly use KeyAuth (the most restricted auth type) for new endpoints unless they are
+ * for resources not contained in an app or need access from things across apps. See more about the
+ * auth types here:
+ * https://clarifai.atlassian.net/wiki/spaces/TT/pages/1821409336/API+Authorizers+and+Resource+Access
+ *
+ *
  */
 class V2Client extends \Grpc\BaseStub {
 
@@ -819,6 +831,21 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/DeleteDatasetVersions',
         $argument,
         ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Create export of a dataset version.
+     * @param \Clarifai\Api\PutDatasetVersionExportsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PutDatasetVersionExports(\Clarifai\Api\PutDatasetVersionExportsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PutDatasetVersionExports',
+        $argument,
+        ['\Clarifai\Api\MultiDatasetVersionExportResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -2610,6 +2637,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Get installed modules vesrions for an app.
+     * @param \Clarifai\Api\GetInstalledModuleVersionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetInstalledModuleVersion(\Clarifai\Api\GetInstalledModuleVersionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetInstalledModuleVersion',
+        $argument,
+        ['\Clarifai\Api\SingleInstalledModuleVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * List installed modules vesrions for an app.
      * @param \Clarifai\Api\ListInstalledModuleVersionsRequest $argument input argument
      * @param array $metadata metadata
@@ -2640,7 +2682,9 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Uninstall an installed module version which will deploy the specific ModuleVersion to the app in the url.
+     * Uninstall an installed module version which will deploy the specific ModuleVersion to the app
+     * in the url.
+     * This cleaned up any associated caller keys so needs the Keys_Delete scope.
      * @param \Clarifai\Api\DeleteInstalledModuleVersionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -2651,6 +2695,22 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/DeleteInstalledModuleVersions',
         $argument,
         ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Assign a key that the caller owns to be used when accessing this installed module version
+     * If this endpoint is called with a different key then it overwrites what is there.
+     * @param \Clarifai\Api\PostInstalledModuleVersionsKeyRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostInstalledModuleVersionsKey(\Clarifai\Api\PostInstalledModuleVersionsKeyRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostInstalledModuleVersionsKey',
+        $argument,
+        ['\Clarifai\Api\SingleKeyResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -2743,6 +2803,76 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/GetDatasetInputsSearchAddJob',
         $argument,
         ['\Clarifai\Api\SingleDatasetInputsSearchAddJobResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PostUploadsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostUploads(\Clarifai\Api\PostUploadsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostUploads',
+        $argument,
+        ['\Clarifai\Api\MultiUploadResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PutUploadContentPartsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PutUploadContentParts(\Clarifai\Api\PutUploadContentPartsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PutUploadContentParts',
+        $argument,
+        ['\Clarifai\Api\SingleUploadResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\GetUploadRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetUpload(\Clarifai\Api\GetUploadRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetUpload',
+        $argument,
+        ['\Clarifai\Api\SingleUploadResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\ListUploadsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListUploads(\Clarifai\Api\ListUploadsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListUploads',
+        $argument,
+        ['\Clarifai\Api\MultiUploadResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\DeleteUploadsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteUploads(\Clarifai\Api\DeleteUploadsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteUploads',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);
     }
 

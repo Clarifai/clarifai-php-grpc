@@ -14,28 +14,35 @@ use UnexpectedValueException;
 class Visibility
 {
     /**
-     * Point is not in the image
+     * Visibility of the point is not set
      *
-     * Generated from protobuf enum <code>NOT_PRESENT = 0;</code>
+     * Generated from protobuf enum <code>NOT_SET = 0;</code>
      */
-    const NOT_PRESENT = 0;
-    /**
-     * Point is occluded
-     *
-     * Generated from protobuf enum <code>NOT_VISIBLE = 1;</code>
-     */
-    const NOT_VISIBLE = 1;
+    const NOT_SET = 0;
     /**
      * Point is visible
      *
-     * Generated from protobuf enum <code>VISIBLE = 2;</code>
+     * Generated from protobuf enum <code>VISIBLE = 1;</code>
      */
-    const VISIBLE = 2;
+    const VISIBLE = 1;
+    /**
+     * Point is occluded
+     *
+     * Generated from protobuf enum <code>NOT_VISIBLE = 2;</code>
+     */
+    const NOT_VISIBLE = 2;
+    /**
+     * Point is not in the image
+     *
+     * Generated from protobuf enum <code>NOT_PRESENT = 3;</code>
+     */
+    const NOT_PRESENT = 3;
 
     private static $valueToName = [
-        self::NOT_PRESENT => 'NOT_PRESENT',
-        self::NOT_VISIBLE => 'NOT_VISIBLE',
+        self::NOT_SET => 'NOT_SET',
         self::VISIBLE => 'VISIBLE',
+        self::NOT_VISIBLE => 'NOT_VISIBLE',
+        self::NOT_PRESENT => 'NOT_PRESENT',
     ];
 
     public static function name($value)

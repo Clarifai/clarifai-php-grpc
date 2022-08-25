@@ -564,6 +564,26 @@ class StatusCode
      */
     const DATA_DUMP_UNEXPECTED_ERROR = 25155;
     /**
+     * Generated from protobuf enum <code>DATA_DUMP_EXPORT_SUCCESS = 25170;</code>
+     */
+    const DATA_DUMP_EXPORT_SUCCESS = 25170;
+    /**
+     * Generated from protobuf enum <code>DATA_DUMP_EXPORT_PENDING = 25171;</code>
+     */
+    const DATA_DUMP_EXPORT_PENDING = 25171;
+    /**
+     * Generated from protobuf enum <code>DATA_DUMP_EXPORT_FAILED = 25172;</code>
+     */
+    const DATA_DUMP_EXPORT_FAILED = 25172;
+    /**
+     * Generated from protobuf enum <code>DATA_DUMP_EXPORT_IN_PROGRESS = 25173;</code>
+     */
+    const DATA_DUMP_EXPORT_IN_PROGRESS = 25173;
+    /**
+     * Generated from protobuf enum <code>DATA_DUMP_EXPORT_UNEXPECTED_ERROR = 25174;</code>
+     */
+    const DATA_DUMP_EXPORT_UNEXPECTED_ERROR = 25174;
+    /**
      * Duplicate related 252xx
      *
      * Generated from protobuf enum <code>APP_DUPLICATION_SUCCESS = 25200;</code>
@@ -637,6 +657,12 @@ class StatusCode
      * Generated from protobuf enum <code>BULK_OPERATION_DELETED = 25407;</code>
      */
     const BULK_OPERATION_DELETED = 25407;
+    /**
+     * INPUTS ADD JOBS related codes 255xx
+     *
+     * Generated from protobuf enum <code>INPUTS_ADD_JOBS_FAILED = 25501;</code>
+     */
+    const INPUTS_ADD_JOBS_FAILED = 25501;
     /**
      * Input:Image related 30xxx
      *
@@ -1388,6 +1414,28 @@ class StatusCode
      */
     const LIST_OBJECTS_FAILED = 66000;
     /**
+     * Generated from protobuf enum <code>ARCHIVE_EXTRACT_FAILED = 67000;</code>
+     */
+    const ARCHIVE_EXTRACT_FAILED = 67000;
+    /**
+     * Multipart uploading status codes
+     *
+     * Generated from protobuf enum <code>UPLOAD_IN_PROGRESS = 68000;</code>
+     */
+    const UPLOAD_IN_PROGRESS = 68000;
+    /**
+     * Generated from protobuf enum <code>UPLOAD_DONE = 68001;</code>
+     */
+    const UPLOAD_DONE = 68001;
+    /**
+     * Generated from protobuf enum <code>UPLOAD_FAILED = 68002;</code>
+     */
+    const UPLOAD_FAILED = 68002;
+    /**
+     * Generated from protobuf enum <code>UPLOAD_UNEXPECTED_ERROR = 68003;</code>
+     */
+    const UPLOAD_UNEXPECTED_ERROR = 68003;
+    /**
      * Internal issues: 98xxx
      *
      * Generated from protobuf enum <code>INTERNAL_SERVER_ISSUE = 98004;</code>
@@ -1587,6 +1635,11 @@ class StatusCode
         self::DATA_DUMP_IN_PROGRESS => 'DATA_DUMP_IN_PROGRESS',
         self::DATA_DUMP_NO_DATA => 'DATA_DUMP_NO_DATA',
         self::DATA_DUMP_UNEXPECTED_ERROR => 'DATA_DUMP_UNEXPECTED_ERROR',
+        self::DATA_DUMP_EXPORT_SUCCESS => 'DATA_DUMP_EXPORT_SUCCESS',
+        self::DATA_DUMP_EXPORT_PENDING => 'DATA_DUMP_EXPORT_PENDING',
+        self::DATA_DUMP_EXPORT_FAILED => 'DATA_DUMP_EXPORT_FAILED',
+        self::DATA_DUMP_EXPORT_IN_PROGRESS => 'DATA_DUMP_EXPORT_IN_PROGRESS',
+        self::DATA_DUMP_EXPORT_UNEXPECTED_ERROR => 'DATA_DUMP_EXPORT_UNEXPECTED_ERROR',
         self::APP_DUPLICATION_SUCCESS => 'APP_DUPLICATION_SUCCESS',
         self::APP_DUPLICATION_FAILED => 'APP_DUPLICATION_FAILED',
         self::APP_DUPLICATION_PENDING => 'APP_DUPLICATION_PENDING',
@@ -1604,6 +1657,7 @@ class StatusCode
         self::BULK_OPERATION_CANCELLED => 'BULK_OPERATION_CANCELLED',
         self::BULK_OPERATION_UNEXPECTED_ERROR => 'BULK_OPERATION_UNEXPECTED_ERROR',
         self::BULK_OPERATION_DELETED => 'BULK_OPERATION_DELETED',
+        self::INPUTS_ADD_JOBS_FAILED => 'INPUTS_ADD_JOBS_FAILED',
         self::INPUT_DOWNLOAD_SUCCESS => 'INPUT_DOWNLOAD_SUCCESS',
         self::INPUT_DOWNLOAD_PENDING => 'INPUT_DOWNLOAD_PENDING',
         self::INPUT_DOWNLOAD_FAILED => 'INPUT_DOWNLOAD_FAILED',
@@ -1769,6 +1823,11 @@ class StatusCode
         self::JOB_FAILED => 'JOB_FAILED',
         self::AUTH_MISSING_IDP_ASSOC => 'AUTH_MISSING_IDP_ASSOC',
         self::LIST_OBJECTS_FAILED => 'LIST_OBJECTS_FAILED',
+        self::ARCHIVE_EXTRACT_FAILED => 'ARCHIVE_EXTRACT_FAILED',
+        self::UPLOAD_IN_PROGRESS => 'UPLOAD_IN_PROGRESS',
+        self::UPLOAD_DONE => 'UPLOAD_DONE',
+        self::UPLOAD_FAILED => 'UPLOAD_FAILED',
+        self::UPLOAD_UNEXPECTED_ERROR => 'UPLOAD_UNEXPECTED_ERROR',
         self::INTERNAL_SERVER_ISSUE => 'INTERNAL_SERVER_ISSUE',
         self::INTERNAL_FETCHING_ISSUE => 'INTERNAL_FETCHING_ISSUE',
         self::INTERNAL_DATABASE_ISSUE => 'INTERNAL_DATABASE_ISSUE',
