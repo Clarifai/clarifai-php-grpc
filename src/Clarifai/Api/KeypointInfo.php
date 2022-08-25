@@ -22,7 +22,7 @@ class KeypointInfo extends \Google\Protobuf\Internal\Message
     /**
      * Defines the connections between keypoint_names. Each value represents the index in keypoint_names.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.ListOfFloat skeleton = 2;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.KeypointEdge skeleton = 2;</code>
      */
     private $skeleton;
 
@@ -34,7 +34,7 @@ class KeypointInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $keypoint_names
      *           Names of the keypoints
-     *     @type \Clarifai\Api\ListOfFloat[]|\Google\Protobuf\Internal\RepeatedField $skeleton
+     *     @type \Clarifai\Api\KeypointEdge[]|\Google\Protobuf\Internal\RepeatedField $skeleton
      *           Defines the connections between keypoint_names. Each value represents the index in keypoint_names.
      * }
      */
@@ -72,7 +72,7 @@ class KeypointInfo extends \Google\Protobuf\Internal\Message
     /**
      * Defines the connections between keypoint_names. Each value represents the index in keypoint_names.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.ListOfFloat skeleton = 2;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.KeypointEdge skeleton = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSkeleton()
@@ -83,13 +83,13 @@ class KeypointInfo extends \Google\Protobuf\Internal\Message
     /**
      * Defines the connections between keypoint_names. Each value represents the index in keypoint_names.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.ListOfFloat skeleton = 2;</code>
-     * @param \Clarifai\Api\ListOfFloat[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .clarifai.api.KeypointEdge skeleton = 2;</code>
+     * @param \Clarifai\Api\KeypointEdge[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSkeleton($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\ListOfFloat::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\KeypointEdge::class);
         $this->skeleton = $arr;
 
         return $this;

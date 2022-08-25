@@ -76,13 +76,7 @@ class BulkOperation extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           id of the Bulk Operation task
      *     @type \Clarifai\Api\InputIDs $input_ids
-     *           List of input ids to which operation to be applied
      *     @type \Clarifai\Api\Search $search
-     *           A Search(either filter or rank with min value) to allow filtering down the entire app's
-     *           sub-assets(image, region in image, frame in video, region in frame in video)
-     *           and perform operation to only the results of this search query. See our search
-     *           documentation for more details about the search Query message.
-     *           For eg., filters the asset/sub-asset matching the search and performs specified operation.
      *     @type \Clarifai\Api\Operation $operation
      *           Operation to perform
      *     @type string $app_id
@@ -135,8 +129,6 @@ class BulkOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of input ids to which operation to be applied
-     *
      * Generated from protobuf field <code>.clarifai.api.InputIDs input_ids = 2;</code>
      * @return \Clarifai\Api\InputIDs|null
      */
@@ -151,8 +143,6 @@ class BulkOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of input ids to which operation to be applied
-     *
      * Generated from protobuf field <code>.clarifai.api.InputIDs input_ids = 2;</code>
      * @param \Clarifai\Api\InputIDs $var
      * @return $this
@@ -166,12 +156,6 @@ class BulkOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A Search(either filter or rank with min value) to allow filtering down the entire app's
-     * sub-assets(image, region in image, frame in video, region in frame in video)
-     * and perform operation to only the results of this search query. See our search
-     * documentation for more details about the search Query message.
-     * For eg., filters the asset/sub-asset matching the search and performs specified operation.
-     *
      * Generated from protobuf field <code>.clarifai.api.Search search = 10;</code>
      * @return \Clarifai\Api\Search|null
      */
@@ -186,12 +170,6 @@ class BulkOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A Search(either filter or rank with min value) to allow filtering down the entire app's
-     * sub-assets(image, region in image, frame in video, region in frame in video)
-     * and perform operation to only the results of this search query. See our search
-     * documentation for more details about the search Query message.
-     * For eg., filters the asset/sub-asset matching the search and performs specified operation.
-     *
      * Generated from protobuf field <code>.clarifai.api.Search search = 10;</code>
      * @param \Clarifai\Api\Search $var
      * @return $this

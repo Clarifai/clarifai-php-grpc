@@ -83,6 +83,18 @@ class InstalledModuleVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 8;</code>
      */
     protected $visibility = null;
+    /**
+     * The key ID to use for making requests to the API for this module.
+     * This key is associated to this installed module version by PostInstalledModuleVersionsKey
+     * request. The key is associated with the CALLER not the App Owner where this module is installed
+     * nor the author of the module. This allows the module to act on behalf of the caller at all
+     * times so we get proper permissions the caller has (such as if they are stranger, teammate or
+     * collaborator). This key should be a personal access token to enable modules to work across apps
+     * and have necessary abilities beyond what app-specific keys offer.
+     *
+     * Generated from protobuf field <code>string key_id = 9;</code>
+     */
+    protected $key_id = '';
 
     /**
      * Constructor.
@@ -128,6 +140,14 @@ class InstalledModuleVersion extends \Google\Protobuf\Internal\Message
      *           installed the module version to decide if they want other users of their app to have
      *           the added functionality that the modules version provides to their app.
      *           Defaults to PRIVATE if not provided.
+     *     @type string $key_id
+     *           The key ID to use for making requests to the API for this module.
+     *           This key is associated to this installed module version by PostInstalledModuleVersionsKey
+     *           request. The key is associated with the CALLER not the App Owner where this module is installed
+     *           nor the author of the module. This allows the module to act on behalf of the caller at all
+     *           times so we get proper permissions the caller has (such as if they are stranger, teammate or
+     *           collaborator). This key should be a personal access token to enable modules to work across apps
+     *           and have necessary abilities beyond what app-specific keys offer.
      * }
      */
     public function __construct($data = NULL) {
@@ -423,6 +443,44 @@ class InstalledModuleVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * The key ID to use for making requests to the API for this module.
+     * This key is associated to this installed module version by PostInstalledModuleVersionsKey
+     * request. The key is associated with the CALLER not the App Owner where this module is installed
+     * nor the author of the module. This allows the module to act on behalf of the caller at all
+     * times so we get proper permissions the caller has (such as if they are stranger, teammate or
+     * collaborator). This key should be a personal access token to enable modules to work across apps
+     * and have necessary abilities beyond what app-specific keys offer.
+     *
+     * Generated from protobuf field <code>string key_id = 9;</code>
+     * @return string
+     */
+    public function getKeyId()
+    {
+        return $this->key_id;
+    }
+
+    /**
+     * The key ID to use for making requests to the API for this module.
+     * This key is associated to this installed module version by PostInstalledModuleVersionsKey
+     * request. The key is associated with the CALLER not the App Owner where this module is installed
+     * nor the author of the module. This allows the module to act on behalf of the caller at all
+     * times so we get proper permissions the caller has (such as if they are stranger, teammate or
+     * collaborator). This key should be a personal access token to enable modules to work across apps
+     * and have necessary abilities beyond what app-specific keys offer.
+     *
+     * Generated from protobuf field <code>string key_id = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setKeyId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->key_id = $var;
 
         return $this;
     }
