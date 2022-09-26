@@ -126,6 +126,8 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
      *           The dataset the dataset version belongs to.
      *     @type \Clarifai\Api\AnnotationFilterConfig $annotation_filter_config
      *           The dataset version will be generated based on a single annotation filter.
+     *     @type \Clarifai\Api\ModelPredictConfig $model_predict_config
+     *           The dataset version will be generated based on model version inferences.
      *     @type \Clarifai\Api\Status\Status $status
      *           Status for this dataset version.
      *     @type string $description
@@ -361,6 +363,37 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\AnnotationFilterConfig::class);
         $this->writeOneof(15, $var);
+
+        return $this;
+    }
+
+    /**
+     * The dataset version will be generated based on model version inferences.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ModelPredictConfig model_predict_config = 18;</code>
+     * @return \Clarifai\Api\ModelPredictConfig|null
+     */
+    public function getModelPredictConfig()
+    {
+        return $this->readOneof(18);
+    }
+
+    public function hasModelPredictConfig()
+    {
+        return $this->hasOneof(18);
+    }
+
+    /**
+     * The dataset version will be generated based on model version inferences.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ModelPredictConfig model_predict_config = 18;</code>
+     * @param \Clarifai\Api\ModelPredictConfig $var
+     * @return $this
+     */
+    public function setModelPredictConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ModelPredictConfig::class);
+        $this->writeOneof(18, $var);
 
         return $this;
     }

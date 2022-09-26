@@ -1381,6 +1381,7 @@ class StatusCode
     const DATASET_INPUT_SUCCESS = 64100;
     /**
      * The dataset input is a duplicate.
+     * Deprecated: Unused.
      *
      * Generated from protobuf enum <code>DATASET_INPUT_DUPLICATE = 64101;</code>
      */
@@ -1435,6 +1436,16 @@ class StatusCode
      * Generated from protobuf enum <code>UPLOAD_UNEXPECTED_ERROR = 68003;</code>
      */
     const UPLOAD_UNEXPECTED_ERROR = 68003;
+    /**
+     * Generated from protobuf enum <code>UPLOAD_EXPIRED = 68004;</code>
+     */
+    const UPLOAD_EXPIRED = 68004;
+    /**
+     * Billing related issues: 69xxx
+     *
+     * Generated from protobuf enum <code>BILLING_INVALID_INFO = 69000;</code>
+     */
+    const BILLING_INVALID_INFO = 69000;
     /**
      * Internal issues: 98xxx
      *
@@ -1828,6 +1839,8 @@ class StatusCode
         self::UPLOAD_DONE => 'UPLOAD_DONE',
         self::UPLOAD_FAILED => 'UPLOAD_FAILED',
         self::UPLOAD_UNEXPECTED_ERROR => 'UPLOAD_UNEXPECTED_ERROR',
+        self::UPLOAD_EXPIRED => 'UPLOAD_EXPIRED',
+        self::BILLING_INVALID_INFO => 'BILLING_INVALID_INFO',
         self::INTERNAL_SERVER_ISSUE => 'INTERNAL_SERVER_ISSUE',
         self::INTERNAL_FETCHING_ISSUE => 'INTERNAL_FETCHING_ISSUE',
         self::INTERNAL_DATABASE_ISSUE => 'INTERNAL_DATABASE_ISSUE',

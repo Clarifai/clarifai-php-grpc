@@ -664,6 +664,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Patch one or more dataset ids.
+     * @param \Clarifai\Api\PatchDatasetIdsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchDatasetIds(\Clarifai\Api\PatchDatasetIdsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchDatasetIds',
+        $argument,
+        ['\Clarifai\Api\MultiDatasetResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Delete one or more datasets in a single request.
      * @param \Clarifai\Api\DeleteDatasetsRequest $argument input argument
      * @param array $metadata metadata
@@ -993,7 +1008,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Patch one or more models.
+     * Patch one or more models ids.
      * @param \Clarifai\Api\PatchModelIdsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1383,6 +1398,21 @@ class V2Client extends \Grpc\BaseStub {
     public function PatchWorkflows(\Clarifai\Api\PatchWorkflowsRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/clarifai.api.V2/PatchWorkflows',
+        $argument,
+        ['\Clarifai\Api\MultiWorkflowResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Patch one or more workflows ids.
+     * @param \Clarifai\Api\PatchWorkflowIdsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchWorkflowIds(\Clarifai\Api\PatchWorkflowIdsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchWorkflowIds',
         $argument,
         ['\Clarifai\Api\MultiWorkflowResponse', 'decode'],
         $metadata, $options);
@@ -2803,6 +2833,36 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/GetDatasetInputsSearchAddJob',
         $argument,
         ['\Clarifai\Api\SingleDatasetInputsSearchAddJobResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all the inputs add jobs
+     * @param \Clarifai\Api\ListInputsAddJobsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListInputsAddJobs(\Clarifai\Api\ListInputsAddJobsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListInputsAddJobs',
+        $argument,
+        ['\Clarifai\Api\MultiInputsAddJobResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get the input add job details by ID
+     * @param \Clarifai\Api\GetInputsAddJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetInputsAddJob(\Clarifai\Api\GetInputsAddJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetInputsAddJob',
+        $argument,
+        ['\Clarifai\Api\SingleInputsAddJobResponse', 'decode'],
         $metadata, $options);
     }
 

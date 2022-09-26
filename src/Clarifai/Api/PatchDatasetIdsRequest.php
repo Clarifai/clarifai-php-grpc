@@ -9,11 +9,11 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * PatchModelIdsRequest
+ * PatchDatasetIdsRequest
  *
- * Generated from protobuf message <code>clarifai.api.PatchModelIdsRequest</code>
+ * Generated from protobuf message <code>clarifai.api.PatchDatasetIdsRequest</code>
  */
-class PatchModelIdsRequest extends \Google\Protobuf\Internal\Message
+class PatchDatasetIdsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>

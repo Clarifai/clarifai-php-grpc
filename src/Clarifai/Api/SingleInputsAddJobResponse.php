@@ -9,22 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * MultiInputResponse
+ * SingleInputsAddJobResponse
  *
- * Generated from protobuf message <code>clarifai.api.MultiInputResponse</code>
+ * Generated from protobuf message <code>clarifai.api.SingleInputsAddJobResponse</code>
  */
-class MultiInputResponse extends \Google\Protobuf\Internal\Message
+class SingleInputsAddJobResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
      */
     protected $status = null;
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.Input inputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    private $inputs;
-    /**
-     * Generated from protobuf field <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+     * Generated from protobuf field <code>.clarifai.api.InputsAddJob inputs_add_job = 2;</code>
      */
     protected $inputs_add_job = null;
 
@@ -35,7 +31,6 @@ class MultiInputResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $inputs
      *     @type \Clarifai\Api\InputsAddJob $inputs_add_job
      * }
      */
@@ -77,29 +72,7 @@ class MultiInputResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.Input inputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getInputs()
-    {
-        return $this->inputs;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .clarifai.api.Input inputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setInputs($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Input::class);
-        $this->inputs = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+     * Generated from protobuf field <code>.clarifai.api.InputsAddJob inputs_add_job = 2;</code>
      * @return \Clarifai\Api\InputsAddJob|null
      */
     public function getInputsAddJob()
@@ -118,7 +91,7 @@ class MultiInputResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+     * Generated from protobuf field <code>.clarifai.api.InputsAddJob inputs_add_job = 2;</code>
      * @param \Clarifai\Api\InputsAddJob $var
      * @return $this
      */

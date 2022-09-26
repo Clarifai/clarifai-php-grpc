@@ -502,19 +502,6 @@ class S
      */
     const HistoricalUsage_Get = 124;
     /**
-     * TODO(Hemanth): Expose scope after endpoints implementation
-     * To write Ingest cloud inputs jobs to the DB
-     *
-     * Generated from protobuf enum <code>InputsAddJobs_Add = 125 [(.clarifai.auth.scope.clarifai_depending_scopes) = InputsAddJobs_Get];</code>
-     */
-    const InputsAddJobs_Add = 125;
-    /**
-     * To Read Ingest cloud inputs jobs to the DB
-     *
-     * Generated from protobuf enum <code>InputsAddJobs_Get = 126;</code>
-     */
-    const InputsAddJobs_Get = 126;
-    /**
      * To read uploaded files and archives info from Uploads endpoints
      *
      * Generated from protobuf enum <code>Uploads_Get = 128 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
@@ -612,8 +599,6 @@ class S
         self::BulkOperation_Get => 'BulkOperation_Get',
         self::BulkOperation_Delete => 'BulkOperation_Delete',
         self::HistoricalUsage_Get => 'HistoricalUsage_Get',
-        self::InputsAddJobs_Add => 'InputsAddJobs_Add',
-        self::InputsAddJobs_Get => 'InputsAddJobs_Get',
         self::Uploads_Get => 'Uploads_Get',
         self::Uploads_Add => 'Uploads_Add',
         self::Uploads_Delete => 'Uploads_Delete',
