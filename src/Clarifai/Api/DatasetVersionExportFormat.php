@@ -23,10 +23,19 @@ class DatasetVersionExportFormat
      * Generated from protobuf enum <code>CLARIFAI_DATA_EXAMPLE = 1;</code>
      */
     const CLARIFAI_DATA_EXAMPLE = 1;
+    /**
+     * COCO is the data format used by Common Objects in Context. It is a
+     * ZIP-archive containing JSON files with the dataset version annotations.
+     * See https://cocodataset.org/#format-data.
+     *
+     * Generated from protobuf enum <code>COCO = 2;</code>
+     */
+    const COCO = 2;
 
     private static $valueToName = [
         self::DATASET_VERSION_EXPORT_FORMAT_NOT_SET => 'DATASET_VERSION_EXPORT_FORMAT_NOT_SET',
         self::CLARIFAI_DATA_EXAMPLE => 'CLARIFAI_DATA_EXAMPLE',
+        self::COCO => 'COCO',
     ];
 
     public static function name($value)

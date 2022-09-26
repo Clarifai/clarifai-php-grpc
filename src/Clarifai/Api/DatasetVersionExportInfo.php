@@ -23,6 +23,12 @@ class DatasetVersionExportInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.DatasetVersionExport clarifai_data_example = 1;</code>
      */
     protected $clarifai_data_example = null;
+    /**
+     * coco is a COCO export of the dataset version.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionExport coco = 2;</code>
+     */
+    protected $coco = null;
 
     /**
      * Constructor.
@@ -32,6 +38,8 @@ class DatasetVersionExportInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\DatasetVersionExport $clarifai_data_example
      *           clarifai_data_example is a CLARIFAI_DATA_EXAMPLE export of the dataset version.
+     *     @type \Clarifai\Api\DatasetVersionExport $coco
+     *           coco is a COCO export of the dataset version.
      * }
      */
     public function __construct($data = NULL) {
@@ -71,6 +79,42 @@ class DatasetVersionExportInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersionExport::class);
         $this->clarifai_data_example = $var;
+
+        return $this;
+    }
+
+    /**
+     * coco is a COCO export of the dataset version.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionExport coco = 2;</code>
+     * @return \Clarifai\Api\DatasetVersionExport|null
+     */
+    public function getCoco()
+    {
+        return $this->coco;
+    }
+
+    public function hasCoco()
+    {
+        return isset($this->coco);
+    }
+
+    public function clearCoco()
+    {
+        unset($this->coco);
+    }
+
+    /**
+     * coco is a COCO export of the dataset version.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionExport coco = 2;</code>
+     * @param \Clarifai\Api\DatasetVersionExport $var
+     * @return $this
+     */
+    public function setCoco($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersionExport::class);
+        $this->coco = $var;
 
         return $this;
     }
