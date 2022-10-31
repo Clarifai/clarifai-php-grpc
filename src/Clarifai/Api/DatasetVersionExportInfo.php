@@ -18,11 +18,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class DatasetVersionExportInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * clarifai_data_example is a CLARIFAI_DATA_EXAMPLE export of the dataset version.
+     * clarifai_data_protobuf is a CLARIFAI_DATA_PROTOBUF export of the dataset version.
      *
-     * Generated from protobuf field <code>.clarifai.api.DatasetVersionExport clarifai_data_example = 1;</code>
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionExport clarifai_data_protobuf = 1;</code>
      */
-    protected $clarifai_data_example = null;
+    protected $clarifai_data_protobuf = null;
+    /**
+     * clarifai_data_json is a CLARIFAI_DATA_JSON export of the dataset version.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionExport clarifai_data_json = 3;</code>
+     */
+    protected $clarifai_data_json = null;
     /**
      * coco is a COCO export of the dataset version.
      *
@@ -36,8 +42,10 @@ class DatasetVersionExportInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Clarifai\Api\DatasetVersionExport $clarifai_data_example
-     *           clarifai_data_example is a CLARIFAI_DATA_EXAMPLE export of the dataset version.
+     *     @type \Clarifai\Api\DatasetVersionExport $clarifai_data_protobuf
+     *           clarifai_data_protobuf is a CLARIFAI_DATA_PROTOBUF export of the dataset version.
+     *     @type \Clarifai\Api\DatasetVersionExport $clarifai_data_json
+     *           clarifai_data_json is a CLARIFAI_DATA_JSON export of the dataset version.
      *     @type \Clarifai\Api\DatasetVersionExport $coco
      *           coco is a COCO export of the dataset version.
      * }
@@ -48,37 +56,73 @@ class DatasetVersionExportInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * clarifai_data_example is a CLARIFAI_DATA_EXAMPLE export of the dataset version.
+     * clarifai_data_protobuf is a CLARIFAI_DATA_PROTOBUF export of the dataset version.
      *
-     * Generated from protobuf field <code>.clarifai.api.DatasetVersionExport clarifai_data_example = 1;</code>
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionExport clarifai_data_protobuf = 1;</code>
      * @return \Clarifai\Api\DatasetVersionExport|null
      */
-    public function getClarifaiDataExample()
+    public function getClarifaiDataProtobuf()
     {
-        return $this->clarifai_data_example;
+        return $this->clarifai_data_protobuf;
     }
 
-    public function hasClarifaiDataExample()
+    public function hasClarifaiDataProtobuf()
     {
-        return isset($this->clarifai_data_example);
+        return isset($this->clarifai_data_protobuf);
     }
 
-    public function clearClarifaiDataExample()
+    public function clearClarifaiDataProtobuf()
     {
-        unset($this->clarifai_data_example);
+        unset($this->clarifai_data_protobuf);
     }
 
     /**
-     * clarifai_data_example is a CLARIFAI_DATA_EXAMPLE export of the dataset version.
+     * clarifai_data_protobuf is a CLARIFAI_DATA_PROTOBUF export of the dataset version.
      *
-     * Generated from protobuf field <code>.clarifai.api.DatasetVersionExport clarifai_data_example = 1;</code>
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionExport clarifai_data_protobuf = 1;</code>
      * @param \Clarifai\Api\DatasetVersionExport $var
      * @return $this
      */
-    public function setClarifaiDataExample($var)
+    public function setClarifaiDataProtobuf($var)
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersionExport::class);
-        $this->clarifai_data_example = $var;
+        $this->clarifai_data_protobuf = $var;
+
+        return $this;
+    }
+
+    /**
+     * clarifai_data_json is a CLARIFAI_DATA_JSON export of the dataset version.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionExport clarifai_data_json = 3;</code>
+     * @return \Clarifai\Api\DatasetVersionExport|null
+     */
+    public function getClarifaiDataJson()
+    {
+        return $this->clarifai_data_json;
+    }
+
+    public function hasClarifaiDataJson()
+    {
+        return isset($this->clarifai_data_json);
+    }
+
+    public function clearClarifaiDataJson()
+    {
+        unset($this->clarifai_data_json);
+    }
+
+    /**
+     * clarifai_data_json is a CLARIFAI_DATA_JSON export of the dataset version.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionExport clarifai_data_json = 3;</code>
+     * @param \Clarifai\Api\DatasetVersionExport $var
+     * @return $this
+     */
+    public function setClarifaiDataJson($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersionExport::class);
+        $this->clarifai_data_json = $var;
 
         return $this;
     }

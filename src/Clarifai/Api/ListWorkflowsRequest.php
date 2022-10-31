@@ -72,6 +72,12 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
      */
     private $additional_fields;
+    /**
+     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     *
+     * Generated from protobuf field <code>string search_term = 12;</code>
+     */
+    protected $search_term = '';
     protected $sort_by;
 
     /**
@@ -106,6 +112,8 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      *           If true, we only return workflows that are starred by the requesting user
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     *     @type string $search_term
+     *           (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
      * }
      */
     public function __construct($data = NULL) {
@@ -425,6 +433,32 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->additional_fields = $arr;
+
+        return $this;
+    }
+
+    /**
+     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     *
+     * Generated from protobuf field <code>string search_term = 12;</code>
+     * @return string
+     */
+    public function getSearchTerm()
+    {
+        return $this->search_term;
+    }
+
+    /**
+     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     *
+     * Generated from protobuf field <code>string search_term = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearchTerm($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search_term = $var;
 
         return $this;
     }

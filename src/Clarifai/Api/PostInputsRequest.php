@@ -29,6 +29,15 @@ class PostInputsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     private $inputs;
+    /**
+     * Collect statistics about created inputs in job with given ID.
+     * * If job ID is empty, then job is not created.
+     * * If job ID is non-empty and doesn't already exist, then a new job will be created with given ID.
+     * * If job ID does already exist, then new inputs statistics are merged with previous inputs statistics.
+     *
+     * Generated from protobuf field <code>string inputs_add_job_id = 3;</code>
+     */
+    protected $inputs_add_job_id = '';
 
     /**
      * Constructor.
@@ -43,6 +52,11 @@ class PostInputsRequest extends \Google\Protobuf\Internal\Message
      *           * id
      *           * data
      *           * dataset_ids
+     *     @type string $inputs_add_job_id
+     *           Collect statistics about created inputs in job with given ID.
+     *           * If job ID is empty, then job is not created.
+     *           * If job ID is non-empty and doesn't already exist, then a new job will be created with given ID.
+     *           * If job ID does already exist, then new inputs statistics are merged with previous inputs statistics.
      * }
      */
     public function __construct($data = NULL) {
@@ -112,6 +126,38 @@ class PostInputsRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Input::class);
         $this->inputs = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Collect statistics about created inputs in job with given ID.
+     * * If job ID is empty, then job is not created.
+     * * If job ID is non-empty and doesn't already exist, then a new job will be created with given ID.
+     * * If job ID does already exist, then new inputs statistics are merged with previous inputs statistics.
+     *
+     * Generated from protobuf field <code>string inputs_add_job_id = 3;</code>
+     * @return string
+     */
+    public function getInputsAddJobId()
+    {
+        return $this->inputs_add_job_id;
+    }
+
+    /**
+     * Collect statistics about created inputs in job with given ID.
+     * * If job ID is empty, then job is not created.
+     * * If job ID is non-empty and doesn't already exist, then a new job will be created with given ID.
+     * * If job ID does already exist, then new inputs statistics are merged with previous inputs statistics.
+     *
+     * Generated from protobuf field <code>string inputs_add_job_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInputsAddJobId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->inputs_add_job_id = $var;
 
         return $this;
     }

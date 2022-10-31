@@ -16,13 +16,19 @@ class DatasetVersionExportFormat
      */
     const DATASET_VERSION_EXPORT_FORMAT_NOT_SET = 0;
     /**
-     * CLARIFAI_DATA_EXAMPLE is the proprietary Clarifai Data Example format. It
-     * is a ZIP-archive containing batches of serialized DataExample protobuf
-     * messages.
+     * CLARIFAI_DATA_PROTOBUF is the proprietary Clarifai API Data format. It
+     * is a ZIP-archive containing batches of serialized Data protobuf messages.
      *
-     * Generated from protobuf enum <code>CLARIFAI_DATA_EXAMPLE = 1;</code>
+     * Generated from protobuf enum <code>CLARIFAI_DATA_PROTOBUF = 1;</code>
      */
-    const CLARIFAI_DATA_EXAMPLE = 1;
+    const CLARIFAI_DATA_PROTOBUF = 1;
+    /**
+     * CLARIFAI_DATA_JSON is the proprietary Clarifai API Data format in JSON. It
+     * is a ZIP-archive containing batches of serialized Data JSON messages.
+     *
+     * Generated from protobuf enum <code>CLARIFAI_DATA_JSON = 3;</code>
+     */
+    const CLARIFAI_DATA_JSON = 3;
     /**
      * COCO is the data format used by Common Objects in Context. It is a
      * ZIP-archive containing JSON files with the dataset version annotations.
@@ -34,7 +40,8 @@ class DatasetVersionExportFormat
 
     private static $valueToName = [
         self::DATASET_VERSION_EXPORT_FORMAT_NOT_SET => 'DATASET_VERSION_EXPORT_FORMAT_NOT_SET',
-        self::CLARIFAI_DATA_EXAMPLE => 'CLARIFAI_DATA_EXAMPLE',
+        self::CLARIFAI_DATA_PROTOBUF => 'CLARIFAI_DATA_PROTOBUF',
+        self::CLARIFAI_DATA_JSON => 'CLARIFAI_DATA_JSON',
         self::COCO => 'COCO',
     ];
 

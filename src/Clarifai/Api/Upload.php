@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class Upload extends \Google\Protobuf\Internal\Message
 {
     /**
-     * ID of upload, name of uploaded file
+     * ID of upload
      *
      * Generated from protobuf field <code>string id = 1;</code>
      */
@@ -50,6 +50,12 @@ class Upload extends \Google\Protobuf\Internal\Message
      */
     protected $status = null;
     /**
+     * name of uploaded content (e.g. filename)
+     *
+     * Generated from protobuf field <code>string content_name = 8;</code>
+     */
+    protected $content_name = '';
+    /**
      * Total size of the upload content
      *
      * Generated from protobuf field <code>uint64 content_length = 6;</code>
@@ -69,7 +75,7 @@ class Upload extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *           ID of upload, name of uploaded file
+     *           ID of upload
      *     @type \Google\Protobuf\Timestamp $created_at
      *           When the upload was started.
      *           The format is https://www.ietf.org/rfc/rfc3339.txt.
@@ -84,6 +90,8 @@ class Upload extends \Google\Protobuf\Internal\Message
      *           Example: "2006-01-02T15:04:05.999999Z".
      *     @type \Clarifai\Api\Status\Status $status
      *           Status of the upload
+     *     @type string $content_name
+     *           name of uploaded content (e.g. filename)
      *     @type int|string $content_length
      *           Total size of the upload content
      *     @type string $content_url
@@ -96,7 +104,7 @@ class Upload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ID of upload, name of uploaded file
+     * ID of upload
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @return string
@@ -107,7 +115,7 @@ class Upload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ID of upload, name of uploaded file
+     * ID of upload
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
@@ -273,6 +281,32 @@ class Upload extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Status\Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * name of uploaded content (e.g. filename)
+     *
+     * Generated from protobuf field <code>string content_name = 8;</code>
+     * @return string
+     */
+    public function getContentName()
+    {
+        return $this->content_name;
+    }
+
+    /**
+     * name of uploaded content (e.g. filename)
+     *
+     * Generated from protobuf field <code>string content_name = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContentName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->content_name = $var;
 
         return $this;
     }
