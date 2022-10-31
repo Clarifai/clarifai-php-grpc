@@ -127,6 +127,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * List models concepts.
+     * @param \Clarifai\Api\ListModelConceptsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListModelConcepts(\Clarifai\Api\ListModelConceptsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListModelConcepts',
+        $argument,
+        ['\Clarifai\Api\MultiConceptResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Search over the concepts to find one or more you're looking for.
      * This leverage the "body" parameter because we also have page and
      * per_page as url query param variables in this request.

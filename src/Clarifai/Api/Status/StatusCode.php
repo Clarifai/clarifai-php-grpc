@@ -658,11 +658,31 @@ class StatusCode
      */
     const BULK_OPERATION_DELETED = 25407;
     /**
-     * INPUTS ADD JOBS related codes 255xx
+     * INPUTS EXTRACTION JOB related codes 255xx
      *
-     * Generated from protobuf enum <code>INPUTS_ADD_JOBS_FAILED = 25501;</code>
+     * Generated from protobuf enum <code>INPUTS_EXTRACTION_JOB_SUCCESS = 25500;</code>
      */
-    const INPUTS_ADD_JOBS_FAILED = 25501;
+    const INPUTS_EXTRACTION_JOB_SUCCESS = 25500;
+    /**
+     * Generated from protobuf enum <code>INPUTS_EXTRACTION_JOB_FAILED = 25501;</code>
+     */
+    const INPUTS_EXTRACTION_JOB_FAILED = 25501;
+    /**
+     * Generated from protobuf enum <code>INPUTS_EXTRACTION_JOB_PENDING = 25502;</code>
+     */
+    const INPUTS_EXTRACTION_JOB_PENDING = 25502;
+    /**
+     * Generated from protobuf enum <code>INPUTS_EXTRACTION_JOB_IN_PROGRESS = 25503;</code>
+     */
+    const INPUTS_EXTRACTION_JOB_IN_PROGRESS = 25503;
+    /**
+     * Generated from protobuf enum <code>INPUTS_EXTRACTION_JOB_CANCELLED = 25505;</code>
+     */
+    const INPUTS_EXTRACTION_JOB_CANCELLED = 25505;
+    /**
+     * Generated from protobuf enum <code>INPUTS_EXTRACTION_JOB_UNEXPECTED_ERROR = 25506;</code>
+     */
+    const INPUTS_EXTRACTION_JOB_UNEXPECTED_ERROR = 25506;
     /**
      * Input:Image related 30xxx
      *
@@ -1668,7 +1688,12 @@ class StatusCode
         self::BULK_OPERATION_CANCELLED => 'BULK_OPERATION_CANCELLED',
         self::BULK_OPERATION_UNEXPECTED_ERROR => 'BULK_OPERATION_UNEXPECTED_ERROR',
         self::BULK_OPERATION_DELETED => 'BULK_OPERATION_DELETED',
-        self::INPUTS_ADD_JOBS_FAILED => 'INPUTS_ADD_JOBS_FAILED',
+        self::INPUTS_EXTRACTION_JOB_SUCCESS => 'INPUTS_EXTRACTION_JOB_SUCCESS',
+        self::INPUTS_EXTRACTION_JOB_FAILED => 'INPUTS_EXTRACTION_JOB_FAILED',
+        self::INPUTS_EXTRACTION_JOB_PENDING => 'INPUTS_EXTRACTION_JOB_PENDING',
+        self::INPUTS_EXTRACTION_JOB_IN_PROGRESS => 'INPUTS_EXTRACTION_JOB_IN_PROGRESS',
+        self::INPUTS_EXTRACTION_JOB_CANCELLED => 'INPUTS_EXTRACTION_JOB_CANCELLED',
+        self::INPUTS_EXTRACTION_JOB_UNEXPECTED_ERROR => 'INPUTS_EXTRACTION_JOB_UNEXPECTED_ERROR',
         self::INPUT_DOWNLOAD_SUCCESS => 'INPUT_DOWNLOAD_SUCCESS',
         self::INPUT_DOWNLOAD_PENDING => 'INPUT_DOWNLOAD_PENDING',
         self::INPUT_DOWNLOAD_FAILED => 'INPUT_DOWNLOAD_FAILED',

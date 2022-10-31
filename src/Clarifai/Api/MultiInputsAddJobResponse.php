@@ -20,7 +20,7 @@ class MultiInputsAddJobResponse extends \Google\Protobuf\Internal\Message
      */
     protected $status = null;
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.InputsAddJob inputs_add_jobs = 2;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.InputsAddJob inputs_add_jobs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     private $inputs_add_jobs;
 
@@ -72,7 +72,7 @@ class MultiInputsAddJobResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.InputsAddJob inputs_add_jobs = 2;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.InputsAddJob inputs_add_jobs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getInputsAddJobs()
@@ -81,7 +81,7 @@ class MultiInputsAddJobResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.InputsAddJob inputs_add_jobs = 2;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.InputsAddJob inputs_add_jobs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @param \Clarifai\Api\InputsAddJob[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

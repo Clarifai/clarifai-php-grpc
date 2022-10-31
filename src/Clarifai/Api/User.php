@@ -93,11 +93,6 @@ class User extends \Google\Protobuf\Internal\Message
      */
     private $email_addresses;
     /**
-     * Generated from protobuf field <code>bool is_org_admin = 14 [deprecated = true];</code>
-     * @deprecated
-     */
-    protected $is_org_admin = false;
-    /**
      * Generated from protobuf field <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
      * @deprecated
      */
@@ -166,7 +161,6 @@ class User extends \Google\Protobuf\Internal\Message
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *     @type \Clarifai\Api\EmailAddress[]|\Google\Protobuf\Internal\RepeatedField $email_addresses
-     *     @type bool $is_org_admin
      *     @type bool $two_factor_auth_enabled
      *     @type int $teams_count
      *     @type bool $is_starred
@@ -636,32 +630,6 @@ class User extends \Google\Protobuf\Internal\Message
         @trigger_error('email_addresses is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\EmailAddress::class);
         $this->email_addresses = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool is_org_admin = 14 [deprecated = true];</code>
-     * @return bool
-     * @deprecated
-     */
-    public function getIsOrgAdmin()
-    {
-        @trigger_error('is_org_admin is deprecated.', E_USER_DEPRECATED);
-        return $this->is_org_admin;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool is_org_admin = 14 [deprecated = true];</code>
-     * @param bool $var
-     * @return $this
-     * @deprecated
-     */
-    public function setIsOrgAdmin($var)
-    {
-        @trigger_error('is_org_admin is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkBool($var);
-        $this->is_org_admin = $var;
 
         return $this;
     }

@@ -52,10 +52,6 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      */
     private $email_addresses;
     /**
-     * Generated from protobuf field <code>bool is_org_admin = 8;</code>
-     */
-    protected $is_org_admin = false;
-    /**
      * Generated from protobuf field <code>bool two_factor_auth_enabled = 9;</code>
      */
     protected $two_factor_auth_enabled = false;
@@ -88,7 +84,6 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *     @type \Clarifai\Api\EmailAddress[]|\Google\Protobuf\Internal\RepeatedField $email_addresses
-     *     @type bool $is_org_admin
      *     @type bool $two_factor_auth_enabled
      *     @type int $teams_count
      *     @type string $country
@@ -328,28 +323,6 @@ class UserDetail extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\EmailAddress::class);
         $this->email_addresses = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool is_org_admin = 8;</code>
-     * @return bool
-     */
-    public function getIsOrgAdmin()
-    {
-        return $this->is_org_admin;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool is_org_admin = 8;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setIsOrgAdmin($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->is_org_admin = $var;
 
         return $this;
     }
