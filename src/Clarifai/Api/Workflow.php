@@ -72,7 +72,7 @@ class Workflow extends \Google\Protobuf\Internal\Message
      */
     protected $modified_at = null;
     /**
-     * Info about the workflow version
+     * Info about the workflow version used to return the latest version when listing Workflows.
      *
      * Generated from protobuf field <code>.clarifai.api.WorkflowVersion version = 9;</code>
      */
@@ -148,7 +148,7 @@ class Workflow extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $modified_at
      *           When the workflow was last modified
      *     @type \Clarifai\Api\WorkflowVersion $version
-     *           Info about the workflow version
+     *           Info about the workflow version used to return the latest version when listing Workflows.
      *     @type bool $is_starred
      *           Is starred by the requesting user (only showed on get/list requests)
      *           Please use PostWorkflowStars/DeleteWorkflowStars endpoints to star/unstar a workflow
@@ -436,7 +436,7 @@ class Workflow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Info about the workflow version
+     * Info about the workflow version used to return the latest version when listing Workflows.
      *
      * Generated from protobuf field <code>.clarifai.api.WorkflowVersion version = 9;</code>
      * @return \Clarifai\Api\WorkflowVersion|null
@@ -457,7 +457,7 @@ class Workflow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Info about the workflow version
+     * Info about the workflow version used to return the latest version when listing Workflows.
      *
      * Generated from protobuf field <code>.clarifai.api.WorkflowVersion version = 9;</code>
      * @param \Clarifai\Api\WorkflowVersion $var

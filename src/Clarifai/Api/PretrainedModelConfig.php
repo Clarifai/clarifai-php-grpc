@@ -17,6 +17,11 @@ class PretrainedModelConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * This is the internal id of the pretrained model.
+     *
+     * Generated from protobuf field <code>string id = 1 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     */
+    protected $id = '';
+    /**
      * Map from the api.Data field names to the Triton config.pbtxt input.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct input_fields_map = 3;</code>
@@ -36,6 +41,12 @@ class PretrainedModelConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string model_zip_url = 6;</code>
      */
     protected $model_zip_url = '';
+    /**
+     * Whether to overwrite the model for the existing internal id
+     *
+     * Generated from protobuf field <code>bool overwrite = 7 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     */
+    protected $overwrite = false;
 
     /**
      * Constructor.
@@ -43,8 +54,9 @@ class PretrainedModelConfig extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Protobuf\Struct $input_fields_map
+     *     @type string $id
      *           This is the internal id of the pretrained model.
+     *     @type \Google\Protobuf\Struct $input_fields_map
      *           Map from the api.Data field names to the Triton config.pbtxt input.
      *     @type \Google\Protobuf\Struct $output_fields_map
      *           Map from the api.Data field names to the Triton config.pbtxt output.
@@ -52,6 +64,8 @@ class PretrainedModelConfig extends \Google\Protobuf\Internal\Message
      *           Url to a zipped up model in triton format with the following files and folders at the root:
      *            config.pbtxt
      *            version 1 folder that contains model files (onnx graph, torch script, python BE model, and etc.)
+     *     @type bool $overwrite
+     *           Whether to overwrite the model for the existing internal id
      * }
      */
     public function __construct($data = NULL) {
@@ -61,6 +75,31 @@ class PretrainedModelConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * This is the internal id of the pretrained model.
+     *
+     * Generated from protobuf field <code>string id = 1 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * This is the internal id of the pretrained model.
+     *
+     * Generated from protobuf field <code>string id = 1 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
      * Map from the api.Data field names to the Triton config.pbtxt input.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct input_fields_map = 3;</code>
@@ -82,7 +121,6 @@ class PretrainedModelConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This is the internal id of the pretrained model.
      * Map from the api.Data field names to the Triton config.pbtxt input.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct input_fields_map = 3;</code>
@@ -159,6 +197,32 @@ class PretrainedModelConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->model_zip_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether to overwrite the model for the existing internal id
+     *
+     * Generated from protobuf field <code>bool overwrite = 7 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @return bool
+     */
+    public function getOverwrite()
+    {
+        return $this->overwrite;
+    }
+
+    /**
+     * Whether to overwrite the model for the existing internal id
+     *
+     * Generated from protobuf field <code>bool overwrite = 7 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOverwrite($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->overwrite = $var;
 
         return $this;
     }

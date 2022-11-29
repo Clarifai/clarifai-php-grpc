@@ -26,6 +26,20 @@ class ListCollaboratorsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool list_all_collaborators = 2;</code>
      */
     protected $list_all_collaborators = false;
+    /**
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     *
+     * Generated from protobuf field <code>uint32 page = 3;</code>
+     */
+    protected $page = 0;
+    /**
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     *
+     * Generated from protobuf field <code>uint32 per_page = 4;</code>
+     */
+    protected $per_page = 0;
 
     /**
      * Constructor.
@@ -37,6 +51,12 @@ class ListCollaboratorsRequest extends \Google\Protobuf\Internal\Message
      *     @type bool $list_all_collaborators
      *           Set this flag to list both deleted and not deleted collaborators
      *           by default it's listing only not deleted collaborators
+     *     @type int $page
+     *           (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     *           Defaults to 1.
+     *     @type int $per_page
+     *           (optional URL parameter) The number of results that will be contained in each page. Defaults
+     *           to 128.
      * }
      */
     public function __construct($data = NULL) {
@@ -100,6 +120,62 @@ class ListCollaboratorsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->list_all_collaborators = $var;
+
+        return $this;
+    }
+
+    /**
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     *
+     * Generated from protobuf field <code>uint32 page = 3;</code>
+     * @return int
+     */
+    public function getPage()
+    {
+        return $this->page;
+    }
+
+    /**
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     *
+     * Generated from protobuf field <code>uint32 page = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->page = $var;
+
+        return $this;
+    }
+
+    /**
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     *
+     * Generated from protobuf field <code>uint32 per_page = 4;</code>
+     * @return int
+     */
+    public function getPerPage()
+    {
+        return $this->per_page;
+    }
+
+    /**
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     *
+     * Generated from protobuf field <code>uint32 per_page = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPerPage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->per_page = $var;
 
         return $this;
     }

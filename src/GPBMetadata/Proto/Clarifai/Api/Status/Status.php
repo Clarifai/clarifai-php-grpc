@@ -18,7 +18,7 @@ class Status
         \GPBMetadata\Proto\Clarifai\Api\Status\StatusCode::initOnce();
         $pool->internalAddGeneratedFile(
             '
-œ
+ñ
 &proto/clarifai/api/status/status.protoclarifai.api.status+proto/clarifai/api/status/status_code.proto"›
 Status-
 code (2.clarifai.api.status.StatusCode
@@ -36,8 +36,8 @@ class Status
 old_resource_id (	
 new_resource_id (	";
 BaseResponse+
-status (2.clarifai.api.status.StatusBg
-com.clarifai.grpc.api.statusPZ>github.com/Clarifai/clarifai-go-grpc/proto/clarifai/api/status¢CAIPbproto3'
+status (2.clarifai.api.status.StatusB<
+com.clarifai.grpc.api.statusPZclarifai/api/status¢CAIPbproto3'
         , true);
 
         static::$is_initialized = true;

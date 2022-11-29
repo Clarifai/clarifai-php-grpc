@@ -53,6 +53,10 @@ class S
      */
     const Predict = 2;
     /**
+     * Generated from protobuf enum <code>Predict_Feedback = 29 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const Predict_Feedback = 29;
+    /**
      * Write to the inputs table in the DB.
      *
      * Generated from protobuf enum <code>Inputs_Add = 4 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Inputs_Get];</code>
@@ -352,6 +356,42 @@ class S
      */
     const PasswordPolicies_Delete = 59;
     /**
+     * Write to password_history table
+     *
+     * Generated from protobuf enum <code>PasswordHistory_Add = 60 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Get];</code>
+     */
+    const PasswordHistory_Add = 60;
+    /**
+     * Read from password_history table
+     *
+     * Generated from protobuf enum <code>PasswordHistory_Get = 61 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const PasswordHistory_Get = 61;
+    /**
+     * To delete password history we need read/write
+     *
+     * Generated from protobuf enum <code>PasswordHistory_Delete = 62 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Get];</code>
+     */
+    const PasswordHistory_Delete = 62;
+    /**
+     * Read from notifications table
+     *
+     * Generated from protobuf enum <code>Notifications_Get = 64 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const Notifications_Get = 64;
+    /**
+     * Write to notifications table
+     *
+     * Generated from protobuf enum <code>Notifications_Add = 65 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Get];</code>
+     */
+    const Notifications_Add = 65;
+    /**
+     * To delete notifications we need read/write
+     *
+     * Generated from protobuf enum <code>Notifications_Delete = 66 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Get];</code>
+     */
+    const Notifications_Delete = 66;
+    /**
      * Read from label orders table
      *
      * Generated from protobuf enum <code>LabelOrders_Get = 67 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
@@ -375,6 +415,136 @@ class S
      * Generated from protobuf enum <code>UserFeatureConfigs_Get = 71 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const UserFeatureConfigs_Get = 71;
+    /**
+     * Write to configs table
+     *
+     * Generated from protobuf enum <code>UserFeatureConfigs_Add = 72 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Get];</code>
+     */
+    const UserFeatureConfigs_Add = 72;
+    /**
+     * To delete configs we need read/write
+     *
+     * Generated from protobuf enum <code>UserFeatureConfigs_Delete = 73 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Get];</code>
+     */
+    const UserFeatureConfigs_Delete = 73;
+    /**
+     * Read from teams table
+     *
+     * Generated from protobuf enum <code>Teams_Get = 74 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const Teams_Get = 74;
+    /**
+     * Write to teams table
+     *
+     * Generated from protobuf enum <code>Teams_Add = 75 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Teams_Get];</code>
+     */
+    const Teams_Add = 75;
+    /**
+     * To delete teams we need read/write
+     *
+     * Generated from protobuf enum <code>Teams_Delete = 76 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Teams_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Teams_Add];</code>
+     */
+    const Teams_Delete = 76;
+    /**
+     * Read from team_users table
+     *
+     * Generated from protobuf enum <code>TeamUsers_Get = 77 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const TeamUsers_Get = 77;
+    /**
+     * Write to team_users table
+     *
+     * Generated from protobuf enum <code>TeamUsers_Add = 78 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = TeamUsers_Get];</code>
+     */
+    const TeamUsers_Add = 78;
+    /**
+     * To delete team_users we need read/write
+     *
+     * Generated from protobuf enum <code>TeamUsers_Delete = 79 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = TeamUsers_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = TeamUsers_Add];</code>
+     */
+    const TeamUsers_Delete = 79;
+    /**
+     * Generated from protobuf enum <code>TeamApps_Get = 83 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const TeamApps_Get = 83;
+    /**
+     * Generated from protobuf enum <code>TeamApps_Add = 84 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = TeamApps_Get];</code>
+     */
+    const TeamApps_Add = 84;
+    /**
+     * Generated from protobuf enum <code>TeamApps_Delete = 85 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = TeamApps_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = TeamApps_Add];</code>
+     */
+    const TeamApps_Delete = 85;
+    /**
+     * Read from roles table
+     *
+     * Generated from protobuf enum <code>Roles_Get = 80 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const Roles_Get = 80;
+    /**
+     * Read from organizations table
+     *
+     * Generated from protobuf enum <code>Organizations_Get = 86 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const Organizations_Get = 86;
+    /**
+     * Write to organizations table
+     *
+     * Generated from protobuf enum <code>Organizations_Add = 87 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Organizations_Get];</code>
+     */
+    const Organizations_Add = 87;
+    /**
+     * To delete organizations we need read/write
+     *
+     * Generated from protobuf enum <code>Organizations_Delete = 88 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Organizations_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Organizations_Add];</code>
+     */
+    const Organizations_Delete = 88;
+    /**
+     * Read from identity_providers table
+     *
+     * Generated from protobuf enum <code>IdentityProviders_Get = 89 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const IdentityProviders_Get = 89;
+    /**
+     * Write to identity_providers table
+     *
+     * Generated from protobuf enum <code>IdentityProviders_Add = 90 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = IdentityProviders_Get];</code>
+     */
+    const IdentityProviders_Add = 90;
+    /**
+     * To delete identity_providers we need read/write
+     *
+     * Generated from protobuf enum <code>IdentityProviders_Delete = 91 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = IdentityProviders_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = IdentityProviders_Add];</code>
+     */
+    const IdentityProviders_Delete = 91;
+    /**
+     * Generated from protobuf enum <code>Org_ListAllApps = 92 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const Org_ListAllApps = 92;
+    /**
+     * Generated from protobuf enum <code>OrganizationMembers_Delete = 93 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const OrganizationMembers_Delete = 93;
+    /**
+     * Generated from protobuf enum <code>OrganizationMembers_Add = 94 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const OrganizationMembers_Add = 94;
+    /**
+     * Generated from protobuf enum <code>OrganizationMembers_List = 99 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const OrganizationMembers_List = 99;
+    /**
+     * Generated from protobuf enum <code>UserOrganizations_Get = 95 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const UserOrganizations_Get = 95;
+    /**
+     * Generated from protobuf enum <code>OrganizationInvitations_Add = 100 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const OrganizationInvitations_Add = 100;
+    /**
+     * Generated from protobuf enum <code>OrganizationInvitations_Get = 101 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const OrganizationInvitations_Get = 101;
     /**
      * CRUD on FindDuplicateAnnotationsJobs table
      *
@@ -443,6 +613,10 @@ class S
      * Generated from protobuf enum <code>Search = 3 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const Search = 3;
+    /**
+     * Generated from protobuf enum <code>Search_Feedback = 28 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = false];</code>
+     */
+    const Search_Feedback = 28;
     /**
      * To get a saved search.
      *
@@ -522,6 +696,7 @@ class S
         self::undef => 'undef',
         self::All => 'All',
         self::Predict => 'Predict',
+        self::Predict_Feedback => 'Predict_Feedback',
         self::Inputs_Add => 'Inputs_Add',
         self::Inputs_Get => 'Inputs_Get',
         self::Inputs_Patch => 'Inputs_Patch',
@@ -571,10 +746,41 @@ class S
         self::PasswordPolicies_Add => 'PasswordPolicies_Add',
         self::PasswordPolicies_Get => 'PasswordPolicies_Get',
         self::PasswordPolicies_Delete => 'PasswordPolicies_Delete',
+        self::PasswordHistory_Add => 'PasswordHistory_Add',
+        self::PasswordHistory_Get => 'PasswordHistory_Get',
+        self::PasswordHistory_Delete => 'PasswordHistory_Delete',
+        self::Notifications_Get => 'Notifications_Get',
+        self::Notifications_Add => 'Notifications_Add',
+        self::Notifications_Delete => 'Notifications_Delete',
         self::LabelOrders_Get => 'LabelOrders_Get',
         self::LabelOrders_Add => 'LabelOrders_Add',
         self::LabelOrders_Delete => 'LabelOrders_Delete',
         self::UserFeatureConfigs_Get => 'UserFeatureConfigs_Get',
+        self::UserFeatureConfigs_Add => 'UserFeatureConfigs_Add',
+        self::UserFeatureConfigs_Delete => 'UserFeatureConfigs_Delete',
+        self::Teams_Get => 'Teams_Get',
+        self::Teams_Add => 'Teams_Add',
+        self::Teams_Delete => 'Teams_Delete',
+        self::TeamUsers_Get => 'TeamUsers_Get',
+        self::TeamUsers_Add => 'TeamUsers_Add',
+        self::TeamUsers_Delete => 'TeamUsers_Delete',
+        self::TeamApps_Get => 'TeamApps_Get',
+        self::TeamApps_Add => 'TeamApps_Add',
+        self::TeamApps_Delete => 'TeamApps_Delete',
+        self::Roles_Get => 'Roles_Get',
+        self::Organizations_Get => 'Organizations_Get',
+        self::Organizations_Add => 'Organizations_Add',
+        self::Organizations_Delete => 'Organizations_Delete',
+        self::IdentityProviders_Get => 'IdentityProviders_Get',
+        self::IdentityProviders_Add => 'IdentityProviders_Add',
+        self::IdentityProviders_Delete => 'IdentityProviders_Delete',
+        self::Org_ListAllApps => 'Org_ListAllApps',
+        self::OrganizationMembers_Delete => 'OrganizationMembers_Delete',
+        self::OrganizationMembers_Add => 'OrganizationMembers_Add',
+        self::OrganizationMembers_List => 'OrganizationMembers_List',
+        self::UserOrganizations_Get => 'UserOrganizations_Get',
+        self::OrganizationInvitations_Add => 'OrganizationInvitations_Add',
+        self::OrganizationInvitations_Get => 'OrganizationInvitations_Get',
         self::FindDuplicateAnnotationsJobs_Add => 'FindDuplicateAnnotationsJobs_Add',
         self::FindDuplicateAnnotationsJobs_Get => 'FindDuplicateAnnotationsJobs_Get',
         self::FindDuplicateAnnotationsJobs_Delete => 'FindDuplicateAnnotationsJobs_Delete',
@@ -588,6 +794,7 @@ class S
         self::InstalledModuleVersions_Get => 'InstalledModuleVersions_Get',
         self::InstalledModuleVersions_Delete => 'InstalledModuleVersions_Delete',
         self::Search => 'Search',
+        self::Search_Feedback => 'Search_Feedback',
         self::SavedSearch_Get => 'SavedSearch_Get',
         self::SavedSearch_Add => 'SavedSearch_Add',
         self::SavedSearch_Delete => 'SavedSearch_Delete',

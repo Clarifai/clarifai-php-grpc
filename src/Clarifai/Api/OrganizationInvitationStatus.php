@@ -7,6 +7,8 @@ namespace Clarifai\Api;
 use UnexpectedValueException;
 
 /**
+ * OrganizationInvitationStatus
+ *
  * Protobuf type <code>clarifai.api.OrganizationInvitationStatus</code>
  */
 class OrganizationInvitationStatus

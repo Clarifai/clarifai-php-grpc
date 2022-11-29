@@ -7,6 +7,8 @@ namespace Clarifai\Api;
 use UnexpectedValueException;
 
 /**
+ * LicenseScope
+ *
  * Protobuf type <code>clarifai.api.LicenseScope</code>
  */
 class LicenseScope

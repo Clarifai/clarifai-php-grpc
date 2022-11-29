@@ -7,6 +7,14 @@ namespace Clarifai\Api;
 use UnexpectedValueException;
 
 /**
+ * For the concept-threshold model type we use these comparison.
+ * This is in the "concept_threshold_type" field of "infer_params" in the output config of
+ * the model.
+ * The json value can either be the integer field number:
+ *   {"infer_params": {"concept_threshold_type": 3}}
+ * Or the string field name:
+ *   {"infer_params": {"concept_threshold_type": "LESS_THAN"}}
+ *
  * Protobuf type <code>clarifai.api.ValueComparator</code>
  */
 class ValueComparator

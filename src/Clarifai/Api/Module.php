@@ -68,6 +68,13 @@ class Module extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string app_id = 10;</code>
      */
     protected $app_id = '';
+    /**
+     * A ModuleVersion which is used when listing modules to include the latest module version
+     * in the response.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ModuleVersion module_version = 11;</code>
+     */
+    protected $module_version = null;
 
     /**
      * Constructor.
@@ -96,6 +103,9 @@ class Module extends \Google\Protobuf\Internal\Message
      *           The creator of the app module.
      *     @type string $app_id
      *           The app_id this module was created in.
+     *     @type \Clarifai\Api\ModuleVersion $module_version
+     *           A ModuleVersion which is used when listing modules to include the latest module version
+     *           in the response.
      * }
      */
     public function __construct($data = NULL) {
@@ -357,6 +367,44 @@ class Module extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->app_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * A ModuleVersion which is used when listing modules to include the latest module version
+     * in the response.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ModuleVersion module_version = 11;</code>
+     * @return \Clarifai\Api\ModuleVersion|null
+     */
+    public function getModuleVersion()
+    {
+        return $this->module_version;
+    }
+
+    public function hasModuleVersion()
+    {
+        return isset($this->module_version);
+    }
+
+    public function clearModuleVersion()
+    {
+        unset($this->module_version);
+    }
+
+    /**
+     * A ModuleVersion which is used when listing modules to include the latest module version
+     * in the response.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ModuleVersion module_version = 11;</code>
+     * @param \Clarifai\Api\ModuleVersion $var
+     * @return $this
+     */
+    public function setModuleVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ModuleVersion::class);
+        $this->module_version = $var;
 
         return $this;
     }

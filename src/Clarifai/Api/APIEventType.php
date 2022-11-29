@@ -7,6 +7,8 @@ namespace Clarifai\Api;
 use UnexpectedValueException;
 
 /**
+ * APIEventType
+ *
  * Protobuf type <code>clarifai.api.APIEventType</code>
  */
 class APIEventType

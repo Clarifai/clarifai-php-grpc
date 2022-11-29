@@ -7,6 +7,8 @@ namespace Clarifai\Api;
 use UnexpectedValueException;
 
 /**
+ * This is expected to match EvaluationType in proto/predictor/predictor.proto
+ *
  * Protobuf type <code>clarifai.api.EvaluationType</code>
  */
 class EvaluationType

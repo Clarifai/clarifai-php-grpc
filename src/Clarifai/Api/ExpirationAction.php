@@ -7,6 +7,8 @@ namespace Clarifai\Api;
 use UnexpectedValueException;
 
 /**
+ * ExpirationAction
+ *
  * Protobuf type <code>clarifai.api.ExpirationAction</code>
  */
 class ExpirationAction

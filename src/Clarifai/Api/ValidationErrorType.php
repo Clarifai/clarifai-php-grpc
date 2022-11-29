@@ -7,6 +7,8 @@ namespace Clarifai\Api;
 use UnexpectedValueException;
 
 /**
+ * ValidationErrorType
+ *
  * Protobuf type <code>clarifai.api.ValidationErrorType</code>
  */
 class ValidationErrorType

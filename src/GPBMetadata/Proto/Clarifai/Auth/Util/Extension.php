@@ -18,9 +18,9 @@ class Extension
         \GPBMetadata\Proto\Clarifai\Auth\Types\Types::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ö
-(proto/clarifai/auth/util/extension.protoclarifai.auth.util%proto/clarifai/auth/types/types.proto google/protobuf/descriptor.protoBe
-com.clarifai.grpc.auth.utilPZ=github.com/Clarifai/clarifai-go-grpc/proto/clarifai/auth/util¢CAIPbproto3'
+Ë
+(proto/clarifai/auth/util/extension.protoclarifai.auth.util%proto/clarifai/auth/types/types.proto google/protobuf/descriptor.protoB:
+com.clarifai.grpc.auth.utilPZclarifai/auth/util¢CAIPbproto3'
         , true);
 
         static::$is_initialized = true;

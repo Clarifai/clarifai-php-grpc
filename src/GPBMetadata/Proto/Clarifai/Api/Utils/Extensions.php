@@ -16,9 +16,9 @@ class Extensions
         }
         $pool->internalAddGeneratedFile(
             '
-Ð
-)proto/clarifai/api/utils/extensions.protoclarifai.api.utils google/protobuf/descriptor.protoBe
-com.clarifai.grpc.api.utilsPZ=github.com/Clarifai/clarifai-go-grpc/proto/clarifai/api/utils¢CAIPbproto3'
+¥
+)proto/clarifai/api/utils/extensions.protoclarifai.api.utils google/protobuf/descriptor.protoB:
+com.clarifai.grpc.api.utilsPZclarifai/api/utils¢CAIPbproto3'
         , true);
 
         static::$is_initialized = true;

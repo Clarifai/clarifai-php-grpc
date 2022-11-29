@@ -1,27 +1,18 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
+// Original file comments:
+// ///////////////////////////////////////////// WARNING ///////////////////////////////////////////////
+// Be aware that if you decide to add comments to this or any other non-private file, they could     //
+// end up in our *public* auto-generated swagger documentation. In order to ensure that your         //
+// comments are not included in our swagger docs, put one line of whitespace between your comment    //
+// and any proto definitions.                                                                        //
+// /////////////////////////////////////////////////////////////////////////////////////////////////////
+//
 namespace Clarifai\Api;
 
 /**
- *
- * Note: this is based on the google api format defined here. Please
- * read this before contributing to this file and other *.proto files
- * for the API.
- * https://cloud.google.com/service-management/reference/rpc/google.api#google.api.HttpRule
- *
- * For the cl_depending_scopes in this file, see the docstring that explains the two types of
- * scope dependencies in clarifai/auth/scope/scope.proto
- *
- * For new endpoints you should typically only add the fully qualified url that includes the user_id
- * and app_id.
- *
- * You should typicaly use KeyAuth (the most restricted auth type) for new endpoints unless they are
- * for resources not contained in an app or need access from things across apps. See more about the
- * auth types here:
- * https://clarifai.atlassian.net/wiki/spaces/TT/pages/1821409336/API+Authorizers+and+Resource+Access
- *
- *
+ * V2
  */
 class V2Client extends \Grpc\BaseStub {
 
@@ -32,6 +23,21 @@ class V2Client extends \Grpc\BaseStub {
      */
     public function __construct($hostname, $opts, $channel = null) {
         parent::__construct($hostname, $opts, $channel);
+    }
+
+    /**
+     * Common echo example.
+     * @param \Clarifai\Api\TestMessage $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function Echo(\Clarifai\Api\TestMessage $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/Echo',
+        $argument,
+        ['\Clarifai\Api\TestMessage', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -189,6 +195,156 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Get a specific vocab from an app.
+     * @param \Clarifai\Api\GetVocabRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetVocab(\Clarifai\Api\GetVocabRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetVocab',
+        $argument,
+        ['\Clarifai\Api\SingleVocabResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all the vocabs.
+     * @param \Clarifai\Api\ListVocabsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListVocabs(\Clarifai\Api\ListVocabsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListVocabs',
+        $argument,
+        ['\Clarifai\Api\MultiVocabResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add a vocab to an app.
+     * @param \Clarifai\Api\PostVocabsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostVocabs(\Clarifai\Api\PostVocabsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostVocabs',
+        $argument,
+        ['\Clarifai\Api\MultiVocabResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Patch one or more vocabs.
+     * @param \Clarifai\Api\PatchVocabsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchVocabs(\Clarifai\Api\PatchVocabsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchVocabs',
+        $argument,
+        ['\Clarifai\Api\MultiVocabResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete a single vocab.
+     * @param \Clarifai\Api\DeleteVocabRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteVocab(\Clarifai\Api\DeleteVocabRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteVocab',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete multiple vocabs in one request.
+     * @param \Clarifai\Api\DeleteVocabsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteVocabs(\Clarifai\Api\DeleteVocabsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteVocabs',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all the vocabs.
+     * @param \Clarifai\Api\ListVocabConceptsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListVocabConcepts(\Clarifai\Api\ListVocabConceptsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListVocabConcepts',
+        $argument,
+        ['\Clarifai\Api\MultiConceptResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add a vocab to an app.
+     * @param \Clarifai\Api\PostVocabConceptsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostVocabConcepts(\Clarifai\Api\PostVocabConceptsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostVocabConcepts',
+        $argument,
+        ['\Clarifai\Api\MultiConceptResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete a single concept from a vocab.
+     * @param \Clarifai\Api\DeleteVocabConceptRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteVocabConcept(\Clarifai\Api\DeleteVocabConceptRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteVocabConcept',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete multiple concepts from a vocab in one request.
+     * @param \Clarifai\Api\DeleteVocabConceptsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteVocabConcepts(\Clarifai\Api\DeleteVocabConceptsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteVocabConcepts',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Get a specific concept from an app.
      * @param \Clarifai\Api\GetConceptLanguageRequest $argument input argument
      * @param array $metadata metadata
@@ -250,6 +406,45 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * TODO(zeiler): we don't have a way to delete the languages currently. This should be rare
+     * anyways as users should just patch translations to the right naming.
+     * // Delete a single concept translation.
+     * rpc DeleteConceptLanguage(DeleteConceptLanguageRequest) returns (clarifai.api.status.BaseResponse) {
+     *   option (google.api.http) = {
+     *     delete: "/v2/users/{user_app_id.user_id}/apps/{user_app_id.app_id}/concepts/{concept_id}/languages/{language}"
+     *     additional_bindings {
+     *       delete: "/v2/concepts/{concept_id}/languages/{language}"
+     *     }
+     *   };
+     * }
+     *
+     * // Delete multiple concept translations in one request.
+     * rpc DeleteConceptLanguages(DeleteConceptLanguagesRequest) returns (clarifai.api.status.BaseResponse) {
+     *   option (google.api.http) = {
+     *     delete: "/v2/users/{user_app_id.user_id}/apps/{user_app_id.app_id}/concepts/{concept_id}/languages"
+     *     body: "*"
+     *     additional_bindings {
+     *       delete: "/v2/concepts/{concept_id}/languages"
+     *       body: "*"
+     *     }
+     *   };
+     * }
+     *
+     * List the concept in all the outside sources where we found these concepts.
+     * @param \Clarifai\Api\ListConceptReferencesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListConceptReferences(\Clarifai\Api\ListConceptReferencesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListConceptReferences',
+        $argument,
+        ['\Clarifai\Api\MultiConceptReferenceResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * List all domain graphs.
      * @param \Clarifai\Api\ListKnowledgeGraphsRequest $argument input argument
      * @param array $metadata metadata
@@ -291,6 +486,36 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/PostConceptMappingJobs',
         $argument,
         ['\Clarifai\Api\MultiConceptMappingJobResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all concept mappings for a given concept id.
+     * @param \Clarifai\Api\ListConceptMappingsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListConceptMappings(\Clarifai\Api\ListConceptMappingsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListConceptMappings',
+        $argument,
+        ['\Clarifai\Api\MultiConceptMappingResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Post concept mappings.
+     * @param \Clarifai\Api\PostConceptMappingsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostConceptMappings(\Clarifai\Api\PostConceptMappingsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostConceptMappings',
+        $argument,
+        ['\Clarifai\Api\MultiConceptMappingResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -516,6 +741,52 @@ class V2Client extends \Grpc\BaseStub {
     public function PostInputs(\Clarifai\Api\PostInputsRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/clarifai.api.V2/PostInputs',
+        $argument,
+        ['\Clarifai\Api\MultiInputResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add an input (or set of inputs) to an app via a file.
+     * This is asynchronous.
+     * @param \Clarifai\Api\PostInputsFileRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostInputsFile(\Clarifai\Api\PostInputsFileRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostInputsFile',
+        $argument,
+        ['\Clarifai\Api\MultiInputResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add an input or set of inputs to an app designed for NiFi integration.
+     * @param \Clarifai\Api\PostInputsNiFiRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostInputsNiFi(\Clarifai\Api\PostInputsNiFiRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostInputsNiFi',
+        $argument,
+        ['\Clarifai\Api\MultiInputResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add an input or set of inputs to an app designed for Document integration.
+     * @param \Clarifai\Api\PostInputsDocumentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostInputsDocument(\Clarifai\Api\PostInputsDocumentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostInputsDocument',
         $argument,
         ['\Clarifai\Api\MultiInputResponse', 'decode'],
         $metadata, $options);
@@ -1323,6 +1594,36 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Add new reference(s) to a particular model
+     * @param \Clarifai\Api\PostModelReferencesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostModelReferences(\Clarifai\Api\PostModelReferencesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostModelReferences',
+        $argument,
+        ['\Clarifai\Api\MultiModelReferenceResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete model references tied to a model id by reference id.
+     * @param \Clarifai\Api\DeleteModelReferencesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteModelReferences(\Clarifai\Api\DeleteModelReferencesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteModelReferences',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * GetModelVersionInputExample
      * @param \Clarifai\Api\GetModelVersionInputExampleRequest $argument input argument
      * @param array $metadata metadata
@@ -1353,8 +1654,156 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * //////////////////////////////////////
-     *
+     * PostModelVersionInputExamples
+     * @param \Clarifai\Api\PostModelVersionInputExamplesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostModelVersionInputExamples(\Clarifai\Api\PostModelVersionInputExamplesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostModelVersionInputExamples',
+        $argument,
+        ['\Clarifai\Api\MultiModelVersionInputExampleResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * DeleteModelVersionInputExamples
+     * @param \Clarifai\Api\DeleteModelVersionInputExamplesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteModelVersionInputExamples(\Clarifai\Api\DeleteModelVersionInputExamplesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteModelVersionInputExamples',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Star a model
+     * @param \Clarifai\Api\PostModelStarsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostModelStars(\Clarifai\Api\PostModelStarsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostModelStars',
+        $argument,
+        ['\Clarifai\Api\MultiModelStarResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Un-star a model
+     * @param \Clarifai\Api\DeleteModelStarsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteModelStars(\Clarifai\Api\DeleteModelStarsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteModelStars',
+        $argument,
+        ['\Clarifai\Api\DeleteModelStarsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Star a user
+     * @param \Clarifai\Api\PostUserStarsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostUserStars(\Clarifai\Api\PostUserStarsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostUserStars',
+        $argument,
+        ['\Clarifai\Api\MultiUserStarResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Un-star a user
+     * @param \Clarifai\Api\DeleteUserStarsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteUserStars(\Clarifai\Api\DeleteUserStarsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteUserStars',
+        $argument,
+        ['\Clarifai\Api\DeleteUserStarsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Star a workflow
+     * @param \Clarifai\Api\PostWorkflowStarsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostWorkflowStars(\Clarifai\Api\PostWorkflowStarsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostWorkflowStars',
+        $argument,
+        ['\Clarifai\Api\MultiWorkflowStarResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Un-star a workflow
+     * @param \Clarifai\Api\DeleteWorkflowStarsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteWorkflowStars(\Clarifai\Api\DeleteWorkflowStarsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteWorkflowStars',
+        $argument,
+        ['\Clarifai\Api\DeleteWorkflowStarsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Star an app
+     * @param \Clarifai\Api\PostAppStarsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostAppStars(\Clarifai\Api\PostAppStarsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostAppStars',
+        $argument,
+        ['\Clarifai\Api\MultiAppStarResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Un-star an app
+     * @param \Clarifai\Api\DeleteAppStarsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteAppStars(\Clarifai\Api\DeleteAppStarsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteAppStars',
+        $argument,
+        ['\Clarifai\Api\DeleteAppStarsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * //////////////////////////////////////
      * Workflows
      * //////////////////////////////////////
@@ -1383,6 +1832,21 @@ class V2Client extends \Grpc\BaseStub {
     public function ListWorkflows(\Clarifai\Api\ListWorkflowsRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/clarifai.api.V2/ListWorkflows',
+        $argument,
+        ['\Clarifai\Api\MultiWorkflowResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all public workflows.
+     * @param \Clarifai\Api\ListPublicWorkflowsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListPublicWorkflows(\Clarifai\Api\ListPublicWorkflowsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListPublicWorkflows',
         $argument,
         ['\Clarifai\Api\MultiWorkflowResponse', 'decode'],
         $metadata, $options);
@@ -1550,6 +2014,81 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/PatchWorkflowVersions',
         $argument,
         ['\Clarifai\Api\MultiWorkflowVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Evaluate all the nodes in the workflow.
+     * @param \Clarifai\Api\PostWorkflowMetricsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostWorkflowMetrics(\Clarifai\Api\PostWorkflowMetricsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostWorkflowMetrics',
+        $argument,
+        ['\Clarifai\Api\MultiWorkflowMetricsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get workflow evaluation data.
+     * @param \Clarifai\Api\GetWorkflowMetricsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetWorkflowMetrics(\Clarifai\Api\GetWorkflowMetricsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetWorkflowMetrics',
+        $argument,
+        ['\Clarifai\Api\SingleWorkflowMetricsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * GetWorkflowNodeMetrics
+     * @param \Clarifai\Api\GetWorkflowNodeMetricsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetWorkflowNodeMetrics(\Clarifai\Api\GetWorkflowNodeMetricsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetWorkflowNodeMetrics',
+        $argument,
+        ['\Clarifai\Api\SingleWorkflowNodeMetricsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * ListWorkflowMetrics
+     * @param \Clarifai\Api\ListWorkflowMetricsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListWorkflowMetrics(\Clarifai\Api\ListWorkflowMetricsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListWorkflowMetrics',
+        $argument,
+        ['\Clarifai\Api\MultiWorkflowMetricsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete one or more workflow metrics.
+     * @param \Clarifai\Api\DeleteWorkflowMetricsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteWorkflowMetrics(\Clarifai\Api\DeleteWorkflowMetricsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteWorkflowMetrics',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -1815,6 +2354,22 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Patch app owner.
+     * The new app owner can only be an org, and the original owner must be a member of that org.
+     * @param \Clarifai\Api\PatchAppOwnerRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchAppOwner(\Clarifai\Api\PatchAppOwnerRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchAppOwner',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Search over the applications to find one or more you're looking for.
      * @param \Clarifai\Api\PostAppsSearchesRequest $argument input argument
      * @param array $metadata metadata
@@ -1830,6 +2385,176 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Get current user information
+     * @param \Clarifai\Api\GetUserRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetUser(\Clarifai\Api\GetUserRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetUser',
+        $argument,
+        ['\Clarifai\Api\SingleUserResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List users
+     * @param \Clarifai\Api\ListUsersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListUsers(\Clarifai\Api\ListUsersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListUsers',
+        $argument,
+        ['\Clarifai\Api\MultiUserResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Update gdpr fields of current user.
+     * @param \Clarifai\Api\PostUserConsentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostUserConsent(\Clarifai\Api\PostUserConsentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostUserConsent',
+        $argument,
+        ['\Clarifai\Api\SingleUserResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Patch information of current user or another user in the same organisation
+     * @param \Clarifai\Api\PatchUserRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchUser(\Clarifai\Api\PatchUserRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchUser',
+        $argument,
+        ['\Clarifai\Api\SingleUserResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Post user access request
+     * @param \Clarifai\Api\PostUserAccessRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostUserAccess(\Clarifai\Api\PostUserAccessRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostUserAccess',
+        $argument,
+        ['\Clarifai\Api\MultiUserAccessResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get user access request
+     * @param \Clarifai\Api\GetUserAccessRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetUserAccess(\Clarifai\Api\GetUserAccessRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetUserAccess',
+        $argument,
+        ['\Clarifai\Api\SingleUserAccessResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * //////////////////////////////////////
+     *
+     * //////////////////////////////////////
+     * Email
+     * //////////////////////////////////////
+     * Add Email
+     * @param \Clarifai\Api\PostEmailsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostEmails(\Clarifai\Api\PostEmailsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostEmails',
+        $argument,
+        ['\Clarifai\Api\MultipleEmailResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List emails
+     * @param \Clarifai\Api\ListEmailsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListEmails(\Clarifai\Api\ListEmailsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListEmails',
+        $argument,
+        ['\Clarifai\Api\MultipleEmailResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * For sending another verification email.
+     * @param \Clarifai\Api\PostResendVerifyRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostResendVerifyEmail(\Clarifai\Api\PostResendVerifyRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostResendVerifyEmail',
+        $argument,
+        ['\Clarifai\Api\SingleResendVerifyResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Deleting an email.
+     * @param \Clarifai\Api\DeleteEmailRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteEmail(\Clarifai\Api\DeleteEmailRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteEmail',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Create primate email.
+     * @param \Clarifai\Api\PostPrimaryEmailRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostPrimaryEmail(\Clarifai\Api\PostPrimaryEmailRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostPrimaryEmail',
+        $argument,
+        ['\Clarifai\Api\SingleEmailResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Validate new password in real-time for a user
      * @param \Clarifai\Api\PostValidatePasswordRequest $argument input argument
      * @param array $metadata metadata
@@ -1841,6 +2566,651 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/PostValidatePassword',
         $argument,
         ['\Clarifai\Api\SinglePasswordValidationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get global policy
+     * @param \Clarifai\Api\ListGlobalPasswordPoliciesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListGlobalPasswordPolicies(\Clarifai\Api\ListGlobalPasswordPoliciesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListGlobalPasswordPolicies',
+        $argument,
+        ['\Clarifai\Api\MultiplePasswordPoliciesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get a specific set of password policies attached to a user.
+     * @param \Clarifai\Api\ListPasswordPoliciesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListPasswordPolicies(\Clarifai\Api\ListPasswordPoliciesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListPasswordPolicies',
+        $argument,
+        ['\Clarifai\Api\MultiplePasswordPoliciesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Create a specific set of password policies attached to a user or an organization.
+     * @param \Clarifai\Api\PostPasswordPoliciesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostPasswordPolicies(\Clarifai\Api\PostPasswordPoliciesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostPasswordPolicies',
+        $argument,
+        ['\Clarifai\Api\MultiplePasswordPoliciesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Update a specific set of password policies attached to a user or an organization.
+     * @param \Clarifai\Api\PatchPasswordPoliciesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchPasswordPolicies(\Clarifai\Api\PatchPasswordPoliciesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchPasswordPolicies',
+        $argument,
+        ['\Clarifai\Api\MultiplePasswordPoliciesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * DeletePasswordPolicies
+     * @param \Clarifai\Api\DeletePasswordPoliciesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeletePasswordPolicies(\Clarifai\Api\DeletePasswordPoliciesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeletePasswordPolicies',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get user feature config
+     * @param \Clarifai\Api\UserFeatureConfigRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetUserFeatureConfig(\Clarifai\Api\UserFeatureConfigRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetUserFeatureConfig',
+        $argument,
+        ['\Clarifai\Api\SingleUserFeatureConfigResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add organizations
+     * @param \Clarifai\Api\PostOrganizationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostOrganizations(\Clarifai\Api\PostOrganizationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostOrganizations',
+        $argument,
+        ['\Clarifai\Api\MultiOrganizationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List the provided user's organizations with their roles
+     * @param \Clarifai\Api\ListUsersOrganizationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListUsersOrganizations(\Clarifai\Api\ListUsersOrganizationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListUsersOrganizations',
+        $argument,
+        ['\Clarifai\Api\MultiUsersOrganizationsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List multiple organizations
+     * @param \Clarifai\Api\ListOrganizationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListOrganizations(\Clarifai\Api\ListOrganizationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListOrganizations',
+        $argument,
+        ['\Clarifai\Api\MultiOrganizationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get single organization
+     * @param \Clarifai\Api\GetOrganizationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetOrganization(\Clarifai\Api\GetOrganizationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetOrganization',
+        $argument,
+        ['\Clarifai\Api\SingleOrganizationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Patch an organization
+     * @param \Clarifai\Api\PatchOrganizationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchOrganization(\Clarifai\Api\PatchOrganizationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchOrganization',
+        $argument,
+        ['\Clarifai\Api\SingleOrganizationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete an organization
+     * @param \Clarifai\Api\DeleteOrganizationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteOrganization(\Clarifai\Api\DeleteOrganizationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteOrganization',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List organization members
+     * @param \Clarifai\Api\ListOrganizationMembersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListOrganizationMembers(\Clarifai\Api\ListOrganizationMembersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListOrganizationMembers',
+        $argument,
+        ['\Clarifai\Api\MultiOrganizationMemberResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * ListOrganizationAppMembers
+     * @param \Clarifai\Api\ListOrganizationAppMembersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListOrganizationAppMembers(\Clarifai\Api\ListOrganizationAppMembersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListOrganizationAppMembers',
+        $argument,
+        ['\Clarifai\Api\MultiOrganizationMemberResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add new member to organization
+     * @param \Clarifai\Api\PostOrganizationMemberRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostOrganizationMember(\Clarifai\Api\PostOrganizationMemberRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostOrganizationMember',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * PatchOrganizationMember
+     * @param \Clarifai\Api\PatchOrganizationMembersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchOrganizationMember(\Clarifai\Api\PatchOrganizationMembersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchOrganizationMember',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Remove a member from organization
+     * @param \Clarifai\Api\DeleteOrganizationMemberRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteOrganizationMember(\Clarifai\Api\DeleteOrganizationMemberRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteOrganizationMember',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Organization invites
+     * @param \Clarifai\Api\PostOrganizationInvitationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostOrganizationInvitations(\Clarifai\Api\PostOrganizationInvitationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostOrganizationInvitations',
+        $argument,
+        ['\Clarifai\Api\MultiOrganizationInvitationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * PatchOrganizationInvitations
+     * @param \Clarifai\Api\PatchOrganizationInvitationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchOrganizationInvitations(\Clarifai\Api\PatchOrganizationInvitationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchOrganizationInvitations',
+        $argument,
+        ['\Clarifai\Api\MultiOrganizationInvitationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * ListOrganizationInvitations
+     * @param \Clarifai\Api\ListOrganizationInvitationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListOrganizationInvitations(\Clarifai\Api\ListOrganizationInvitationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListOrganizationInvitations',
+        $argument,
+        ['\Clarifai\Api\MultiOrganizationInvitationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * GetOrganizationInvitation
+     * @param \Clarifai\Api\GetOrganizationInvitationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetOrganizationInvitation(\Clarifai\Api\GetOrganizationInvitationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetOrganizationInvitation',
+        $argument,
+        ['\Clarifai\Api\SingleOrganizationInvitationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * PostDeclineOrganizationInvitation
+     * @param \Clarifai\Api\PostDeclineOrganizationInvitationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostDeclineOrganizationInvitation(\Clarifai\Api\PostDeclineOrganizationInvitationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostDeclineOrganizationInvitation',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * PostAcceptOrganizationInvitation
+     * @param \Clarifai\Api\PostAcceptOrganizationInvitationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostAcceptOrganizationInvitation(\Clarifai\Api\PostAcceptOrganizationInvitationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostAcceptOrganizationInvitation',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * GetOrganizationInvitationPublic
+     * @param \Clarifai\Api\GetOrganizationInvitationPublicRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetOrganizationInvitationPublic(\Clarifai\Api\GetOrganizationInvitationPublicRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetOrganizationInvitationPublic',
+        $argument,
+        ['\Clarifai\Api\SingleOrganizationInvitationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Leave an organization
+     * @param \Clarifai\Api\DeleteRequestingUserFromOrganizationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteRequestingUserFromOrganization(\Clarifai\Api\DeleteRequestingUserFromOrganizationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteRequestingUserFromOrganization',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add IdentityProviders
+     * @param \Clarifai\Api\PostIdentityProvidersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostIdentityProviders(\Clarifai\Api\PostIdentityProvidersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostIdentityProviders',
+        $argument,
+        ['\Clarifai\Api\MultiIdentityProviderResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List multiple IdentityProviders
+     * @param \Clarifai\Api\ListIdentityProvidersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListIdentityProviders(\Clarifai\Api\ListIdentityProvidersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListIdentityProviders',
+        $argument,
+        ['\Clarifai\Api\MultiIdentityProviderResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get single IdentityProvider
+     * @param \Clarifai\Api\GetIdentityProviderRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetIdentityProvider(\Clarifai\Api\GetIdentityProviderRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetIdentityProvider',
+        $argument,
+        ['\Clarifai\Api\SingleIdentityProviderResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Patch multiple IdentityProviders
+     * @param \Clarifai\Api\PatchIdentityProvidersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchIdentityProviders(\Clarifai\Api\PatchIdentityProvidersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchIdentityProviders',
+        $argument,
+        ['\Clarifai\Api\MultiIdentityProviderResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete multiple IdentityProviders
+     * @param \Clarifai\Api\DeleteIdentityProvidersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteIdentityProviders(\Clarifai\Api\DeleteIdentityProvidersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteIdentityProviders',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add teams
+     * @param \Clarifai\Api\PostTeamsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostTeams(\Clarifai\Api\PostTeamsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostTeams',
+        $argument,
+        ['\Clarifai\Api\MultiTeamResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List multiple teams
+     * @param \Clarifai\Api\ListTeamsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListTeams(\Clarifai\Api\ListTeamsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListTeams',
+        $argument,
+        ['\Clarifai\Api\MultiTeamResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get single team
+     * @param \Clarifai\Api\GetTeamRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetTeam(\Clarifai\Api\GetTeamRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetTeam',
+        $argument,
+        ['\Clarifai\Api\SingleTeamResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Patch multiple teams
+     * @param \Clarifai\Api\PatchTeamsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchTeams(\Clarifai\Api\PatchTeamsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchTeams',
+        $argument,
+        ['\Clarifai\Api\MultiTeamResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete multiple teams
+     * @param \Clarifai\Api\DeleteTeamsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteTeams(\Clarifai\Api\DeleteTeamsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteTeams',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add users to a team
+     * @param \Clarifai\Api\PostTeamUsersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostTeamUsers(\Clarifai\Api\PostTeamUsersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostTeamUsers',
+        $argument,
+        ['\Clarifai\Api\MultiTeamUserResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List team users
+     * @param \Clarifai\Api\ListTeamUsersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListTeamUsers(\Clarifai\Api\ListTeamUsersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListTeamUsers',
+        $argument,
+        ['\Clarifai\Api\MultiTeamUserResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete users from a team
+     * @param \Clarifai\Api\DeleteTeamUsersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteTeamUsers(\Clarifai\Api\DeleteTeamUsersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteTeamUsers',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add applications to team
+     * @param \Clarifai\Api\PostTeamAppsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostTeamApps(\Clarifai\Api\PostTeamAppsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostTeamApps',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List team applications
+     * @param \Clarifai\Api\ListTeamAppsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListTeamApps(\Clarifai\Api\ListTeamAppsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListTeamApps',
+        $argument,
+        ['\Clarifai\Api\MultiTeamAppsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Remove applications from team
+     * @param \Clarifai\Api\DeleteTeamAppsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteTeamApps(\Clarifai\Api\DeleteTeamAppsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteTeamApps',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List multiple roles
+     * @param \Clarifai\Api\ListRolesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListRoles(\Clarifai\Api\ListRolesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListRoles',
+        $argument,
+        ['\Clarifai\Api\MultiRoleResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get single role
+     * @param \Clarifai\Api\GetRoleRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetRole(\Clarifai\Api\GetRoleRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetRole',
+        $argument,
+        ['\Clarifai\Api\SingleRoleResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -1891,6 +3261,8 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * Execute a new search and optionally save it.
+     *
+     * Deprecated: Use PostInputsSearches or PostAnnotationsSearches instead.
      * @param \Clarifai\Api\PostSearchesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1995,6 +3367,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Execute an attribute search.
+     * @param \Clarifai\Api\PostAttributeSearchRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostAttributeSearch(\Clarifai\Api\PostAttributeSearchRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostAttributeSearch',
+        $argument,
+        ['\Clarifai\Api\MultiSearchResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * List all the annotation filters.
      * @param \Clarifai\Api\ListAnnotationFiltersRequest $argument input argument
      * @param array $metadata metadata
@@ -2070,6 +3457,459 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Get a list of clusters in an app
+     * @param \Clarifai\Api\ListClustersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListClusters(\Clarifai\Api\ListClustersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListClusters',
+        $argument,
+        ['\Clarifai\Api\MultiClusterResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all the annotations for a given cluster.
+     * @param \Clarifai\Api\ListAnnotationsForClusterRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListAnnotationsForCluster(\Clarifai\Api\ListAnnotationsForClusterRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListAnnotationsForCluster',
+        $argument,
+        ['\Clarifai\Api\MultiAnnotationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all the annotations for a given cluser.
+     * @param \Clarifai\Api\PostClustersSearchesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostClustersSearches(\Clarifai\Api\PostClustersSearchesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostClustersSearches',
+        $argument,
+        ['\Clarifai\Api\MultiClusterResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Verify email
+     * @param \Clarifai\Api\PostVerifyEmailRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostVerifyEmail(\Clarifai\Api\PostVerifyEmailRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostVerifyEmail',
+        $argument,
+        ['\Clarifai\Api\SingleVerifyEmailResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Request for password reset email
+     * @param \Clarifai\Api\RequestResetPasswordRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostRequestResetPassword(\Clarifai\Api\RequestResetPasswordRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostRequestResetPassword',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Complete reset password
+     * @param \Clarifai\Api\CompleteResetPasswordRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostCompleteResetPassword(\Clarifai\Api\CompleteResetPasswordRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostCompleteResetPassword',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Login with user/pass
+     * @param \Clarifai\Api\PostLoginRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostLogin(\Clarifai\Api\PostLoginRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostLogin',
+        $argument,
+        ['\Clarifai\Api\SingleLoginResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Signup with account.
+     * @param \Clarifai\Api\PostSignupRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostSignup(\Clarifai\Api\PostSignupRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostSignup',
+        $argument,
+        ['\Clarifai\Api\SingleLoginResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Logout use
+     * @param \Clarifai\Api\PostLogoutRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostLogout(\Clarifai\Api\PostLogoutRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostLogout',
+        $argument,
+        ['\Clarifai\Api\SingleLogoutResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List available authentication methods, e.g.
+     * * standard auth method - login using user & password
+     * * SAML auth methods - SSO using SAML Identity Providers like Okta, Github, Google GSuite, LinkedIn, etc.
+     * @param \Clarifai\Api\ListAuthMethodsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListAuthMethods(\Clarifai\Api\ListAuthMethodsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListAuthMethods',
+        $argument,
+        ['\Clarifai\Api\ListAuthMethodsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * ListOrgAuthMethods
+     * @param \Clarifai\Api\ListAuthMethodsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListOrgAuthMethods(\Clarifai\Api\ListAuthMethodsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListOrgAuthMethods',
+        $argument,
+        ['\Clarifai\Api\ListAuthMethodsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * ListOrgAuthMethods
+     * @param \Clarifai\Api\PostIdLoginFinalizerRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostIdLoginFinalizer(\Clarifai\Api\PostIdLoginFinalizerRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostIdLoginFinalizer',
+        $argument,
+        ['\Clarifai\Api\PostIdLoginFinalizerResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * PostLinkIdpUser
+     * @param \Clarifai\Api\PostLinkIdpUserRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostLinkIdpUser(\Clarifai\Api\PostLinkIdpUserRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostLinkIdpUser',
+        $argument,
+        ['\Clarifai\Api\PostLinkIdpUserResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * GetLoginInfo
+     * @param \Clarifai\Api\GetLoginInfoRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetLoginInfo(\Clarifai\Api\GetLoginInfoRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetLoginInfo',
+        $argument,
+        ['\Clarifai\Api\GetLoginInfoResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List available 2FA methods in current environment, e.g.
+     * * TOTP auth method - login layer using time synced  codes
+     * @param \Clarifai\Api\List2FAMethodsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListAuth2FAMethods(\Clarifai\Api\List2FAMethodsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListAuth2FAMethods',
+        $argument,
+        ['\Clarifai\Api\List2FAMethodsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Enable Clarifai TOTP 2FA
+     * @param \Clarifai\Api\PostAuth2FATotpRegisterEnableRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostAuth2FATotpRegisterEnable(\Clarifai\Api\PostAuth2FATotpRegisterEnableRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostAuth2FATotpRegisterEnable',
+        $argument,
+        ['\Clarifai\Api\PostAuth2FATotpRegisterEnableResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Verify Clarifai TOTP 2FA activation
+     * @param \Clarifai\Api\PostAuth2FATotpRegisterVerifyRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostAuth2FATotpRegisterVerify(\Clarifai\Api\PostAuth2FATotpRegisterVerifyRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostAuth2FATotpRegisterVerify',
+        $argument,
+        ['\Clarifai\Api\PostAuth2FATotpRegisterVerifyResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Disable Clarifai TOTP 2FA
+     * @param \Clarifai\Api\PostAuth2FATotpDisableRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostAuth2FATotpDisable(\Clarifai\Api\PostAuth2FATotpDisableRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostAuth2FATotpDisable',
+        $argument,
+        ['\Clarifai\Api\PostAuth2FATotpDisableResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Login with Clarifai TOTP 2FA activation
+     * @param \Clarifai\Api\PostAuth2FATotpLoginRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostAuth2FATotpLogin(\Clarifai\Api\PostAuth2FATotpLoginRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostAuth2FATotpLogin',
+        $argument,
+        ['\Clarifai\Api\SingleLoginResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Recover users Clarifai TOTP 2FA activation through sending an email confirmation.
+     * @param \Clarifai\Api\PostAuth2FATotpRecoverRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostAuth2FATotpRecover(\Clarifai\Api\PostAuth2FATotpRecoverRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostAuth2FATotpRecover',
+        $argument,
+        ['\Clarifai\Api\PostAuth2FATotpRecoverResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Confirm the recovery of users Clarifai TOTP 2FA. Will be called by user from email link (via portal).
+     * @param \Clarifai\Api\GetAuth2FATotpRecoverConfirmRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetAuth2FATotpRecoverConfirm(\Clarifai\Api\GetAuth2FATotpRecoverConfirmRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetAuth2FATotpRecoverConfirm',
+        $argument,
+        ['\Clarifai\Api\GetAuth2FATotpRecoverConfirmResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List the subscriptions.
+     * @param \Clarifai\Api\GetSubscriptionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetSubscription(\Clarifai\Api\GetSubscriptionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetSubscription',
+        $argument,
+        ['\Clarifai\Api\SingleSubscriptionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add a new subscription.
+     * @param \Clarifai\Api\PostSubscriptionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostSubscription(\Clarifai\Api\PostSubscriptionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostSubscription',
+        $argument,
+        ['\Clarifai\Api\SingleSubscriptionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all credit cards.
+     * @param \Clarifai\Api\ListCreditCardsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListCreditCards(\Clarifai\Api\ListCreditCardsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListCreditCards',
+        $argument,
+        ['\Clarifai\Api\MultipleCreditCardResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add a new credit card.
+     * @param \Clarifai\Api\PostCreditCardRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostCreditCard(\Clarifai\Api\PostCreditCardRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostCreditCard',
+        $argument,
+        ['\Clarifai\Api\SingleCreditCardResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete a credit card.
+     * @param \Clarifai\Api\DeleteCreditCardRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteCreditCard(\Clarifai\Api\DeleteCreditCardRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteCreditCard',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Update a credit card.
+     * @param \Clarifai\Api\PatchCreditCardsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchCreditCards(\Clarifai\Api\PatchCreditCardsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchCreditCards',
+        $argument,
+        ['\Clarifai\Api\MultipleCreditCardResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get the shipping address.
+     * @param \Clarifai\Api\GetShippingAddressRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetShippingAddress(\Clarifai\Api\GetShippingAddressRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetShippingAddress',
+        $argument,
+        ['\Clarifai\Api\SingleShippingAddressResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Update shipping address.
+     * @param \Clarifai\Api\PutShippingAddressRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PutShippingAddress(\Clarifai\Api\PutShippingAddressRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PutShippingAddress',
+        $argument,
+        ['\Clarifai\Api\SingleShippingAddressResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * ListPlans
+     * @param \Clarifai\Api\ListPlansRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListPlans(\Clarifai\Api\ListPlansRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListPlans',
+        $argument,
+        ['\Clarifai\Api\MultiPlanResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * List all status codes.
      * @param \Clarifai\Api\ListStatusCodesRequest $argument input argument
      * @param array $metadata metadata
@@ -2096,6 +3936,141 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/GetStatusCode',
         $argument,
         ['\Clarifai\Api\SingleStatusCodeResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Health check endpoint
+     * @param \Clarifai\Api\GetHealthzRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetHealthz(\Clarifai\Api\GetHealthzRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetHealthz',
+        $argument,
+        ['\Clarifai\Api\GetHealthzResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all billing  cycles - old billing
+     * @param \Clarifai\Api\ListUserBillingCyclesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListUserBillingCycles(\Clarifai\Api\ListUserBillingCyclesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListUserBillingCycles',
+        $argument,
+        ['\Clarifai\Api\ListUserBillingCyclesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List user usage.cycles.
+     * @param \Clarifai\Api\ListUserCyclesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListUserCycles(\Clarifai\Api\ListUserCyclesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListUserCycles',
+        $argument,
+        ['\Clarifai\Api\ListUserCyclesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Gets the billing cycle start and end date as well as invoice items.
+     * @param \Clarifai\Api\GetBillingUsageRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetBillingUsage(\Clarifai\Api\GetBillingUsageRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetBillingUsage',
+        $argument,
+        ['\Clarifai\Api\GetBillingUsageResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add historical usage. - Billing 1
+     * @param \Clarifai\Api\PostHistoricalUsageRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostHistoricalUsage(\Clarifai\Api\PostHistoricalUsageRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostHistoricalUsage',
+        $argument,
+        ['\Clarifai\Api\PostHistoricalUsageResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get historical usage. - Billing 2
+     * @param \Clarifai\Api\GetHistoricalUsageRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetHistoricalUsage(\Clarifai\Api\GetHistoricalUsageRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetHistoricalUsage',
+        $argument,
+        ['\Clarifai\Api\GetHistoricalUsageResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get a list of valid usage intervals
+     * @param \Clarifai\Api\ListUsageIntervalsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListUsageIntervals(\Clarifai\Api\ListUsageIntervalsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListUsageIntervals',
+        $argument,
+        ['\Clarifai\Api\ListUsageIntervalsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get realtime usage.
+     * @param \Clarifai\Api\GetRealtimeUsageRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetRealtimeUsage(\Clarifai\Api\GetRealtimeUsageRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetRealtimeUsage',
+        $argument,
+        ['\Clarifai\Api\GetRealtimeUsageResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Post usage to platform. Only called by on prem now.
+     * @param \Clarifai\Api\PostUsageRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostUsage(\Clarifai\Api\PostUsageRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostUsage',
+        $argument,
+        ['\Clarifai\Api\PostUsageResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -2171,6 +4146,66 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/ListCollaborations',
         $argument,
         ['\Clarifai\Api\MultiCollaborationsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get the license with crypto security.
+     * @param \Clarifai\Api\FetchLicenseRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function FetchLicense(\Clarifai\Api\FetchLicenseRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/FetchLicense',
+        $argument,
+        ['\Clarifai\Api\FetchLicenseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all licenses.
+     * @param \Clarifai\Api\ListLicensesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListLicenses(\Clarifai\Api\ListLicensesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListLicenses',
+        $argument,
+        ['\Clarifai\Api\MultipleLicensesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get a license
+     * @param \Clarifai\Api\GetLicenseRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetLicense(\Clarifai\Api\GetLicenseRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetLicense',
+        $argument,
+        ['\Clarifai\Api\SingleLicenseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Check that a license is still valid.
+     * @param \Clarifai\Api\ValidateLicenseRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ValidateLicense(\Clarifai\Api\ValidateLicenseRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ValidateLicense',
+        $argument,
+        ['\Clarifai\Api\ValidateLicenseResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -2320,6 +4355,21 @@ class V2Client extends \Grpc\BaseStub {
     public function DeleteTasks(\Clarifai\Api\DeleteTasksRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/clarifai.api.V2/DeleteTasks',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Rollup annotation count for task.
+     * @param \Clarifai\Api\PatchAnnotationCountsRollupRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchAnnotationCountsRollup(\Clarifai\Api\PatchAnnotationCountsRollupRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchAnnotationCountsRollup',
         $argument,
         ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);
@@ -2517,6 +4567,96 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Add a new analytics entry into our database
+     * @param \Clarifai\Api\PostAnalyticsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostAnalytics(\Clarifai\Api\PostAnalyticsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostAnalytics',
+        $argument,
+        ['\Clarifai\Api\PostAnalyticsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add a new sdk_billing entry into our database
+     * @param \Clarifai\Api\PostSDKBillingRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostSDKBilling(\Clarifai\Api\PostSDKBillingRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostSDKBilling',
+        $argument,
+        ['\Clarifai\Api\PostSDKBillingResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Find annotations duplicates based on an specified attribute of different annotations
+     * @param \Clarifai\Api\PostFindDuplicateAnnotationsJobsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostFindDuplicateAnnotationsJobs(\Clarifai\Api\PostFindDuplicateAnnotationsJobsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostFindDuplicateAnnotationsJobs',
+        $argument,
+        ['\Clarifai\Api\MultiFindDuplicateAnnotationsJobResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get annotations find duplicates jobs results by id
+     * @param \Clarifai\Api\GetFindDuplicateAnnotationsJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetFindDuplicateAnnotationsJob(\Clarifai\Api\GetFindDuplicateAnnotationsJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetFindDuplicateAnnotationsJob',
+        $argument,
+        ['\Clarifai\Api\SingleFindDuplicateAnnotationsJobResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all the annotations find duplicates jobs results
+     * @param \Clarifai\Api\ListFindDuplicateAnnotationsJobsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListFindDuplicateAnnotationsJobs(\Clarifai\Api\ListFindDuplicateAnnotationsJobsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListFindDuplicateAnnotationsJobs',
+        $argument,
+        ['\Clarifai\Api\MultiFindDuplicateAnnotationsJobResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * DeleteFindDuplicateAnnotationsJobs
+     * @param \Clarifai\Api\DeleteFindDuplicateAnnotationsJobsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteFindDuplicateAnnotationsJobs(\Clarifai\Api\DeleteFindDuplicateAnnotationsJobsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteFindDuplicateAnnotationsJobs',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Increase the view metric for a detail view
      * @param \Clarifai\Api\PostTrendingMetricsViewRequest $argument input argument
      * @param array $metadata metadata
@@ -2543,6 +4683,96 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/ListTrendingMetricsViews',
         $argument,
         ['\Clarifai\Api\MultiTrendingMetricsViewResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Validates the ids (app and user supported), returns validation errors and recommendations
+     * @param \Clarifai\Api\PostIdValidationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostIdValidation(\Clarifai\Api\PostIdValidationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostIdValidation',
+        $argument,
+        ['\Clarifai\Api\MultiIdValidationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all the available tags for specified object_type grouped by category
+     * @param \Clarifai\Api\ListTagCategoriesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListTagCategories(\Clarifai\Api\ListTagCategoriesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListTagCategories',
+        $argument,
+        ['\Clarifai\Api\MultiTagCategoryResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List users web notifications
+     * @param \Clarifai\Api\ListWebNotificationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListWebNotifications(\Clarifai\Api\ListWebNotificationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListWebNotifications',
+        $argument,
+        ['\Clarifai\Api\MultiWebNotificationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get a web notification
+     * @param \Clarifai\Api\GetWebNotificationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetWebNotification(\Clarifai\Api\GetWebNotificationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetWebNotification',
+        $argument,
+        ['\Clarifai\Api\SingleWebNotificationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Update users web notifications
+     * @param \Clarifai\Api\PatchWebNotificationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchWebNotifications(\Clarifai\Api\PatchWebNotificationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchWebNotifications',
+        $argument,
+        ['\Clarifai\Api\MultiWebNotificationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete users web notifications
+     * @param \Clarifai\Api\DeleteWebNotificationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteWebNotifications(\Clarifai\Api\DeleteWebNotificationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteWebNotifications',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -2852,6 +5082,82 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * List next non-labeled and unassigned inputs from task's dataset
+     * @param \Clarifai\Api\ListNextTaskAssignmentsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListNextTaskAssignments(\Clarifai\Api\ListNextTaskAssignmentsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListNextTaskAssignments',
+        $argument,
+        ['\Clarifai\Api\MultiInputResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * PutTaskAssignments evaluates all the annotations by labeler (authenticated user) for given task (task_id) and input (input_id).
+     * @param \Clarifai\Api\PutTaskAssignmentsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PutTaskAssignments(\Clarifai\Api\PutTaskAssignmentsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PutTaskAssignments',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * PostWaitlistEmails adds new e-mail addresses to a feature waiting list.
+     * @param \Clarifai\Api\PostWaitlistEmailsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostWaitlistEmails(\Clarifai\Api\PostWaitlistEmailsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostWaitlistEmails',
+        $argument,
+        ['\Clarifai\Api\MultiWaitlistEmailResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * GetSampledPredictResults get sampled prediction metrics by model id
+     * @param \Clarifai\Api\GetSampledPredictMetricsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetSampledPredictMetrics(\Clarifai\Api\GetSampledPredictMetricsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetSampledPredictMetrics',
+        $argument,
+        ['\Clarifai\Api\MultiSampledPredictMetricsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Create a job to add inputs from a cloud storage to an app on the clarifai platform
+     * This is an Asynchronous process. Use ListInputsAddJobs or GetInputsJob to check the status.
+     * @param \Clarifai\Api\PostInputsAddJobsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostInputsAddJobs(\Clarifai\Api\PostInputsAddJobsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostInputsAddJobs',
+        $argument,
+        ['\Clarifai\Api\MultiInputsAddJobResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * List all the inputs add jobs
      * @param \Clarifai\Api\ListInputsAddJobsRequest $argument input argument
      * @param array $metadata metadata
@@ -2876,6 +5182,21 @@ class V2Client extends \Grpc\BaseStub {
     public function GetInputsAddJob(\Clarifai\Api\GetInputsAddJobRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/clarifai.api.V2/GetInputsAddJob',
+        $argument,
+        ['\Clarifai\Api\SingleInputsAddJobResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * cancel the input add job by ID
+     * @param \Clarifai\Api\CancelInputsAddJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CancelInputsAddJob(\Clarifai\Api\CancelInputsAddJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/CancelInputsAddJob',
         $argument,
         ['\Clarifai\Api\SingleInputsAddJobResponse', 'decode'],
         $metadata, $options);

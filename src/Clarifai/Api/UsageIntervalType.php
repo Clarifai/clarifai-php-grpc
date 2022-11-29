@@ -7,6 +7,8 @@ namespace Clarifai\Api;
 use UnexpectedValueException;
 
 /**
+ * UsageIntervalType
+ *
  * Protobuf type <code>clarifai.api.UsageIntervalType</code>
  */
 class UsageIntervalType

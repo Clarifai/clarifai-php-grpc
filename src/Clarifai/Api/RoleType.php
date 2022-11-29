@@ -7,6 +7,8 @@ namespace Clarifai\Api;
 use UnexpectedValueException;
 
 /**
+ * RoleType
+ *
  * Protobuf type <code>clarifai.api.RoleType</code>
  */
 class RoleType

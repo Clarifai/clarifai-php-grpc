@@ -7,6 +7,8 @@ namespace Clarifai\Api;
 use UnexpectedValueException;
 
 /**
+ * StatTimeAggType
+ *
  * Protobuf type <code>clarifai.api.StatTimeAggType</code>
  */
 class StatTimeAggType
