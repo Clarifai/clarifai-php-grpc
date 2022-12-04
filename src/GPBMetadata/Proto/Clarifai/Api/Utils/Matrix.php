@@ -16,12 +16,12 @@ class Matrix
         }
         $pool->internalAddGeneratedFile(
             '
-¥
+Ð
 %proto/clarifai/api/utils/matrix.proto",
 MatrixUint64
 n_cols (
-data (BF
-utilsZ=github.com/Clarifai/clarifai-go-grpc/proto/clarifai/api/utilsbproto3'
+data (Bq
+utilsZhgithub.com/Clarifai/clarifai-go-grpc/proto/github.com/Clarifai/clarifai-go-grpc/proto/clarifai/api/utilsbproto3'
         , true);
 
         static::$is_initialized = true;
