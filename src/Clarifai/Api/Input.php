@@ -52,7 +52,10 @@ class Input extends \Google\Protobuf\Internal\Message
     protected $status = null;
     /**
      * List of dataset IDs that this input is part of
-     * Currently, this field is ONLY used in search.
+     * Currently, this field is ONLY used to
+     * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+     * * to add inputs to dataset(s) in `PostInputs` endpoint.
+     * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
      *
      * Generated from protobuf field <code>repeated string dataset_ids = 7;</code>
      */
@@ -81,7 +84,10 @@ class Input extends \Google\Protobuf\Internal\Message
      *           partial failures.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $dataset_ids
      *           List of dataset IDs that this input is part of
-     *           Currently, this field is ONLY used in search.
+     *           Currently, this field is ONLY used to
+     *           * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+     *           * to add inputs to dataset(s) in `PostInputs` endpoint.
+     *           Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
      * }
      */
     public function __construct($data = NULL) {
@@ -271,7 +277,10 @@ class Input extends \Google\Protobuf\Internal\Message
 
     /**
      * List of dataset IDs that this input is part of
-     * Currently, this field is ONLY used in search.
+     * Currently, this field is ONLY used to
+     * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+     * * to add inputs to dataset(s) in `PostInputs` endpoint.
+     * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
      *
      * Generated from protobuf field <code>repeated string dataset_ids = 7;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -283,7 +292,10 @@ class Input extends \Google\Protobuf\Internal\Message
 
     /**
      * List of dataset IDs that this input is part of
-     * Currently, this field is ONLY used in search.
+     * Currently, this field is ONLY used to
+     * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+     * * to add inputs to dataset(s) in `PostInputs` endpoint.
+     * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
      *
      * Generated from protobuf field <code>repeated string dataset_ids = 7;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var

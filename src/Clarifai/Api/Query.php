@@ -18,8 +18,11 @@ class Query extends \Google\Protobuf\Internal\Message
     /**
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.And ands = 1;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
+     * @deprecated
      */
     private $ands;
     /**
@@ -54,6 +57,8 @@ class Query extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\PBAnd[]|\Google\Protobuf\Internal\RepeatedField $ands
      *           The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      *           results which are returned to the user as Hit messages.
+     *           Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     *           and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      *     @type string $language
      *           This allows the query to override any default language the app was setup in when doing Concept
      *           based searches. This currently only affects public Models Output searches when those public
@@ -74,25 +79,33 @@ class Query extends \Google\Protobuf\Internal\Message
     /**
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.And ands = 1;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getAnds()
     {
+        @trigger_error('ands is deprecated.', E_USER_DEPRECATED);
         return $this->ands;
     }
 
     /**
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.And ands = 1;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      * @param \Clarifai\Api\PBAnd[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setAnds($var)
     {
+        @trigger_error('ands is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\PBAnd::class);
         $this->ands = $arr;
 

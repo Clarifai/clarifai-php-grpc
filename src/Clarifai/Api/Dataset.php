@@ -84,7 +84,8 @@ class Dataset extends \Google\Protobuf\Internal\Message
      */
     protected $notes = '';
     /**
-     * Dataset version associated with this dataset.
+     * Dataset version associated with this dataset. This is used in listing Datasets
+     * and including the latest version.
      *
      * Generated from protobuf field <code>.clarifai.api.DatasetVersion version = 13;</code>
      */
@@ -125,7 +126,8 @@ class Dataset extends \Google\Protobuf\Internal\Message
      *           Notes for the dataset
      *           This field should be used for in-depth notes and supports up to 64Kbs.
      *     @type \Clarifai\Api\DatasetVersion $version
-     *           Dataset version associated with this dataset.
+     *           Dataset version associated with this dataset. This is used in listing Datasets
+     *           and including the latest version.
      * }
      */
     public function __construct($data = NULL) {
@@ -460,7 +462,8 @@ class Dataset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Dataset version associated with this dataset.
+     * Dataset version associated with this dataset. This is used in listing Datasets
+     * and including the latest version.
      *
      * Generated from protobuf field <code>.clarifai.api.DatasetVersion version = 13;</code>
      * @return \Clarifai\Api\DatasetVersion|null
@@ -481,7 +484,8 @@ class Dataset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Dataset version associated with this dataset.
+     * Dataset version associated with this dataset. This is used in listing Datasets
+     * and including the latest version.
      *
      * Generated from protobuf field <code>.clarifai.api.DatasetVersion version = 13;</code>
      * @param \Clarifai\Api\DatasetVersion $var
