@@ -17,14 +17,16 @@ class DatasetVersionExportFormat
     const DATASET_VERSION_EXPORT_FORMAT_NOT_SET = 0;
     /**
      * CLARIFAI_DATA_PROTOBUF is the proprietary Clarifai API Data format. It
-     * is a ZIP-archive containing batches of serialized Data protobuf messages.
+     * is a ZIP-archive containing batches of serialized InputBatch protobuf messages.
+     * Note that only the "id" and "data" fields of exported inputs are set.
      *
      * Generated from protobuf enum <code>CLARIFAI_DATA_PROTOBUF = 1;</code>
      */
     const CLARIFAI_DATA_PROTOBUF = 1;
     /**
      * CLARIFAI_DATA_JSON is the proprietary Clarifai API Data format in JSON. It
-     * is a ZIP-archive containing batches of serialized Data JSON messages.
+     * is a ZIP-archive containing batches of serialized InputBatch JSON messages.
+     * Note that only the "id" and "data" fields of exported inputs are set.
      *
      * Generated from protobuf enum <code>CLARIFAI_DATA_JSON = 3;</code>
      */

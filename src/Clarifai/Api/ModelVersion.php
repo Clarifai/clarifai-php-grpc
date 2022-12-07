@@ -104,6 +104,30 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
      */
     protected $dataset_version = null;
+    /**
+     * Info about the model's output and configuration.
+     *
+     * Generated from protobuf field <code>.clarifai.api.OutputInfo output_info = 19;</code>
+     */
+    protected $output_info = null;
+    /**
+     * Info about the models' input and configuration of them.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputInfo input_info = 20;</code>
+     */
+    protected $input_info = null;
+    /**
+     * Configuration for the training process of this model.
+     *
+     * Generated from protobuf field <code>.clarifai.api.TrainInfo train_info = 21;</code>
+     */
+    protected $train_info = null;
+    /**
+     * Configuration used to import model from third-party toolkits
+     *
+     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     */
+    protected $import_info = null;
 
     /**
      * Constructor.
@@ -141,6 +165,14 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *     @type string $license
      *     @type \Clarifai\Api\DatasetVersion $dataset_version
      *           Dataset version used to create this model version.
+     *     @type \Clarifai\Api\OutputInfo $output_info
+     *           Info about the model's output and configuration.
+     *     @type \Clarifai\Api\InputInfo $input_info
+     *           Info about the models' input and configuration of them.
+     *     @type \Clarifai\Api\TrainInfo $train_info
+     *           Configuration for the training process of this model.
+     *     @type \Clarifai\Api\ImportInfo $import_info
+     *           Configuration used to import model from third-party toolkits
      * }
      */
     public function __construct($data = NULL) {
@@ -636,6 +668,150 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersion::class);
         $this->dataset_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Info about the model's output and configuration.
+     *
+     * Generated from protobuf field <code>.clarifai.api.OutputInfo output_info = 19;</code>
+     * @return \Clarifai\Api\OutputInfo|null
+     */
+    public function getOutputInfo()
+    {
+        return $this->output_info;
+    }
+
+    public function hasOutputInfo()
+    {
+        return isset($this->output_info);
+    }
+
+    public function clearOutputInfo()
+    {
+        unset($this->output_info);
+    }
+
+    /**
+     * Info about the model's output and configuration.
+     *
+     * Generated from protobuf field <code>.clarifai.api.OutputInfo output_info = 19;</code>
+     * @param \Clarifai\Api\OutputInfo $var
+     * @return $this
+     */
+    public function setOutputInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\OutputInfo::class);
+        $this->output_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Info about the models' input and configuration of them.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputInfo input_info = 20;</code>
+     * @return \Clarifai\Api\InputInfo|null
+     */
+    public function getInputInfo()
+    {
+        return $this->input_info;
+    }
+
+    public function hasInputInfo()
+    {
+        return isset($this->input_info);
+    }
+
+    public function clearInputInfo()
+    {
+        unset($this->input_info);
+    }
+
+    /**
+     * Info about the models' input and configuration of them.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputInfo input_info = 20;</code>
+     * @param \Clarifai\Api\InputInfo $var
+     * @return $this
+     */
+    public function setInputInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\InputInfo::class);
+        $this->input_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Configuration for the training process of this model.
+     *
+     * Generated from protobuf field <code>.clarifai.api.TrainInfo train_info = 21;</code>
+     * @return \Clarifai\Api\TrainInfo|null
+     */
+    public function getTrainInfo()
+    {
+        return $this->train_info;
+    }
+
+    public function hasTrainInfo()
+    {
+        return isset($this->train_info);
+    }
+
+    public function clearTrainInfo()
+    {
+        unset($this->train_info);
+    }
+
+    /**
+     * Configuration for the training process of this model.
+     *
+     * Generated from protobuf field <code>.clarifai.api.TrainInfo train_info = 21;</code>
+     * @param \Clarifai\Api\TrainInfo $var
+     * @return $this
+     */
+    public function setTrainInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\TrainInfo::class);
+        $this->train_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Configuration used to import model from third-party toolkits
+     *
+     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * @return \Clarifai\Api\ImportInfo|null
+     */
+    public function getImportInfo()
+    {
+        return $this->import_info;
+    }
+
+    public function hasImportInfo()
+    {
+        return isset($this->import_info);
+    }
+
+    public function clearImportInfo()
+    {
+        unset($this->import_info);
+    }
+
+    /**
+     * Configuration used to import model from third-party toolkits
+     *
+     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * @param \Clarifai\Api\ImportInfo $var
+     * @return $this
+     */
+    public function setImportInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ImportInfo::class);
+        $this->import_info = $var;
 
         return $this;
     }

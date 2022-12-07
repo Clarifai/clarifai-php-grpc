@@ -1891,6 +1891,8 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * Execute a new search and optionally save it.
+     *
+     * Deprecated: Use PostInputsSearches or PostAnnotationsSearches instead.
      * @param \Clarifai\Api\PostSearchesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
