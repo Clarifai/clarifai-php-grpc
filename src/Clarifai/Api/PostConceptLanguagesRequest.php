@@ -36,7 +36,7 @@ class PostConceptLanguagesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $concept_id
-     *     @type \Clarifai\Api\ConceptLanguage[]|\Google\Protobuf\Internal\RepeatedField $concept_languages
+     *     @type array<\Clarifai\Api\ConceptLanguage>|\Google\Protobuf\Internal\RepeatedField $concept_languages
      * }
      */
     public function __construct($data = NULL) {
@@ -109,7 +109,7 @@ class PostConceptLanguagesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.ConceptLanguage concept_languages = 3;</code>
-     * @param \Clarifai\Api\ConceptLanguage[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ConceptLanguage>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConceptLanguages($var)

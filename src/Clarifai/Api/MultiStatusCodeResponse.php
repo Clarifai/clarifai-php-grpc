@@ -31,7 +31,7 @@ class MultiStatusCodeResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\Status\Status[]|\Google\Protobuf\Internal\RepeatedField $statuses
+     *     @type array<\Clarifai\Api\Status\Status>|\Google\Protobuf\Internal\RepeatedField $statuses
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiStatusCodeResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.status.Status statuses = 2;</code>
-     * @param \Clarifai\Api\Status\Status[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Status\Status>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setStatuses($var)

@@ -52,7 +52,7 @@ class HostedURL extends \Google\Protobuf\Internal\Message
      *           Prefix of the URL of every hosted image.
      *     @type string $suffix
      *           Suffix of an image stored in different sizes.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $sizes
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $sizes
      *           The sizes field lists which images of the different sizes are hosted in our storage. The URL
      *           of each hosted image can be obtained by joining the prefix, one of the sizes and suffix.
      *     @type string $crossorigin
@@ -134,7 +134,7 @@ class HostedURL extends \Google\Protobuf\Internal\Message
      * of each hosted image can be obtained by joining the prefix, one of the sizes and suffix.
      *
      * Generated from protobuf field <code>repeated string sizes = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSizes($var)

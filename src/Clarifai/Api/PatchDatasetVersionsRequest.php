@@ -48,7 +48,7 @@ class PatchDatasetVersionsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $dataset_id
      *           Identify dataset by id.
-     *     @type \Clarifai\Api\DatasetVersion[]|\Google\Protobuf\Internal\RepeatedField $dataset_versions
+     *     @type array<\Clarifai\Api\DatasetVersion>|\Google\Protobuf\Internal\RepeatedField $dataset_versions
      *           List of dataset versions that are requested to be updated.
      *     @type string $action
      *           The action to perform on the patched objects
@@ -133,7 +133,7 @@ class PatchDatasetVersionsRequest extends \Google\Protobuf\Internal\Message
      * List of dataset versions that are requested to be updated.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.DatasetVersion dataset_versions = 3;</code>
-     * @param \Clarifai\Api\DatasetVersion[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\DatasetVersion>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDatasetVersions($var)

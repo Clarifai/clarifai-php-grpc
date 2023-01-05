@@ -29,7 +29,7 @@ class MultiDatasetVersionMetricsGroupResponse extends \Google\Protobuf\Internal\
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\DatasetVersionMetricsGroup[]|\Google\Protobuf\Internal\RepeatedField $dataset_version_metrics_groups
+     *     @type array<\Clarifai\Api\DatasetVersionMetricsGroup>|\Google\Protobuf\Internal\RepeatedField $dataset_version_metrics_groups
      * }
      */
     public function __construct($data = NULL) {
@@ -80,7 +80,7 @@ class MultiDatasetVersionMetricsGroupResponse extends \Google\Protobuf\Internal\
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.DatasetVersionMetricsGroup dataset_version_metrics_groups = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\DatasetVersionMetricsGroup[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\DatasetVersionMetricsGroup>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDatasetVersionMetricsGroups($var)

@@ -41,7 +41,7 @@ class AiAssistParameters extends \Google\Protobuf\Internal\Message
      *     @type float $min_threshold
      *           Min and max threshold values for approving annotations by default based on prediction score
      *     @type float $max_threshold
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $concept_relation_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $concept_relation_ids
      *           ids of concept relations. Used in AI assist workflow
      * }
      */
@@ -113,7 +113,7 @@ class AiAssistParameters extends \Google\Protobuf\Internal\Message
      * ids of concept relations. Used in AI assist workflow
      *
      * Generated from protobuf field <code>repeated string concept_relation_ids = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConceptRelationIds($var)

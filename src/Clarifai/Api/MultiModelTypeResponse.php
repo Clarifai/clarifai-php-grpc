@@ -42,7 +42,7 @@ class MultiModelTypeResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *           Status of the response.
-     *     @type \Clarifai\Api\ModelType[]|\Google\Protobuf\Internal\RepeatedField $model_types
+     *     @type array<\Clarifai\Api\ModelType>|\Google\Protobuf\Internal\RepeatedField $model_types
      *           List of ModelType objects.
      *     @type \Clarifai\Api\ModelTypeField $model_importers
      *           List of model importers
@@ -104,7 +104,7 @@ class MultiModelTypeResponse extends \Google\Protobuf\Internal\Message
      * List of ModelType objects.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\ModelType[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ModelType>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModelTypes($var)

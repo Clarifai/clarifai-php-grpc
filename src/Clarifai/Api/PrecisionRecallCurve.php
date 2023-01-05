@@ -34,9 +34,9 @@ class PrecisionRecallCurve extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type float[]|\Google\Protobuf\Internal\RepeatedField $recall
-     *     @type float[]|\Google\Protobuf\Internal\RepeatedField $precision
-     *     @type float[]|\Google\Protobuf\Internal\RepeatedField $thresholds
+     *     @type array<float>|\Google\Protobuf\Internal\RepeatedField $recall
+     *     @type array<float>|\Google\Protobuf\Internal\RepeatedField $precision
+     *     @type array<float>|\Google\Protobuf\Internal\RepeatedField $thresholds
      * }
      */
     public function __construct($data = NULL) {
@@ -55,7 +55,7 @@ class PrecisionRecallCurve extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated float recall = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param float[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<float>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRecall($var)
@@ -77,7 +77,7 @@ class PrecisionRecallCurve extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated float precision = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param float[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<float>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPrecision($var)
@@ -99,7 +99,7 @@ class PrecisionRecallCurve extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param float[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<float>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setThresholds($var)

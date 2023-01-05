@@ -60,6 +60,12 @@ class InputsAddJob extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 9;</code>
      */
     protected $modified_at = null;
+    /**
+     * Sub-jobs that extract inputs from the cloud and/or archives
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.InputsExtractionJob extraction_jobs = 10;</code>
+     */
+    private $extraction_jobs;
 
     /**
      * Constructor.
@@ -86,6 +92,8 @@ class InputsAddJob extends \Google\Protobuf\Internal\Message
      *           Most recent time when the job was updated.
      *           The format is https://www.ietf.org/rfc/rfc3339.txt.
      *           Example: "2006-01-02T15:04:05.999999Z".
+     *     @type array<\Clarifai\Api\InputsExtractionJob>|\Google\Protobuf\Internal\RepeatedField $extraction_jobs
+     *           Sub-jobs that extract inputs from the cloud and/or archives
      * }
      */
     public function __construct($data = NULL) {
@@ -311,6 +319,32 @@ class InputsAddJob extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->modified_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sub-jobs that extract inputs from the cloud and/or archives
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.InputsExtractionJob extraction_jobs = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtractionJobs()
+    {
+        return $this->extraction_jobs;
+    }
+
+    /**
+     * Sub-jobs that extract inputs from the cloud and/or archives
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.InputsExtractionJob extraction_jobs = 10;</code>
+     * @param array<\Clarifai\Api\InputsExtractionJob>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtractionJobs($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\InputsExtractionJob::class);
+        $this->extraction_jobs = $arr;
 
         return $this;
     }

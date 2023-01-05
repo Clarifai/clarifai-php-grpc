@@ -31,7 +31,7 @@ class MultiCollaboratorsResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\Collaborator[]|\Google\Protobuf\Internal\RepeatedField $collaborators
+     *     @type array<\Clarifai\Api\Collaborator>|\Google\Protobuf\Internal\RepeatedField $collaborators
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiCollaboratorsResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Collaborator collaborators = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\Collaborator[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Collaborator>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCollaborators($var)

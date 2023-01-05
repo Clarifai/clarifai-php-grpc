@@ -30,7 +30,7 @@ class Embedding extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type float[]|\Google\Protobuf\Internal\RepeatedField $vector
+     *     @type array<float>|\Google\Protobuf\Internal\RepeatedField $vector
      *     @type int $num_dimensions
      * }
      */
@@ -50,7 +50,7 @@ class Embedding extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated float vector = 1 [packed = true];</code>
-     * @param float[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<float>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setVector($var)

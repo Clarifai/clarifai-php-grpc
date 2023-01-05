@@ -36,7 +36,7 @@ class MultiConceptRelationResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *           The response status.
-     *     @type \Clarifai\Api\ConceptRelation[]|\Google\Protobuf\Internal\RepeatedField $concept_relations
+     *     @type array<\Clarifai\Api\ConceptRelation>|\Google\Protobuf\Internal\RepeatedField $concept_relations
      *           The returned concept relations.
      * }
      */
@@ -96,7 +96,7 @@ class MultiConceptRelationResponse extends \Google\Protobuf\Internal\Message
      * The returned concept relations.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ConceptRelation concept_relations = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\ConceptRelation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ConceptRelation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConceptRelations($var)

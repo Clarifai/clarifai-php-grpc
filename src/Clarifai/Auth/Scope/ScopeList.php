@@ -32,9 +32,9 @@ class ScopeList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $scopes
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $scopes
      *           These are the list of low-level scopes to check from the enum below.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $endpoints
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $endpoints
      *           This is a list of fully qualified grpc names to check.
      * }
      */
@@ -58,7 +58,7 @@ class ScopeList extends \Google\Protobuf\Internal\Message
      * These are the list of low-level scopes to check from the enum below.
      *
      * Generated from protobuf field <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setScopes($var)
@@ -84,7 +84,7 @@ class ScopeList extends \Google\Protobuf\Internal\Message
      * This is a list of fully qualified grpc names to check.
      *
      * Generated from protobuf field <code>repeated string endpoints = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEndpoints($var)

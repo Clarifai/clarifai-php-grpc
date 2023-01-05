@@ -36,7 +36,7 @@ class MultiConceptResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *           The response status.
-     *     @type \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $concepts
+     *     @type array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $concepts
      *           The returned concepts.
      * }
      */
@@ -96,7 +96,7 @@ class MultiConceptResponse extends \Google\Protobuf\Internal\Message
      * The returned concepts.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Concept concepts = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConcepts($var)

@@ -26,7 +26,7 @@ class TrainStats extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Clarifai\Api\LossCurveEntry[]|\Google\Protobuf\Internal\RepeatedField $loss_curve
+     *     @type array<\Clarifai\Api\LossCurveEntry>|\Google\Protobuf\Internal\RepeatedField $loss_curve
      * }
      */
     public function __construct($data = NULL) {
@@ -45,7 +45,7 @@ class TrainStats extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.LossCurveEntry loss_curve = 1;</code>
-     * @param \Clarifai\Api\LossCurveEntry[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\LossCurveEntry>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLossCurve($var)

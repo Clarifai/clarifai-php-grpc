@@ -49,7 +49,7 @@ class PatchAnnotationsStatusRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type int $status_code
      *           Annotation Status code
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $user_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $user_ids
      *     @type string $task_id
      *     @type string $action
      *           'overwrite' is supported
@@ -129,7 +129,7 @@ class PatchAnnotationsStatusRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string user_ids = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUserIds($var)

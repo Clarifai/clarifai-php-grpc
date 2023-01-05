@@ -38,7 +38,7 @@ class PatchCollaboratorsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type \Clarifai\Api\Collaborator[]|\Google\Protobuf\Internal\RepeatedField $collaborators
+     *     @type array<\Clarifai\Api\Collaborator>|\Google\Protobuf\Internal\RepeatedField $collaborators
      *     @type string $action
      *           The action to perform on the patched objects
      *           For now only action 'overwrite' is supported
@@ -92,7 +92,7 @@ class PatchCollaboratorsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Collaborator collaborators = 2;</code>
-     * @param \Clarifai\Api\Collaborator[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Collaborator>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCollaborators($var)

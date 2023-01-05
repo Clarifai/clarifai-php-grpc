@@ -38,7 +38,7 @@ class PostModuleVersionsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $module_id
-     *     @type \Clarifai\Api\ModuleVersion[]|\Google\Protobuf\Internal\RepeatedField $module_versions
+     *     @type array<\Clarifai\Api\ModuleVersion>|\Google\Protobuf\Internal\RepeatedField $module_versions
      *           This allows you to create one or more module by posting it to the API.
      * }
      */
@@ -116,7 +116,7 @@ class PostModuleVersionsRequest extends \Google\Protobuf\Internal\Message
      * This allows you to create one or more module by posting it to the API.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModuleVersion module_versions = 3;</code>
-     * @param \Clarifai\Api\ModuleVersion[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ModuleVersion>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModuleVersions($var)

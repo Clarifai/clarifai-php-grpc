@@ -12,19 +12,39 @@ use UnexpectedValueException;
 class EvaluationType
 {
     /**
+     * Generated from protobuf enum <code>Undefined = 0;</code>
+     */
+    const Undefined = 0;
+    /**
      * default
      *
-     * Generated from protobuf enum <code>Classification = 0;</code>
+     * Generated from protobuf enum <code>Classification = 1;</code>
      */
-    const Classification = 0;
+    const Classification = 1;
     /**
-     * Generated from protobuf enum <code>Detection = 1;</code>
+     * Generated from protobuf enum <code>Detection = 2;</code>
      */
-    const Detection = 1;
+    const Detection = 2;
+    /**
+     * Generated from protobuf enum <code>Segmentation = 3;</code>
+     */
+    const Segmentation = 3;
+    /**
+     * Generated from protobuf enum <code>Clustering = 4;</code>
+     */
+    const Clustering = 4;
+    /**
+     * Generated from protobuf enum <code>Tracker = 5;</code>
+     */
+    const Tracker = 5;
 
     private static $valueToName = [
+        self::Undefined => 'Undefined',
         self::Classification => 'Classification',
         self::Detection => 'Detection',
+        self::Segmentation => 'Segmentation',
+        self::Clustering => 'Clustering',
+        self::Tracker => 'Tracker',
     ];
 
     public static function name($value)

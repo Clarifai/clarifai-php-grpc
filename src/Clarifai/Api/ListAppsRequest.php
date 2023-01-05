@@ -106,7 +106,7 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      *           If true, we only return apps that are handpicked by clarifai staff
      *     @type bool $starred_only
      *           If true, we only return apps that are starred by the requesting user
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
      * }
      */
@@ -422,7 +422,7 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
      *
      * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdditionalFields($var)

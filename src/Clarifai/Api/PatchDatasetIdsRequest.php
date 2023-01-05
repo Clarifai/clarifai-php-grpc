@@ -40,7 +40,7 @@ class PatchDatasetIdsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type \Clarifai\Api\IdUpdateSource[]|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type array<\Clarifai\Api\IdUpdateSource>|\Google\Protobuf\Internal\RepeatedField $ids
      *           Array containing 1 entry
      *     @type string $action
      *           The action to perform on the patched objects
@@ -99,7 +99,7 @@ class PatchDatasetIdsRequest extends \Google\Protobuf\Internal\Message
      * Array containing 1 entry
      *
      * Generated from protobuf field <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
-     * @param \Clarifai\Api\IdUpdateSource[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\IdUpdateSource>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setIds($var)

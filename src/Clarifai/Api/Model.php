@@ -268,15 +268,15 @@ class Model extends \Google\Protobuf\Internal\Message
      *     @type string $notes
      *           Notes for the model
      *           This field should be used for in-depth notes and supports up to 64Kbs.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $toolkits
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $toolkits
      *           Tags from toolkits category
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $use_cases
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $use_cases
      *           Tags from use_cases category
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $languages
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $languages
      *           Tags from languages category.
-     *     @type \Clarifai\Api\FullTag[]|\Google\Protobuf\Internal\RepeatedField $languages_full
+     *     @type array<\Clarifai\Api\FullTag>|\Google\Protobuf\Internal\RepeatedField $languages_full
      *           Tags from languages category with names, only used in responses.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $check_consents
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $check_consents
      *     @type bool $is_starred
      *           Is starred by the requesting user (only showed on get/list requests)
      *           Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
@@ -952,7 +952,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * Tags from toolkits category
      *
      * Generated from protobuf field <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setToolkits($var)
@@ -978,7 +978,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * Tags from use_cases category
      *
      * Generated from protobuf field <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUseCases($var)
@@ -1004,7 +1004,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * Tags from languages category.
      *
      * Generated from protobuf field <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLanguages($var)
@@ -1030,7 +1030,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * Tags from languages category with names, only used in responses.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\FullTag[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\FullTag>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLanguagesFull($var)
@@ -1052,7 +1052,7 @@ class Model extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCheckConsents($var)

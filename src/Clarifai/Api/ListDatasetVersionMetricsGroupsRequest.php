@@ -81,11 +81,11 @@ class ListDatasetVersionMetricsGroupsRequest extends \Google\Protobuf\Internal\M
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $parent_paths
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $parent_paths
      *           Filter by parent path. Multiple parent paths are OR-ed. Empty list results in no filter.
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $types
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $types
      *           Filter by parent type. Multiple types are OR-ed. Empty list results in no filter.
-     *     @type \Google\Protobuf\Value[]|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type array<\Google\Protobuf\Value>|\Google\Protobuf\Internal\RepeatedField $values
      *           Filter by value. Multiple values are OR-ed. Empty list results in no filter.
      * }
      */
@@ -249,7 +249,7 @@ class ListDatasetVersionMetricsGroupsRequest extends \Google\Protobuf\Internal\M
      * Filter by parent path. Multiple parent paths are OR-ed. Empty list results in no filter.
      *
      * Generated from protobuf field <code>repeated string parent_paths = 6;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setParentPaths($var)
@@ -275,7 +275,7 @@ class ListDatasetVersionMetricsGroupsRequest extends \Google\Protobuf\Internal\M
      * Filter by parent type. Multiple types are OR-ed. Empty list results in no filter.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.DatasetVersionMetricsGroupType types = 7;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTypes($var)
@@ -301,7 +301,7 @@ class ListDatasetVersionMetricsGroupsRequest extends \Google\Protobuf\Internal\M
      * Filter by value. Multiple values are OR-ed. Empty list results in no filter.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Value values = 8;</code>
-     * @param \Google\Protobuf\Value[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Protobuf\Value>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setValues($var)

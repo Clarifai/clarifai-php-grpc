@@ -68,9 +68,9 @@ class PostWorkflowResultsSimilarityRequest extends \Google\Protobuf\Internal\Mes
      *           If no ID is specified, latest workflow version is used
      *     @type string $model_version_id
      *           The specific model version whose outputs we are comparing
-     *     @type \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $probe_inputs
+     *     @type array<\Clarifai\Api\Input>|\Google\Protobuf\Internal\RepeatedField $probe_inputs
      *           Each probe is compared against every pool input
-     *     @type \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $pool_inputs
+     *     @type array<\Clarifai\Api\Input>|\Google\Protobuf\Internal\RepeatedField $pool_inputs
      *           Each pool input is compared against ever probe input
      *     @type bool $favor_clarifai_workflows
      *           Use this flag to look into clarifai published workflows first for a Workflow ID
@@ -204,7 +204,7 @@ class PostWorkflowResultsSimilarityRequest extends \Google\Protobuf\Internal\Mes
      * Each probe is compared against every pool input
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Input probe_inputs = 4;</code>
-     * @param \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Input>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProbeInputs($var)
@@ -230,7 +230,7 @@ class PostWorkflowResultsSimilarityRequest extends \Google\Protobuf\Internal\Mes
      * Each pool input is compared against ever probe input
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Input pool_inputs = 5;</code>
-     * @param \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Input>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPoolInputs($var)

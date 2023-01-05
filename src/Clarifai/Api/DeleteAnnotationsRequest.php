@@ -44,9 +44,9 @@ class DeleteAnnotationsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
      *           Delete annotations with IDs
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $input_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $input_ids
      *           Delete annotations for these Input IDs
      *           Note that 'ids' are optional but if the are provided the number and order in
      *           'ids' and 'input_ids' should match
@@ -107,7 +107,7 @@ class DeleteAnnotationsRequest extends \Google\Protobuf\Internal\Message
      * Delete annotations with IDs
      *
      * Generated from protobuf field <code>repeated string ids = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setIds($var)
@@ -143,7 +143,7 @@ class DeleteAnnotationsRequest extends \Google\Protobuf\Internal\Message
      * i.e. this API does not support deleting all annotations
      *
      * Generated from protobuf field <code>repeated string input_ids = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setInputIds($var)

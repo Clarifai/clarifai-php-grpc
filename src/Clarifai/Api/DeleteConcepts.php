@@ -17,6 +17,10 @@ class DeleteConcepts extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.Concept concepts = 1;</code>
      */
     private $concepts;
+    /**
+     * Generated from protobuf field <code>repeated string user_ids = 2;</code>
+     */
+    private $user_ids;
 
     /**
      * Constructor.
@@ -24,7 +28,8 @@ class DeleteConcepts extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $concepts
+     *     @type array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $concepts
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $user_ids
      * }
      */
     public function __construct($data = NULL) {
@@ -43,13 +48,35 @@ class DeleteConcepts extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Concept concepts = 1;</code>
-     * @param \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConcepts($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Concept::class);
         $this->concepts = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string user_ids = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUserIds()
+    {
+        return $this->user_ids;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string user_ids = 2;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUserIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->user_ids = $arr;
 
         return $this;
     }

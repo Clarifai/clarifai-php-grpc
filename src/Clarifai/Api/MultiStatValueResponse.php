@@ -36,7 +36,7 @@ class MultiStatValueResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *           The response status.
-     *     @type \Clarifai\Api\StatValue[]|\Google\Protobuf\Internal\RepeatedField $stat_values
+     *     @type array<\Clarifai\Api\StatValue>|\Google\Protobuf\Internal\RepeatedField $stat_values
      *           The returned stats values.
      * }
      */
@@ -96,7 +96,7 @@ class MultiStatValueResponse extends \Google\Protobuf\Internal\Message
      * The returned stats values.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.StatValue stat_values = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\StatValue[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\StatValue>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setStatValues($var)

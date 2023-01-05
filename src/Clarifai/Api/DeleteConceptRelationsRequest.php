@@ -44,7 +44,7 @@ class DeleteConceptRelationsRequest extends \Google\Protobuf\Internal\Message
      *           The user_id and app_id information.
      *     @type string $concept_id
      *           The concept to delete relationship for.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
      *           The concept relationship ids to delete.
      * }
      */
@@ -130,7 +130,7 @@ class DeleteConceptRelationsRequest extends \Google\Protobuf\Internal\Message
      * The concept relationship ids to delete.
      *
      * Generated from protobuf field <code>repeated string ids = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setIds($var)

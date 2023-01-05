@@ -40,7 +40,7 @@ class PatchModelLanguagesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $model_id
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $languages
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $languages
      *     @type string $action
      *           Only overwrite supported
      * }
@@ -115,7 +115,7 @@ class PatchModelLanguagesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string languages = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLanguages($var)

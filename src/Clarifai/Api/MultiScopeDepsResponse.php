@@ -44,9 +44,9 @@ class MultiScopeDepsResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *           The status of the request.
-     *     @type \Clarifai\Api\ScopeDeps[]|\Google\Protobuf\Internal\RepeatedField $scope_deps
+     *     @type array<\Clarifai\Api\ScopeDeps>|\Google\Protobuf\Internal\RepeatedField $scope_deps
      *           scopes is a list of low-level scopes and their dependencies.
-     *     @type \Clarifai\Api\EndpointDeps[]|\Google\Protobuf\Internal\RepeatedField $endpoint_deps
+     *     @type array<\Clarifai\Api\EndpointDeps>|\Google\Protobuf\Internal\RepeatedField $endpoint_deps
      *           endpoint_scopes is a listof all the publicly available endponts which can be
      *           used as scopes as well. A call to each of those endpoint depends on a subset
      *           of the above "scopes"
@@ -108,7 +108,7 @@ class MultiScopeDepsResponse extends \Google\Protobuf\Internal\Message
      * scopes is a list of low-level scopes and their dependencies.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ScopeDeps scope_deps = 2;</code>
-     * @param \Clarifai\Api\ScopeDeps[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ScopeDeps>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setScopeDeps($var)
@@ -138,7 +138,7 @@ class MultiScopeDepsResponse extends \Google\Protobuf\Internal\Message
      * of the above "scopes"
      *
      * Generated from protobuf field <code>repeated .clarifai.api.EndpointDeps endpoint_deps = 3;</code>
-     * @param \Clarifai\Api\EndpointDeps[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\EndpointDeps>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEndpointDeps($var)

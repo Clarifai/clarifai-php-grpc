@@ -112,7 +112,7 @@ class WorkflowVersion extends \Google\Protobuf\Internal\Message
      *           The visibility field represents whether this message is privately/publicly visible.
      *           To be visible to the public the App that contains it AND the User that contains the App must
      *           also be publicly visible.
-     *     @type \Clarifai\Api\WorkflowNode[]|\Google\Protobuf\Internal\RepeatedField $nodes
+     *     @type array<\Clarifai\Api\WorkflowNode>|\Google\Protobuf\Internal\RepeatedField $nodes
      *           The list of nodes that make up the workflow version. Each node can specify an input node
      *           that it connects to in order to define the graph.
      *     @type \Google\Protobuf\Struct $metadata
@@ -322,7 +322,7 @@ class WorkflowVersion extends \Google\Protobuf\Internal\Message
      * that it connects to in order to define the graph.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowNode nodes = 6;</code>
-     * @param \Clarifai\Api\WorkflowNode[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\WorkflowNode>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setNodes($var)

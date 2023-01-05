@@ -45,10 +45,10 @@ class LayerShape extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $dims
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $dims
      *           Supported dimensions
      *           Example: [-1,4] is a 2-dimensional array with the first dimension of variablesize, but second dimension with a static size: [[1,2,3,4],[4,5,6,7],...]
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $max_dims
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $max_dims
      *           Max dimension size, applicable to layers that can have flexible sizes.
      *     @type int $data_type
      *           The triton data type
@@ -78,7 +78,7 @@ class LayerShape extends \Google\Protobuf\Internal\Message
      * Example: [-1,4] is a 2-dimensional array with the first dimension of variablesize, but second dimension with a static size: [[1,2,3,4],[4,5,6,7],...]
      *
      * Generated from protobuf field <code>repeated int32 dims = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDims($var)
@@ -104,7 +104,7 @@ class LayerShape extends \Google\Protobuf\Internal\Message
      * Max dimension size, applicable to layers that can have flexible sizes.
      *
      * Generated from protobuf field <code>repeated int32 max_dims = 2;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMaxDims($var)

@@ -105,29 +105,29 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
      *           List annotations for these IDs
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $input_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $input_ids
      *           List annotations for these Input IDs
      *           Note that 'ids' are optional but if the are provided the number and order in
      *           'ids' and 'input_ids' should match
      *           If you do not specify 'ids' all the annotations for 'input_ids' are returned
      *           If a you do not specify both 'input_ids' and 'ids' all the annotations in the app are returned
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $user_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $user_ids
      *           Only return the annotations that has one of these user IDs, effectively operating as an
      *           OR among them to filter down the results.
      *           If model_version_ids are also provided these user_ids are OR'd with them as well since
      *           annotations are either provided by users or model versions and we want the union of any
      *           provided user or model version annotations in the results of ListAnnotations request.
      *           If no user_ids are provided then annotations from all users are returned.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $model_version_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $model_version_ids
      *           Only return the annotations that has one of these model version IDs, effectively operating as an
      *           OR among them to filter down the results.
      *           If user_ids are also provided these model_versions_ids are OR'd with them as well since
      *           annotations are either provided by users or model versions and we want the union of any
      *           provided user or model version annotations in the results of ListAnnotations request.
      *           If no model_version_ids are provided then annotations from all model versions are returned.
-     *     @type \Clarifai\Api\Status\Status[]|\Google\Protobuf\Internal\RepeatedField $statuses
+     *     @type array<\Clarifai\Api\Status\Status>|\Google\Protobuf\Internal\RepeatedField $statuses
      *           Set status to filter by a list of statuses
      *           If not statuses are provided then annotations with any status will be returned.
      *     @type bool $list_all_annotations
@@ -197,7 +197,7 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
      * List annotations for these IDs
      *
      * Generated from protobuf field <code>repeated string ids = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setIds($var)
@@ -231,7 +231,7 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
      * If a you do not specify both 'input_ids' and 'ids' all the annotations in the app are returned
      *
      * Generated from protobuf field <code>repeated string input_ids = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setInputIds($var)
@@ -267,7 +267,7 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
      * If no user_ids are provided then annotations from all users are returned.
      *
      * Generated from protobuf field <code>repeated string user_ids = 9;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUserIds($var)
@@ -303,7 +303,7 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
      * If no model_version_ids are provided then annotations from all model versions are returned.
      *
      * Generated from protobuf field <code>repeated string model_version_ids = 10;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModelVersionIds($var)
@@ -331,7 +331,7 @@ class ListAnnotationsRequest extends \Google\Protobuf\Internal\Message
      * If not statuses are provided then annotations with any status will be returned.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.status.Status statuses = 5;</code>
-     * @param \Clarifai\Api\Status\Status[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Status\Status>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setStatuses($var)

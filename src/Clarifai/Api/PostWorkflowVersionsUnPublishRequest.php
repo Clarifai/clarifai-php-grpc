@@ -34,7 +34,7 @@ class PostWorkflowVersionsUnPublishRequest extends \Google\Protobuf\Internal\Mes
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $workflow_id
-     *     @type \Clarifai\Api\WorkflowVersionUnPublishRequest[]|\Google\Protobuf\Internal\RepeatedField $publications
+     *     @type array<\Clarifai\Api\WorkflowVersionUnPublishRequest>|\Google\Protobuf\Internal\RepeatedField $publications
      * }
      */
     public function __construct($data = NULL) {
@@ -107,7 +107,7 @@ class PostWorkflowVersionsUnPublishRequest extends \Google\Protobuf\Internal\Mes
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowVersionUnPublishRequest publications = 3;</code>
-     * @param \Clarifai\Api\WorkflowVersionUnPublishRequest[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\WorkflowVersionUnPublishRequest>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPublications($var)

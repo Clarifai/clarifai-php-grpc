@@ -36,7 +36,7 @@ class MultiConceptMappingJobResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *           The response status.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
      *           The ids of the concept mapping jobs underway.
      * }
      */
@@ -96,7 +96,7 @@ class MultiConceptMappingJobResponse extends \Google\Protobuf\Internal\Message
      * The ids of the concept mapping jobs underway.
      *
      * Generated from protobuf field <code>repeated string ids = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setIds($var)

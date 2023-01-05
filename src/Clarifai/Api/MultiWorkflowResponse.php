@@ -31,7 +31,7 @@ class MultiWorkflowResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\Workflow[]|\Google\Protobuf\Internal\RepeatedField $workflows
+     *     @type array<\Clarifai\Api\Workflow>|\Google\Protobuf\Internal\RepeatedField $workflows
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiWorkflowResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Workflow workflows = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\Workflow[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Workflow>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setWorkflows($var)

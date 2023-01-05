@@ -57,7 +57,7 @@ class StatValueAggregate extends \Google\Protobuf\Internal\Message
      *           The value aggregated according to the stat_value_agg_type
      *     @type int|string $count
      *           The count of the stat values that were used in this aggregation.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $tags
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $tags
      *           The tags for this aggregated_value and count. This will be filled in if tag groups were used in
      *           the query to group aggregations.
      * }
@@ -176,7 +176,7 @@ class StatValueAggregate extends \Google\Protobuf\Internal\Message
      * the query to group aggregations.
      *
      * Generated from protobuf field <code>repeated string tags = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTags($var)

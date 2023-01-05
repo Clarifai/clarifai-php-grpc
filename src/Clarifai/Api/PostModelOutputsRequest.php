@@ -51,7 +51,7 @@ class PostModelOutputsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $model_id
      *     @type string $version_id
-     *     @type \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $inputs
+     *     @type array<\Clarifai\Api\Input>|\Google\Protobuf\Internal\RepeatedField $inputs
      *     @type \Clarifai\Api\Model $model
      *           This allows you to specify config options for the model such as
      *           the language which appear's in the model's output_info.
@@ -149,7 +149,7 @@ class PostModelOutputsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Input inputs = 4;</code>
-     * @param \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Input>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setInputs($var)

@@ -33,7 +33,7 @@ class PostBulkOperationsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type \Clarifai\Api\BulkOperation[]|\Google\Protobuf\Internal\RepeatedField $bulk_operations
+     *     @type array<\Clarifai\Api\BulkOperation>|\Google\Protobuf\Internal\RepeatedField $bulk_operations
      *           List of bulk operation(s) to be performed e.g bulk update metadata or tags or labels etc.
      * }
      */
@@ -89,7 +89,7 @@ class PostBulkOperationsRequest extends \Google\Protobuf\Internal\Message
      * List of bulk operation(s) to be performed e.g bulk update metadata or tags or labels etc.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.BulkOperation bulk_operations = 2;</code>
-     * @param \Clarifai\Api\BulkOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\BulkOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setBulkOperations($var)

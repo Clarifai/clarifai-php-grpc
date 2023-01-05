@@ -56,11 +56,11 @@ class MultiSearchResponse extends \Google\Protobuf\Internal\Message
      *           Status of whether the search was successful.
      *     @type string $id
      *           A unique id which uniquely identifies a search
-     *     @type \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $hits
+     *     @type array<\Clarifai\Api\Hit>|\Google\Protobuf\Internal\RepeatedField $hits
      *           The list of search result Hits.
      *     @type \Clarifai\Api\Query $query
      *           The original query provided in the request.
-     *     @type \Clarifai\Api\Search[]|\Google\Protobuf\Internal\RepeatedField $searches
+     *     @type array<\Clarifai\Api\Search>|\Google\Protobuf\Internal\RepeatedField $searches
      *           The original Searches provided in the request.
      * }
      */
@@ -146,7 +146,7 @@ class MultiSearchResponse extends \Google\Protobuf\Internal\Message
      * The list of search result Hits.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Hit>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHits($var)
@@ -208,7 +208,7 @@ class MultiSearchResponse extends \Google\Protobuf\Internal\Message
      * The original Searches provided in the request.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Search searches = 5;</code>
-     * @param \Clarifai\Api\Search[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Search>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSearches($var)

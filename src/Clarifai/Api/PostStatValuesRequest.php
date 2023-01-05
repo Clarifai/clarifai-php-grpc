@@ -36,7 +36,7 @@ class PostStatValuesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *           The user and app information for the request.
-     *     @type \Clarifai\Api\StatValue[]|\Google\Protobuf\Internal\RepeatedField $stat_values
+     *     @type array<\Clarifai\Api\StatValue>|\Google\Protobuf\Internal\RepeatedField $stat_values
      *           The stats to post, can post more than one at a time.
      * }
      */
@@ -96,7 +96,7 @@ class PostStatValuesRequest extends \Google\Protobuf\Internal\Message
      * The stats to post, can post more than one at a time.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.StatValue stat_values = 2;</code>
-     * @param \Clarifai\Api\StatValue[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\StatValue>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setStatValues($var)

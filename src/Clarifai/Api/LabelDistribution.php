@@ -26,7 +26,7 @@ class LabelDistribution extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Clarifai\Api\LabelCount[]|\Google\Protobuf\Internal\RepeatedField $positive_label_counts
+     *     @type array<\Clarifai\Api\LabelCount>|\Google\Protobuf\Internal\RepeatedField $positive_label_counts
      * }
      */
     public function __construct($data = NULL) {
@@ -45,7 +45,7 @@ class LabelDistribution extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.LabelCount positive_label_counts = 1;</code>
-     * @param \Clarifai\Api\LabelCount[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\LabelCount>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPositiveLabelCounts($var)

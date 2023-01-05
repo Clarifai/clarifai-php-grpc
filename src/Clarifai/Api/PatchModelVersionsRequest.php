@@ -43,7 +43,7 @@ class PatchModelVersionsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $model_id
-     *     @type \Clarifai\Api\ModelVersion[]|\Google\Protobuf\Internal\RepeatedField $model_versions
+     *     @type array<\Clarifai\Api\ModelVersion>|\Google\Protobuf\Internal\RepeatedField $model_versions
      *     @type string $action
      *           The action to perform on the patched objects
      *           For now actions 'merge', 'overwrite', and 'remove' are supported
@@ -119,7 +119,7 @@ class PatchModelVersionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
-     * @param \Clarifai\Api\ModelVersion[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ModelVersion>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModelVersions($var)

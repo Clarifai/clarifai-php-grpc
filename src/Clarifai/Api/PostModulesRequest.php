@@ -33,7 +33,7 @@ class PostModulesRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type \Clarifai\Api\Module[]|\Google\Protobuf\Internal\RepeatedField $modules
+     *     @type array<\Clarifai\Api\Module>|\Google\Protobuf\Internal\RepeatedField $modules
      *           This allows you to create one or more module by posting it to the API.
      * }
      */
@@ -89,7 +89,7 @@ class PostModulesRequest extends \Google\Protobuf\Internal\Message
      * This allows you to create one or more module by posting it to the API.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Module modules = 3;</code>
-     * @param \Clarifai\Api\Module[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Module>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModules($var)

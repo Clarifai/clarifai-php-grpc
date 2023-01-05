@@ -48,7 +48,7 @@ class PostDatasetInputsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $dataset_id
      *           Identify dataset by id.
-     *     @type \Clarifai\Api\DatasetInput[]|\Google\Protobuf\Internal\RepeatedField $dataset_inputs
+     *     @type array<\Clarifai\Api\DatasetInput>|\Google\Protobuf\Internal\RepeatedField $dataset_inputs
      *           List of inputs that are requested to be added to this dataset.
      *           Identify each input by id field. All other inputs fields are ignored.
      *     @type \Clarifai\Api\Search $search
@@ -135,7 +135,7 @@ class PostDatasetInputsRequest extends \Google\Protobuf\Internal\Message
      * Identify each input by id field. All other inputs fields are ignored.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.DatasetInput dataset_inputs = 3;</code>
-     * @param \Clarifai\Api\DatasetInput[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\DatasetInput>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDatasetInputs($var)

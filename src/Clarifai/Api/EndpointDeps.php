@@ -36,7 +36,7 @@ class EndpointDeps extends \Google\Protobuf\Internal\Message
      *
      *     @type string $endpoint
      *           The fully qualified endpoint to
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $depending_scopes
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $depending_scopes
      *           Other scopes that are required.
      * }
      */
@@ -86,7 +86,7 @@ class EndpointDeps extends \Google\Protobuf\Internal\Message
      * Other scopes that are required.
      *
      * Generated from protobuf field <code>repeated string depending_scopes = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDependingScopes($var)

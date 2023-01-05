@@ -40,7 +40,7 @@ class PatchConceptsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $concepts
+     *     @type array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $concepts
      *           The concepts to patch.
      *     @type string $action
      *           The action to perform on the patched objects
@@ -99,7 +99,7 @@ class PatchConceptsRequest extends \Google\Protobuf\Internal\Message
      * The concepts to patch.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Concept concepts = 2;</code>
-     * @param \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConcepts($var)

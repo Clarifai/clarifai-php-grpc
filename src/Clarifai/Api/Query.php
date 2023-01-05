@@ -54,7 +54,7 @@ class Query extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Clarifai\Api\PBAnd[]|\Google\Protobuf\Internal\RepeatedField $ands
+     *     @type array<\Clarifai\Api\PBAnd>|\Google\Protobuf\Internal\RepeatedField $ands
      *           The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      *           results which are returned to the user as Hit messages.
      *           Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
@@ -63,10 +63,10 @@ class Query extends \Google\Protobuf\Internal\Message
      *           This allows the query to override any default language the app was setup in when doing Concept
      *           based searches. This currently only affects public Models Output searches when those public
      *           Models have translations for their Concepts.
-     *     @type \Clarifai\Api\Filter[]|\Google\Protobuf\Internal\RepeatedField $filters
+     *     @type array<\Clarifai\Api\Filter>|\Google\Protobuf\Internal\RepeatedField $filters
      *           filters in this query
      *           e.q. only fetch annotations that have certain metadata
-     *     @type \Clarifai\Api\Rank[]|\Google\Protobuf\Internal\RepeatedField $ranks
+     *     @type array<\Clarifai\Api\Rank>|\Google\Protobuf\Internal\RepeatedField $ranks
      *           rankings in this query
      *           e.g. visual search by a url
      * }
@@ -99,7 +99,7 @@ class Query extends \Google\Protobuf\Internal\Message
      * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
-     * @param \Clarifai\Api\PBAnd[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\PBAnd>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      * @deprecated
      */
@@ -159,7 +159,7 @@ class Query extends \Google\Protobuf\Internal\Message
      * e.q. only fetch annotations that have certain metadata
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Filter filters = 3;</code>
-     * @param \Clarifai\Api\Filter[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Filter>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFilters($var)
@@ -187,7 +187,7 @@ class Query extends \Google\Protobuf\Internal\Message
      * e.g. visual search by a url
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Rank ranks = 4;</code>
-     * @param \Clarifai\Api\Rank[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Rank>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRanks($var)

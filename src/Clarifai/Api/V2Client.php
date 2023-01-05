@@ -2953,4 +2953,48 @@ class V2Client extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Clarifai\Api\PostInputsDataSourcesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostInputsDataSources(\Clarifai\Api\PostInputsDataSourcesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostInputsDataSources',
+        $argument,
+        ['\Clarifai\Api\MultiInputsAddJobResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get the input extraction job details by ID
+     * @param \Clarifai\Api\GetInputsExtractionJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetInputsExtractionJob(\Clarifai\Api\GetInputsExtractionJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetInputsExtractionJob',
+        $argument,
+        ['\Clarifai\Api\SingleInputsExtractionJobResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all the input extraction jobs
+     * @param \Clarifai\Api\ListInputsExtractionJobsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListInputsExtractionJobs(\Clarifai\Api\ListInputsExtractionJobsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListInputsExtractionJobs',
+        $argument,
+        ['\Clarifai\Api\MultiInputsExtractionJobResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

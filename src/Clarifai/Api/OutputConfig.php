@@ -146,7 +146,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      *           For concept model predictions: Minimum value of concept's probability score in result.
      *           Defaults to 0.0 which means we won't do any thresholding as all probabilities will
      *           likely be > 0.0.
-     *     @type \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $select_concepts
+     *     @type array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $select_concepts
      *           For concept model predictions: Select concepts in result by name or by id
      *     @type int $training_timeout
      *           For custom concept model training: Training timeout of the model (in seconds)
@@ -393,7 +393,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * For concept model predictions: Select concepts in result by name or by id
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
-     * @param \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSelectConcepts($var)

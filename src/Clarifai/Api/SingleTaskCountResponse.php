@@ -41,7 +41,7 @@ class SingleTaskCountResponse extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Status\Status $status
      *     @type string $app_id
      *     @type string $task_id
-     *     @type \Clarifai\Api\TaskStatusCountPerUser[]|\Google\Protobuf\Internal\RepeatedField $counts
+     *     @type array<\Clarifai\Api\TaskStatusCountPerUser>|\Google\Protobuf\Internal\RepeatedField $counts
      * }
      */
     public function __construct($data = NULL) {
@@ -136,7 +136,7 @@ class SingleTaskCountResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.TaskStatusCountPerUser counts = 4;</code>
-     * @param \Clarifai\Api\TaskStatusCountPerUser[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\TaskStatusCountPerUser>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCounts($var)

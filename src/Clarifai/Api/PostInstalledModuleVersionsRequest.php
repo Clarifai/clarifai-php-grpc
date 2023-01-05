@@ -33,7 +33,7 @@ class PostInstalledModuleVersionsRequest extends \Google\Protobuf\Internal\Messa
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type \Clarifai\Api\InstalledModuleVersion[]|\Google\Protobuf\Internal\RepeatedField $installed_module_versions
+     *     @type array<\Clarifai\Api\InstalledModuleVersion>|\Google\Protobuf\Internal\RepeatedField $installed_module_versions
      *           This allows you to create one or more module by posting it to the API.
      * }
      */
@@ -89,7 +89,7 @@ class PostInstalledModuleVersionsRequest extends \Google\Protobuf\Internal\Messa
      * This allows you to create one or more module by posting it to the API.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
-     * @param \Clarifai\Api\InstalledModuleVersion[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\InstalledModuleVersion>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setInstalledModuleVersions($var)

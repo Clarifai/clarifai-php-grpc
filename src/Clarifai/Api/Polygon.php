@@ -28,7 +28,7 @@ class Polygon extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Clarifai\Api\Point[]|\Google\Protobuf\Internal\RepeatedField $points
+     *     @type array<\Clarifai\Api\Point>|\Google\Protobuf\Internal\RepeatedField $points
      *           A list of points connected together to form the polygon.
      * }
      */
@@ -52,7 +52,7 @@ class Polygon extends \Google\Protobuf\Internal\Message
      * A list of points connected together to form the polygon.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Point points = 1;</code>
-     * @param \Clarifai\Api\Point[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Point>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPoints($var)

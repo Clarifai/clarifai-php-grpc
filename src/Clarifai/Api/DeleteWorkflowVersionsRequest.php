@@ -41,7 +41,7 @@ class DeleteWorkflowVersionsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $workflow_id
      *           The id of the workflow that has the requested versions to delete.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $workflow_version_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $workflow_version_ids
      *           Delete the versions identified by these ids
      * }
      */
@@ -123,7 +123,7 @@ class DeleteWorkflowVersionsRequest extends \Google\Protobuf\Internal\Message
      * Delete the versions identified by these ids
      *
      * Generated from protobuf field <code>repeated string workflow_version_ids = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setWorkflowVersionIds($var)

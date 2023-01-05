@@ -34,7 +34,7 @@ class PostKnowledgeGraphsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *           The user_id and app_id information.
-     *     @type \Clarifai\Api\KnowledgeGraph[]|\Google\Protobuf\Internal\RepeatedField $knowledge_graphs
+     *     @type array<\Clarifai\Api\KnowledgeGraph>|\Google\Protobuf\Internal\RepeatedField $knowledge_graphs
      * }
      */
     public function __construct($data = NULL) {
@@ -89,7 +89,7 @@ class PostKnowledgeGraphsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.KnowledgeGraph knowledge_graphs = 2;</code>
-     * @param \Clarifai\Api\KnowledgeGraph[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\KnowledgeGraph>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setKnowledgeGraphs($var)

@@ -31,7 +31,7 @@ class MultiModelReferenceResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\ModelReference[]|\Google\Protobuf\Internal\RepeatedField $model_references
+     *     @type array<\Clarifai\Api\ModelReference>|\Google\Protobuf\Internal\RepeatedField $model_references
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiModelReferenceResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.ModelReference model_references = 2;</code>
-     * @param \Clarifai\Api\ModelReference[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ModelReference>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModelReferences($var)

@@ -32,8 +32,8 @@ class CooccurrenceMatrix extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Clarifai\Api\CooccurrenceMatrixEntry[]|\Google\Protobuf\Internal\RepeatedField $matrix
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $concept_ids
+     *     @type array<\Clarifai\Api\CooccurrenceMatrixEntry>|\Google\Protobuf\Internal\RepeatedField $matrix
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $concept_ids
      *           These concept_ids are ordered by the strength of the diagonal in the ConfusionMatrix.
      * }
      */
@@ -53,7 +53,7 @@ class CooccurrenceMatrix extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.CooccurrenceMatrixEntry matrix = 1;</code>
-     * @param \Clarifai\Api\CooccurrenceMatrixEntry[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\CooccurrenceMatrixEntry>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMatrix($var)
@@ -79,7 +79,7 @@ class CooccurrenceMatrix extends \Google\Protobuf\Internal\Message
      * These concept_ids are ordered by the strength of the diagonal in the ConfusionMatrix.
      *
      * Generated from protobuf field <code>repeated string concept_ids = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConceptIds($var)

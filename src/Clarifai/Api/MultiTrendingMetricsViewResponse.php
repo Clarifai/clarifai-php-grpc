@@ -31,7 +31,7 @@ class MultiTrendingMetricsViewResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\TrendingMetric[]|\Google\Protobuf\Internal\RepeatedField $metrics
+     *     @type array<\Clarifai\Api\TrendingMetric>|\Google\Protobuf\Internal\RepeatedField $metrics
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiTrendingMetricsViewResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.TrendingMetric metrics = 2;</code>
-     * @param \Clarifai\Api\TrendingMetric[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\TrendingMetric>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMetrics($var)

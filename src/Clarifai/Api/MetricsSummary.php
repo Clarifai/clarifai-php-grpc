@@ -78,7 +78,7 @@ class MetricsSummary extends \Google\Protobuf\Internal\Message
      *     @type float $macro_avg_recall
      *     @type float $mean_avg_precision_iou_50
      *     @type float $mean_avg_precision_iou_range
-     *     @type \Clarifai\Api\LOPQEvalResult[]|\Google\Protobuf\Internal\RepeatedField $lopq_metrics
+     *     @type array<\Clarifai\Api\LOPQEvalResult>|\Google\Protobuf\Internal\RepeatedField $lopq_metrics
      * }
      */
     public function __construct($data = NULL) {
@@ -325,7 +325,7 @@ class MetricsSummary extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     * @param \Clarifai\Api\LOPQEvalResult[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\LOPQEvalResult>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLopqMetrics($var)

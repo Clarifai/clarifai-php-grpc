@@ -47,10 +47,10 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
      *
      *     @type int $strategy
      *           Worker strategy.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $user_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $user_ids
      *           Who will work on this task.
      *           DEPRECATED: Use users.id instead.
-     *     @type \Clarifai\Api\User[]|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type array<\Clarifai\Api\User>|\Google\Protobuf\Internal\RepeatedField $users
      *           Users who will work on this task.
      *           When the 'worker.users' field is additionally requested, then all user
      *           info is filled for the workers. Otherwise, only the user 'id' is filled.
@@ -107,7 +107,7 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
      * DEPRECATED: Use users.id instead.
      *
      * Generated from protobuf field <code>repeated string user_ids = 2 [deprecated = true];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      * @deprecated
      */
@@ -139,7 +139,7 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
      * info is filled for the workers. Otherwise, only the user 'id' is filled.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.User users = 4;</code>
-     * @param \Clarifai\Api\User[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\User>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUsers($var)

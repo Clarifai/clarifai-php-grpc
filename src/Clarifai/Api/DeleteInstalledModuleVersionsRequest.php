@@ -31,7 +31,7 @@ class DeleteInstalledModuleVersionsRequest extends \Google\Protobuf\Internal\Mes
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class DeleteInstalledModuleVersionsRequest extends \Google\Protobuf\Internal\Mes
 
     /**
      * Generated from protobuf field <code>repeated string ids = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setIds($var)

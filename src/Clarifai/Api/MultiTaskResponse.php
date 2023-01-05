@@ -31,7 +31,7 @@ class MultiTaskResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\Task[]|\Google\Protobuf\Internal\RepeatedField $tasks
+     *     @type array<\Clarifai\Api\Task>|\Google\Protobuf\Internal\RepeatedField $tasks
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiTaskResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Task tasks = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\Task[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Task>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTasks($var)

@@ -55,7 +55,7 @@ class WorkflowNode extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Model $model
      *           The model that will do the processing at this node. We only vlidate the model.id and
      *           model.model_version.id fields.
-     *     @type \Clarifai\Api\NodeInput[]|\Google\Protobuf\Internal\RepeatedField $node_inputs
+     *     @type array<\Clarifai\Api\NodeInput>|\Google\Protobuf\Internal\RepeatedField $node_inputs
      *           Each WorkflowNode can connect to multiple input nodes so that we can handle multi-model data
      *           and more complex workflow operations.
      *     @type bool $suppress_output
@@ -150,7 +150,7 @@ class WorkflowNode extends \Google\Protobuf\Internal\Message
      * and more complex workflow operations.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.NodeInput node_inputs = 3;</code>
-     * @param \Clarifai\Api\NodeInput[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\NodeInput>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setNodeInputs($var)

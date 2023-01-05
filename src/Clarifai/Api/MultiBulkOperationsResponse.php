@@ -31,7 +31,7 @@ class MultiBulkOperationsResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\BulkOperation[]|\Google\Protobuf\Internal\RepeatedField $bulk_operation
+     *     @type array<\Clarifai\Api\BulkOperation>|\Google\Protobuf\Internal\RepeatedField $bulk_operation
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiBulkOperationsResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.BulkOperation bulk_operation = 2;</code>
-     * @param \Clarifai\Api\BulkOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\BulkOperation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setBulkOperation($var)

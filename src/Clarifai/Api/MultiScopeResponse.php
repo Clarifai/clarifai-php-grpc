@@ -52,11 +52,11 @@ class MultiScopeResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *           The status of the request.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $scopes
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scopes
      *           This is a list of the scopes that your key has.
      *     @type \Clarifai\Api\App $app
      *           The app that the key has access to.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $endpoints
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $endpoints
      *           This is a list of endpoint permissions that your key has.
      *     @type string $user_feature_flags
      * }
@@ -117,7 +117,7 @@ class MultiScopeResponse extends \Google\Protobuf\Internal\Message
      * This is a list of the scopes that your key has.
      *
      * Generated from protobuf field <code>repeated string scopes = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setScopes($var)
@@ -179,7 +179,7 @@ class MultiScopeResponse extends \Google\Protobuf\Internal\Message
      * This is a list of endpoint permissions that your key has.
      *
      * Generated from protobuf field <code>repeated string endpoints = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEndpoints($var)

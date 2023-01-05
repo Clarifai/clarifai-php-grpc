@@ -31,7 +31,7 @@ class MultiModuleResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\Module[]|\Google\Protobuf\Internal\RepeatedField $modules
+     *     @type array<\Clarifai\Api\Module>|\Google\Protobuf\Internal\RepeatedField $modules
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiModuleResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Module modules = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\Module[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Module>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModules($var)

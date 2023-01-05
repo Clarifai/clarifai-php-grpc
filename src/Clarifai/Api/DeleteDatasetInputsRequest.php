@@ -41,7 +41,7 @@ class DeleteDatasetInputsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $dataset_id
      *           Identify dataset by id.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $input_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $input_ids
      *           Specify which inputs to delete from dataset.
      * }
      */
@@ -123,7 +123,7 @@ class DeleteDatasetInputsRequest extends \Google\Protobuf\Internal\Message
      * Specify which inputs to delete from dataset.
      *
      * Generated from protobuf field <code>repeated string input_ids = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setInputIds($var)

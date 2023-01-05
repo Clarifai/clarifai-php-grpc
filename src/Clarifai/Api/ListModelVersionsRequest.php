@@ -58,7 +58,7 @@ class ListModelVersionsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $concept_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $concept_ids
      *           To list only the model versions that have these concept ids present in them.
      * }
      */
@@ -192,7 +192,7 @@ class ListModelVersionsRequest extends \Google\Protobuf\Internal\Message
      * To list only the model versions that have these concept ids present in them.
      *
      * Generated from protobuf field <code>repeated string concept_ids = 5;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConceptIds($var)

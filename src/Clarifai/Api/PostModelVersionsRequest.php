@@ -24,15 +24,12 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $model_id = '';
     /**
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     private $model_versions;
     /**
      * Use this to filter inputs that are used in training
-     * Alternatively, use train_search & test_search fields OR dataset_version field.
+     * Alternatively, dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
      * @deprecated
@@ -42,22 +39,18 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
      *train_search is used to specify what data to train on.
      * Alternatively, use dataset_version field.
      *
-     * Generated from protobuf field <code>.clarifai.api.Search train_search = 5;</code>
+     * Generated from protobuf field <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
+     * @deprecated
      */
     protected $train_search = null;
     /**
      *test_search is used to specify what data to test on.
      * Alternatively, use dataset_version field.
      *
-     * Generated from protobuf field <code>.clarifai.api.Search test_search = 6;</code>
+     * Generated from protobuf field <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
+     * @deprecated
      */
     protected $test_search = null;
-    /**
-     * whether to evaluate the transfer trained model after training
-     *
-     * Generated from protobuf field <code>bool evaluate_after_training = 7;</code>
-     */
-    protected $evaluate_after_training = false;
     /**
      * Description about this training run
      *
@@ -91,20 +84,16 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $model_id
-     *     @type \Clarifai\Api\ModelVersion[]|\Google\Protobuf\Internal\RepeatedField $model_versions
-     *           This lets you post an existing model version rather than training a new one.
-     *           For internal Clarifai use only to start.
+     *     @type array<\Clarifai\Api\ModelVersion>|\Google\Protobuf\Internal\RepeatedField $model_versions
      *     @type \Clarifai\Api\Search $search
      *           Use this to filter inputs that are used in training
-     *           Alternatively, use train_search & test_search fields OR dataset_version field.
+     *           Alternatively, dataset_version field.
      *     @type \Clarifai\Api\Search $train_search
      *          train_search is used to specify what data to train on.
      *           Alternatively, use dataset_version field.
      *     @type \Clarifai\Api\Search $test_search
      *          test_search is used to specify what data to test on.
      *           Alternatively, use dataset_version field.
-     *     @type bool $evaluate_after_training
-     *           whether to evaluate the transfer trained model after training
      *     @type string $description
      *           Description about this training run
      *     @type \Clarifai\Api\DatasetVersion $dataset_version
@@ -179,9 +168,6 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -191,11 +177,8 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
-     * @param \Clarifai\Api\ModelVersion[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ModelVersion>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModelVersions($var)
@@ -208,7 +191,7 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Use this to filter inputs that are used in training
-     * Alternatively, use train_search & test_search fields OR dataset_version field.
+     * Alternatively, dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
      * @return \Clarifai\Api\Search|null
@@ -234,7 +217,7 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Use this to filter inputs that are used in training
-     * Alternatively, use train_search & test_search fields OR dataset_version field.
+     * Alternatively, dataset_version field.
      *
      * Generated from protobuf field <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
      * @param \Clarifai\Api\Search $var
@@ -254,21 +237,25 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
      *train_search is used to specify what data to train on.
      * Alternatively, use dataset_version field.
      *
-     * Generated from protobuf field <code>.clarifai.api.Search train_search = 5;</code>
+     * Generated from protobuf field <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
      * @return \Clarifai\Api\Search|null
+     * @deprecated
      */
     public function getTrainSearch()
     {
+        @trigger_error('train_search is deprecated.', E_USER_DEPRECATED);
         return $this->train_search;
     }
 
     public function hasTrainSearch()
     {
+        @trigger_error('train_search is deprecated.', E_USER_DEPRECATED);
         return isset($this->train_search);
     }
 
     public function clearTrainSearch()
     {
+        @trigger_error('train_search is deprecated.', E_USER_DEPRECATED);
         unset($this->train_search);
     }
 
@@ -276,12 +263,14 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
      *train_search is used to specify what data to train on.
      * Alternatively, use dataset_version field.
      *
-     * Generated from protobuf field <code>.clarifai.api.Search train_search = 5;</code>
+     * Generated from protobuf field <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
      * @param \Clarifai\Api\Search $var
      * @return $this
+     * @deprecated
      */
     public function setTrainSearch($var)
     {
+        @trigger_error('train_search is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Clarifai\Api\Search::class);
         $this->train_search = $var;
 
@@ -292,21 +281,25 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
      *test_search is used to specify what data to test on.
      * Alternatively, use dataset_version field.
      *
-     * Generated from protobuf field <code>.clarifai.api.Search test_search = 6;</code>
+     * Generated from protobuf field <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
      * @return \Clarifai\Api\Search|null
+     * @deprecated
      */
     public function getTestSearch()
     {
+        @trigger_error('test_search is deprecated.', E_USER_DEPRECATED);
         return $this->test_search;
     }
 
     public function hasTestSearch()
     {
+        @trigger_error('test_search is deprecated.', E_USER_DEPRECATED);
         return isset($this->test_search);
     }
 
     public function clearTestSearch()
     {
+        @trigger_error('test_search is deprecated.', E_USER_DEPRECATED);
         unset($this->test_search);
     }
 
@@ -314,40 +307,16 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
      *test_search is used to specify what data to test on.
      * Alternatively, use dataset_version field.
      *
-     * Generated from protobuf field <code>.clarifai.api.Search test_search = 6;</code>
+     * Generated from protobuf field <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
      * @param \Clarifai\Api\Search $var
      * @return $this
+     * @deprecated
      */
     public function setTestSearch($var)
     {
+        @trigger_error('test_search is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Clarifai\Api\Search::class);
         $this->test_search = $var;
-
-        return $this;
-    }
-
-    /**
-     * whether to evaluate the transfer trained model after training
-     *
-     * Generated from protobuf field <code>bool evaluate_after_training = 7;</code>
-     * @return bool
-     */
-    public function getEvaluateAfterTraining()
-    {
-        return $this->evaluate_after_training;
-    }
-
-    /**
-     * whether to evaluate the transfer trained model after training
-     *
-     * Generated from protobuf field <code>bool evaluate_after_training = 7;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setEvaluateAfterTraining($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->evaluate_after_training = $var;
 
         return $this;
     }

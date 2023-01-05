@@ -33,7 +33,7 @@ class PostAnnotationFiltersRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type \Clarifai\Api\AnnotationFilter[]|\Google\Protobuf\Internal\RepeatedField $annotation_filters
+     *     @type array<\Clarifai\Api\AnnotationFilter>|\Google\Protobuf\Internal\RepeatedField $annotation_filters
      *           List of annotation filters that are requested to be added.
      * }
      */
@@ -89,7 +89,7 @@ class PostAnnotationFiltersRequest extends \Google\Protobuf\Internal\Message
      * List of annotation filters that are requested to be added.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.AnnotationFilter annotation_filters = 2;</code>
-     * @param \Clarifai\Api\AnnotationFilter[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\AnnotationFilter>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAnnotationFilters($var)
