@@ -23,7 +23,7 @@
     "google/common-protos": "^1.2"
   },
   "require-dev": {
-    "phpunit/phpunit": "9.2.6"
+    "phpunit/phpunit": "10.0.0"
   },
   "autoload": {
     "psr-4": {
