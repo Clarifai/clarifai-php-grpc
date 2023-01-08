@@ -59,7 +59,7 @@ class ListInputsRequest extends \Google\Protobuf\Internal\Message
      *           to 128.
      *     @type \Clarifai\Api\Status\Status $status
      *           Set status to filter by status
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
      * }
      */
     public function __construct($data = NULL) {
@@ -202,7 +202,7 @@ class ListInputsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string ids = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setIds($var)

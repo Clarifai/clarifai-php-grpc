@@ -54,7 +54,7 @@ class PostWorkflowResultsResponse extends \Google\Protobuf\Internal\Message
      *           The status of the request.
      *     @type \Clarifai\Api\Workflow $workflow
      *           The workflow that was used in predictions with PostWorkflowResults
-     *     @type \Clarifai\Api\WorkflowResult[]|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type array<\Clarifai\Api\WorkflowResult>|\Google\Protobuf\Internal\RepeatedField $results
      *           The resulting predictions of all models in the workflow.
      *     @type \Clarifai\Api\WorkflowState $workflow_state
      *           A workflow state to be maintained across PostWorkflowResults requests/responses.
@@ -156,7 +156,7 @@ class PostWorkflowResultsResponse extends \Google\Protobuf\Internal\Message
      * The resulting predictions of all models in the workflow.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowResult results = 3;</code>
-     * @param \Clarifai\Api\WorkflowResult[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\WorkflowResult>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setResults($var)

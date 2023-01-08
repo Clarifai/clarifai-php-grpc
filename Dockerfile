@@ -8,7 +8,7 @@ RUN curl --silent --show-error https://getcomposer.org/installer | \
     php -- --install-dir=/usr/local/bin --filename=composer
 
 RUN docker-php-ext-install bcmath zip
-RUN pecl install xdebug
+RUN pecl install xdebug-3.1.0
 RUN docker-php-ext-enable xdebug
 
 RUN pecl install grpc

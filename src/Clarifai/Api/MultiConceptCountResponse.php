@@ -36,7 +36,7 @@ class MultiConceptCountResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *           The response status.
-     *     @type \Clarifai\Api\ConceptCount[]|\Google\Protobuf\Internal\RepeatedField $concept_counts
+     *     @type array<\Clarifai\Api\ConceptCount>|\Google\Protobuf\Internal\RepeatedField $concept_counts
      *           The returned concept counts.
      * }
      */
@@ -96,7 +96,7 @@ class MultiConceptCountResponse extends \Google\Protobuf\Internal\Message
      * The returned concept counts.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ConceptCount concept_counts = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\ConceptCount[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ConceptCount>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConceptCounts($var)

@@ -31,7 +31,7 @@ class MultiModelVersionResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\ModelVersion[]|\Google\Protobuf\Internal\RepeatedField $model_versions
+     *     @type array<\Clarifai\Api\ModelVersion>|\Google\Protobuf\Internal\RepeatedField $model_versions
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiModelVersionResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.ModelVersion model_versions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\ModelVersion[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ModelVersion>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModelVersions($var)

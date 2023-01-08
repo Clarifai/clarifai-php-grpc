@@ -34,7 +34,7 @@ class PostWorkflowVersionsPublishRequest extends \Google\Protobuf\Internal\Messa
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $workflow_id
-     *     @type \Clarifai\Api\WorkflowVersionPublishRequest[]|\Google\Protobuf\Internal\RepeatedField $publications
+     *     @type array<\Clarifai\Api\WorkflowVersionPublishRequest>|\Google\Protobuf\Internal\RepeatedField $publications
      * }
      */
     public function __construct($data = NULL) {
@@ -107,7 +107,7 @@ class PostWorkflowVersionsPublishRequest extends \Google\Protobuf\Internal\Messa
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowVersionPublishRequest publications = 3;</code>
-     * @param \Clarifai\Api\WorkflowVersionPublishRequest[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\WorkflowVersionPublishRequest>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPublications($var)

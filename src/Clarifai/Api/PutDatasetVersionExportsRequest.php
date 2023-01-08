@@ -50,7 +50,7 @@ class PutDatasetVersionExportsRequest extends \Google\Protobuf\Internal\Message
      *           Identify dataset by id.
      *     @type string $dataset_version_id
      *           Identify dataset version by id.
-     *     @type \Clarifai\Api\DatasetVersionExport[]|\Google\Protobuf\Internal\RepeatedField $exports
+     *     @type array<\Clarifai\Api\DatasetVersionExport>|\Google\Protobuf\Internal\RepeatedField $exports
      *           exports is the list of requested dataset version exports.
      *           Only setting the 'format' field of the export is supported.
      * }
@@ -161,7 +161,7 @@ class PutDatasetVersionExportsRequest extends \Google\Protobuf\Internal\Message
      * Only setting the 'format' field of the export is supported.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.DatasetVersionExport exports = 4;</code>
-     * @param \Clarifai\Api\DatasetVersionExport[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\DatasetVersionExport>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExports($var)

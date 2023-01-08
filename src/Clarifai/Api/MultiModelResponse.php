@@ -31,7 +31,7 @@ class MultiModelResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\Model[]|\Google\Protobuf\Internal\RepeatedField $models
+     *     @type array<\Clarifai\Api\Model>|\Google\Protobuf\Internal\RepeatedField $models
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiModelResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Model models = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\Model[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Model>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModels($var)

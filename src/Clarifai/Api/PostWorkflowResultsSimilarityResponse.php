@@ -31,7 +31,7 @@ class PostWorkflowResultsSimilarityResponse extends \Google\Protobuf\Internal\Me
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\WorkflowResultsSimilarity[]|\Google\Protobuf\Internal\RepeatedField $results
+     *     @type array<\Clarifai\Api\WorkflowResultsSimilarity>|\Google\Protobuf\Internal\RepeatedField $results
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class PostWorkflowResultsSimilarityResponse extends \Google\Protobuf\Internal\Me
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
-     * @param \Clarifai\Api\WorkflowResultsSimilarity[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\WorkflowResultsSimilarity>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setResults($var)

@@ -88,12 +88,6 @@ class ModelType extends \Google\Protobuf\Internal\Message
      */
     protected $requires_sequential_frames = false;
     /**
-     * Can this model be evaluated?
-     *
-     * Generated from protobuf field <code>bool evaluable = 13;</code>
-     */
-    protected $evaluable = false;
-    /**
      * Expected input layers of an uploaded model
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -105,6 +99,10 @@ class ModelType extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
      */
     private $expected_output_layers;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
+     */
+    protected $evaluation_type = 0;
 
     /**
      * Constructor.
@@ -120,10 +118,10 @@ class ModelType extends \Google\Protobuf\Internal\Message
      *           title for this model in model gallery
      *     @type string $description
      *           Description of this model type.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $input_fields
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $input_fields
      *           The list of input fields that this model accepts. These are the keys of the Model's
      *           InputInfo.fields_map
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $output_fields
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $output_fields
      *           The list of output fields that this model accepts. These are the keys of the Model's
      *           OutputInfo.fields_map
      *     @type bool $trainable
@@ -133,7 +131,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
      *           model mode.
      *     @type bool $internal_only
      *           Is this model type only for internal users at this time.
-     *     @type \Clarifai\Api\ModelTypeField[]|\Google\Protobuf\Internal\RepeatedField $model_type_fields
+     *     @type array<\Clarifai\Api\ModelTypeField>|\Google\Protobuf\Internal\RepeatedField $model_type_fields
      *           The remaining fields are definitions of the configurable fields that exist.
      *           Each field has path into the Model object such as "name" as a top level or "output_info.data"
      *           if it's the Data object within the OutputInfo object. We decided to not break these up
@@ -142,12 +140,11 @@ class ModelType extends \Google\Protobuf\Internal\Message
      *     @type bool $requires_sequential_frames
      *           For sequence models we need to know when processing that they require temporal time frames
      *           in sequential order. This will be true for model types like trackers as an example.
-     *     @type bool $evaluable
-     *           Can this model be evaluated?
-     *     @type \Clarifai\Api\ModelLayerInfo[]|\Google\Protobuf\Internal\RepeatedField $expected_input_layers
+     *     @type array<\Clarifai\Api\ModelLayerInfo>|\Google\Protobuf\Internal\RepeatedField $expected_input_layers
      *           Expected input layers of an uploaded model
-     *     @type \Clarifai\Api\ModelLayerInfo[]|\Google\Protobuf\Internal\RepeatedField $expected_output_layers
+     *     @type array<\Clarifai\Api\ModelLayerInfo>|\Google\Protobuf\Internal\RepeatedField $expected_output_layers
      *           Expected output layers of an uploaded model
+     *     @type int $evaluation_type
      * }
      */
     public function __construct($data = NULL) {
@@ -254,7 +251,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
      * InputInfo.fields_map
      *
      * Generated from protobuf field <code>repeated string input_fields = 5;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setInputFields($var)
@@ -282,7 +279,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
      * OutputInfo.fields_map
      *
      * Generated from protobuf field <code>repeated string output_fields = 6;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOutputFields($var)
@@ -396,7 +393,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
      * so that they are most flexible.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
-     * @param \Clarifai\Api\ModelTypeField[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ModelTypeField>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModelTypeFields($var)
@@ -436,32 +433,6 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Can this model be evaluated?
-     *
-     * Generated from protobuf field <code>bool evaluable = 13;</code>
-     * @return bool
-     */
-    public function getEvaluable()
-    {
-        return $this->evaluable;
-    }
-
-    /**
-     * Can this model be evaluated?
-     *
-     * Generated from protobuf field <code>bool evaluable = 13;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setEvaluable($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->evaluable = $var;
-
-        return $this;
-    }
-
-    /**
      * Expected input layers of an uploaded model
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -476,7 +447,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
      * Expected input layers of an uploaded model
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
-     * @param \Clarifai\Api\ModelLayerInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ModelLayerInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExpectedInputLayers($var)
@@ -502,13 +473,35 @@ class ModelType extends \Google\Protobuf\Internal\Message
      * Expected output layers of an uploaded model
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
-     * @param \Clarifai\Api\ModelLayerInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ModelLayerInfo>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExpectedOutputLayers($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\ModelLayerInfo::class);
         $this->expected_output_layers = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
+     * @return int
+     */
+    public function getEvaluationType()
+    {
+        return $this->evaluation_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEvaluationType($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\EvaluationType::class);
+        $this->evaluation_type = $var;
 
         return $this;
     }

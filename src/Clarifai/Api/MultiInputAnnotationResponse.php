@@ -31,7 +31,7 @@ class MultiInputAnnotationResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $hits
+     *     @type array<\Clarifai\Api\Hit>|\Google\Protobuf\Internal\RepeatedField $hits
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiInputAnnotationResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Hit>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHits($var)

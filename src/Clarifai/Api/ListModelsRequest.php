@@ -128,6 +128,13 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
      */
     private $additional_fields;
+    /**
+     * Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
+     * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
+     *
+     * Generated from protobuf field <code>bool dont_fetch_from_main = 23;</code>
+     */
+    protected $dont_fetch_from_main = false;
     protected $sort_by;
 
     /**
@@ -165,10 +172,10 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           supported.
      *     @type bool $trained_only
      *           If true, we only return models that have the status MODEL_TRAINED, which includes non-trainable model types.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $input_fields
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $input_fields
      *           The list of input fields to the model.
      *           For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $output_fields
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $output_fields
      *           The list of output fields to the model.
      *           For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
      *     @type string $license
@@ -177,14 +184,17 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           If true, we only return models that are handpicked by clarifai staff
      *     @type bool $starred_only
      *           If true, we only return models that are starred by the requesting user
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $toolkits
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $toolkits
      *           List of toolkit tags to filter by
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $use_cases
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $use_cases
      *           List of use_case tags to filter by
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $languages
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $languages
      *           List of language tags to filter by
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     *     @type bool $dont_fetch_from_main
+     *           Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
+     *           away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
      * }
      */
     public function __construct($data = NULL) {
@@ -554,7 +564,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
      *
      * Generated from protobuf field <code>repeated string input_fields = 8;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setInputFields($var)
@@ -582,7 +592,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
      *
      * Generated from protobuf field <code>repeated string output_fields = 9;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOutputFields($var)
@@ -686,7 +696,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * List of toolkit tags to filter by
      *
      * Generated from protobuf field <code>repeated string toolkits = 17;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setToolkits($var)
@@ -712,7 +722,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * List of use_case tags to filter by
      *
      * Generated from protobuf field <code>repeated string use_cases = 18;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUseCases($var)
@@ -738,7 +748,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * List of language tags to filter by
      *
      * Generated from protobuf field <code>repeated string languages = 21;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLanguages($var)
@@ -764,13 +774,41 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      *
      * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdditionalFields($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->additional_fields = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
+     * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
+     *
+     * Generated from protobuf field <code>bool dont_fetch_from_main = 23;</code>
+     * @return bool
+     */
+    public function getDontFetchFromMain()
+    {
+        return $this->dont_fetch_from_main;
+    }
+
+    /**
+     * Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
+     * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
+     *
+     * Generated from protobuf field <code>bool dont_fetch_from_main = 23;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDontFetchFromMain($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->dont_fetch_from_main = $var;
 
         return $this;
     }

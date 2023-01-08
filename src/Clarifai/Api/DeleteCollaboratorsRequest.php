@@ -35,8 +35,8 @@ class DeleteCollaboratorsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $collaborator_ids
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $user_emails
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $collaborator_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $user_emails
      * }
      */
     public function __construct($data = NULL) {
@@ -87,7 +87,7 @@ class DeleteCollaboratorsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string collaborator_ids = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCollaboratorIds($var)
@@ -109,7 +109,7 @@ class DeleteCollaboratorsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string user_emails = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUserEmails($var)

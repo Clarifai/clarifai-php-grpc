@@ -81,7 +81,7 @@ class Status extends \Google\Protobuf\Internal\Message
      *           A longer description of the error.
      *     @type string $details
      *           More details of the given error.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $stack_trace
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $stack_trace
      *           For some environment we may return a stack trace to help debug
      *           any issues.
      *     @type int $percent_completed
@@ -196,7 +196,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * any issues.
      *
      * Generated from protobuf field <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setStackTrace($var)

@@ -31,7 +31,7 @@ class MultiOutputResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\Output[]|\Google\Protobuf\Internal\RepeatedField $outputs
+     *     @type array<\Clarifai\Api\Output>|\Google\Protobuf\Internal\RepeatedField $outputs
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiOutputResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\Output[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Output>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOutputs($var)

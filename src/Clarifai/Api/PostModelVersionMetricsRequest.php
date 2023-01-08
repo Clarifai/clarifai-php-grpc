@@ -28,10 +28,6 @@ class PostModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $version_id = '';
     /**
-     * Generated from protobuf field <code>uint32 max_examples = 4;</code>
-     */
-    protected $max_examples = 0;
-    /**
      * Use this to filter inputs that are used in evaluation
      *
      * Generated from protobuf field <code>.clarifai.api.Search test_search = 5;</code>
@@ -53,7 +49,6 @@ class PostModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $model_id
      *     @type string $version_id
-     *     @type int $max_examples
      *     @type \Clarifai\Api\Search $test_search
      *           Use this to filter inputs that are used in evaluation
      *     @type \Clarifai\Api\EvalInfo $eval_info
@@ -137,28 +132,6 @@ class PostModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->version_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 max_examples = 4;</code>
-     * @return int
-     */
-    public function getMaxExamples()
-    {
-        return $this->max_examples;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 max_examples = 4;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setMaxExamples($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->max_examples = $var;
 
         return $this;
     }

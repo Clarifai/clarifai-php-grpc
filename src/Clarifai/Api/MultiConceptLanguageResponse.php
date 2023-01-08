@@ -31,7 +31,7 @@ class MultiConceptLanguageResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\ConceptLanguage[]|\Google\Protobuf\Internal\RepeatedField $concept_languages
+     *     @type array<\Clarifai\Api\ConceptLanguage>|\Google\Protobuf\Internal\RepeatedField $concept_languages
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiConceptLanguageResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.ConceptLanguage concept_languages = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\ConceptLanguage[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ConceptLanguage>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConceptLanguages($var)

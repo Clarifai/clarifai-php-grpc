@@ -36,7 +36,7 @@ class PostConceptMappingJobsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *           The user_id and app_id information.
-     *     @type \Clarifai\Api\ConceptMappingJob[]|\Google\Protobuf\Internal\RepeatedField $concept_mapping_jobs
+     *     @type array<\Clarifai\Api\ConceptMappingJob>|\Google\Protobuf\Internal\RepeatedField $concept_mapping_jobs
      *           The concept mapping jobs that are being started
      * }
      */
@@ -96,7 +96,7 @@ class PostConceptMappingJobsRequest extends \Google\Protobuf\Internal\Message
      * The concept mapping jobs that are being started
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
-     * @param \Clarifai\Api\ConceptMappingJob[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ConceptMappingJob>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConceptMappingJobs($var)

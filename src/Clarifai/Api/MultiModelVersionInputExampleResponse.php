@@ -36,7 +36,7 @@ class MultiModelVersionInputExampleResponse extends \Google\Protobuf\Internal\Me
      *
      *     @type \Clarifai\Api\Status\Status $status
      *           status of response
-     *     @type \Clarifai\Api\ModelVersionInputExample[]|\Google\Protobuf\Internal\RepeatedField $model_version_input_examples
+     *     @type array<\Clarifai\Api\ModelVersionInputExample>|\Google\Protobuf\Internal\RepeatedField $model_version_input_examples
      *           model input example messages
      * }
      */
@@ -96,7 +96,7 @@ class MultiModelVersionInputExampleResponse extends \Google\Protobuf\Internal\Me
      * model input example messages
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelVersionInputExample model_version_input_examples = 2;</code>
-     * @param \Clarifai\Api\ModelVersionInputExample[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ModelVersionInputExample>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModelVersionInputExamples($var)

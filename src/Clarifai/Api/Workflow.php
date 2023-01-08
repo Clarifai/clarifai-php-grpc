@@ -133,7 +133,7 @@ class Workflow extends \Google\Protobuf\Internal\Message
      *           "2006-01-02T15:04:05.999999Z" so you can expect results like
      *           the following from the API:
      *           "2017-04-11T21:50:50.223962Z"
-     *     @type \Clarifai\Api\WorkflowNode[]|\Google\Protobuf\Internal\RepeatedField $nodes
+     *     @type array<\Clarifai\Api\WorkflowNode>|\Google\Protobuf\Internal\RepeatedField $nodes
      *           The list of nodes retrieved from latest workflow version.
      *           Each node can specify an input node that it connects to in order to define the graph.
      *     @type \Google\Protobuf\Struct $metadata
@@ -160,9 +160,9 @@ class Workflow extends \Google\Protobuf\Internal\Message
      *     @type string $notes
      *           Notes for the workflow
      *           This field should be used for in-depth notes and supports up to 64Kbs.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $use_cases
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $use_cases
      *           Tags from use_cases category
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $check_consents
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $check_consents
      *           Tags for check consents
      * }
      */
@@ -284,7 +284,7 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * Each node can specify an input node that it connects to in order to define the graph.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
-     * @param \Clarifai\Api\WorkflowNode[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\WorkflowNode>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setNodes($var)
@@ -596,7 +596,7 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * Tags from use_cases category
      *
      * Generated from protobuf field <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUseCases($var)
@@ -622,7 +622,7 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * Tags for check consents
      *
      * Generated from protobuf field <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCheckConsents($var)

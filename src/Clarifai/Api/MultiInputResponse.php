@@ -35,7 +35,7 @@ class MultiInputResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $inputs
+     *     @type array<\Clarifai\Api\Input>|\Google\Protobuf\Internal\RepeatedField $inputs
      *     @type \Clarifai\Api\InputsAddJob $inputs_add_job
      * }
      */
@@ -87,7 +87,7 @@ class MultiInputResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Input inputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Input>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setInputs($var)

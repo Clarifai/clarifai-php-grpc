@@ -36,7 +36,7 @@ class PostStatValuesAggregateRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *           Ids present in the url of the request.
-     *     @type \Clarifai\Api\StatValueAggregateQuery[]|\Google\Protobuf\Internal\RepeatedField $stat_value_aggregate_queries
+     *     @type array<\Clarifai\Api\StatValueAggregateQuery>|\Google\Protobuf\Internal\RepeatedField $stat_value_aggregate_queries
      *           Query to retrieve aggregate values.
      * }
      */
@@ -96,7 +96,7 @@ class PostStatValuesAggregateRequest extends \Google\Protobuf\Internal\Message
      * Query to retrieve aggregate values.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.StatValueAggregateQuery stat_value_aggregate_queries = 2;</code>
-     * @param \Clarifai\Api\StatValueAggregateQuery[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\StatValueAggregateQuery>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setStatValueAggregateQueries($var)

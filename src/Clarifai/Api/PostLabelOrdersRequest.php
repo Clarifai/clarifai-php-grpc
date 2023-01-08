@@ -31,7 +31,7 @@ class PostLabelOrdersRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type \Clarifai\Api\LabelOrder[]|\Google\Protobuf\Internal\RepeatedField $label_orders
+     *     @type array<\Clarifai\Api\LabelOrder>|\Google\Protobuf\Internal\RepeatedField $label_orders
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class PostLabelOrdersRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.LabelOrder label_orders = 2;</code>
-     * @param \Clarifai\Api\LabelOrder[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\LabelOrder>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLabelOrders($var)

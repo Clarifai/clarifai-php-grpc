@@ -40,7 +40,7 @@ class PatchDatasetsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type \Clarifai\Api\Dataset[]|\Google\Protobuf\Internal\RepeatedField $datasets
+     *     @type array<\Clarifai\Api\Dataset>|\Google\Protobuf\Internal\RepeatedField $datasets
      *           List of datasets that are requested to be updated.
      *     @type string $action
      *           The action to perform on the patched objects
@@ -99,7 +99,7 @@ class PatchDatasetsRequest extends \Google\Protobuf\Internal\Message
      * List of datasets that are requested to be updated.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Dataset datasets = 2;</code>
-     * @param \Clarifai\Api\Dataset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Dataset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDatasets($var)

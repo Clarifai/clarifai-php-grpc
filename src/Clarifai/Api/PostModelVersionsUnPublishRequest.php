@@ -36,7 +36,7 @@ class PostModelVersionsUnPublishRequest extends \Google\Protobuf\Internal\Messag
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $model_id
-     *     @type \Clarifai\Api\ModelVersionUnpublishRequest[]|\Google\Protobuf\Internal\RepeatedField $publications
+     *     @type array<\Clarifai\Api\ModelVersionUnpublishRequest>|\Google\Protobuf\Internal\RepeatedField $publications
      * }
      */
     public function __construct($data = NULL) {
@@ -109,7 +109,7 @@ class PostModelVersionsUnPublishRequest extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     * @param \Clarifai\Api\ModelVersionUnpublishRequest[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ModelVersionUnpublishRequest>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPublications($var)

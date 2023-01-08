@@ -78,7 +78,7 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $version_id
      *           Workflow version ID to retrieve
      *           If no ID is specified, latest workflow version is used
-     *     @type \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $inputs
+     *     @type array<\Clarifai\Api\Input>|\Google\Protobuf\Internal\RepeatedField $inputs
      *     @type \Clarifai\Api\OutputConfig $output_config
      *           FIXME(zeiler): the request for post workflows is using an outputconfig object that is supposed
      *           to be within models. This is not consistent with setting this on the request for post model
@@ -200,7 +200,7 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Input inputs = 3;</code>
-     * @param \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Input>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setInputs($var)

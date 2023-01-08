@@ -79,16 +79,16 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $worker_user_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $worker_user_ids
      *           Get tasks that have ANY user from this list assigned as worker.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $review_user_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $review_user_ids
      *           Get tasks that have ANY user from this list assigned as reviewer.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $label_order_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $label_order_ids
      *           Get tasks that are associated to ANY label order from this list.
      *     @type bool $including_label_order_tasks
      *           Get label order tasks as well
      *           It is automatically set to true if label_order_ids is set.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response.
      *           Currently supported: all, worker.users, review.users.
      * }
@@ -201,7 +201,7 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      * Get tasks that have ANY user from this list assigned as worker.
      *
      * Generated from protobuf field <code>repeated string worker_user_ids = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setWorkerUserIds($var)
@@ -227,7 +227,7 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      * Get tasks that have ANY user from this list assigned as reviewer.
      *
      * Generated from protobuf field <code>repeated string review_user_ids = 5;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setReviewUserIds($var)
@@ -253,7 +253,7 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      * Get tasks that are associated to ANY label order from this list.
      *
      * Generated from protobuf field <code>repeated string label_order_ids = 8;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLabelOrderIds($var)
@@ -309,7 +309,7 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      * Currently supported: all, worker.users, review.users.
      *
      * Generated from protobuf field <code>repeated string additional_fields = 7;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdditionalFields($var)

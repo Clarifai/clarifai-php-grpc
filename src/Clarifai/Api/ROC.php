@@ -42,11 +42,11 @@ class ROC extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type float[]|\Google\Protobuf\Internal\RepeatedField $fpr
-     *     @type float[]|\Google\Protobuf\Internal\RepeatedField $tpr
-     *     @type float[]|\Google\Protobuf\Internal\RepeatedField $thresholds
-     *     @type float[]|\Google\Protobuf\Internal\RepeatedField $fpr_per_image
-     *     @type float[]|\Google\Protobuf\Internal\RepeatedField $fpr_per_object
+     *     @type array<float>|\Google\Protobuf\Internal\RepeatedField $fpr
+     *     @type array<float>|\Google\Protobuf\Internal\RepeatedField $tpr
+     *     @type array<float>|\Google\Protobuf\Internal\RepeatedField $thresholds
+     *     @type array<float>|\Google\Protobuf\Internal\RepeatedField $fpr_per_image
+     *     @type array<float>|\Google\Protobuf\Internal\RepeatedField $fpr_per_object
      * }
      */
     public function __construct($data = NULL) {
@@ -65,7 +65,7 @@ class ROC extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated float fpr = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param float[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<float>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFpr($var)
@@ -87,7 +87,7 @@ class ROC extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated float tpr = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param float[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<float>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTpr($var)
@@ -109,7 +109,7 @@ class ROC extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param float[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<float>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setThresholds($var)
@@ -131,7 +131,7 @@ class ROC extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated float fpr_per_image = 4;</code>
-     * @param float[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<float>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFprPerImage($var)
@@ -153,7 +153,7 @@ class ROC extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated float fpr_per_object = 5;</code>
-     * @param float[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<float>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFprPerObject($var)

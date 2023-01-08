@@ -31,7 +31,7 @@ class PostCollectorsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type \Clarifai\Api\Collector[]|\Google\Protobuf\Internal\RepeatedField $collectors
+     *     @type array<\Clarifai\Api\Collector>|\Google\Protobuf\Internal\RepeatedField $collectors
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class PostCollectorsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Collector collectors = 2;</code>
-     * @param \Clarifai\Api\Collector[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Collector>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCollectors($var)

@@ -82,7 +82,7 @@ class Input extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Status\Status $status
      *           This is the status at a per Input level which allows for
      *           partial failures.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $dataset_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $dataset_ids
      *           List of dataset IDs that this input is part of
      *           Currently, this field is ONLY used to
      *           * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
@@ -298,7 +298,7 @@ class Input extends \Google\Protobuf\Internal\Message
      * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
      *
      * Generated from protobuf field <code>repeated string dataset_ids = 7;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDatasetIds($var)

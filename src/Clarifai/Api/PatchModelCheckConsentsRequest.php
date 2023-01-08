@@ -47,7 +47,7 @@ class PatchModelCheckConsentsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $model_id
      *           the model id
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $check_consents
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $check_consents
      *           the consents
      *     @type string $action
      *          overwrite supported
@@ -131,7 +131,7 @@ class PatchModelCheckConsentsRequest extends \Google\Protobuf\Internal\Message
      * the consents
      *
      * Generated from protobuf field <code>repeated string check_consents = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCheckConsents($var)

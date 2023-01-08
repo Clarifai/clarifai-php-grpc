@@ -46,7 +46,7 @@ class ModelLayerInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type string $data_field_name
      *           The api.Data field this layer will be parsed into
-     *     @type \Clarifai\Api\LayerShape[]|\Google\Protobuf\Internal\RepeatedField $shapes
+     *     @type array<\Clarifai\Api\LayerShape>|\Google\Protobuf\Internal\RepeatedField $shapes
      *           Description of the expected shape. Can support multiple support layer shapes.
      *     @type string $description
      *           Brief description about the layer if needed
@@ -100,7 +100,7 @@ class ModelLayerInfo extends \Google\Protobuf\Internal\Message
      * Description of the expected shape. Can support multiple support layer shapes.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.LayerShape shapes = 2;</code>
-     * @param \Clarifai\Api\LayerShape[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\LayerShape>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setShapes($var)

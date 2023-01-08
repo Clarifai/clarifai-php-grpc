@@ -56,9 +56,9 @@ class Collaboration extends \Google\Protobuf\Internal\Message
      *          the application
      *     @type \Clarifai\Api\User $app_owner
      *          the app owner's info(including user_unique_id, first_name, last_name, primary_email)
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $scopes
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scopes
      *          the low-level scope users are shared with for this collaboration
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $endpoints
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $endpoints
      *          the endpoint-level scopes users are shared with for this collaboration
      *     @type \Google\Protobuf\Timestamp $created_at
      *          when is the collaboration created
@@ -156,7 +156,7 @@ class Collaboration extends \Google\Protobuf\Internal\Message
      *the low-level scope users are shared with for this collaboration
      *
      * Generated from protobuf field <code>repeated string scopes = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setScopes($var)
@@ -182,7 +182,7 @@ class Collaboration extends \Google\Protobuf\Internal\Message
      *the endpoint-level scopes users are shared with for this collaboration
      *
      * Generated from protobuf field <code>repeated string endpoints = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEndpoints($var)

@@ -38,7 +38,7 @@ class ModuleNav extends \Google\Protobuf\Internal\Message
      *           This is the left side title for this module and for browser tab title of the module.
      *           We have this in the version so that users can change those settings
      *           when releasing a new version of their module.
-     *     @type \Clarifai\Api\ModuleVersion\ModuleSubNav[]|\Google\Protobuf\Internal\RepeatedField $module_sub_navs
+     *     @type array<\Clarifai\Api\ModuleVersion\ModuleSubNav>|\Google\Protobuf\Internal\RepeatedField $module_sub_navs
      *           A list of subnav elements to put under the module title.
      * }
      */
@@ -92,7 +92,7 @@ class ModuleNav extends \Google\Protobuf\Internal\Message
      * A list of subnav elements to put under the module title.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModuleVersion.ModuleSubNav module_sub_navs = 2;</code>
-     * @param \Clarifai\Api\ModuleVersion\ModuleSubNav[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ModuleVersion\ModuleSubNav>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModuleSubNavs($var)

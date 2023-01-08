@@ -83,7 +83,7 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Struct $metadata
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
-     *     @type \Clarifai\Api\EmailAddress[]|\Google\Protobuf\Internal\RepeatedField $email_addresses
+     *     @type array<\Clarifai\Api\EmailAddress>|\Google\Protobuf\Internal\RepeatedField $email_addresses
      *     @type bool $two_factor_auth_enabled
      *     @type int $teams_count
      *     @type string $country
@@ -316,7 +316,7 @@ class UserDetail extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.EmailAddress email_addresses = 7;</code>
-     * @param \Clarifai\Api\EmailAddress[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\EmailAddress>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEmailAddresses($var)

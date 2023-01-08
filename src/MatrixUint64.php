@@ -39,7 +39,7 @@ class MatrixUint64 extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $n_cols
      *           Number of columns
-     *     @type int[]|string[]|\Google\Protobuf\Internal\RepeatedField $data
+     *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $data
      *           Matrix data stored as an array.
      *           In order to access matrix element at row i & column j, use data[i*n_cols+j].
      * }
@@ -92,7 +92,7 @@ class MatrixUint64 extends \Google\Protobuf\Internal\Message
      * In order to access matrix element at row i & column j, use data[i*n_cols+j].
      *
      * Generated from protobuf field <code>repeated uint64 data = 2;</code>
-     * @param int[]|string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setData($var)

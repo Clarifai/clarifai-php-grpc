@@ -104,7 +104,7 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
      *           Description for this field.
      *     @type string $placeholder
      *           Placeholder text for the UI element.
-     *     @type \Clarifai\Api\ModelTypeEnumOption[]|\Google\Protobuf\Internal\RepeatedField $model_type_enum_options
+     *     @type array<\Clarifai\Api\ModelTypeEnumOption>|\Google\Protobuf\Internal\RepeatedField $model_type_enum_options
      *           List of options of the ENUM type and potentially additional fields they bring with them.
      *     @type bool $internal_only
      *           If this field should appear for internal users only.
@@ -292,7 +292,7 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
      * List of options of the ENUM type and potentially additional fields they bring with them.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeEnumOption model_type_enum_options = 6;</code>
-     * @param \Clarifai\Api\ModelTypeEnumOption[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ModelTypeEnumOption>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModelTypeEnumOptions($var)

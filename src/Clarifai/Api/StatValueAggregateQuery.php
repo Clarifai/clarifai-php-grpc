@@ -74,10 +74,10 @@ class StatValueAggregateQuery extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $tags
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $tags
      *           These tags are used to filter down the values before they are aggregated. For example,
      *           if you want to aggregate values for "task_id:a" you could specify that as a tag here.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $tag_groups
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $tag_groups
      *           These are tag groups to aggregate over. So for example if you added stat values with tags
      *           "task_id:a" and others with "task_id:b", then added ["task_id"] to the task group, it the
      *           aggregation would return StatValueAggregate values for each task_id. If you provide more than
@@ -126,7 +126,7 @@ class StatValueAggregateQuery extends \Google\Protobuf\Internal\Message
      * if you want to aggregate values for "task_id:a" you could specify that as a tag here.
      *
      * Generated from protobuf field <code>repeated string tags = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTags($var)
@@ -172,7 +172,7 @@ class StatValueAggregateQuery extends \Google\Protobuf\Internal\Message
      * b       | 1
      *
      * Generated from protobuf field <code>repeated string tag_groups = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTagGroups($var)

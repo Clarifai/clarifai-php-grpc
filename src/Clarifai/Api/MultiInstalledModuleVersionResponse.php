@@ -31,7 +31,7 @@ class MultiInstalledModuleVersionResponse extends \Google\Protobuf\Internal\Mess
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\InstalledModuleVersion[]|\Google\Protobuf\Internal\RepeatedField $installed_module_versions
+     *     @type array<\Clarifai\Api\InstalledModuleVersion>|\Google\Protobuf\Internal\RepeatedField $installed_module_versions
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiInstalledModuleVersionResponse extends \Google\Protobuf\Internal\Mess
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\InstalledModuleVersion[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\InstalledModuleVersion>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setInstalledModuleVersions($var)

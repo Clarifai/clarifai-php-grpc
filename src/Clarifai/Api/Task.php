@@ -150,7 +150,7 @@ class Task extends \Google\Protobuf\Internal\Message
      *           Description of the task.
      *     @type \Clarifai\Api\TaskWorker $worker
      *           Worker details.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $concept_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $concept_ids
      *           List of concept ids used in the work of this task if label type is classification.
      *     @type \Clarifai\Api\TaskInputSource $input_source
      *           List of inputs used in this task will be taken from this source.
@@ -391,7 +391,7 @@ class Task extends \Google\Protobuf\Internal\Message
      * List of concept ids used in the work of this task if label type is classification.
      *
      * Generated from protobuf field <code>repeated string concept_ids = 7;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConceptIds($var)

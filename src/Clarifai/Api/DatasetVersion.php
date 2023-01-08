@@ -143,7 +143,7 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
      *           The visibility field represents whether this message is privately/publicly visible.
      *           To be visible to the public the App that contains it AND the User that contains the App must
      *           also be publicly visible.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $embed_model_version_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $embed_model_version_ids
      *           The embedding models to return embeddings for. If empty, no embeddings are returned.
      * }
      */
@@ -615,7 +615,7 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
      * The embedding models to return embeddings for. If empty, no embeddings are returned.
      *
      * Generated from protobuf field <code>repeated string embed_model_version_ids = 14;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEmbedModelVersionIds($var)

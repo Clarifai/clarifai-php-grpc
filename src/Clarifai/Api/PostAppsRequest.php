@@ -31,7 +31,7 @@ class PostAppsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type \Clarifai\Api\App[]|\Google\Protobuf\Internal\RepeatedField $apps
+     *     @type array<\Clarifai\Api\App>|\Google\Protobuf\Internal\RepeatedField $apps
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class PostAppsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.App apps = 2;</code>
-     * @param \Clarifai\Api\App[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\App>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setApps($var)

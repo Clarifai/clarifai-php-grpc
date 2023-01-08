@@ -29,7 +29,7 @@ class MultiDatasetVersionExportResponse extends \Google\Protobuf\Internal\Messag
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\DatasetVersionExport[]|\Google\Protobuf\Internal\RepeatedField $exports
+     *     @type array<\Clarifai\Api\DatasetVersionExport>|\Google\Protobuf\Internal\RepeatedField $exports
      * }
      */
     public function __construct($data = NULL) {
@@ -80,7 +80,7 @@ class MultiDatasetVersionExportResponse extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.DatasetVersionExport exports = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\DatasetVersionExport[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\DatasetVersionExport>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExports($var)

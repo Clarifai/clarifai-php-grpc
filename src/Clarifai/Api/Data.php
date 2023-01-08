@@ -123,34 +123,34 @@ class Data extends \Google\Protobuf\Internal\Message
      *           Input and output images.
      *     @type \Clarifai\Api\Video $video
      *           Input and output videos.
-     *     @type \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $concepts
+     *     @type array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $concepts
      *           A list of concepts.
      *     @type \Google\Protobuf\Struct $metadata
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *     @type \Clarifai\Api\Geo $geo
      *           Geography information.
-     *     @type \Clarifai\Api\Color[]|\Google\Protobuf\Internal\RepeatedField $colors
+     *     @type array<\Clarifai\Api\Color>|\Google\Protobuf\Internal\RepeatedField $colors
      *           The dominant colors within an image.
-     *     @type \Clarifai\Api\Cluster[]|\Google\Protobuf\Internal\RepeatedField $clusters
+     *     @type array<\Clarifai\Api\Cluster>|\Google\Protobuf\Internal\RepeatedField $clusters
      *           Clustering centroids for inputs.
-     *     @type \Clarifai\Api\Embedding[]|\Google\Protobuf\Internal\RepeatedField $embeddings
+     *     @type array<\Clarifai\Api\Embedding>|\Google\Protobuf\Internal\RepeatedField $embeddings
      *           Embedding vectors representing each input.
-     *     @type \Clarifai\Api\Region[]|\Google\Protobuf\Internal\RepeatedField $regions
+     *     @type array<\Clarifai\Api\Region>|\Google\Protobuf\Internal\RepeatedField $regions
      *           For recursing into localized regions of an input.
-     *     @type \Clarifai\Api\Frame[]|\Google\Protobuf\Internal\RepeatedField $frames
+     *     @type array<\Clarifai\Api\Frame>|\Google\Protobuf\Internal\RepeatedField $frames
      *           For temporal content like video.
      *     @type \Clarifai\Api\Text $text
      *           Input, output or annotation text.
      *     @type \Clarifai\Api\Audio $audio
      *           Input and output audio.
-     *     @type \Clarifai\Api\Track[]|\Google\Protobuf\Internal\RepeatedField $tracks
+     *     @type array<\Clarifai\Api\Track>|\Google\Protobuf\Internal\RepeatedField $tracks
      *           Track information.
-     *     @type \Clarifai\Api\TimeSegment[]|\Google\Protobuf\Internal\RepeatedField $time_segments
+     *     @type array<\Clarifai\Api\TimeSegment>|\Google\Protobuf\Internal\RepeatedField $time_segments
      *           Time segments information.
-     *     @type \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $hits
+     *     @type array<\Clarifai\Api\Hit>|\Google\Protobuf\Internal\RepeatedField $hits
      *           Holds score, rank, and user, app, input IDs and search hit data
-     *     @type \Clarifai\Api\Image[]|\Google\Protobuf\Internal\RepeatedField $heatmaps
+     *     @type array<\Clarifai\Api\Image>|\Google\Protobuf\Internal\RepeatedField $heatmaps
      *           Heatmap as 2d image
      * }
      */
@@ -246,7 +246,7 @@ class Data extends \Google\Protobuf\Internal\Message
      * A list of concepts.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Concept concepts = 3;</code>
-     * @param \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConcepts($var)
@@ -346,7 +346,7 @@ class Data extends \Google\Protobuf\Internal\Message
      * The dominant colors within an image.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Color colors = 7;</code>
-     * @param \Clarifai\Api\Color[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Color>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setColors($var)
@@ -372,7 +372,7 @@ class Data extends \Google\Protobuf\Internal\Message
      * Clustering centroids for inputs.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Cluster clusters = 8;</code>
-     * @param \Clarifai\Api\Cluster[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Cluster>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setClusters($var)
@@ -398,7 +398,7 @@ class Data extends \Google\Protobuf\Internal\Message
      * Embedding vectors representing each input.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Embedding embeddings = 9;</code>
-     * @param \Clarifai\Api\Embedding[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Embedding>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEmbeddings($var)
@@ -424,7 +424,7 @@ class Data extends \Google\Protobuf\Internal\Message
      * For recursing into localized regions of an input.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Region regions = 11;</code>
-     * @param \Clarifai\Api\Region[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Region>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRegions($var)
@@ -450,7 +450,7 @@ class Data extends \Google\Protobuf\Internal\Message
      * For temporal content like video.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Frame frames = 12;</code>
-     * @param \Clarifai\Api\Frame[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Frame>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFrames($var)
@@ -548,7 +548,7 @@ class Data extends \Google\Protobuf\Internal\Message
      * Track information.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Track tracks = 15;</code>
-     * @param \Clarifai\Api\Track[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Track>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTracks($var)
@@ -574,7 +574,7 @@ class Data extends \Google\Protobuf\Internal\Message
      * Time segments information.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
-     * @param \Clarifai\Api\TimeSegment[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\TimeSegment>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTimeSegments($var)
@@ -600,7 +600,7 @@ class Data extends \Google\Protobuf\Internal\Message
      * Holds score, rank, and user, app, input IDs and search hit data
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Hit hits = 17;</code>
-     * @param \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Hit>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHits($var)
@@ -626,7 +626,7 @@ class Data extends \Google\Protobuf\Internal\Message
      * Heatmap as 2d image
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Image heatmaps = 18;</code>
-     * @param \Clarifai\Api\Image[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Image>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHeatmaps($var)

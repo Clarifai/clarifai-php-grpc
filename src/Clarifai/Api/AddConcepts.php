@@ -24,7 +24,7 @@ class AddConcepts extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $concepts
+     *     @type array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $concepts
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +43,7 @@ class AddConcepts extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Concept concepts = 1;</code>
-     * @param \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConcepts($var)

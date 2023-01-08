@@ -54,7 +54,7 @@ class PostSearchesRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Query $query
      *           The query; this specifies how the data to be searched
      *           this will be replaced by "Searches"
-     *     @type \Clarifai\Api\Search[]|\Google\Protobuf\Internal\RepeatedField $searches
+     *     @type array<\Clarifai\Api\Search>|\Google\Protobuf\Internal\RepeatedField $searches
      *           The searched to be executed or saved
      *           Eventually the request level fields will be deprecated in favor of this object
      *     @type \Clarifai\Api\Pagination $pagination
@@ -163,7 +163,7 @@ class PostSearchesRequest extends \Google\Protobuf\Internal\Message
      * Eventually the request level fields will be deprecated in favor of this object
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Search searches = 3;</code>
-     * @param \Clarifai\Api\Search[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Search>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSearches($var)

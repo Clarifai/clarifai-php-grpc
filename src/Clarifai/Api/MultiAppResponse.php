@@ -31,7 +31,7 @@ class MultiAppResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\App[]|\Google\Protobuf\Internal\RepeatedField $apps
+     *     @type array<\Clarifai\Api\App>|\Google\Protobuf\Internal\RepeatedField $apps
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiAppResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.App apps = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\App[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\App>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setApps($var)

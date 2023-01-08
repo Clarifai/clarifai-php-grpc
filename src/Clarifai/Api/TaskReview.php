@@ -47,10 +47,10 @@ class TaskReview extends \Google\Protobuf\Internal\Message
      *
      *     @type int $strategy
      *           Task review strategy.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $user_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $user_ids
      *           Who will review this task.
      *           DEPRECATED: Use users.id instead.
-     *     @type \Clarifai\Api\User[]|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type array<\Clarifai\Api\User>|\Google\Protobuf\Internal\RepeatedField $users
      *           Users who will review this task.
      *           When the 'review.users' field is additionally requested, then all user
      *           info is filled for the reviewers. Otherwise, only the user 'id' is filled.
@@ -108,7 +108,7 @@ class TaskReview extends \Google\Protobuf\Internal\Message
      * DEPRECATED: Use users.id instead.
      *
      * Generated from protobuf field <code>repeated string user_ids = 2 [deprecated = true];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      * @deprecated
      */
@@ -140,7 +140,7 @@ class TaskReview extends \Google\Protobuf\Internal\Message
      * info is filled for the reviewers. Otherwise, only the user 'id' is filled.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.User users = 5;</code>
-     * @param \Clarifai\Api\User[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\User>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUsers($var)

@@ -36,7 +36,7 @@ class ConceptMappingJob extends \Google\Protobuf\Internal\Message
      *
      *     @type string $knowledge_graph_id
      *           The id of the knowledge graph being used for this concept mapping job
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $concept_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $concept_ids
      *           The ids of the concepts being mapped
      * }
      */
@@ -86,7 +86,7 @@ class ConceptMappingJob extends \Google\Protobuf\Internal\Message
      * The ids of the concepts being mapped
      *
      * Generated from protobuf field <code>repeated string concept_ids = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConceptIds($var)

@@ -80,9 +80,9 @@ class Collaborator extends \Google\Protobuf\Internal\Message
      *           FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      *     @type \Clarifai\Api\User $user
      *          who is this collaborator
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $scopes
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scopes
      *          the permission this collaborator
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $endpoints
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $endpoints
      *     @type \Google\Protobuf\Timestamp $created_at
      *           When the app was shared with. We follow the XXXX timestamp
      *           format. We use https://www.ietf.org/rfc/rfc3339.txt format:
@@ -215,7 +215,7 @@ class Collaborator extends \Google\Protobuf\Internal\Message
      *the permission this collaborator
      *
      * Generated from protobuf field <code>repeated string scopes = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setScopes($var)
@@ -237,7 +237,7 @@ class Collaborator extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string endpoints = 5;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEndpoints($var)

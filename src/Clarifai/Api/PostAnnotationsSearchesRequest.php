@@ -43,7 +43,7 @@ class PostAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *           The user_id and app_id to query from.
-     *     @type \Clarifai\Api\Search[]|\Google\Protobuf\Internal\RepeatedField $searches
+     *     @type array<\Clarifai\Api\Search>|\Google\Protobuf\Internal\RepeatedField $searches
      *           The searched to be executed or saved
      *     @type \Clarifai\Api\Pagination $pagination
      *           Pagination information to paginate through search result Hits.
@@ -105,7 +105,7 @@ class PostAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Message
      * The searched to be executed or saved
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Search searches = 2;</code>
-     * @param \Clarifai\Api\Search[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Search>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSearches($var)

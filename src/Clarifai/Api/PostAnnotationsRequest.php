@@ -31,7 +31,7 @@ class PostAnnotationsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type \Clarifai\Api\Annotation[]|\Google\Protobuf\Internal\RepeatedField $annotations
+     *     @type array<\Clarifai\Api\Annotation>|\Google\Protobuf\Internal\RepeatedField $annotations
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class PostAnnotationsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Annotation annotations = 2;</code>
-     * @param \Clarifai\Api\Annotation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Annotation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAnnotations($var)

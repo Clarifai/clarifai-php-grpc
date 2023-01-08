@@ -76,11 +76,11 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\ConfusionMatrix $confusion_matrix
      *     @type \Clarifai\Api\CooccurrenceMatrix $cooccurrence_matrix
      *     @type \Clarifai\Api\LabelDistribution $label_counts
-     *     @type \Clarifai\Api\BinaryMetrics[]|\Google\Protobuf\Internal\RepeatedField $binary_metrics
-     *     @type \Clarifai\Api\EvalTestSetEntry[]|\Google\Protobuf\Internal\RepeatedField $test_set
-     *     @type \Clarifai\Api\BinaryMetrics[]|\Google\Protobuf\Internal\RepeatedField $metrics_by_area
-     *     @type \Clarifai\Api\BinaryMetrics[]|\Google\Protobuf\Internal\RepeatedField $metrics_by_class
-     *     @type \Clarifai\Api\TrackerMetrics[]|\Google\Protobuf\Internal\RepeatedField $tracker_metrics
+     *     @type array<\Clarifai\Api\BinaryMetrics>|\Google\Protobuf\Internal\RepeatedField $binary_metrics
+     *     @type array<\Clarifai\Api\EvalTestSetEntry>|\Google\Protobuf\Internal\RepeatedField $test_set
+     *     @type array<\Clarifai\Api\BinaryMetrics>|\Google\Protobuf\Internal\RepeatedField $metrics_by_area
+     *     @type array<\Clarifai\Api\BinaryMetrics>|\Google\Protobuf\Internal\RepeatedField $metrics_by_class
+     *     @type array<\Clarifai\Api\TrackerMetrics>|\Google\Protobuf\Internal\RepeatedField $tracker_metrics
      *     @type \Clarifai\Api\EvalInfo $eval_info
      * }
      */
@@ -282,7 +282,7 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.BinaryMetrics binary_metrics = 6;</code>
-     * @param \Clarifai\Api\BinaryMetrics[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\BinaryMetrics>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setBinaryMetrics($var)
@@ -304,7 +304,7 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.EvalTestSetEntry test_set = 7;</code>
-     * @param \Clarifai\Api\EvalTestSetEntry[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\EvalTestSetEntry>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTestSet($var)
@@ -326,7 +326,7 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.BinaryMetrics metrics_by_area = 8;</code>
-     * @param \Clarifai\Api\BinaryMetrics[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\BinaryMetrics>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMetricsByArea($var)
@@ -348,7 +348,7 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.BinaryMetrics metrics_by_class = 9;</code>
-     * @param \Clarifai\Api\BinaryMetrics[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\BinaryMetrics>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMetricsByClass($var)
@@ -370,7 +370,7 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
-     * @param \Clarifai\Api\TrackerMetrics[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\TrackerMetrics>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTrackerMetrics($var)

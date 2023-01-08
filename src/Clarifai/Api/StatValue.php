@@ -47,7 +47,7 @@ class StatValue extends \Google\Protobuf\Internal\Message
      *           The time of the event. Defaults to now().
      *     @type float $value
      *           A value for the metric you're recording.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $tags
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $tags
      *           List of tags to attach to this stat. Each should contain one colon so that the first part will
      *           be used as a tag group while the second being the tag itself. For example: ["task_id:a",
      *           "worker_id:1"]. These tag groups like "task_id" or "worker_id" are important for aggregating
@@ -142,7 +142,7 @@ class StatValue extends \Google\Protobuf\Internal\Message
      * values in the StatValueAggregateQuery.
      *
      * Generated from protobuf field <code>repeated string tags = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTags($var)

@@ -44,7 +44,7 @@ class PostConceptRelationsRequest extends \Google\Protobuf\Internal\Message
      *           The user_id and app_id information.
      *     @type string $concept_id
      *           The subject concept id you're going to add relations for.
-     *     @type \Clarifai\Api\ConceptRelation[]|\Google\Protobuf\Internal\RepeatedField $concept_relations
+     *     @type array<\Clarifai\Api\ConceptRelation>|\Google\Protobuf\Internal\RepeatedField $concept_relations
      *           The relationships you're going to add.
      * }
      */
@@ -130,7 +130,7 @@ class PostConceptRelationsRequest extends \Google\Protobuf\Internal\Message
      * The relationships you're going to add.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ConceptRelation concept_relations = 3;</code>
-     * @param \Clarifai\Api\ConceptRelation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\ConceptRelation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConceptRelations($var)

@@ -36,7 +36,7 @@ class MultiKnowledgeGraphResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *           The response status.
-     *     @type \Clarifai\Api\KnowledgeGraph[]|\Google\Protobuf\Internal\RepeatedField $knowledge_graphs
+     *     @type array<\Clarifai\Api\KnowledgeGraph>|\Google\Protobuf\Internal\RepeatedField $knowledge_graphs
      *           The returned knowledge graphs.
      * }
      */
@@ -96,7 +96,7 @@ class MultiKnowledgeGraphResponse extends \Google\Protobuf\Internal\Message
      * The returned knowledge graphs.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.KnowledgeGraph knowledge_graphs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\KnowledgeGraph[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\KnowledgeGraph>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setKnowledgeGraphs($var)

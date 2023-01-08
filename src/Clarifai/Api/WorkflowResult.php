@@ -68,7 +68,7 @@ class WorkflowResult extends \Google\Protobuf\Internal\Message
      *           "2017-04-11T21:50:50.223962Z"
      *     @type \Clarifai\Api\Model $model
      *     @type \Clarifai\Api\Input $input
-     *     @type \Clarifai\Api\Output[]|\Google\Protobuf\Internal\RepeatedField $outputs
+     *     @type array<\Clarifai\Api\Output>|\Google\Protobuf\Internal\RepeatedField $outputs
      *     @type bool $suppress_output
      *           Indicate if the output of this model is suppressed.
      * }
@@ -251,7 +251,7 @@ class WorkflowResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Output outputs = 6;</code>
-     * @param \Clarifai\Api\Output[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Output>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOutputs($var)

@@ -31,7 +31,7 @@ class MultiDatasetResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\Dataset[]|\Google\Protobuf\Internal\RepeatedField $datasets
+     *     @type array<\Clarifai\Api\Dataset>|\Google\Protobuf\Internal\RepeatedField $datasets
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +82,7 @@ class MultiDatasetResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Dataset datasets = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\Dataset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Dataset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDatasets($var)

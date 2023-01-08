@@ -48,7 +48,7 @@ class PatchWorkflowVersionsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $workflow_id
      *           The id of the workflow that has the requested versions to patch.
-     *     @type \Clarifai\Api\WorkflowVersion[]|\Google\Protobuf\Internal\RepeatedField $workflow_versions
+     *     @type array<\Clarifai\Api\WorkflowVersion>|\Google\Protobuf\Internal\RepeatedField $workflow_versions
      *           Patch these versions.
      *     @type string $action
      *           The action to perform on the patched objects
@@ -133,7 +133,7 @@ class PatchWorkflowVersionsRequest extends \Google\Protobuf\Internal\Message
      * Patch these versions.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowVersion workflow_versions = 3;</code>
-     * @param \Clarifai\Api\WorkflowVersion[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\WorkflowVersion>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setWorkflowVersions($var)

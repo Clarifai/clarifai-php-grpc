@@ -114,6 +114,12 @@ class App extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string notes = 21;</code>
      */
     protected $notes = '';
+    /**
+     * Representative image for this app
+     *
+     * Generated from protobuf field <code>.clarifai.api.Image image = 22;</code>
+     */
+    protected $image = null;
 
     /**
      * Constructor.
@@ -160,6 +166,8 @@ class App extends \Google\Protobuf\Internal\Message
      *     @type string $notes
      *           Notes for the application
      *           This field should be used for in-depth notes and supports up to 64Kbs.
+     *     @type \Clarifai\Api\Image $image
+     *           Representative image for this app
      * }
      */
     public function __construct($data = NULL) {
@@ -625,6 +633,42 @@ class App extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->notes = $var;
+
+        return $this;
+    }
+
+    /**
+     * Representative image for this app
+     *
+     * Generated from protobuf field <code>.clarifai.api.Image image = 22;</code>
+     * @return \Clarifai\Api\Image|null
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function hasImage()
+    {
+        return isset($this->image);
+    }
+
+    public function clearImage()
+    {
+        unset($this->image);
+    }
+
+    /**
+     * Representative image for this app
+     *
+     * Generated from protobuf field <code>.clarifai.api.Image image = 22;</code>
+     * @param \Clarifai\Api\Image $var
+     * @return $this
+     */
+    public function setImage($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Image::class);
+        $this->image = $var;
 
         return $this;
     }

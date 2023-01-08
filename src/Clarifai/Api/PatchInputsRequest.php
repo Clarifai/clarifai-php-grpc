@@ -43,7 +43,7 @@ class PatchInputsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $inputs
+     *     @type array<\Clarifai\Api\Input>|\Google\Protobuf\Internal\RepeatedField $inputs
      *           List of inputs to patch.
      *           Inputs are identified by id field.
      *           For each input, the following fields are patchable:
@@ -111,7 +111,7 @@ class PatchInputsRequest extends \Google\Protobuf\Internal\Message
      * * data
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Input inputs = 2;</code>
-     * @param \Clarifai\Api\Input[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Input>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setInputs($var)

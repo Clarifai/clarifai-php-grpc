@@ -34,7 +34,7 @@ class StatValueAggregateResult extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Clarifai\Api\StatValueAggregate[]|\Google\Protobuf\Internal\RepeatedField $stat_value_aggregates
+     *     @type array<\Clarifai\Api\StatValueAggregate>|\Google\Protobuf\Internal\RepeatedField $stat_value_aggregates
      *           The list of repeated aggregate values and their counts.
      *     @type \Clarifai\Api\StatValueAggregateQuery $stat_value_aggregate_query
      *           The query that created these results.
@@ -60,7 +60,7 @@ class StatValueAggregateResult extends \Google\Protobuf\Internal\Message
      * The list of repeated aggregate values and their counts.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.StatValueAggregate stat_value_aggregates = 1;</code>
-     * @param \Clarifai\Api\StatValueAggregate[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\StatValueAggregate>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setStatValueAggregates($var)

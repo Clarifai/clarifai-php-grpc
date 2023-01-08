@@ -34,7 +34,7 @@ class WorkflowResultsSimilarity extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Input $probe_input
      *           The input with the specific data compare against all pool results
-     *     @type \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $pool_results
+     *     @type array<\Clarifai\Api\Hit>|\Google\Protobuf\Internal\RepeatedField $pool_results
      * }
      */
     public function __construct($data = NULL) {
@@ -89,7 +89,7 @@ class WorkflowResultsSimilarity extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Hit pool_results = 2;</code>
-     * @param \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Hit>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPoolResults($var)

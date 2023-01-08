@@ -34,7 +34,7 @@ class MultiAnnotationSearchMetricsResponse extends \Google\Protobuf\Internal\Mes
      *
      *     @type \Clarifai\Api\Status\Status $status
      *           Status of the request
-     *     @type \Clarifai\Api\AnnotationSearchMetrics[]|\Google\Protobuf\Internal\RepeatedField $annotation_search_metrics
+     *     @type array<\Clarifai\Api\AnnotationSearchMetrics>|\Google\Protobuf\Internal\RepeatedField $annotation_search_metrics
      * }
      */
     public function __construct($data = NULL) {
@@ -89,7 +89,7 @@ class MultiAnnotationSearchMetricsResponse extends \Google\Protobuf\Internal\Mes
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.AnnotationSearchMetrics annotation_search_metrics = 2;</code>
-     * @param \Clarifai\Api\AnnotationSearchMetrics[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\AnnotationSearchMetrics>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAnnotationSearchMetrics($var)

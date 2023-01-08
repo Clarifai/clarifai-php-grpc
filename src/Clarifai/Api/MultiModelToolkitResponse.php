@@ -29,7 +29,7 @@ class MultiModelToolkitResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $toolkits
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $toolkits
      * }
      */
     public function __construct($data = NULL) {
@@ -80,7 +80,7 @@ class MultiModelToolkitResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string toolkits = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setToolkits($var)

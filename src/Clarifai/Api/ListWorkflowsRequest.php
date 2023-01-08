@@ -110,7 +110,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      *           If true, we only return workflows that are handpicked by clarifai staff
      *     @type bool $starred_only
      *           If true, we only return workflows that are starred by the requesting user
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
      *     @type string $search_term
      *           (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
@@ -426,7 +426,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
      *
      * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdditionalFields($var)

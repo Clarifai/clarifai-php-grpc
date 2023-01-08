@@ -35,7 +35,7 @@ class MultiDatasetInputResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type \Clarifai\Api\DatasetInput[]|\Google\Protobuf\Internal\RepeatedField $dataset_inputs
+     *     @type array<\Clarifai\Api\DatasetInput>|\Google\Protobuf\Internal\RepeatedField $dataset_inputs
      *     @type \Clarifai\Api\DatasetInputsSearchAddJob $dataset_inputs_search_add_job
      * }
      */
@@ -87,7 +87,7 @@ class MultiDatasetInputResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.DatasetInput dataset_inputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param \Clarifai\Api\DatasetInput[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\DatasetInput>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDatasetInputs($var)

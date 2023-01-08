@@ -63,8 +63,8 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
      *     @type string $url
      *     @type \Clarifai\Api\Input $input
      *           the input information
-     *     @type \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $predicted_concepts
-     *     @type \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $ground_truth_concepts
+     *     @type array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $predicted_concepts
+     *     @type array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $ground_truth_concepts
      *           All the ground truth concepts will be show on the top level
      *     @type \Clarifai\Api\Annotation $annotation
      *           Only region-based/frame-based app contains this annotation
@@ -180,7 +180,7 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Concept predicted_concepts = 3;</code>
-     * @param \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPredictedConcepts($var)
@@ -206,7 +206,7 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
      * All the ground truth concepts will be show on the top level
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Concept ground_truth_concepts = 4;</code>
-     * @param \Clarifai\Api\Concept[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGroundTruthConcepts($var)

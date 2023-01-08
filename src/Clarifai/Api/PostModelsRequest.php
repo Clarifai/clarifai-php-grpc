@@ -48,7 +48,7 @@ class PostModelsRequest extends \Google\Protobuf\Internal\Message
      *           Previously you could only create one model at a time.
      *           We still support this but you should pass it as models=[model] so
      *           that this endpoint is consistent with the rest of our API.
-     *     @type \Clarifai\Api\Model[]|\Google\Protobuf\Internal\RepeatedField $models
+     *     @type array<\Clarifai\Api\Model>|\Google\Protobuf\Internal\RepeatedField $models
      *           This allows you to create one or more model by posting it to the API.
      * }
      */
@@ -152,7 +152,7 @@ class PostModelsRequest extends \Google\Protobuf\Internal\Message
      * This allows you to create one or more model by posting it to the API.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Model models = 3;</code>
-     * @param \Clarifai\Api\Model[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Model>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModels($var)

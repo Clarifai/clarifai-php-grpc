@@ -102,7 +102,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *           the id of existing app you want to copy data into.
      *           you can not set this if either new_app_id or new_app_name is set.
      *           if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
-     *     @type \Clarifai\Api\AppCopyProgress[]|\Google\Protobuf\Internal\RepeatedField $progress
+     *     @type array<\Clarifai\Api\AppCopyProgress>|\Google\Protobuf\Internal\RepeatedField $progress
      *           contains progress for each requested filter
      * }
      */
@@ -384,7 +384,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      * contains progress for each requested filter
      *
      * Generated from protobuf field <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
-     * @param \Clarifai\Api\AppCopyProgress[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\AppCopyProgress>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProgress($var)

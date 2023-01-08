@@ -87,11 +87,11 @@ class Key extends \Google\Protobuf\Internal\Message
      *           The type of key, it can be api_key or personal_access_token, the default value is api_key
      *     @type string $description
      *           The description
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $scopes
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scopes
      *           The low-level scopes this key has
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $endpoints
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $endpoints
      *           The endpoint-level scopes this key has
-     *     @type \Clarifai\Api\App[]|\Google\Protobuf\Internal\RepeatedField $apps
+     *     @type array<\Clarifai\Api\App>|\Google\Protobuf\Internal\RepeatedField $apps
      *           The apps that this key give you access to, it is empty if this key is personal_access_token
      *           API key can only give you access to a single app.
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -102,7 +102,7 @@ class Key extends \Google\Protobuf\Internal\Message
      *           "2017-04-11T21:50:50.223962Z"
      *     @type \Google\Protobuf\Timestamp $expires_at
      *           When does the key expires, the key won't expire if this is empty
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $authorized_idp_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $authorized_idp_ids
      *           list of idp ids at which key is currently authorized
      * }
      */
@@ -204,7 +204,7 @@ class Key extends \Google\Protobuf\Internal\Message
      * The low-level scopes this key has
      *
      * Generated from protobuf field <code>repeated string scopes = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setScopes($var)
@@ -230,7 +230,7 @@ class Key extends \Google\Protobuf\Internal\Message
      * The endpoint-level scopes this key has
      *
      * Generated from protobuf field <code>repeated string endpoints = 7;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEndpoints($var)
@@ -258,7 +258,7 @@ class Key extends \Google\Protobuf\Internal\Message
      * API key can only give you access to a single app.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.App apps = 4;</code>
-     * @param \Clarifai\Api\App[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\App>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setApps($var)
@@ -364,7 +364,7 @@ class Key extends \Google\Protobuf\Internal\Message
      * list of idp ids at which key is currently authorized
      *
      * Generated from protobuf field <code>repeated string authorized_idp_ids = 9;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAuthorizedIdpIds($var)

@@ -55,9 +55,9 @@ class Cluster extends \Google\Protobuf\Internal\Message
      *     @type float $score
      *           The score assigned to this cluster.
      *           For List Clusters endpoint, this represents percentage of inputs in the app assigned to this cluster.
-     *     @type \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $hits
+     *     @type array<\Clarifai\Api\Hit>|\Google\Protobuf\Internal\RepeatedField $hits
      *           Representative hits for cluster (for now we only return 1)
-     *     @type float[]|\Google\Protobuf\Internal\RepeatedField $projection
+     *     @type array<float>|\Google\Protobuf\Internal\RepeatedField $projection
      * }
      */
     public function __construct($data = NULL) {
@@ -156,7 +156,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
      * Representative hits for cluster (for now we only return 1)
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Hit hits = 4;</code>
-     * @param \Clarifai\Api\Hit[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Hit>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHits($var)
@@ -178,7 +178,7 @@ class Cluster extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated float projection = 5;</code>
-     * @param float[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<float>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProjection($var)

@@ -58,7 +58,7 @@ class GetModelRequest extends \Google\Protobuf\Internal\Message
      *           rpcs with and without the version_id.
      *     @type string $language
      *     @type bool $trained_before
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * }
      */
@@ -208,7 +208,7 @@ class GetModelRequest extends \Google\Protobuf\Internal\Message
      * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      *
      * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdditionalFields($var)

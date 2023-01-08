@@ -36,7 +36,7 @@ class MultiStatValueAggregateResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *           The response status.
-     *     @type \Clarifai\Api\StatValueAggregateResult[]|\Google\Protobuf\Internal\RepeatedField $stat_value_aggregate_results
+     *     @type array<\Clarifai\Api\StatValueAggregateResult>|\Google\Protobuf\Internal\RepeatedField $stat_value_aggregate_results
      *           The aggregate results for each query passedin.
      * }
      */
@@ -96,7 +96,7 @@ class MultiStatValueAggregateResponse extends \Google\Protobuf\Internal\Message
      * The aggregate results for each query passedin.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.StatValueAggregateResult stat_value_aggregate_results = 2;</code>
-     * @param \Clarifai\Api\StatValueAggregateResult[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\StatValueAggregateResult>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setStatValueAggregateResults($var)

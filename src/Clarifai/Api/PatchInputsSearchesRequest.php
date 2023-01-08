@@ -41,7 +41,7 @@ class PatchInputsSearchesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *           The user_id and app_id to query from.
-     *     @type \Clarifai\Api\Search[]|\Google\Protobuf\Internal\RepeatedField $searches
+     *     @type array<\Clarifai\Api\Search>|\Google\Protobuf\Internal\RepeatedField $searches
      *           The searches to be patched
      *     @type string $action
      *           The action to perform on the patched Search objects
@@ -104,7 +104,7 @@ class PatchInputsSearchesRequest extends \Google\Protobuf\Internal\Message
      * The searches to be patched
      *
      * Generated from protobuf field <code>repeated .clarifai.api.Search searches = 2;</code>
-     * @param \Clarifai\Api\Search[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Search>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSearches($var)

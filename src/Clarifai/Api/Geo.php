@@ -38,7 +38,7 @@ class Geo extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\GeoPoint $geo_point
      *     @type \Clarifai\Api\GeoLimit $geo_limit
-     *     @type \Clarifai\Api\GeoBoxedPoint[]|\Google\Protobuf\Internal\RepeatedField $geo_box
+     *     @type array<\Clarifai\Api\GeoBoxedPoint>|\Google\Protobuf\Internal\RepeatedField $geo_box
      *           NOTE: inconsistency: should have been geo_boxed_points
      * }
      */
@@ -126,7 +126,7 @@ class Geo extends \Google\Protobuf\Internal\Message
      * NOTE: inconsistency: should have been geo_boxed_points
      *
      * Generated from protobuf field <code>repeated .clarifai.api.GeoBoxedPoint geo_box = 3;</code>
-     * @param \Clarifai\Api\GeoBoxedPoint[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\GeoBoxedPoint>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGeoBox($var)

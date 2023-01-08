@@ -38,7 +38,7 @@ class PatchModulesRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type \Clarifai\Api\Module[]|\Google\Protobuf\Internal\RepeatedField $modules
+     *     @type array<\Clarifai\Api\Module>|\Google\Protobuf\Internal\RepeatedField $modules
      *     @type string $action
      *           The action to perform on the patched objects
      *           For now actions 'merge', 'overwrite', and 'remove' are supported
@@ -92,7 +92,7 @@ class PatchModulesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .clarifai.api.Module modules = 2;</code>
-     * @param \Clarifai\Api\Module[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Clarifai\Api\Module>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setModules($var)

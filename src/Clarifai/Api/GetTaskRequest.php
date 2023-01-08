@@ -39,7 +39,7 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $task_id
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response.
      *           Currently supported: all, worker.users, review.users.
      * }
@@ -120,7 +120,7 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      * Currently supported: all, worker.users, review.users.
      *
      * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdditionalFields($var)
