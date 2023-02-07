@@ -1278,6 +1278,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Deprecated: Use GetModelVersionEvaluation instead
      * Get the evaluation metrics for a model version.
      * @param \Clarifai\Api\GetModelVersionMetricsRequest $argument input argument
      * @param array $metadata metadata
@@ -1293,6 +1294,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Deprecated, use PostModelVersionEvaluations instead
      * Run the evaluation metrics for a model version.
      * @param \Clarifai\Api\PostModelVersionMetricsRequest $argument input argument
      * @param array $metadata metadata
@@ -1304,6 +1306,50 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/PostModelVersionMetrics',
         $argument,
         ['\Clarifai\Api\SingleModelVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PostModelVersionEvaluationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostModelVersionEvaluations(\Clarifai\Api\PostModelVersionEvaluationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostModelVersionEvaluations',
+        $argument,
+        ['\Clarifai\Api\MultiEvalMetricsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List the evaluation metrics for a model version.
+     * @param \Clarifai\Api\ListModelVersionEvaluationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListModelVersionEvaluations(\Clarifai\Api\ListModelVersionEvaluationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListModelVersionEvaluations',
+        $argument,
+        ['\Clarifai\Api\MultiEvalMetricsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get an evaluation metrics for a model version.
+     * @param \Clarifai\Api\GetModelVersionEvaluationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetModelVersionEvaluation(\Clarifai\Api\GetModelVersionEvaluationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetModelVersionEvaluation',
+        $argument,
+        ['\Clarifai\Api\SingleEvalMetricsResponse', 'decode'],
         $metadata, $options);
     }
 
