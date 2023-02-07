@@ -9,12 +9,11 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Get the already computed evaluation metrics for this model
- * version.
+ * Evaluate this model vesion
  *
- * Generated from protobuf message <code>clarifai.api.GetModelVersionMetricsRequest</code>
+ * Generated from protobuf message <code>clarifai.api.PostModelVersionEvaluationsRequest</code>
  */
-class GetModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
+class PostModelVersionEvaluationsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -25,16 +24,15 @@ class GetModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $model_id = '';
     /**
-     * Generated from protobuf field <code>string version_id = 3;</code>
+     * Generated from protobuf field <code>string model_version_id = 3;</code>
      */
-    protected $version_id = '';
+    protected $model_version_id = '';
     /**
-     * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * EvalInfo and ID will be used when creating the evaluation
      *
-     * Generated from protobuf field <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
      */
-    protected $fields = null;
+    private $eval_metrics;
 
     /**
      * Constructor.
@@ -44,10 +42,9 @@ class GetModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $model_id
-     *     @type string $version_id
-     *     @type \Clarifai\Api\FieldsValue $fields
-     *           Any of the fields you wish to return from multiclass_metrics
-     *           By default, only the summary will be returned
+     *     @type string $model_version_id
+     *     @type array<\Clarifai\Api\EvalMetrics>|\Google\Protobuf\Internal\RepeatedField $eval_metrics
+     *           EvalInfo and ID will be used when creating the evaluation
      * }
      */
     public function __construct($data = NULL) {
@@ -110,61 +107,49 @@ class GetModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string version_id = 3;</code>
+     * Generated from protobuf field <code>string model_version_id = 3;</code>
      * @return string
      */
-    public function getVersionId()
+    public function getModelVersionId()
     {
-        return $this->version_id;
+        return $this->model_version_id;
     }
 
     /**
-     * Generated from protobuf field <code>string version_id = 3;</code>
+     * Generated from protobuf field <code>string model_version_id = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setVersionId($var)
+    public function setModelVersionId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->version_id = $var;
+        $this->model_version_id = $var;
 
         return $this;
     }
 
     /**
-     * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * EvalInfo and ID will be used when creating the evaluation
      *
-     * Generated from protobuf field <code>.clarifai.api.FieldsValue fields = 4;</code>
-     * @return \Clarifai\Api\FieldsValue|null
+     * Generated from protobuf field <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getFields()
+    public function getEvalMetrics()
     {
-        return $this->fields;
-    }
-
-    public function hasFields()
-    {
-        return isset($this->fields);
-    }
-
-    public function clearFields()
-    {
-        unset($this->fields);
+        return $this->eval_metrics;
     }
 
     /**
-     * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * EvalInfo and ID will be used when creating the evaluation
      *
-     * Generated from protobuf field <code>.clarifai.api.FieldsValue fields = 4;</code>
-     * @param \Clarifai\Api\FieldsValue $var
+     * Generated from protobuf field <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
+     * @param array<\Clarifai\Api\EvalMetrics>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setFields($var)
+    public function setEvalMetrics($var)
     {
-        GPBUtil::checkMessage($var, \Clarifai\Api\FieldsValue::class);
-        $this->fields = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\EvalMetrics::class);
+        $this->eval_metrics = $arr;
 
         return $this;
     }

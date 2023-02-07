@@ -9,12 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Get the already computed evaluation metrics for this model
- * version.
- *
- * Generated from protobuf message <code>clarifai.api.GetModelVersionMetricsRequest</code>
+ * Generated from protobuf message <code>clarifai.api.GetModelVersionEvaluationRequest</code>
  */
-class GetModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
+class GetModelVersionEvaluationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -25,14 +22,18 @@ class GetModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $model_id = '';
     /**
-     * Generated from protobuf field <code>string version_id = 3;</code>
+     * Generated from protobuf field <code>string model_version_id = 3;</code>
      */
-    protected $version_id = '';
+    protected $model_version_id = '';
+    /**
+     * Generated from protobuf field <code>string evaluation_id = 4;</code>
+     */
+    protected $evaluation_id = '';
     /**
      * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * By default, only the summary is returned.
      *
-     * Generated from protobuf field <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * Generated from protobuf field <code>.clarifai.api.FieldsValue fields = 5;</code>
      */
     protected $fields = null;
 
@@ -44,10 +45,11 @@ class GetModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $model_id
-     *     @type string $version_id
+     *     @type string $model_version_id
+     *     @type string $evaluation_id
      *     @type \Clarifai\Api\FieldsValue $fields
      *           Any of the fields you wish to return from multiclass_metrics
-     *           By default, only the summary will be returned
+     *           By default, only the summary is returned.
      * }
      */
     public function __construct($data = NULL) {
@@ -110,32 +112,54 @@ class GetModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string version_id = 3;</code>
+     * Generated from protobuf field <code>string model_version_id = 3;</code>
      * @return string
      */
-    public function getVersionId()
+    public function getModelVersionId()
     {
-        return $this->version_id;
+        return $this->model_version_id;
     }
 
     /**
-     * Generated from protobuf field <code>string version_id = 3;</code>
+     * Generated from protobuf field <code>string model_version_id = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setVersionId($var)
+    public function setModelVersionId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->version_id = $var;
+        $this->model_version_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string evaluation_id = 4;</code>
+     * @return string
+     */
+    public function getEvaluationId()
+    {
+        return $this->evaluation_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string evaluation_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEvaluationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->evaluation_id = $var;
 
         return $this;
     }
 
     /**
      * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * By default, only the summary is returned.
      *
-     * Generated from protobuf field <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * Generated from protobuf field <code>.clarifai.api.FieldsValue fields = 5;</code>
      * @return \Clarifai\Api\FieldsValue|null
      */
     public function getFields()
@@ -155,9 +179,9 @@ class GetModelVersionMetricsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * By default, only the summary is returned.
      *
-     * Generated from protobuf field <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * Generated from protobuf field <code>.clarifai.api.FieldsValue fields = 5;</code>
      * @param \Clarifai\Api\FieldsValue $var
      * @return $this
      */
