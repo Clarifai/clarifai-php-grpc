@@ -51,7 +51,7 @@ class ModelTypeEnumOption extends \Google\Protobuf\Internal\Message
      */
     protected $internal_only = false;
     /**
-     * Whether this is the recommended enum option. Set to `true` when there 
+     * Whether this is the recommended enum option. Set to `true` when there
      * are multiple options, and one is shown to be better than the others.
      *
      * Generated from protobuf field <code>bool recommended = 6;</code>
@@ -80,7 +80,7 @@ class ModelTypeEnumOption extends \Google\Protobuf\Internal\Message
      *     @type bool $internal_only
      *           If this enum option should be internal only.
      *     @type bool $recommended
-     *           Whether this is the recommended enum option. Set to `true` when there 
+     *           Whether this is the recommended enum option. Set to `true` when there
      *           are multiple options, and one is shown to be better than the others.
      * }
      */
@@ -230,7 +230,7 @@ class ModelTypeEnumOption extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether this is the recommended enum option. Set to `true` when there 
+     * Whether this is the recommended enum option. Set to `true` when there
      * are multiple options, and one is shown to be better than the others.
      *
      * Generated from protobuf field <code>bool recommended = 6;</code>
@@ -242,7 +242,7 @@ class ModelTypeEnumOption extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether this is the recommended enum option. Set to `true` when there 
+     * Whether this is the recommended enum option. Set to `true` when there
      * are multiple options, and one is shown to be better than the others.
      *
      * Generated from protobuf field <code>bool recommended = 6;</code>

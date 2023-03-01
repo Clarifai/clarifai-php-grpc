@@ -86,8 +86,8 @@ class ModelTypeFieldType
      */
     const ARRAY_OF_STRINGS = 13;
     /**
-     * If RECURSIVE_ENUM is used then the "enum_options" field should also be filled in with the respective ID and description
-     * for the different RECURSIVE_ENUM options, as well as model_type_fields for each enum choice.
+     * If RECURSIVE_ENUM is used then the "enum_options" field should also be filled in with the respective ID and
+     * description for the different RECURSIVE_ENUM options, as well as model_type_fields for each enum choice.
      *
      * Generated from protobuf enum <code>RECURSIVE_ENUM = 14;</code>
      */

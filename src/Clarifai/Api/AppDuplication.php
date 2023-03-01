@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class AppDuplication extends \Google\Protobuf\Internal\Message
 {
     /**
-     *the id of app duplication
+     * the id of app duplication
      *
      * Generated from protobuf field <code>string id = 1;</code>
      */
@@ -30,26 +30,26 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      */
     protected $new_app_id = '';
     /**
-     *the name of new app. If provided, we will create a new application with this name.
+     * the name of new app. If provided, we will create a new application with this name.
      * You can not set this if existing_app_id is set.
      *
      * Generated from protobuf field <code>string new_app_name = 3;</code>
      */
     protected $new_app_name = '';
     /**
-     *the status of app duplication
+     * the status of app duplication
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 4;</code>
      */
     protected $status = null;
     /**
-     *when is the app duplication triggered
+     * when is the app duplication triggered
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
      */
     protected $created_at = null;
     /**
-     *The last time when is the status got updated
+     * The last time when is the status got updated
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
      */
@@ -82,20 +82,20 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *          the id of app duplication
+     *           the id of app duplication
      *     @type string $new_app_id
      *           the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
      *           if new_app_name is empty, the name will be the same as this id.
      *           You can not set this if existing_app_id is set.
      *     @type string $new_app_name
-     *          the name of new app. If provided, we will create a new application with this name.
+     *           the name of new app. If provided, we will create a new application with this name.
      *           You can not set this if existing_app_id is set.
      *     @type \Clarifai\Api\Status\Status $status
-     *          the status of app duplication
+     *           the status of app duplication
      *     @type \Google\Protobuf\Timestamp $created_at
-     *          when is the app duplication triggered
+     *           when is the app duplication triggered
      *     @type \Google\Protobuf\Timestamp $last_modified_at
-     *          The last time when is the status got updated
+     *           The last time when is the status got updated
      *     @type \Clarifai\Api\AppDuplicationFilters $filter
      *           Only copy resources depending on the filters
      *     @type string $existing_app_id
@@ -112,7 +112,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the id of app duplication
+     * the id of app duplication
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @return string
@@ -123,7 +123,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the id of app duplication
+     * the id of app duplication
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
@@ -168,7 +168,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the name of new app. If provided, we will create a new application with this name.
+     * the name of new app. If provided, we will create a new application with this name.
      * You can not set this if existing_app_id is set.
      *
      * Generated from protobuf field <code>string new_app_name = 3;</code>
@@ -180,7 +180,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the name of new app. If provided, we will create a new application with this name.
+     * the name of new app. If provided, we will create a new application with this name.
      * You can not set this if existing_app_id is set.
      *
      * Generated from protobuf field <code>string new_app_name = 3;</code>
@@ -196,7 +196,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the status of app duplication
+     * the status of app duplication
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 4;</code>
      * @return \Clarifai\Api\Status\Status|null
@@ -217,7 +217,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the status of app duplication
+     * the status of app duplication
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 4;</code>
      * @param \Clarifai\Api\Status\Status $var
@@ -232,7 +232,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *when is the app duplication triggered
+     * when is the app duplication triggered
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -253,7 +253,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *when is the app duplication triggered
+     * when is the app duplication triggered
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -268,7 +268,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *The last time when is the status got updated
+     * The last time when is the status got updated
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -289,7 +289,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *The last time when is the status got updated
+     * The last time when is the status got updated
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
      * @param \Google\Protobuf\Timestamp $var
