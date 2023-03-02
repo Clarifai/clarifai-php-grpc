@@ -16,26 +16,26 @@ use Google\Protobuf\Internal\GPBUtil;
 class Collaborator extends \Google\Protobuf\Internal\Message
 {
     /**
-     *id of this collaborator
+     * id of this collaborator
      *
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
     /**
-     *the app this collaborator has access to
+     * the app this collaborator has access to
      * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      *
      * Generated from protobuf field <code>.clarifai.api.App app = 2;</code>
      */
     protected $app = null;
     /**
-     *who is this collaborator
+     * who is this collaborator
      *
      * Generated from protobuf field <code>.clarifai.api.User user = 3;</code>
      */
     protected $user = null;
     /**
-     *the permission this collaborator
+     * the permission this collaborator
      *
      * Generated from protobuf field <code>repeated string scopes = 4;</code>
      */
@@ -74,14 +74,14 @@ class Collaborator extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *          id of this collaborator
+     *           id of this collaborator
      *     @type \Clarifai\Api\App $app
-     *          the app this collaborator has access to
+     *           the app this collaborator has access to
      *           FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      *     @type \Clarifai\Api\User $user
-     *          who is this collaborator
+     *           who is this collaborator
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scopes
-     *          the permission this collaborator
+     *           the permission this collaborator
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $endpoints
      *     @type \Google\Protobuf\Timestamp $created_at
      *           When the app was shared with. We follow the XXXX timestamp
@@ -101,7 +101,7 @@ class Collaborator extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *id of this collaborator
+     * id of this collaborator
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @return string
@@ -112,7 +112,7 @@ class Collaborator extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *id of this collaborator
+     * id of this collaborator
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
@@ -127,7 +127,7 @@ class Collaborator extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the app this collaborator has access to
+     * the app this collaborator has access to
      * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      *
      * Generated from protobuf field <code>.clarifai.api.App app = 2;</code>
@@ -149,7 +149,7 @@ class Collaborator extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the app this collaborator has access to
+     * the app this collaborator has access to
      * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      *
      * Generated from protobuf field <code>.clarifai.api.App app = 2;</code>
@@ -165,7 +165,7 @@ class Collaborator extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *who is this collaborator
+     * who is this collaborator
      *
      * Generated from protobuf field <code>.clarifai.api.User user = 3;</code>
      * @return \Clarifai\Api\User|null
@@ -186,7 +186,7 @@ class Collaborator extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *who is this collaborator
+     * who is this collaborator
      *
      * Generated from protobuf field <code>.clarifai.api.User user = 3;</code>
      * @param \Clarifai\Api\User $var
@@ -201,7 +201,7 @@ class Collaborator extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the permission this collaborator
+     * the permission this collaborator
      *
      * Generated from protobuf field <code>repeated string scopes = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -212,7 +212,7 @@ class Collaborator extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the permission this collaborator
+     * the permission this collaborator
      *
      * Generated from protobuf field <code>repeated string scopes = 4;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var

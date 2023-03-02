@@ -9,38 +9,38 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *collaboration includes an app you're invited to work on.
+ * collaboration includes an app you're invited to work on.
  *
  * Generated from protobuf message <code>clarifai.api.Collaboration</code>
  */
 class Collaboration extends \Google\Protobuf\Internal\Message
 {
     /**
-     *the application
+     * the application
      *
      * Generated from protobuf field <code>.clarifai.api.App app = 1;</code>
      */
     protected $app = null;
     /**
-     *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+     * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
      *
      * Generated from protobuf field <code>.clarifai.api.User app_owner = 2;</code>
      */
     protected $app_owner = null;
     /**
-     *the low-level scope users are shared with for this collaboration
+     * the low-level scope users are shared with for this collaboration
      *
      * Generated from protobuf field <code>repeated string scopes = 3;</code>
      */
     private $scopes;
     /**
-     *the endpoint-level scopes users are shared with for this collaboration
+     * the endpoint-level scopes users are shared with for this collaboration
      *
      * Generated from protobuf field <code>repeated string endpoints = 4;</code>
      */
     private $endpoints;
     /**
-     *when is the collaboration created
+     * when is the collaboration created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
      */
@@ -53,15 +53,15 @@ class Collaboration extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\App $app
-     *          the application
+     *           the application
      *     @type \Clarifai\Api\User $app_owner
-     *          the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+     *           the app owner's info(including user_unique_id, first_name, last_name, primary_email)
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scopes
-     *          the low-level scope users are shared with for this collaboration
+     *           the low-level scope users are shared with for this collaboration
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $endpoints
-     *          the endpoint-level scopes users are shared with for this collaboration
+     *           the endpoint-level scopes users are shared with for this collaboration
      *     @type \Google\Protobuf\Timestamp $created_at
-     *          when is the collaboration created
+     *           when is the collaboration created
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,7 @@ class Collaboration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the application
+     * the application
      *
      * Generated from protobuf field <code>.clarifai.api.App app = 1;</code>
      * @return \Clarifai\Api\App|null
@@ -91,7 +91,7 @@ class Collaboration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the application
+     * the application
      *
      * Generated from protobuf field <code>.clarifai.api.App app = 1;</code>
      * @param \Clarifai\Api\App $var
@@ -106,7 +106,7 @@ class Collaboration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+     * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
      *
      * Generated from protobuf field <code>.clarifai.api.User app_owner = 2;</code>
      * @return \Clarifai\Api\User|null
@@ -127,7 +127,7 @@ class Collaboration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+     * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
      *
      * Generated from protobuf field <code>.clarifai.api.User app_owner = 2;</code>
      * @param \Clarifai\Api\User $var
@@ -142,7 +142,7 @@ class Collaboration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the low-level scope users are shared with for this collaboration
+     * the low-level scope users are shared with for this collaboration
      *
      * Generated from protobuf field <code>repeated string scopes = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -153,7 +153,7 @@ class Collaboration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the low-level scope users are shared with for this collaboration
+     * the low-level scope users are shared with for this collaboration
      *
      * Generated from protobuf field <code>repeated string scopes = 3;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
@@ -168,7 +168,7 @@ class Collaboration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the endpoint-level scopes users are shared with for this collaboration
+     * the endpoint-level scopes users are shared with for this collaboration
      *
      * Generated from protobuf field <code>repeated string endpoints = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -179,7 +179,7 @@ class Collaboration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *the endpoint-level scopes users are shared with for this collaboration
+     * the endpoint-level scopes users are shared with for this collaboration
      *
      * Generated from protobuf field <code>repeated string endpoints = 4;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
@@ -194,7 +194,7 @@ class Collaboration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *when is the collaboration created
+     * when is the collaboration created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -215,7 +215,7 @@ class Collaboration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *when is the collaboration created
+     * when is the collaboration created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
      * @param \Google\Protobuf\Timestamp $var

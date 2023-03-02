@@ -98,6 +98,10 @@ class Search extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 12;</code>
      */
     protected $visibility = null;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Search.Metric metric = 13;</code>
+     */
+    protected $metric = 0;
 
     /**
      * Constructor.
@@ -140,6 +144,7 @@ class Search extends \Google\Protobuf\Internal\Message
      *           The visibility field represents whether this message is privately/publicly visible.
      *           To be visible to the public the App that contains it AND the User that contains the App must
      *           also be publicly visible.
+     *     @type int $metric
      * }
      */
     public function __construct($data = NULL) {
@@ -527,6 +532,28 @@ class Search extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Search.Metric metric = 13;</code>
+     * @return int
+     */
+    public function getMetric()
+    {
+        return $this->metric;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Search.Metric metric = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMetric($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\Search\Metric::class);
+        $this->metric = $var;
 
         return $this;
     }

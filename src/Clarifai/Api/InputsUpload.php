@@ -9,13 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>clarifai.api.InputsDataSource</code>
+ * Generated from protobuf message <code>clarifai.api.InputsUpload</code>
  */
-class InputsDataSource extends \Google\Protobuf\Internal\Message
+class InputsUpload extends \Google\Protobuf\Internal\Message
 {
     /**
      * Collect statistics about created inputs in job with given ID.
-     * On Post call:
      * * If job ID is empty, then job is automatically created with random ID.
      * * If job ID is non-empty, then a new job will be created with given ID.
      *
@@ -23,9 +22,15 @@ class InputsDataSource extends \Google\Protobuf\Internal\Message
      */
     protected $inputs_add_job_id = '';
     /**
-     * Generated from protobuf field <code>.clarifai.api.DataSourceURL url = 2;</code>
+     * Personal Access Token to the application to which inputs are added
+     *
+     * Generated from protobuf field <code>string app_pat = 2;</code>
      */
-    protected $url = null;
+    protected $app_pat = '';
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Upload upload = 3;</code>
+     */
+    protected $upload = null;
 
     /**
      * Constructor.
@@ -35,10 +40,11 @@ class InputsDataSource extends \Google\Protobuf\Internal\Message
      *
      *     @type string $inputs_add_job_id
      *           Collect statistics about created inputs in job with given ID.
-     *           On Post call:
      *           * If job ID is empty, then job is automatically created with random ID.
      *           * If job ID is non-empty, then a new job will be created with given ID.
-     *     @type \Clarifai\Api\DataSourceURL $url
+     *     @type string $app_pat
+     *           Personal Access Token to the application to which inputs are added
+     *     @type \Clarifai\Api\Upload $upload
      * }
      */
     public function __construct($data = NULL) {
@@ -48,7 +54,6 @@ class InputsDataSource extends \Google\Protobuf\Internal\Message
 
     /**
      * Collect statistics about created inputs in job with given ID.
-     * On Post call:
      * * If job ID is empty, then job is automatically created with random ID.
      * * If job ID is non-empty, then a new job will be created with given ID.
      *
@@ -62,7 +67,6 @@ class InputsDataSource extends \Google\Protobuf\Internal\Message
 
     /**
      * Collect statistics about created inputs in job with given ID.
-     * On Post call:
      * * If job ID is empty, then job is automatically created with random ID.
      * * If job ID is non-empty, then a new job will be created with given ID.
      *
@@ -79,33 +83,59 @@ class InputsDataSource extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.clarifai.api.DataSourceURL url = 2;</code>
-     * @return \Clarifai\Api\DataSourceURL|null
+     * Personal Access Token to the application to which inputs are added
+     *
+     * Generated from protobuf field <code>string app_pat = 2;</code>
+     * @return string
      */
-    public function getUrl()
+    public function getAppPat()
     {
-        return $this->url;
-    }
-
-    public function hasUrl()
-    {
-        return isset($this->url);
-    }
-
-    public function clearUrl()
-    {
-        unset($this->url);
+        return $this->app_pat;
     }
 
     /**
-     * Generated from protobuf field <code>.clarifai.api.DataSourceURL url = 2;</code>
-     * @param \Clarifai\Api\DataSourceURL $var
+     * Personal Access Token to the application to which inputs are added
+     *
+     * Generated from protobuf field <code>string app_pat = 2;</code>
+     * @param string $var
      * @return $this
      */
-    public function setUrl($var)
+    public function setAppPat($var)
     {
-        GPBUtil::checkMessage($var, \Clarifai\Api\DataSourceURL::class);
-        $this->url = $var;
+        GPBUtil::checkString($var, True);
+        $this->app_pat = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Upload upload = 3;</code>
+     * @return \Clarifai\Api\Upload|null
+     */
+    public function getUpload()
+    {
+        return $this->upload;
+    }
+
+    public function hasUpload()
+    {
+        return isset($this->upload);
+    }
+
+    public function clearUpload()
+    {
+        unset($this->upload);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Upload upload = 3;</code>
+     * @param \Clarifai\Api\Upload $var
+     * @return $this
+     */
+    public function setUpload($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Upload::class);
+        $this->upload = $var;
 
         return $this;
     }

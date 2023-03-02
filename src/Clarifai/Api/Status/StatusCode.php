@@ -654,10 +654,6 @@ class StatusCode
      */
     const BULK_OPERATION_UNEXPECTED_ERROR = 25406;
     /**
-     * Generated from protobuf enum <code>BULK_OPERATION_DELETED = 25407;</code>
-     */
-    const BULK_OPERATION_DELETED = 25407;
-    /**
      * Input:Image related 30xxx
      *
      * Generated from protobuf enum <code>INPUT_DOWNLOAD_SUCCESS = 30000;</code>
@@ -939,6 +935,10 @@ class StatusCode
      * Generated from protobuf enum <code>EXTERNAL_CONNECTION_ERROR = 40034;</code>
      */
     const EXTERNAL_CONNECTION_ERROR = 40034;
+    /**
+     * Generated from protobuf enum <code>QUERY_INVALID_SYNTAX = 40050;</code>
+     */
+    const QUERY_INVALID_SYNTAX = 40050;
     /**
      * Queue related errors 41xxx
      *
@@ -1381,6 +1381,36 @@ class StatusCode
      */
     const DATASET_INPUT_DUPLICATE = 64101;
     /**
+     * The dataset version export is completed.
+     *
+     * Generated from protobuf enum <code>DATASET_VERSION_EXPORT_SUCCESS = 64200;</code>
+     */
+    const DATASET_VERSION_EXPORT_SUCCESS = 64200;
+    /**
+     * The dataset version is pending to be exported.
+     *
+     * Generated from protobuf enum <code>DATASET_VERSION_EXPORT_PENDING = 64201;</code>
+     */
+    const DATASET_VERSION_EXPORT_PENDING = 64201;
+    /**
+     * An error occurred during the dataset version export.
+     *
+     * Generated from protobuf enum <code>DATASET_VERSION_EXPORT_FAILED = 64202;</code>
+     */
+    const DATASET_VERSION_EXPORT_FAILED = 64202;
+    /**
+     * The dataset version is currently being exported.
+     *
+     * Generated from protobuf enum <code>DATASET_VERSION_EXPORT_IN_PROGRESS = 64203;</code>
+     */
+    const DATASET_VERSION_EXPORT_IN_PROGRESS = 64203;
+    /**
+     * An unexpected error occurred during the dataset version export.
+     *
+     * Generated from protobuf enum <code>DATASET_VERSION_EXPORT_UNEXPECTED_ERROR = 64204;</code>
+     */
+    const DATASET_VERSION_EXPORT_UNEXPECTED_ERROR = 64204;
+    /**
      * Generic Job status codes
      *
      * Generated from protobuf enum <code>JOB_QUEUED = 64000;</code>
@@ -1669,7 +1699,6 @@ class StatusCode
         self::BULK_OPERATION_INVALID_REQUEST => 'BULK_OPERATION_INVALID_REQUEST',
         self::BULK_OPERATION_CANCELLED => 'BULK_OPERATION_CANCELLED',
         self::BULK_OPERATION_UNEXPECTED_ERROR => 'BULK_OPERATION_UNEXPECTED_ERROR',
-        self::BULK_OPERATION_DELETED => 'BULK_OPERATION_DELETED',
         self::INPUT_DOWNLOAD_SUCCESS => 'INPUT_DOWNLOAD_SUCCESS',
         self::INPUT_DOWNLOAD_PENDING => 'INPUT_DOWNLOAD_PENDING',
         self::INPUT_DOWNLOAD_FAILED => 'INPUT_DOWNLOAD_FAILED',
@@ -1737,6 +1766,7 @@ class StatusCode
         self::REQUEST_CANCELED_BY_USER => 'REQUEST_CANCELED_BY_USER',
         self::CLUSTER_INTERNAL_FAILURE => 'CLUSTER_INTERNAL_FAILURE',
         self::EXTERNAL_CONNECTION_ERROR => 'EXTERNAL_CONNECTION_ERROR',
+        self::QUERY_INVALID_SYNTAX => 'QUERY_INVALID_SYNTAX',
         self::QUEUE_CONN_ERROR => 'QUEUE_CONN_ERROR',
         self::QUEUE_CLOSE_REQUEST_TIMEOUT => 'QUEUE_CLOSE_REQUEST_TIMEOUT',
         self::QUEUE_CONN_CLOSED => 'QUEUE_CONN_CLOSED',
@@ -1829,6 +1859,11 @@ class StatusCode
         self::DATASET_VERSION_CONFLICT => 'DATASET_VERSION_CONFLICT',
         self::DATASET_INPUT_SUCCESS => 'DATASET_INPUT_SUCCESS',
         self::DATASET_INPUT_DUPLICATE => 'DATASET_INPUT_DUPLICATE',
+        self::DATASET_VERSION_EXPORT_SUCCESS => 'DATASET_VERSION_EXPORT_SUCCESS',
+        self::DATASET_VERSION_EXPORT_PENDING => 'DATASET_VERSION_EXPORT_PENDING',
+        self::DATASET_VERSION_EXPORT_FAILED => 'DATASET_VERSION_EXPORT_FAILED',
+        self::DATASET_VERSION_EXPORT_IN_PROGRESS => 'DATASET_VERSION_EXPORT_IN_PROGRESS',
+        self::DATASET_VERSION_EXPORT_UNEXPECTED_ERROR => 'DATASET_VERSION_EXPORT_UNEXPECTED_ERROR',
         self::JOB_QUEUED => 'JOB_QUEUED',
         self::JOB_RUNNING => 'JOB_RUNNING',
         self::JOB_COMPLETED => 'JOB_COMPLETED',

@@ -3043,4 +3043,32 @@ class V2Client extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Clarifai\Api\CancelInputsExtractionJobsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CancelInputsExtractionJobs(\Clarifai\Api\CancelInputsExtractionJobsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/CancelInputsExtractionJobs',
+        $argument,
+        ['\Clarifai\Api\MultiInputsExtractionJobResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PostInputsUploadsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostInputsUploads(\Clarifai\Api\PostInputsUploadsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostInputsUploads',
+        $argument,
+        ['\Clarifai\Api\MultiInputsAddJobResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

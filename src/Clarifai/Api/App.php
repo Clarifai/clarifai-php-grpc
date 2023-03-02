@@ -32,8 +32,9 @@ class App extends \Google\Protobuf\Internal\Message
      */
     protected $default_workflow_id = '';
     /**
-     *why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
-     *This creates a lot of ambiguity, should always have different message types for Post/Get endpoints so that the minimum interface for each op can be described
+     * why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already
+     * specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
+     * This creates a lot of ambiguity, should always have different message types for Post/Get endpoints so that the minimum interface for each op can be described
      *
      * Generated from protobuf field <code>string user_id = 5;</code>
      */
@@ -132,8 +133,9 @@ class App extends \Google\Protobuf\Internal\Message
      *     @type string $default_language
      *     @type string $default_workflow_id
      *     @type string $user_id
-     *          why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
-     *          This creates a lot of ambiguity, should always have different message types for Post/Get endpoints so that the minimum interface for each op can be described
+     *           why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already
+     *           specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
+     *           This creates a lot of ambiguity, should always have different message types for Post/Get endpoints so that the minimum interface for each op can be described
      *     @type \Google\Protobuf\Timestamp $created_at
      *           When the app was created. We follow the XXXX timestamp
      *           format. We use https://www.ietf.org/rfc/rfc3339.txt format:
@@ -264,8 +266,9 @@ class App extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
-     *This creates a lot of ambiguity, should always have different message types for Post/Get endpoints so that the minimum interface for each op can be described
+     * why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already
+     * specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
+     * This creates a lot of ambiguity, should always have different message types for Post/Get endpoints so that the minimum interface for each op can be described
      *
      * Generated from protobuf field <code>string user_id = 5;</code>
      * @return string
@@ -276,8 +279,9 @@ class App extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
-     *This creates a lot of ambiguity, should always have different message types for Post/Get endpoints so that the minimum interface for each op can be described
+     * why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already
+     * specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
+     * This creates a lot of ambiguity, should always have different message types for Post/Get endpoints so that the minimum interface for each op can be described
      *
      * Generated from protobuf field <code>string user_id = 5;</code>
      * @param string $var

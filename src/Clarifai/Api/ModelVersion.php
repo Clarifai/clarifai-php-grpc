@@ -99,6 +99,8 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      */
     protected $license = '';
     /**
+     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+     * and provide the dataset version ID in the train_info.params.
      * Dataset version used to create this model version.
      *
      * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
@@ -128,6 +130,10 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 22;</code>
      */
     protected $import_info = null;
+    /**
+     * Generated from protobuf field <code>string train_log = 23;</code>
+     */
+    protected $train_log = '';
 
     /**
      * Constructor.
@@ -164,6 +170,8 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *     @type string $license
      *     @type \Clarifai\Api\DatasetVersion $dataset_version
+     *           Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+     *           and provide the dataset version ID in the train_info.params.
      *           Dataset version used to create this model version.
      *     @type \Clarifai\Api\OutputInfo $output_info
      *           Info about the model's output and configuration.
@@ -173,6 +181,7 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *           Configuration for the training process of this model.
      *     @type \Clarifai\Api\ImportInfo $import_info
      *           Configuration used to import model from third-party toolkits
+     *     @type string $train_log
      * }
      */
     public function __construct($data = NULL) {
@@ -637,6 +646,8 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+     * and provide the dataset version ID in the train_info.params.
      * Dataset version used to create this model version.
      *
      * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
@@ -658,6 +669,8 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+     * and provide the dataset version ID in the train_info.params.
      * Dataset version used to create this model version.
      *
      * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
@@ -812,6 +825,28 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\ImportInfo::class);
         $this->import_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string train_log = 23;</code>
+     * @return string
+     */
+    public function getTrainLog()
+    {
+        return $this->train_log;
+    }
+
+    /**
+     * Generated from protobuf field <code>string train_log = 23;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTrainLog($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->train_log = $var;
 
         return $this;
     }

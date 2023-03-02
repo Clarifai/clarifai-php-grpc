@@ -14,9 +14,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class AnnotationFilterConfig extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The annotation filter that is used.
+     *
      * Generated from protobuf field <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
      */
     protected $annotation_filter = null;
+    /**
+     * If true, empty inputs are not included in the dataset version.
+     * If false, empty inputs are included in the dataset version.
+     * We define an empty input as an input without any annotations after annotation filter is applied.
+     *
+     * Generated from protobuf field <code>bool ignore_empty_inputs = 2;</code>
+     */
+    protected $ignore_empty_inputs = false;
 
     /**
      * Constructor.
@@ -25,6 +35,11 @@ class AnnotationFilterConfig extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\AnnotationFilter $annotation_filter
+     *           The annotation filter that is used.
+     *     @type bool $ignore_empty_inputs
+     *           If true, empty inputs are not included in the dataset version.
+     *           If false, empty inputs are included in the dataset version.
+     *           We define an empty input as an input without any annotations after annotation filter is applied.
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +48,8 @@ class AnnotationFilterConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The annotation filter that is used.
+     *
      * Generated from protobuf field <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
      * @return \Clarifai\Api\AnnotationFilter|null
      */
@@ -52,6 +69,8 @@ class AnnotationFilterConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The annotation filter that is used.
+     *
      * Generated from protobuf field <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
      * @param \Clarifai\Api\AnnotationFilter $var
      * @return $this
@@ -60,6 +79,36 @@ class AnnotationFilterConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\AnnotationFilter::class);
         $this->annotation_filter = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, empty inputs are not included in the dataset version.
+     * If false, empty inputs are included in the dataset version.
+     * We define an empty input as an input without any annotations after annotation filter is applied.
+     *
+     * Generated from protobuf field <code>bool ignore_empty_inputs = 2;</code>
+     * @return bool
+     */
+    public function getIgnoreEmptyInputs()
+    {
+        return $this->ignore_empty_inputs;
+    }
+
+    /**
+     * If true, empty inputs are not included in the dataset version.
+     * If false, empty inputs are included in the dataset version.
+     * We define an empty input as an input without any annotations after annotation filter is applied.
+     *
+     * Generated from protobuf field <code>bool ignore_empty_inputs = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIgnoreEmptyInputs($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->ignore_empty_inputs = $var;
 
         return $this;
     }

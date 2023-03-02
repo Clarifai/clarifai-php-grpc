@@ -66,6 +66,12 @@ class InputsAddJob extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.InputsExtractionJob extraction_jobs = 10;</code>
      */
     private $extraction_jobs;
+    /**
+     * Archive uploads
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    private $uploads;
 
     /**
      * Constructor.
@@ -94,6 +100,8 @@ class InputsAddJob extends \Google\Protobuf\Internal\Message
      *           Example: "2006-01-02T15:04:05.999999Z".
      *     @type array<\Clarifai\Api\InputsExtractionJob>|\Google\Protobuf\Internal\RepeatedField $extraction_jobs
      *           Sub-jobs that extract inputs from the cloud and/or archives
+     *     @type array<\Clarifai\Api\Upload>|\Google\Protobuf\Internal\RepeatedField $uploads
+     *           Archive uploads
      * }
      */
     public function __construct($data = NULL) {
@@ -345,6 +353,32 @@ class InputsAddJob extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\InputsExtractionJob::class);
         $this->extraction_jobs = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Archive uploads
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUploads()
+    {
+        return $this->uploads;
+    }
+
+    /**
+     * Archive uploads
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     * @param array<\Clarifai\Api\Upload>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUploads($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Upload::class);
+        $this->uploads = $arr;
 
         return $this;
     }
