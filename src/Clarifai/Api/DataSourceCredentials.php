@@ -22,11 +22,11 @@ class DataSourceCredentials extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\AWSCreds $s3_creds
-     *           AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+     *           AWS S3 credentials for authentication.
      *     @type string $gcp_creds
      *           GCP Cloud Storage uses service account key data(creds.json) as Byte array for authentication.
-     *     @type string $azure_blob_creds
-     *           Azure Blob storage uses creds: “{storageAccount}:{storageKey}” for authentication.
+     *     @type \Clarifai\Api\AzureBlobCreds $azure_blob_creds
+     *           Azure Blob credentials for authentication.
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class DataSourceCredentials extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+     * AWS S3 credentials for authentication.
      *
      * Generated from protobuf field <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
      * @return \Clarifai\Api\AWSCreds|null
@@ -51,7 +51,7 @@ class DataSourceCredentials extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+     * AWS S3 credentials for authentication.
      *
      * Generated from protobuf field <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
      * @param \Clarifai\Api\AWSCreds $var
@@ -97,32 +97,32 @@ class DataSourceCredentials extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Azure Blob storage uses creds: “{storageAccount}:{storageKey}” for authentication.
+     * Azure Blob credentials for authentication.
      *
-     * Generated from protobuf field <code>string azure_blob_creds = 3;</code>
-     * @return string
+     * Generated from protobuf field <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
+     * @return \Clarifai\Api\AzureBlobCreds|null
      */
     public function getAzureBlobCreds()
     {
-        return $this->readOneof(3);
+        return $this->readOneof(4);
     }
 
     public function hasAzureBlobCreds()
     {
-        return $this->hasOneof(3);
+        return $this->hasOneof(4);
     }
 
     /**
-     * Azure Blob storage uses creds: “{storageAccount}:{storageKey}” for authentication.
+     * Azure Blob credentials for authentication.
      *
-     * Generated from protobuf field <code>string azure_blob_creds = 3;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
+     * @param \Clarifai\Api\AzureBlobCreds $var
      * @return $this
      */
     public function setAzureBlobCreds($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(3, $var);
+        GPBUtil::checkMessage($var, \Clarifai\Api\AzureBlobCreds::class);
+        $this->writeOneof(4, $var);
 
         return $this;
     }

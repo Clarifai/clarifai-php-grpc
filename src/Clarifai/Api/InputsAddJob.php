@@ -20,13 +20,6 @@ class InputsAddJob extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Cloud storage url from which the inputs can be accessed.
-     * Supported providers are AWS S3, Azure blob, GCP cloud storage.
-     *
-     * Generated from protobuf field <code>string cloud_storage_url = 2;</code>
-     */
-    protected $cloud_storage_url = '';
-    /**
      * If call back url is set, we will send a Post request to this endpoint with job status.
      *
      * Generated from protobuf field <code>string call_back_url = 3;</code>
@@ -81,9 +74,6 @@ class InputsAddJob extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           id of the job
-     *     @type string $cloud_storage_url
-     *           Cloud storage url from which the inputs can be accessed.
-     *           Supported providers are AWS S3, Azure blob, GCP cloud storage.
      *     @type string $call_back_url
      *           If call back url is set, we will send a Post request to this endpoint with job status.
      *     @type string $app_pat
@@ -131,34 +121,6 @@ class InputsAddJob extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Cloud storage url from which the inputs can be accessed.
-     * Supported providers are AWS S3, Azure blob, GCP cloud storage.
-     *
-     * Generated from protobuf field <code>string cloud_storage_url = 2;</code>
-     * @return string
-     */
-    public function getCloudStorageUrl()
-    {
-        return $this->cloud_storage_url;
-    }
-
-    /**
-     * Cloud storage url from which the inputs can be accessed.
-     * Supported providers are AWS S3, Azure blob, GCP cloud storage.
-     *
-     * Generated from protobuf field <code>string cloud_storage_url = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCloudStorageUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->cloud_storage_url = $var;
 
         return $this;
     }

@@ -39,6 +39,12 @@ class DatasetVersionExport extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint64 size = 4;</code>
      */
     protected $size = 0;
+    /**
+     * whether to include embeddings in the export or not.
+     *
+     * Generated from protobuf field <code>bool include_embeddings = 5;</code>
+     */
+    protected $include_embeddings = false;
 
     /**
      * Constructor.
@@ -54,6 +60,8 @@ class DatasetVersionExport extends \Google\Protobuf\Internal\Message
      *           url is the URL from where the dataset version export can be downloaded.
      *     @type int|string $size
      *           size is the size of the dataset version export in number of bytes.
+     *     @type bool $include_embeddings
+     *           whether to include embeddings in the export or not.
      * }
      */
     public function __construct($data = NULL) {
@@ -171,6 +179,32 @@ class DatasetVersionExport extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint64($var);
         $this->size = $var;
+
+        return $this;
+    }
+
+    /**
+     * whether to include embeddings in the export or not.
+     *
+     * Generated from protobuf field <code>bool include_embeddings = 5;</code>
+     * @return bool
+     */
+    public function getIncludeEmbeddings()
+    {
+        return $this->include_embeddings;
+    }
+
+    /**
+     * whether to include embeddings in the export or not.
+     *
+     * Generated from protobuf field <code>bool include_embeddings = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIncludeEmbeddings($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->include_embeddings = $var;
 
         return $this;
     }

@@ -33,6 +33,18 @@ class ListKeysRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 per_page = 3;</code>
      */
     protected $per_page = 0;
+    /**
+     * Generated from protobuf field <code>bool not_expired = 4;</code>
+     */
+    protected $not_expired = false;
+    /**
+     * Generated from protobuf field <code>repeated string scopes = 5;</code>
+     */
+    private $scopes;
+    /**
+     * Generated from protobuf field <code>repeated string endpoints = 6;</code>
+     */
+    private $endpoints;
 
     /**
      * Constructor.
@@ -47,6 +59,9 @@ class ListKeysRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
+     *     @type bool $not_expired
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scopes
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $endpoints
      * }
      */
     public function __construct($data = NULL) {
@@ -138,6 +153,72 @@ class ListKeysRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->per_page = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool not_expired = 4;</code>
+     * @return bool
+     */
+    public function getNotExpired()
+    {
+        return $this->not_expired;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool not_expired = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setNotExpired($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->not_expired = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string scopes = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getScopes()
+    {
+        return $this->scopes;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string scopes = 5;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setScopes($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->scopes = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string endpoints = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getEndpoints()
+    {
+        return $this->endpoints;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string endpoints = 6;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setEndpoints($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->endpoints = $arr;
 
         return $this;
     }
