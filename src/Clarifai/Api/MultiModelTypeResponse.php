@@ -33,6 +33,12 @@ class MultiModelTypeResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
      */
     protected $model_importers = null;
+    /**
+     * Triton model envs that can be used for model upload
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    private $triton_conda_envs_info;
 
     /**
      * Constructor.
@@ -46,6 +52,8 @@ class MultiModelTypeResponse extends \Google\Protobuf\Internal\Message
      *           List of ModelType objects.
      *     @type \Clarifai\Api\ModelTypeField $model_importers
      *           List of model importers
+     *     @type array<\Clarifai\Api\TritonCondaEnvInfo>|\Google\Protobuf\Internal\RepeatedField $triton_conda_envs_info
+     *           Triton model envs that can be used for model upload
      * }
      */
     public function __construct($data = NULL) {
@@ -147,6 +155,32 @@ class MultiModelTypeResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\ModelTypeField::class);
         $this->model_importers = $var;
+
+        return $this;
+    }
+
+    /**
+     * Triton model envs that can be used for model upload
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTritonCondaEnvsInfo()
+    {
+        return $this->triton_conda_envs_info;
+    }
+
+    /**
+     * Triton model envs that can be used for model upload
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     * @param array<\Clarifai\Api\TritonCondaEnvInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTritonCondaEnvsInfo($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\TritonCondaEnvInfo::class);
+        $this->triton_conda_envs_info = $arr;
 
         return $this;
     }

@@ -99,14 +99,6 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      */
     protected $license = '';
     /**
-     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-     * and provide the dataset version ID in the train_info.params.
-     * Dataset version used to create this model version.
-     *
-     * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-     */
-    protected $dataset_version = null;
-    /**
      * Info about the model's output and configuration.
      *
      * Generated from protobuf field <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -169,10 +161,6 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *     @type string $license
-     *     @type \Clarifai\Api\DatasetVersion $dataset_version
-     *           Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-     *           and provide the dataset version ID in the train_info.params.
-     *           Dataset version used to create this model version.
      *     @type \Clarifai\Api\OutputInfo $output_info
      *           Info about the model's output and configuration.
      *     @type \Clarifai\Api\InputInfo $input_info
@@ -641,46 +629,6 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->license = $var;
-
-        return $this;
-    }
-
-    /**
-     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-     * and provide the dataset version ID in the train_info.params.
-     * Dataset version used to create this model version.
-     *
-     * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-     * @return \Clarifai\Api\DatasetVersion|null
-     */
-    public function getDatasetVersion()
-    {
-        return $this->dataset_version;
-    }
-
-    public function hasDatasetVersion()
-    {
-        return isset($this->dataset_version);
-    }
-
-    public function clearDatasetVersion()
-    {
-        unset($this->dataset_version);
-    }
-
-    /**
-     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-     * and provide the dataset version ID in the train_info.params.
-     * Dataset version used to create this model version.
-     *
-     * Generated from protobuf field <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-     * @param \Clarifai\Api\DatasetVersion $var
-     * @return $this
-     */
-    public function setDatasetVersion($var)
-    {
-        GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersion::class);
-        $this->dataset_version = $var;
 
         return $this;
     }

@@ -9,16 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * WaitlistEmail is an e-mail address on a feature waiting list.
- *
- * Generated from protobuf message <code>clarifai.api.WaitlistEmail</code>
+ * Generated from protobuf message <code>clarifai.api.DeleteFromDataset</code>
  */
-class WaitlistEmail extends \Google\Protobuf\Internal\Message
+class DeleteFromDataset extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string email = 1;</code>
+     * Generated from protobuf field <code>string dataset_id = 1;</code>
      */
-    protected $email = '';
+    protected $dataset_id = '';
 
     /**
      * Constructor.
@@ -26,7 +24,7 @@ class WaitlistEmail extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $email
+     *     @type string $dataset_id
      * }
      */
     public function __construct($data = NULL) {
@@ -35,23 +33,23 @@ class WaitlistEmail extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email = 1;</code>
+     * Generated from protobuf field <code>string dataset_id = 1;</code>
      * @return string
      */
-    public function getEmail()
+    public function getDatasetId()
     {
-        return $this->email;
+        return $this->dataset_id;
     }
 
     /**
-     * Generated from protobuf field <code>string email = 1;</code>
+     * Generated from protobuf field <code>string dataset_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setEmail($var)
+    public function setDatasetId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->email = $var;
+        $this->dataset_id = $var;
 
         return $this;
     }

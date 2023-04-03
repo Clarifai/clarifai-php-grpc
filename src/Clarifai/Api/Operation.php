@@ -27,6 +27,7 @@ class Operation extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\DeleteMetadata $delete_metadata
      *     @type \Clarifai\Api\OverwriteGeo $overwrite_geo
      *     @type \Clarifai\Api\DeleteGeo $delete_geo
+     *     @type \Clarifai\Api\DeleteFromDataset $delete_from_dataset
      * }
      */
     public function __construct($data = NULL) {
@@ -192,6 +193,33 @@ class Operation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\DeleteGeo::class);
         $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+     * @return \Clarifai\Api\DeleteFromDataset|null
+     */
+    public function getDeleteFromDataset()
+    {
+        return $this->readOneof(7);
+    }
+
+    public function hasDeleteFromDataset()
+    {
+        return $this->hasOneof(7);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+     * @param \Clarifai\Api\DeleteFromDataset $var
+     * @return $this
+     */
+    public function setDeleteFromDataset($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\DeleteFromDataset::class);
+        $this->writeOneof(7, $var);
 
         return $this;
     }

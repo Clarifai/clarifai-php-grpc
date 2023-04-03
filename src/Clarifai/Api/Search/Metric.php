@@ -7,7 +7,7 @@ namespace Clarifai\Api\Search;
 use UnexpectedValueException;
 
 /**
- * Metric used for search. Can be EUCLIDEAN_DISTANCE (default) or COSINE_DISTANCE. 
+ * Metric used for search. Can be EUCLIDEAN_DISTANCE (default) or COSINE_DISTANCE.
  * Currently only brute force search supports non-eudlicean metrics.
  *
  * Protobuf type <code>clarifai.api.Search.Metric</code>

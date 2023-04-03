@@ -42,6 +42,13 @@ class WorkflowNode extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool suppress_output = 4;</code>
      */
     protected $suppress_output = false;
+    /**
+     * Used to override the output_info.data and output_info.params of the model specified by the node.
+     * Values for fields_map, message, and output_config are ignored.
+     *
+     * Generated from protobuf field <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+     */
+    protected $output_info_override = null;
 
     /**
      * Constructor.
@@ -60,6 +67,9 @@ class WorkflowNode extends \Google\Protobuf\Internal\Message
      *           and more complex workflow operations.
      *     @type bool $suppress_output
      *           suppress the output for workflow prediction
+     *     @type \Clarifai\Api\OutputInfo $output_info_override
+     *           Used to override the output_info.data and output_info.params of the model specified by the node.
+     *           Values for fields_map, message, and output_config are ignored.
      * }
      */
     public function __construct($data = NULL) {
@@ -183,6 +193,44 @@ class WorkflowNode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->suppress_output = $var;
+
+        return $this;
+    }
+
+    /**
+     * Used to override the output_info.data and output_info.params of the model specified by the node.
+     * Values for fields_map, message, and output_config are ignored.
+     *
+     * Generated from protobuf field <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+     * @return \Clarifai\Api\OutputInfo|null
+     */
+    public function getOutputInfoOverride()
+    {
+        return $this->output_info_override;
+    }
+
+    public function hasOutputInfoOverride()
+    {
+        return isset($this->output_info_override);
+    }
+
+    public function clearOutputInfoOverride()
+    {
+        unset($this->output_info_override);
+    }
+
+    /**
+     * Used to override the output_info.data and output_info.params of the model specified by the node.
+     * Values for fields_map, message, and output_config are ignored.
+     *
+     * Generated from protobuf field <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+     * @param \Clarifai\Api\OutputInfo $var
+     * @return $this
+     */
+    public function setOutputInfoOverride($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\OutputInfo::class);
+        $this->output_info_override = $var;
 
         return $this;
     }
