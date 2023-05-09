@@ -45,6 +45,13 @@ class MultiSearchResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.Search searches = 5;</code>
      */
     private $searches;
+    /**
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    private $hit_counts;
 
     /**
      * Constructor.
@@ -62,6 +69,9 @@ class MultiSearchResponse extends \Google\Protobuf\Internal\Message
      *           The original query provided in the request.
      *     @type array<\Clarifai\Api\Search>|\Google\Protobuf\Internal\RepeatedField $searches
      *           The original Searches provided in the request.
+     *     @type array<\Clarifai\Api\HitCount>|\Google\Protobuf\Internal\RepeatedField $hit_counts
+     *           The counts of hits for each search, in the same order as searches.
+     *           Only returned if the request set only_count.
      * }
      */
     public function __construct($data = NULL) {
@@ -215,6 +225,34 @@ class MultiSearchResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Search::class);
         $this->searches = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getHitCounts()
+    {
+        return $this->hit_counts;
+    }
+
+    /**
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     * @param array<\Clarifai\Api\HitCount>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setHitCounts($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\HitCount::class);
+        $this->hit_counts = $arr;
 
         return $this;
     }

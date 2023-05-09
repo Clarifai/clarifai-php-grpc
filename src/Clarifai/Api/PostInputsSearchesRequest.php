@@ -33,6 +33,13 @@ class PostInputsSearchesRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Pagination pagination = 3;</code>
      */
     protected $pagination = null;
+    /**
+     * If only_count is set, then the response will not contain hits,
+     * but hit_counts instead.
+     *
+     * Generated from protobuf field <code>bool only_count = 4;</code>
+     */
+    protected $only_count = false;
 
     /**
      * Constructor.
@@ -46,6 +53,9 @@ class PostInputsSearchesRequest extends \Google\Protobuf\Internal\Message
      *           The searched to be executed or saved
      *     @type \Clarifai\Api\Pagination $pagination
      *           Pagination information to paginate through search result Hits.
+     *     @type bool $only_count
+     *           If only_count is set, then the response will not contain hits,
+     *           but hit_counts instead.
      * }
      */
     public function __construct($data = NULL) {
@@ -147,6 +157,34 @@ class PostInputsSearchesRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Pagination::class);
         $this->pagination = $var;
+
+        return $this;
+    }
+
+    /**
+     * If only_count is set, then the response will not contain hits,
+     * but hit_counts instead.
+     *
+     * Generated from protobuf field <code>bool only_count = 4;</code>
+     * @return bool
+     */
+    public function getOnlyCount()
+    {
+        return $this->only_count;
+    }
+
+    /**
+     * If only_count is set, then the response will not contain hits,
+     * but hit_counts instead.
+     *
+     * Generated from protobuf field <code>bool only_count = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOnlyCount($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->only_count = $var;
 
         return $this;
     }

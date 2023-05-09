@@ -1876,6 +1876,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Get user information
+     * @param \Clarifai\Api\GetUserRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetUser(\Clarifai\Api\GetUserRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetUser',
+        $argument,
+        ['\Clarifai\Api\SingleUserResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Validate new password in real-time for a user
      * @param \Clarifai\Api\PostValidatePasswordRequest $argument input argument
      * @param array $metadata metadata
@@ -2900,6 +2915,36 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * List next non-labeled and unassigned inputs from task's dataset
+     * @param \Clarifai\Api\ListNextTaskAssignmentsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListNextTaskAssignments(\Clarifai\Api\ListNextTaskAssignmentsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListNextTaskAssignments',
+        $argument,
+        ['\Clarifai\Api\MultiInputResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * PutTaskAssignments evaluates all the annotations by labeler (authenticated user) for given task (task_id) and input (input_id).
+     * @param \Clarifai\Api\PutTaskAssignmentsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PutTaskAssignments(\Clarifai\Api\PutTaskAssignmentsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PutTaskAssignments',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * List all the inputs add jobs
      * @param \Clarifai\Api\ListInputsAddJobsRequest $argument input argument
      * @param array $metadata metadata
@@ -2944,6 +2989,8 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Upload a part of a multipart upload.
+     * Behaviour on completion depends on the endpoint that was used to initiate the upload.
      * @param \Clarifai\Api\PutUploadContentPartsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -3000,6 +3047,19 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Initiates retrieval of inputs from cloud storage from a user provided data source.
+     * Will create and return an inputs-add-job for tracking progress.
+     * Archives will be extracted and their contents will be processed as inputs.
+     *
+     * The cloud URL will be treated as a filter prefix. For example s3:/bucket/images_folder/abc will process
+     * files in the images_folder beginning with abc or in a subfolder beginning with abc.
+     * For example:
+     * bucket/images_folder/abcImage.png
+     * bucket/images_folder/abc-1/Data.zip
+     *
+     * If given URL is for a private bucket or file, then credentials should be provided to access the bucket.
+     * Credentials should include rights to list the objects in the bucket, except when pointed directly at a file archive,
+     * in which case it only requires rights to access that particular file.
      * @param \Clarifai\Api\PostInputsDataSourcesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -3058,6 +3118,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Start uploading a file archive containing inputs.
+     * Will create and return an inputs-add-job for tracking progress.
+     *
+     * Associated inputs-add-job contains an upload id which should be completed through `PutUploadContentParts` endpoint.
+     * Completing the upload will automatically begin unpacking the archive and uploading the contents as inputs.
      * @param \Clarifai\Api\PostInputsUploadsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

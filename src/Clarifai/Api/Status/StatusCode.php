@@ -894,6 +894,10 @@ class StatusCode
      */
     const DATABASE_CONSTRAINT_VIOLATED = 40017;
     /**
+     * Generated from protobuf enum <code>DATABASE_CANCELED = 40021;</code>
+     */
+    const DATABASE_CANCELED = 40021;
+    /**
      * Generated from protobuf enum <code>ASYNC_WORKER_MULTI_ERRORS = 40020;</code>
      */
     const ASYNC_WORKER_MULTI_ERRORS = 40020;
@@ -1021,6 +1025,10 @@ class StatusCode
      * Generated from protobuf enum <code>SAVED_SEARCH_MODIFY_FAILED = 43005;</code>
      */
     const SAVED_SEARCH_MODIFY_FAILED = 43005;
+    /**
+     * Generated from protobuf enum <code>SEARCH_COUNTS_UNAVAILABLE = 43006;</code>
+     */
+    const SEARCH_COUNTS_UNAVAILABLE = 43006;
     /**
      * Workflow evaluation err code
      *
@@ -1756,6 +1764,7 @@ class StatusCode
         self::DATABASE_FAIL_TO_GET_CONNECTIONS => 'DATABASE_FAIL_TO_GET_CONNECTIONS',
         self::DATABASE_TOO_MANY_CLIENTS => 'DATABASE_TOO_MANY_CLIENTS',
         self::DATABASE_CONSTRAINT_VIOLATED => 'DATABASE_CONSTRAINT_VIOLATED',
+        self::DATABASE_CANCELED => 'DATABASE_CANCELED',
         self::ASYNC_WORKER_MULTI_ERRORS => 'ASYNC_WORKER_MULTI_ERRORS',
         self::RPC_REQUEST_QUEUE_FULL => 'RPC_REQUEST_QUEUE_FULL',
         self::RPC_SERVER_UNAVAILABLE => 'RPC_SERVER_UNAVAILABLE',
@@ -1786,6 +1795,7 @@ class StatusCode
         self::SEARCH_PREDICTION_FAILURE => 'SEARCH_PREDICTION_FAILURE',
         self::SEARCH_BY_NOT_FULLY_INDEXED_INPUT => 'SEARCH_BY_NOT_FULLY_INDEXED_INPUT',
         self::SAVED_SEARCH_MODIFY_FAILED => 'SAVED_SEARCH_MODIFY_FAILED',
+        self::SEARCH_COUNTS_UNAVAILABLE => 'SEARCH_COUNTS_UNAVAILABLE',
         self::EVALUATION_QUEUED => 'EVALUATION_QUEUED',
         self::EVALUATION_IN_PROGRESS => 'EVALUATION_IN_PROGRESS',
         self::EVALUATION_SUCCESS => 'EVALUATION_SUCCESS',

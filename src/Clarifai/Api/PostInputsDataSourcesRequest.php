@@ -9,7 +9,17 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request to initiate ingestion of inputs from cloud storage
+ * Initiates retrieval of inputs from cloud storage from a user provided data source.
+ * Will create and return an inputs-add-job for tracking progress.
+ * Archives will be extracted and their contents will be processed as inputs.
+ * The cloud URL will be treated as a filter prefix. For example s3:/bucket/images_folder/abc will process
+ * files in the images_folder beginning with abc or in a subfolder beginning with abc.
+ * For example:
+ * bucket/images_folder/abcImage.png
+ * bucket/images_folder/abc-1/Data.zip
+ * If given URL is for a private bucket or file, then credentials should be provided to access the bucket.
+ * Credentials should include rights to list the objects in the bucket, except when pointed directly at a file archive,
+ * in which case it only requires rights to access that particular file.
  *
  * Generated from protobuf message <code>clarifai.api.PostInputsDataSourcesRequest</code>
  */

@@ -38,11 +38,26 @@ class ListModelVersionsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $per_page = 0;
     /**
+     * Filtering options:
      * To list only the model versions that have these concept ids present in them.
      *
      * Generated from protobuf field <code>repeated string concept_ids = 5;</code>
      */
     private $concept_ids;
+    /**
+     * To list only the model versions that have been trained.
+     *
+     * Generated from protobuf field <code>bool trained_only = 6;</code>
+     */
+    protected $trained_only = false;
+    /**
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     *
+     * Generated from protobuf field <code>bool sort_ascending = 7;</code>
+     */
+    protected $sort_ascending = false;
+    protected $sort_by;
 
     /**
      * Constructor.
@@ -59,7 +74,22 @@ class ListModelVersionsRequest extends \Google\Protobuf\Internal\Message
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $concept_ids
+     *           Filtering options:
      *           To list only the model versions that have these concept ids present in them.
+     *     @type bool $trained_only
+     *           To list only the model versions that have been trained.
+     *     @type bool $sort_ascending
+     *           Sorting options:
+     *           Whether to sort in ascending order. If false, will order in descending order.
+     *     @type bool $sort_by_status_code
+     *           Whether to order by the status code
+     *     @type bool $sort_by_num_inputs
+     *           Whether to order by the number of training inputs
+     *     @type bool $sort_by_description
+     *           Whether to sort by the description
+     *     @type bool $sort_by_created_at
+     *           Whether to order by the created_at time
+     *           If neither sort option is set to true, will sort by created_at.
      * }
      */
     public function __construct($data = NULL) {
@@ -178,6 +208,7 @@ class ListModelVersionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filtering options:
      * To list only the model versions that have these concept ids present in them.
      *
      * Generated from protobuf field <code>repeated string concept_ids = 5;</code>
@@ -189,6 +220,7 @@ class ListModelVersionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filtering options:
      * To list only the model versions that have these concept ids present in them.
      *
      * Generated from protobuf field <code>repeated string concept_ids = 5;</code>
@@ -201,6 +233,194 @@ class ListModelVersionsRequest extends \Google\Protobuf\Internal\Message
         $this->concept_ids = $arr;
 
         return $this;
+    }
+
+    /**
+     * To list only the model versions that have been trained.
+     *
+     * Generated from protobuf field <code>bool trained_only = 6;</code>
+     * @return bool
+     */
+    public function getTrainedOnly()
+    {
+        return $this->trained_only;
+    }
+
+    /**
+     * To list only the model versions that have been trained.
+     *
+     * Generated from protobuf field <code>bool trained_only = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setTrainedOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->trained_only = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     *
+     * Generated from protobuf field <code>bool sort_ascending = 7;</code>
+     * @return bool
+     */
+    public function getSortAscending()
+    {
+        return $this->sort_ascending;
+    }
+
+    /**
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     *
+     * Generated from protobuf field <code>bool sort_ascending = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortAscending($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->sort_ascending = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the status code
+     *
+     * Generated from protobuf field <code>bool sort_by_status_code = 8;</code>
+     * @return bool
+     */
+    public function getSortByStatusCode()
+    {
+        return $this->readOneof(8);
+    }
+
+    public function hasSortByStatusCode()
+    {
+        return $this->hasOneof(8);
+    }
+
+    /**
+     * Whether to order by the status code
+     *
+     * Generated from protobuf field <code>bool sort_by_status_code = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByStatusCode($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the number of training inputs
+     *
+     * Generated from protobuf field <code>bool sort_by_num_inputs = 9;</code>
+     * @return bool
+     */
+    public function getSortByNumInputs()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasSortByNumInputs()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * Whether to order by the number of training inputs
+     *
+     * Generated from protobuf field <code>bool sort_by_num_inputs = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByNumInputs($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(9, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to sort by the description
+     *
+     * Generated from protobuf field <code>bool sort_by_description = 10;</code>
+     * @return bool
+     */
+    public function getSortByDescription()
+    {
+        return $this->readOneof(10);
+    }
+
+    public function hasSortByDescription()
+    {
+        return $this->hasOneof(10);
+    }
+
+    /**
+     * Whether to sort by the description
+     *
+     * Generated from protobuf field <code>bool sort_by_description = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByDescription($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the created_at time
+     * If neither sort option is set to true, will sort by created_at.
+     *
+     * Generated from protobuf field <code>bool sort_by_created_at = 11;</code>
+     * @return bool
+     */
+    public function getSortByCreatedAt()
+    {
+        return $this->readOneof(11);
+    }
+
+    public function hasSortByCreatedAt()
+    {
+        return $this->hasOneof(11);
+    }
+
+    /**
+     * Whether to order by the created_at time
+     * If neither sort option is set to true, will sort by created_at.
+     *
+     * Generated from protobuf field <code>bool sort_by_created_at = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByCreatedAt($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSortBy()
+    {
+        return $this->whichOneof("sort_by");
     }
 
 }
