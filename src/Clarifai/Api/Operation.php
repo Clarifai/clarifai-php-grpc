@@ -28,6 +28,7 @@ class Operation extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\OverwriteGeo $overwrite_geo
      *     @type \Clarifai\Api\DeleteGeo $delete_geo
      *     @type \Clarifai\Api\DeleteFromDataset $delete_from_dataset
+     *     @type \Clarifai\Api\AddToDataset $add_to_dataset
      * }
      */
     public function __construct($data = NULL) {
@@ -220,6 +221,33 @@ class Operation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\DeleteFromDataset::class);
         $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+     * @return \Clarifai\Api\AddToDataset|null
+     */
+    public function getAddToDataset()
+    {
+        return $this->readOneof(8);
+    }
+
+    public function hasAddToDataset()
+    {
+        return $this->hasOneof(8);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+     * @param \Clarifai\Api\AddToDataset $var
+     * @return $this
+     */
+    public function setAddToDataset($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\AddToDataset::class);
+        $this->writeOneof(8, $var);
 
         return $this;
     }

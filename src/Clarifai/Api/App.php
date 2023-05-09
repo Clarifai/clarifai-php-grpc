@@ -28,9 +28,15 @@ class App extends \Google\Protobuf\Internal\Message
      */
     protected $default_language = '';
     /**
+     * Default workflow id deprecated in favor of default_workflow
+     *
      * Generated from protobuf field <code>string default_workflow_id = 4;</code>
      */
     protected $default_workflow_id = '';
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Workflow default_workflow = 23;</code>
+     */
+    protected $default_workflow = null;
     /**
      * why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already
      * specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
@@ -132,6 +138,8 @@ class App extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $default_language
      *     @type string $default_workflow_id
+     *           Default workflow id deprecated in favor of default_workflow
+     *     @type \Clarifai\Api\Workflow $default_workflow
      *     @type string $user_id
      *           why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already
      *           specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
@@ -244,6 +252,8 @@ class App extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Default workflow id deprecated in favor of default_workflow
+     *
      * Generated from protobuf field <code>string default_workflow_id = 4;</code>
      * @return string
      */
@@ -253,6 +263,8 @@ class App extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Default workflow id deprecated in favor of default_workflow
+     *
      * Generated from protobuf field <code>string default_workflow_id = 4;</code>
      * @param string $var
      * @return $this
@@ -261,6 +273,38 @@ class App extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->default_workflow_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Workflow default_workflow = 23;</code>
+     * @return \Clarifai\Api\Workflow|null
+     */
+    public function getDefaultWorkflow()
+    {
+        return $this->default_workflow;
+    }
+
+    public function hasDefaultWorkflow()
+    {
+        return isset($this->default_workflow);
+    }
+
+    public function clearDefaultWorkflow()
+    {
+        unset($this->default_workflow);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Workflow default_workflow = 23;</code>
+     * @param \Clarifai\Api\Workflow $var
+     * @return $this
+     */
+    public function setDefaultWorkflow($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Workflow::class);
+        $this->default_workflow = $var;
 
         return $this;
     }

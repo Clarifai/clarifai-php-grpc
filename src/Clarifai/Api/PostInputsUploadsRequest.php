@@ -9,6 +9,11 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Start uploading a file archive containing inputs.
+ * Will create and return an inputs-add-job for tracking progress.
+ * Associated inputs-add-job contains an upload id which should be completed through `PutUploadContentParts` endpoint.
+ * Completing the upload will automatically begin unpacking the archive and uploading the contents as inputs.
+ *
  * Generated from protobuf message <code>clarifai.api.PostInputsUploadsRequest</code>
  */
 class PostInputsUploadsRequest extends \Google\Protobuf\Internal\Message

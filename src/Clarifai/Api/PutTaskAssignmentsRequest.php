@@ -9,25 +9,24 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Upload a part of a multipart upload.
- * Behaviour on completion depends on the endpoint that was used to initiate the upload.
+ * PutTaskAssignmentsRequest
  *
- * Generated from protobuf message <code>clarifai.api.PutUploadContentPartsRequest</code>
+ * Generated from protobuf message <code>clarifai.api.PutTaskAssignmentsRequest</code>
  */
-class PutUploadContentPartsRequest extends \Google\Protobuf\Internal\Message
+class PutTaskAssignmentsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>string upload_id = 2;</code>
+     * Generated from protobuf field <code>string task_id = 2;</code>
      */
-    protected $upload_id = '';
+    protected $task_id = '';
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.UploadContentPart content_parts = 3;</code>
+     * Generated from protobuf field <code>string input_id = 3;</code>
      */
-    private $content_parts;
+    protected $input_id = '';
 
     /**
      * Constructor.
@@ -36,8 +35,8 @@ class PutUploadContentPartsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string $upload_id
-     *     @type array<\Clarifai\Api\UploadContentPart>|\Google\Protobuf\Internal\RepeatedField $content_parts
+     *     @type string $task_id
+     *     @type string $input_id
      * }
      */
     public function __construct($data = NULL) {
@@ -78,45 +77,45 @@ class PutUploadContentPartsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string upload_id = 2;</code>
+     * Generated from protobuf field <code>string task_id = 2;</code>
      * @return string
      */
-    public function getUploadId()
+    public function getTaskId()
     {
-        return $this->upload_id;
+        return $this->task_id;
     }
 
     /**
-     * Generated from protobuf field <code>string upload_id = 2;</code>
+     * Generated from protobuf field <code>string task_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setUploadId($var)
+    public function setTaskId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->upload_id = $var;
+        $this->task_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.UploadContentPart content_parts = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>string input_id = 3;</code>
+     * @return string
      */
-    public function getContentParts()
+    public function getInputId()
     {
-        return $this->content_parts;
+        return $this->input_id;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.UploadContentPart content_parts = 3;</code>
-     * @param array<\Clarifai\Api\UploadContentPart>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>string input_id = 3;</code>
+     * @param string $var
      * @return $this
      */
-    public function setContentParts($var)
+    public function setInputId($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\UploadContentPart::class);
-        $this->content_parts = $arr;
+        GPBUtil::checkString($var, True);
+        $this->input_id = $var;
 
         return $this;
     }
