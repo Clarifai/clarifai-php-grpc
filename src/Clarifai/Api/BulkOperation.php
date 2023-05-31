@@ -77,6 +77,7 @@ class BulkOperation extends \Google\Protobuf\Internal\Message
      *           id of the Bulk Operation task
      *     @type \Clarifai\Api\InputIDs $input_ids
      *     @type \Clarifai\Api\Search $search
+     *     @type \Clarifai\Api\Dataset $dataset
      *     @type \Clarifai\Api\Operation $operation
      *           Operation to perform
      *     @type string $app_id
@@ -178,6 +179,33 @@ class BulkOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Search::class);
         $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Dataset dataset = 11;</code>
+     * @return \Clarifai\Api\Dataset|null
+     */
+    public function getDataset()
+    {
+        return $this->readOneof(11);
+    }
+
+    public function hasDataset()
+    {
+        return $this->hasOneof(11);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Dataset dataset = 11;</code>
+     * @param \Clarifai\Api\Dataset $var
+     * @return $this
+     */
+    public function setDataset($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Dataset::class);
+        $this->writeOneof(11, $var);
 
         return $this;
     }

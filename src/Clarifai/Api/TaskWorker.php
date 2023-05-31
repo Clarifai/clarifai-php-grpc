@@ -37,6 +37,18 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.User users = 4;</code>
      */
     private $users;
+    /**
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    private $models;
+    /**
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    private $workflows;
     protected $strategy_info;
 
     /**
@@ -54,6 +66,10 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
      *           Users who will work on this task.
      *           When the 'worker.users' field is additionally requested, then all user
      *           info is filled for the workers. Otherwise, only the user 'id' is filled.
+     *     @type array<\Clarifai\Api\Model>|\Google\Protobuf\Internal\RepeatedField $models
+     *           Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     *     @type array<\Clarifai\Api\Workflow>|\Google\Protobuf\Internal\RepeatedField $workflows
+     *           Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
      *     @type \Clarifai\Api\TaskWorkerPartitionedStrategyInfo $partitioned_strategy_info
      * }
      */
@@ -146,6 +162,58 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\User::class);
         $this->users = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Model models = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getModels()
+    {
+        return $this->models;
+    }
+
+    /**
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Model models = 5;</code>
+     * @param array<\Clarifai\Api\Model>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setModels($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Model::class);
+        $this->models = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getWorkflows()
+    {
+        return $this->workflows;
+    }
+
+    /**
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     * @param array<\Clarifai\Api\Workflow>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setWorkflows($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Workflow::class);
+        $this->workflows = $arr;
 
         return $this;
     }

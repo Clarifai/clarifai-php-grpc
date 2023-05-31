@@ -490,6 +490,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Get a video input manifest.
+     * @param \Clarifai\Api\GetVideoManifestRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetInputVideoManifest(\Clarifai\Api\GetVideoManifestRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetInputVideoManifest',
+        $argument,
+        ['\Clarifai\Api\GetVideoManifestResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * List all the inputs.
      * @param \Clarifai\Api\ListInputsRequest $argument input argument
      * @param array $metadata metadata
@@ -505,9 +520,8 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Add an input (or set of inputs) to an app.
-     * This call is synchronous if the PostInputsRequest contains exactly one image input. Otherwise,
-     * it is asynchronous.
+     * Add 1 or more input to an app.
+     * The actual inputs processing is asynchronous.
      * @param \Clarifai\Api\PostInputsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

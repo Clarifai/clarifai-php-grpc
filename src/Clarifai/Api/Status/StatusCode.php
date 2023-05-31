@@ -556,7 +556,9 @@ class StatusCode
      */
     const DATA_DUMP_IN_PROGRESS = 25153;
     /**
-     * Generated from protobuf enum <code>DATA_DUMP_NO_DATA = 25154;</code>
+     * DEPRECATED: Not used anymore. Now for an empty data dump, DATA_DUMP_SUCCESS is returned. To detect an empty data dump, check if the inptus count is 0.
+     *
+     * Generated from protobuf enum <code>DATA_DUMP_NO_DATA = 25154 [deprecated = true];</code>
      */
     const DATA_DUMP_NO_DATA = 25154;
     /**
@@ -834,7 +836,9 @@ class StatusCode
      */
     const REQUEST_DISABLED_FOR_MAINTENANCE = 39997;
     /**
-     * Generated from protobuf enum <code>INPUT_WRITES_DISABLED_FOR_MAINTENANCE = 39998;</code>
+     * deprecate this one. Use REQUEST_DISABLED_FOR_MAINTENANCE
+     *
+     * Generated from protobuf enum <code>INPUT_WRITES_DISABLED_FOR_MAINTENANCE = 39998 [deprecated = true];</code>
      */
     const INPUT_WRITES_DISABLED_FOR_MAINTENANCE = 39998;
     /**
