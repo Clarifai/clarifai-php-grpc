@@ -16,18 +16,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Input CFID
-     *
-     * Generated from protobuf field <code>string id = 1 [deprecated = true];</code>
-     * @deprecated
-     */
-    protected $id = '';
-    /**
-     * Generated from protobuf field <code>string url = 2 [deprecated = true];</code>
-     * @deprecated
-     */
-    protected $url = '';
-    /**
      * the input information
      *
      * Generated from protobuf field <code>.clarifai.api.Input input = 6;</code>
@@ -58,9 +46,6 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $id
-     *           Input CFID
-     *     @type string $url
      *     @type \Clarifai\Api\Input $input
      *           the input information
      *     @type array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $predicted_concepts
@@ -75,62 +60,6 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Proto\Clarifai\Api\Resources::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Input CFID
-     *
-     * Generated from protobuf field <code>string id = 1 [deprecated = true];</code>
-     * @return string
-     * @deprecated
-     */
-    public function getId()
-    {
-        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
-        return $this->id;
-    }
-
-    /**
-     * Input CFID
-     *
-     * Generated from protobuf field <code>string id = 1 [deprecated = true];</code>
-     * @param string $var
-     * @return $this
-     * @deprecated
-     */
-    public function setId($var)
-    {
-        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
-        $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string url = 2 [deprecated = true];</code>
-     * @return string
-     * @deprecated
-     */
-    public function getUrl()
-    {
-        @trigger_error('url is deprecated.', E_USER_DEPRECATED);
-        return $this->url;
-    }
-
-    /**
-     * Generated from protobuf field <code>string url = 2 [deprecated = true];</code>
-     * @param string $var
-     * @return $this
-     * @deprecated
-     */
-    public function setUrl($var)
-    {
-        @trigger_error('url is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
-        $this->url = $var;
-
-        return $this;
     }
 
     /**

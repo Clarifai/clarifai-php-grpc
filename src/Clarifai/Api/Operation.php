@@ -29,6 +29,7 @@ class Operation extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\DeleteGeo $delete_geo
      *     @type \Clarifai\Api\DeleteFromDataset $delete_from_dataset
      *     @type \Clarifai\Api\AddToDataset $add_to_dataset
+     *     @type \Clarifai\Api\SplitIntoDatasets $split_into_datasets
      * }
      */
     public function __construct($data = NULL) {
@@ -248,6 +249,33 @@ class Operation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\AddToDataset::class);
         $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+     * @return \Clarifai\Api\SplitIntoDatasets|null
+     */
+    public function getSplitIntoDatasets()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasSplitIntoDatasets()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+     * @param \Clarifai\Api\SplitIntoDatasets $var
+     * @return $this
+     */
+    public function setSplitIntoDatasets($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\SplitIntoDatasets::class);
+        $this->writeOneof(9, $var);
 
         return $this;
     }
