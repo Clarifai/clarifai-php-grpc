@@ -20,9 +20,35 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
      */
     protected $status = null;
     /**
+     * user id that owns this evaluation
+     *
+     * Generated from protobuf field <code>string user_id = 15;</code>
+     */
+    protected $user_id = '';
+    /**
+     * app id that owns this evaluation
+     *
+     * Generated from protobuf field <code>string app_id = 16;</code>
+     */
+    protected $app_id = '';
+    /**
+     * Id of this evaluation
+     *
      * Generated from protobuf field <code>string id = 10;</code>
      */
     protected $id = '';
+    /**
+     * Model to evaluate
+     *
+     * Generated from protobuf field <code>.clarifai.api.Model model = 13;</code>
+     */
+    protected $model = null;
+    /**
+     * The ground truth dataset
+     *
+     * Generated from protobuf field <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+     */
+    protected $ground_truth_dataset = null;
     /**
      * Generated from protobuf field <code>.clarifai.api.MetricsSummary summary = 2;</code>
      */
@@ -60,6 +86,9 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
      */
     private $tracker_metrics;
     /**
+     * Evaluation parameters to pass. Expected to match what
+     * is defined in the model type for the respective model.
+     *
      * Generated from protobuf field <code>.clarifai.api.EvalInfo eval_info = 12;</code>
      */
     protected $eval_info = null;
@@ -71,7 +100,16 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
+     *     @type string $user_id
+     *           user id that owns this evaluation
+     *     @type string $app_id
+     *           app id that owns this evaluation
      *     @type string $id
+     *           Id of this evaluation
+     *     @type \Clarifai\Api\Model $model
+     *           Model to evaluate
+     *     @type \Clarifai\Api\Dataset $ground_truth_dataset
+     *           The ground truth dataset
      *     @type \Clarifai\Api\MetricsSummary $summary
      *     @type \Clarifai\Api\ConfusionMatrix $confusion_matrix
      *     @type \Clarifai\Api\CooccurrenceMatrix $cooccurrence_matrix
@@ -82,6 +120,8 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
      *     @type array<\Clarifai\Api\BinaryMetrics>|\Google\Protobuf\Internal\RepeatedField $metrics_by_class
      *     @type array<\Clarifai\Api\TrackerMetrics>|\Google\Protobuf\Internal\RepeatedField $tracker_metrics
      *     @type \Clarifai\Api\EvalInfo $eval_info
+     *           Evaluation parameters to pass. Expected to match what
+     *           is defined in the model type for the respective model.
      * }
      */
     public function __construct($data = NULL) {
@@ -122,6 +162,60 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user id that owns this evaluation
+     *
+     * Generated from protobuf field <code>string user_id = 15;</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * user id that owns this evaluation
+     *
+     * Generated from protobuf field <code>string user_id = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * app id that owns this evaluation
+     *
+     * Generated from protobuf field <code>string app_id = 16;</code>
+     * @return string
+     */
+    public function getAppId()
+    {
+        return $this->app_id;
+    }
+
+    /**
+     * app id that owns this evaluation
+     *
+     * Generated from protobuf field <code>string app_id = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAppId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->app_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Id of this evaluation
+     *
      * Generated from protobuf field <code>string id = 10;</code>
      * @return string
      */
@@ -131,6 +225,8 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Id of this evaluation
+     *
      * Generated from protobuf field <code>string id = 10;</code>
      * @param string $var
      * @return $this
@@ -139,6 +235,78 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Model to evaluate
+     *
+     * Generated from protobuf field <code>.clarifai.api.Model model = 13;</code>
+     * @return \Clarifai\Api\Model|null
+     */
+    public function getModel()
+    {
+        return $this->model;
+    }
+
+    public function hasModel()
+    {
+        return isset($this->model);
+    }
+
+    public function clearModel()
+    {
+        unset($this->model);
+    }
+
+    /**
+     * Model to evaluate
+     *
+     * Generated from protobuf field <code>.clarifai.api.Model model = 13;</code>
+     * @param \Clarifai\Api\Model $var
+     * @return $this
+     */
+    public function setModel($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Model::class);
+        $this->model = $var;
+
+        return $this;
+    }
+
+    /**
+     * The ground truth dataset
+     *
+     * Generated from protobuf field <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+     * @return \Clarifai\Api\Dataset|null
+     */
+    public function getGroundTruthDataset()
+    {
+        return $this->ground_truth_dataset;
+    }
+
+    public function hasGroundTruthDataset()
+    {
+        return isset($this->ground_truth_dataset);
+    }
+
+    public function clearGroundTruthDataset()
+    {
+        unset($this->ground_truth_dataset);
+    }
+
+    /**
+     * The ground truth dataset
+     *
+     * Generated from protobuf field <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+     * @param \Clarifai\Api\Dataset $var
+     * @return $this
+     */
+    public function setGroundTruthDataset($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Dataset::class);
+        $this->ground_truth_dataset = $var;
 
         return $this;
     }
@@ -382,6 +550,9 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Evaluation parameters to pass. Expected to match what
+     * is defined in the model type for the respective model.
+     *
      * Generated from protobuf field <code>.clarifai.api.EvalInfo eval_info = 12;</code>
      * @return \Clarifai\Api\EvalInfo|null
      */
@@ -401,6 +572,9 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Evaluation parameters to pass. Expected to match what
+     * is defined in the model type for the respective model.
+     *
      * Generated from protobuf field <code>.clarifai.api.EvalInfo eval_info = 12;</code>
      * @param \Clarifai\Api\EvalInfo $var
      * @return $this

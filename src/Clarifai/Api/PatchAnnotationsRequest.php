@@ -30,6 +30,14 @@ class PatchAnnotationsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string action = 3;</code>
      */
     protected $action = '';
+    /**
+     * If the request is a "remove" action and the annotation is left with empty data,
+     * then setting delete_if_empty_data to true will delete the annotation,
+     * if possible (for example, will not delete an input-level annotation).
+     *
+     * Generated from protobuf field <code>bool delete_if_empty_data = 4;</code>
+     */
+    protected $delete_if_empty_data = false;
 
     /**
      * Constructor.
@@ -42,6 +50,10 @@ class PatchAnnotationsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $action
      *           The action to perform on the patched objects
      *           For now actions 'merge', 'overwrite', and 'remove' are supported
+     *     @type bool $delete_if_empty_data
+     *           If the request is a "remove" action and the annotation is left with empty data,
+     *           then setting delete_if_empty_data to true will delete the annotation,
+     *           if possible (for example, will not delete an input-level annotation).
      * }
      */
     public function __construct($data = NULL) {
@@ -127,6 +139,36 @@ class PatchAnnotationsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->action = $var;
+
+        return $this;
+    }
+
+    /**
+     * If the request is a "remove" action and the annotation is left with empty data,
+     * then setting delete_if_empty_data to true will delete the annotation,
+     * if possible (for example, will not delete an input-level annotation).
+     *
+     * Generated from protobuf field <code>bool delete_if_empty_data = 4;</code>
+     * @return bool
+     */
+    public function getDeleteIfEmptyData()
+    {
+        return $this->delete_if_empty_data;
+    }
+
+    /**
+     * If the request is a "remove" action and the annotation is left with empty data,
+     * then setting delete_if_empty_data to true will delete the annotation,
+     * if possible (for example, will not delete an input-level annotation).
+     *
+     * Generated from protobuf field <code>bool delete_if_empty_data = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDeleteIfEmptyData($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->delete_if_empty_data = $var;
 
         return $this;
     }

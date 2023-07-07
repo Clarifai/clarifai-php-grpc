@@ -25,14 +25,6 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      */
     protected $concepts_mutually_exclusive = false;
     /**
-     * For custom concept model training: Whether negatives should only be sampled from within the app during
-     * training, for custom models.
-     * Deprecated field. Use train_info.params.enrich_dataset for the model types that support it.
-     *
-     * Generated from protobuf field <code>bool closed_environment = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    protected $closed_environment = false;
-    /**
      * DEPRECATED: For custom models, this is the base model to use for image embeddings.
      * Default is general model.
      *
@@ -129,10 +121,6 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      *
      *     @type bool $concepts_mutually_exclusive
      *           For custom concept model training: whether the concept predictions must sum to 1.
-     *     @type bool $closed_environment
-     *           For custom concept model training: Whether negatives should only be sampled from within the app during
-     *           training, for custom models.
-     *           Deprecated field. Use train_info.params.enrich_dataset for the model types that support it.
      *     @type string $existing_model_id
      *           DEPRECATED: For custom models, this is the base model to use for image embeddings.
      *           Default is general model.
@@ -203,36 +191,6 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
         @trigger_error('concepts_mutually_exclusive is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->concepts_mutually_exclusive = $var;
-
-        return $this;
-    }
-
-    /**
-     * For custom concept model training: Whether negatives should only be sampled from within the app during
-     * training, for custom models.
-     * Deprecated field. Use train_info.params.enrich_dataset for the model types that support it.
-     *
-     * Generated from protobuf field <code>bool closed_environment = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @return bool
-     */
-    public function getClosedEnvironment()
-    {
-        return $this->closed_environment;
-    }
-
-    /**
-     * For custom concept model training: Whether negatives should only be sampled from within the app during
-     * training, for custom models.
-     * Deprecated field. Use train_info.params.enrich_dataset for the model types that support it.
-     *
-     * Generated from protobuf field <code>bool closed_environment = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setClosedEnvironment($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->closed_environment = $var;
 
         return $this;
     }

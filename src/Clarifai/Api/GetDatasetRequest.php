@@ -25,6 +25,10 @@ class GetDatasetRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string dataset_id = 2;</code>
      */
     protected $dataset_id = '';
+    /**
+     * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
+     */
+    private $additional_fields;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class GetDatasetRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $dataset_id
      *           Identify dataset by id.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
      * }
      */
     public function __construct($data = NULL) {
@@ -96,6 +101,28 @@ class GetDatasetRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->dataset_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAdditionalFields()
+    {
+        return $this->additional_fields;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAdditionalFields($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->additional_fields = $arr;
 
         return $this;
     }

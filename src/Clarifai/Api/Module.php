@@ -75,6 +75,20 @@ class Module extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.ModuleVersion module_version = 11;</code>
      */
     protected $module_version = null;
+    /**
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostModuleStars/DeleteModuleStars endpoints to star/unstar a module
+     *
+     * Generated from protobuf field <code>bool is_starred = 12;</code>
+     */
+    protected $is_starred = false;
+    /**
+     * How many users have starred the module (only showed on get/list requests)
+     * Computed value, not editable
+     *
+     * Generated from protobuf field <code>int32 star_count = 13;</code>
+     */
+    protected $star_count = 0;
 
     /**
      * Constructor.
@@ -106,6 +120,12 @@ class Module extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\ModuleVersion $module_version
      *           A ModuleVersion which is used when listing modules to include the latest module version
      *           in the response.
+     *     @type bool $is_starred
+     *           Is starred by the requesting user (only showed on get/list requests)
+     *           Please use PostModuleStars/DeleteModuleStars endpoints to star/unstar a module
+     *     @type int $star_count
+     *           How many users have starred the module (only showed on get/list requests)
+     *           Computed value, not editable
      * }
      */
     public function __construct($data = NULL) {
@@ -405,6 +425,62 @@ class Module extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\ModuleVersion::class);
         $this->module_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostModuleStars/DeleteModuleStars endpoints to star/unstar a module
+     *
+     * Generated from protobuf field <code>bool is_starred = 12;</code>
+     * @return bool
+     */
+    public function getIsStarred()
+    {
+        return $this->is_starred;
+    }
+
+    /**
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostModuleStars/DeleteModuleStars endpoints to star/unstar a module
+     *
+     * Generated from protobuf field <code>bool is_starred = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsStarred($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_starred = $var;
+
+        return $this;
+    }
+
+    /**
+     * How many users have starred the module (only showed on get/list requests)
+     * Computed value, not editable
+     *
+     * Generated from protobuf field <code>int32 star_count = 13;</code>
+     * @return int
+     */
+    public function getStarCount()
+    {
+        return $this->star_count;
+    }
+
+    /**
+     * How many users have starred the module (only showed on get/list requests)
+     * Computed value, not editable
+     *
+     * Generated from protobuf field <code>int32 star_count = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStarCount($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->star_count = $var;
 
         return $this;
     }

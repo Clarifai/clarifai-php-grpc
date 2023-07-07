@@ -38,6 +38,12 @@ class PostInputsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string inputs_add_job_id = 3;</code>
      */
     protected $inputs_add_job_id = '';
+    /**
+     * How to handle input ID conflicts.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 4;</code>
+     */
+    protected $input_id_conflict_resolution = 0;
 
     /**
      * Constructor.
@@ -57,6 +63,8 @@ class PostInputsRequest extends \Google\Protobuf\Internal\Message
      *           * If job ID is empty, then job is not created.
      *           * If job ID is non-empty and doesn't already exist, then a new job will be created with given ID.
      *           * If job ID does already exist, then new inputs statistics are merged with previous inputs statistics.
+     *     @type int $input_id_conflict_resolution
+     *           How to handle input ID conflicts.
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +166,32 @@ class PostInputsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->inputs_add_job_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * How to handle input ID conflicts.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 4;</code>
+     * @return int
+     */
+    public function getInputIdConflictResolution()
+    {
+        return $this->input_id_conflict_resolution;
+    }
+
+    /**
+     * How to handle input ID conflicts.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInputIdConflictResolution($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\InputIDConflictResolution::class);
+        $this->input_id_conflict_resolution = $var;
 
         return $this;
     }

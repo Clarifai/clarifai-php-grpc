@@ -9,24 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * GetModuleRequest
- *
- * Generated from protobuf message <code>clarifai.api.GetModuleRequest</code>
+ * Generated from protobuf message <code>clarifai.api.CancelInputsAddJobRequest</code>
  */
-class GetModuleRequest extends \Google\Protobuf\Internal\Message
+class CancelInputsAddJobRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>string module_id = 2;</code>
+     * id of add inputs job to be cancelled
+     *
+     * Generated from protobuf field <code>string id = 2;</code>
      */
-    protected $module_id = '';
-    /**
-     * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
-     */
-    private $additional_fields;
+    protected $id = '';
 
     /**
      * Constructor.
@@ -35,8 +31,8 @@ class GetModuleRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string $module_id
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *     @type string $id
+     *           id of add inputs job to be cancelled
      * }
      */
     public function __construct($data = NULL) {
@@ -77,45 +73,27 @@ class GetModuleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string module_id = 2;</code>
+     * id of add inputs job to be cancelled
+     *
+     * Generated from protobuf field <code>string id = 2;</code>
      * @return string
      */
-    public function getModuleId()
+    public function getId()
     {
-        return $this->module_id;
+        return $this->id;
     }
 
     /**
-     * Generated from protobuf field <code>string module_id = 2;</code>
+     * id of add inputs job to be cancelled
+     *
+     * Generated from protobuf field <code>string id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setModuleId($var)
+    public function setId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->module_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getAdditionalFields()
-    {
-        return $this->additional_fields;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setAdditionalFields($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->additional_fields = $arr;
+        $this->id = $var;
 
         return $this;
     }
