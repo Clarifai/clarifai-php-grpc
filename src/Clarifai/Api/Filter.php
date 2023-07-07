@@ -24,13 +24,52 @@ class Filter extends \Google\Protobuf\Internal\Message
     protected $negate = false;
     /**
      * FILTER by annotation information.
+     * ########## Supported fields ##########
+     *  - annotation_info - allows searching by empty annotation info
+     *    note that searching by empty annotation info will actually not influence the search results.
+     *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
+     *  - annotation_info.fields - filter by annotation info
+     *  - data.clusters[].id
+     *  - data.concepts[].id
+     *  - data.concepts[].name
+     *  - data.concepts[].value
+     *  - data.frames[].frame_info - filter by frame annotations
+     *  - data.geo.geo_box[].geo_point.latitude
+     *  - data.geo.geo_box[].geo_point.longitude
+     *  - data.geo.geo_limit.type
+     *  - data.geo.geo_limit.value
+     *  - data.geo.geo_point.latitude
+     *  - data.geo.geo_point.longitude
+     *  - data.metadata - allow search with empty metadata
+     *    note that searching by empty metadata will actually not influence the search results.
+     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
+     *  - data.metadata.fields - filter by metadata. metadata key&value fields are OR-ed.
+     *  - data.regions[].region_info.bounding_box - filter by bounding box annotations
+     *  - data.regions[].region_info.mask - filter by mask annotations
+     *  - data.regions[].region_info.point - filter by point annotations
+     *  - data.regions[].region_info.polygon - filter by polygon annotations
+     *  - data.regions[].region_info.span - filter by span annotations
+     *  - data.text - filter by text annotations
+     *  - data.time_segments[].time_info - filter by time-segment annotations
+     *  - id
+     *  - input_id
+     *  - input_level
+     *  - status.code
+     *  - task_id
+     *  - user_id
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
      */
     protected $annotation = null;
     /**
      * FILTER by input information.
-     * For example you can filter inputs by status,
+     * ########## Supported fields ##########
+     *  - data.audio - filter audio inputs
+     *  - data.image - filter image inputs
+     *  - data.text - filter text inputs
+     *  - data.video - filter video inputs
+     *  - dataset_ids[] - filter by dataset IDs
+     *  - status.code - filter by input status
      *
      * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
      */
@@ -53,9 +92,48 @@ class Filter extends \Google\Protobuf\Internal\Message
      *           query. This allow for queries such as dog AND ! metadata=={"blah":"value"}
      *     @type \Clarifai\Api\Annotation $annotation
      *           FILTER by annotation information.
+     *           ########## Supported fields ##########
+     *            - annotation_info - allows searching by empty annotation info
+     *              note that searching by empty annotation info will actually not influence the search results.
+     *              however, in order to be user-friendly, we are still supporting searching by empty annotation info.
+     *            - annotation_info.fields - filter by annotation info
+     *            - data.clusters[].id
+     *            - data.concepts[].id
+     *            - data.concepts[].name
+     *            - data.concepts[].value
+     *            - data.frames[].frame_info - filter by frame annotations
+     *            - data.geo.geo_box[].geo_point.latitude
+     *            - data.geo.geo_box[].geo_point.longitude
+     *            - data.geo.geo_limit.type
+     *            - data.geo.geo_limit.value
+     *            - data.geo.geo_point.latitude
+     *            - data.geo.geo_point.longitude
+     *            - data.metadata - allow search with empty metadata
+     *              note that searching by empty metadata will actually not influence the search results.
+     *              however, in order to be user-friendly, we are still supporting searching by empty metadata.
+     *            - data.metadata.fields - filter by metadata. metadata key&value fields are OR-ed.
+     *            - data.regions[].region_info.bounding_box - filter by bounding box annotations
+     *            - data.regions[].region_info.mask - filter by mask annotations
+     *            - data.regions[].region_info.point - filter by point annotations
+     *            - data.regions[].region_info.polygon - filter by polygon annotations
+     *            - data.regions[].region_info.span - filter by span annotations
+     *            - data.text - filter by text annotations
+     *            - data.time_segments[].time_info - filter by time-segment annotations
+     *            - id
+     *            - input_id
+     *            - input_level
+     *            - status.code
+     *            - task_id
+     *            - user_id
      *     @type \Clarifai\Api\Input $input
      *           FILTER by input information.
-     *           For example you can filter inputs by status,
+     *           ########## Supported fields ##########
+     *            - data.audio - filter audio inputs
+     *            - data.image - filter image inputs
+     *            - data.text - filter text inputs
+     *            - data.video - filter video inputs
+     *            - dataset_ids[] - filter by dataset IDs
+     *            - status.code - filter by input status
      *     @type \Clarifai\Api\TimeRange $last_updated_time_range
      *           Filter by annotation last updated time range.
      * }
@@ -95,6 +173,39 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * FILTER by annotation information.
+     * ########## Supported fields ##########
+     *  - annotation_info - allows searching by empty annotation info
+     *    note that searching by empty annotation info will actually not influence the search results.
+     *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
+     *  - annotation_info.fields - filter by annotation info
+     *  - data.clusters[].id
+     *  - data.concepts[].id
+     *  - data.concepts[].name
+     *  - data.concepts[].value
+     *  - data.frames[].frame_info - filter by frame annotations
+     *  - data.geo.geo_box[].geo_point.latitude
+     *  - data.geo.geo_box[].geo_point.longitude
+     *  - data.geo.geo_limit.type
+     *  - data.geo.geo_limit.value
+     *  - data.geo.geo_point.latitude
+     *  - data.geo.geo_point.longitude
+     *  - data.metadata - allow search with empty metadata
+     *    note that searching by empty metadata will actually not influence the search results.
+     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
+     *  - data.metadata.fields - filter by metadata. metadata key&value fields are OR-ed.
+     *  - data.regions[].region_info.bounding_box - filter by bounding box annotations
+     *  - data.regions[].region_info.mask - filter by mask annotations
+     *  - data.regions[].region_info.point - filter by point annotations
+     *  - data.regions[].region_info.polygon - filter by polygon annotations
+     *  - data.regions[].region_info.span - filter by span annotations
+     *  - data.text - filter by text annotations
+     *  - data.time_segments[].time_info - filter by time-segment annotations
+     *  - id
+     *  - input_id
+     *  - input_level
+     *  - status.code
+     *  - task_id
+     *  - user_id
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
      * @return \Clarifai\Api\Annotation|null
@@ -116,6 +227,39 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * FILTER by annotation information.
+     * ########## Supported fields ##########
+     *  - annotation_info - allows searching by empty annotation info
+     *    note that searching by empty annotation info will actually not influence the search results.
+     *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
+     *  - annotation_info.fields - filter by annotation info
+     *  - data.clusters[].id
+     *  - data.concepts[].id
+     *  - data.concepts[].name
+     *  - data.concepts[].value
+     *  - data.frames[].frame_info - filter by frame annotations
+     *  - data.geo.geo_box[].geo_point.latitude
+     *  - data.geo.geo_box[].geo_point.longitude
+     *  - data.geo.geo_limit.type
+     *  - data.geo.geo_limit.value
+     *  - data.geo.geo_point.latitude
+     *  - data.geo.geo_point.longitude
+     *  - data.metadata - allow search with empty metadata
+     *    note that searching by empty metadata will actually not influence the search results.
+     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
+     *  - data.metadata.fields - filter by metadata. metadata key&value fields are OR-ed.
+     *  - data.regions[].region_info.bounding_box - filter by bounding box annotations
+     *  - data.regions[].region_info.mask - filter by mask annotations
+     *  - data.regions[].region_info.point - filter by point annotations
+     *  - data.regions[].region_info.polygon - filter by polygon annotations
+     *  - data.regions[].region_info.span - filter by span annotations
+     *  - data.text - filter by text annotations
+     *  - data.time_segments[].time_info - filter by time-segment annotations
+     *  - id
+     *  - input_id
+     *  - input_level
+     *  - status.code
+     *  - task_id
+     *  - user_id
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
      * @param \Clarifai\Api\Annotation $var
@@ -131,7 +275,13 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * FILTER by input information.
-     * For example you can filter inputs by status,
+     * ########## Supported fields ##########
+     *  - data.audio - filter audio inputs
+     *  - data.image - filter image inputs
+     *  - data.text - filter text inputs
+     *  - data.video - filter video inputs
+     *  - dataset_ids[] - filter by dataset IDs
+     *  - status.code - filter by input status
      *
      * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
      * @return \Clarifai\Api\Input|null
@@ -153,7 +303,13 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * FILTER by input information.
-     * For example you can filter inputs by status,
+     * ########## Supported fields ##########
+     *  - data.audio - filter audio inputs
+     *  - data.image - filter image inputs
+     *  - data.text - filter text inputs
+     *  - data.video - filter video inputs
+     *  - dataset_ids[] - filter by dataset IDs
+     *  - status.code - filter by input status
      *
      * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
      * @param \Clarifai\Api\Input $var

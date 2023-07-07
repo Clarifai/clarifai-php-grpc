@@ -68,6 +68,12 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
      */
     protected $description = '';
     /**
+     * Dataset version processing
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+     */
+    protected $processing_info = null;
+    /**
      * Dataset version metrics
      *
      * Generated from protobuf field <code>map<string, .clarifai.api.DatasetVersionMetrics> metrics = 16;</code>
@@ -132,6 +138,8 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
      *           Status for this dataset version.
      *     @type string $description
      *           Description of the dataset version
+     *     @type \Clarifai\Api\DatasetVersionProcessingInfo $processing_info
+     *           Dataset version processing
      *     @type array|\Google\Protobuf\Internal\MapField $metrics
      *           Dataset version metrics
      *     @type \Clarifai\Api\DatasetVersionExportInfo $export_info
@@ -456,6 +464,42 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Dataset version processing
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+     * @return \Clarifai\Api\DatasetVersionProcessingInfo|null
+     */
+    public function getProcessingInfo()
+    {
+        return $this->processing_info;
+    }
+
+    public function hasProcessingInfo()
+    {
+        return isset($this->processing_info);
+    }
+
+    public function clearProcessingInfo()
+    {
+        unset($this->processing_info);
+    }
+
+    /**
+     * Dataset version processing
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+     * @param \Clarifai\Api\DatasetVersionProcessingInfo $var
+     * @return $this
+     */
+    public function setProcessingInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersionProcessingInfo::class);
+        $this->processing_info = $var;
 
         return $this;
     }

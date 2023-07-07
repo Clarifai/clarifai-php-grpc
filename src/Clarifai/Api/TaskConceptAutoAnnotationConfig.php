@@ -15,7 +15,7 @@ class TaskConceptAutoAnnotationConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * Filter anontations by their annotation data type.
-     * This specifies types in an OR fashion, e.g. a `dog` concept that appears as a mask or a bbox. 
+     * This specifies types in an OR fashion, e.g. a `dog` concept that appears as a mask or a bbox.
      *
      * Generated from protobuf field <code>uint32 annotation_data_types = 1;</code>
      */
@@ -42,7 +42,7 @@ class TaskConceptAutoAnnotationConfig extends \Google\Protobuf\Internal\Message
      *
      *     @type int $annotation_data_types
      *           Filter anontations by their annotation data type.
-     *           This specifies types in an OR fashion, e.g. a `dog` concept that appears as a mask or a bbox. 
+     *           This specifies types in an OR fashion, e.g. a `dog` concept that appears as a mask or a bbox.
      *     @type \Clarifai\Api\ThresholdRange $threshold_range
      *           Filter annotations by concept value.
      *           Only concepts that fit in the threshold will be used to generate annotations.
@@ -57,7 +57,7 @@ class TaskConceptAutoAnnotationConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Filter anontations by their annotation data type.
-     * This specifies types in an OR fashion, e.g. a `dog` concept that appears as a mask or a bbox. 
+     * This specifies types in an OR fashion, e.g. a `dog` concept that appears as a mask or a bbox.
      *
      * Generated from protobuf field <code>uint32 annotation_data_types = 1;</code>
      * @return int
@@ -69,7 +69,7 @@ class TaskConceptAutoAnnotationConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Filter anontations by their annotation data type.
-     * This specifies types in an OR fashion, e.g. a `dog` concept that appears as a mask or a bbox. 
+     * This specifies types in an OR fashion, e.g. a `dog` concept that appears as a mask or a bbox.
      *
      * Generated from protobuf field <code>uint32 annotation_data_types = 1;</code>
      * @param int $var

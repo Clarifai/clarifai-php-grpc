@@ -828,6 +828,30 @@ class StatusCode
      */
     const ALL_INPUT_VIDEOS_INVALID_BYTES = 31300;
     /**
+     * Generated from protobuf enum <code>INPUT_VIDEO_PROCESSING_SUCCESS = 31400;</code>
+     */
+    const INPUT_VIDEO_PROCESSING_SUCCESS = 31400;
+    /**
+     * Generated from protobuf enum <code>INPUT_VIDEO_PROCESSING_PENDING = 31410;</code>
+     */
+    const INPUT_VIDEO_PROCESSING_PENDING = 31410;
+    /**
+     * Generated from protobuf enum <code>INPUT_VIDEO_PROCESSING_FAILED = 31420;</code>
+     */
+    const INPUT_VIDEO_PROCESSING_FAILED = 31420;
+    /**
+     * Generated from protobuf enum <code>INPUT_VIDEO_STORAGE_INCONSISTENCY = 31430;</code>
+     */
+    const INPUT_VIDEO_STORAGE_INCONSISTENCY = 31430;
+    /**
+     * Generated from protobuf enum <code>INPUT_VIDEO_STORAGE_FAILURE = 31440;</code>
+     */
+    const INPUT_VIDEO_STORAGE_FAILURE = 31440;
+    /**
+     * Generated from protobuf enum <code>INPUT_VIDEO_URL_GENERATION_FAILURE = 31450;</code>
+     */
+    const INPUT_VIDEO_URL_GENERATION_FAILURE = 31450;
+    /**
      * Generated from protobuf enum <code>INPUT_CONNECTION_FAILED = 39996;</code>
      */
     const INPUT_CONNECTION_FAILED = 39996;
@@ -1449,6 +1473,10 @@ class StatusCode
      */
     const JOB_UNEXPECTED_ERROR = 64006;
     /**
+     * Generated from protobuf enum <code>JOB_CONFLICT = 64007;</code>
+     */
+    const JOB_CONFLICT = 64007;
+    /**
      *auth issues
      *
      * Generated from protobuf enum <code>AUTH_MISSING_IDP_ASSOC = 65000;</code>
@@ -1484,6 +1512,14 @@ class StatusCode
      * Generated from protobuf enum <code>UPLOAD_EXPIRED = 68004;</code>
      */
     const UPLOAD_EXPIRED = 68004;
+    /**
+     * Generated from protobuf enum <code>UPLOAD_CANCELED = 68005;</code>
+     */
+    const UPLOAD_CANCELED = 68005;
+    /**
+     * Generated from protobuf enum <code>UPLOAD_CONFLICT = 68006;</code>
+     */
+    const UPLOAD_CONFLICT = 68006;
     /**
      * Billing related issues: 69xxx
      *
@@ -1752,6 +1788,12 @@ class StatusCode
         self::INPUT_VIDEO_MODIFY_FAILED => 'INPUT_VIDEO_MODIFY_FAILED',
         self::INPUT_VIDEO_STORAGE_HOST_FAILED => 'INPUT_VIDEO_STORAGE_HOST_FAILED',
         self::ALL_INPUT_VIDEOS_INVALID_BYTES => 'ALL_INPUT_VIDEOS_INVALID_BYTES',
+        self::INPUT_VIDEO_PROCESSING_SUCCESS => 'INPUT_VIDEO_PROCESSING_SUCCESS',
+        self::INPUT_VIDEO_PROCESSING_PENDING => 'INPUT_VIDEO_PROCESSING_PENDING',
+        self::INPUT_VIDEO_PROCESSING_FAILED => 'INPUT_VIDEO_PROCESSING_FAILED',
+        self::INPUT_VIDEO_STORAGE_INCONSISTENCY => 'INPUT_VIDEO_STORAGE_INCONSISTENCY',
+        self::INPUT_VIDEO_STORAGE_FAILURE => 'INPUT_VIDEO_STORAGE_FAILURE',
+        self::INPUT_VIDEO_URL_GENERATION_FAILURE => 'INPUT_VIDEO_URL_GENERATION_FAILURE',
         self::INPUT_CONNECTION_FAILED => 'INPUT_CONNECTION_FAILED',
         self::REQUEST_DISABLED_FOR_MAINTENANCE => 'REQUEST_DISABLED_FOR_MAINTENANCE',
         self::INPUT_WRITES_DISABLED_FOR_MAINTENANCE => 'INPUT_WRITES_DISABLED_FOR_MAINTENANCE',
@@ -1884,6 +1926,7 @@ class StatusCode
         self::JOB_FAILED => 'JOB_FAILED',
         self::JOB_CANCELLED => 'JOB_CANCELLED',
         self::JOB_UNEXPECTED_ERROR => 'JOB_UNEXPECTED_ERROR',
+        self::JOB_CONFLICT => 'JOB_CONFLICT',
         self::AUTH_MISSING_IDP_ASSOC => 'AUTH_MISSING_IDP_ASSOC',
         self::LIST_OBJECTS_FAILED => 'LIST_OBJECTS_FAILED',
         self::ARCHIVE_EXTRACT_FAILED => 'ARCHIVE_EXTRACT_FAILED',
@@ -1892,6 +1935,8 @@ class StatusCode
         self::UPLOAD_FAILED => 'UPLOAD_FAILED',
         self::UPLOAD_UNEXPECTED_ERROR => 'UPLOAD_UNEXPECTED_ERROR',
         self::UPLOAD_EXPIRED => 'UPLOAD_EXPIRED',
+        self::UPLOAD_CANCELED => 'UPLOAD_CANCELED',
+        self::UPLOAD_CONFLICT => 'UPLOAD_CONFLICT',
         self::BILLING_INVALID_INFO => 'BILLING_INVALID_INFO',
         self::INTERNAL_SERVER_ISSUE => 'INTERNAL_SERVER_ISSUE',
         self::INTERNAL_FETCHING_ISSUE => 'INTERNAL_FETCHING_ISSUE',

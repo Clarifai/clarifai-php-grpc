@@ -693,21 +693,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Patch one or more dataset ids.
-     * @param \Clarifai\Api\PatchDatasetIdsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PatchDatasetIds(\Clarifai\Api\PatchDatasetIdsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PatchDatasetIds',
-        $argument,
-        ['\Clarifai\Api\MultiDatasetResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * Delete one or more datasets in a single request.
      * @param \Clarifai\Api\DeleteDatasetsRequest $argument input argument
      * @param array $metadata metadata
@@ -986,6 +971,21 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/ListModels',
         $argument,
         ['\Clarifai\Api\MultiModelResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List the resource counts for the app.
+     * @param \Clarifai\Api\GetResourceCountsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetResourceCounts(\Clarifai\Api\GetResourceCountsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetResourceCounts',
+        $argument,
+        ['\Clarifai\Api\GetResourceCountsResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -1292,7 +1292,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Deprecated: Use GetModelVersionEvaluation instead
+     * Deprecated: Use GetEvaluation instead
      * Get the evaluation metrics for a model version.
      * @param \Clarifai\Api\GetModelVersionMetricsRequest $argument input argument
      * @param array $metadata metadata
@@ -1308,7 +1308,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Deprecated, use PostModelVersionEvaluations instead
+     * Deprecated, use PostEvaluations instead
      * Run the evaluation metrics for a model version.
      * @param \Clarifai\Api\PostModelVersionMetricsRequest $argument input argument
      * @param array $metadata metadata
@@ -1324,6 +1324,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Deprecated, use PostEvaluations instead
      * @param \Clarifai\Api\PostModelVersionEvaluationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1338,6 +1339,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Deprecated, use GetEvaluation instead
      * List the evaluation metrics for a model version.
      * @param \Clarifai\Api\ListModelVersionEvaluationsRequest $argument input argument
      * @param array $metadata metadata
@@ -1353,6 +1355,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Deprecated, use GetEvaluation instead
      * Get an evaluation metrics for a model version.
      * @param \Clarifai\Api\GetModelVersionEvaluationRequest $argument input argument
      * @param array $metadata metadata
@@ -1362,6 +1365,48 @@ class V2Client extends \Grpc\BaseStub {
     public function GetModelVersionEvaluation(\Clarifai\Api\GetModelVersionEvaluationRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/clarifai.api.V2/GetModelVersionEvaluation',
+        $argument,
+        ['\Clarifai\Api\SingleEvalMetricsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PostEvaluationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostEvaluations(\Clarifai\Api\PostEvaluationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostEvaluations',
+        $argument,
+        ['\Clarifai\Api\MultiEvalMetricsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\ListEvaluationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListEvaluations(\Clarifai\Api\ListEvaluationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListEvaluations',
+        $argument,
+        ['\Clarifai\Api\MultiEvalMetricsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\GetEvaluationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetEvaluation(\Clarifai\Api\GetEvaluationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetEvaluation',
         $argument,
         ['\Clarifai\Api\SingleEvalMetricsResponse', 'decode'],
         $metadata, $options);
@@ -2983,6 +3028,21 @@ class V2Client extends \Grpc\BaseStub {
     public function GetInputsAddJob(\Clarifai\Api\GetInputsAddJobRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/clarifai.api.V2/GetInputsAddJob',
+        $argument,
+        ['\Clarifai\Api\SingleInputsAddJobResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * cancel the input add job by ID
+     * @param \Clarifai\Api\CancelInputsAddJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CancelInputsAddJob(\Clarifai\Api\CancelInputsAddJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/CancelInputsAddJob',
         $argument,
         ['\Clarifai\Api\SingleInputsAddJobResponse', 'decode'],
         $metadata, $options);

@@ -65,6 +65,12 @@ class InputsAddJob extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.Upload uploads = 11;</code>
      */
     private $uploads;
+    /**
+     * Status of the job
+     *
+     * Generated from protobuf field <code>.clarifai.api.status.Status status = 12;</code>
+     */
+    protected $status = null;
 
     /**
      * Constructor.
@@ -92,6 +98,8 @@ class InputsAddJob extends \Google\Protobuf\Internal\Message
      *           Sub-jobs that extract inputs from the cloud and/or archives
      *     @type array<\Clarifai\Api\Upload>|\Google\Protobuf\Internal\RepeatedField $uploads
      *           Archive uploads
+     *     @type \Clarifai\Api\Status\Status $status
+     *           Status of the job
      * }
      */
     public function __construct($data = NULL) {
@@ -341,6 +349,42 @@ class InputsAddJob extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Upload::class);
         $this->uploads = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Status of the job
+     *
+     * Generated from protobuf field <code>.clarifai.api.status.Status status = 12;</code>
+     * @return \Clarifai\Api\Status\Status|null
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
+    }
+
+    /**
+     * Status of the job
+     *
+     * Generated from protobuf field <code>.clarifai.api.status.Status status = 12;</code>
+     * @param \Clarifai\Api\Status\Status $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Status\Status::class);
+        $this->status = $var;
 
         return $this;
     }

@@ -31,6 +31,12 @@ class InputsUpload extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Upload upload = 3;</code>
      */
     protected $upload = null;
+    /**
+     * How to handle input ID conflicts.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 4;</code>
+     */
+    protected $input_id_conflict_resolution = 0;
 
     /**
      * Constructor.
@@ -45,6 +51,8 @@ class InputsUpload extends \Google\Protobuf\Internal\Message
      *     @type string $app_pat
      *           Personal Access Token to the application to which inputs are added
      *     @type \Clarifai\Api\Upload $upload
+     *     @type int $input_id_conflict_resolution
+     *           How to handle input ID conflicts.
      * }
      */
     public function __construct($data = NULL) {
@@ -136,6 +144,32 @@ class InputsUpload extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Upload::class);
         $this->upload = $var;
+
+        return $this;
+    }
+
+    /**
+     * How to handle input ID conflicts.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 4;</code>
+     * @return int
+     */
+    public function getInputIdConflictResolution()
+    {
+        return $this->input_id_conflict_resolution;
+    }
+
+    /**
+     * How to handle input ID conflicts.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInputIdConflictResolution($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\InputIDConflictResolution::class);
+        $this->input_id_conflict_resolution = $var;
 
         return $this;
     }

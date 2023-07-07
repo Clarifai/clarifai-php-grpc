@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class InputsExtractionJobProgress extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint64 read_objects_count = 1;</code>
-     */
-    protected $read_objects_count = 0;
-    /**
      * Generated from protobuf field <code>uint64 audio_inputs_count = 2;</code>
      */
     protected $audio_inputs_count = 0;
@@ -56,7 +52,6 @@ class InputsExtractionJobProgress extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int|string $read_objects_count
      *     @type int|string $audio_inputs_count
      *     @type int|string $image_inputs_count
      *     @type int|string $video_inputs_count
@@ -70,28 +65,6 @@ class InputsExtractionJobProgress extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Proto\Clarifai\Api\Resources::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>uint64 read_objects_count = 1;</code>
-     * @return int|string
-     */
-    public function getReadObjectsCount()
-    {
-        return $this->read_objects_count;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint64 read_objects_count = 1;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setReadObjectsCount($var)
-    {
-        GPBUtil::checkUint64($var);
-        $this->read_objects_count = $var;
-
-        return $this;
     }
 
     /**

@@ -90,6 +90,18 @@ class Dataset extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.DatasetVersion version = 13;</code>
      */
     protected $version = null;
+    /**
+     * Whether the dataset is starred by the requesting user.
+     *
+     * Generated from protobuf field <code>bool is_starred = 14;</code>
+     */
+    protected $is_starred = false;
+    /**
+     * Number of users that starred this dataset.
+     *
+     * Generated from protobuf field <code>int32 star_count = 15;</code>
+     */
+    protected $star_count = 0;
 
     /**
      * Constructor.
@@ -128,6 +140,10 @@ class Dataset extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\DatasetVersion $version
      *           Dataset version associated with this dataset. This is used in listing Datasets
      *           and including the latest version.
+     *     @type bool $is_starred
+     *           Whether the dataset is starred by the requesting user.
+     *     @type int $star_count
+     *           Number of users that starred this dataset.
      * }
      */
     public function __construct($data = NULL) {
@@ -495,6 +511,58 @@ class Dataset extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersion::class);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether the dataset is starred by the requesting user.
+     *
+     * Generated from protobuf field <code>bool is_starred = 14;</code>
+     * @return bool
+     */
+    public function getIsStarred()
+    {
+        return $this->is_starred;
+    }
+
+    /**
+     * Whether the dataset is starred by the requesting user.
+     *
+     * Generated from protobuf field <code>bool is_starred = 14;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsStarred($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_starred = $var;
+
+        return $this;
+    }
+
+    /**
+     * Number of users that starred this dataset.
+     *
+     * Generated from protobuf field <code>int32 star_count = 15;</code>
+     * @return int
+     */
+    public function getStarCount()
+    {
+        return $this->star_count;
+    }
+
+    /**
+     * Number of users that starred this dataset.
+     *
+     * Generated from protobuf field <code>int32 star_count = 15;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStarCount($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->star_count = $var;
 
         return $this;
     }
