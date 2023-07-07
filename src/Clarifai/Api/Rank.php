@@ -24,6 +24,18 @@ class Rank extends \Google\Protobuf\Internal\Message
     protected $negate = false;
     /**
      * RANK by annotation information.
+     * ########## Supported fields ##########
+     *  - data.concepts[].id
+     *  - data.concepts[].name
+     *  - data.concepts[].value
+     *  - data.embeddings[].num_dimensions
+     *  - data.embeddings[].vector[]
+     *  - data.image.base64[]
+     *  - data.image.url
+     *  - data.lopq_code[]
+     *  - data.text.raw
+     *  - input_id
+     *  - model_version_id
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
      */
@@ -40,6 +52,18 @@ class Rank extends \Google\Protobuf\Internal\Message
      *           query. This allow for queries such as !dog
      *     @type \Clarifai\Api\Annotation $annotation
      *           RANK by annotation information.
+     *           ########## Supported fields ##########
+     *            - data.concepts[].id
+     *            - data.concepts[].name
+     *            - data.concepts[].value
+     *            - data.embeddings[].num_dimensions
+     *            - data.embeddings[].vector[]
+     *            - data.image.base64[]
+     *            - data.image.url
+     *            - data.lopq_code[]
+     *            - data.text.raw
+     *            - input_id
+     *            - model_version_id
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +101,18 @@ class Rank extends \Google\Protobuf\Internal\Message
 
     /**
      * RANK by annotation information.
+     * ########## Supported fields ##########
+     *  - data.concepts[].id
+     *  - data.concepts[].name
+     *  - data.concepts[].value
+     *  - data.embeddings[].num_dimensions
+     *  - data.embeddings[].vector[]
+     *  - data.image.base64[]
+     *  - data.image.url
+     *  - data.lopq_code[]
+     *  - data.text.raw
+     *  - input_id
+     *  - model_version_id
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
      * @return \Clarifai\Api\Annotation|null
@@ -98,6 +134,18 @@ class Rank extends \Google\Protobuf\Internal\Message
 
     /**
      * RANK by annotation information.
+     * ########## Supported fields ##########
+     *  - data.concepts[].id
+     *  - data.concepts[].name
+     *  - data.concepts[].value
+     *  - data.embeddings[].num_dimensions
+     *  - data.embeddings[].vector[]
+     *  - data.image.base64[]
+     *  - data.image.url
+     *  - data.lopq_code[]
+     *  - data.text.raw
+     *  - input_id
+     *  - model_version_id
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
      * @param \Clarifai\Api\Annotation $var

@@ -26,6 +26,12 @@ class InputsDataSource extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.DataSourceURL url = 2;</code>
      */
     protected $url = null;
+    /**
+     * How to handle input ID conflicts.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 3;</code>
+     */
+    protected $input_id_conflict_resolution = 0;
 
     /**
      * Constructor.
@@ -39,6 +45,8 @@ class InputsDataSource extends \Google\Protobuf\Internal\Message
      *           * If job ID is empty, then job is automatically created with random ID.
      *           * If job ID is non-empty, then a new job will be created with given ID.
      *     @type \Clarifai\Api\DataSourceURL $url
+     *     @type int $input_id_conflict_resolution
+     *           How to handle input ID conflicts.
      * }
      */
     public function __construct($data = NULL) {
@@ -106,6 +114,32 @@ class InputsDataSource extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\DataSourceURL::class);
         $this->url = $var;
+
+        return $this;
+    }
+
+    /**
+     * How to handle input ID conflicts.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 3;</code>
+     * @return int
+     */
+    public function getInputIdConflictResolution()
+    {
+        return $this->input_id_conflict_resolution;
+    }
+
+    /**
+     * How to handle input ID conflicts.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInputIdConflictResolution($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\InputIDConflictResolution::class);
+        $this->input_id_conflict_resolution = $var;
 
         return $this;
     }

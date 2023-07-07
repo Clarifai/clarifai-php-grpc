@@ -16,28 +16,33 @@ class AnnotationDataType
      */
     const ANNOTATION_DATA_TYPE_NOT_SET = 0;
     /**
-     * Generated from protobuf enum <code>BOUNDING_BOX = 1;</code>
+     * Generated from protobuf enum <code>TAG = 1;</code>
      */
-    const BOUNDING_BOX = 1;
+    const TAG = 1;
     /**
-     * Generated from protobuf enum <code>POLYGON = 2;</code>
+     * Generated from protobuf enum <code>BOUNDING_BOX = 2;</code>
      */
-    const POLYGON = 2;
+    const BOUNDING_BOX = 2;
     /**
-     * Generated from protobuf enum <code>POINT = 4;</code>
+     * Generated from protobuf enum <code>POLYGON = 4;</code>
      */
-    const POINT = 4;
+    const POLYGON = 4;
     /**
-     * Generated from protobuf enum <code>SPAN = 8;</code>
+     * Generated from protobuf enum <code>POINT = 8;</code>
      */
-    const SPAN = 8;
+    const POINT = 8;
     /**
-     * Generated from protobuf enum <code>MASK = 16;</code>
+     * Generated from protobuf enum <code>SPAN = 16;</code>
      */
-    const MASK = 16;
+    const SPAN = 16;
+    /**
+     * Generated from protobuf enum <code>MASK = 32;</code>
+     */
+    const MASK = 32;
 
     private static $valueToName = [
         self::ANNOTATION_DATA_TYPE_NOT_SET => 'ANNOTATION_DATA_TYPE_NOT_SET',
+        self::TAG => 'TAG',
         self::BOUNDING_BOX => 'BOUNDING_BOX',
         self::POLYGON => 'POLYGON',
         self::POINT => 'POINT',

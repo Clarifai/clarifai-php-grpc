@@ -18,6 +18,10 @@ class GetVideoManifestResponse extends \Google\Protobuf\Internal\Message
      */
     protected $status = null;
     /**
+     * MPEG-dash manifest as data-URI, base64-encoded
+     * Can be empty if status is FAILED
+     * Can be fallback manifest if status is MIXED_STATUS
+     *
      * Generated from protobuf field <code>string manifest_url = 2;</code>
      */
     protected $manifest_url = '';
@@ -30,6 +34,9 @@ class GetVideoManifestResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *     @type string $manifest_url
+     *           MPEG-dash manifest as data-URI, base64-encoded
+     *           Can be empty if status is FAILED
+     *           Can be fallback manifest if status is MIXED_STATUS
      * }
      */
     public function __construct($data = NULL) {
@@ -70,6 +77,10 @@ class GetVideoManifestResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * MPEG-dash manifest as data-URI, base64-encoded
+     * Can be empty if status is FAILED
+     * Can be fallback manifest if status is MIXED_STATUS
+     *
      * Generated from protobuf field <code>string manifest_url = 2;</code>
      * @return string
      */
@@ -79,6 +90,10 @@ class GetVideoManifestResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * MPEG-dash manifest as data-URI, base64-encoded
+     * Can be empty if status is FAILED
+     * Can be fallback manifest if status is MIXED_STATUS
+     *
      * Generated from protobuf field <code>string manifest_url = 2;</code>
      * @param string $var
      * @return $this

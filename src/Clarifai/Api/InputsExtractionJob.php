@@ -51,6 +51,12 @@ class InputsExtractionJob extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 6;</code>
      */
     protected $modified_at = null;
+    /**
+     * How to handle input ID conflicts.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 7;</code>
+     */
+    protected $input_id_conflict_resolution = 0;
 
     /**
      * Constructor.
@@ -73,6 +79,8 @@ class InputsExtractionJob extends \Google\Protobuf\Internal\Message
      *           Most recent time when the extraction job was updated.
      *           The format is https://www.ietf.org/rfc/rfc3339.txt.
      *           Example: "2006-01-02T15:04:05.999999Z".
+     *     @type int $input_id_conflict_resolution
+     *           How to handle input ID conflicts.
      * }
      */
     public function __construct($data = NULL) {
@@ -276,6 +284,32 @@ class InputsExtractionJob extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->modified_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * How to handle input ID conflicts.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 7;</code>
+     * @return int
+     */
+    public function getInputIdConflictResolution()
+    {
+        return $this->input_id_conflict_resolution;
+    }
+
+    /**
+     * How to handle input ID conflicts.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 7;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInputIdConflictResolution($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\InputIDConflictResolution::class);
+        $this->input_id_conflict_resolution = $var;
 
         return $this;
     }

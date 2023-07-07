@@ -33,6 +33,14 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 per_page = 3;</code>
      */
     protected $per_page = 0;
+    /**
+     * Generated from protobuf field <code>bool starred_only = 4;</code>
+     */
+    protected $starred_only = false;
+    /**
+     * Generated from protobuf field <code>repeated string additional_fields = 5;</code>
+     */
+    private $additional_fields;
 
     /**
      * Constructor.
@@ -47,6 +55,8 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
+     *     @type bool $starred_only
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
      * }
      */
     public function __construct($data = NULL) {
@@ -138,6 +148,50 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->per_page = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool starred_only = 4;</code>
+     * @return bool
+     */
+    public function getStarredOnly()
+    {
+        return $this->starred_only;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool starred_only = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setStarredOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->starred_only = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string additional_fields = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAdditionalFields()
+    {
+        return $this->additional_fields;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string additional_fields = 5;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAdditionalFields($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->additional_fields = $arr;
 
         return $this;
     }

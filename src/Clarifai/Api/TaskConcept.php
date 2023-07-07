@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class TaskConcept extends \Google\Protobuf\Internal\Message
 {
     /**
-     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
      *
      * Generated from protobuf field <code>.clarifai.api.Concept concept = 1;</code>
      */
@@ -31,7 +31,7 @@ class TaskConcept extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Concept $concept
-     *           For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+     *           For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
      *     @type \Clarifai\Api\TaskConceptAutoAnnotationConfig $auto_annotation_config
      * }
      */
@@ -41,7 +41,7 @@ class TaskConcept extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
      *
      * Generated from protobuf field <code>.clarifai.api.Concept concept = 1;</code>
      * @return \Clarifai\Api\Concept|null
@@ -62,7 +62,7 @@ class TaskConcept extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
      *
      * Generated from protobuf field <code>.clarifai.api.Concept concept = 1;</code>
      * @param \Clarifai\Api\Concept $var
