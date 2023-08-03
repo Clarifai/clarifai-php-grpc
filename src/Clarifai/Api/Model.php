@@ -89,22 +89,6 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     protected $user_id = '';
     /**
-     * Info about the models' input and configuration of them.
-     * DEPRECATED: Will be moved to model version
-     *
-     * Generated from protobuf field <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
-     * @deprecated
-     */
-    protected $input_info = null;
-    /**
-     * Configuration for the training process of this model.
-     * DEPRECATED: Will be moved to model version
-     *
-     * Generated from protobuf field <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
-     * @deprecated
-     */
-    protected $train_info = null;
-    /**
      * The default evaluation info. Can be overwritten by eval request.
      *
      * Generated from protobuf field <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
@@ -198,19 +182,18 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     protected $star_count = 0;
     /**
-     * Configuration used to import model from third-party toolkits
-     * DEPRECATED: Will be moved to model version
-     *
-     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
-     * @deprecated
-     */
-    protected $import_info = null;
-    /**
      * Whether it's recommended that this model is used within a workflow
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
      */
     protected $workflow_recommended = null;
+    /**
+     * bookmark info. When set, this model is a bookmarked model of this app.
+     * Info in this field will allow you to find/access original model.
+     *
+     * Generated from protobuf field <code>.clarifai.api.BookmarkOrigin bookmark_origin = 33;</code>
+     */
+    protected $bookmark_origin = null;
 
     /**
      * Constructor.
@@ -242,12 +225,6 @@ class Model extends \Google\Protobuf\Internal\Message
      *           DEPRECATED: Please use the model id to name the model.
      *     @type string $user_id
      *           The user id that the model belongs to.
-     *     @type \Clarifai\Api\InputInfo $input_info
-     *           Info about the models' input and configuration of them.
-     *           DEPRECATED: Will be moved to model version
-     *     @type \Clarifai\Api\TrainInfo $train_info
-     *           Configuration for the training process of this model.
-     *           DEPRECATED: Will be moved to model version
      *     @type \Clarifai\Api\EvalInfo $default_eval_info
      *           The default evaluation info. Can be overwritten by eval request.
      *     @type string $model_type_id
@@ -283,11 +260,11 @@ class Model extends \Google\Protobuf\Internal\Message
      *     @type int $star_count
      *           How many users have starred the model (only showed on get/list requests)
      *           Computed value, not editable
-     *     @type \Clarifai\Api\ImportInfo $import_info
-     *           Configuration used to import model from third-party toolkits
-     *           DEPRECATED: Will be moved to model version
      *     @type \Google\Protobuf\BoolValue $workflow_recommended
      *           Whether it's recommended that this model is used within a workflow
+     *     @type \Clarifai\Api\BookmarkOrigin $bookmark_origin
+     *           bookmark info. When set, this model is a bookmarked model of this app.
+     *           Info in this field will allow you to find/access original model.
      * }
      */
     public function __construct($data = NULL) {
@@ -591,94 +568,6 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Info about the models' input and configuration of them.
-     * DEPRECATED: Will be moved to model version
-     *
-     * Generated from protobuf field <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
-     * @return \Clarifai\Api\InputInfo|null
-     * @deprecated
-     */
-    public function getInputInfo()
-    {
-        @trigger_error('input_info is deprecated.', E_USER_DEPRECATED);
-        return $this->input_info;
-    }
-
-    public function hasInputInfo()
-    {
-        @trigger_error('input_info is deprecated.', E_USER_DEPRECATED);
-        return isset($this->input_info);
-    }
-
-    public function clearInputInfo()
-    {
-        @trigger_error('input_info is deprecated.', E_USER_DEPRECATED);
-        unset($this->input_info);
-    }
-
-    /**
-     * Info about the models' input and configuration of them.
-     * DEPRECATED: Will be moved to model version
-     *
-     * Generated from protobuf field <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
-     * @param \Clarifai\Api\InputInfo $var
-     * @return $this
-     * @deprecated
-     */
-    public function setInputInfo($var)
-    {
-        @trigger_error('input_info is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Clarifai\Api\InputInfo::class);
-        $this->input_info = $var;
-
-        return $this;
-    }
-
-    /**
-     * Configuration for the training process of this model.
-     * DEPRECATED: Will be moved to model version
-     *
-     * Generated from protobuf field <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
-     * @return \Clarifai\Api\TrainInfo|null
-     * @deprecated
-     */
-    public function getTrainInfo()
-    {
-        @trigger_error('train_info is deprecated.', E_USER_DEPRECATED);
-        return $this->train_info;
-    }
-
-    public function hasTrainInfo()
-    {
-        @trigger_error('train_info is deprecated.', E_USER_DEPRECATED);
-        return isset($this->train_info);
-    }
-
-    public function clearTrainInfo()
-    {
-        @trigger_error('train_info is deprecated.', E_USER_DEPRECATED);
-        unset($this->train_info);
-    }
-
-    /**
-     * Configuration for the training process of this model.
-     * DEPRECATED: Will be moved to model version
-     *
-     * Generated from protobuf field <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
-     * @param \Clarifai\Api\TrainInfo $var
-     * @return $this
-     * @deprecated
-     */
-    public function setTrainInfo($var)
-    {
-        @trigger_error('train_info is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Clarifai\Api\TrainInfo::class);
-        $this->train_info = $var;
 
         return $this;
     }
@@ -1120,50 +1009,6 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Configuration used to import model from third-party toolkits
-     * DEPRECATED: Will be moved to model version
-     *
-     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
-     * @return \Clarifai\Api\ImportInfo|null
-     * @deprecated
-     */
-    public function getImportInfo()
-    {
-        @trigger_error('import_info is deprecated.', E_USER_DEPRECATED);
-        return $this->import_info;
-    }
-
-    public function hasImportInfo()
-    {
-        @trigger_error('import_info is deprecated.', E_USER_DEPRECATED);
-        return isset($this->import_info);
-    }
-
-    public function clearImportInfo()
-    {
-        @trigger_error('import_info is deprecated.', E_USER_DEPRECATED);
-        unset($this->import_info);
-    }
-
-    /**
-     * Configuration used to import model from third-party toolkits
-     * DEPRECATED: Will be moved to model version
-     *
-     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
-     * @param \Clarifai\Api\ImportInfo $var
-     * @return $this
-     * @deprecated
-     */
-    public function setImportInfo($var)
-    {
-        @trigger_error('import_info is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Clarifai\Api\ImportInfo::class);
-        $this->import_info = $var;
-
-        return $this;
-    }
-
-    /**
      * Whether it's recommended that this model is used within a workflow
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
@@ -1225,6 +1070,44 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         $this->writeWrapperValue("workflow_recommended", $var);
         return $this;}
+
+    /**
+     * bookmark info. When set, this model is a bookmarked model of this app.
+     * Info in this field will allow you to find/access original model.
+     *
+     * Generated from protobuf field <code>.clarifai.api.BookmarkOrigin bookmark_origin = 33;</code>
+     * @return \Clarifai\Api\BookmarkOrigin|null
+     */
+    public function getBookmarkOrigin()
+    {
+        return $this->bookmark_origin;
+    }
+
+    public function hasBookmarkOrigin()
+    {
+        return isset($this->bookmark_origin);
+    }
+
+    public function clearBookmarkOrigin()
+    {
+        unset($this->bookmark_origin);
+    }
+
+    /**
+     * bookmark info. When set, this model is a bookmarked model of this app.
+     * Info in this field will allow you to find/access original model.
+     *
+     * Generated from protobuf field <code>.clarifai.api.BookmarkOrigin bookmark_origin = 33;</code>
+     * @param \Clarifai\Api\BookmarkOrigin $var
+     * @return $this
+     */
+    public function setBookmarkOrigin($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\BookmarkOrigin::class);
+        $this->bookmark_origin = $var;
+
+        return $this;
+    }
 
 }
 

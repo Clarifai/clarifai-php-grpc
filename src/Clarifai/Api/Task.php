@@ -56,9 +56,11 @@ class Task extends \Google\Protobuf\Internal\Message
      */
     protected $worker = null;
     /**
-     * List of concept ids used in the work of this task if label type is classification.
+     * List of concept ids used in the work of this task.
+     * DEPRECATED: Use task.concepts instead.
      *
-     * Generated from protobuf field <code>repeated string concept_ids = 7;</code>
+     * Generated from protobuf field <code>repeated string concept_ids = 7 [deprecated = true];</code>
+     * @deprecated
      */
     private $concept_ids;
     /**
@@ -164,7 +166,8 @@ class Task extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\TaskWorker $worker
      *           Worker details.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $concept_ids
-     *           List of concept ids used in the work of this task if label type is classification.
+     *           List of concept ids used in the work of this task.
+     *           DEPRECATED: Use task.concepts instead.
      *     @type \Clarifai\Api\TaskInputSource $input_source
      *           List of inputs used in this task will be taken from this source.
      *     @type int $sample_ms
@@ -395,25 +398,31 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of concept ids used in the work of this task if label type is classification.
+     * List of concept ids used in the work of this task.
+     * DEPRECATED: Use task.concepts instead.
      *
-     * Generated from protobuf field <code>repeated string concept_ids = 7;</code>
+     * Generated from protobuf field <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getConceptIds()
     {
+        @trigger_error('concept_ids is deprecated.', E_USER_DEPRECATED);
         return $this->concept_ids;
     }
 
     /**
-     * List of concept ids used in the work of this task if label type is classification.
+     * List of concept ids used in the work of this task.
+     * DEPRECATED: Use task.concepts instead.
      *
-     * Generated from protobuf field <code>repeated string concept_ids = 7;</code>
+     * Generated from protobuf field <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setConceptIds($var)
     {
+        @trigger_error('concept_ids is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->concept_ids = $arr;
 

@@ -77,6 +77,12 @@ class Dataset extends \Google\Protobuf\Internal\Message
      */
     protected $default_annotation_filter = null;
     /**
+     * Default processing info used for this dataset.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+     */
+    protected $default_processing_info = null;
+    /**
      * Notes for the dataset
      * This field should be used for in-depth notes and supports up to 64Kbs.
      *
@@ -102,6 +108,13 @@ class Dataset extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 star_count = 15;</code>
      */
     protected $star_count = 0;
+    /**
+     * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+     * Info in this field will allow you to find/access original dataset.
+     *
+     * Generated from protobuf field <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+     */
+    protected $bookmark_origin = null;
 
     /**
      * Constructor.
@@ -134,6 +147,8 @@ class Dataset extends \Google\Protobuf\Internal\Message
      *           also be publicly visible.
      *     @type \Clarifai\Api\AnnotationFilter $default_annotation_filter
      *           Default annotation filter used for this dataset.
+     *     @type \Clarifai\Api\DatasetVersionProcessingInfo $default_processing_info
+     *           Default processing info used for this dataset.
      *     @type string $notes
      *           Notes for the dataset
      *           This field should be used for in-depth notes and supports up to 64Kbs.
@@ -144,6 +159,9 @@ class Dataset extends \Google\Protobuf\Internal\Message
      *           Whether the dataset is starred by the requesting user.
      *     @type int $star_count
      *           Number of users that starred this dataset.
+     *     @type \Clarifai\Api\BookmarkOrigin $bookmark_origin
+     *           bookmark info. When set, this dataset is a bookmarked dataset of this app.
+     *           Info in this field will allow you to find/access original dataset.
      * }
      */
     public function __construct($data = NULL) {
@@ -450,6 +468,42 @@ class Dataset extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Default processing info used for this dataset.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+     * @return \Clarifai\Api\DatasetVersionProcessingInfo|null
+     */
+    public function getDefaultProcessingInfo()
+    {
+        return $this->default_processing_info;
+    }
+
+    public function hasDefaultProcessingInfo()
+    {
+        return isset($this->default_processing_info);
+    }
+
+    public function clearDefaultProcessingInfo()
+    {
+        unset($this->default_processing_info);
+    }
+
+    /**
+     * Default processing info used for this dataset.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+     * @param \Clarifai\Api\DatasetVersionProcessingInfo $var
+     * @return $this
+     */
+    public function setDefaultProcessingInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersionProcessingInfo::class);
+        $this->default_processing_info = $var;
+
+        return $this;
+    }
+
+    /**
      * Notes for the dataset
      * This field should be used for in-depth notes and supports up to 64Kbs.
      *
@@ -563,6 +617,44 @@ class Dataset extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->star_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+     * Info in this field will allow you to find/access original dataset.
+     *
+     * Generated from protobuf field <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+     * @return \Clarifai\Api\BookmarkOrigin|null
+     */
+    public function getBookmarkOrigin()
+    {
+        return $this->bookmark_origin;
+    }
+
+    public function hasBookmarkOrigin()
+    {
+        return isset($this->bookmark_origin);
+    }
+
+    public function clearBookmarkOrigin()
+    {
+        unset($this->bookmark_origin);
+    }
+
+    /**
+     * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+     * Info in this field will allow you to find/access original dataset.
+     *
+     * Generated from protobuf field <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+     * @param \Clarifai\Api\BookmarkOrigin $var
+     * @return $this
+     */
+    public function setBookmarkOrigin($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\BookmarkOrigin::class);
+        $this->bookmark_origin = $var;
 
         return $this;
     }

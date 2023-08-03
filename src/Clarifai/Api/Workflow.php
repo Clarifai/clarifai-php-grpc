@@ -116,6 +116,13 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     private $check_consents;
+    /**
+     * bookmark info. When set, this workflow is a bookmarked workflow of this app.
+     * Info in this field will allow you to find/access original workflow.
+     *
+     * Generated from protobuf field <code>.clarifai.api.BookmarkOrigin bookmark_origin = 16;</code>
+     */
+    protected $bookmark_origin = null;
 
     /**
      * Constructor.
@@ -164,6 +171,9 @@ class Workflow extends \Google\Protobuf\Internal\Message
      *           Tags from use_cases category
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $check_consents
      *           Tags for check consents
+     *     @type \Clarifai\Api\BookmarkOrigin $bookmark_origin
+     *           bookmark info. When set, this workflow is a bookmarked workflow of this app.
+     *           Info in this field will allow you to find/access original workflow.
      * }
      */
     public function __construct($data = NULL) {
@@ -629,6 +639,44 @@ class Workflow extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->check_consents = $arr;
+
+        return $this;
+    }
+
+    /**
+     * bookmark info. When set, this workflow is a bookmarked workflow of this app.
+     * Info in this field will allow you to find/access original workflow.
+     *
+     * Generated from protobuf field <code>.clarifai.api.BookmarkOrigin bookmark_origin = 16;</code>
+     * @return \Clarifai\Api\BookmarkOrigin|null
+     */
+    public function getBookmarkOrigin()
+    {
+        return $this->bookmark_origin;
+    }
+
+    public function hasBookmarkOrigin()
+    {
+        return isset($this->bookmark_origin);
+    }
+
+    public function clearBookmarkOrigin()
+    {
+        unset($this->bookmark_origin);
+    }
+
+    /**
+     * bookmark info. When set, this workflow is a bookmarked workflow of this app.
+     * Info in this field will allow you to find/access original workflow.
+     *
+     * Generated from protobuf field <code>.clarifai.api.BookmarkOrigin bookmark_origin = 16;</code>
+     * @param \Clarifai\Api\BookmarkOrigin $var
+     * @return $this
+     */
+    public function setBookmarkOrigin($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\BookmarkOrigin::class);
+        $this->bookmark_origin = $var;
 
         return $this;
     }

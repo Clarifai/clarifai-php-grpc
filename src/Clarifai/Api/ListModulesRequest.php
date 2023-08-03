@@ -41,6 +41,20 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string additional_fields = 5;</code>
      */
     private $additional_fields;
+    /**
+     * Sorting opitons:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     *
+     * Generated from protobuf field <code>bool sort_ascending = 6;</code>
+     */
+    protected $sort_ascending = false;
+    /**
+     * Filter modules by bookmark. If set, only return bookmarked modules. Otherwise none bookmarked modules only.
+     *
+     * Generated from protobuf field <code>bool bookmark = 10;</code>
+     */
+    protected $bookmark = false;
+    protected $sort_by;
 
     /**
      * Constructor.
@@ -57,6 +71,17 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
      *           to 128.
      *     @type bool $starred_only
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *     @type bool $sort_ascending
+     *           Sorting opitons:
+     *           Whether to sort in ascending order. If false, will order in descending order.
+     *     @type bool $sort_by_created_at
+     *           Whether to order by the created_at time.
+     *     @type bool $sort_by_star_count
+     *           Whether to order by the number of users stared the app
+     *     @type bool $sort_by_modified_at
+     *           If neither sort option is set to true, will sort by modified_at.
+     *     @type bool $bookmark
+     *           Filter modules by bookmark. If set, only return bookmarked modules. Otherwise none bookmarked modules only.
      * }
      */
     public function __construct($data = NULL) {
@@ -194,6 +219,161 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
         $this->additional_fields = $arr;
 
         return $this;
+    }
+
+    /**
+     * Sorting opitons:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     *
+     * Generated from protobuf field <code>bool sort_ascending = 6;</code>
+     * @return bool
+     */
+    public function getSortAscending()
+    {
+        return $this->sort_ascending;
+    }
+
+    /**
+     * Sorting opitons:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     *
+     * Generated from protobuf field <code>bool sort_ascending = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortAscending($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->sort_ascending = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the created_at time.
+     *
+     * Generated from protobuf field <code>bool sort_by_created_at = 7;</code>
+     * @return bool
+     */
+    public function getSortByCreatedAt()
+    {
+        return $this->readOneof(7);
+    }
+
+    public function hasSortByCreatedAt()
+    {
+        return $this->hasOneof(7);
+    }
+
+    /**
+     * Whether to order by the created_at time.
+     *
+     * Generated from protobuf field <code>bool sort_by_created_at = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByCreatedAt($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the number of users stared the app
+     *
+     * Generated from protobuf field <code>bool sort_by_star_count = 8;</code>
+     * @return bool
+     */
+    public function getSortByStarCount()
+    {
+        return $this->readOneof(8);
+    }
+
+    public function hasSortByStarCount()
+    {
+        return $this->hasOneof(8);
+    }
+
+    /**
+     * Whether to order by the number of users stared the app
+     *
+     * Generated from protobuf field <code>bool sort_by_star_count = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByStarCount($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * If neither sort option is set to true, will sort by modified_at.
+     *
+     * Generated from protobuf field <code>bool sort_by_modified_at = 9;</code>
+     * @return bool
+     */
+    public function getSortByModifiedAt()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasSortByModifiedAt()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * If neither sort option is set to true, will sort by modified_at.
+     *
+     * Generated from protobuf field <code>bool sort_by_modified_at = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByModifiedAt($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(9, $var);
+
+        return $this;
+    }
+
+    /**
+     * Filter modules by bookmark. If set, only return bookmarked modules. Otherwise none bookmarked modules only.
+     *
+     * Generated from protobuf field <code>bool bookmark = 10;</code>
+     * @return bool
+     */
+    public function getBookmark()
+    {
+        return $this->bookmark;
+    }
+
+    /**
+     * Filter modules by bookmark. If set, only return bookmarked modules. Otherwise none bookmarked modules only.
+     *
+     * Generated from protobuf field <code>bool bookmark = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setBookmark($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->bookmark = $var;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSortBy()
+    {
+        return $this->whichOneof("sort_by");
     }
 
 }

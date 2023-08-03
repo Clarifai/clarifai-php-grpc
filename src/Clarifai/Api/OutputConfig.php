@@ -90,7 +90,8 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * For custom model training: this is the base model version to use for image embeddings.
      * This has to be one of the embed models in the app workflow.
      *
-     * Generated from protobuf field <code>string embed_model_version_id = 14;</code>
+     * Generated from protobuf field <code>string embed_model_version_id = 14 [deprecated = true];</code>
+     * @deprecated
      */
     protected $embed_model_version_id = '';
     /**
@@ -463,11 +464,13 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * For custom model training: this is the base model version to use for image embeddings.
      * This has to be one of the embed models in the app workflow.
      *
-     * Generated from protobuf field <code>string embed_model_version_id = 14;</code>
+     * Generated from protobuf field <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getEmbedModelVersionId()
     {
+        @trigger_error('embed_model_version_id is deprecated.', E_USER_DEPRECATED);
         return $this->embed_model_version_id;
     }
 
@@ -475,12 +478,14 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      * For custom model training: this is the base model version to use for image embeddings.
      * This has to be one of the embed models in the app workflow.
      *
-     * Generated from protobuf field <code>string embed_model_version_id = 14;</code>
+     * Generated from protobuf field <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setEmbedModelVersionId($var)
     {
+        @trigger_error('embed_model_version_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->embed_model_version_id = $var;
 

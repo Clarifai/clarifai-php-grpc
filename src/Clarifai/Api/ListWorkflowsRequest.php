@@ -78,6 +78,12 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string search_term = 12;</code>
      */
     protected $search_term = '';
+    /**
+     * Filter workflows by bookmark. If set, only return bookmarked workflows. Otherwise none bookmarked workflows only.
+     *
+     * Generated from protobuf field <code>bool bookmark = 15;</code>
+     */
+    protected $bookmark = false;
     protected $sort_by;
 
     /**
@@ -100,7 +106,11 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      *           Whether to order by the name
      *     @type bool $sort_by_modified_at
      *           Whether to order by the modified_at time.
-     *           If neither sort option is set to true, will sort by modified_at.
+     *           If none of the sort options is set to true, will sort by modified_at.
+     *     @type bool $sort_by_created_at
+     *           Whether to order by the created_at time.
+     *     @type bool $sort_by_star_count
+     *           Whether to order by the number of users stared the workflow
      *     @type string $query
      *           Query various text fields that can contain the words in the query string.
      *     @type string $id
@@ -114,6 +124,8 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
      *     @type string $search_term
      *           (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     *     @type bool $bookmark
+     *           Filter workflows by bookmark. If set, only return bookmarked workflows. Otherwise none bookmarked workflows only.
      * }
      */
     public function __construct($data = NULL) {
@@ -270,7 +282,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Whether to order by the modified_at time.
-     * If neither sort option is set to true, will sort by modified_at.
+     * If none of the sort options is set to true, will sort by modified_at.
      *
      * Generated from protobuf field <code>bool sort_by_modified_at = 7;</code>
      * @return bool
@@ -287,7 +299,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Whether to order by the modified_at time.
-     * If neither sort option is set to true, will sort by modified_at.
+     * If none of the sort options is set to true, will sort by modified_at.
      *
      * Generated from protobuf field <code>bool sort_by_modified_at = 7;</code>
      * @param bool $var
@@ -297,6 +309,68 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the created_at time.
+     *
+     * Generated from protobuf field <code>bool sort_by_created_at = 13;</code>
+     * @return bool
+     */
+    public function getSortByCreatedAt()
+    {
+        return $this->readOneof(13);
+    }
+
+    public function hasSortByCreatedAt()
+    {
+        return $this->hasOneof(13);
+    }
+
+    /**
+     * Whether to order by the created_at time.
+     *
+     * Generated from protobuf field <code>bool sort_by_created_at = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByCreatedAt($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(13, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the number of users stared the workflow
+     *
+     * Generated from protobuf field <code>bool sort_by_star_count = 14;</code>
+     * @return bool
+     */
+    public function getSortByStarCount()
+    {
+        return $this->readOneof(14);
+    }
+
+    public function hasSortByStarCount()
+    {
+        return $this->hasOneof(14);
+    }
+
+    /**
+     * Whether to order by the number of users stared the workflow
+     *
+     * Generated from protobuf field <code>bool sort_by_star_count = 14;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByStarCount($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(14, $var);
 
         return $this;
     }
@@ -459,6 +533,32 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->search_term = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter workflows by bookmark. If set, only return bookmarked workflows. Otherwise none bookmarked workflows only.
+     *
+     * Generated from protobuf field <code>bool bookmark = 15;</code>
+     * @return bool
+     */
+    public function getBookmark()
+    {
+        return $this->bookmark;
+    }
+
+    /**
+     * Filter workflows by bookmark. If set, only return bookmarked workflows. Otherwise none bookmarked workflows only.
+     *
+     * Generated from protobuf field <code>bool bookmark = 15;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setBookmark($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->bookmark = $var;
 
         return $this;
     }

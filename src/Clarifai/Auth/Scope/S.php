@@ -517,6 +517,28 @@ class S
      * Generated from protobuf enum <code>Uploads_Delete = 130 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Uploads_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Uploads_Add];</code>
      */
     const Uploads_Delete = 130;
+    /**
+     * To read allo control over remote runners
+     *
+     * Generated from protobuf enum <code>Runners_Get = 131 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const Runners_Get = 131;
+    /**
+     * Generated from protobuf enum <code>Runners_Add = 132 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Runners_Get];</code>
+     */
+    const Runners_Add = 132;
+    /**
+     * Generated from protobuf enum <code>Runners_Delete = 133 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Runners_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Runners_Add];</code>
+     */
+    const Runners_Delete = 133;
+    /**
+     * Generated from protobuf enum <code>RunnerItems_Get = 134 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const RunnerItems_Get = 134;
+    /**
+     * Generated from protobuf enum <code>RunnerItems_Add = 135 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = RunnerItems_Get];</code>
+     */
+    const RunnerItems_Add = 135;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -602,6 +624,11 @@ class S
         self::Uploads_Get => 'Uploads_Get',
         self::Uploads_Add => 'Uploads_Add',
         self::Uploads_Delete => 'Uploads_Delete',
+        self::Runners_Get => 'Runners_Get',
+        self::Runners_Add => 'Runners_Add',
+        self::Runners_Delete => 'Runners_Delete',
+        self::RunnerItems_Get => 'RunnerItems_Get',
+        self::RunnerItems_Add => 'RunnerItems_Add',
     ];
 
     public static function name($value)
