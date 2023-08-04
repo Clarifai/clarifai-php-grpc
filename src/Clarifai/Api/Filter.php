@@ -54,9 +54,11 @@ class Filter extends \Google\Protobuf\Internal\Message
      *  - id
      *  - input_id
      *  - input_level
+     *  - model_version_id
      *  - status.code
      *  - task_id
      *  - user_id
+     *  - workflow_version_id
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
      */
@@ -122,9 +124,11 @@ class Filter extends \Google\Protobuf\Internal\Message
      *            - id
      *            - input_id
      *            - input_level
+     *            - model_version_id
      *            - status.code
      *            - task_id
      *            - user_id
+     *            - workflow_version_id
      *     @type \Clarifai\Api\Input $input
      *           FILTER by input information.
      *           ########## Supported fields ##########
@@ -203,9 +207,11 @@ class Filter extends \Google\Protobuf\Internal\Message
      *  - id
      *  - input_id
      *  - input_level
+     *  - model_version_id
      *  - status.code
      *  - task_id
      *  - user_id
+     *  - workflow_version_id
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
      * @return \Clarifai\Api\Annotation|null
@@ -257,9 +263,11 @@ class Filter extends \Google\Protobuf\Internal\Message
      *  - id
      *  - input_id
      *  - input_level
+     *  - model_version_id
      *  - status.code
      *  - task_id
      *  - user_id
+     *  - workflow_version_id
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
      * @param \Clarifai\Api\Annotation $var

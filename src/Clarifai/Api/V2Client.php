@@ -3210,4 +3210,94 @@ class V2Client extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Get a specific runner from an app.
+     * @param \Clarifai\Api\GetRunnerRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetRunner(\Clarifai\Api\GetRunnerRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetRunner',
+        $argument,
+        ['\Clarifai\Api\SingleRunnerResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all the runners in community, by user or by app.
+     * @param \Clarifai\Api\ListRunnersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListRunners(\Clarifai\Api\ListRunnersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListRunners',
+        $argument,
+        ['\Clarifai\Api\MultiRunnerResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Add a runners to an app.
+     * @param \Clarifai\Api\PostRunnersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostRunners(\Clarifai\Api\PostRunnersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostRunners',
+        $argument,
+        ['\Clarifai\Api\MultiRunnerResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete multiple runners in one request.
+     * @param \Clarifai\Api\DeleteRunnersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteRunners(\Clarifai\Api\DeleteRunnersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteRunners',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List items for the remote runner to work on.
+     * @param \Clarifai\Api\ListRunnerItemsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListRunnerItems(\Clarifai\Api\ListRunnerItemsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListRunnerItems',
+        $argument,
+        ['\Clarifai\Api\MultiRunnerItemResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Post back outputs from remote runners
+     * @param \Clarifai\Api\PostRunnerItemOutputsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostRunnerItemOutputs(\Clarifai\Api\PostRunnerItemOutputsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostRunnerItemOutputs',
+        $argument,
+        ['\Clarifai\Api\MultiRunnerItemOutputResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

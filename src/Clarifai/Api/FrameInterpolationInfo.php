@@ -19,7 +19,9 @@ class FrameInterpolationInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * sample_ms is the sampling rate at which frame annotations are interpolated.
-     * If zero, then the input frame prediction sampling rate is used.
+     * If sample_ms is zero, then the dataset default_processing_info value is used.
+     * If the dataset default is zero or not set, then the input frame prediction
+     * sampling rate is used.
      *
      * Generated from protobuf field <code>uint32 sample_ms = 1;</code>
      */
@@ -33,7 +35,9 @@ class FrameInterpolationInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type int $sample_ms
      *           sample_ms is the sampling rate at which frame annotations are interpolated.
-     *           If zero, then the input frame prediction sampling rate is used.
+     *           If sample_ms is zero, then the dataset default_processing_info value is used.
+     *           If the dataset default is zero or not set, then the input frame prediction
+     *           sampling rate is used.
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +47,9 @@ class FrameInterpolationInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * sample_ms is the sampling rate at which frame annotations are interpolated.
-     * If zero, then the input frame prediction sampling rate is used.
+     * If sample_ms is zero, then the dataset default_processing_info value is used.
+     * If the dataset default is zero or not set, then the input frame prediction
+     * sampling rate is used.
      *
      * Generated from protobuf field <code>uint32 sample_ms = 1;</code>
      * @return int
@@ -55,7 +61,9 @@ class FrameInterpolationInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * sample_ms is the sampling rate at which frame annotations are interpolated.
-     * If zero, then the input frame prediction sampling rate is used.
+     * If sample_ms is zero, then the dataset default_processing_info value is used.
+     * If the dataset default is zero or not set, then the input frame prediction
+     * sampling rate is used.
      *
      * Generated from protobuf field <code>uint32 sample_ms = 1;</code>
      * @param int $var

@@ -31,6 +31,13 @@ class ListEvaluationsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 per_page = 3;</code>
      */
     protected $per_page = 0;
+    /**
+     * If true, sort in ascending order, otherwise sort in descending order.
+     *
+     * Generated from protobuf field <code>bool sort_ascending = 4;</code>
+     */
+    protected $sort_ascending = false;
+    protected $sort_by;
 
     /**
      * Constructor.
@@ -45,6 +52,22 @@ class ListEvaluationsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
+     *     @type bool $sort_ascending
+     *           If true, sort in ascending order, otherwise sort in descending order.
+     *     @type bool $sort_by_app_id
+     *           Whether to order by application id
+     *     @type bool $sort_by_roc_auc
+     *           Whether to order by eval metric summary.macro_avg_roc_auc
+     *     @type bool $sort_by_f1
+     *           Whether to order by eval metric summary.f1
+     *     @type bool $sort_by_created_at
+     *           Whether to order by when the metric was created
+     *     @type bool $sort_by_mean_avg_precision
+     *           Whether to order by eval metric summary.mean_avg_precision_iou_50
+     *     @type bool $sort_by_precision
+     *           Whether to order by eval metric summary.macro_avg_precision
+     *     @type bool $sort_by_recall
+     *           Whether to order by eval metric summary.macro_avg_recall
      * }
      */
     public function __construct($data = NULL) {
@@ -138,6 +161,257 @@ class ListEvaluationsRequest extends \Google\Protobuf\Internal\Message
         $this->per_page = $var;
 
         return $this;
+    }
+
+    /**
+     * If true, sort in ascending order, otherwise sort in descending order.
+     *
+     * Generated from protobuf field <code>bool sort_ascending = 4;</code>
+     * @return bool
+     */
+    public function getSortAscending()
+    {
+        return $this->sort_ascending;
+    }
+
+    /**
+     * If true, sort in ascending order, otherwise sort in descending order.
+     *
+     * Generated from protobuf field <code>bool sort_ascending = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortAscending($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->sort_ascending = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by application id
+     *
+     * Generated from protobuf field <code>bool sort_by_app_id = 5;</code>
+     * @return bool
+     */
+    public function getSortByAppId()
+    {
+        return $this->readOneof(5);
+    }
+
+    public function hasSortByAppId()
+    {
+        return $this->hasOneof(5);
+    }
+
+    /**
+     * Whether to order by application id
+     *
+     * Generated from protobuf field <code>bool sort_by_app_id = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByAppId($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by eval metric summary.macro_avg_roc_auc
+     *
+     * Generated from protobuf field <code>bool sort_by_roc_auc = 6;</code>
+     * @return bool
+     */
+    public function getSortByRocAuc()
+    {
+        return $this->readOneof(6);
+    }
+
+    public function hasSortByRocAuc()
+    {
+        return $this->hasOneof(6);
+    }
+
+    /**
+     * Whether to order by eval metric summary.macro_avg_roc_auc
+     *
+     * Generated from protobuf field <code>bool sort_by_roc_auc = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByRocAuc($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by eval metric summary.f1
+     *
+     * Generated from protobuf field <code>bool sort_by_f1 = 7;</code>
+     * @return bool
+     */
+    public function getSortByF1()
+    {
+        return $this->readOneof(7);
+    }
+
+    public function hasSortByF1()
+    {
+        return $this->hasOneof(7);
+    }
+
+    /**
+     * Whether to order by eval metric summary.f1
+     *
+     * Generated from protobuf field <code>bool sort_by_f1 = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByF1($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by when the metric was created
+     *
+     * Generated from protobuf field <code>bool sort_by_created_at = 8;</code>
+     * @return bool
+     */
+    public function getSortByCreatedAt()
+    {
+        return $this->readOneof(8);
+    }
+
+    public function hasSortByCreatedAt()
+    {
+        return $this->hasOneof(8);
+    }
+
+    /**
+     * Whether to order by when the metric was created
+     *
+     * Generated from protobuf field <code>bool sort_by_created_at = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByCreatedAt($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by eval metric summary.mean_avg_precision_iou_50
+     *
+     * Generated from protobuf field <code>bool sort_by_mean_avg_precision = 9;</code>
+     * @return bool
+     */
+    public function getSortByMeanAvgPrecision()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasSortByMeanAvgPrecision()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * Whether to order by eval metric summary.mean_avg_precision_iou_50
+     *
+     * Generated from protobuf field <code>bool sort_by_mean_avg_precision = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByMeanAvgPrecision($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(9, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by eval metric summary.macro_avg_precision
+     *
+     * Generated from protobuf field <code>bool sort_by_precision = 10;</code>
+     * @return bool
+     */
+    public function getSortByPrecision()
+    {
+        return $this->readOneof(10);
+    }
+
+    public function hasSortByPrecision()
+    {
+        return $this->hasOneof(10);
+    }
+
+    /**
+     * Whether to order by eval metric summary.macro_avg_precision
+     *
+     * Generated from protobuf field <code>bool sort_by_precision = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByPrecision($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by eval metric summary.macro_avg_recall
+     *
+     * Generated from protobuf field <code>bool sort_by_recall = 11;</code>
+     * @return bool
+     */
+    public function getSortByRecall()
+    {
+        return $this->readOneof(11);
+    }
+
+    public function hasSortByRecall()
+    {
+        return $this->hasOneof(11);
+    }
+
+    /**
+     * Whether to order by eval metric summary.macro_avg_recall
+     *
+     * Generated from protobuf field <code>bool sort_by_recall = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByRecall($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSortBy()
+    {
+        return $this->whichOneof("sort_by");
     }
 
 }

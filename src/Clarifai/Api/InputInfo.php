@@ -30,6 +30,12 @@ class InputInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Struct params = 2;</code>
      */
     protected $params = null;
+    /**
+     * For base model to get embeddings from for transfer learned models.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Model base_embed_model = 3;</code>
+     */
+    protected $base_embed_model = null;
 
     /**
      * Constructor.
@@ -44,6 +50,8 @@ class InputInfo extends \Google\Protobuf\Internal\Message
      *           To control the inputs to the given model we allow a list of parameters
      *           defined for each ModelType as a Struct (JSON object) here. During training or inference, the
      *           settings contained within are sent to the training processor to alter the training process.
+     *     @type \Clarifai\Api\Model $base_embed_model
+     *           For base model to get embeddings from for transfer learned models.
      * }
      */
     public function __construct($data = NULL) {
@@ -125,6 +133,42 @@ class InputInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->params = $var;
+
+        return $this;
+    }
+
+    /**
+     * For base model to get embeddings from for transfer learned models.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Model base_embed_model = 3;</code>
+     * @return \Clarifai\Api\Model|null
+     */
+    public function getBaseEmbedModel()
+    {
+        return $this->base_embed_model;
+    }
+
+    public function hasBaseEmbedModel()
+    {
+        return isset($this->base_embed_model);
+    }
+
+    public function clearBaseEmbedModel()
+    {
+        unset($this->base_embed_model);
+    }
+
+    /**
+     * For base model to get embeddings from for transfer learned models.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Model base_embed_model = 3;</code>
+     * @param \Clarifai\Api\Model $var
+     * @return $this
+     */
+    public function setBaseEmbedModel($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Model::class);
+        $this->base_embed_model = $var;
 
         return $this;
     }

@@ -68,7 +68,9 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
      */
     protected $description = '';
     /**
-     * Dataset version processing
+     * Dataset version processing. If this is not set when the dataset version is
+     * created, then the dataset default_processing_info is copied instead. Later
+     * updates to default_processing_info will not apply to existing versions.
      *
      * Generated from protobuf field <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
      */
@@ -139,7 +141,9 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *           Description of the dataset version
      *     @type \Clarifai\Api\DatasetVersionProcessingInfo $processing_info
-     *           Dataset version processing
+     *           Dataset version processing. If this is not set when the dataset version is
+     *           created, then the dataset default_processing_info is copied instead. Later
+     *           updates to default_processing_info will not apply to existing versions.
      *     @type array|\Google\Protobuf\Internal\MapField $metrics
      *           Dataset version metrics
      *     @type \Clarifai\Api\DatasetVersionExportInfo $export_info
@@ -469,7 +473,9 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Dataset version processing
+     * Dataset version processing. If this is not set when the dataset version is
+     * created, then the dataset default_processing_info is copied instead. Later
+     * updates to default_processing_info will not apply to existing versions.
      *
      * Generated from protobuf field <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
      * @return \Clarifai\Api\DatasetVersionProcessingInfo|null
@@ -490,7 +496,9 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Dataset version processing
+     * Dataset version processing. If this is not set when the dataset version is
+     * created, then the dataset default_processing_info is copied instead. Later
+     * updates to default_processing_info will not apply to existing versions.
      *
      * Generated from protobuf field <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
      * @param \Clarifai\Api\DatasetVersionProcessingInfo $var

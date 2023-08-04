@@ -108,6 +108,12 @@ class Annotation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string task_id = 19;</code>
      */
     protected $task_id = '';
+    /**
+     * ID of the workflow version this annotation is created by
+     *
+     * Generated from protobuf field <code>string workflow_version_id = 20;</code>
+     */
+    protected $workflow_version_id = '';
 
     /**
      * Constructor.
@@ -150,6 +156,8 @@ class Annotation extends \Google\Protobuf\Internal\Message
      *           * id of annotation parent, in case the annotation was split from another annotation
      *     @type string $task_id
      *           The id of the task annotation belongs to
+     *     @type string $workflow_version_id
+     *           ID of the workflow version this annotation is created by
      * }
      */
     public function __construct($data = NULL) {
@@ -599,6 +607,32 @@ class Annotation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->task_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * ID of the workflow version this annotation is created by
+     *
+     * Generated from protobuf field <code>string workflow_version_id = 20;</code>
+     * @return string
+     */
+    public function getWorkflowVersionId()
+    {
+        return $this->workflow_version_id;
+    }
+
+    /**
+     * ID of the workflow version this annotation is created by
+     *
+     * Generated from protobuf field <code>string workflow_version_id = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWorkflowVersionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->workflow_version_id = $var;
 
         return $this;
     }

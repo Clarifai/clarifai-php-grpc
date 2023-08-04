@@ -656,6 +656,28 @@ class StatusCode
      */
     const BULK_OPERATION_UNEXPECTED_ERROR = 25406;
     /**
+     * Runner related codes 256xx
+     *
+     * Generated from protobuf enum <code>RUNNER_DOES_NOT_EXIST = 25600;</code>
+     */
+    const RUNNER_DOES_NOT_EXIST = 25600;
+    /**
+     * Generated from protobuf enum <code>RUNNER_PERMISSION_DENIED = 25601;</code>
+     */
+    const RUNNER_PERMISSION_DENIED = 25601;
+    /**
+     * Generated from protobuf enum <code>RUNNER_INVALID_ARGUMENT = 25602;</code>
+     */
+    const RUNNER_INVALID_ARGUMENT = 25602;
+    /**
+     * Generated from protobuf enum <code>RUNNER_INVALID_REQUEST = 25603;</code>
+     */
+    const RUNNER_INVALID_REQUEST = 25603;
+    /**
+     * Generated from protobuf enum <code>RUNNER_NEEDS_RETRY = 25604;</code>
+     */
+    const RUNNER_NEEDS_RETRY = 25604;
+    /**
      * Input:Image related 30xxx
      *
      * Generated from protobuf enum <code>INPUT_DOWNLOAD_SUCCESS = 30000;</code>
@@ -1255,11 +1277,17 @@ class StatusCode
      */
     const TASK_WONT_DO = 54003;
     /**
-     * An error occurred during add-task-annotations pipeline.
+     * An error occurred during add-task-annotations or add-auto-annotations pipeline.
      *
-     * Generated from protobuf enum <code>TASK_ADD_ANNOTATIONS_FAILURE = 54005;</code>
+     * Generated from protobuf enum <code>TASK_FAILED = 54005;</code>
      */
-    const TASK_ADD_ANNOTATIONS_FAILURE = 54005;
+    const TASK_FAILED = 54005;
+    /**
+     * When an Auto Annotation task job has finished processing its last batch and is waiting for more dataset assets.
+     *
+     * Generated from protobuf enum <code>TASK_IDLE = 54006;</code>
+     */
+    const TASK_IDLE = 54006;
     /**
      * The task operation is in conflict with the current state of the server.
      *
@@ -1747,6 +1775,11 @@ class StatusCode
         self::BULK_OPERATION_INVALID_REQUEST => 'BULK_OPERATION_INVALID_REQUEST',
         self::BULK_OPERATION_CANCELLED => 'BULK_OPERATION_CANCELLED',
         self::BULK_OPERATION_UNEXPECTED_ERROR => 'BULK_OPERATION_UNEXPECTED_ERROR',
+        self::RUNNER_DOES_NOT_EXIST => 'RUNNER_DOES_NOT_EXIST',
+        self::RUNNER_PERMISSION_DENIED => 'RUNNER_PERMISSION_DENIED',
+        self::RUNNER_INVALID_ARGUMENT => 'RUNNER_INVALID_ARGUMENT',
+        self::RUNNER_INVALID_REQUEST => 'RUNNER_INVALID_REQUEST',
+        self::RUNNER_NEEDS_RETRY => 'RUNNER_NEEDS_RETRY',
         self::INPUT_DOWNLOAD_SUCCESS => 'INPUT_DOWNLOAD_SUCCESS',
         self::INPUT_DOWNLOAD_PENDING => 'INPUT_DOWNLOAD_PENDING',
         self::INPUT_DOWNLOAD_FAILED => 'INPUT_DOWNLOAD_FAILED',
@@ -1884,7 +1917,8 @@ class StatusCode
         self::TASK_IN_PROGRESS => 'TASK_IN_PROGRESS',
         self::TASK_DONE => 'TASK_DONE',
         self::TASK_WONT_DO => 'TASK_WONT_DO',
-        self::TASK_ADD_ANNOTATIONS_FAILURE => 'TASK_ADD_ANNOTATIONS_FAILURE',
+        self::TASK_FAILED => 'TASK_FAILED',
+        self::TASK_IDLE => 'TASK_IDLE',
         self::TASK_CONFLICT => 'TASK_CONFLICT',
         self::TASK_NOT_IMPLEMENTED => 'TASK_NOT_IMPLEMENTED',
         self::TASK_MISSING => 'TASK_MISSING',

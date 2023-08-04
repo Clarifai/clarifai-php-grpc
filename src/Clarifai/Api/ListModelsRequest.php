@@ -135,6 +135,14 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool dont_fetch_from_main = 23;</code>
      */
     protected $dont_fetch_from_main = false;
+    /**
+     * Filter models by bookmark. If set, only return bookmarked models. Otherwise none bookmarked models only.
+     * Note: you can not filter `trained_only` and bookmark at the same time.
+     * When filter by bookmark, we will return trained and untrained models.
+     *
+     * Generated from protobuf field <code>bool bookmark = 26;</code>
+     */
+    protected $bookmark = false;
     protected $sort_by;
 
     /**
@@ -159,7 +167,11 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           Whether to order by the number of training inputs
      *     @type bool $sort_by_modified_at
      *           Whether to order by the modified_at time of the latest model version.
-     *           If neither sort option is set to true, will sort by modified_at.
+     *           If none of the sort options is set to true, will sort by modified_at.
+     *     @type bool $sort_by_created_at
+     *           Whether to order by the created_at
+     *     @type bool $sort_by_star_count
+     *           Whether to order by count of stars
      *     @type string $query
      *           Filtering options:
      *           Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
@@ -195,6 +207,10 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *     @type bool $dont_fetch_from_main
      *           Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
      *           away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
+     *     @type bool $bookmark
+     *           Filter models by bookmark. If set, only return bookmarked models. Otherwise none bookmarked models only.
+     *           Note: you can not filter `trained_only` and bookmark at the same time.
+     *           When filter by bookmark, we will return trained and untrained models.
      * }
      */
     public function __construct($data = NULL) {
@@ -382,7 +398,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Whether to order by the modified_at time of the latest model version.
-     * If neither sort option is set to true, will sort by modified_at.
+     * If none of the sort options is set to true, will sort by modified_at.
      *
      * Generated from protobuf field <code>bool sort_by_modified_at = 13;</code>
      * @return bool
@@ -399,7 +415,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Whether to order by the modified_at time of the latest model version.
-     * If neither sort option is set to true, will sort by modified_at.
+     * If none of the sort options is set to true, will sort by modified_at.
      *
      * Generated from protobuf field <code>bool sort_by_modified_at = 13;</code>
      * @param bool $var
@@ -409,6 +425,68 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->writeOneof(13, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the created_at
+     *
+     * Generated from protobuf field <code>bool sort_by_created_at = 24;</code>
+     * @return bool
+     */
+    public function getSortByCreatedAt()
+    {
+        return $this->readOneof(24);
+    }
+
+    public function hasSortByCreatedAt()
+    {
+        return $this->hasOneof(24);
+    }
+
+    /**
+     * Whether to order by the created_at
+     *
+     * Generated from protobuf field <code>bool sort_by_created_at = 24;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByCreatedAt($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(24, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by count of stars
+     *
+     * Generated from protobuf field <code>bool sort_by_star_count = 25;</code>
+     * @return bool
+     */
+    public function getSortByStarCount()
+    {
+        return $this->readOneof(25);
+    }
+
+    public function hasSortByStarCount()
+    {
+        return $this->hasOneof(25);
+    }
+
+    /**
+     * Whether to order by count of stars
+     *
+     * Generated from protobuf field <code>bool sort_by_star_count = 25;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByStarCount($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(25, $var);
 
         return $this;
     }
@@ -809,6 +887,36 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->dont_fetch_from_main = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter models by bookmark. If set, only return bookmarked models. Otherwise none bookmarked models only.
+     * Note: you can not filter `trained_only` and bookmark at the same time.
+     * When filter by bookmark, we will return trained and untrained models.
+     *
+     * Generated from protobuf field <code>bool bookmark = 26;</code>
+     * @return bool
+     */
+    public function getBookmark()
+    {
+        return $this->bookmark;
+    }
+
+    /**
+     * Filter models by bookmark. If set, only return bookmarked models. Otherwise none bookmarked models only.
+     * Note: you can not filter `trained_only` and bookmark at the same time.
+     * When filter by bookmark, we will return trained and untrained models.
+     *
+     * Generated from protobuf field <code>bool bookmark = 26;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setBookmark($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->bookmark = $var;
 
         return $this;
     }

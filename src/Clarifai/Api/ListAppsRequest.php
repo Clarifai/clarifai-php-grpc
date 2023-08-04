@@ -95,7 +95,11 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      *           Whether to order by the name
      *     @type bool $sort_by_modified_at
      *           Whether to order by the modified_at time.
-     *           If neither sort option is set to true, will sort by modified_at.
+     *           If none of the sort options is set to true, will sort by modified_at.
+     *     @type bool $sort_by_created_at
+     *           Whether to order by the created_at time.
+     *     @type bool $sort_by_star_count
+     *           Whether to order by the number of users stared the app
      *     @type string $query
      *           Filtering options:
      *           Query various text fields that can contain the words in the query string
@@ -264,7 +268,7 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Whether to order by the modified_at time.
-     * If neither sort option is set to true, will sort by modified_at.
+     * If none of the sort options is set to true, will sort by modified_at.
      *
      * Generated from protobuf field <code>bool sort_by_modified_at = 7;</code>
      * @return bool
@@ -281,7 +285,7 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Whether to order by the modified_at time.
-     * If neither sort option is set to true, will sort by modified_at.
+     * If none of the sort options is set to true, will sort by modified_at.
      *
      * Generated from protobuf field <code>bool sort_by_modified_at = 7;</code>
      * @param bool $var
@@ -291,6 +295,68 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the created_at time.
+     *
+     * Generated from protobuf field <code>bool sort_by_created_at = 12;</code>
+     * @return bool
+     */
+    public function getSortByCreatedAt()
+    {
+        return $this->readOneof(12);
+    }
+
+    public function hasSortByCreatedAt()
+    {
+        return $this->hasOneof(12);
+    }
+
+    /**
+     * Whether to order by the created_at time.
+     *
+     * Generated from protobuf field <code>bool sort_by_created_at = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByCreatedAt($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(12, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the number of users stared the app
+     *
+     * Generated from protobuf field <code>bool sort_by_star_count = 13;</code>
+     * @return bool
+     */
+    public function getSortByStarCount()
+    {
+        return $this->readOneof(13);
+    }
+
+    public function hasSortByStarCount()
+    {
+        return $this->hasOneof(13);
+    }
+
+    /**
+     * Whether to order by the number of users stared the app
+     *
+     * Generated from protobuf field <code>bool sort_by_star_count = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByStarCount($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(13, $var);
 
         return $this;
     }

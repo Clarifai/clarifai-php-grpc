@@ -89,6 +89,13 @@ class Module extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 star_count = 13;</code>
      */
     protected $star_count = 0;
+    /**
+     * bookmark info. When set, this module is a bookmarked module of this app.
+     * Info in this field will allow you to find/access original module.
+     *
+     * Generated from protobuf field <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+     */
+    protected $bookmark_origin = null;
 
     /**
      * Constructor.
@@ -126,6 +133,9 @@ class Module extends \Google\Protobuf\Internal\Message
      *     @type int $star_count
      *           How many users have starred the module (only showed on get/list requests)
      *           Computed value, not editable
+     *     @type \Clarifai\Api\BookmarkOrigin $bookmark_origin
+     *           bookmark info. When set, this module is a bookmarked module of this app.
+     *           Info in this field will allow you to find/access original module.
      * }
      */
     public function __construct($data = NULL) {
@@ -481,6 +491,44 @@ class Module extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->star_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * bookmark info. When set, this module is a bookmarked module of this app.
+     * Info in this field will allow you to find/access original module.
+     *
+     * Generated from protobuf field <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+     * @return \Clarifai\Api\BookmarkOrigin|null
+     */
+    public function getBookmarkOrigin()
+    {
+        return $this->bookmark_origin;
+    }
+
+    public function hasBookmarkOrigin()
+    {
+        return isset($this->bookmark_origin);
+    }
+
+    public function clearBookmarkOrigin()
+    {
+        unset($this->bookmark_origin);
+    }
+
+    /**
+     * bookmark info. When set, this module is a bookmarked module of this app.
+     * Info in this field will allow you to find/access original module.
+     *
+     * Generated from protobuf field <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+     * @param \Clarifai\Api\BookmarkOrigin $var
+     * @return $this
+     */
+    public function setBookmarkOrigin($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\BookmarkOrigin::class);
+        $this->bookmark_origin = $var;
 
         return $this;
     }

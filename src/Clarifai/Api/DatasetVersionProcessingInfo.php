@@ -19,6 +19,9 @@ class DatasetVersionProcessingInfo extends \Google\Protobuf\Internal\Message
     /**
      * If frame_interpolation_info is set, then these settings are used to
      * interpolate new frame annotation from other video annotations.
+     * If frame_interpolation_info is set in the dataset default_processing_info,
+     * then it can be disabled for a single dataset version by setting
+     * processing_info but not setting processing_info.frame_interpolation_info.
      *
      * Generated from protobuf field <code>.clarifai.api.FrameInterpolationInfo frame_interpolation_info = 1;</code>
      */
@@ -33,6 +36,9 @@ class DatasetVersionProcessingInfo extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\FrameInterpolationInfo $frame_interpolation_info
      *           If frame_interpolation_info is set, then these settings are used to
      *           interpolate new frame annotation from other video annotations.
+     *           If frame_interpolation_info is set in the dataset default_processing_info,
+     *           then it can be disabled for a single dataset version by setting
+     *           processing_info but not setting processing_info.frame_interpolation_info.
      * }
      */
     public function __construct($data = NULL) {
@@ -43,6 +49,9 @@ class DatasetVersionProcessingInfo extends \Google\Protobuf\Internal\Message
     /**
      * If frame_interpolation_info is set, then these settings are used to
      * interpolate new frame annotation from other video annotations.
+     * If frame_interpolation_info is set in the dataset default_processing_info,
+     * then it can be disabled for a single dataset version by setting
+     * processing_info but not setting processing_info.frame_interpolation_info.
      *
      * Generated from protobuf field <code>.clarifai.api.FrameInterpolationInfo frame_interpolation_info = 1;</code>
      * @return \Clarifai\Api\FrameInterpolationInfo|null
@@ -65,6 +74,9 @@ class DatasetVersionProcessingInfo extends \Google\Protobuf\Internal\Message
     /**
      * If frame_interpolation_info is set, then these settings are used to
      * interpolate new frame annotation from other video annotations.
+     * If frame_interpolation_info is set in the dataset default_processing_info,
+     * then it can be disabled for a single dataset version by setting
+     * processing_info but not setting processing_info.frame_interpolation_info.
      *
      * Generated from protobuf field <code>.clarifai.api.FrameInterpolationInfo frame_interpolation_info = 1;</code>
      * @param \Clarifai\Api\FrameInterpolationInfo $var
