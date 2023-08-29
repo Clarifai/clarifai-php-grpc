@@ -22,7 +22,8 @@ class ClarifaiClient
         }
 
         return new V2Client($base, [
-            'credentials' => ChannelCredentials::createSsl()
+            'credentials' => ChannelCredentials::createSsl(),
+            'grpc.max_receive_message_length' => 128 * 1024 * 1024 // 128 MB
         ]);
     }
 }
