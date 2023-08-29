@@ -27,6 +27,14 @@ class ConfusionMatrixEntry extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>float value = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     protected $value = 0.0;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Concept predicted_concept = 5;</code>
+     */
+    protected $predicted_concept = null;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Concept actual_concept = 6;</code>
+     */
+    protected $actual_concept = null;
 
     /**
      * Constructor.
@@ -37,6 +45,8 @@ class ConfusionMatrixEntry extends \Google\Protobuf\Internal\Message
      *     @type string $predicted
      *     @type string $actual
      *     @type float $value
+     *     @type \Clarifai\Api\Concept $predicted_concept
+     *     @type \Clarifai\Api\Concept $actual_concept
      * }
      */
     public function __construct($data = NULL) {
@@ -106,6 +116,70 @@ class ConfusionMatrixEntry extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->value = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Concept predicted_concept = 5;</code>
+     * @return \Clarifai\Api\Concept|null
+     */
+    public function getPredictedConcept()
+    {
+        return $this->predicted_concept;
+    }
+
+    public function hasPredictedConcept()
+    {
+        return isset($this->predicted_concept);
+    }
+
+    public function clearPredictedConcept()
+    {
+        unset($this->predicted_concept);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Concept predicted_concept = 5;</code>
+     * @param \Clarifai\Api\Concept $var
+     * @return $this
+     */
+    public function setPredictedConcept($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Concept::class);
+        $this->predicted_concept = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Concept actual_concept = 6;</code>
+     * @return \Clarifai\Api\Concept|null
+     */
+    public function getActualConcept()
+    {
+        return $this->actual_concept;
+    }
+
+    public function hasActualConcept()
+    {
+        return isset($this->actual_concept);
+    }
+
+    public function clearActualConcept()
+    {
+        unset($this->actual_concept);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Concept actual_concept = 6;</code>
+     * @param \Clarifai\Api\Concept $var
+     * @return $this
+     */
+    public function setActualConcept($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Concept::class);
+        $this->actual_concept = $var;
 
         return $this;
     }

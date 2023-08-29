@@ -37,6 +37,30 @@ class ListEvaluationsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool sort_ascending = 4;</code>
      */
     protected $sort_ascending = false;
+    /**
+     * Filter on model type id
+     *
+     * Generated from protobuf field <code>string model_type_id = 12;</code>
+     */
+    protected $model_type_id = '';
+    /**
+     * Filter on dataset ID of the dataset version specified in the metric version
+     *
+     * Generated from protobuf field <code>repeated string eval_dataset_ids = 13;</code>
+     */
+    private $eval_dataset_ids;
+    /**
+     * Filter on dataset ID of the dataset version specified by the model version
+     *
+     * Generated from protobuf field <code>repeated string train_dataset_ids = 14;</code>
+     */
+    private $train_dataset_ids;
+    /**
+     * Filter on concept IDs specified in the modele version's output_info
+     *
+     * Generated from protobuf field <code>repeated string concept_ids = 15;</code>
+     */
+    private $concept_ids;
     protected $sort_by;
 
     /**
@@ -68,6 +92,17 @@ class ListEvaluationsRequest extends \Google\Protobuf\Internal\Message
      *           Whether to order by eval metric summary.macro_avg_precision
      *     @type bool $sort_by_recall
      *           Whether to order by eval metric summary.macro_avg_recall
+     *     @type bool $sort_by_model_id
+     *     @type bool $sort_by_eval_dataset_id
+     *     @type bool $sort_by_train_dataset_id
+     *     @type string $model_type_id
+     *           Filter on model type id
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $eval_dataset_ids
+     *           Filter on dataset ID of the dataset version specified in the metric version
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $train_dataset_ids
+     *           Filter on dataset ID of the dataset version specified by the model version
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $concept_ids
+     *           Filter on concept IDs specified in the modele version's output_info
      * }
      */
     public function __construct($data = NULL) {
@@ -402,6 +437,191 @@ class ListEvaluationsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool sort_by_model_id = 16;</code>
+     * @return bool
+     */
+    public function getSortByModelId()
+    {
+        return $this->readOneof(16);
+    }
+
+    public function hasSortByModelId()
+    {
+        return $this->hasOneof(16);
+    }
+
+    /**
+     * Generated from protobuf field <code>bool sort_by_model_id = 16;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByModelId($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(16, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool sort_by_eval_dataset_id = 17;</code>
+     * @return bool
+     */
+    public function getSortByEvalDatasetId()
+    {
+        return $this->readOneof(17);
+    }
+
+    public function hasSortByEvalDatasetId()
+    {
+        return $this->hasOneof(17);
+    }
+
+    /**
+     * Generated from protobuf field <code>bool sort_by_eval_dataset_id = 17;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByEvalDatasetId($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(17, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool sort_by_train_dataset_id = 18;</code>
+     * @return bool
+     */
+    public function getSortByTrainDatasetId()
+    {
+        return $this->readOneof(18);
+    }
+
+    public function hasSortByTrainDatasetId()
+    {
+        return $this->hasOneof(18);
+    }
+
+    /**
+     * Generated from protobuf field <code>bool sort_by_train_dataset_id = 18;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByTrainDatasetId($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(18, $var);
+
+        return $this;
+    }
+
+    /**
+     * Filter on model type id
+     *
+     * Generated from protobuf field <code>string model_type_id = 12;</code>
+     * @return string
+     */
+    public function getModelTypeId()
+    {
+        return $this->model_type_id;
+    }
+
+    /**
+     * Filter on model type id
+     *
+     * Generated from protobuf field <code>string model_type_id = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setModelTypeId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->model_type_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter on dataset ID of the dataset version specified in the metric version
+     *
+     * Generated from protobuf field <code>repeated string eval_dataset_ids = 13;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getEvalDatasetIds()
+    {
+        return $this->eval_dataset_ids;
+    }
+
+    /**
+     * Filter on dataset ID of the dataset version specified in the metric version
+     *
+     * Generated from protobuf field <code>repeated string eval_dataset_ids = 13;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setEvalDatasetIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->eval_dataset_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Filter on dataset ID of the dataset version specified by the model version
+     *
+     * Generated from protobuf field <code>repeated string train_dataset_ids = 14;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTrainDatasetIds()
+    {
+        return $this->train_dataset_ids;
+    }
+
+    /**
+     * Filter on dataset ID of the dataset version specified by the model version
+     *
+     * Generated from protobuf field <code>repeated string train_dataset_ids = 14;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTrainDatasetIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->train_dataset_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Filter on concept IDs specified in the modele version's output_info
+     *
+     * Generated from protobuf field <code>repeated string concept_ids = 15;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getConceptIds()
+    {
+        return $this->concept_ids;
+    }
+
+    /**
+     * Filter on concept IDs specified in the modele version's output_info
+     *
+     * Generated from protobuf field <code>repeated string concept_ids = 15;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setConceptIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->concept_ids = $arr;
 
         return $this;
     }

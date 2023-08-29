@@ -16,16 +16,18 @@ use Google\Protobuf\Internal\GPBUtil;
 class LabelCount extends \Google\Protobuf\Internal\Message
 {
     /**
-     * FIXME: should move to Concept object and return the whole thing (including name and id)
-     * otherwise if two concepts have same name then you won't tell them apart in confusion matrix.
-     *
-     * Generated from protobuf field <code>string concept_name = 1;</code>
+     * Generated from protobuf field <code>string concept_name = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $concept_name = '';
     /**
      * Generated from protobuf field <code>uint32 count = 2;</code>
      */
     protected $count = 0;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Concept concept = 3;</code>
+     */
+    protected $concept = null;
 
     /**
      * Constructor.
@@ -34,9 +36,8 @@ class LabelCount extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $concept_name
-     *           FIXME: should move to Concept object and return the whole thing (including name and id)
-     *           otherwise if two concepts have same name then you won't tell them apart in confusion matrix.
      *     @type int $count
+     *     @type \Clarifai\Api\Concept $concept
      * }
      */
     public function __construct($data = NULL) {
@@ -45,27 +46,25 @@ class LabelCount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * FIXME: should move to Concept object and return the whole thing (including name and id)
-     * otherwise if two concepts have same name then you won't tell them apart in confusion matrix.
-     *
-     * Generated from protobuf field <code>string concept_name = 1;</code>
+     * Generated from protobuf field <code>string concept_name = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getConceptName()
     {
+        @trigger_error('concept_name is deprecated.', E_USER_DEPRECATED);
         return $this->concept_name;
     }
 
     /**
-     * FIXME: should move to Concept object and return the whole thing (including name and id)
-     * otherwise if two concepts have same name then you won't tell them apart in confusion matrix.
-     *
-     * Generated from protobuf field <code>string concept_name = 1;</code>
+     * Generated from protobuf field <code>string concept_name = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setConceptName($var)
     {
+        @trigger_error('concept_name is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->concept_name = $var;
 
@@ -90,6 +89,38 @@ class LabelCount extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Concept concept = 3;</code>
+     * @return \Clarifai\Api\Concept|null
+     */
+    public function getConcept()
+    {
+        return $this->concept;
+    }
+
+    public function hasConcept()
+    {
+        return isset($this->concept);
+    }
+
+    public function clearConcept()
+    {
+        unset($this->concept);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Concept concept = 3;</code>
+     * @param \Clarifai\Api\Concept $var
+     * @return $this
+     */
+    public function setConcept($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Concept::class);
+        $this->concept = $var;
 
         return $this;
     }
