@@ -80,6 +80,8 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      *           Whether to order by the number of users stared the app
      *     @type bool $sort_by_modified_at
      *           If neither sort option is set to true, will sort by modified_at.
+     *     @type bool $sort_by_id
+     *           Whether to order by the external id
      *     @type bool $bookmark
      *           Filter datasets by bookmark. If set, only return bookmarked datasets. Otherwise none bookmarked datasets only.
      * }
@@ -338,6 +340,37 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->writeOneof(9, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the external id
+     *
+     * Generated from protobuf field <code>bool sort_by_id = 11;</code>
+     * @return bool
+     */
+    public function getSortById()
+    {
+        return $this->readOneof(11);
+    }
+
+    public function hasSortById()
+    {
+        return $this->hasOneof(11);
+    }
+
+    /**
+     * Whether to order by the external id
+     *
+     * Generated from protobuf field <code>bool sort_by_id = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortById($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(11, $var);
 
         return $this;
     }

@@ -92,6 +92,12 @@ class Concept extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
      */
     protected $keypoint_info = null;
+    /**
+     * Optional extra info.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ConceptExtraInfo extra_info = 12;</code>
+     */
+    protected $extra_info = null;
 
     /**
      * Constructor.
@@ -132,6 +138,8 @@ class Concept extends \Google\Protobuf\Internal\Message
      *           The user the concept belongs to.
      *     @type \Clarifai\Api\KeypointInfo $keypoint_info
      *           Information about keypoints for this concept
+     *     @type \Clarifai\Api\ConceptExtraInfo $extra_info
+     *           Optional extra info.
      * }
      */
     public function __construct($data = NULL) {
@@ -473,6 +481,42 @@ class Concept extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\KeypointInfo::class);
         $this->keypoint_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional extra info.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ConceptExtraInfo extra_info = 12;</code>
+     * @return \Clarifai\Api\ConceptExtraInfo|null
+     */
+    public function getExtraInfo()
+    {
+        return $this->extra_info;
+    }
+
+    public function hasExtraInfo()
+    {
+        return isset($this->extra_info);
+    }
+
+    public function clearExtraInfo()
+    {
+        unset($this->extra_info);
+    }
+
+    /**
+     * Optional extra info.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ConceptExtraInfo extra_info = 12;</code>
+     * @param \Clarifai\Api\ConceptExtraInfo $var
+     * @return $this
+     */
+    public function setExtraInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ConceptExtraInfo::class);
+        $this->extra_info = $var;
 
         return $this;
     }

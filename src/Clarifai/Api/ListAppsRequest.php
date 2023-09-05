@@ -56,6 +56,12 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
+     * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     *
+     * Generated from protobuf field <code>string id = 14;</code>
+     */
+    protected $id = '';
+    /**
      * If true, we only return apps that are handpicked by clarifai staff
      *
      * Generated from protobuf field <code>bool featured_only = 9;</code>
@@ -106,6 +112,8 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
      *           Deprecated in favor of query
+     *     @type string $id
+     *           Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
      *     @type bool $featured_only
      *           If true, we only return apps that are handpicked by clarifai staff
      *     @type bool $starred_only
@@ -417,6 +425,32 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
         @trigger_error('name is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     *
+     * Generated from protobuf field <code>string id = 14;</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     *
+     * Generated from protobuf field <code>string id = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
 
         return $this;
     }

@@ -28,6 +28,12 @@ class PostConceptsSearchesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $concept_query = null;
     /**
+     * Request additional info to be retrieved for each concept in the response.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+     */
+    protected $extra_info = null;
+    /**
      * Pagination parameters here since there are no url args in this
      * POST request.
      *
@@ -45,6 +51,8 @@ class PostConceptsSearchesRequest extends \Google\Protobuf\Internal\Message
      *           Ids present in the url of the request.
      *     @type \Clarifai\Api\ConceptQuery $concept_query
      *           The body of the request.
+     *     @type \Clarifai\Api\ConceptExtraInfoRequest $extra_info
+     *           Request additional info to be retrieved for each concept in the response.
      *     @type \Clarifai\Api\Pagination $pagination
      *           Pagination parameters here since there are no url args in this
      *           POST request.
@@ -123,6 +131,42 @@ class PostConceptsSearchesRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\ConceptQuery::class);
         $this->concept_query = $var;
+
+        return $this;
+    }
+
+    /**
+     * Request additional info to be retrieved for each concept in the response.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+     * @return \Clarifai\Api\ConceptExtraInfoRequest|null
+     */
+    public function getExtraInfo()
+    {
+        return $this->extra_info;
+    }
+
+    public function hasExtraInfo()
+    {
+        return isset($this->extra_info);
+    }
+
+    public function clearExtraInfo()
+    {
+        unset($this->extra_info);
+    }
+
+    /**
+     * Request additional info to be retrieved for each concept in the response.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+     * @param \Clarifai\Api\ConceptExtraInfoRequest $var
+     * @return $this
+     */
+    public function setExtraInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ConceptExtraInfoRequest::class);
+        $this->extra_info = $var;
 
         return $this;
     }
