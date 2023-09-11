@@ -54,6 +54,12 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool bookmark = 10;</code>
      */
     protected $bookmark = false;
+    /**
+     * Fuzzy filter on dataset ID
+     *
+     * Generated from protobuf field <code>string id = 12;</code>
+     */
+    protected $id = '';
     protected $sort_by;
 
     /**
@@ -84,6 +90,8 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      *           Whether to order by the external id
      *     @type bool $bookmark
      *           Filter datasets by bookmark. If set, only return bookmarked datasets. Otherwise none bookmarked datasets only.
+     *     @type string $id
+     *           Fuzzy filter on dataset ID
      * }
      */
     public function __construct($data = NULL) {
@@ -397,6 +405,32 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->bookmark = $var;
+
+        return $this;
+    }
+
+    /**
+     * Fuzzy filter on dataset ID
+     *
+     * Generated from protobuf field <code>string id = 12;</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Fuzzy filter on dataset ID
+     *
+     * Generated from protobuf field <code>string id = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
 
         return $this;
     }

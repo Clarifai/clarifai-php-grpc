@@ -116,6 +116,18 @@ class ModelTypeFieldType
      * Generated from protobuf enum <code>ARRAY_OF_MODEL_CONCEPTS = 18;</code>
      */
     const ARRAY_OF_MODEL_CONCEPTS = 18;
+    /**
+     * For selecting a dataset
+     *
+     * Generated from protobuf enum <code>DATASET = 19;</code>
+     */
+    const DATASET = 19;
+    /**
+     * For selecting a dataset version
+     *
+     * Generated from protobuf enum <code>DATASET_VERSION = 20;</code>
+     */
+    const DATASET_VERSION = 20;
 
     private static $valueToName = [
         self::INVALID_MODEL_TYPE_FIELD_TYPE => 'INVALID_MODEL_TYPE_FIELD_TYPE',
@@ -136,6 +148,8 @@ class ModelTypeFieldType
         self::DATASET_ID => 'DATASET_ID',
         self::DATASET_VERSION_ID => 'DATASET_VERSION_ID',
         self::ARRAY_OF_MODEL_CONCEPTS => 'ARRAY_OF_MODEL_CONCEPTS',
+        self::DATASET => 'DATASET',
+        self::DATASET_VERSION => 'DATASET_VERSION',
     ];
 
     public static function name($value)

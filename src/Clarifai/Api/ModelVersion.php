@@ -123,6 +123,8 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      */
     protected $import_info = null;
     /**
+     * Contains the training logs if available
+     *
      * Generated from protobuf field <code>string train_log = 23;</code>
      */
     protected $train_log = '';
@@ -170,6 +172,7 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\ImportInfo $import_info
      *           Configuration used to import model from third-party toolkits
      *     @type string $train_log
+     *           Contains the training logs if available
      * }
      */
     public function __construct($data = NULL) {
@@ -778,6 +781,8 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Contains the training logs if available
+     *
      * Generated from protobuf field <code>string train_log = 23;</code>
      * @return string
      */
@@ -787,6 +792,8 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Contains the training logs if available
+     *
      * Generated from protobuf field <code>string train_log = 23;</code>
      * @param string $var
      * @return $this
