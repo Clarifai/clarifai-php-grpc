@@ -50,6 +50,13 @@ class APIPostModelOutputsCollectorSource extends \Google\Protobuf\Internal\Messa
      * Generated from protobuf field <code>string post_inputs_key_id = 5;</code>
      */
     protected $post_inputs_key_id = '';
+    /**
+     * This is a private field that defaults to the app owner for public users.
+     * If this is left blank then this collector will collect from ALL users calling the given model.
+     *
+     * Generated from protobuf field <code>string caller_user_id = 6;</code>
+     */
+    protected $caller_user_id = '';
 
     /**
      * Constructor.
@@ -71,6 +78,9 @@ class APIPostModelOutputsCollectorSource extends \Google\Protobuf\Internal\Messa
      *           This key is used to POST /inputs into your app by the collector. It can be an API key or a
      *           PAT. This needs the permissions that are needed for POST /inputs for the app_id this
      *           Collector is defined in.
+     *     @type string $caller_user_id
+     *           This is a private field that defaults to the app owner for public users.
+     *           If this is left blank then this collector will collect from ALL users calling the given model.
      * }
      */
     public function __construct($data = NULL) {
@@ -212,6 +222,34 @@ class APIPostModelOutputsCollectorSource extends \Google\Protobuf\Internal\Messa
     {
         GPBUtil::checkString($var, True);
         $this->post_inputs_key_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * This is a private field that defaults to the app owner for public users.
+     * If this is left blank then this collector will collect from ALL users calling the given model.
+     *
+     * Generated from protobuf field <code>string caller_user_id = 6;</code>
+     * @return string
+     */
+    public function getCallerUserId()
+    {
+        return $this->caller_user_id;
+    }
+
+    /**
+     * This is a private field that defaults to the app owner for public users.
+     * If this is left blank then this collector will collect from ALL users calling the given model.
+     *
+     * Generated from protobuf field <code>string caller_user_id = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCallerUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->caller_user_id = $var;
 
         return $this;
     }
