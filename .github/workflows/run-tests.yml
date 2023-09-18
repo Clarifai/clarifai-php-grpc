@@ -20,3 +20,14 @@ jobs:
         CLARIFAI_API_KEY: ${{ secrets.CLARIFAI_API_KEY }}
         CLARIFAI_GRPC_BASE: ${{ secrets.CLARIFAI_GRPC_BASE }}
       run: docker run -e CLARIFAI_API_KEY -e CLARIFAI_GRPC_BASE run-test-suite
+    - name: Slack Notify
+      if: ${{ failure() }}
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_ICON: "https://raw.githubusercontent.com/github/explore/2c7e603b797535e5ad8b4beb575ab3b7354666e1/topics/actions/actions.png"
+        SLACK_USERNAME: "GitHub Alerts"
+        SLACK_CHANNEL: "#grpc-client-repo-alerts"
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_COLOR: ${{ job.status }}
+        SLACK_MESSAGE: "Test failure"
+        SLACK_FOOTER: "Clarifai PHP GRPC Repo"
