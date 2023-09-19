@@ -32,6 +32,12 @@ class InputsDataSource extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 3;</code>
      */
     protected $input_id_conflict_resolution = 0;
+    /**
+     * Fields set in the template will also be added to all generated inputs
+     *
+     * Generated from protobuf field <code>.clarifai.api.Input input_template = 4;</code>
+     */
+    protected $input_template = null;
 
     /**
      * Constructor.
@@ -47,6 +53,8 @@ class InputsDataSource extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\DataSourceURL $url
      *     @type int $input_id_conflict_resolution
      *           How to handle input ID conflicts.
+     *     @type \Clarifai\Api\Input $input_template
+     *           Fields set in the template will also be added to all generated inputs
      * }
      */
     public function __construct($data = NULL) {
@@ -140,6 +148,42 @@ class InputsDataSource extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Clarifai\Api\InputIDConflictResolution::class);
         $this->input_id_conflict_resolution = $var;
+
+        return $this;
+    }
+
+    /**
+     * Fields set in the template will also be added to all generated inputs
+     *
+     * Generated from protobuf field <code>.clarifai.api.Input input_template = 4;</code>
+     * @return \Clarifai\Api\Input|null
+     */
+    public function getInputTemplate()
+    {
+        return $this->input_template;
+    }
+
+    public function hasInputTemplate()
+    {
+        return isset($this->input_template);
+    }
+
+    public function clearInputTemplate()
+    {
+        unset($this->input_template);
+    }
+
+    /**
+     * Fields set in the template will also be added to all generated inputs
+     *
+     * Generated from protobuf field <code>.clarifai.api.Input input_template = 4;</code>
+     * @param \Clarifai\Api\Input $var
+     * @return $this
+     */
+    public function setInputTemplate($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Input::class);
+        $this->input_template = $var;
 
         return $this;
     }

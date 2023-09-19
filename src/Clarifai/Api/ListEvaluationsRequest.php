@@ -61,6 +61,12 @@ class ListEvaluationsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string concept_ids = 15;</code>
      */
     private $concept_ids;
+    /**
+     * Whether to show failed metrics, defaults to false
+     *
+     * Generated from protobuf field <code>bool show_failed_metrics = 19;</code>
+     */
+    protected $show_failed_metrics = false;
     protected $sort_by;
 
     /**
@@ -103,6 +109,8 @@ class ListEvaluationsRequest extends \Google\Protobuf\Internal\Message
      *           Filter on dataset ID of the dataset version specified by the model version
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $concept_ids
      *           Filter on concept IDs specified in the modele version's output_info
+     *     @type bool $show_failed_metrics
+     *           Whether to show failed metrics, defaults to false
      * }
      */
     public function __construct($data = NULL) {
@@ -622,6 +630,32 @@ class ListEvaluationsRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->concept_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Whether to show failed metrics, defaults to false
+     *
+     * Generated from protobuf field <code>bool show_failed_metrics = 19;</code>
+     * @return bool
+     */
+    public function getShowFailedMetrics()
+    {
+        return $this->show_failed_metrics;
+    }
+
+    /**
+     * Whether to show failed metrics, defaults to false
+     *
+     * Generated from protobuf field <code>bool show_failed_metrics = 19;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setShowFailedMetrics($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->show_failed_metrics = $var;
 
         return $this;
     }

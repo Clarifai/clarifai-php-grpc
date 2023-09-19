@@ -430,6 +430,22 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * ListAnnotationWorkers lists users, models, and workflows (collectively
+     * known as "workers") that have added annotations to the application.
+     * @param \Clarifai\Api\ListAnnotationWorkersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListAnnotationWorkers(\Clarifai\Api\ListAnnotationWorkersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListAnnotationWorkers',
+        $argument,
+        ['\Clarifai\Api\MultiWorkerResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Get input count per status.
      * @param \Clarifai\Api\GetInputCountRequest $argument input argument
      * @param array $metadata metadata
