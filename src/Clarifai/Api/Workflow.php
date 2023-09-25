@@ -123,6 +123,12 @@ class Workflow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.BookmarkOrigin bookmark_origin = 16;</code>
      */
     protected $bookmark_origin = null;
+    /**
+     * Representative image for this workflow
+     *
+     * Generated from protobuf field <code>.clarifai.api.Image image = 17;</code>
+     */
+    protected $image = null;
 
     /**
      * Constructor.
@@ -174,6 +180,8 @@ class Workflow extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\BookmarkOrigin $bookmark_origin
      *           bookmark info. When set, this workflow is a bookmarked workflow of this app.
      *           Info in this field will allow you to find/access original workflow.
+     *     @type \Clarifai\Api\Image $image
+     *           Representative image for this workflow
      * }
      */
     public function __construct($data = NULL) {
@@ -677,6 +685,42 @@ class Workflow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\BookmarkOrigin::class);
         $this->bookmark_origin = $var;
+
+        return $this;
+    }
+
+    /**
+     * Representative image for this workflow
+     *
+     * Generated from protobuf field <code>.clarifai.api.Image image = 17;</code>
+     * @return \Clarifai\Api\Image|null
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function hasImage()
+    {
+        return isset($this->image);
+    }
+
+    public function clearImage()
+    {
+        unset($this->image);
+    }
+
+    /**
+     * Representative image for this workflow
+     *
+     * Generated from protobuf field <code>.clarifai.api.Image image = 17;</code>
+     * @param \Clarifai\Api\Image $var
+     * @return $this
+     */
+    public function setImage($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Image::class);
+        $this->image = $var;
 
         return $this;
     }

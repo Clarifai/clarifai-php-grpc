@@ -128,6 +128,12 @@ class ModelTypeFieldType
      * Generated from protobuf enum <code>DATASET_VERSION = 20;</code>
      */
     const DATASET_VERSION = 20;
+    /**
+     * To pass a string downstream, that is encrypted in the DB and API.
+     *
+     * Generated from protobuf enum <code>ENCRYPTED_STRING = 21;</code>
+     */
+    const ENCRYPTED_STRING = 21;
 
     private static $valueToName = [
         self::INVALID_MODEL_TYPE_FIELD_TYPE => 'INVALID_MODEL_TYPE_FIELD_TYPE',
@@ -150,6 +156,7 @@ class ModelTypeFieldType
         self::ARRAY_OF_MODEL_CONCEPTS => 'ARRAY_OF_MODEL_CONCEPTS',
         self::DATASET => 'DATASET',
         self::DATASET_VERSION => 'DATASET_VERSION',
+        self::ENCRYPTED_STRING => 'ENCRYPTED_STRING',
     ];
 
     public static function name($value)

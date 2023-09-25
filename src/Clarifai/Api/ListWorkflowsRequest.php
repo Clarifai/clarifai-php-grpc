@@ -41,7 +41,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $sort_ascending = false;
     /**
-     * Query various text fields that can contain the words in the query string.
+     * Query various text fields (id, description and notes) that can contain the words in the query string.
      *
      * Generated from protobuf field <code>string query = 8;</code>
      */
@@ -73,7 +73,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      */
     private $additional_fields;
     /**
-     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
      *
      * Generated from protobuf field <code>string search_term = 12;</code>
      */
@@ -112,7 +112,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      *     @type bool $sort_by_star_count
      *           Whether to order by the number of users stared the workflow
      *     @type string $query
-     *           Query various text fields that can contain the words in the query string.
+     *           Query various text fields (id, description and notes) that can contain the words in the query string.
      *     @type string $id
      *           Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
      *           Deprecated in favor of query
@@ -123,7 +123,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
      *     @type string $search_term
-     *           (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     *           (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
      *     @type bool $bookmark
      *           Filter workflows by bookmark. If set, only return bookmarked workflows. Otherwise none bookmarked workflows only.
      * }
@@ -376,7 +376,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Query various text fields that can contain the words in the query string.
+     * Query various text fields (id, description and notes) that can contain the words in the query string.
      *
      * Generated from protobuf field <code>string query = 8;</code>
      * @return string
@@ -387,7 +387,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Query various text fields that can contain the words in the query string.
+     * Query various text fields (id, description and notes) that can contain the words in the query string.
      *
      * Generated from protobuf field <code>string query = 8;</code>
      * @param string $var
@@ -512,7 +512,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
      *
      * Generated from protobuf field <code>string search_term = 12;</code>
      * @return string
@@ -523,7 +523,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
      *
      * Generated from protobuf field <code>string search_term = 12;</code>
      * @param string $var

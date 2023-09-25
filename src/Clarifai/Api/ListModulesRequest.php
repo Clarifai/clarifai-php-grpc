@@ -54,6 +54,18 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool bookmark = 10;</code>
      */
     protected $bookmark = false;
+    /**
+     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     *
+     * Generated from protobuf field <code>string name = 12;</code>
+     */
+    protected $name = '';
+    /**
+     * Filter by the application owner whose this module belongs to
+     *
+     * Generated from protobuf field <code>bool filter_by_user_id = 13;</code>
+     */
+    protected $filter_by_user_id = false;
     protected $sort_by;
 
     /**
@@ -84,6 +96,10 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
      *           Whether to order by the external id
      *     @type bool $bookmark
      *           Filter modules by bookmark. If set, only return bookmarked modules. Otherwise none bookmarked modules only.
+     *     @type string $name
+     *           Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     *     @type bool $filter_by_user_id
+     *           Filter by the application owner whose this module belongs to
      * }
      */
     public function __construct($data = NULL) {
@@ -397,6 +413,58 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->bookmark = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     *
+     * Generated from protobuf field <code>string name = 12;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     *
+     * Generated from protobuf field <code>string name = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by the application owner whose this module belongs to
+     *
+     * Generated from protobuf field <code>bool filter_by_user_id = 13;</code>
+     * @return bool
+     */
+    public function getFilterByUserId()
+    {
+        return $this->filter_by_user_id;
+    }
+
+    /**
+     * Filter by the application owner whose this module belongs to
+     *
+     * Generated from protobuf field <code>bool filter_by_user_id = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFilterByUserId($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->filter_by_user_id = $var;
 
         return $this;
     }
