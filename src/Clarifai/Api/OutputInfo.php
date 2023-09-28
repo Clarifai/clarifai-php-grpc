@@ -56,6 +56,10 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Struct params = 7;</code>
      */
     protected $params = null;
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    private $params_specs;
 
     /**
      * Constructor.
@@ -77,6 +81,7 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
      *           For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
      *           that the ModelTypeField defines. During inference, the settings contained within are sent
      *           to the model predictor to alter predictions from this Model.
+     *     @type array<\Clarifai\Api\ModelTypeField>|\Google\Protobuf\Internal\RepeatedField $params_specs
      * }
      */
     public function __construct($data = NULL) {
@@ -258,6 +263,28 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->params = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getParamsSpecs()
+    {
+        return $this->params_specs;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     * @param array<\Clarifai\Api\ModelTypeField>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setParamsSpecs($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\ModelTypeField::class);
+        $this->params_specs = $arr;
 
         return $this;
     }
