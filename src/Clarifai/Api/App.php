@@ -127,6 +127,10 @@ class App extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Image image = 22;</code>
      */
     protected $image = null;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+     */
+    protected $extra_info = null;
 
     /**
      * Constructor.
@@ -178,6 +182,7 @@ class App extends \Google\Protobuf\Internal\Message
      *           This field should be used for in-depth notes and supports up to 64Kbs.
      *     @type \Clarifai\Api\Image $image
      *           Representative image for this app
+     *     @type \Clarifai\Api\AppExtraInfo $extra_info
      * }
      */
     public function __construct($data = NULL) {
@@ -717,6 +722,38 @@ class App extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Image::class);
         $this->image = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+     * @return \Clarifai\Api\AppExtraInfo|null
+     */
+    public function getExtraInfo()
+    {
+        return $this->extra_info;
+    }
+
+    public function hasExtraInfo()
+    {
+        return isset($this->extra_info);
+    }
+
+    public function clearExtraInfo()
+    {
+        unset($this->extra_info);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+     * @param \Clarifai\Api\AppExtraInfo $var
+     * @return $this
+     */
+    public function setExtraInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\AppExtraInfo::class);
+        $this->extra_info = $var;
 
         return $this;
     }
