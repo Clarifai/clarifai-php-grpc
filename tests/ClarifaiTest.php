@@ -102,7 +102,7 @@ class ClarifaiTest extends TestCase
             $this->metadata
         )->wait();
         $this->assertEquals(0, $status->code, "Response failure: {$status->details}");
-        $this->assertEquals(StatusCode::FAILURE, $response->getStatus()->getCode());
+        $this->assertEquals(StatusCode::INPUT_DOWNLOAD_FAILED, $response->getStatus()->getCode());
     }
 
     public function testMixedSuccessPostModelOutputs()
