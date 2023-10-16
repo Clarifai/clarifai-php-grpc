@@ -57,6 +57,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *  - model_version_id
      *  - status.code
      *  - task_id
+     *  - trusted
      *  - user_id
      *  - workflow_version_id
      *
@@ -127,6 +128,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *            - model_version_id
      *            - status.code
      *            - task_id
+     *            - trusted
      *            - user_id
      *            - workflow_version_id
      *     @type \Clarifai\Api\Input $input
@@ -210,6 +212,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *  - model_version_id
      *  - status.code
      *  - task_id
+     *  - trusted
      *  - user_id
      *  - workflow_version_id
      *
@@ -266,6 +269,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *  - model_version_id
      *  - status.code
      *  - task_id
+     *  - trusted
      *  - user_id
      *  - workflow_version_id
      *
