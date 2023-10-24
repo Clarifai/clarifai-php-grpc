@@ -3316,4 +3316,18 @@ class V2Client extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Clarifai\Api\PostModelVersionsTrainingTimeEstimateRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostModelVersionsTrainingTimeEstimate(\Clarifai\Api\PostModelVersionsTrainingTimeEstimateRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostModelVersionsTrainingTimeEstimate',
+        $argument,
+        ['\Clarifai\Api\MultiTrainingTimeEstimateResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

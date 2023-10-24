@@ -34,20 +34,22 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $per_page = 0;
     /**
-     * Generated from protobuf field <code>bool starred_only = 4;</code>
-     */
-    protected $starred_only = false;
-    /**
      * Generated from protobuf field <code>repeated string additional_fields = 5;</code>
      */
     private $additional_fields;
     /**
-     * Sorting opitons:
+     * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      *
      * Generated from protobuf field <code>bool sort_ascending = 6;</code>
      */
     protected $sort_ascending = false;
+    /**
+     * Filtering options:
+     *
+     * Generated from protobuf field <code>bool starred_only = 4;</code>
+     */
+    protected $starred_only = false;
     /**
      * Filter modules by bookmark. If set, only return bookmarked modules. Otherwise none bookmarked modules only.
      *
@@ -55,15 +57,34 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $bookmark = false;
     /**
-     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the module:
+     *   - id
+     *   - description
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
      *
-     * Generated from protobuf field <code>string name = 12;</code>
+     * Generated from protobuf field <code>string search = 14;</code>
+     */
+    protected $search = '';
+    /**
+     * Filter by the id and description of the module. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string name = 12 [deprecated = true];</code>
+     * @deprecated
      */
     protected $name = '';
     /**
      * Filter by the application owner whose this module belongs to
+     * Deprecated: use search instead of name.
      *
-     * Generated from protobuf field <code>bool filter_by_user_id = 13;</code>
+     * Generated from protobuf field <code>bool filter_by_user_id = 13 [deprecated = true];</code>
+     * @deprecated
      */
     protected $filter_by_user_id = false;
     protected $sort_by;
@@ -81,10 +102,9 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
-     *     @type bool $starred_only
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *     @type bool $sort_ascending
-     *           Sorting opitons:
+     *           Sorting options:
      *           Whether to sort in ascending order. If false, will order in descending order.
      *     @type bool $sort_by_created_at
      *           Whether to order by the created_at time.
@@ -94,12 +114,27 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
      *           If neither sort option is set to true, will sort by modified_at.
      *     @type bool $sort_by_id
      *           Whether to order by the external id
+     *     @type bool $starred_only
+     *           Filtering options:
      *     @type bool $bookmark
      *           Filter modules by bookmark. If set, only return bookmarked modules. Otherwise none bookmarked modules only.
+     *     @type string $search
+     *           Searching options:
+     *           Specify a search parameter in order to perform keyword search on the
+     *           following fields of the module:
+     *             - id
+     *             - description
+     *             - user_id (unless user_app_id.user_id is already set)
+     *           Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     *           and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     *           NOTE: Both the list of fields searched and the exact keyword matching
+     *           rules are subject to change and not guaranteed to be backwards-compatible.
      *     @type string $name
-     *           Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     *           Filter by the id and description of the module. This supports wildcard queries like "gen*" to match "general" as an example.
+     *           Deprecated: use search instead.
      *     @type bool $filter_by_user_id
      *           Filter by the application owner whose this module belongs to
+     *           Deprecated: use search instead of name.
      * }
      */
     public function __construct($data = NULL) {
@@ -196,28 +231,6 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool starred_only = 4;</code>
-     * @return bool
-     */
-    public function getStarredOnly()
-    {
-        return $this->starred_only;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool starred_only = 4;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setStarredOnly($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->starred_only = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>repeated string additional_fields = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -240,7 +253,7 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sorting opitons:
+     * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      *
      * Generated from protobuf field <code>bool sort_ascending = 6;</code>
@@ -252,7 +265,7 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sorting opitons:
+     * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      *
      * Generated from protobuf field <code>bool sort_ascending = 6;</code>
@@ -392,6 +405,32 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filtering options:
+     *
+     * Generated from protobuf field <code>bool starred_only = 4;</code>
+     * @return bool
+     */
+    public function getStarredOnly()
+    {
+        return $this->starred_only;
+    }
+
+    /**
+     * Filtering options:
+     *
+     * Generated from protobuf field <code>bool starred_only = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setStarredOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->starred_only = $var;
+
+        return $this;
+    }
+
+    /**
      * Filter modules by bookmark. If set, only return bookmarked modules. Otherwise none bookmarked modules only.
      *
      * Generated from protobuf field <code>bool bookmark = 10;</code>
@@ -418,25 +457,75 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the module:
+     *   - id
+     *   - description
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
      *
-     * Generated from protobuf field <code>string name = 12;</code>
+     * Generated from protobuf field <code>string search = 14;</code>
      * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the module:
+     *   - id
+     *   - description
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     *
+     * Generated from protobuf field <code>string search = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by the id and description of the module. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string name = 12 [deprecated = true];</code>
+     * @return string
+     * @deprecated
      */
     public function getName()
     {
+        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
         return $this->name;
     }
 
     /**
-     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Filter by the id and description of the module. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
      *
-     * Generated from protobuf field <code>string name = 12;</code>
+     * Generated from protobuf field <code>string name = 12 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setName($var)
     {
+        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->name = $var;
 
@@ -445,24 +534,30 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Filter by the application owner whose this module belongs to
+     * Deprecated: use search instead of name.
      *
-     * Generated from protobuf field <code>bool filter_by_user_id = 13;</code>
+     * Generated from protobuf field <code>bool filter_by_user_id = 13 [deprecated = true];</code>
      * @return bool
+     * @deprecated
      */
     public function getFilterByUserId()
     {
+        @trigger_error('filter_by_user_id is deprecated.', E_USER_DEPRECATED);
         return $this->filter_by_user_id;
     }
 
     /**
      * Filter by the application owner whose this module belongs to
+     * Deprecated: use search instead of name.
      *
-     * Generated from protobuf field <code>bool filter_by_user_id = 13;</code>
+     * Generated from protobuf field <code>bool filter_by_user_id = 13 [deprecated = true];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setFilterByUserId($var)
     {
+        @trigger_error('filter_by_user_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->filter_by_user_id = $var;
 

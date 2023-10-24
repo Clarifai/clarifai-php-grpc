@@ -34,6 +34,12 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $per_page = 0;
     /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
+     */
+    private $additional_fields;
+    /**
      * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      *
@@ -41,20 +47,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $sort_ascending = false;
     /**
-     * Query various text fields (id, description and notes) that can contain the words in the query string.
-     *
-     * Generated from protobuf field <code>string query = 8;</code>
-     */
-    protected $query = '';
-    /**
-     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
-     * Deprecated in favor of query
-     *
-     * Generated from protobuf field <code>string id = 4 [deprecated = true];</code>
-     * @deprecated
-     */
-    protected $id = '';
-    /**
+     * Filtering options:
      * If true, we only return workflows that are handpicked by clarifai staff
      *
      * Generated from protobuf field <code>bool featured_only = 9;</code>
@@ -67,23 +60,51 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $starred_only = false;
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-     *
-     * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
-     */
-    private $additional_fields;
-    /**
-     * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
-     *
-     * Generated from protobuf field <code>string search_term = 12;</code>
-     */
-    protected $search_term = '';
-    /**
      * Filter workflows by bookmark. If set, only return bookmarked workflows. Otherwise none bookmarked workflows only.
      *
      * Generated from protobuf field <code>bool bookmark = 15;</code>
      */
     protected $bookmark = false;
+    /**
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the workflow:
+     *   - id
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     *
+     * Generated from protobuf field <code>string search = 16;</code>
+     */
+    protected $search = '';
+    /**
+     * Query various text fields (id, description and notes) that can contain the words in the query string.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string query = 8 [deprecated = true];</code>
+     * @deprecated
+     */
+    protected $query = '';
+    /**
+     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string id = 4 [deprecated = true];</code>
+     * @deprecated
+     */
+    protected $id = '';
+    /**
+     * Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string search_term = 12 [deprecated = true];</code>
+     * @deprecated
+     */
+    protected $search_term = '';
     protected $sort_by;
 
     /**
@@ -99,6 +120,8 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
      *     @type bool $sort_ascending
      *           Sorting options:
      *           Whether to sort in ascending order. If false, will order in descending order.
@@ -111,21 +134,34 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      *           Whether to order by the created_at time.
      *     @type bool $sort_by_star_count
      *           Whether to order by the number of users stared the workflow
-     *     @type string $query
-     *           Query various text fields (id, description and notes) that can contain the words in the query string.
-     *     @type string $id
-     *           Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
-     *           Deprecated in favor of query
      *     @type bool $featured_only
+     *           Filtering options:
      *           If true, we only return workflows that are handpicked by clarifai staff
      *     @type bool $starred_only
      *           If true, we only return workflows that are starred by the requesting user
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
-     *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-     *     @type string $search_term
-     *           (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
      *     @type bool $bookmark
      *           Filter workflows by bookmark. If set, only return bookmarked workflows. Otherwise none bookmarked workflows only.
+     *     @type string $search
+     *           Searching options:
+     *           Specify a search parameter in order to perform keyword search on the
+     *           following fields of the workflow:
+     *             - id
+     *             - description
+     *             - notes
+     *             - user_id (unless user_app_id.user_id is already set)
+     *           Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     *           and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     *           NOTE: Both the list of fields searched and the exact keyword matching
+     *           rules are subject to change and not guaranteed to be backwards-compatible.
+     *     @type string $query
+     *           Query various text fields (id, description and notes) that can contain the words in the query string.
+     *           Deprecated: use search instead.
+     *     @type string $id
+     *           Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     *           Deprecated: use search instead.
+     *     @type string $search_term
+     *           Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
+     *           Deprecated: use search instead.
      * }
      */
     public function __construct($data = NULL) {
@@ -217,6 +253,32 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->per_page = $var;
+
+        return $this;
+    }
+
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAdditionalFields()
+    {
+        return $this->additional_fields;
+    }
+
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAdditionalFields($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->additional_fields = $arr;
 
         return $this;
     }
@@ -376,64 +438,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Query various text fields (id, description and notes) that can contain the words in the query string.
-     *
-     * Generated from protobuf field <code>string query = 8;</code>
-     * @return string
-     */
-    public function getQuery()
-    {
-        return $this->query;
-    }
-
-    /**
-     * Query various text fields (id, description and notes) that can contain the words in the query string.
-     *
-     * Generated from protobuf field <code>string query = 8;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setQuery($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->query = $var;
-
-        return $this;
-    }
-
-    /**
-     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
-     * Deprecated in favor of query
-     *
-     * Generated from protobuf field <code>string id = 4 [deprecated = true];</code>
-     * @return string
-     * @deprecated
-     */
-    public function getId()
-    {
-        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
-        return $this->id;
-    }
-
-    /**
-     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
-     * Deprecated in favor of query
-     *
-     * Generated from protobuf field <code>string id = 4 [deprecated = true];</code>
-     * @param string $var
-     * @return $this
-     * @deprecated
-     */
-    public function setId($var)
-    {
-        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
-        $this->id = $var;
-
-        return $this;
-    }
-
-    /**
+     * Filtering options:
      * If true, we only return workflows that are handpicked by clarifai staff
      *
      * Generated from protobuf field <code>bool featured_only = 9;</code>
@@ -445,6 +450,7 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filtering options:
      * If true, we only return workflows that are handpicked by clarifai staff
      *
      * Generated from protobuf field <code>bool featured_only = 9;</code>
@@ -486,58 +492,6 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-     *
-     * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getAdditionalFields()
-    {
-        return $this->additional_fields;
-    }
-
-    /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-     *
-     * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setAdditionalFields($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->additional_fields = $arr;
-
-        return $this;
-    }
-
-    /**
-     * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
-     *
-     * Generated from protobuf field <code>string search_term = 12;</code>
-     * @return string
-     */
-    public function getSearchTerm()
-    {
-        return $this->search_term;
-    }
-
-    /**
-     * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
-     *
-     * Generated from protobuf field <code>string search_term = 12;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSearchTerm($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->search_term = $var;
-
-        return $this;
-    }
-
-    /**
      * Filter workflows by bookmark. If set, only return bookmarked workflows. Otherwise none bookmarked workflows only.
      *
      * Generated from protobuf field <code>bool bookmark = 15;</code>
@@ -559,6 +513,148 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->bookmark = $var;
+
+        return $this;
+    }
+
+    /**
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the workflow:
+     *   - id
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     *
+     * Generated from protobuf field <code>string search = 16;</code>
+     * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the workflow:
+     *   - id
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     *
+     * Generated from protobuf field <code>string search = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
+
+        return $this;
+    }
+
+    /**
+     * Query various text fields (id, description and notes) that can contain the words in the query string.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string query = 8 [deprecated = true];</code>
+     * @return string
+     * @deprecated
+     */
+    public function getQuery()
+    {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
+        return $this->query;
+    }
+
+    /**
+     * Query various text fields (id, description and notes) that can contain the words in the query string.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string query = 8 [deprecated = true];</code>
+     * @param string $var
+     * @return $this
+     * @deprecated
+     */
+    public function setQuery($var)
+    {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkString($var, True);
+        $this->query = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string id = 4 [deprecated = true];</code>
+     * @return string
+     * @deprecated
+     */
+    public function getId()
+    {
+        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
+        return $this->id;
+    }
+
+    /**
+     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string id = 4 [deprecated = true];</code>
+     * @param string $var
+     * @return $this
+     * @deprecated
+     */
+    public function setId($var)
+    {
+        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string search_term = 12 [deprecated = true];</code>
+     * @return string
+     * @deprecated
+     */
+    public function getSearchTerm()
+    {
+        @trigger_error('search_term is deprecated.', E_USER_DEPRECATED);
+        return $this->search_term;
+    }
+
+    /**
+     * Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string search_term = 12 [deprecated = true];</code>
+     * @param string $var
+     * @return $this
+     * @deprecated
+     */
+    public function setSearchTerm($var)
+    {
+        @trigger_error('search_term is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkString($var, True);
+        $this->search_term = $var;
 
         return $this;
     }

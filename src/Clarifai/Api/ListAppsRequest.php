@@ -34,7 +34,13 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $per_page = 0;
     /**
-     * Sorting opitons:
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
+     */
+    private $additional_fields;
+    /**
+     * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      *
      * Generated from protobuf field <code>bool sort_ascending = 5;</code>
@@ -42,26 +48,6 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     protected $sort_ascending = false;
     /**
      * Filtering options:
-     * Query various text fields ( id, name, description, and notes) that can contain the words in the query string
-     *
-     * Generated from protobuf field <code>string query = 8;</code>
-     */
-    protected $query = '';
-    /**
-     * Filter by the id, name and notes of the app. This supports wilcard queries like "gen*" to match "general" as an example.
-     * Deprecated in favor of query
-     *
-     * Generated from protobuf field <code>string name = 4 [deprecated = true];</code>
-     * @deprecated
-     */
-    protected $name = '';
-    /**
-     * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
-     *
-     * Generated from protobuf field <code>string id = 14;</code>
-     */
-    protected $id = '';
-    /**
      * If true, we only return apps that are handpicked by clarifai staff
      *
      * Generated from protobuf field <code>bool featured_only = 9;</code>
@@ -74,11 +60,46 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $starred_only = false;
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the application:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
      *
-     * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
+     * Generated from protobuf field <code>string search = 15;</code>
      */
-    private $additional_fields;
+    protected $search = '';
+    /**
+     * Query various text fields (id, name, description, and notes) that can contain the words in the query string
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string query = 8 [deprecated = true];</code>
+     * @deprecated
+     */
+    protected $query = '';
+    /**
+     * Filter by the id, name and notes of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string name = 4 [deprecated = true];</code>
+     * @deprecated
+     */
+    protected $name = '';
+    /**
+     * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string id = 14 [deprecated = true];</code>
+     * @deprecated
+     */
+    protected $id = '';
     protected $sort_by;
 
     /**
@@ -94,8 +115,10 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
      *     @type bool $sort_ascending
-     *           Sorting opitons:
+     *           Sorting options:
      *           Whether to sort in ascending order. If false, will order in descending order.
      *     @type bool $sort_by_name
      *           Whether to order by the name
@@ -106,20 +129,33 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      *           Whether to order by the created_at time.
      *     @type bool $sort_by_star_count
      *           Whether to order by the number of users stared the app
-     *     @type string $query
-     *           Filtering options:
-     *           Query various text fields ( id, name, description, and notes) that can contain the words in the query string
-     *     @type string $name
-     *           Filter by the id, name and notes of the app. This supports wilcard queries like "gen*" to match "general" as an example.
-     *           Deprecated in favor of query
-     *     @type string $id
-     *           Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
      *     @type bool $featured_only
+     *           Filtering options:
      *           If true, we only return apps that are handpicked by clarifai staff
      *     @type bool $starred_only
      *           If true, we only return apps that are starred by the requesting user
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
-     *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     *     @type string $search
+     *           Searching options:
+     *           Specify a search parameter in order to perform keyword search on the
+     *           following fields of the application:
+     *             - id
+     *             - name
+     *             - description
+     *             - notes
+     *             - user_id (unless user_app_id.user_id is already set)
+     *           Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     *           and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     *           NOTE: Both the list of fields searched and the exact keyword matching
+     *           rules are subject to change and not guaranteed to be backwards-compatible.
+     *     @type string $query
+     *           Query various text fields (id, name, description, and notes) that can contain the words in the query string
+     *           Deprecated: use search instead.
+     *     @type string $name
+     *           Filter by the id, name and notes of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     *           Deprecated: use search instead.
+     *     @type string $id
+     *           Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     *           Deprecated: use search instead.
      * }
      */
     public function __construct($data = NULL) {
@@ -216,7 +252,33 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sorting opitons:
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAdditionalFields()
+    {
+        return $this->additional_fields;
+    }
+
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAdditionalFields($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->additional_fields = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      *
      * Generated from protobuf field <code>bool sort_ascending = 5;</code>
@@ -228,7 +290,7 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sorting opitons:
+     * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      *
      * Generated from protobuf field <code>bool sort_ascending = 5;</code>
@@ -371,91 +433,6 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Filtering options:
-     * Query various text fields ( id, name, description, and notes) that can contain the words in the query string
-     *
-     * Generated from protobuf field <code>string query = 8;</code>
-     * @return string
-     */
-    public function getQuery()
-    {
-        return $this->query;
-    }
-
-    /**
-     * Filtering options:
-     * Query various text fields ( id, name, description, and notes) that can contain the words in the query string
-     *
-     * Generated from protobuf field <code>string query = 8;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setQuery($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->query = $var;
-
-        return $this;
-    }
-
-    /**
-     * Filter by the id, name and notes of the app. This supports wilcard queries like "gen*" to match "general" as an example.
-     * Deprecated in favor of query
-     *
-     * Generated from protobuf field <code>string name = 4 [deprecated = true];</code>
-     * @return string
-     * @deprecated
-     */
-    public function getName()
-    {
-        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
-        return $this->name;
-    }
-
-    /**
-     * Filter by the id, name and notes of the app. This supports wilcard queries like "gen*" to match "general" as an example.
-     * Deprecated in favor of query
-     *
-     * Generated from protobuf field <code>string name = 4 [deprecated = true];</code>
-     * @param string $var
-     * @return $this
-     * @deprecated
-     */
-    public function setName($var)
-    {
-        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
-        $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
-     *
-     * Generated from protobuf field <code>string id = 14;</code>
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
-     *
-     * Generated from protobuf field <code>string id = 14;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->id = $var;
-
-        return $this;
-    }
-
-    /**
      * If true, we only return apps that are handpicked by clarifai staff
      *
      * Generated from protobuf field <code>bool featured_only = 9;</code>
@@ -467,6 +444,7 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filtering options:
      * If true, we only return apps that are handpicked by clarifai staff
      *
      * Generated from protobuf field <code>bool featured_only = 9;</code>
@@ -508,27 +486,145 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the application:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
      *
-     * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>string search = 15;</code>
+     * @return string
      */
-    public function getAdditionalFields()
+    public function getSearch()
     {
-        return $this->additional_fields;
+        return $this->search;
     }
 
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the application:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
      *
-     * Generated from protobuf field <code>repeated string additional_fields = 10;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>string search = 15;</code>
+     * @param string $var
      * @return $this
      */
-    public function setAdditionalFields($var)
+    public function setSearch($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->additional_fields = $arr;
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
+
+        return $this;
+    }
+
+    /**
+     * Query various text fields (id, name, description, and notes) that can contain the words in the query string
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string query = 8 [deprecated = true];</code>
+     * @return string
+     * @deprecated
+     */
+    public function getQuery()
+    {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
+        return $this->query;
+    }
+
+    /**
+     * Query various text fields (id, name, description, and notes) that can contain the words in the query string
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string query = 8 [deprecated = true];</code>
+     * @param string $var
+     * @return $this
+     * @deprecated
+     */
+    public function setQuery($var)
+    {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkString($var, True);
+        $this->query = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by the id, name and notes of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string name = 4 [deprecated = true];</code>
+     * @return string
+     * @deprecated
+     */
+    public function getName()
+    {
+        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
+        return $this->name;
+    }
+
+    /**
+     * Filter by the id, name and notes of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string name = 4 [deprecated = true];</code>
+     * @param string $var
+     * @return $this
+     * @deprecated
+     */
+    public function setName($var)
+    {
+        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string id = 14 [deprecated = true];</code>
+     * @return string
+     * @deprecated
+     */
+    public function getId()
+    {
+        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
+        return $this->id;
+    }
+
+    /**
+     * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string id = 14 [deprecated = true];</code>
+     * @param string $var
+     * @return $this
+     * @deprecated
+     */
+    public function setId($var)
+    {
+        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
 
         return $this;
     }

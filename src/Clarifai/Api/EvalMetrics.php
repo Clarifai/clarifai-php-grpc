@@ -92,6 +92,10 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.EvalInfo eval_info = 12;</code>
      */
     protected $eval_info = null;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+     */
+    protected $extended_metrics = null;
 
     /**
      * Constructor.
@@ -122,6 +126,7 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\EvalInfo $eval_info
      *           Evaluation parameters to pass. Expected to match what
      *           is defined in the model type for the respective model.
+     *     @type \Clarifai\Api\ExtendedMetrics $extended_metrics
      * }
      */
     public function __construct($data = NULL) {
@@ -583,6 +588,38 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\EvalInfo::class);
         $this->eval_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+     * @return \Clarifai\Api\ExtendedMetrics|null
+     */
+    public function getExtendedMetrics()
+    {
+        return $this->extended_metrics;
+    }
+
+    public function hasExtendedMetrics()
+    {
+        return isset($this->extended_metrics);
+    }
+
+    public function clearExtendedMetrics()
+    {
+        unset($this->extended_metrics);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+     * @param \Clarifai\Api\ExtendedMetrics $var
+     * @return $this
+     */
+    public function setExtendedMetrics($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ExtendedMetrics::class);
+        $this->extended_metrics = $var;
 
         return $this;
     }

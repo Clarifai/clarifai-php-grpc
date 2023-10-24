@@ -34,20 +34,22 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $per_page = 0;
     /**
-     * Generated from protobuf field <code>bool starred_only = 4;</code>
-     */
-    protected $starred_only = false;
-    /**
      * Generated from protobuf field <code>repeated string additional_fields = 5;</code>
      */
     private $additional_fields;
     /**
-     * Sorting opitons:
+     * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      *
      * Generated from protobuf field <code>bool sort_ascending = 6;</code>
      */
     protected $sort_ascending = false;
+    /**
+     * Filtering options:
+     *
+     * Generated from protobuf field <code>bool starred_only = 4;</code>
+     */
+    protected $starred_only = false;
     /**
      * Filter datasets by bookmark. If set, only return bookmarked datasets. Otherwise none bookmarked datasets only.
      *
@@ -55,9 +57,27 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $bookmark = false;
     /**
-     * Fuzzy filter on dataset ID
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the dataset:
+     *   - id
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
      *
-     * Generated from protobuf field <code>string id = 12;</code>
+     * Generated from protobuf field <code>string search = 13;</code>
+     */
+    protected $search = '';
+    /**
+     * Fuzzy filter on dataset ID
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string id = 12 [deprecated = true];</code>
+     * @deprecated
      */
     protected $id = '';
     protected $sort_by;
@@ -75,10 +95,9 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
-     *     @type bool $starred_only
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *     @type bool $sort_ascending
-     *           Sorting opitons:
+     *           Sorting options:
      *           Whether to sort in ascending order. If false, will order in descending order.
      *     @type bool $sort_by_created_at
      *           Whether to order by the created_at time.
@@ -88,10 +107,25 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      *           If neither sort option is set to true, will sort by modified_at.
      *     @type bool $sort_by_id
      *           Whether to order by the external id
+     *     @type bool $starred_only
+     *           Filtering options:
      *     @type bool $bookmark
      *           Filter datasets by bookmark. If set, only return bookmarked datasets. Otherwise none bookmarked datasets only.
+     *     @type string $search
+     *           Searching options:
+     *           Specify a search parameter in order to perform keyword search on the
+     *           following fields of the dataset:
+     *             - id
+     *             - description
+     *             - notes
+     *             - user_id (unless user_app_id.user_id is already set)
+     *           Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     *           and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     *           NOTE: Both the list of fields searched and the exact keyword matching
+     *           rules are subject to change and not guaranteed to be backwards-compatible.
      *     @type string $id
      *           Fuzzy filter on dataset ID
+     *           Deprecated: use search instead.
      * }
      */
     public function __construct($data = NULL) {
@@ -188,28 +222,6 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool starred_only = 4;</code>
-     * @return bool
-     */
-    public function getStarredOnly()
-    {
-        return $this->starred_only;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool starred_only = 4;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setStarredOnly($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->starred_only = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>repeated string additional_fields = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -232,7 +244,7 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sorting opitons:
+     * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      *
      * Generated from protobuf field <code>bool sort_ascending = 6;</code>
@@ -244,7 +256,7 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sorting opitons:
+     * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      *
      * Generated from protobuf field <code>bool sort_ascending = 6;</code>
@@ -384,6 +396,32 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filtering options:
+     *
+     * Generated from protobuf field <code>bool starred_only = 4;</code>
+     * @return bool
+     */
+    public function getStarredOnly()
+    {
+        return $this->starred_only;
+    }
+
+    /**
+     * Filtering options:
+     *
+     * Generated from protobuf field <code>bool starred_only = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setStarredOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->starred_only = $var;
+
+        return $this;
+    }
+
+    /**
      * Filter datasets by bookmark. If set, only return bookmarked datasets. Otherwise none bookmarked datasets only.
      *
      * Generated from protobuf field <code>bool bookmark = 10;</code>
@@ -410,25 +448,77 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Fuzzy filter on dataset ID
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the dataset:
+     *   - id
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
      *
-     * Generated from protobuf field <code>string id = 12;</code>
+     * Generated from protobuf field <code>string search = 13;</code>
      * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the dataset:
+     *   - id
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     *
+     * Generated from protobuf field <code>string search = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
+
+        return $this;
+    }
+
+    /**
+     * Fuzzy filter on dataset ID
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string id = 12 [deprecated = true];</code>
+     * @return string
+     * @deprecated
      */
     public function getId()
     {
+        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
         return $this->id;
     }
 
     /**
      * Fuzzy filter on dataset ID
+     * Deprecated: use search instead.
      *
-     * Generated from protobuf field <code>string id = 12;</code>
+     * Generated from protobuf field <code>string id = 12 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setId($var)
     {
+        @trigger_error('id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->id = $var;
 

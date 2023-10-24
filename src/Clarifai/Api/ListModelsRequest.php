@@ -34,6 +34,12 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $per_page = 0;
     /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
+     */
+    private $additional_fields;
+    /**
      * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      *
@@ -42,24 +48,6 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     protected $sort_ascending = false;
     /**
      * Filtering options:
-     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-     *
-     * Generated from protobuf field <code>string query = 14;</code>
-     */
-    protected $query = '';
-    /**
-     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     *
-     * Generated from protobuf field <code>string name = 5;</code>
-     */
-    protected $name = '';
-    /**
-     * Extends the name filter to include the user_id of the application owner that the model belongs to.
-     *
-     * Generated from protobuf field <code>bool filter_by_user_id = 22;</code>
-     */
-    protected $filter_by_user_id = false;
-    /**
      * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
      * supported.
      *
@@ -123,12 +111,6 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      */
     private $languages;
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-     *
-     * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
-     */
-    private $additional_fields;
-    /**
      * Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
      * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
      *
@@ -143,6 +125,47 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool bookmark = 26;</code>
      */
     protected $bookmark = false;
+    /**
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the model:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     *
+     * Generated from protobuf field <code>string search = 27;</code>
+     */
+    protected $search = '';
+    /**
+     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string query = 14 [deprecated = true];</code>
+     * @deprecated
+     */
+    protected $query = '';
+    /**
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string name = 5 [deprecated = true];</code>
+     * @deprecated
+     */
+    protected $name = '';
+    /**
+     * Extends the name filter to include the user_id of the application owner that the model belongs to.
+     * Deprecated: use search instead of name.
+     *
+     * Generated from protobuf field <code>bool filter_by_user_id = 22 [deprecated = true];</code>
+     * @deprecated
+     */
+    protected $filter_by_user_id = false;
     protected $sort_by;
 
     /**
@@ -158,6 +181,8 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      *     @type bool $sort_ascending
      *           Sorting options:
      *           Whether to sort in ascending order. If false, will order in descending order.
@@ -172,14 +197,8 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           Whether to order by the created_at
      *     @type bool $sort_by_star_count
      *           Whether to order by count of stars
-     *     @type string $query
-     *           Filtering options:
-     *           Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-     *     @type string $name
-     *           Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     *     @type bool $filter_by_user_id
-     *           Extends the name filter to include the user_id of the application owner that the model belongs to.
      *     @type string $model_type_id
+     *           Filtering options:
      *           Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
      *           supported.
      *     @type bool $trained_only
@@ -202,8 +221,6 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           List of use_case tags to filter by
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $languages
      *           List of language tags to filter by
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
-     *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      *     @type bool $dont_fetch_from_main
      *           Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
      *           away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
@@ -211,6 +228,28 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           Filter models by bookmark. If set, only return bookmarked models. Otherwise none bookmarked models only.
      *           Note: you can not filter `trained_only` and bookmark at the same time.
      *           When filter by bookmark, we will return trained and untrained models.
+     *     @type string $search
+     *           Searching options:
+     *           Specify a search parameter in order to perform keyword search on the
+     *           following fields of the model:
+     *             - id
+     *             - name
+     *             - description
+     *             - notes
+     *             - user_id (unless user_app_id.user_id is already set)
+     *           Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     *           and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     *           NOTE: Both the list of fields searched and the exact keyword matching
+     *           rules are subject to change and not guaranteed to be backwards-compatible.
+     *     @type string $query
+     *           Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+     *           Deprecated: use search instead.
+     *     @type string $name
+     *           Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     *           Deprecated: use search instead.
+     *     @type bool $filter_by_user_id
+     *           Extends the name filter to include the user_id of the application owner that the model belongs to.
+     *           Deprecated: use search instead of name.
      * }
      */
     public function __construct($data = NULL) {
@@ -302,6 +341,32 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->per_page = $var;
+
+        return $this;
+    }
+
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAdditionalFields()
+    {
+        return $this->additional_fields;
+    }
+
+    /**
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     *
+     * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAdditionalFields($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->additional_fields = $arr;
 
         return $this;
     }
@@ -493,85 +558,6 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Filtering options:
-     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-     *
-     * Generated from protobuf field <code>string query = 14;</code>
-     * @return string
-     */
-    public function getQuery()
-    {
-        return $this->query;
-    }
-
-    /**
-     * Filtering options:
-     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-     *
-     * Generated from protobuf field <code>string query = 14;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setQuery($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->query = $var;
-
-        return $this;
-    }
-
-    /**
-     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     *
-     * Generated from protobuf field <code>string name = 5;</code>
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     *
-     * Generated from protobuf field <code>string name = 5;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Extends the name filter to include the user_id of the application owner that the model belongs to.
-     *
-     * Generated from protobuf field <code>bool filter_by_user_id = 22;</code>
-     * @return bool
-     */
-    public function getFilterByUserId()
-    {
-        return $this->filter_by_user_id;
-    }
-
-    /**
-     * Extends the name filter to include the user_id of the application owner that the model belongs to.
-     *
-     * Generated from protobuf field <code>bool filter_by_user_id = 22;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setFilterByUserId($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->filter_by_user_id = $var;
-
-        return $this;
-    }
-
-    /**
      * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
      * supported.
      *
@@ -584,6 +570,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filtering options:
      * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
      * supported.
      *
@@ -838,32 +825,6 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-     *
-     * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getAdditionalFields()
-    {
-        return $this->additional_fields;
-    }
-
-    /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-     *
-     * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setAdditionalFields($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->additional_fields = $arr;
-
-        return $this;
-    }
-
-    /**
      * Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
      * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
      *
@@ -917,6 +878,150 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->bookmark = $var;
+
+        return $this;
+    }
+
+    /**
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the model:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     *
+     * Generated from protobuf field <code>string search = 27;</code>
+     * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the model:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     *
+     * Generated from protobuf field <code>string search = 27;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
+
+        return $this;
+    }
+
+    /**
+     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string query = 14 [deprecated = true];</code>
+     * @return string
+     * @deprecated
+     */
+    public function getQuery()
+    {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
+        return $this->query;
+    }
+
+    /**
+     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string query = 14 [deprecated = true];</code>
+     * @param string $var
+     * @return $this
+     * @deprecated
+     */
+    public function setQuery($var)
+    {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkString($var, True);
+        $this->query = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string name = 5 [deprecated = true];</code>
+     * @return string
+     * @deprecated
+     */
+    public function getName()
+    {
+        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
+        return $this->name;
+    }
+
+    /**
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     *
+     * Generated from protobuf field <code>string name = 5 [deprecated = true];</code>
+     * @param string $var
+     * @return $this
+     * @deprecated
+     */
+    public function setName($var)
+    {
+        @trigger_error('name is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Extends the name filter to include the user_id of the application owner that the model belongs to.
+     * Deprecated: use search instead of name.
+     *
+     * Generated from protobuf field <code>bool filter_by_user_id = 22 [deprecated = true];</code>
+     * @return bool
+     * @deprecated
+     */
+    public function getFilterByUserId()
+    {
+        @trigger_error('filter_by_user_id is deprecated.', E_USER_DEPRECATED);
+        return $this->filter_by_user_id;
+    }
+
+    /**
+     * Extends the name filter to include the user_id of the application owner that the model belongs to.
+     * Deprecated: use search instead of name.
+     *
+     * Generated from protobuf field <code>bool filter_by_user_id = 22 [deprecated = true];</code>
+     * @param bool $var
+     * @return $this
+     * @deprecated
+     */
+    public function setFilterByUserId($var)
+    {
+        @trigger_error('filter_by_user_id is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkBool($var);
+        $this->filter_by_user_id = $var;
 
         return $this;
     }
