@@ -45,6 +45,12 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $job_role = '';
     /**
+     * This specifies user intent when registering on clarifai
+     *
+     * Generated from protobuf field <code>string intention = 24;</code>
+     */
+    protected $intention = '';
+    /**
      * Generated from protobuf field <code>string bill_type = 7 [deprecated = true];</code>
      * @deprecated
      */
@@ -146,6 +152,8 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type string $company_name
      *     @type string $job_title
      *     @type string $job_role
+     *     @type string $intention
+     *           This specifies user intent when registering on clarifai
      *     @type string $bill_type
      *     @type \Google\Protobuf\Timestamp $created_at
      *           When the user was created. We follow the XXXX timestamp
@@ -338,6 +346,32 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->job_role = $var;
+
+        return $this;
+    }
+
+    /**
+     * This specifies user intent when registering on clarifai
+     *
+     * Generated from protobuf field <code>string intention = 24;</code>
+     * @return string
+     */
+    public function getIntention()
+    {
+        return $this->intention;
+    }
+
+    /**
+     * This specifies user intent when registering on clarifai
+     *
+     * Generated from protobuf field <code>string intention = 24;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIntention($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->intention = $var;
 
         return $this;
     }
