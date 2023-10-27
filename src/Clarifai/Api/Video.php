@@ -40,8 +40,10 @@ class Video extends \Google\Protobuf\Internal\Message
     /**
      * URL of thumbnail image, which is currently frame at position of 1s. This field is currently
      * used only in response.
+     * Deprecated in favour of thumbnail_hosted, which also contains alternate sizes of thumbnail
      *
-     * Generated from protobuf field <code>string thumbnail_url = 5;</code>
+     * Generated from protobuf field <code>string thumbnail_url = 5 [deprecated = true];</code>
+     * @deprecated
      */
     protected $thumbnail_url = '';
     /**
@@ -51,6 +53,13 @@ class Video extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.HostedURL hosted = 6;</code>
      */
     protected $hosted = null;
+    /**
+     * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+     * This field is currently used only in response.
+     *
+     * Generated from protobuf field <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+     */
+    protected $hosted_thumbnail = null;
     /**
      * video info
      *
@@ -78,9 +87,13 @@ class Video extends \Google\Protobuf\Internal\Message
      *     @type string $thumbnail_url
      *           URL of thumbnail image, which is currently frame at position of 1s. This field is currently
      *           used only in response.
+     *           Deprecated in favour of thumbnail_hosted, which also contains alternate sizes of thumbnail
      *     @type \Clarifai\Api\HostedURL $hosted
      *           The hosted field lists original video hosted in Clarifai storage. This field is currently used
      *           only in response.
+     *     @type \Clarifai\Api\HostedURL $hosted_thumbnail
+     *           The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+     *           This field is currently used only in response.
      *     @type \Clarifai\Api\VideoInfo $video_info
      *           video info
      * }
@@ -179,25 +192,31 @@ class Video extends \Google\Protobuf\Internal\Message
     /**
      * URL of thumbnail image, which is currently frame at position of 1s. This field is currently
      * used only in response.
+     * Deprecated in favour of thumbnail_hosted, which also contains alternate sizes of thumbnail
      *
-     * Generated from protobuf field <code>string thumbnail_url = 5;</code>
+     * Generated from protobuf field <code>string thumbnail_url = 5 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getThumbnailUrl()
     {
+        @trigger_error('thumbnail_url is deprecated.', E_USER_DEPRECATED);
         return $this->thumbnail_url;
     }
 
     /**
      * URL of thumbnail image, which is currently frame at position of 1s. This field is currently
      * used only in response.
+     * Deprecated in favour of thumbnail_hosted, which also contains alternate sizes of thumbnail
      *
-     * Generated from protobuf field <code>string thumbnail_url = 5;</code>
+     * Generated from protobuf field <code>string thumbnail_url = 5 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setThumbnailUrl($var)
     {
+        @trigger_error('thumbnail_url is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->thumbnail_url = $var;
 
@@ -238,6 +257,44 @@ class Video extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\HostedURL::class);
         $this->hosted = $var;
+
+        return $this;
+    }
+
+    /**
+     * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+     * This field is currently used only in response.
+     *
+     * Generated from protobuf field <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+     * @return \Clarifai\Api\HostedURL|null
+     */
+    public function getHostedThumbnail()
+    {
+        return $this->hosted_thumbnail;
+    }
+
+    public function hasHostedThumbnail()
+    {
+        return isset($this->hosted_thumbnail);
+    }
+
+    public function clearHostedThumbnail()
+    {
+        unset($this->hosted_thumbnail);
+    }
+
+    /**
+     * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+     * This field is currently used only in response.
+     *
+     * Generated from protobuf field <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+     * @param \Clarifai\Api\HostedURL $var
+     * @return $this
+     */
+    public function setHostedThumbnail($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\HostedURL::class);
+        $this->hosted_thumbnail = $var;
 
         return $this;
     }
