@@ -32,7 +32,6 @@ class Rank extends \Google\Protobuf\Internal\Message
      *  - data.embeddings[].vector[]
      *  - data.image.base64[]
      *  - data.image.url
-     *  - data.lopq_code[]
      *  - data.text.raw
      *  - input_id
      *  - model_version_id
@@ -60,7 +59,6 @@ class Rank extends \Google\Protobuf\Internal\Message
      *            - data.embeddings[].vector[]
      *            - data.image.base64[]
      *            - data.image.url
-     *            - data.lopq_code[]
      *            - data.text.raw
      *            - input_id
      *            - model_version_id
@@ -109,7 +107,6 @@ class Rank extends \Google\Protobuf\Internal\Message
      *  - data.embeddings[].vector[]
      *  - data.image.base64[]
      *  - data.image.url
-     *  - data.lopq_code[]
      *  - data.text.raw
      *  - input_id
      *  - model_version_id
@@ -142,7 +139,6 @@ class Rank extends \Google\Protobuf\Internal\Message
      *  - data.embeddings[].vector[]
      *  - data.image.base64[]
      *  - data.image.url
-     *  - data.lopq_code[]
      *  - data.text.raw
      *  - input_id
      *  - model_version_id

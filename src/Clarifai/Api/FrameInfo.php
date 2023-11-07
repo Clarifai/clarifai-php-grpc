@@ -16,10 +16,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class FrameInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The index of the frame. Keep in mind that this depends on the sampling rate used during
-     * processing.
+     * Deprecated. Use Time instead.
+     * The index of the frame, informational and optional.
+     * Depends on the sampling rate used during processing
+     * May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
      *
-     * Generated from protobuf field <code>uint32 index = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @deprecated
      */
     protected $index = 0;
     /**
@@ -37,8 +40,10 @@ class FrameInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $index
-     *           The index of the frame. Keep in mind that this depends on the sampling rate used during
-     *           processing.
+     *           Deprecated. Use Time instead.
+     *           The index of the frame, informational and optional.
+     *           Depends on the sampling rate used during processing
+     *           May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
      *     @type int $time
      *           time in the video in milliseconds. This is independent of the sampling rates used during
      *           processing.
@@ -50,27 +55,35 @@ class FrameInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The index of the frame. Keep in mind that this depends on the sampling rate used during
-     * processing.
+     * Deprecated. Use Time instead.
+     * The index of the frame, informational and optional.
+     * Depends on the sampling rate used during processing
+     * May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
      *
-     * Generated from protobuf field <code>uint32 index = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return int
+     * @deprecated
      */
     public function getIndex()
     {
+        @trigger_error('index is deprecated.', E_USER_DEPRECATED);
         return $this->index;
     }
 
     /**
-     * The index of the frame. Keep in mind that this depends on the sampling rate used during
-     * processing.
+     * Deprecated. Use Time instead.
+     * The index of the frame, informational and optional.
+     * Depends on the sampling rate used during processing
+     * May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
      *
-     * Generated from protobuf field <code>uint32 index = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setIndex($var)
     {
+        @trigger_error('index is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkUint32($var);
         $this->index = $var;
 
