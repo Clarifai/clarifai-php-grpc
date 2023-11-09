@@ -27,7 +27,9 @@ class PatchDatasetsRequest extends \Google\Protobuf\Internal\Message
     private $datasets;
     /**
      * The action to perform on the patched objects
-     * Supported values: 'overwrite' and 'merge'
+     * Supported values: 'overwrite', 'merge', and 'remove'.
+     * Note that 'remove' can only be used to remove the dataset image by setting
+     * 'image.url' in the request to the current value returned for that dataset.
      *
      * Generated from protobuf field <code>string action = 3;</code>
      */
@@ -44,7 +46,9 @@ class PatchDatasetsRequest extends \Google\Protobuf\Internal\Message
      *           List of datasets that are requested to be updated.
      *     @type string $action
      *           The action to perform on the patched objects
-     *           Supported values: 'overwrite' and 'merge'
+     *           Supported values: 'overwrite', 'merge', and 'remove'.
+     *           Note that 'remove' can only be used to remove the dataset image by setting
+     *           'image.url' in the request to the current value returned for that dataset.
      * }
      */
     public function __construct($data = NULL) {
@@ -112,7 +116,9 @@ class PatchDatasetsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The action to perform on the patched objects
-     * Supported values: 'overwrite' and 'merge'
+     * Supported values: 'overwrite', 'merge', and 'remove'.
+     * Note that 'remove' can only be used to remove the dataset image by setting
+     * 'image.url' in the request to the current value returned for that dataset.
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @return string
@@ -124,7 +130,9 @@ class PatchDatasetsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The action to perform on the patched objects
-     * Supported values: 'overwrite' and 'merge'
+     * Supported values: 'overwrite', 'merge', and 'remove'.
+     * Note that 'remove' can only be used to remove the dataset image by setting
+     * 'image.url' in the request to the current value returned for that dataset.
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @param string $var

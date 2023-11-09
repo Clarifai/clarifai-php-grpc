@@ -25,7 +25,9 @@ class PatchModulesRequest extends \Google\Protobuf\Internal\Message
     private $modules;
     /**
      * The action to perform on the patched objects
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the module image by setting
+     * 'image.url' in the request to the current value returned for that module.
      *
      * Generated from protobuf field <code>string action = 3;</code>
      */
@@ -41,7 +43,9 @@ class PatchModulesRequest extends \Google\Protobuf\Internal\Message
      *     @type array<\Clarifai\Api\Module>|\Google\Protobuf\Internal\RepeatedField $modules
      *     @type string $action
      *           The action to perform on the patched objects
-     *           For now actions 'merge', 'overwrite', and 'remove' are supported
+     *           Supported values: 'overwrite' and 'remove'.
+     *           Note that 'remove' can only be used to remove the module image by setting
+     *           'image.url' in the request to the current value returned for that module.
      * }
      */
     public function __construct($data = NULL) {
@@ -105,7 +109,9 @@ class PatchModulesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The action to perform on the patched objects
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the module image by setting
+     * 'image.url' in the request to the current value returned for that module.
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @return string
@@ -117,7 +123,9 @@ class PatchModulesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The action to perform on the patched objects
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the module image by setting
+     * 'image.url' in the request to the current value returned for that module.
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @param string $var

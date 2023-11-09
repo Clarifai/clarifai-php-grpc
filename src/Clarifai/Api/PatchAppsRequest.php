@@ -25,7 +25,9 @@ class PatchAppsRequest extends \Google\Protobuf\Internal\Message
     private $apps;
     /**
      * The action to perform on the patched App objects except App.Metadata
-     * For now only action 'overwrite' is supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the app image by setting
+     * 'image.url' in the request to the current value returned for that app.
      *
      * Generated from protobuf field <code>string action = 3;</code>
      */
@@ -53,7 +55,9 @@ class PatchAppsRequest extends \Google\Protobuf\Internal\Message
      *     @type array<\Clarifai\Api\App>|\Google\Protobuf\Internal\RepeatedField $apps
      *     @type string $action
      *           The action to perform on the patched App objects except App.Metadata
-     *           For now only action 'overwrite' is supported
+     *           Supported values: 'overwrite' and 'remove'.
+     *           Note that 'remove' can only be used to remove the app image by setting
+     *           'image.url' in the request to the current value returned for that app.
      *     @type \Clarifai\Api\PatchAction $metadata_action
      *           The action to perform on the patched App.Metadata
      *     @type bool $reindex
@@ -121,7 +125,9 @@ class PatchAppsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The action to perform on the patched App objects except App.Metadata
-     * For now only action 'overwrite' is supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the app image by setting
+     * 'image.url' in the request to the current value returned for that app.
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @return string
@@ -133,7 +139,9 @@ class PatchAppsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The action to perform on the patched App objects except App.Metadata
-     * For now only action 'overwrite' is supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the app image by setting
+     * 'image.url' in the request to the current value returned for that app.
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @param string $var

@@ -26,6 +26,9 @@ class PatchModelsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The action to perform on the patched objects
      * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * Note that 'remove' can be used to remove the model image by setting
+     * 'image.url' in the request to the current value returned for that model.
+     * This cannot be used in a request that is patching other fields as well.
      *
      * Generated from protobuf field <code>string action = 3;</code>
      */
@@ -42,6 +45,9 @@ class PatchModelsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $action
      *           The action to perform on the patched objects
      *           For now actions 'merge', 'overwrite', and 'remove' are supported
+     *           Note that 'remove' can be used to remove the model image by setting
+     *           'image.url' in the request to the current value returned for that model.
+     *           This cannot be used in a request that is patching other fields as well.
      * }
      */
     public function __construct($data = NULL) {
@@ -106,6 +112,9 @@ class PatchModelsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The action to perform on the patched objects
      * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * Note that 'remove' can be used to remove the model image by setting
+     * 'image.url' in the request to the current value returned for that model.
+     * This cannot be used in a request that is patching other fields as well.
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @return string
@@ -118,6 +127,9 @@ class PatchModelsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The action to perform on the patched objects
      * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * Note that 'remove' can be used to remove the model image by setting
+     * 'image.url' in the request to the current value returned for that model.
+     * This cannot be used in a request that is patching other fields as well.
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @param string $var
