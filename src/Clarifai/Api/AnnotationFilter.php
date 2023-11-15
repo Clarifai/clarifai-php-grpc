@@ -52,11 +52,11 @@ class AnnotationFilter extends \Google\Protobuf\Internal\Message
      */
     protected $app_id = '';
     /**
-     * The saved search that this filter uses.
+     * The search that this filter uses.
      *
-     * Generated from protobuf field <code>.clarifai.api.Search saved_search = 8;</code>
+     * Generated from protobuf field <code>.clarifai.api.Search search = 9;</code>
      */
-    protected $saved_search = null;
+    protected $search = null;
 
     /**
      * Constructor.
@@ -78,8 +78,8 @@ class AnnotationFilter extends \Google\Protobuf\Internal\Message
      *           The user the annotation filter belongs to.
      *     @type string $app_id
      *           The app the annotation filter belongs to.
-     *     @type \Clarifai\Api\Search $saved_search
-     *           The saved search that this filter uses.
+     *     @type \Clarifai\Api\Search $search
+     *           The search that this filter uses.
      * }
      */
     public function __construct($data = NULL) {
@@ -246,37 +246,37 @@ class AnnotationFilter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The saved search that this filter uses.
+     * The search that this filter uses.
      *
-     * Generated from protobuf field <code>.clarifai.api.Search saved_search = 8;</code>
+     * Generated from protobuf field <code>.clarifai.api.Search search = 9;</code>
      * @return \Clarifai\Api\Search|null
      */
-    public function getSavedSearch()
+    public function getSearch()
     {
-        return $this->saved_search;
+        return $this->search;
     }
 
-    public function hasSavedSearch()
+    public function hasSearch()
     {
-        return isset($this->saved_search);
+        return isset($this->search);
     }
 
-    public function clearSavedSearch()
+    public function clearSearch()
     {
-        unset($this->saved_search);
+        unset($this->search);
     }
 
     /**
-     * The saved search that this filter uses.
+     * The search that this filter uses.
      *
-     * Generated from protobuf field <code>.clarifai.api.Search saved_search = 8;</code>
+     * Generated from protobuf field <code>.clarifai.api.Search search = 9;</code>
      * @param \Clarifai\Api\Search $var
      * @return $this
      */
-    public function setSavedSearch($var)
+    public function setSearch($var)
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Search::class);
-        $this->saved_search = $var;
+        $this->search = $var;
 
         return $this;
     }

@@ -128,6 +128,13 @@ class App extends \Google\Protobuf\Internal\Message
      */
     protected $image = null;
     /**
+     * An app marked as a template can be duplicated by any user that can see it,
+     * including all visible resources within it.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue is_template = 25;</code>
+     */
+    protected $is_template = null;
+    /**
      * Generated from protobuf field <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
      */
     protected $extra_info = null;
@@ -182,6 +189,9 @@ class App extends \Google\Protobuf\Internal\Message
      *           This field should be used for in-depth notes and supports up to 64Kbs.
      *     @type \Clarifai\Api\Image $image
      *           Representative image for this app
+     *     @type \Google\Protobuf\BoolValue $is_template
+     *           An app marked as a template can be duplicated by any user that can see it,
+     *           including all visible resources within it.
      *     @type \Clarifai\Api\AppExtraInfo $extra_info
      * }
      */
@@ -725,6 +735,73 @@ class App extends \Google\Protobuf\Internal\Message
 
         return $this;
     }
+
+    /**
+     * An app marked as a template can be duplicated by any user that can see it,
+     * including all visible resources within it.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue is_template = 25;</code>
+     * @return \Google\Protobuf\BoolValue|null
+     */
+    public function getIsTemplate()
+    {
+        return $this->is_template;
+    }
+
+    public function hasIsTemplate()
+    {
+        return isset($this->is_template);
+    }
+
+    public function clearIsTemplate()
+    {
+        unset($this->is_template);
+    }
+
+    /**
+     * Returns the unboxed value from <code>getIsTemplate()</code>
+
+     * An app marked as a template can be duplicated by any user that can see it,
+     * including all visible resources within it.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue is_template = 25;</code>
+     * @return bool|null
+     */
+    public function getIsTemplateUnwrapped()
+    {
+        return $this->readWrapperValue("is_template");
+    }
+
+    /**
+     * An app marked as a template can be duplicated by any user that can see it,
+     * including all visible resources within it.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue is_template = 25;</code>
+     * @param \Google\Protobuf\BoolValue $var
+     * @return $this
+     */
+    public function setIsTemplate($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\BoolValue::class);
+        $this->is_template = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * An app marked as a template can be duplicated by any user that can see it,
+     * including all visible resources within it.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue is_template = 25;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setIsTemplateUnwrapped($var)
+    {
+        $this->writeWrapperValue("is_template", $var);
+        return $this;}
 
     /**
      * Generated from protobuf field <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>

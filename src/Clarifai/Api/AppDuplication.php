@@ -22,20 +22,37 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
-     * if new_app_name is empty, the name will be the same as this id.
-     * You can not set this if existing_app_id is set.
+     * The ID of an existing app you want to copy data into.
+     * If not provided, then we will create a new application as the destination instead.
+     * The various new_app_* fields can be used to set fields of this new application.
+     *
+     * Generated from protobuf field <code>string existing_app_id = 8;</code>
+     */
+    protected $existing_app_id = '';
+    /**
+     * The ID to use when creating a new application.
+     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+     * If not provided, then it will be generated automatically.
      *
      * Generated from protobuf field <code>string new_app_id = 2;</code>
      */
     protected $new_app_id = '';
     /**
-     * the name of new app. If provided, we will create a new application with this name.
-     * You can not set this if existing_app_id is set.
+     * The name to use when creating a new application.
+     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+     * If not provided, then the ID of the new application is also used as the name.
      *
      * Generated from protobuf field <code>string new_app_name = 3;</code>
      */
     protected $new_app_name = '';
+    /**
+     * The description to use when creating a new application.
+     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+     * If not provided, then the description of the source application is copied.
+     *
+     * Generated from protobuf field <code>string new_app_description = 10;</code>
+     */
+    protected $new_app_description = '';
     /**
      * the status of app duplication
      *
@@ -61,14 +78,6 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      */
     protected $filter = null;
     /**
-     * the id of existing app you want to copy data into.
-     * you can not set this if either new_app_id or new_app_name is set.
-     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
-     *
-     * Generated from protobuf field <code>string existing_app_id = 8;</code>
-     */
-    protected $existing_app_id = '';
-    /**
      * contains progress for each requested filter
      *
      * Generated from protobuf field <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -83,13 +92,22 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           the id of app duplication
+     *     @type string $existing_app_id
+     *           The ID of an existing app you want to copy data into.
+     *           If not provided, then we will create a new application as the destination instead.
+     *           The various new_app_* fields can be used to set fields of this new application.
      *     @type string $new_app_id
-     *           the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
-     *           if new_app_name is empty, the name will be the same as this id.
-     *           You can not set this if existing_app_id is set.
+     *           The ID to use when creating a new application.
+     *           You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+     *           If not provided, then it will be generated automatically.
      *     @type string $new_app_name
-     *           the name of new app. If provided, we will create a new application with this name.
-     *           You can not set this if existing_app_id is set.
+     *           The name to use when creating a new application.
+     *           You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+     *           If not provided, then the ID of the new application is also used as the name.
+     *     @type string $new_app_description
+     *           The description to use when creating a new application.
+     *           You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+     *           If not provided, then the description of the source application is copied.
      *     @type \Clarifai\Api\Status\Status $status
      *           the status of app duplication
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -98,10 +116,6 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *           The last time when is the status got updated
      *     @type \Clarifai\Api\AppDuplicationFilters $filter
      *           Only copy resources depending on the filters
-     *     @type string $existing_app_id
-     *           the id of existing app you want to copy data into.
-     *           you can not set this if either new_app_id or new_app_name is set.
-     *           if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
      *     @type array<\Clarifai\Api\AppCopyProgress>|\Google\Protobuf\Internal\RepeatedField $progress
      *           contains progress for each requested filter
      * }
@@ -138,9 +152,39 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
-     * if new_app_name is empty, the name will be the same as this id.
-     * You can not set this if existing_app_id is set.
+     * The ID of an existing app you want to copy data into.
+     * If not provided, then we will create a new application as the destination instead.
+     * The various new_app_* fields can be used to set fields of this new application.
+     *
+     * Generated from protobuf field <code>string existing_app_id = 8;</code>
+     * @return string
+     */
+    public function getExistingAppId()
+    {
+        return $this->existing_app_id;
+    }
+
+    /**
+     * The ID of an existing app you want to copy data into.
+     * If not provided, then we will create a new application as the destination instead.
+     * The various new_app_* fields can be used to set fields of this new application.
+     *
+     * Generated from protobuf field <code>string existing_app_id = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExistingAppId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->existing_app_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * The ID to use when creating a new application.
+     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+     * If not provided, then it will be generated automatically.
      *
      * Generated from protobuf field <code>string new_app_id = 2;</code>
      * @return string
@@ -151,9 +195,9 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
-     * if new_app_name is empty, the name will be the same as this id.
-     * You can not set this if existing_app_id is set.
+     * The ID to use when creating a new application.
+     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+     * If not provided, then it will be generated automatically.
      *
      * Generated from protobuf field <code>string new_app_id = 2;</code>
      * @param string $var
@@ -168,8 +212,9 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the name of new app. If provided, we will create a new application with this name.
-     * You can not set this if existing_app_id is set.
+     * The name to use when creating a new application.
+     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+     * If not provided, then the ID of the new application is also used as the name.
      *
      * Generated from protobuf field <code>string new_app_name = 3;</code>
      * @return string
@@ -180,8 +225,9 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the name of new app. If provided, we will create a new application with this name.
-     * You can not set this if existing_app_id is set.
+     * The name to use when creating a new application.
+     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+     * If not provided, then the ID of the new application is also used as the name.
      *
      * Generated from protobuf field <code>string new_app_name = 3;</code>
      * @param string $var
@@ -191,6 +237,36 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->new_app_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * The description to use when creating a new application.
+     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+     * If not provided, then the description of the source application is copied.
+     *
+     * Generated from protobuf field <code>string new_app_description = 10;</code>
+     * @return string
+     */
+    public function getNewAppDescription()
+    {
+        return $this->new_app_description;
+    }
+
+    /**
+     * The description to use when creating a new application.
+     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+     * If not provided, then the description of the source application is copied.
+     *
+     * Generated from protobuf field <code>string new_app_description = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNewAppDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->new_app_description = $var;
 
         return $this;
     }
@@ -335,36 +411,6 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\AppDuplicationFilters::class);
         $this->filter = $var;
-
-        return $this;
-    }
-
-    /**
-     * the id of existing app you want to copy data into.
-     * you can not set this if either new_app_id or new_app_name is set.
-     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
-     *
-     * Generated from protobuf field <code>string existing_app_id = 8;</code>
-     * @return string
-     */
-    public function getExistingAppId()
-    {
-        return $this->existing_app_id;
-    }
-
-    /**
-     * the id of existing app you want to copy data into.
-     * you can not set this if either new_app_id or new_app_name is set.
-     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
-     *
-     * Generated from protobuf field <code>string existing_app_id = 8;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setExistingAppId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->existing_app_id = $var;
 
         return $this;
     }
