@@ -27,6 +27,12 @@ class TrainInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Dataset dataset = 2;</code>
      */
     protected $dataset = null;
+    /**
+     * The model to resume training from.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Model resume_from_model = 3;</code>
+     */
+    protected $resume_from_model = null;
 
     /**
      * Constructor.
@@ -40,6 +46,8 @@ class TrainInfo extends \Google\Protobuf\Internal\Message
      *           contained within are sent to the training processor to alter the training process.
      *     @type \Clarifai\Api\Dataset $dataset
      *           The dataset and dataset version this model version was or will be trained on
+     *     @type \Clarifai\Api\Model $resume_from_model
+     *           The model to resume training from.
      * }
      */
     public function __construct($data = NULL) {
@@ -119,6 +127,42 @@ class TrainInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Dataset::class);
         $this->dataset = $var;
+
+        return $this;
+    }
+
+    /**
+     * The model to resume training from.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Model resume_from_model = 3;</code>
+     * @return \Clarifai\Api\Model|null
+     */
+    public function getResumeFromModel()
+    {
+        return $this->resume_from_model;
+    }
+
+    public function hasResumeFromModel()
+    {
+        return isset($this->resume_from_model);
+    }
+
+    public function clearResumeFromModel()
+    {
+        unset($this->resume_from_model);
+    }
+
+    /**
+     * The model to resume training from.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Model resume_from_model = 3;</code>
+     * @param \Clarifai\Api\Model $var
+     * @return $this
+     */
+    public function setResumeFromModel($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Model::class);
+        $this->resume_from_model = $var;
 
         return $this;
     }

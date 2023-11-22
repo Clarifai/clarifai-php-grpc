@@ -23,6 +23,17 @@ class MultiCollaboratorsResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.Collaborator collaborators = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     private $collaborators;
+    /**
+     * The owner of the application.
+     * When listing users that have access to the application, i.e. collaborators,
+     * it is often relevant to also include the application owner, so return
+     * their information here for convenience.
+     * Note: app_owner is only returned by ListCollaborators and only if the
+     * owner is a regular user, not an organization.
+     *
+     * Generated from protobuf field <code>.clarifai.api.User app_owner = 3;</code>
+     */
+    protected $app_owner = null;
 
     /**
      * Constructor.
@@ -32,6 +43,13 @@ class MultiCollaboratorsResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *     @type array<\Clarifai\Api\Collaborator>|\Google\Protobuf\Internal\RepeatedField $collaborators
+     *     @type \Clarifai\Api\User $app_owner
+     *           The owner of the application.
+     *           When listing users that have access to the application, i.e. collaborators,
+     *           it is often relevant to also include the application owner, so return
+     *           their information here for convenience.
+     *           Note: app_owner is only returned by ListCollaborators and only if the
+     *           owner is a regular user, not an organization.
      * }
      */
     public function __construct($data = NULL) {
@@ -89,6 +107,52 @@ class MultiCollaboratorsResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Collaborator::class);
         $this->collaborators = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The owner of the application.
+     * When listing users that have access to the application, i.e. collaborators,
+     * it is often relevant to also include the application owner, so return
+     * their information here for convenience.
+     * Note: app_owner is only returned by ListCollaborators and only if the
+     * owner is a regular user, not an organization.
+     *
+     * Generated from protobuf field <code>.clarifai.api.User app_owner = 3;</code>
+     * @return \Clarifai\Api\User|null
+     */
+    public function getAppOwner()
+    {
+        return $this->app_owner;
+    }
+
+    public function hasAppOwner()
+    {
+        return isset($this->app_owner);
+    }
+
+    public function clearAppOwner()
+    {
+        unset($this->app_owner);
+    }
+
+    /**
+     * The owner of the application.
+     * When listing users that have access to the application, i.e. collaborators,
+     * it is often relevant to also include the application owner, so return
+     * their information here for convenience.
+     * Note: app_owner is only returned by ListCollaborators and only if the
+     * owner is a regular user, not an organization.
+     *
+     * Generated from protobuf field <code>.clarifai.api.User app_owner = 3;</code>
+     * @param \Clarifai\Api\User $var
+     * @return $this
+     */
+    public function setAppOwner($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\User::class);
+        $this->app_owner = $var;
 
         return $this;
     }

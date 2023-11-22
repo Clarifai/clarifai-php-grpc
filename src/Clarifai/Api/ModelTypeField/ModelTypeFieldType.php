@@ -74,7 +74,6 @@ class ModelTypeFieldType
     const ARRAY_OF_NUMBERS = 11;
     /**
      * For selecting the embed_model_version_id for context based models.
-     * This is a string type in the API request.
      *
      * Generated from protobuf enum <code>WORKFLOW_EMBED_MODELS = 12;</code>
      */
@@ -134,6 +133,12 @@ class ModelTypeFieldType
      * Generated from protobuf enum <code>ENCRYPTED_STRING = 21;</code>
      */
     const ENCRYPTED_STRING = 21;
+    /**
+     * For selecting a model version of the same model type to resume training from. 
+     *
+     * Generated from protobuf enum <code>CHECKPOINT_MODEL = 22;</code>
+     */
+    const CHECKPOINT_MODEL = 22;
 
     private static $valueToName = [
         self::INVALID_MODEL_TYPE_FIELD_TYPE => 'INVALID_MODEL_TYPE_FIELD_TYPE',
@@ -157,6 +162,7 @@ class ModelTypeFieldType
         self::DATASET => 'DATASET',
         self::DATASET_VERSION => 'DATASET_VERSION',
         self::ENCRYPTED_STRING => 'ENCRYPTED_STRING',
+        self::CHECKPOINT_MODEL => 'CHECKPOINT_MODEL',
     ];
 
     public static function name($value)

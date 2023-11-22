@@ -60,6 +60,12 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $starred_only = false;
     /**
+     * If true, we only return apps that are marked as a template by the app owner.
+     *
+     * Generated from protobuf field <code>bool template_only = 16;</code>
+     */
+    protected $template_only = false;
+    /**
      * Searching options:
      * Specify a search parameter in order to perform keyword search on the
      * following fields of the application:
@@ -134,6 +140,8 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      *           If true, we only return apps that are handpicked by clarifai staff
      *     @type bool $starred_only
      *           If true, we only return apps that are starred by the requesting user
+     *     @type bool $template_only
+     *           If true, we only return apps that are marked as a template by the app owner.
      *     @type string $search
      *           Searching options:
      *           Specify a search parameter in order to perform keyword search on the
@@ -481,6 +489,32 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->starred_only = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, we only return apps that are marked as a template by the app owner.
+     *
+     * Generated from protobuf field <code>bool template_only = 16;</code>
+     * @return bool
+     */
+    public function getTemplateOnly()
+    {
+        return $this->template_only;
+    }
+
+    /**
+     * If true, we only return apps that are marked as a template by the app owner.
+     *
+     * Generated from protobuf field <code>bool template_only = 16;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setTemplateOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->template_only = $var;
 
         return $this;
     }

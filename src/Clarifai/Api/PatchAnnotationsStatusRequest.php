@@ -20,25 +20,35 @@ class PatchAnnotationsStatusRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_app_id = null;
     /**
-     * Annotation Status code
+     * Filter by user IDs
      *
-     * Generated from protobuf field <code>.clarifai.api.status.StatusCode status_code = 2;</code>
-     */
-    protected $status_code = 0;
-    /**
      * Generated from protobuf field <code>repeated string user_ids = 3;</code>
      */
     private $user_ids;
     /**
+     * Filter by task ID
+     *
      * Generated from protobuf field <code>string task_id = 4;</code>
      */
     protected $task_id = '';
+    /**
+     * Filter by Status codes
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+     */
+    private $status_codes;
     /**
      * 'overwrite' is supported
      *
      * Generated from protobuf field <code>string action = 5;</code>
      */
     protected $action = '';
+    /**
+     * Update filtered annotations to this status
+     *
+     * Generated from protobuf field <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+     */
+    protected $status_code = 0;
 
     /**
      * Constructor.
@@ -47,12 +57,16 @@ class PatchAnnotationsStatusRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type int $status_code
-     *           Annotation Status code
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $user_ids
+     *           Filter by user IDs
      *     @type string $task_id
+     *           Filter by task ID
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $status_codes
+     *           Filter by Status codes
      *     @type string $action
      *           'overwrite' is supported
+     *     @type int $status_code
+     *           Update filtered annotations to this status
      * }
      */
     public function __construct($data = NULL) {
@@ -93,32 +107,8 @@ class PatchAnnotationsStatusRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Annotation Status code
+     * Filter by user IDs
      *
-     * Generated from protobuf field <code>.clarifai.api.status.StatusCode status_code = 2;</code>
-     * @return int
-     */
-    public function getStatusCode()
-    {
-        return $this->status_code;
-    }
-
-    /**
-     * Annotation Status code
-     *
-     * Generated from protobuf field <code>.clarifai.api.status.StatusCode status_code = 2;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setStatusCode($var)
-    {
-        GPBUtil::checkEnum($var, \Clarifai\Api\Status\StatusCode::class);
-        $this->status_code = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>repeated string user_ids = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -128,6 +118,8 @@ class PatchAnnotationsStatusRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filter by user IDs
+     *
      * Generated from protobuf field <code>repeated string user_ids = 3;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -141,6 +133,8 @@ class PatchAnnotationsStatusRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filter by task ID
+     *
      * Generated from protobuf field <code>string task_id = 4;</code>
      * @return string
      */
@@ -150,6 +144,8 @@ class PatchAnnotationsStatusRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filter by task ID
+     *
      * Generated from protobuf field <code>string task_id = 4;</code>
      * @param string $var
      * @return $this
@@ -158,6 +154,32 @@ class PatchAnnotationsStatusRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->task_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by Status codes
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getStatusCodes()
+    {
+        return $this->status_codes;
+    }
+
+    /**
+     * Filter by Status codes
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setStatusCodes($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Clarifai\Api\Status\StatusCode::class);
+        $this->status_codes = $arr;
 
         return $this;
     }
@@ -184,6 +206,32 @@ class PatchAnnotationsStatusRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->action = $var;
+
+        return $this;
+    }
+
+    /**
+     * Update filtered annotations to this status
+     *
+     * Generated from protobuf field <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+     * @return int
+     */
+    public function getStatusCode()
+    {
+        return $this->status_code;
+    }
+
+    /**
+     * Update filtered annotations to this status
+     *
+     * Generated from protobuf field <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatusCode($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\Status\StatusCode::class);
+        $this->status_code = $var;
 
         return $this;
     }
