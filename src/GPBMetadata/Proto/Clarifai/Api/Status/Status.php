@@ -18,8 +18,8 @@ class Status
         \GPBMetadata\Proto\Clarifai\Api\Status\StatusCode::initOnce();
         $pool->internalAddGeneratedFile(
             '
-œ
-&proto/clarifai/api/status/status.protoclarifai.api.status+proto/clarifai/api/status/status_code.proto"›
+µ
+&proto/clarifai/api/status/status.protoclarifai.api.status+proto/clarifai/api/status/status_code.proto"´
 Status-
 code (2.clarifai.api.status.StatusCode
 description (	
@@ -29,7 +29,9 @@ class Status
 time_remaining (
 req_id (	
 internal_details (	B€œ\'>
-redirect_info	 (2!.clarifai.api.status.RedirectInfoB€œ\'"d
+redirect_info	 (2!.clarifai.api.status.RedirectInfoB€œ\'
+developer_notes
+ (	"d
 RedirectInfo
 url (	
 resource_type (	

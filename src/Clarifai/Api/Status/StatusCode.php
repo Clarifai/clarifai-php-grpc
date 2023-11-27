@@ -46,6 +46,13 @@ class StatusCode
      */
     const MOVED = 10050;
     /**
+     *SUCCESS_WARNING_API_DEPRECATED = 10001;
+     *SUCCESS_WARNING_CLIENT_DEPRECATED = 10002;
+     *
+     * Generated from protobuf enum <code>TEAPOT = 10060;</code>
+     */
+    const TEAPOT = 10060;
+    /**
      * Clarifai Connection Codes: 11xxx
      *
      * Generated from protobuf enum <code>CONN_ACCOUNT_ISSUES = 11000;</code>
@@ -1651,6 +1658,7 @@ class StatusCode
         self::TRY_AGAIN => 'TRY_AGAIN',
         self::NOT_IMPLEMENTED => 'NOT_IMPLEMENTED',
         self::MOVED => 'MOVED',
+        self::TEAPOT => 'TEAPOT',
         self::CONN_ACCOUNT_ISSUES => 'CONN_ACCOUNT_ISSUES',
         self::CONN_TOKEN_INVALID => 'CONN_TOKEN_INVALID',
         self::CONN_CREDENTIALS_INVALID => 'CONN_CREDENTIALS_INVALID',

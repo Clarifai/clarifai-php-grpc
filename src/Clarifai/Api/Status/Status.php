@@ -68,6 +68,12 @@ class Status extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
      */
     protected $redirect_info = null;
+    /**
+     * Notes for developer.
+     *
+     * Generated from protobuf field <code>string developer_notes = 10;</code>
+     */
+    protected $developer_notes = '';
 
     /**
      * Constructor.
@@ -94,6 +100,8 @@ class Status extends \Google\Protobuf\Internal\Message
      *           Internal Annotation (do not set in production, for internal Clarifai use only).
      *     @type \Clarifai\Api\Status\RedirectInfo $redirect_info
      *           Resource location info for redirect, when resource location has been changed.
+     *     @type string $developer_notes
+     *           Notes for developer.
      * }
      */
     public function __construct($data = NULL) {
@@ -343,6 +351,32 @@ class Status extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Status\RedirectInfo::class);
         $this->redirect_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Notes for developer.
+     *
+     * Generated from protobuf field <code>string developer_notes = 10;</code>
+     * @return string
+     */
+    public function getDeveloperNotes()
+    {
+        return $this->developer_notes;
+    }
+
+    /**
+     * Notes for developer.
+     *
+     * Generated from protobuf field <code>string developer_notes = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDeveloperNotes($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->developer_notes = $var;
 
         return $this;
     }
