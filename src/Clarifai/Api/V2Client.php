@@ -2975,21 +2975,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Get a specific job.
-     * @param \Clarifai\Api\GetDatasetInputsSearchAddJobRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function GetDatasetInputsSearchAddJob(\Clarifai\Api\GetDatasetInputsSearchAddJobRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/GetDatasetInputsSearchAddJob',
-        $argument,
-        ['\Clarifai\Api\SingleDatasetInputsSearchAddJobResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * List next non-labeled and unassigned inputs from task's dataset
      * @param \Clarifai\Api\ListNextTaskAssignmentsRequest $argument input argument
      * @param array $metadata metadata

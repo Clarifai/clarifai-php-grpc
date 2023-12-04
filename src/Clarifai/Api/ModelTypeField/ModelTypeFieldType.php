@@ -134,7 +134,7 @@ class ModelTypeFieldType
      */
     const ENCRYPTED_STRING = 21;
     /**
-     * For selecting a model version of the same model type to resume training from. 
+     * For selecting a model version of the same model type to resume training from.
      *
      * Generated from protobuf enum <code>CHECKPOINT_MODEL = 22;</code>
      */

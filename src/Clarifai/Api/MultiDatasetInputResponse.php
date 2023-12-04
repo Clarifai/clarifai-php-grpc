@@ -24,9 +24,9 @@ class MultiDatasetInputResponse extends \Google\Protobuf\Internal\Message
      */
     private $dataset_inputs;
     /**
-     * Generated from protobuf field <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
+     * Generated from protobuf field <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
      */
-    protected $dataset_inputs_search_add_job = null;
+    protected $bulk_operation = null;
 
     /**
      * Constructor.
@@ -36,7 +36,7 @@ class MultiDatasetInputResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *     @type array<\Clarifai\Api\DatasetInput>|\Google\Protobuf\Internal\RepeatedField $dataset_inputs
-     *     @type \Clarifai\Api\DatasetInputsSearchAddJob $dataset_inputs_search_add_job
+     *     @type \Clarifai\Api\BulkOperation $bulk_operation
      * }
      */
     public function __construct($data = NULL) {
@@ -99,33 +99,33 @@ class MultiDatasetInputResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
-     * @return \Clarifai\Api\DatasetInputsSearchAddJob|null
+     * Generated from protobuf field <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
+     * @return \Clarifai\Api\BulkOperation|null
      */
-    public function getDatasetInputsSearchAddJob()
+    public function getBulkOperation()
     {
-        return $this->dataset_inputs_search_add_job;
+        return $this->bulk_operation;
     }
 
-    public function hasDatasetInputsSearchAddJob()
+    public function hasBulkOperation()
     {
-        return isset($this->dataset_inputs_search_add_job);
+        return isset($this->bulk_operation);
     }
 
-    public function clearDatasetInputsSearchAddJob()
+    public function clearBulkOperation()
     {
-        unset($this->dataset_inputs_search_add_job);
+        unset($this->bulk_operation);
     }
 
     /**
-     * Generated from protobuf field <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
-     * @param \Clarifai\Api\DatasetInputsSearchAddJob $var
+     * Generated from protobuf field <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
+     * @param \Clarifai\Api\BulkOperation $var
      * @return $this
      */
-    public function setDatasetInputsSearchAddJob($var)
+    public function setBulkOperation($var)
     {
-        GPBUtil::checkMessage($var, \Clarifai\Api\DatasetInputsSearchAddJob::class);
-        $this->dataset_inputs_search_add_job = $var;
+        GPBUtil::checkMessage($var, \Clarifai\Api\BulkOperation::class);
+        $this->bulk_operation = $var;
 
         return $this;
     }
