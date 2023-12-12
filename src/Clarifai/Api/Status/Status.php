@@ -20,13 +20,15 @@ class Status extends \Google\Protobuf\Internal\Message
      */
     protected $code = 0;
     /**
-     * A longer description of the error.
+     * A short description of the error.
      *
      * Generated from protobuf field <code>string description = 2;</code>
      */
     protected $description = '';
     /**
      * More details of the given error.
+     * These details may be exposed to non-technical users.
+     * For technical details, try to use developer_notes field.
      *
      * Generated from protobuf field <code>string details = 3;</code>
      */
@@ -51,7 +53,7 @@ class Status extends \Google\Protobuf\Internal\Message
      */
     protected $time_remaining = 0;
     /**
-     * If we want to return a request id in the base status field
+     * A request ID may be present, to help monitoring and tracking requests
      *
      * Generated from protobuf field <code>string req_id = 7;</code>
      */
@@ -70,6 +72,8 @@ class Status extends \Google\Protobuf\Internal\Message
     protected $redirect_info = null;
     /**
      * Notes for developer.
+     * These notes are rather technical details for developers how to interpret the status,
+     * e.g. why an error occurred and how to avoid getting the error.
      *
      * Generated from protobuf field <code>string developer_notes = 10;</code>
      */
@@ -84,9 +88,11 @@ class Status extends \Google\Protobuf\Internal\Message
      *     @type int $code
      *           Status code from internal codes.
      *     @type string $description
-     *           A longer description of the error.
+     *           A short description of the error.
      *     @type string $details
      *           More details of the given error.
+     *           These details may be exposed to non-technical users.
+     *           For technical details, try to use developer_notes field.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $stack_trace
      *           For some environment we may return a stack trace to help debug
      *           any issues.
@@ -95,13 +101,15 @@ class Status extends \Google\Protobuf\Internal\Message
      *     @type int $time_remaining
      *           if status is pending, how much time is remaining (in seconds)
      *     @type string $req_id
-     *           If we want to return a request id in the base status field
+     *           A request ID may be present, to help monitoring and tracking requests
      *     @type string $internal_details
      *           Internal Annotation (do not set in production, for internal Clarifai use only).
      *     @type \Clarifai\Api\Status\RedirectInfo $redirect_info
      *           Resource location info for redirect, when resource location has been changed.
      *     @type string $developer_notes
      *           Notes for developer.
+     *           These notes are rather technical details for developers how to interpret the status,
+     *           e.g. why an error occurred and how to avoid getting the error.
      * }
      */
     public function __construct($data = NULL) {
@@ -136,7 +144,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A longer description of the error.
+     * A short description of the error.
      *
      * Generated from protobuf field <code>string description = 2;</code>
      * @return string
@@ -147,7 +155,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A longer description of the error.
+     * A short description of the error.
      *
      * Generated from protobuf field <code>string description = 2;</code>
      * @param string $var
@@ -163,6 +171,8 @@ class Status extends \Google\Protobuf\Internal\Message
 
     /**
      * More details of the given error.
+     * These details may be exposed to non-technical users.
+     * For technical details, try to use developer_notes field.
      *
      * Generated from protobuf field <code>string details = 3;</code>
      * @return string
@@ -174,6 +184,8 @@ class Status extends \Google\Protobuf\Internal\Message
 
     /**
      * More details of the given error.
+     * These details may be exposed to non-technical users.
+     * For technical details, try to use developer_notes field.
      *
      * Generated from protobuf field <code>string details = 3;</code>
      * @param string $var
@@ -268,7 +280,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If we want to return a request id in the base status field
+     * A request ID may be present, to help monitoring and tracking requests
      *
      * Generated from protobuf field <code>string req_id = 7;</code>
      * @return string
@@ -279,7 +291,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If we want to return a request id in the base status field
+     * A request ID may be present, to help monitoring and tracking requests
      *
      * Generated from protobuf field <code>string req_id = 7;</code>
      * @param string $var
@@ -357,6 +369,8 @@ class Status extends \Google\Protobuf\Internal\Message
 
     /**
      * Notes for developer.
+     * These notes are rather technical details for developers how to interpret the status,
+     * e.g. why an error occurred and how to avoid getting the error.
      *
      * Generated from protobuf field <code>string developer_notes = 10;</code>
      * @return string
@@ -368,6 +382,8 @@ class Status extends \Google\Protobuf\Internal\Message
 
     /**
      * Notes for developer.
+     * These notes are rather technical details for developers how to interpret the status,
+     * e.g. why an error occurred and how to avoid getting the error.
      *
      * Generated from protobuf field <code>string developer_notes = 10;</code>
      * @param string $var

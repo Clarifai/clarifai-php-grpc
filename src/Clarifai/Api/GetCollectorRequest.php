@@ -20,8 +20,6 @@ class GetCollectorRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_app_id = null;
     /**
-     *The collecgtor id
-     *
      * Generated from protobuf field <code>string collector_id = 2;</code>
      */
     protected $collector_id = '';
@@ -34,7 +32,6 @@ class GetCollectorRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $collector_id
-     *          The collecgtor id
      * }
      */
     public function __construct($data = NULL) {
@@ -75,8 +72,6 @@ class GetCollectorRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *The collecgtor id
-     *
      * Generated from protobuf field <code>string collector_id = 2;</code>
      * @return string
      */
@@ -86,8 +81,6 @@ class GetCollectorRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *The collecgtor id
-     *
      * Generated from protobuf field <code>string collector_id = 2;</code>
      * @param string $var
      * @return $this

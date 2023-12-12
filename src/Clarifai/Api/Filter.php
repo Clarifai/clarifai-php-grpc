@@ -25,41 +25,85 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * FILTER by annotation information.
      * ########## Supported fields ##########
-     *  - annotation_info - allows searching by empty annotation info
-     *    note that searching by empty annotation info will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
-     *  - annotation_info.fields - filter by annotation info
+     *  # Filter by ID fields
+     *  - id                                      - example: `{"id": "xyz"}`
+     *  - input_id
+     *  - model_version_id
+     *  - task_id
+     *  - user_id
+     *  - workflow_version_id
+     *  # Filter by other top-level fields
+     *  - annotation_info                         - allows searching by empty annotation-info, i.e. `{"data": "annotation_info": {}}`;
+     *                                              note that searching by empty annotation-info will actually not influence the search results.
+     *                                              however, in order to be user-friendly, we still support searching by empty annotation-info.
+     *  - annotation_info.fields                  - filter by annotation info
+     *  - input_level                             - filter only input-level annotations
+     *  - status.code                             - filter by annotation status code
+     *  - trusted                                 - filter only trusted annotations
+     *  # Filter by space-time info fields, i.e. region, frames and time-segments
+     *  - data                                    - filter only annotations without space-time info, e.g. classifications
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {}}`
+     *  - data.frames[].frame_info                - filter only frame annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"frames": [{"frame_info": {}}]}}`
+     *  - data.regions[].region_info.bounding_box - filter only bounding box annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"bounding_box":{}}}]}}`
+     *  - data.regions[].region_info.mask         - filter only mask annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"mask":{}}}]}}`
+     *  - data.regions[].region_info.point        - filter only point annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"point":{}}}]}}`
+     *  - data.regions[].region_info.polygon      - filter only polygon annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"polygon":{}}}]}}`
+     *  - data.regions[].region_info.span         - filter only span annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"span":{}}}]}}`
+     *  - data.time_segments[].time_info          - filter only time-segment annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"time_segments": [{"time_info": {}}]}}`
+     *  # Filter by other data fields
      *  - data.clusters[].id
      *  - data.concepts[].id
      *  - data.concepts[].name
      *  - data.concepts[].value
-     *  - data.frames[].frame_info - filter by frame annotations
      *  - data.geo.geo_box[].geo_point.latitude
      *  - data.geo.geo_box[].geo_point.longitude
      *  - data.geo.geo_limit.type
      *  - data.geo.geo_limit.value
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
-     *  - data.metadata.fields - filter by metadata. metadata key&value fields are OR-ed.
-     *  - data.regions[].region_info.bounding_box - filter by bounding box annotations
-     *  - data.regions[].region_info.mask - filter by mask annotations
-     *  - data.regions[].region_info.point - filter by point annotations
-     *  - data.regions[].region_info.polygon - filter by polygon annotations
-     *  - data.regions[].region_info.span - filter by span annotations
-     *  - data.text - filter by text annotations
-     *  - data.time_segments[].time_info - filter by time-segment annotations
-     *  - id
-     *  - input_id
-     *  - input_level
-     *  - model_version_id
-     *  - status.code
-     *  - task_id
-     *  - trusted
-     *  - user_id
-     *  - workflow_version_id
+     *  - data.metadata                           - allow search with empty metadata, i.e. `{"data": "metadata": {}}`;
+     *                                              note that searching by empty metadata will actually not influence the search results;
+     *                                              however, in order to be user-friendly, we still support searching by empty metadata.
+     *  - data.metadata.fields                    - filter by metadata
+     *                                            - Important to note: metadata key&value fields are OR-ed.
+     *                                            - example with 1 metadata key: searching by
+     *                                                      `{
+     *                                                      `  "data": {
+     *                                                      `    "metadata": {
+     *                                                      `      "fields": {
+     *                                                      `        "foo": {
+     *                                                      `          "string_value": "bar"
+     *                                                      `        },
+     *                                                      `      }
+     *                                                      `    }
+     *                                                      `  }
+     *                                                      `}
+     *                                                      will result in a search condition like `metadata includes {"foo": "bar}`;
+     *                                            - example with 2 metadata keys: searching by
+     *                                                      `{
+     *                                                      `  "data": {
+     *                                                      `    "metadata": {
+     *                                                      `      "fields": {
+     *                                                      `        "foo1": {
+     *                                                      `          "string_value": "bar2"
+     *                                                      `        },
+     *                                                      `        "foo2": {
+     *                                                      `          "string_value": "bar2"
+     *                                                      `        }
+     *                                                      `      }
+     *                                                      `    }
+     *                                                      `  }
+     *                                                      `}
+     *                                                      will result in a search condition like `(metadata includes {"foo1": "bar1"}) OR (metadata includes {"foo2": "bar2"})`.
+     *  - data.text                               - filter only text annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"text": {}}}`
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
      */
@@ -67,12 +111,18 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * FILTER by input information.
      * ########## Supported fields ##########
-     *  - data.audio - filter audio inputs
-     *  - data.image - filter image inputs
-     *  - data.text - filter text inputs
-     *  - data.video - filter video inputs
-     *  - dataset_ids[] - filter by dataset IDs
-     *  - status.code - filter by input status
+     *  - data.audio                              - filter only audio inputs
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"audio": {}}`
+     *  - data.image                              - filter only image inputs
+     *                                            - enable using `{"image": {}}`
+     *  - data.text                               - filter only text inputs
+     *                                            - enable using `{"text": {}}`
+     *  - data.video                              - filter only video inputs
+     *                                            - enable using `{"video": {}}`
+     *  - dataset_ids[]                           - filter by dataset IDs
+     *                                            - example: `{"dataset_ids": ["d1", "d2"]}` will filter for inputs in d1 OR d2
+     *  - status.code                             - filter by input status
+     *                                            - example: `{"status": {"code": 30000}}` to filter only for SUCCESS inputs
      *
      * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
      */
@@ -96,50 +146,100 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Annotation $annotation
      *           FILTER by annotation information.
      *           ########## Supported fields ##########
-     *            - annotation_info - allows searching by empty annotation info
-     *              note that searching by empty annotation info will actually not influence the search results.
-     *              however, in order to be user-friendly, we are still supporting searching by empty annotation info.
-     *            - annotation_info.fields - filter by annotation info
+     *            # Filter by ID fields
+     *            - id                                      - example: `{"id": "xyz"}`
+     *            - input_id
+     *            - model_version_id
+     *            - task_id
+     *            - user_id
+     *            - workflow_version_id
+     *            # Filter by other top-level fields
+     *            - annotation_info                         - allows searching by empty annotation-info, i.e. `{"data": "annotation_info": {}}`;
+     *                                                        note that searching by empty annotation-info will actually not influence the search results.
+     *                                                        however, in order to be user-friendly, we still support searching by empty annotation-info.
+     *            - annotation_info.fields                  - filter by annotation info
+     *            - input_level                             - filter only input-level annotations
+     *            - status.code                             - filter by annotation status code
+     *            - trusted                                 - filter only trusted annotations
+     *            # Filter by space-time info fields, i.e. region, frames and time-segments
+     *            - data                                    - filter only annotations without space-time info, e.g. classifications
+     *                                                      - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {}}`
+     *            - data.frames[].frame_info                - filter only frame annotations
+     *                                                      - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"frames": [{"frame_info": {}}]}}`
+     *            - data.regions[].region_info.bounding_box - filter only bounding box annotations
+     *                                                      - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"bounding_box":{}}}]}}`
+     *            - data.regions[].region_info.mask         - filter only mask annotations
+     *                                                      - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"mask":{}}}]}}`
+     *            - data.regions[].region_info.point        - filter only point annotations
+     *                                                      - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"point":{}}}]}}`
+     *            - data.regions[].region_info.polygon      - filter only polygon annotations
+     *                                                      - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"polygon":{}}}]}}`
+     *            - data.regions[].region_info.span         - filter only span annotations
+     *                                                      - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"span":{}}}]}}`
+     *            - data.time_segments[].time_info          - filter only time-segment annotations
+     *                                                      - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"time_segments": [{"time_info": {}}]}}`
+     *            # Filter by other data fields
      *            - data.clusters[].id
      *            - data.concepts[].id
      *            - data.concepts[].name
      *            - data.concepts[].value
-     *            - data.frames[].frame_info - filter by frame annotations
      *            - data.geo.geo_box[].geo_point.latitude
      *            - data.geo.geo_box[].geo_point.longitude
      *            - data.geo.geo_limit.type
      *            - data.geo.geo_limit.value
      *            - data.geo.geo_point.latitude
      *            - data.geo.geo_point.longitude
-     *            - data.metadata - allow search with empty metadata
-     *              note that searching by empty metadata will actually not influence the search results.
-     *              however, in order to be user-friendly, we are still supporting searching by empty metadata.
-     *            - data.metadata.fields - filter by metadata. metadata key&value fields are OR-ed.
-     *            - data.regions[].region_info.bounding_box - filter by bounding box annotations
-     *            - data.regions[].region_info.mask - filter by mask annotations
-     *            - data.regions[].region_info.point - filter by point annotations
-     *            - data.regions[].region_info.polygon - filter by polygon annotations
-     *            - data.regions[].region_info.span - filter by span annotations
-     *            - data.text - filter by text annotations
-     *            - data.time_segments[].time_info - filter by time-segment annotations
-     *            - id
-     *            - input_id
-     *            - input_level
-     *            - model_version_id
-     *            - status.code
-     *            - task_id
-     *            - trusted
-     *            - user_id
-     *            - workflow_version_id
+     *            - data.metadata                           - allow search with empty metadata, i.e. `{"data": "metadata": {}}`;
+     *                                                        note that searching by empty metadata will actually not influence the search results;
+     *                                                        however, in order to be user-friendly, we still support searching by empty metadata.
+     *            - data.metadata.fields                    - filter by metadata
+     *                                                      - Important to note: metadata key&value fields are OR-ed.
+     *                                                      - example with 1 metadata key: searching by
+     *                                                                `{
+     *                                                                `  "data": {
+     *                                                                `    "metadata": {
+     *                                                                `      "fields": {
+     *                                                                `        "foo": {
+     *                                                                `          "string_value": "bar"
+     *                                                                `        },
+     *                                                                `      }
+     *                                                                `    }
+     *                                                                `  }
+     *                                                                `}
+     *                                                                will result in a search condition like `metadata includes {"foo": "bar}`;
+     *                                                      - example with 2 metadata keys: searching by
+     *                                                                `{
+     *                                                                `  "data": {
+     *                                                                `    "metadata": {
+     *                                                                `      "fields": {
+     *                                                                `        "foo1": {
+     *                                                                `          "string_value": "bar2"
+     *                                                                `        },
+     *                                                                `        "foo2": {
+     *                                                                `          "string_value": "bar2"
+     *                                                                `        }
+     *                                                                `      }
+     *                                                                `    }
+     *                                                                `  }
+     *                                                                `}
+     *                                                                will result in a search condition like `(metadata includes {"foo1": "bar1"}) OR (metadata includes {"foo2": "bar2"})`.
+     *            - data.text                               - filter only text annotations
+     *                                                      - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"text": {}}}`
      *     @type \Clarifai\Api\Input $input
      *           FILTER by input information.
      *           ########## Supported fields ##########
-     *            - data.audio - filter audio inputs
-     *            - data.image - filter image inputs
-     *            - data.text - filter text inputs
-     *            - data.video - filter video inputs
-     *            - dataset_ids[] - filter by dataset IDs
-     *            - status.code - filter by input status
+     *            - data.audio                              - filter only audio inputs
+     *                                                      - in order to enable this, you need to set the field to an empty object, i.e. `{"audio": {}}`
+     *            - data.image                              - filter only image inputs
+     *                                                      - enable using `{"image": {}}`
+     *            - data.text                               - filter only text inputs
+     *                                                      - enable using `{"text": {}}`
+     *            - data.video                              - filter only video inputs
+     *                                                      - enable using `{"video": {}}`
+     *            - dataset_ids[]                           - filter by dataset IDs
+     *                                                      - example: `{"dataset_ids": ["d1", "d2"]}` will filter for inputs in d1 OR d2
+     *            - status.code                             - filter by input status
+     *                                                      - example: `{"status": {"code": 30000}}` to filter only for SUCCESS inputs
      *     @type \Clarifai\Api\TimeRange $last_updated_time_range
      *           Filter by annotation last updated time range.
      * }
@@ -180,41 +280,85 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * FILTER by annotation information.
      * ########## Supported fields ##########
-     *  - annotation_info - allows searching by empty annotation info
-     *    note that searching by empty annotation info will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
-     *  - annotation_info.fields - filter by annotation info
+     *  # Filter by ID fields
+     *  - id                                      - example: `{"id": "xyz"}`
+     *  - input_id
+     *  - model_version_id
+     *  - task_id
+     *  - user_id
+     *  - workflow_version_id
+     *  # Filter by other top-level fields
+     *  - annotation_info                         - allows searching by empty annotation-info, i.e. `{"data": "annotation_info": {}}`;
+     *                                              note that searching by empty annotation-info will actually not influence the search results.
+     *                                              however, in order to be user-friendly, we still support searching by empty annotation-info.
+     *  - annotation_info.fields                  - filter by annotation info
+     *  - input_level                             - filter only input-level annotations
+     *  - status.code                             - filter by annotation status code
+     *  - trusted                                 - filter only trusted annotations
+     *  # Filter by space-time info fields, i.e. region, frames and time-segments
+     *  - data                                    - filter only annotations without space-time info, e.g. classifications
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {}}`
+     *  - data.frames[].frame_info                - filter only frame annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"frames": [{"frame_info": {}}]}}`
+     *  - data.regions[].region_info.bounding_box - filter only bounding box annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"bounding_box":{}}}]}}`
+     *  - data.regions[].region_info.mask         - filter only mask annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"mask":{}}}]}}`
+     *  - data.regions[].region_info.point        - filter only point annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"point":{}}}]}}`
+     *  - data.regions[].region_info.polygon      - filter only polygon annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"polygon":{}}}]}}`
+     *  - data.regions[].region_info.span         - filter only span annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"span":{}}}]}}`
+     *  - data.time_segments[].time_info          - filter only time-segment annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"time_segments": [{"time_info": {}}]}}`
+     *  # Filter by other data fields
      *  - data.clusters[].id
      *  - data.concepts[].id
      *  - data.concepts[].name
      *  - data.concepts[].value
-     *  - data.frames[].frame_info - filter by frame annotations
      *  - data.geo.geo_box[].geo_point.latitude
      *  - data.geo.geo_box[].geo_point.longitude
      *  - data.geo.geo_limit.type
      *  - data.geo.geo_limit.value
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
-     *  - data.metadata.fields - filter by metadata. metadata key&value fields are OR-ed.
-     *  - data.regions[].region_info.bounding_box - filter by bounding box annotations
-     *  - data.regions[].region_info.mask - filter by mask annotations
-     *  - data.regions[].region_info.point - filter by point annotations
-     *  - data.regions[].region_info.polygon - filter by polygon annotations
-     *  - data.regions[].region_info.span - filter by span annotations
-     *  - data.text - filter by text annotations
-     *  - data.time_segments[].time_info - filter by time-segment annotations
-     *  - id
-     *  - input_id
-     *  - input_level
-     *  - model_version_id
-     *  - status.code
-     *  - task_id
-     *  - trusted
-     *  - user_id
-     *  - workflow_version_id
+     *  - data.metadata                           - allow search with empty metadata, i.e. `{"data": "metadata": {}}`;
+     *                                              note that searching by empty metadata will actually not influence the search results;
+     *                                              however, in order to be user-friendly, we still support searching by empty metadata.
+     *  - data.metadata.fields                    - filter by metadata
+     *                                            - Important to note: metadata key&value fields are OR-ed.
+     *                                            - example with 1 metadata key: searching by
+     *                                                      `{
+     *                                                      `  "data": {
+     *                                                      `    "metadata": {
+     *                                                      `      "fields": {
+     *                                                      `        "foo": {
+     *                                                      `          "string_value": "bar"
+     *                                                      `        },
+     *                                                      `      }
+     *                                                      `    }
+     *                                                      `  }
+     *                                                      `}
+     *                                                      will result in a search condition like `metadata includes {"foo": "bar}`;
+     *                                            - example with 2 metadata keys: searching by
+     *                                                      `{
+     *                                                      `  "data": {
+     *                                                      `    "metadata": {
+     *                                                      `      "fields": {
+     *                                                      `        "foo1": {
+     *                                                      `          "string_value": "bar2"
+     *                                                      `        },
+     *                                                      `        "foo2": {
+     *                                                      `          "string_value": "bar2"
+     *                                                      `        }
+     *                                                      `      }
+     *                                                      `    }
+     *                                                      `  }
+     *                                                      `}
+     *                                                      will result in a search condition like `(metadata includes {"foo1": "bar1"}) OR (metadata includes {"foo2": "bar2"})`.
+     *  - data.text                               - filter only text annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"text": {}}}`
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
      * @return \Clarifai\Api\Annotation|null
@@ -237,41 +381,85 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * FILTER by annotation information.
      * ########## Supported fields ##########
-     *  - annotation_info - allows searching by empty annotation info
-     *    note that searching by empty annotation info will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
-     *  - annotation_info.fields - filter by annotation info
+     *  # Filter by ID fields
+     *  - id                                      - example: `{"id": "xyz"}`
+     *  - input_id
+     *  - model_version_id
+     *  - task_id
+     *  - user_id
+     *  - workflow_version_id
+     *  # Filter by other top-level fields
+     *  - annotation_info                         - allows searching by empty annotation-info, i.e. `{"data": "annotation_info": {}}`;
+     *                                              note that searching by empty annotation-info will actually not influence the search results.
+     *                                              however, in order to be user-friendly, we still support searching by empty annotation-info.
+     *  - annotation_info.fields                  - filter by annotation info
+     *  - input_level                             - filter only input-level annotations
+     *  - status.code                             - filter by annotation status code
+     *  - trusted                                 - filter only trusted annotations
+     *  # Filter by space-time info fields, i.e. region, frames and time-segments
+     *  - data                                    - filter only annotations without space-time info, e.g. classifications
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {}}`
+     *  - data.frames[].frame_info                - filter only frame annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"frames": [{"frame_info": {}}]}}`
+     *  - data.regions[].region_info.bounding_box - filter only bounding box annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"bounding_box":{}}}]}}`
+     *  - data.regions[].region_info.mask         - filter only mask annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"mask":{}}}]}}`
+     *  - data.regions[].region_info.point        - filter only point annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"point":{}}}]}}`
+     *  - data.regions[].region_info.polygon      - filter only polygon annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"polygon":{}}}]}}`
+     *  - data.regions[].region_info.span         - filter only span annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"span":{}}}]}}`
+     *  - data.time_segments[].time_info          - filter only time-segment annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"time_segments": [{"time_info": {}}]}}`
+     *  # Filter by other data fields
      *  - data.clusters[].id
      *  - data.concepts[].id
      *  - data.concepts[].name
      *  - data.concepts[].value
-     *  - data.frames[].frame_info - filter by frame annotations
      *  - data.geo.geo_box[].geo_point.latitude
      *  - data.geo.geo_box[].geo_point.longitude
      *  - data.geo.geo_limit.type
      *  - data.geo.geo_limit.value
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
-     *  - data.metadata.fields - filter by metadata. metadata key&value fields are OR-ed.
-     *  - data.regions[].region_info.bounding_box - filter by bounding box annotations
-     *  - data.regions[].region_info.mask - filter by mask annotations
-     *  - data.regions[].region_info.point - filter by point annotations
-     *  - data.regions[].region_info.polygon - filter by polygon annotations
-     *  - data.regions[].region_info.span - filter by span annotations
-     *  - data.text - filter by text annotations
-     *  - data.time_segments[].time_info - filter by time-segment annotations
-     *  - id
-     *  - input_id
-     *  - input_level
-     *  - model_version_id
-     *  - status.code
-     *  - task_id
-     *  - trusted
-     *  - user_id
-     *  - workflow_version_id
+     *  - data.metadata                           - allow search with empty metadata, i.e. `{"data": "metadata": {}}`;
+     *                                              note that searching by empty metadata will actually not influence the search results;
+     *                                              however, in order to be user-friendly, we still support searching by empty metadata.
+     *  - data.metadata.fields                    - filter by metadata
+     *                                            - Important to note: metadata key&value fields are OR-ed.
+     *                                            - example with 1 metadata key: searching by
+     *                                                      `{
+     *                                                      `  "data": {
+     *                                                      `    "metadata": {
+     *                                                      `      "fields": {
+     *                                                      `        "foo": {
+     *                                                      `          "string_value": "bar"
+     *                                                      `        },
+     *                                                      `      }
+     *                                                      `    }
+     *                                                      `  }
+     *                                                      `}
+     *                                                      will result in a search condition like `metadata includes {"foo": "bar}`;
+     *                                            - example with 2 metadata keys: searching by
+     *                                                      `{
+     *                                                      `  "data": {
+     *                                                      `    "metadata": {
+     *                                                      `      "fields": {
+     *                                                      `        "foo1": {
+     *                                                      `          "string_value": "bar2"
+     *                                                      `        },
+     *                                                      `        "foo2": {
+     *                                                      `          "string_value": "bar2"
+     *                                                      `        }
+     *                                                      `      }
+     *                                                      `    }
+     *                                                      `  }
+     *                                                      `}
+     *                                                      will result in a search condition like `(metadata includes {"foo1": "bar1"}) OR (metadata includes {"foo2": "bar2"})`.
+     *  - data.text                               - filter only text annotations
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"text": {}}}`
      *
      * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 4;</code>
      * @param \Clarifai\Api\Annotation $var
@@ -288,12 +476,18 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * FILTER by input information.
      * ########## Supported fields ##########
-     *  - data.audio - filter audio inputs
-     *  - data.image - filter image inputs
-     *  - data.text - filter text inputs
-     *  - data.video - filter video inputs
-     *  - dataset_ids[] - filter by dataset IDs
-     *  - status.code - filter by input status
+     *  - data.audio                              - filter only audio inputs
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"audio": {}}`
+     *  - data.image                              - filter only image inputs
+     *                                            - enable using `{"image": {}}`
+     *  - data.text                               - filter only text inputs
+     *                                            - enable using `{"text": {}}`
+     *  - data.video                              - filter only video inputs
+     *                                            - enable using `{"video": {}}`
+     *  - dataset_ids[]                           - filter by dataset IDs
+     *                                            - example: `{"dataset_ids": ["d1", "d2"]}` will filter for inputs in d1 OR d2
+     *  - status.code                             - filter by input status
+     *                                            - example: `{"status": {"code": 30000}}` to filter only for SUCCESS inputs
      *
      * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
      * @return \Clarifai\Api\Input|null
@@ -316,12 +510,18 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * FILTER by input information.
      * ########## Supported fields ##########
-     *  - data.audio - filter audio inputs
-     *  - data.image - filter image inputs
-     *  - data.text - filter text inputs
-     *  - data.video - filter video inputs
-     *  - dataset_ids[] - filter by dataset IDs
-     *  - status.code - filter by input status
+     *  - data.audio                              - filter only audio inputs
+     *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"audio": {}}`
+     *  - data.image                              - filter only image inputs
+     *                                            - enable using `{"image": {}}`
+     *  - data.text                               - filter only text inputs
+     *                                            - enable using `{"text": {}}`
+     *  - data.video                              - filter only video inputs
+     *                                            - enable using `{"video": {}}`
+     *  - dataset_ids[]                           - filter by dataset IDs
+     *                                            - example: `{"dataset_ids": ["d1", "d2"]}` will filter for inputs in d1 OR d2
+     *  - status.code                             - filter by input status
+     *                                            - example: `{"status": {"code": 30000}}` to filter only for SUCCESS inputs
      *
      * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
      * @param \Clarifai\Api\Input $var

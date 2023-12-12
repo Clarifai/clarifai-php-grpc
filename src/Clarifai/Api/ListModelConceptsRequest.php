@@ -45,6 +45,19 @@ class ListModelConceptsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 per_page = 5;</code>
      */
     protected $per_page = 0;
+    /**
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the concept:
+     *   - id
+     *   - name
+     * Keywords are used for partial prefix-matching (so searching for "larif" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     *
+     * Generated from protobuf field <code>string search = 6;</code>
+     */
+    protected $search = '';
 
     /**
      * Constructor.
@@ -63,6 +76,15 @@ class ListModelConceptsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
+     *     @type string $search
+     *           Searching options:
+     *           Specify a search parameter in order to perform keyword search on the
+     *           following fields of the concept:
+     *             - id
+     *             - name
+     *           Keywords are used for partial prefix-matching (so searching for "larif" matches "clarifai").
+     *           NOTE: Both the list of fields searched and the exact keyword matching
+     *           rules are subject to change and not guaranteed to be backwards-compatible.
      * }
      */
     public function __construct($data = NULL) {
@@ -206,6 +228,46 @@ class ListModelConceptsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->per_page = $var;
+
+        return $this;
+    }
+
+    /**
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the concept:
+     *   - id
+     *   - name
+     * Keywords are used for partial prefix-matching (so searching for "larif" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     *
+     * Generated from protobuf field <code>string search = 6;</code>
+     * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the concept:
+     *   - id
+     *   - name
+     * Keywords are used for partial prefix-matching (so searching for "larif" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     *
+     * Generated from protobuf field <code>string search = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
 
         return $this;
     }
