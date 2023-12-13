@@ -9,19 +9,19 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *Request to check app duplication status
+ * Request to get an app duplication job.
  *
  * Generated from protobuf message <code>clarifai.api.GetAppDuplicationRequest</code>
  */
 class GetAppDuplicationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The ID of the user that created the app duplication job.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     *The app duplication id
-     *
      * Generated from protobuf field <code>string app_duplication_id = 2;</code>
      */
     protected $app_duplication_id = '';
@@ -33,8 +33,8 @@ class GetAppDuplicationRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
+     *           The ID of the user that created the app duplication job.
      *     @type string $app_duplication_id
-     *          The app duplication id
      * }
      */
     public function __construct($data = NULL) {
@@ -43,6 +43,8 @@ class GetAppDuplicationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The ID of the user that created the app duplication job.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @return \Clarifai\Api\UserAppIDSet|null
      */
@@ -62,6 +64,8 @@ class GetAppDuplicationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The ID of the user that created the app duplication job.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @param \Clarifai\Api\UserAppIDSet $var
      * @return $this
@@ -75,8 +79,6 @@ class GetAppDuplicationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *The app duplication id
-     *
      * Generated from protobuf field <code>string app_duplication_id = 2;</code>
      * @return string
      */
@@ -86,8 +88,6 @@ class GetAppDuplicationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *The app duplication id
-     *
      * Generated from protobuf field <code>string app_duplication_id = 2;</code>
      * @param string $var
      * @return $this

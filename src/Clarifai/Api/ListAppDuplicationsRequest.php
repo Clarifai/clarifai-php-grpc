@@ -9,13 +9,15 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *Request to list all the app duplication that user triggered.
+ * Request to list all the app duplication jobs that a user created.
  *
  * Generated from protobuf message <code>clarifai.api.ListAppDuplicationsRequest</code>
  */
 class ListAppDuplicationsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The ID of the user whose app duplication jobs to list.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
@@ -41,6 +43,7 @@ class ListAppDuplicationsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
+     *           The ID of the user whose app duplication jobs to list.
      *     @type int $page
      *           (optional URL parameter) The page number. Pagination is used to split the results into chunks.
      *           Defaults to 1.
@@ -55,6 +58,8 @@ class ListAppDuplicationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The ID of the user whose app duplication jobs to list.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @return \Clarifai\Api\UserAppIDSet|null
      */
@@ -74,6 +79,8 @@ class ListAppDuplicationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The ID of the user whose app duplication jobs to list.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @param \Clarifai\Api\UserAppIDSet $var
      * @return $this

@@ -16,69 +16,87 @@ use Google\Protobuf\Internal\GPBUtil;
 class AppDuplication extends \Google\Protobuf\Internal\Message
 {
     /**
-     * the id of app duplication
+     * The unique identifier of an app duplication job.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
     /**
+     * The destination application where resources are written.
+     * If the destination does not exist, then the fields from the request are
+     * used to create the application. If a field is not set or not supported,
+     * then it will be copied from the source app, unless otherwise noted.
+     * Note: this field can be empty when reading app duplication jobs in cases
+     * where the app has been deleted or is just not visible to the caller.
+     * ########## Supported fields ##########
+     *  - description
+     *  - id      - if not set, then generated automatically
+     *  - user_id - if not set, then the calling user is used as the app owner
+     *
+     * Generated from protobuf field <code>.clarifai.api.App destination_app = 10;</code>
+     */
+    protected $destination_app = null;
+    /**
      * The ID of an existing app you want to copy data into.
      * If not provided, then we will create a new application as the destination instead.
      * The various new_app_* fields can be used to set fields of this new application.
+     * Deprecated: Use destination_app.id with an existing ID instead.
      *
-     * Generated from protobuf field <code>string existing_app_id = 8;</code>
+     * Generated from protobuf field <code>string existing_app_id = 8 [deprecated = true];</code>
+     * @deprecated
      */
     protected $existing_app_id = '';
     /**
      * The ID to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then it will be generated automatically.
+     * Deprecated: Use destination_app.id with a new ID instead.
      *
-     * Generated from protobuf field <code>string new_app_id = 2;</code>
+     * Generated from protobuf field <code>string new_app_id = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $new_app_id = '';
     /**
      * The name to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then the ID of the new application is also used as the name.
+     * Deprecated: Application names are deprecated, use application IDs instead.
      *
-     * Generated from protobuf field <code>string new_app_name = 3;</code>
+     * Generated from protobuf field <code>string new_app_name = 3 [deprecated = true];</code>
+     * @deprecated
      */
     protected $new_app_name = '';
     /**
-     * The description to use when creating a new application.
-     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
-     * If not provided, then the description of the source application is copied.
-     *
-     * Generated from protobuf field <code>string new_app_description = 10;</code>
-     */
-    protected $new_app_description = '';
-    /**
-     * the status of app duplication
+     * The status of the app duplication job.
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 4;</code>
      */
     protected $status = null;
     /**
-     * when is the app duplication triggered
+     * The time when the app duplication job was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
      */
     protected $created_at = null;
     /**
-     * The last time when is the status got updated
+     * The last time when the app duplication job status was updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
      */
     protected $last_modified_at = null;
     /**
-     * Only copy resources depending on the filters
+     * The filter specifies which resources are copied by the app duplication job.
      *
      * Generated from protobuf field <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
      */
     protected $filter = null;
     /**
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      *
      * Generated from protobuf field <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
      */
@@ -91,33 +109,48 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *           the id of app duplication
+     *           The unique identifier of an app duplication job.
+     *     @type \Clarifai\Api\App $destination_app
+     *           The destination application where resources are written.
+     *           If the destination does not exist, then the fields from the request are
+     *           used to create the application. If a field is not set or not supported,
+     *           then it will be copied from the source app, unless otherwise noted.
+     *           Note: this field can be empty when reading app duplication jobs in cases
+     *           where the app has been deleted or is just not visible to the caller.
+     *           ########## Supported fields ##########
+     *            - description
+     *            - id      - if not set, then generated automatically
+     *            - user_id - if not set, then the calling user is used as the app owner
      *     @type string $existing_app_id
      *           The ID of an existing app you want to copy data into.
      *           If not provided, then we will create a new application as the destination instead.
      *           The various new_app_* fields can be used to set fields of this new application.
+     *           Deprecated: Use destination_app.id with an existing ID instead.
      *     @type string $new_app_id
      *           The ID to use when creating a new application.
      *           You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      *           If not provided, then it will be generated automatically.
+     *           Deprecated: Use destination_app.id with a new ID instead.
      *     @type string $new_app_name
      *           The name to use when creating a new application.
      *           You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      *           If not provided, then the ID of the new application is also used as the name.
-     *     @type string $new_app_description
-     *           The description to use when creating a new application.
-     *           You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
-     *           If not provided, then the description of the source application is copied.
+     *           Deprecated: Application names are deprecated, use application IDs instead.
      *     @type \Clarifai\Api\Status\Status $status
-     *           the status of app duplication
+     *           The status of the app duplication job.
      *     @type \Google\Protobuf\Timestamp $created_at
-     *           when is the app duplication triggered
+     *           The time when the app duplication job was created.
      *     @type \Google\Protobuf\Timestamp $last_modified_at
-     *           The last time when is the status got updated
+     *           The last time when the app duplication job status was updated.
      *     @type \Clarifai\Api\AppDuplicationFilters $filter
-     *           Only copy resources depending on the filters
+     *           The filter specifies which resources are copied by the app duplication job.
      *     @type array<\Clarifai\Api\AppCopyProgress>|\Google\Protobuf\Internal\RepeatedField $progress
-     *           contains progress for each requested filter
+     *           Copy progress for each resource type requested by the filter. Possible fields:
+     *            - inputs
+     *            - concepts
+     *            - annotations
+     *            - models
+     *            - workflows
      * }
      */
     public function __construct($data = NULL) {
@@ -126,7 +159,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the id of app duplication
+     * The unique identifier of an app duplication job.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @return string
@@ -137,7 +170,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the id of app duplication
+     * The unique identifier of an app duplication job.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
@@ -152,15 +185,72 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The destination application where resources are written.
+     * If the destination does not exist, then the fields from the request are
+     * used to create the application. If a field is not set or not supported,
+     * then it will be copied from the source app, unless otherwise noted.
+     * Note: this field can be empty when reading app duplication jobs in cases
+     * where the app has been deleted or is just not visible to the caller.
+     * ########## Supported fields ##########
+     *  - description
+     *  - id      - if not set, then generated automatically
+     *  - user_id - if not set, then the calling user is used as the app owner
+     *
+     * Generated from protobuf field <code>.clarifai.api.App destination_app = 10;</code>
+     * @return \Clarifai\Api\App|null
+     */
+    public function getDestinationApp()
+    {
+        return $this->destination_app;
+    }
+
+    public function hasDestinationApp()
+    {
+        return isset($this->destination_app);
+    }
+
+    public function clearDestinationApp()
+    {
+        unset($this->destination_app);
+    }
+
+    /**
+     * The destination application where resources are written.
+     * If the destination does not exist, then the fields from the request are
+     * used to create the application. If a field is not set or not supported,
+     * then it will be copied from the source app, unless otherwise noted.
+     * Note: this field can be empty when reading app duplication jobs in cases
+     * where the app has been deleted or is just not visible to the caller.
+     * ########## Supported fields ##########
+     *  - description
+     *  - id      - if not set, then generated automatically
+     *  - user_id - if not set, then the calling user is used as the app owner
+     *
+     * Generated from protobuf field <code>.clarifai.api.App destination_app = 10;</code>
+     * @param \Clarifai\Api\App $var
+     * @return $this
+     */
+    public function setDestinationApp($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\App::class);
+        $this->destination_app = $var;
+
+        return $this;
+    }
+
+    /**
      * The ID of an existing app you want to copy data into.
      * If not provided, then we will create a new application as the destination instead.
      * The various new_app_* fields can be used to set fields of this new application.
+     * Deprecated: Use destination_app.id with an existing ID instead.
      *
-     * Generated from protobuf field <code>string existing_app_id = 8;</code>
+     * Generated from protobuf field <code>string existing_app_id = 8 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getExistingAppId()
     {
+        @trigger_error('existing_app_id is deprecated.', E_USER_DEPRECATED);
         return $this->existing_app_id;
     }
 
@@ -168,13 +258,16 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      * The ID of an existing app you want to copy data into.
      * If not provided, then we will create a new application as the destination instead.
      * The various new_app_* fields can be used to set fields of this new application.
+     * Deprecated: Use destination_app.id with an existing ID instead.
      *
-     * Generated from protobuf field <code>string existing_app_id = 8;</code>
+     * Generated from protobuf field <code>string existing_app_id = 8 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setExistingAppId($var)
     {
+        @trigger_error('existing_app_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->existing_app_id = $var;
 
@@ -185,12 +278,15 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      * The ID to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then it will be generated automatically.
+     * Deprecated: Use destination_app.id with a new ID instead.
      *
-     * Generated from protobuf field <code>string new_app_id = 2;</code>
+     * Generated from protobuf field <code>string new_app_id = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getNewAppId()
     {
+        @trigger_error('new_app_id is deprecated.', E_USER_DEPRECATED);
         return $this->new_app_id;
     }
 
@@ -198,13 +294,16 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      * The ID to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then it will be generated automatically.
+     * Deprecated: Use destination_app.id with a new ID instead.
      *
-     * Generated from protobuf field <code>string new_app_id = 2;</code>
+     * Generated from protobuf field <code>string new_app_id = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setNewAppId($var)
     {
+        @trigger_error('new_app_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->new_app_id = $var;
 
@@ -215,12 +314,15 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      * The name to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then the ID of the new application is also used as the name.
+     * Deprecated: Application names are deprecated, use application IDs instead.
      *
-     * Generated from protobuf field <code>string new_app_name = 3;</code>
+     * Generated from protobuf field <code>string new_app_name = 3 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getNewAppName()
     {
+        @trigger_error('new_app_name is deprecated.', E_USER_DEPRECATED);
         return $this->new_app_name;
     }
 
@@ -228,13 +330,16 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      * The name to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then the ID of the new application is also used as the name.
+     * Deprecated: Application names are deprecated, use application IDs instead.
      *
-     * Generated from protobuf field <code>string new_app_name = 3;</code>
+     * Generated from protobuf field <code>string new_app_name = 3 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setNewAppName($var)
     {
+        @trigger_error('new_app_name is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->new_app_name = $var;
 
@@ -242,37 +347,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The description to use when creating a new application.
-     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
-     * If not provided, then the description of the source application is copied.
-     *
-     * Generated from protobuf field <code>string new_app_description = 10;</code>
-     * @return string
-     */
-    public function getNewAppDescription()
-    {
-        return $this->new_app_description;
-    }
-
-    /**
-     * The description to use when creating a new application.
-     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
-     * If not provided, then the description of the source application is copied.
-     *
-     * Generated from protobuf field <code>string new_app_description = 10;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setNewAppDescription($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->new_app_description = $var;
-
-        return $this;
-    }
-
-    /**
-     * the status of app duplication
+     * The status of the app duplication job.
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 4;</code>
      * @return \Clarifai\Api\Status\Status|null
@@ -293,7 +368,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the status of app duplication
+     * The status of the app duplication job.
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 4;</code>
      * @param \Clarifai\Api\Status\Status $var
@@ -308,7 +383,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * when is the app duplication triggered
+     * The time when the app duplication job was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -329,7 +404,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * when is the app duplication triggered
+     * The time when the app duplication job was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -344,7 +419,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The last time when is the status got updated
+     * The last time when the app duplication job status was updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -365,7 +440,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The last time when is the status got updated
+     * The last time when the app duplication job status was updated.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -380,7 +455,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Only copy resources depending on the filters
+     * The filter specifies which resources are copied by the app duplication job.
      *
      * Generated from protobuf field <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
      * @return \Clarifai\Api\AppDuplicationFilters|null
@@ -401,7 +476,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Only copy resources depending on the filters
+     * The filter specifies which resources are copied by the app duplication job.
      *
      * Generated from protobuf field <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
      * @param \Clarifai\Api\AppDuplicationFilters $var
@@ -416,7 +491,12 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      *
      * Generated from protobuf field <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -427,7 +507,12 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      *
      * Generated from protobuf field <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
      * @param array<\Clarifai\Api\AppCopyProgress>|\Google\Protobuf\Internal\RepeatedField $var

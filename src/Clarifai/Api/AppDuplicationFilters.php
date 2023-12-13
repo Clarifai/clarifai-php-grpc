@@ -16,31 +16,32 @@ use Google\Protobuf\Internal\GPBUtil;
 class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Copy inputs what what it depends on: input level annotation and concepts
+     * Copy inputs. Requires that copy_concepts is also set.
+     * Note that this will still copy input-level annotations even if copy_annotations is not set.
      *
      * Generated from protobuf field <code>bool copy_inputs = 1;</code>
      */
     protected $copy_inputs = false;
     /**
-     * Copy only concepts
+     * Copy concepts.
      *
      * Generated from protobuf field <code>bool copy_concepts = 2;</code>
      */
     protected $copy_concepts = false;
     /**
-     * Copy annotations and what it depends on: inputs and concepts
+     * Copy annotations. Requires that copy_inputs and copy_concepts are also set.
      *
      * Generated from protobuf field <code>bool copy_annotations = 3;</code>
      */
     protected $copy_annotations = false;
     /**
-     * Copy models and what it depends on: concepts
+     * Copy models. Requires that copy_concepts is also set.
      *
      * Generated from protobuf field <code>bool copy_models = 4;</code>
      */
     protected $copy_models = false;
     /**
-     * Copy workflows and what it depends on: models and concepts
+     * Copy workflows. Requires that copy_models and copy_concepts are also set.
      *
      * Generated from protobuf field <code>bool copy_workflows = 5;</code>
      */
@@ -53,15 +54,16 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $copy_inputs
-     *           Copy inputs what what it depends on: input level annotation and concepts
+     *           Copy inputs. Requires that copy_concepts is also set.
+     *           Note that this will still copy input-level annotations even if copy_annotations is not set.
      *     @type bool $copy_concepts
-     *           Copy only concepts
+     *           Copy concepts.
      *     @type bool $copy_annotations
-     *           Copy annotations and what it depends on: inputs and concepts
+     *           Copy annotations. Requires that copy_inputs and copy_concepts are also set.
      *     @type bool $copy_models
-     *           Copy models and what it depends on: concepts
+     *           Copy models. Requires that copy_concepts is also set.
      *     @type bool $copy_workflows
-     *           Copy workflows and what it depends on: models and concepts
+     *           Copy workflows. Requires that copy_models and copy_concepts are also set.
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +72,8 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy inputs what what it depends on: input level annotation and concepts
+     * Copy inputs. Requires that copy_concepts is also set.
+     * Note that this will still copy input-level annotations even if copy_annotations is not set.
      *
      * Generated from protobuf field <code>bool copy_inputs = 1;</code>
      * @return bool
@@ -81,7 +84,8 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy inputs what what it depends on: input level annotation and concepts
+     * Copy inputs. Requires that copy_concepts is also set.
+     * Note that this will still copy input-level annotations even if copy_annotations is not set.
      *
      * Generated from protobuf field <code>bool copy_inputs = 1;</code>
      * @param bool $var
@@ -96,7 +100,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy only concepts
+     * Copy concepts.
      *
      * Generated from protobuf field <code>bool copy_concepts = 2;</code>
      * @return bool
@@ -107,7 +111,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy only concepts
+     * Copy concepts.
      *
      * Generated from protobuf field <code>bool copy_concepts = 2;</code>
      * @param bool $var
@@ -122,7 +126,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy annotations and what it depends on: inputs and concepts
+     * Copy annotations. Requires that copy_inputs and copy_concepts are also set.
      *
      * Generated from protobuf field <code>bool copy_annotations = 3;</code>
      * @return bool
@@ -133,7 +137,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy annotations and what it depends on: inputs and concepts
+     * Copy annotations. Requires that copy_inputs and copy_concepts are also set.
      *
      * Generated from protobuf field <code>bool copy_annotations = 3;</code>
      * @param bool $var
@@ -148,7 +152,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy models and what it depends on: concepts
+     * Copy models. Requires that copy_concepts is also set.
      *
      * Generated from protobuf field <code>bool copy_models = 4;</code>
      * @return bool
@@ -159,7 +163,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy models and what it depends on: concepts
+     * Copy models. Requires that copy_concepts is also set.
      *
      * Generated from protobuf field <code>bool copy_models = 4;</code>
      * @param bool $var
@@ -174,7 +178,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy workflows and what it depends on: models and concepts
+     * Copy workflows. Requires that copy_models and copy_concepts are also set.
      *
      * Generated from protobuf field <code>bool copy_workflows = 5;</code>
      * @return bool
@@ -185,7 +189,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy workflows and what it depends on: models and concepts
+     * Copy workflows. Requires that copy_models and copy_concepts are also set.
      *
      * Generated from protobuf field <code>bool copy_workflows = 5;</code>
      * @param bool $var

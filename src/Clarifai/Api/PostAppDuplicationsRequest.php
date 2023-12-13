@@ -9,13 +9,15 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- *Request to start a app duplication process
+ * Request to start app duplication jobs.
  *
  * Generated from protobuf message <code>clarifai.api.PostAppDuplicationsRequest</code>
  */
 class PostAppDuplicationsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The user and application ID of the source application to duplicate.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
@@ -31,6 +33,7 @@ class PostAppDuplicationsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
+     *           The user and application ID of the source application to duplicate.
      *     @type array<\Clarifai\Api\AppDuplication>|\Google\Protobuf\Internal\RepeatedField $app_duplications
      * }
      */
@@ -40,6 +43,8 @@ class PostAppDuplicationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The user and application ID of the source application to duplicate.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @return \Clarifai\Api\UserAppIDSet|null
      */
@@ -59,6 +64,8 @@ class PostAppDuplicationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The user and application ID of the source application to duplicate.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @param \Clarifai\Api\UserAppIDSet $var
      * @return $this
