@@ -2829,6 +2829,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Get usage count for specific module version.
+     * @param \Clarifai\Api\GetModuleVersionUsageCountRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetModuleVersionUsageCount(\Clarifai\Api\GetModuleVersionUsageCountRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetModuleVersionUsageCount',
+        $argument,
+        ['\Clarifai\Api\SingleModuleVersionUsageCountResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Get installed modules vesrions for an app.
      * @param \Clarifai\Api\GetInstalledModuleVersionRequest $argument input argument
      * @param array $metadata metadata
