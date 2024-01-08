@@ -87,6 +87,13 @@ class Collector extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 7;</code>
      */
     protected $status = null;
+    /**
+     * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+     * original model predict call will be posted as annotations along with the input with success status.
+     *
+     * Generated from protobuf field <code>bool collect_outputs = 9;</code>
+     */
+    protected $collect_outputs = false;
 
     /**
      * Constructor.
@@ -133,6 +140,9 @@ class Collector extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Status\Status $status
      *           Status for the collector. This allows you to pause a collector without having to delete it as
      *           an example.
+     *     @type bool $collect_outputs
+     *           Whether to collect outputs or not. Default is false. If selected, outputs from the 
+     *           original model predict call will be posted as annotations along with the input with success status.
      * }
      */
     public function __construct($data = NULL) {
@@ -420,6 +430,34 @@ class Collector extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Status\Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+     * original model predict call will be posted as annotations along with the input with success status.
+     *
+     * Generated from protobuf field <code>bool collect_outputs = 9;</code>
+     * @return bool
+     */
+    public function getCollectOutputs()
+    {
+        return $this->collect_outputs;
+    }
+
+    /**
+     * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+     * original model predict call will be posted as annotations along with the input with success status.
+     *
+     * Generated from protobuf field <code>bool collect_outputs = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setCollectOutputs($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->collect_outputs = $var;
 
         return $this;
     }

@@ -1158,7 +1158,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * List all the inputs.
+     * Deprecated: Unmaintained and ideally replaced with usage of datasets
      * @param \Clarifai\Api\ListModelInputsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
