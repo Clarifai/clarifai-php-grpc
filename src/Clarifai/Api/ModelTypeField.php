@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ModelTypeField extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The path where the value of the field will be stored.
+     * The path where the value of the field will be stored in the model version object.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -87,7 +87,7 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $path
-     *           The path where the value of the field will be stored.
+     *           The path where the value of the field will be stored in the model version object.
      *           Example:
      *           "output_info.data" would be the Data message in the OutputInfo message.
      *           "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -122,7 +122,7 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The path where the value of the field will be stored.
+     * The path where the value of the field will be stored in the model version object.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -140,7 +140,7 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The path where the value of the field will be stored.
+     * The path where the value of the field will be stored in the model version object.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo

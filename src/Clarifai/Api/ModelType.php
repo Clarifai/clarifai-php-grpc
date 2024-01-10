@@ -9,24 +9,21 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * ModelSpec is a definition of a Model type. This is used in model mode of portal
- * to list out the possible models that can be created and can be used to understand more about
- * the possible models in our platform.
+ * ModelType is a definition of a set of models that generally have the same input and output fields. 
+ * This is used to understand more about the possible models in our platform.
  *
  * Generated from protobuf message <code>clarifai.api.ModelType</code>
  */
 class ModelType extends \Google\Protobuf\Internal\Message
 {
     /**
-     * A unique identifies for this model type. This is differnt than the 'type' field below because
-     * the 'type' can be re-used for differnet input and output combinations whereas 'id' is always
-     * unique.
+     * A unique identifier for this model type.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
     /**
-     * title for this model in model gallery
+     * A display title for this model.
      *
      * Generated from protobuf field <code>string title = 2;</code>
      */
@@ -38,15 +35,14 @@ class ModelType extends \Google\Protobuf\Internal\Message
      */
     protected $description = '';
     /**
-     * The list of input fields that this model accepts. These are the keys of the Model's
-     * InputInfo.fields_map
+     * The list of input fields that this model expects as inputs.
+     * Used to validate that request input data has the expected fields.
      *
      * Generated from protobuf field <code>repeated string input_fields = 5;</code>
      */
     private $input_fields;
     /**
-     * The list of output fields that this model accepts. These are the keys of the Model's
-     * OutputInfo.fields_map
+     * The list of output fields that this model accepts.
      *
      * Generated from protobuf field <code>repeated string output_fields = 6;</code>
      */
@@ -72,10 +68,6 @@ class ModelType extends \Google\Protobuf\Internal\Message
     protected $internal_only = false;
     /**
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
      */
@@ -88,7 +80,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
      */
     protected $requires_sequential_frames = false;
     /**
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
      */
@@ -100,6 +92,8 @@ class ModelType extends \Google\Protobuf\Internal\Message
      */
     private $expected_output_layers;
     /**
+     * What type of evaluation is supported for this model type.
+     *
      * Generated from protobuf field <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
      */
     protected $evaluation_type = 0;
@@ -111,19 +105,16 @@ class ModelType extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *           A unique identifies for this model type. This is differnt than the 'type' field below because
-     *           the 'type' can be re-used for differnet input and output combinations whereas 'id' is always
-     *           unique.
+     *           A unique identifier for this model type.
      *     @type string $title
-     *           title for this model in model gallery
+     *           A display title for this model.
      *     @type string $description
      *           Description of this model type.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $input_fields
-     *           The list of input fields that this model accepts. These are the keys of the Model's
-     *           InputInfo.fields_map
+     *           The list of input fields that this model expects as inputs.
+     *           Used to validate that request input data has the expected fields.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $output_fields
-     *           The list of output fields that this model accepts. These are the keys of the Model's
-     *           OutputInfo.fields_map
+     *           The list of output fields that this model accepts.
      *     @type bool $trainable
      *           Is this model trainable in our platform.
      *     @type bool $creatable
@@ -133,18 +124,15 @@ class ModelType extends \Google\Protobuf\Internal\Message
      *           Is this model type only for internal users at this time.
      *     @type array<\Clarifai\Api\ModelTypeField>|\Google\Protobuf\Internal\RepeatedField $model_type_fields
      *           The remaining fields are definitions of the configurable fields that exist.
-     *           Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     *           if it's the Data object within the OutputInfo object. We decided to not break these up
-     *           into input_info, train_info and output_info related parameters and instead use the path
-     *           so that they are most flexible.
      *     @type bool $requires_sequential_frames
      *           For sequence models we need to know when processing that they require temporal time frames
      *           in sequential order. This will be true for model types like trackers as an example.
      *     @type array<\Clarifai\Api\ModelLayerInfo>|\Google\Protobuf\Internal\RepeatedField $expected_input_layers
-     *           Expected input layers of an uploaded model
+     *           Expected input layers of an uploaded model.
      *     @type array<\Clarifai\Api\ModelLayerInfo>|\Google\Protobuf\Internal\RepeatedField $expected_output_layers
      *           Expected output layers of an uploaded model
      *     @type int $evaluation_type
+     *           What type of evaluation is supported for this model type.
      * }
      */
     public function __construct($data = NULL) {
@@ -153,9 +141,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A unique identifies for this model type. This is differnt than the 'type' field below because
-     * the 'type' can be re-used for differnet input and output combinations whereas 'id' is always
-     * unique.
+     * A unique identifier for this model type.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @return string
@@ -166,9 +152,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A unique identifies for this model type. This is differnt than the 'type' field below because
-     * the 'type' can be re-used for differnet input and output combinations whereas 'id' is always
-     * unique.
+     * A unique identifier for this model type.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
@@ -183,7 +167,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * title for this model in model gallery
+     * A display title for this model.
      *
      * Generated from protobuf field <code>string title = 2;</code>
      * @return string
@@ -194,7 +178,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * title for this model in model gallery
+     * A display title for this model.
      *
      * Generated from protobuf field <code>string title = 2;</code>
      * @param string $var
@@ -235,8 +219,8 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of input fields that this model accepts. These are the keys of the Model's
-     * InputInfo.fields_map
+     * The list of input fields that this model expects as inputs.
+     * Used to validate that request input data has the expected fields.
      *
      * Generated from protobuf field <code>repeated string input_fields = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -247,8 +231,8 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of input fields that this model accepts. These are the keys of the Model's
-     * InputInfo.fields_map
+     * The list of input fields that this model expects as inputs.
+     * Used to validate that request input data has the expected fields.
      *
      * Generated from protobuf field <code>repeated string input_fields = 5;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
@@ -263,8 +247,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of output fields that this model accepts. These are the keys of the Model's
-     * OutputInfo.fields_map
+     * The list of output fields that this model accepts.
      *
      * Generated from protobuf field <code>repeated string output_fields = 6;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -275,8 +258,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of output fields that this model accepts. These are the keys of the Model's
-     * OutputInfo.fields_map
+     * The list of output fields that this model accepts.
      *
      * Generated from protobuf field <code>repeated string output_fields = 6;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
@@ -372,10 +354,6 @@ class ModelType extends \Google\Protobuf\Internal\Message
 
     /**
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -387,10 +365,6 @@ class ModelType extends \Google\Protobuf\Internal\Message
 
     /**
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
      * @param array<\Clarifai\Api\ModelTypeField>|\Google\Protobuf\Internal\RepeatedField $var
@@ -433,7 +407,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -444,7 +418,7 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
      * @param array<\Clarifai\Api\ModelLayerInfo>|\Google\Protobuf\Internal\RepeatedField $var
@@ -485,6 +459,8 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * What type of evaluation is supported for this model type.
+     *
      * Generated from protobuf field <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
      * @return int
      */
@@ -494,6 +470,8 @@ class ModelType extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * What type of evaluation is supported for this model type.
+     *
      * Generated from protobuf field <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
      * @param int $var
      * @return $this

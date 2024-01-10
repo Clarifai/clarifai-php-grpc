@@ -99,19 +99,22 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      */
     protected $license = '';
     /**
-     * Info about the model's output and configuration.
+     * Info about the model's output. Besides `output_info.data`, these fields should
+     * be reserved for parameters that affect the models outputs when inferencing.
+     * `output_info.data` is used to specify the training concepts for this model version.
      *
      * Generated from protobuf field <code>.clarifai.api.OutputInfo output_info = 19;</code>
      */
     protected $output_info = null;
     /**
-     * Info about the models' input and configuration of them.
+     * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+     * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
      *
      * Generated from protobuf field <code>.clarifai.api.InputInfo input_info = 20;</code>
      */
     protected $input_info = null;
     /**
-     * Configuration for the training process of this model.
+     * Configuration for the training process of this model version.
      *
      * Generated from protobuf field <code>.clarifai.api.TrainInfo train_info = 21;</code>
      */
@@ -164,11 +167,14 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *     @type string $license
      *     @type \Clarifai\Api\OutputInfo $output_info
-     *           Info about the model's output and configuration.
+     *           Info about the model's output. Besides `output_info.data`, these fields should
+     *           be reserved for parameters that affect the models outputs when inferencing.
+     *           `output_info.data` is used to specify the training concepts for this model version.
      *     @type \Clarifai\Api\InputInfo $input_info
-     *           Info about the models' input and configuration of them.
+     *           Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+     *           E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
      *     @type \Clarifai\Api\TrainInfo $train_info
-     *           Configuration for the training process of this model.
+     *           Configuration for the training process of this model version.
      *     @type \Clarifai\Api\ImportInfo $import_info
      *           Configuration used to import model from third-party toolkits
      *     @type string $train_log
@@ -637,7 +643,9 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Info about the model's output and configuration.
+     * Info about the model's output. Besides `output_info.data`, these fields should
+     * be reserved for parameters that affect the models outputs when inferencing.
+     * `output_info.data` is used to specify the training concepts for this model version.
      *
      * Generated from protobuf field <code>.clarifai.api.OutputInfo output_info = 19;</code>
      * @return \Clarifai\Api\OutputInfo|null
@@ -658,7 +666,9 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Info about the model's output and configuration.
+     * Info about the model's output. Besides `output_info.data`, these fields should
+     * be reserved for parameters that affect the models outputs when inferencing.
+     * `output_info.data` is used to specify the training concepts for this model version.
      *
      * Generated from protobuf field <code>.clarifai.api.OutputInfo output_info = 19;</code>
      * @param \Clarifai\Api\OutputInfo $var
@@ -673,7 +683,8 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Info about the models' input and configuration of them.
+     * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+     * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
      *
      * Generated from protobuf field <code>.clarifai.api.InputInfo input_info = 20;</code>
      * @return \Clarifai\Api\InputInfo|null
@@ -694,7 +705,8 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Info about the models' input and configuration of them.
+     * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+     * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
      *
      * Generated from protobuf field <code>.clarifai.api.InputInfo input_info = 20;</code>
      * @param \Clarifai\Api\InputInfo $var
@@ -709,7 +721,7 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Configuration for the training process of this model.
+     * Configuration for the training process of this model version.
      *
      * Generated from protobuf field <code>.clarifai.api.TrainInfo train_info = 21;</code>
      * @return \Clarifai\Api\TrainInfo|null
@@ -730,7 +742,7 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Configuration for the training process of this model.
+     * Configuration for the training process of this model version.
      *
      * Generated from protobuf field <code>.clarifai.api.TrainInfo train_info = 21;</code>
      * @param \Clarifai\Api\TrainInfo $var
