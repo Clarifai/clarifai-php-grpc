@@ -50,6 +50,12 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
      */
     protected $ground_truth_dataset = null;
     /**
+     * The dataset with predictions
+     *
+     * Generated from protobuf field <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+     */
+    protected $predictions_dataset = null;
+    /**
      * Generated from protobuf field <code>.clarifai.api.MetricsSummary summary = 2;</code>
      */
     protected $summary = null;
@@ -114,6 +120,8 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
      *           Model to evaluate
      *     @type \Clarifai\Api\Dataset $ground_truth_dataset
      *           The ground truth dataset
+     *     @type \Clarifai\Api\Dataset $predictions_dataset
+     *           The dataset with predictions
      *     @type \Clarifai\Api\MetricsSummary $summary
      *     @type \Clarifai\Api\ConfusionMatrix $confusion_matrix
      *     @type \Clarifai\Api\CooccurrenceMatrix $cooccurrence_matrix
@@ -312,6 +320,42 @@ class EvalMetrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Dataset::class);
         $this->ground_truth_dataset = $var;
+
+        return $this;
+    }
+
+    /**
+     * The dataset with predictions
+     *
+     * Generated from protobuf field <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+     * @return \Clarifai\Api\Dataset|null
+     */
+    public function getPredictionsDataset()
+    {
+        return $this->predictions_dataset;
+    }
+
+    public function hasPredictionsDataset()
+    {
+        return isset($this->predictions_dataset);
+    }
+
+    public function clearPredictionsDataset()
+    {
+        unset($this->predictions_dataset);
+    }
+
+    /**
+     * The dataset with predictions
+     *
+     * Generated from protobuf field <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+     * @param \Clarifai\Api\Dataset $var
+     * @return $this
+     */
+    public function setPredictionsDataset($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Dataset::class);
+        $this->predictions_dataset = $var;
 
         return $this;
     }

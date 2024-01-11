@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request to get the number of installations (by all users) for the module version 
+ * Request to get the number of installations (by all users) for the module version
  *
  * Generated from protobuf message <code>clarifai.api.GetModuleVersionUsageCountRequest</code>
  */
