@@ -2814,6 +2814,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Modify details of an existing module version.
+     * @param \Clarifai\Api\PatchModuleVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchModuleVersions(\Clarifai\Api\PatchModuleVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchModuleVersions',
+        $argument,
+        ['\Clarifai\Api\MultiModuleVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Delete a multiple module version.
      * @param \Clarifai\Api\DeleteModuleVersionsRequest $argument input argument
      * @param array $metadata metadata
