@@ -18,7 +18,7 @@ class AppCopyProgress extends \Google\Protobuf\Internal\Message
      */
     protected $field = '';
     /**
-     * Generated from protobuf field <code>int32 value = 2;</code>
+     * Generated from protobuf field <code>int32 value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     protected $value = 0;
 
@@ -60,7 +60,7 @@ class AppCopyProgress extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 value = 2;</code>
+     * Generated from protobuf field <code>int32 value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return int
      */
     public function getValue()
@@ -69,7 +69,7 @@ class AppCopyProgress extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 value = 2;</code>
+     * Generated from protobuf field <code>int32 value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @param int $var
      * @return $this
      */

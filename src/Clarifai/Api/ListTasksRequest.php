@@ -65,6 +65,12 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string additional_fields = 7;</code>
      */
     private $additional_fields;
+    /**
+     * (optional) task IDs to filter on
+     *
+     * Generated from protobuf field <code>repeated string ids = 9;</code>
+     */
+    private $ids;
 
     /**
      * Constructor.
@@ -91,6 +97,8 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response.
      *           Currently supported: all, worker.users, review.users.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
+     *           (optional) task IDs to filter on
      * }
      */
     public function __construct($data = NULL) {
@@ -316,6 +324,32 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->additional_fields = $arr;
+
+        return $this;
+    }
+
+    /**
+     * (optional) task IDs to filter on
+     *
+     * Generated from protobuf field <code>repeated string ids = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getIds()
+    {
+        return $this->ids;
+    }
+
+    /**
+     * (optional) task IDs to filter on
+     *
+     * Generated from protobuf field <code>repeated string ids = 9;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->ids = $arr;
 
         return $this;
     }
