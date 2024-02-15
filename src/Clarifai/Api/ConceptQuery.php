@@ -22,17 +22,24 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * (optional) The language of the concept name in a search. Defaults to English.
+     * The language of the concept name in a search. Defaults to English.
      *
      * Generated from protobuf field <code>string language = 2;</code>
      */
     protected $language = '';
     /**
-     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     * The id of workflow. If no id is provided, then application base workflow is used.
      *
      * Generated from protobuf field <code>string workflow_id = 3;</code>
      */
     protected $workflow_id = '';
+    /**
+     * The concepts must belong to workflow models with specified use cases.
+     * Multiple values are joined using an OR condition.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+     */
+    private $use_cases;
 
     /**
      * Constructor.
@@ -43,9 +50,12 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           The name of the concept to search.
      *     @type string $language
-     *           (optional) The language of the concept name in a search. Defaults to English.
+     *           The language of the concept name in a search. Defaults to English.
      *     @type string $workflow_id
-     *           (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     *           The id of workflow. If no id is provided, then application base workflow is used.
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $use_cases
+     *           The concepts must belong to workflow models with specified use cases.
+     *           Multiple values are joined using an OR condition.
      * }
      */
     public function __construct($data = NULL) {
@@ -80,7 +90,7 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional) The language of the concept name in a search. Defaults to English.
+     * The language of the concept name in a search. Defaults to English.
      *
      * Generated from protobuf field <code>string language = 2;</code>
      * @return string
@@ -91,7 +101,7 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional) The language of the concept name in a search. Defaults to English.
+     * The language of the concept name in a search. Defaults to English.
      *
      * Generated from protobuf field <code>string language = 2;</code>
      * @param string $var
@@ -106,7 +116,7 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     * The id of workflow. If no id is provided, then application base workflow is used.
      *
      * Generated from protobuf field <code>string workflow_id = 3;</code>
      * @return string
@@ -117,7 +127,7 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     * The id of workflow. If no id is provided, then application base workflow is used.
      *
      * Generated from protobuf field <code>string workflow_id = 3;</code>
      * @param string $var
@@ -127,6 +137,34 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->workflow_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * The concepts must belong to workflow models with specified use cases.
+     * Multiple values are joined using an OR condition.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUseCases()
+    {
+        return $this->use_cases;
+    }
+
+    /**
+     * The concepts must belong to workflow models with specified use cases.
+     * Multiple values are joined using an OR condition.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUseCases($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Clarifai\Api\WorkflowModelUseCase::class);
+        $this->use_cases = $arr;
 
         return $this;
     }

@@ -46,6 +46,12 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool copy_workflows = 5;</code>
      */
     protected $copy_workflows = false;
+    /**
+     * Copy installed module versions.
+     *
+     * Generated from protobuf field <code>bool copy_installed_module_versions = 6;</code>
+     */
+    protected $copy_installed_module_versions = false;
 
     /**
      * Constructor.
@@ -64,6 +70,8 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
      *           Copy models. Requires that copy_concepts is also set.
      *     @type bool $copy_workflows
      *           Copy workflows. Requires that copy_models and copy_concepts are also set.
+     *     @type bool $copy_installed_module_versions
+     *           Copy installed module versions.
      * }
      */
     public function __construct($data = NULL) {
@@ -199,6 +207,32 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->copy_workflows = $var;
+
+        return $this;
+    }
+
+    /**
+     * Copy installed module versions.
+     *
+     * Generated from protobuf field <code>bool copy_installed_module_versions = 6;</code>
+     * @return bool
+     */
+    public function getCopyInstalledModuleVersions()
+    {
+        return $this->copy_installed_module_versions;
+    }
+
+    /**
+     * Copy installed module versions.
+     *
+     * Generated from protobuf field <code>bool copy_installed_module_versions = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setCopyInstalledModuleVersions($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->copy_installed_module_versions = $var;
 
         return $this;
     }

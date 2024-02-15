@@ -88,7 +88,7 @@ class Collector extends \Google\Protobuf\Internal\Message
      */
     protected $status = null;
     /**
-     * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+     * Whether to collect outputs or not. Default is false. If selected, outputs from the
      * original model predict call will be posted as annotations along with the input with success status.
      *
      * Generated from protobuf field <code>bool collect_outputs = 9;</code>
@@ -141,7 +141,7 @@ class Collector extends \Google\Protobuf\Internal\Message
      *           Status for the collector. This allows you to pause a collector without having to delete it as
      *           an example.
      *     @type bool $collect_outputs
-     *           Whether to collect outputs or not. Default is false. If selected, outputs from the 
+     *           Whether to collect outputs or not. Default is false. If selected, outputs from the
      *           original model predict call will be posted as annotations along with the input with success status.
      * }
      */
@@ -435,7 +435,7 @@ class Collector extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+     * Whether to collect outputs or not. Default is false. If selected, outputs from the
      * original model predict call will be posted as annotations along with the input with success status.
      *
      * Generated from protobuf field <code>bool collect_outputs = 9;</code>
@@ -447,7 +447,7 @@ class Collector extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+     * Whether to collect outputs or not. Default is false. If selected, outputs from the
      * original model predict call will be posted as annotations along with the input with success status.
      *
      * Generated from protobuf field <code>bool collect_outputs = 9;</code>

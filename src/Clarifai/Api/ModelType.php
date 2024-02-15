@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * ModelType is a definition of a set of models that generally have the same input and output fields. 
+ * ModelType is a definition of a set of models that generally have the same input and output fields.
  * This is used to understand more about the possible models in our platform.
  *
  * Generated from protobuf message <code>clarifai.api.ModelType</code>

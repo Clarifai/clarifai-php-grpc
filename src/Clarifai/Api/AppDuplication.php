@@ -97,6 +97,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *  - annotations
      *  - models
      *  - workflows
+     *  - installed_module_versions
      *
      * Generated from protobuf field <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
      */
@@ -151,6 +152,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *            - annotations
      *            - models
      *            - workflows
+     *            - installed_module_versions
      * }
      */
     public function __construct($data = NULL) {
@@ -497,6 +499,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *  - annotations
      *  - models
      *  - workflows
+     *  - installed_module_versions
      *
      * Generated from protobuf field <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -513,6 +516,7 @@ class AppDuplication extends \Google\Protobuf\Internal\Message
      *  - annotations
      *  - models
      *  - workflows
+     *  - installed_module_versions
      *
      * Generated from protobuf field <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
      * @param array<\Clarifai\Api\AppCopyProgress>|\Google\Protobuf\Internal\RepeatedField $var
