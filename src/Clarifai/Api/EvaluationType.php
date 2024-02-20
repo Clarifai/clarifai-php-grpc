@@ -37,6 +37,10 @@ class EvaluationType
      * Generated from protobuf enum <code>Tracker = 5;</code>
      */
     const Tracker = 5;
+    /**
+     * Generated from protobuf enum <code>Generation = 6;</code>
+     */
+    const Generation = 6;
 
     private static $valueToName = [
         self::Undefined => 'Undefined',
@@ -45,6 +49,7 @@ class EvaluationType
         self::Segmentation => 'Segmentation',
         self::Clustering => 'Clustering',
         self::Tracker => 'Tracker',
+        self::Generation => 'Generation',
     ];
 
     public static function name($value)

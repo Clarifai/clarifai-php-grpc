@@ -25,7 +25,7 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
     protected $task_id = '';
     /**
      * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported: all, worker.users, review.users.
+     * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
      *
      * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
      */
@@ -41,7 +41,7 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      *     @type string $task_id
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response.
-     *           Currently supported: all, worker.users, review.users.
+     *           Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
      * }
      */
     public function __construct($data = NULL) {
@@ -105,7 +105,7 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported: all, worker.users, review.users.
+     * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
      *
      * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -117,7 +117,7 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported: all, worker.users, review.users.
+     * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
      *
      * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
