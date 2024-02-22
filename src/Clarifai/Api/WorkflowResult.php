@@ -10,6 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * WorkflowResult
+ * One result per input in the workflow.
  *
  * Generated from protobuf message <code>clarifai.api.WorkflowResult</code>
  */
@@ -34,14 +35,23 @@ class WorkflowResult extends \Google\Protobuf\Internal\Message
      */
     protected $created_at = null;
     /**
-     * Generated from protobuf field <code>.clarifai.api.Model model = 4;</code>
+     * The model that this WorkflowResult is for.
+     * DEPRECATED: not sure why there ever was a model here because each output shows the model
+     * that process this given input.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
+     * @deprecated
      */
     protected $model = null;
     /**
+     * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+     *
      * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
      */
     protected $input = null;
     /**
+     * For each model in the workflow we return an Output.
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     private $outputs;
@@ -67,8 +77,13 @@ class WorkflowResult extends \Google\Protobuf\Internal\Message
      *           the following from the API:
      *           "2017-04-11T21:50:50.223962Z"
      *     @type \Clarifai\Api\Model $model
+     *           The model that this WorkflowResult is for.
+     *           DEPRECATED: not sure why there ever was a model here because each output shows the model
+     *           that process this given input.
      *     @type \Clarifai\Api\Input $input
+     *           The input that ran through the workflow to generate the outputs in this WorkflowResult.
      *     @type array<\Clarifai\Api\Output>|\Google\Protobuf\Internal\RepeatedField $outputs
+     *           For each model in the workflow we return an Output.
      *     @type bool $suppress_output
      *           Indicate if the output of this model is suppressed.
      * }
@@ -177,31 +192,45 @@ class WorkflowResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.clarifai.api.Model model = 4;</code>
+     * The model that this WorkflowResult is for.
+     * DEPRECATED: not sure why there ever was a model here because each output shows the model
+     * that process this given input.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
      * @return \Clarifai\Api\Model|null
+     * @deprecated
      */
     public function getModel()
     {
+        @trigger_error('model is deprecated.', E_USER_DEPRECATED);
         return $this->model;
     }
 
     public function hasModel()
     {
+        @trigger_error('model is deprecated.', E_USER_DEPRECATED);
         return isset($this->model);
     }
 
     public function clearModel()
     {
+        @trigger_error('model is deprecated.', E_USER_DEPRECATED);
         unset($this->model);
     }
 
     /**
-     * Generated from protobuf field <code>.clarifai.api.Model model = 4;</code>
+     * The model that this WorkflowResult is for.
+     * DEPRECATED: not sure why there ever was a model here because each output shows the model
+     * that process this given input.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
      * @param \Clarifai\Api\Model $var
      * @return $this
+     * @deprecated
      */
     public function setModel($var)
     {
+        @trigger_error('model is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Clarifai\Api\Model::class);
         $this->model = $var;
 
@@ -209,6 +238,8 @@ class WorkflowResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+     *
      * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
      * @return \Clarifai\Api\Input|null
      */
@@ -228,6 +259,8 @@ class WorkflowResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+     *
      * Generated from protobuf field <code>.clarifai.api.Input input = 5;</code>
      * @param \Clarifai\Api\Input $var
      * @return $this
@@ -241,6 +274,8 @@ class WorkflowResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * For each model in the workflow we return an Output.
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.Output outputs = 6;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -250,6 +285,8 @@ class WorkflowResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * For each model in the workflow we return an Output.
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.Output outputs = 6;</code>
      * @param array<\Clarifai\Api\Output>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this

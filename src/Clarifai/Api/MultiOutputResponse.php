@@ -20,6 +20,8 @@ class MultiOutputResponse extends \Google\Protobuf\Internal\Message
      */
     protected $status = null;
     /**
+     * For each input processed during model prediction we create one output.
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     private $outputs;
@@ -32,6 +34,7 @@ class MultiOutputResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *     @type array<\Clarifai\Api\Output>|\Google\Protobuf\Internal\RepeatedField $outputs
+     *           For each input processed during model prediction we create one output.
      * }
      */
     public function __construct($data = NULL) {
@@ -72,6 +75,8 @@ class MultiOutputResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * For each input processed during model prediction we create one output.
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -81,6 +86,8 @@ class MultiOutputResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * For each input processed during model prediction we create one output.
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @param array<\Clarifai\Api\Output>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
