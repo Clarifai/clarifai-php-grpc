@@ -1308,6 +1308,22 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * This is a streaming endpoint, the request has a field, upload_data, which can either be the config for the upload or the actual data to upload.
+     * The config must be sent first before the model_bytes can be uploaded.
+     * Once the config has been sent, the server will respond with a confirmation containing the model_version_id. 
+     * This is so that if your upload is interrupted, you can resume the upload by sending the config again with the model_version_id specified for your model_version.
+     * The actual upload will be done via a multipart upload, the latest successful part_id will be sent from the server in the response to the model_bytes.
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\BidiStreamingCall
+     */
+    public function PostModelVersionsUpload($metadata = [], $options = []) {
+        return $this->_bidiRequest('/clarifai.api.V2/PostModelVersionsUpload',
+        ['\Clarifai\Api\PostModelVersionsUploadResponse','decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Deprecated: Use GetEvaluation instead
      * Get the evaluation metrics for a model version.
      * @param \Clarifai\Api\GetModelVersionMetricsRequest $argument input argument
@@ -2239,6 +2255,20 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/GetStatusCode',
         $argument,
         ['\Clarifai\Api\SingleStatusCodeResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\GetResourcePriceRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetResourcePrice(\Clarifai\Api\GetResourcePriceRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetResourcePrice',
+        $argument,
+        ['\Clarifai\Api\GetResourcePriceResponse', 'decode'],
         $metadata, $options);
     }
 

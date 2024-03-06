@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * TaskWorker
+ * TaskWorker includes information about the workers that will work on this task.
  *
  * Generated from protobuf message <code>clarifai.api.TaskWorker</code>
  */
@@ -23,7 +23,7 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
     protected $strategy = 0;
     /**
      * Who will work on this task.
-     * DEPRECATED: Use users.id instead.
+     * DEPRECATED: Use workers.user.id instead.
      *
      * Generated from protobuf field <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated
@@ -33,22 +33,24 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
      * Users who will work on this task.
      * When the 'worker.users' field is additionally requested, then all user
      * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * DEPRECATED: Use workers.user instead.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.User users = 4;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.User users = 4 [deprecated = true];</code>
+     * @deprecated
      */
     private $users;
     /**
-     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * Workers that will work on this task.
+     * For Auto Annotation Tasks:
+     *   the worker can be either a model or a workflow;
+     *   currently only supports 1 worker.
+     * For manual labeling Tasks:
+     *   the workers can only be users;
+     *   no limitation on number of workers.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.Model models = 5;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.Worker workers = 7;</code>
      */
-    private $models;
-    /**
-     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
-     *
-     * Generated from protobuf field <code>repeated .clarifai.api.Workflow workflows = 6;</code>
-     */
-    private $workflows;
+    private $workers;
     protected $strategy_info;
 
     /**
@@ -61,16 +63,21 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
      *           Worker strategy.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $user_ids
      *           Who will work on this task.
-     *           DEPRECATED: Use users.id instead.
+     *           DEPRECATED: Use workers.user.id instead.
      *     @type array<\Clarifai\Api\User>|\Google\Protobuf\Internal\RepeatedField $users
      *           Users who will work on this task.
      *           When the 'worker.users' field is additionally requested, then all user
      *           info is filled for the workers. Otherwise, only the user 'id' is filled.
-     *     @type array<\Clarifai\Api\Model>|\Google\Protobuf\Internal\RepeatedField $models
-     *           Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
-     *     @type array<\Clarifai\Api\Workflow>|\Google\Protobuf\Internal\RepeatedField $workflows
-     *           Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     *           DEPRECATED: Use workers.user instead.
      *     @type \Clarifai\Api\TaskWorkerPartitionedStrategyInfo $partitioned_strategy_info
+     *     @type array<\Clarifai\Api\Worker>|\Google\Protobuf\Internal\RepeatedField $workers
+     *           Workers that will work on this task.
+     *           For Auto Annotation Tasks:
+     *             the worker can be either a model or a workflow;
+     *             currently only supports 1 worker.
+     *           For manual labeling Tasks:
+     *             the workers can only be users;
+     *             no limitation on number of workers.
      * }
      */
     public function __construct($data = NULL) {
@@ -106,7 +113,7 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
 
     /**
      * Who will work on this task.
-     * DEPRECATED: Use users.id instead.
+     * DEPRECATED: Use workers.user.id instead.
      *
      * Generated from protobuf field <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -120,7 +127,7 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
 
     /**
      * Who will work on this task.
-     * DEPRECATED: Use users.id instead.
+     * DEPRECATED: Use workers.user.id instead.
      *
      * Generated from protobuf field <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
@@ -140,12 +147,15 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
      * Users who will work on this task.
      * When the 'worker.users' field is additionally requested, then all user
      * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * DEPRECATED: Use workers.user instead.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.User users = 4;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.User users = 4 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getUsers()
     {
+        @trigger_error('users is deprecated.', E_USER_DEPRECATED);
         return $this->users;
     }
 
@@ -153,67 +163,18 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
      * Users who will work on this task.
      * When the 'worker.users' field is additionally requested, then all user
      * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * DEPRECATED: Use workers.user instead.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.User users = 4;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.User users = 4 [deprecated = true];</code>
      * @param array<\Clarifai\Api\User>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setUsers($var)
     {
+        @trigger_error('users is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\User::class);
         $this->users = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
-     *
-     * Generated from protobuf field <code>repeated .clarifai.api.Model models = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getModels()
-    {
-        return $this->models;
-    }
-
-    /**
-     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
-     *
-     * Generated from protobuf field <code>repeated .clarifai.api.Model models = 5;</code>
-     * @param array<\Clarifai\Api\Model>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setModels($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Model::class);
-        $this->models = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
-     *
-     * Generated from protobuf field <code>repeated .clarifai.api.Workflow workflows = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getWorkflows()
-    {
-        return $this->workflows;
-    }
-
-    /**
-     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
-     *
-     * Generated from protobuf field <code>repeated .clarifai.api.Workflow workflows = 6;</code>
-     * @param array<\Clarifai\Api\Workflow>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setWorkflows($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Workflow::class);
-        $this->workflows = $arr;
 
         return $this;
     }
@@ -241,6 +202,44 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\TaskWorkerPartitionedStrategyInfo::class);
         $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * Workers that will work on this task.
+     * For Auto Annotation Tasks:
+     *   the worker can be either a model or a workflow;
+     *   currently only supports 1 worker.
+     * For manual labeling Tasks:
+     *   the workers can only be users;
+     *   no limitation on number of workers.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Worker workers = 7;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getWorkers()
+    {
+        return $this->workers;
+    }
+
+    /**
+     * Workers that will work on this task.
+     * For Auto Annotation Tasks:
+     *   the worker can be either a model or a workflow;
+     *   currently only supports 1 worker.
+     * For manual labeling Tasks:
+     *   the workers can only be users;
+     *   no limitation on number of workers.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Worker workers = 7;</code>
+     * @param array<\Clarifai\Api\Worker>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setWorkers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Worker::class);
+        $this->workers = $arr;
 
         return $this;
     }
