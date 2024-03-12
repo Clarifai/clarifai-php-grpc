@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class TaskMetrics extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint64 estimated_labeled_inputs_count = 1;</code>
+     * Generated from protobuf field <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
      */
-    protected $estimated_labeled_inputs_count = 0;
+    protected $work = null;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class TaskMetrics extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int|string $estimated_labeled_inputs_count
+     *     @type \Clarifai\Api\TaskWorkMetrics $work
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,33 @@ class TaskMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint64 estimated_labeled_inputs_count = 1;</code>
-     * @return int|string
+     * Generated from protobuf field <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+     * @return \Clarifai\Api\TaskWorkMetrics|null
      */
-    public function getEstimatedLabeledInputsCount()
+    public function getWork()
     {
-        return $this->estimated_labeled_inputs_count;
+        return $this->work;
+    }
+
+    public function hasWork()
+    {
+        return isset($this->work);
+    }
+
+    public function clearWork()
+    {
+        unset($this->work);
     }
 
     /**
-     * Generated from protobuf field <code>uint64 estimated_labeled_inputs_count = 1;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+     * @param \Clarifai\Api\TaskWorkMetrics $var
      * @return $this
      */
-    public function setEstimatedLabeledInputsCount($var)
+    public function setWork($var)
     {
-        GPBUtil::checkUint64($var);
-        $this->estimated_labeled_inputs_count = $var;
+        GPBUtil::checkMessage($var, \Clarifai\Api\TaskWorkMetrics::class);
+        $this->work = $var;
 
         return $this;
     }

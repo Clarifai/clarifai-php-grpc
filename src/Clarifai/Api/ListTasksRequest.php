@@ -60,7 +60,12 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
     protected $including_label_order_tasks = false;
     /**
      * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+     * Currently supported additional fields:
+     * - all
+     * - worker.users
+     * - review.users
+     * - metrics.work.inputs_count_estimated
+     * - metrics.work.inputs_percent_estimated
      *
      * Generated from protobuf field <code>repeated string additional_fields = 7;</code>
      */
@@ -96,7 +101,12 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      *           It is automatically set to true if label_order_ids is set.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response.
-     *           Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+     *           Currently supported additional fields:
+     *           - all
+     *           - worker.users
+     *           - review.users
+     *           - metrics.work.inputs_count_estimated
+     *           - metrics.work.inputs_percent_estimated
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
      *           (optional) task IDs to filter on
      * }
@@ -302,7 +312,12 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+     * Currently supported additional fields:
+     * - all
+     * - worker.users
+     * - review.users
+     * - metrics.work.inputs_count_estimated
+     * - metrics.work.inputs_percent_estimated
      *
      * Generated from protobuf field <code>repeated string additional_fields = 7;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -314,7 +329,12 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+     * Currently supported additional fields:
+     * - all
+     * - worker.users
+     * - review.users
+     * - metrics.work.inputs_count_estimated
+     * - metrics.work.inputs_percent_estimated
      *
      * Generated from protobuf field <code>repeated string additional_fields = 7;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
