@@ -373,6 +373,24 @@ class StatusCode
      */
     const MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT = 21420;
     /**
+     * Model Export status codes
+     *
+     * Generated from protobuf enum <code>MODEL_EXPORTED = 21500;</code>
+     */
+    const MODEL_EXPORTED = 21500;
+    /**
+     * Generated from protobuf enum <code>MODEL_EXPORTING = 21501;</code>
+     */
+    const MODEL_EXPORTING = 21501;
+    /**
+     * Generated from protobuf enum <code>MODEL_EXPORTING_FAILED = 21502;</code>
+     */
+    const MODEL_EXPORTING_FAILED = 21502;
+    /**
+     * Generated from protobuf enum <code>MODEL_EXPORT_PENDING = 21503;</code>
+     */
+    const MODEL_EXPORT_PENDING = 21503;
+    /**
      * specified model input not in workflow
      *
      * Generated from protobuf enum <code>WORKFLOW_NO_MATCHING_INPUT = 22001;</code>
@@ -1314,6 +1332,22 @@ class StatusCode
      */
     const TASK_MISSING = 54102;
     /**
+     * Generated from protobuf enum <code>TASK_ASSIGNMENT_SUCCESS = 54200;</code>
+     */
+    const TASK_ASSIGNMENT_SUCCESS = 54200;
+    /**
+     * Generated from protobuf enum <code>TASK_ASSIGNMENT_PENDING = 54201;</code>
+     */
+    const TASK_ASSIGNMENT_PENDING = 54201;
+    /**
+     * Generated from protobuf enum <code>TASK_ASSIGNMENT_AWAITING_REVIEW = 54202;</code>
+     */
+    const TASK_ASSIGNMENT_AWAITING_REVIEW = 54202;
+    /**
+     * Generated from protobuf enum <code>TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW = 54203;</code>
+     */
+    const TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW = 54203;
+    /**
      * Label Order Related Status Code 55xxx
      *
      * Generated from protobuf enum <code>LABEL_ORDER_PENDING = 55001;</code>
@@ -1721,6 +1755,10 @@ class StatusCode
         self::MODEL_NOT_DEPLOYED => 'MODEL_NOT_DEPLOYED',
         self::MODEL_REFERENCE_INVALID_ARGUMENT => 'MODEL_REFERENCE_INVALID_ARGUMENT',
         self::MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT => 'MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT',
+        self::MODEL_EXPORTED => 'MODEL_EXPORTED',
+        self::MODEL_EXPORTING => 'MODEL_EXPORTING',
+        self::MODEL_EXPORTING_FAILED => 'MODEL_EXPORTING_FAILED',
+        self::MODEL_EXPORT_PENDING => 'MODEL_EXPORT_PENDING',
         self::WORKFLOW_NO_MATCHING_INPUT => 'WORKFLOW_NO_MATCHING_INPUT',
         self::WORKFLOW_REQUIRE_TRAINED_MODEL => 'WORKFLOW_REQUIRE_TRAINED_MODEL',
         self::WORKFLOW_DUPLICATE => 'WORKFLOW_DUPLICATE',
@@ -1934,6 +1972,10 @@ class StatusCode
         self::TASK_CONFLICT => 'TASK_CONFLICT',
         self::TASK_NOT_IMPLEMENTED => 'TASK_NOT_IMPLEMENTED',
         self::TASK_MISSING => 'TASK_MISSING',
+        self::TASK_ASSIGNMENT_SUCCESS => 'TASK_ASSIGNMENT_SUCCESS',
+        self::TASK_ASSIGNMENT_PENDING => 'TASK_ASSIGNMENT_PENDING',
+        self::TASK_ASSIGNMENT_AWAITING_REVIEW => 'TASK_ASSIGNMENT_AWAITING_REVIEW',
+        self::TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW => 'TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW',
         self::LABEL_ORDER_PENDING => 'LABEL_ORDER_PENDING',
         self::LABEL_ORDER_IN_PROGRESS => 'LABEL_ORDER_IN_PROGRESS',
         self::LABEL_ORDER_SUCCESS => 'LABEL_ORDER_SUCCESS',

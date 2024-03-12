@@ -24,9 +24,21 @@ class PutTaskAssignmentsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $task_id = '';
     /**
+     * Deprecated: use action and action_config instead.
+     * Supported for backwards compatibility: setting this field is equivalent with
+     * * action = LABEL_SUBMIT
+     * * label_submit_config = [{"task_assignments": {"input": {"id": <input-id>}}}]
+     *
      * Generated from protobuf field <code>string input_id = 3;</code>
      */
     protected $input_id = '';
+    /**
+     * Action to perform on selected task.
+     *
+     * Generated from protobuf field <code>.clarifai.api.PutTaskAssignmentsRequestAction action = 4;</code>
+     */
+    protected $action = 0;
+    protected $action_config;
 
     /**
      * Constructor.
@@ -37,6 +49,13 @@ class PutTaskAssignmentsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $task_id
      *     @type string $input_id
+     *           Deprecated: use action and action_config instead.
+     *           Supported for backwards compatibility: setting this field is equivalent with
+     *           * action = LABEL_SUBMIT
+     *           * label_submit_config = [{"task_assignments": {"input": {"id": <input-id>}}}]
+     *     @type int $action
+     *           Action to perform on selected task.
+     *     @type \Clarifai\Api\LabelSubmitConfig $label_submit_config
      * }
      */
     public function __construct($data = NULL) {
@@ -99,6 +118,11 @@ class PutTaskAssignmentsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated: use action and action_config instead.
+     * Supported for backwards compatibility: setting this field is equivalent with
+     * * action = LABEL_SUBMIT
+     * * label_submit_config = [{"task_assignments": {"input": {"id": <input-id>}}}]
+     *
      * Generated from protobuf field <code>string input_id = 3;</code>
      * @return string
      */
@@ -108,6 +132,11 @@ class PutTaskAssignmentsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated: use action and action_config instead.
+     * Supported for backwards compatibility: setting this field is equivalent with
+     * * action = LABEL_SUBMIT
+     * * label_submit_config = [{"task_assignments": {"input": {"id": <input-id>}}}]
+     *
      * Generated from protobuf field <code>string input_id = 3;</code>
      * @param string $var
      * @return $this
@@ -118,6 +147,67 @@ class PutTaskAssignmentsRequest extends \Google\Protobuf\Internal\Message
         $this->input_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Action to perform on selected task.
+     *
+     * Generated from protobuf field <code>.clarifai.api.PutTaskAssignmentsRequestAction action = 4;</code>
+     * @return int
+     */
+    public function getAction()
+    {
+        return $this->action;
+    }
+
+    /**
+     * Action to perform on selected task.
+     *
+     * Generated from protobuf field <code>.clarifai.api.PutTaskAssignmentsRequestAction action = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAction($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\PutTaskAssignmentsRequestAction::class);
+        $this->action = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+     * @return \Clarifai\Api\LabelSubmitConfig|null
+     */
+    public function getLabelSubmitConfig()
+    {
+        return $this->readOneof(6);
+    }
+
+    public function hasLabelSubmitConfig()
+    {
+        return $this->hasOneof(6);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+     * @param \Clarifai\Api\LabelSubmitConfig $var
+     * @return $this
+     */
+    public function setLabelSubmitConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\LabelSubmitConfig::class);
+        $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getActionConfig()
+    {
+        return $this->whichOneof("action_config");
     }
 
 }
