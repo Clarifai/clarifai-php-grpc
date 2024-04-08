@@ -643,6 +643,22 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * // TODO(zeiler): will need to
+     * // Single request but streaming resopnses.
+     * rpc GeneratePostModelOutputs (PostModelOutputsRequest) returns (stream MultiOutputResponse) {
+     *   option (google.api.http) = {
+     *     post: "/v2/users/{user_app_id.user_id}/apps/{user_app_id.app_id}/models/{model_id}/versions/{version_id}/outputs"
+     *     body: "*"
+     *   };
+     *   option (clarifai.auth.util.cl_auth_type) = KeyAuth;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Apps_Get;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Concepts_Get;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Models_Get;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Predict;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Nodepools_Get;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Deployments_Get;
+     * }
+     *
      * List all the datasets.
      * @param \Clarifai\Api\ListDatasetsRequest $argument input argument
      * @param array $metadata metadata
@@ -1203,6 +1219,23 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * TODO(zeiler): in future we can add endpoints like this for listing runners for a specific model
+     * List all the runners currently handling work for the given model.
+     * By default this lists the runners available in your account as well as all the orgs you have
+     * access to.
+     * Could have RunnerSelector to break it down by Nodepool or Deployment.
+     * Addition filters on the request can select specific user/org to list from or nodepool.
+     * rpc ListModelVersionRunners (ListModelVersionRunnersRequest) returns (MultiRunnerResponse) {
+     *   option (google.api.http) = {
+     *     get: "/v2/users/{user_app_id.user_id}/apps/{user_app_id.app_id}/models/{model_id}/versions/{version_id}/runners"
+     *   };
+     *   option (clarifai.auth.util.cl_auth_type) = KeyAuth;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Apps_Get;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Concepts_Get;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Models_Get;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Runners_Get;
+     * }
+     *
      * @param \Clarifai\Api\PostWorkflowVersionsUnPublishRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -2291,20 +2324,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Clarifai\Api\GetResourcePriceRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function GetResourcePrice(\Clarifai\Api\GetResourcePriceRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/GetResourcePrice',
-        $argument,
-        ['\Clarifai\Api\GetResourcePriceResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * owner list users who the app is shared with
      * @param \Clarifai\Api\ListCollaboratorsRequest $argument input argument
      * @param array $metadata metadata
@@ -3096,7 +3115,9 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * PutTaskAssignments evaluates all the annotations by labeler (authenticated user) for given task (task_id) and input (input_id).
+     * PutTaskAssignments performs an action for the task assignments in given task.
+     * All the actions are theoretically idempotent, but practically, in the current implementation,
+     * the REVIEW_START action is not idempotent. See PutTaskAssignmentsRequestAction for more details.
      * @param \Clarifai\Api\PutTaskAssignmentsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -3318,7 +3339,8 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Get a specific runner from an app.
+     * Get a specific runner.
+     * TODO(zeiler): runner_id is a UUID so can list globally as well.
      * @param \Clarifai\Api\GetRunnerRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -3333,7 +3355,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * List all the runners in community, by user or by app.
+     * List all the runners for the user.
      * @param \Clarifai\Api\ListRunnersRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -3348,7 +3370,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Add a runners to an app.
+     * Add a runners to a user.
      * @param \Clarifai\Api\PostRunnersRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -3379,6 +3401,7 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * List items for the remote runner to work on.
+     * since the runner_id is a UUID we can access it directly too.
      * @param \Clarifai\Api\ListRunnerItemsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -3394,6 +3417,7 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * Post back outputs from remote runners
+     * since the runner_id is a UUID we can access it directly too.
      * @param \Clarifai\Api\PostRunnerItemOutputsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

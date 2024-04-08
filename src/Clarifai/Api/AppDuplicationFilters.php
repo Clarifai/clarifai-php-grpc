@@ -41,7 +41,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
      */
     protected $copy_models = false;
     /**
-     * Copy workflows. Requires that copy_models and copy_concepts are also set.
+     * Copy workflows.
      *
      * Generated from protobuf field <code>bool copy_workflows = 5;</code>
      */
@@ -69,7 +69,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
      *     @type bool $copy_models
      *           Copy models. Requires that copy_concepts is also set.
      *     @type bool $copy_workflows
-     *           Copy workflows. Requires that copy_models and copy_concepts are also set.
+     *           Copy workflows.
      *     @type bool $copy_installed_module_versions
      *           Copy installed module versions.
      * }
@@ -186,7 +186,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy workflows. Requires that copy_models and copy_concepts are also set.
+     * Copy workflows.
      *
      * Generated from protobuf field <code>bool copy_workflows = 5;</code>
      * @return bool
@@ -197,7 +197,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy workflows. Requires that copy_models and copy_concepts are also set.
+     * Copy workflows.
      *
      * Generated from protobuf field <code>bool copy_workflows = 5;</code>
      * @param bool $var

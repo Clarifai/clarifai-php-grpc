@@ -16,25 +16,79 @@ class PutTaskAssignmentsRequestAction
      */
     const PUT_TASK_ASSIGNMENTS_REQUEST_ACTION_NOT_SET = 0;
     /**
+     * Create a list of task assignments for labeler => 10 inputs are assigned to the labeler.
+     * This is a fully sync action.
+     * If task assignments already exist, then return existing task assignments.
+     *
      * Generated from protobuf enum <code>LABEL_START = 1;</code>
      */
     const LABEL_START = 1;
     /**
+     * Submit task assignments => mark task assignment work as completed.
+     * This is a partially sync action.
+     * Sync: task assignments are updated as follows:
+     * * when review_strategy is NONE, then task assignment status is updated to SUCCESS.
+     * * when review strategy is CONSENSUS, then task assignment status is updated to AWAITING_CONSENSUS_REVIEW.
+     * * when review strategy is MANUAL, then task assignment status is updated to AWAITING_REVIEW.
+     * If task assignments are already submitted, then no update is performed on them.
+     * Async: annotations added for the same input as the task assignment are updated as follows:
+     * * when review_strategy is NONE, then annotation status is updated to SUCCESS.
+     * * when review strategy is CONSENSUS, then annotation status is updated to SUCCESS (if it reaches consensus) or AWAITING_REVIEW (if it does not reach consensus).
+     * * when review strategy is MANUAL, then annotation status is updated to AWAITING_REVIEW.
+     *
      * Generated from protobuf enum <code>LABEL_SUBMIT = 2;</code>
      */
     const LABEL_SUBMIT = 2;
     /**
+     * Return a list of task assignments for reviewer to review => 10 inputs are assigned to the reviewer.
+     * This is a fully sync action.
+     * NOT idempotent:
+     *  In the current implementation, we don't actually store the reviewer in the task assignment,
+     *  as the task assignment still stays assigned to the labeler.
+     *  Therefore, multiple calls to this endpoint may result in different set of task assignments to review.
+     *  For now, this action is practically not idempotent.
+     *  In the future, we could however store the reviewer in the task assignment and
+     *  return existing task assignments already assigned to the reviewer => this will make this action idempotent.
+     *
      * Generated from protobuf enum <code>REVIEW_START = 10;</code>
      */
     const REVIEW_START = 10;
     /**
+     * Approve task assignments.
+     * There are two types of configurations:
+     * * Batch approve: approve a list of task assignment IDs;
+     * * Bulk approve: approve all task assignments from a list of workers.
+     * This is a partially sync action.
+     * Sync: task assignments are updated to SUCCESS
+     * Async: annotations added for the same input as the task assignment are updated to SUCCESS
+     *
      * Generated from protobuf enum <code>REVIEW_APPROVE = 11;</code>
      */
     const REVIEW_APPROVE = 11;
     /**
+     * Request changes for task assignments.
+     * There are two types of configurations:
+     * * Batch request changes: request changes for a list of task assignment IDs;
+     * * Bulk request changes: request changes for all task assignments from a list of workers.
+     * This is a partially sync action.
+     * Sync: task assignments are updated to PENDING
+     * Async: annotations added for the same input as the task assignment are updated to PENDING
+     *
      * Generated from protobuf enum <code>REVIEW_REQUEST_CHANGES = 12;</code>
      */
     const REVIEW_REQUEST_CHANGES = 12;
+    /**
+     * Reject task assignments.
+     * There are two types of configurations:
+     * * Batch reject: reject a list of task assignment IDs;
+     * * Bulk reject: reject all task assignments from a list of workers.
+     * This is a partially sync action.
+     * Sync: task assignments are updated to REVIEW_DENIED
+     * Async: annotations added for the same input as the task assignment are updated to REVIEW_DENIED
+     *
+     * Generated from protobuf enum <code>REVIEW_REJECT = 13;</code>
+     */
+    const REVIEW_REJECT = 13;
 
     private static $valueToName = [
         self::PUT_TASK_ASSIGNMENTS_REQUEST_ACTION_NOT_SET => 'PUT_TASK_ASSIGNMENTS_REQUEST_ACTION_NOT_SET',
@@ -43,6 +97,7 @@ class PutTaskAssignmentsRequestAction
         self::REVIEW_START => 'REVIEW_START',
         self::REVIEW_APPROVE => 'REVIEW_APPROVE',
         self::REVIEW_REQUEST_CHANGES => 'REVIEW_REQUEST_CHANGES',
+        self::REVIEW_REJECT => 'REVIEW_REJECT',
     ];
 
     public static function name($value)

@@ -27,7 +27,7 @@ class PutTaskAssignmentsRequest extends \Google\Protobuf\Internal\Message
      * Deprecated: use action and action_config instead.
      * Supported for backwards compatibility: setting this field is equivalent with
      * * action = LABEL_SUBMIT
-     * * label_submit_config = [{"task_assignments": {"input": {"id": <input-id>}}}]
+     * * label_submit_config = [{"task_assignments": {{"id": "<task-assignment-id-for-input-id>"}}]
      *
      * Generated from protobuf field <code>string input_id = 3;</code>
      */
@@ -52,10 +52,13 @@ class PutTaskAssignmentsRequest extends \Google\Protobuf\Internal\Message
      *           Deprecated: use action and action_config instead.
      *           Supported for backwards compatibility: setting this field is equivalent with
      *           * action = LABEL_SUBMIT
-     *           * label_submit_config = [{"task_assignments": {"input": {"id": <input-id>}}}]
+     *           * label_submit_config = [{"task_assignments": {{"id": "<task-assignment-id-for-input-id>"}}]
      *     @type int $action
      *           Action to perform on selected task.
      *     @type \Clarifai\Api\LabelSubmitConfig $label_submit_config
+     *     @type \Clarifai\Api\ReviewApproveConfig $review_approve_config
+     *     @type \Clarifai\Api\ReviewRequestChangesConfig $review_request_changes_config
+     *     @type \Clarifai\Api\ReviewRejectConfig $review_reject_config
      * }
      */
     public function __construct($data = NULL) {
@@ -121,7 +124,7 @@ class PutTaskAssignmentsRequest extends \Google\Protobuf\Internal\Message
      * Deprecated: use action and action_config instead.
      * Supported for backwards compatibility: setting this field is equivalent with
      * * action = LABEL_SUBMIT
-     * * label_submit_config = [{"task_assignments": {"input": {"id": <input-id>}}}]
+     * * label_submit_config = [{"task_assignments": {{"id": "<task-assignment-id-for-input-id>"}}]
      *
      * Generated from protobuf field <code>string input_id = 3;</code>
      * @return string
@@ -135,7 +138,7 @@ class PutTaskAssignmentsRequest extends \Google\Protobuf\Internal\Message
      * Deprecated: use action and action_config instead.
      * Supported for backwards compatibility: setting this field is equivalent with
      * * action = LABEL_SUBMIT
-     * * label_submit_config = [{"task_assignments": {"input": {"id": <input-id>}}}]
+     * * label_submit_config = [{"task_assignments": {{"id": "<task-assignment-id-for-input-id>"}}]
      *
      * Generated from protobuf field <code>string input_id = 3;</code>
      * @param string $var
@@ -198,6 +201,87 @@ class PutTaskAssignmentsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\LabelSubmitConfig::class);
         $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+     * @return \Clarifai\Api\ReviewApproveConfig|null
+     */
+    public function getReviewApproveConfig()
+    {
+        return $this->readOneof(7);
+    }
+
+    public function hasReviewApproveConfig()
+    {
+        return $this->hasOneof(7);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+     * @param \Clarifai\Api\ReviewApproveConfig $var
+     * @return $this
+     */
+    public function setReviewApproveConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ReviewApproveConfig::class);
+        $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+     * @return \Clarifai\Api\ReviewRequestChangesConfig|null
+     */
+    public function getReviewRequestChangesConfig()
+    {
+        return $this->readOneof(8);
+    }
+
+    public function hasReviewRequestChangesConfig()
+    {
+        return $this->hasOneof(8);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+     * @param \Clarifai\Api\ReviewRequestChangesConfig $var
+     * @return $this
+     */
+    public function setReviewRequestChangesConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ReviewRequestChangesConfig::class);
+        $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+     * @return \Clarifai\Api\ReviewRejectConfig|null
+     */
+    public function getReviewRejectConfig()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasReviewRejectConfig()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+     * @param \Clarifai\Api\ReviewRejectConfig $var
+     * @return $this
+     */
+    public function setReviewRejectConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ReviewRejectConfig::class);
+        $this->writeOneof(9, $var);
 
         return $this;
     }

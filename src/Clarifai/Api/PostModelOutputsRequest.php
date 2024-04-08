@@ -41,6 +41,12 @@ class PostModelOutputsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Model model = 5;</code>
      */
     protected $model = null;
+    /**
+     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     *
+     * Generated from protobuf field <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+     */
+    protected $runner_selector = null;
 
     /**
      * Constructor.
@@ -55,6 +61,8 @@ class PostModelOutputsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Model $model
      *           This allows you to specify config options for the model such as
      *           the language which appear's in the model's output_info.
+     *     @type \Clarifai\Api\RunnerSelector $runner_selector
+     *           Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
      * }
      */
     public function __construct($data = NULL) {
@@ -194,6 +202,42 @@ class PostModelOutputsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Model::class);
         $this->model = $var;
+
+        return $this;
+    }
+
+    /**
+     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     *
+     * Generated from protobuf field <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+     * @return \Clarifai\Api\RunnerSelector|null
+     */
+    public function getRunnerSelector()
+    {
+        return $this->runner_selector;
+    }
+
+    public function hasRunnerSelector()
+    {
+        return isset($this->runner_selector);
+    }
+
+    public function clearRunnerSelector()
+    {
+        unset($this->runner_selector);
+    }
+
+    /**
+     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     *
+     * Generated from protobuf field <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+     * @param \Clarifai\Api\RunnerSelector $var
+     * @return $this
+     */
+    public function setRunnerSelector($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\RunnerSelector::class);
+        $this->runner_selector = $var;
 
         return $this;
     }

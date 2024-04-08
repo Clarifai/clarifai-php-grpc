@@ -9,7 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * An app module that a user created in our app module marketplace.
+ * A worker for compute within a nodepool of instances.
+ * This asks the API for work
  *
  * Generated from protobuf message <code>clarifai.api.Runner</code>
  */
@@ -17,6 +18,7 @@ class Runner extends \Google\Protobuf\Internal\Message
 {
     /**
      * A unique ID for this app module.
+     * This is a UUID since runners can be automatically orchestrated.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      */
@@ -48,17 +50,40 @@ class Runner extends \Google\Protobuf\Internal\Message
      */
     protected $metadata = null;
     /**
-     * The creator of the app module.
+     * The owner of the runner. Runners belong to a user/org account.
      *
      * Generated from protobuf field <code>string user_id = 6;</code>
      */
     protected $user_id = '';
     /**
-     * Labels to match.
+     * Labels to match in order to find work.
      *
-     * Generated from protobuf field <code>repeated string labels = 7;</code>
+     * Generated from protobuf field <code>repeated string labels = 7 [deprecated = true];</code>
+     * @deprecated
      */
     private $labels;
+    /**
+     * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+     * to be provided when creating a Runner.
+     * This nodepool must be accessible to you or an org you are part of.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     */
+    protected $nodepool = null;
+    /**
+     *&#47;/////////////////////////
+     * Need resources on the runner so we can schedule this Runner into the Nodepool.
+     * If this runner is being orchestrated for a model then the orchestrator will set this to the
+     * model resource requirements. If a workflow then it'll compute those requirements and set
+     * populate this resource field.
+     * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+     * requirements on those object, which may be less than what the Runner allocates (as a safety
+     * margin for the runner to for sure run the resource).
+     *
+     * Generated from protobuf field <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     */
+    protected $compute_info = null;
+    protected $object;
 
     /**
      * Constructor.
@@ -68,6 +93,7 @@ class Runner extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           A unique ID for this app module.
+     *           This is a UUID since runners can be automatically orchestrated.
      *     @type string $description
      *           A short description for this app module to be used in grids of modules.
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -79,9 +105,26 @@ class Runner extends \Google\Protobuf\Internal\Message
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *           This is an optional arg.
      *     @type string $user_id
-     *           The creator of the app module.
+     *           The owner of the runner. Runners belong to a user/org account.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
-     *           Labels to match.
+     *           Labels to match in order to find work.
+     *     @type \Clarifai\Api\Model $model
+     *           Model: match work to only a specific model.
+     *     @type \Clarifai\Api\Workflow $workflow
+     *           Workflow: match work to only a specific workflow.
+     *     @type \Clarifai\Api\Nodepool $nodepool
+     *           Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+     *           to be provided when creating a Runner.
+     *           This nodepool must be accessible to you or an org you are part of.
+     *     @type \Clarifai\Api\ComputeInfo $compute_info
+     *          &#47;/////////////////////////
+     *           Need resources on the runner so we can schedule this Runner into the Nodepool.
+     *           If this runner is being orchestrated for a model then the orchestrator will set this to the
+     *           model resource requirements. If a workflow then it'll compute those requirements and set
+     *           populate this resource field.
+     *           Having this on the underlying object like Model and Workflow allows us to represent the minimum
+     *           requirements on those object, which may be less than what the Runner allocates (as a safety
+     *           margin for the runner to for sure run the resource).
      * }
      */
     public function __construct($data = NULL) {
@@ -91,6 +134,7 @@ class Runner extends \Google\Protobuf\Internal\Message
 
     /**
      * A unique ID for this app module.
+     * This is a UUID since runners can be automatically orchestrated.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @return string
@@ -102,6 +146,7 @@ class Runner extends \Google\Protobuf\Internal\Message
 
     /**
      * A unique ID for this app module.
+     * This is a UUID since runners can be automatically orchestrated.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
@@ -254,7 +299,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The creator of the app module.
+     * The owner of the runner. Runners belong to a user/org account.
      *
      * Generated from protobuf field <code>string user_id = 6;</code>
      * @return string
@@ -265,7 +310,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The creator of the app module.
+     * The owner of the runner. Runners belong to a user/org account.
      *
      * Generated from protobuf field <code>string user_id = 6;</code>
      * @param string $var
@@ -280,29 +325,193 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Labels to match.
+     * Labels to match in order to find work.
      *
-     * Generated from protobuf field <code>repeated string labels = 7;</code>
+     * Generated from protobuf field <code>repeated string labels = 7 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getLabels()
     {
+        @trigger_error('labels is deprecated.', E_USER_DEPRECATED);
         return $this->labels;
     }
 
     /**
-     * Labels to match.
+     * Labels to match in order to find work.
      *
-     * Generated from protobuf field <code>repeated string labels = 7;</code>
+     * Generated from protobuf field <code>repeated string labels = 7 [deprecated = true];</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setLabels($var)
     {
+        @trigger_error('labels is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->labels = $arr;
 
         return $this;
+    }
+
+    /**
+     * Model: match work to only a specific model.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Model model = 9;</code>
+     * @return \Clarifai\Api\Model|null
+     */
+    public function getModel()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasModel()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * Model: match work to only a specific model.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Model model = 9;</code>
+     * @param \Clarifai\Api\Model $var
+     * @return $this
+     */
+    public function setModel($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Model::class);
+        $this->writeOneof(9, $var);
+
+        return $this;
+    }
+
+    /**
+     * Workflow: match work to only a specific workflow.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Workflow workflow = 10;</code>
+     * @return \Clarifai\Api\Workflow|null
+     */
+    public function getWorkflow()
+    {
+        return $this->readOneof(10);
+    }
+
+    public function hasWorkflow()
+    {
+        return $this->hasOneof(10);
+    }
+
+    /**
+     * Workflow: match work to only a specific workflow.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Workflow workflow = 10;</code>
+     * @param \Clarifai\Api\Workflow $var
+     * @return $this
+     */
+    public function setWorkflow($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Workflow::class);
+        $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
+     * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+     * to be provided when creating a Runner.
+     * This nodepool must be accessible to you or an org you are part of.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * @return \Clarifai\Api\Nodepool|null
+     */
+    public function getNodepool()
+    {
+        return $this->nodepool;
+    }
+
+    public function hasNodepool()
+    {
+        return isset($this->nodepool);
+    }
+
+    public function clearNodepool()
+    {
+        unset($this->nodepool);
+    }
+
+    /**
+     * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+     * to be provided when creating a Runner.
+     * This nodepool must be accessible to you or an org you are part of.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * @param \Clarifai\Api\Nodepool $var
+     * @return $this
+     */
+    public function setNodepool($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Nodepool::class);
+        $this->nodepool = $var;
+
+        return $this;
+    }
+
+    /**
+     *&#47;/////////////////////////
+     * Need resources on the runner so we can schedule this Runner into the Nodepool.
+     * If this runner is being orchestrated for a model then the orchestrator will set this to the
+     * model resource requirements. If a workflow then it'll compute those requirements and set
+     * populate this resource field.
+     * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+     * requirements on those object, which may be less than what the Runner allocates (as a safety
+     * margin for the runner to for sure run the resource).
+     *
+     * Generated from protobuf field <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * @return \Clarifai\Api\ComputeInfo|null
+     */
+    public function getComputeInfo()
+    {
+        return $this->compute_info;
+    }
+
+    public function hasComputeInfo()
+    {
+        return isset($this->compute_info);
+    }
+
+    public function clearComputeInfo()
+    {
+        unset($this->compute_info);
+    }
+
+    /**
+     *&#47;/////////////////////////
+     * Need resources on the runner so we can schedule this Runner into the Nodepool.
+     * If this runner is being orchestrated for a model then the orchestrator will set this to the
+     * model resource requirements. If a workflow then it'll compute those requirements and set
+     * populate this resource field.
+     * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+     * requirements on those object, which may be less than what the Runner allocates (as a safety
+     * margin for the runner to for sure run the resource).
+     *
+     * Generated from protobuf field <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * @param \Clarifai\Api\ComputeInfo $var
+     * @return $this
+     */
+    public function setComputeInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ComputeInfo::class);
+        $this->compute_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getObject()
+    {
+        return $this->whichOneof("object");
     }
 
 }

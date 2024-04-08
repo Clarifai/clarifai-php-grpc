@@ -150,6 +150,18 @@ class S
      */
     const Models_Sync = 27;
     /**
+     * To get model version export
+     *
+     * Generated from protobuf enum <code>ModelExports_Get = 142 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const ModelExports_Get = 142;
+    /**
+     * To create model version export
+     *
+     * Generated from protobuf enum <code>ModelExports_Add = 143 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = ModelExports_Get];</code>
+     */
+    const ModelExports_Add = 143;
+    /**
      * Write to the workflows DB table.
      *
      * Generated from protobuf enum <code>Workflows_Add = 18 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Workflows_Get];</code>
@@ -518,7 +530,7 @@ class S
      */
     const Uploads_Delete = 130;
     /**
-     * To read allo control over remote runners
+     * To control remote runners
      *
      * Generated from protobuf enum <code>Runners_Get = 131 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
@@ -559,6 +571,8 @@ class S
         self::Models_Delete => 'Models_Delete',
         self::Models_Train => 'Models_Train',
         self::Models_Sync => 'Models_Sync',
+        self::ModelExports_Get => 'ModelExports_Get',
+        self::ModelExports_Add => 'ModelExports_Add',
         self::Workflows_Add => 'Workflows_Add',
         self::Workflows_Get => 'Workflows_Get',
         self::Workflows_Patch => 'Workflows_Patch',

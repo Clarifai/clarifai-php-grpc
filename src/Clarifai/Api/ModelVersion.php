@@ -131,6 +131,18 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string train_log = 23;</code>
      */
     protected $train_log = '';
+    /**
+     * The minimum required compute resource for this model for inference.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+     */
+    protected $inference_compute_info = null;
+    /**
+     * Build information for the model version
+     *
+     * Generated from protobuf field <code>.clarifai.api.BuildInfo build_info = 25;</code>
+     */
+    protected $build_info = null;
 
     /**
      * Constructor.
@@ -179,6 +191,10 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *           Configuration used to import model from third-party toolkits
      *     @type string $train_log
      *           Contains the training logs if available
+     *     @type \Clarifai\Api\ComputeInfo $inference_compute_info
+     *           The minimum required compute resource for this model for inference.
+     *     @type \Clarifai\Api\BuildInfo $build_info
+     *           Build information for the model version
      * }
      */
     public function __construct($data = NULL) {
@@ -814,6 +830,78 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->train_log = $var;
+
+        return $this;
+    }
+
+    /**
+     * The minimum required compute resource for this model for inference.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+     * @return \Clarifai\Api\ComputeInfo|null
+     */
+    public function getInferenceComputeInfo()
+    {
+        return $this->inference_compute_info;
+    }
+
+    public function hasInferenceComputeInfo()
+    {
+        return isset($this->inference_compute_info);
+    }
+
+    public function clearInferenceComputeInfo()
+    {
+        unset($this->inference_compute_info);
+    }
+
+    /**
+     * The minimum required compute resource for this model for inference.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+     * @param \Clarifai\Api\ComputeInfo $var
+     * @return $this
+     */
+    public function setInferenceComputeInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ComputeInfo::class);
+        $this->inference_compute_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Build information for the model version
+     *
+     * Generated from protobuf field <code>.clarifai.api.BuildInfo build_info = 25;</code>
+     * @return \Clarifai\Api\BuildInfo|null
+     */
+    public function getBuildInfo()
+    {
+        return $this->build_info;
+    }
+
+    public function hasBuildInfo()
+    {
+        return isset($this->build_info);
+    }
+
+    public function clearBuildInfo()
+    {
+        unset($this->build_info);
+    }
+
+    /**
+     * Build information for the model version
+     *
+     * Generated from protobuf field <code>.clarifai.api.BuildInfo build_info = 25;</code>
+     * @param \Clarifai\Api\BuildInfo $var
+     * @return $this
+     */
+    public function setBuildInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\BuildInfo::class);
+        $this->build_info = $var;
 
         return $this;
     }

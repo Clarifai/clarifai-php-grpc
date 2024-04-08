@@ -17,7 +17,7 @@ class ListScopesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * If "personal_access_token" include scopes and endpoints available to personal access tokens.
-     * If "api_key" include scopes and endpoints available to app-specific keys. (default)
+     * If "app_specific_key" include scopes and endpoints available to app-specific keys. (default)
      *
      * Generated from protobuf field <code>string key_type = 1;</code>
      */
@@ -37,7 +37,7 @@ class ListScopesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $key_type
      *           If "personal_access_token" include scopes and endpoints available to personal access tokens.
-     *           If "api_key" include scopes and endpoints available to app-specific keys. (default)
+     *           If "app_specific_key" include scopes and endpoints available to app-specific keys. (default)
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *           For all user specific information we include user_app_id to get the user_id in a consistent way
      * }
@@ -49,7 +49,7 @@ class ListScopesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * If "personal_access_token" include scopes and endpoints available to personal access tokens.
-     * If "api_key" include scopes and endpoints available to app-specific keys. (default)
+     * If "app_specific_key" include scopes and endpoints available to app-specific keys. (default)
      *
      * Generated from protobuf field <code>string key_type = 1;</code>
      * @return string
@@ -61,7 +61,7 @@ class ListScopesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * If "personal_access_token" include scopes and endpoints available to personal access tokens.
-     * If "api_key" include scopes and endpoints available to app-specific keys. (default)
+     * If "app_specific_key" include scopes and endpoints available to app-specific keys. (default)
      *
      * Generated from protobuf field <code>string key_type = 1;</code>
      * @param string $var

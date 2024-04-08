@@ -36,9 +36,20 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
      * Each annotation only contains one region
      * And the concepts is in ground_truth_concepts instead of this annotation
      *
-     * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 5;</code>
+     * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
+     * @deprecated
      */
     protected $annotation = null;
+    /**
+     * For region based models, region and associated concepts are stored together.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+     */
+    protected $predicted_annotation = null;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+     */
+    protected $ground_truth_annotation = null;
 
     /**
      * Constructor.
@@ -55,6 +66,9 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
      *           Only region-based/frame-based app contains this annotation
      *           Each annotation only contains one region
      *           And the concepts is in ground_truth_concepts instead of this annotation
+     *     @type \Clarifai\Api\Annotation $predicted_annotation
+     *           For region based models, region and associated concepts are stored together.
+     *     @type \Clarifai\Api\Annotation $ground_truth_annotation
      * }
      */
     public function __construct($data = NULL) {
@@ -151,21 +165,25 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
      * Each annotation only contains one region
      * And the concepts is in ground_truth_concepts instead of this annotation
      *
-     * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 5;</code>
+     * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
      * @return \Clarifai\Api\Annotation|null
+     * @deprecated
      */
     public function getAnnotation()
     {
+        @trigger_error('annotation is deprecated.', E_USER_DEPRECATED);
         return $this->annotation;
     }
 
     public function hasAnnotation()
     {
+        @trigger_error('annotation is deprecated.', E_USER_DEPRECATED);
         return isset($this->annotation);
     }
 
     public function clearAnnotation()
     {
+        @trigger_error('annotation is deprecated.', E_USER_DEPRECATED);
         unset($this->annotation);
     }
 
@@ -174,14 +192,84 @@ class EvalTestSetEntry extends \Google\Protobuf\Internal\Message
      * Each annotation only contains one region
      * And the concepts is in ground_truth_concepts instead of this annotation
      *
-     * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 5;</code>
+     * Generated from protobuf field <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
      * @param \Clarifai\Api\Annotation $var
      * @return $this
+     * @deprecated
      */
     public function setAnnotation($var)
     {
+        @trigger_error('annotation is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Clarifai\Api\Annotation::class);
         $this->annotation = $var;
+
+        return $this;
+    }
+
+    /**
+     * For region based models, region and associated concepts are stored together.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+     * @return \Clarifai\Api\Annotation|null
+     */
+    public function getPredictedAnnotation()
+    {
+        return $this->predicted_annotation;
+    }
+
+    public function hasPredictedAnnotation()
+    {
+        return isset($this->predicted_annotation);
+    }
+
+    public function clearPredictedAnnotation()
+    {
+        unset($this->predicted_annotation);
+    }
+
+    /**
+     * For region based models, region and associated concepts are stored together.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+     * @param \Clarifai\Api\Annotation $var
+     * @return $this
+     */
+    public function setPredictedAnnotation($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Annotation::class);
+        $this->predicted_annotation = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+     * @return \Clarifai\Api\Annotation|null
+     */
+    public function getGroundTruthAnnotation()
+    {
+        return $this->ground_truth_annotation;
+    }
+
+    public function hasGroundTruthAnnotation()
+    {
+        return isset($this->ground_truth_annotation);
+    }
+
+    public function clearGroundTruthAnnotation()
+    {
+        unset($this->ground_truth_annotation);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+     * @param \Clarifai\Api\Annotation $var
+     * @return $this
+     */
+    public function setGroundTruthAnnotation($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Annotation::class);
+        $this->ground_truth_annotation = $var;
 
         return $this;
     }
