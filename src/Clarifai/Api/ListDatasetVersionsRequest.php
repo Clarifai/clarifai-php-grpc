@@ -39,6 +39,12 @@ class ListDatasetVersionsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 per_page = 4;</code>
      */
     protected $per_page = 0;
+    /**
+     * (optional URL parameter) Filter by origin of dataset version
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+     */
+    private $request_origins;
 
     /**
      * Constructor.
@@ -55,6 +61,8 @@ class ListDatasetVersionsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $request_origins
+     *           (optional URL parameter) Filter by origin of dataset version
      * }
      */
     public function __construct($data = NULL) {
@@ -172,6 +180,32 @@ class ListDatasetVersionsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->per_page = $var;
+
+        return $this;
+    }
+
+    /**
+     * (optional URL parameter) Filter by origin of dataset version
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRequestOrigins()
+    {
+        return $this->request_origins;
+    }
+
+    /**
+     * (optional URL parameter) Filter by origin of dataset version
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRequestOrigins($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Clarifai\Api\DatasetVersionRequestOrigin::class);
+        $this->request_origins = $arr;
 
         return $this;
     }

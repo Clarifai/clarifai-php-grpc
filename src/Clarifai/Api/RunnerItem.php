@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * This is a piece of work for a runner to process.
+ *
  * Generated from protobuf message <code>clarifai.api.RunnerItem</code>
  */
 class RunnerItem extends \Google\Protobuf\Internal\Message
@@ -26,12 +28,12 @@ class RunnerItem extends \Google\Protobuf\Internal\Message
      */
     protected $description = '';
     /**
-     * TODO(zeiler): make these options a oneof.
-     * first work to do would be an inference runner.
+     * Information on how to process the given RunnerItem.
      *
-     * Generated from protobuf field <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+     * Generated from protobuf field <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
      */
-    protected $post_model_outputs_request = null;
+    protected $processing_info = null;
+    protected $request;
 
     /**
      * Constructor.
@@ -43,9 +45,10 @@ class RunnerItem extends \Google\Protobuf\Internal\Message
      *           A UUID hash for this work item.
      *     @type string $description
      *           A description of the work to be done in case needed for UIs.
+     *     @type \Clarifai\Api\ProcessingInfo $processing_info
+     *           Information on how to process the given RunnerItem.
      *     @type \Clarifai\Api\PostModelOutputsRequest $post_model_outputs_request
-     *           TODO(zeiler): make these options a oneof.
-     *           first work to do would be an inference runner.
+     *           Model prediction request from a user.
      * }
      */
     public function __construct($data = NULL) {
@@ -106,41 +109,78 @@ class RunnerItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * TODO(zeiler): make these options a oneof.
-     * first work to do would be an inference runner.
+     * Information on how to process the given RunnerItem.
      *
-     * Generated from protobuf field <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+     * Generated from protobuf field <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+     * @return \Clarifai\Api\ProcessingInfo|null
+     */
+    public function getProcessingInfo()
+    {
+        return $this->processing_info;
+    }
+
+    public function hasProcessingInfo()
+    {
+        return isset($this->processing_info);
+    }
+
+    public function clearProcessingInfo()
+    {
+        unset($this->processing_info);
+    }
+
+    /**
+     * Information on how to process the given RunnerItem.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+     * @param \Clarifai\Api\ProcessingInfo $var
+     * @return $this
+     */
+    public function setProcessingInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ProcessingInfo::class);
+        $this->processing_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Model prediction request from a user.
+     *
+     * Generated from protobuf field <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
      * @return \Clarifai\Api\PostModelOutputsRequest|null
      */
     public function getPostModelOutputsRequest()
     {
-        return $this->post_model_outputs_request;
+        return $this->readOneof(4);
     }
 
     public function hasPostModelOutputsRequest()
     {
-        return isset($this->post_model_outputs_request);
-    }
-
-    public function clearPostModelOutputsRequest()
-    {
-        unset($this->post_model_outputs_request);
+        return $this->hasOneof(4);
     }
 
     /**
-     * TODO(zeiler): make these options a oneof.
-     * first work to do would be an inference runner.
+     * Model prediction request from a user.
      *
-     * Generated from protobuf field <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+     * Generated from protobuf field <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
      * @param \Clarifai\Api\PostModelOutputsRequest $var
      * @return $this
      */
     public function setPostModelOutputsRequest($var)
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\PostModelOutputsRequest::class);
-        $this->post_model_outputs_request = $var;
+        $this->writeOneof(4, $var);
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRequest()
+    {
+        return $this->whichOneof("request");
     }
 
 }

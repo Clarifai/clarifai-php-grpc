@@ -20,9 +20,9 @@ class MultiRunnerItemResponse extends \Google\Protobuf\Internal\Message
      */
     protected $status = null;
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.RunnerItem items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.RunnerItem runner_items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    private $items;
+    private $runner_items;
 
     /**
      * Constructor.
@@ -31,7 +31,7 @@ class MultiRunnerItemResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\Status\Status $status
-     *     @type array<\Clarifai\Api\RunnerItem>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Clarifai\Api\RunnerItem>|\Google\Protobuf\Internal\RepeatedField $runner_items
      * }
      */
     public function __construct($data = NULL) {
@@ -72,23 +72,23 @@ class MultiRunnerItemResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.RunnerItem items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.RunnerItem runner_items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getItems()
+    public function getRunnerItems()
     {
-        return $this->items;
+        return $this->runner_items;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.RunnerItem items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.RunnerItem runner_items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @param array<\Clarifai\Api\RunnerItem>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setItems($var)
+    public function setRunnerItems($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\RunnerItem::class);
-        $this->items = $arr;
+        $this->runner_items = $arr;
 
         return $this;
     }

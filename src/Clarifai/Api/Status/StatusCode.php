@@ -703,6 +703,22 @@ class StatusCode
      */
     const RUNNER_NEEDS_RETRY = 25604;
     /**
+     * Generated from protobuf enum <code>RUNNER_STREAM_START = 25605;</code>
+     */
+    const RUNNER_STREAM_START = 25605;
+    /**
+     * Generated from protobuf enum <code>RUNNER_STREAM_END = 25606;</code>
+     */
+    const RUNNER_STREAM_END = 25606;
+    /**
+     * Generated from protobuf enum <code>RUNNER_ITEM_CANCELLED = 25607;</code>
+     */
+    const RUNNER_ITEM_CANCELLED = 25607;
+    /**
+     * Generated from protobuf enum <code>RUNNER_PROCESSING_FAILED = 25608;</code>
+     */
+    const RUNNER_PROCESSING_FAILED = 25608;
+    /**
      * Input:Image related 30xxx
      *
      * Generated from protobuf enum <code>INPUT_DOWNLOAD_SUCCESS = 30000;</code>
@@ -1840,6 +1856,10 @@ class StatusCode
         self::RUNNER_INVALID_ARGUMENT => 'RUNNER_INVALID_ARGUMENT',
         self::RUNNER_INVALID_REQUEST => 'RUNNER_INVALID_REQUEST',
         self::RUNNER_NEEDS_RETRY => 'RUNNER_NEEDS_RETRY',
+        self::RUNNER_STREAM_START => 'RUNNER_STREAM_START',
+        self::RUNNER_STREAM_END => 'RUNNER_STREAM_END',
+        self::RUNNER_ITEM_CANCELLED => 'RUNNER_ITEM_CANCELLED',
+        self::RUNNER_PROCESSING_FAILED => 'RUNNER_PROCESSING_FAILED',
         self::INPUT_DOWNLOAD_SUCCESS => 'INPUT_DOWNLOAD_SUCCESS',
         self::INPUT_DOWNLOAD_PENDING => 'INPUT_DOWNLOAD_PENDING',
         self::INPUT_DOWNLOAD_FAILED => 'INPUT_DOWNLOAD_FAILED',
