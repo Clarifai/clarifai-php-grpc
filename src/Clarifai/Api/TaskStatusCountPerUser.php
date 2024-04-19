@@ -9,15 +9,19 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * TaskStatusCountPerUser can represents count of human created annotations for a user for each valid status,
- * count of inputs (anchor annotation) for a user for each valid status
+ * TaskStatusCountPerUser can represent one of the following:
+ * * count of task annotations created by a worker for each valid status,
+ * * count of task inputs assigned to a worker  (i.e. task assignments) for each valid status
  *
  * Generated from protobuf message <code>clarifai.api.TaskStatusCountPerUser</code>
  */
 class TaskStatusCountPerUser extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string user_id = 1;</code>
+     * Deprecated: Use worker instead.
+     *
+     * Generated from protobuf field <code>string user_id = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $user_id = '';
     /**
@@ -40,6 +44,10 @@ class TaskStatusCountPerUser extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 awaiting_consensus_review = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     protected $awaiting_consensus_review = 0;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Worker worker = 7;</code>
+     */
+    protected $worker = null;
 
     /**
      * Constructor.
@@ -48,11 +56,13 @@ class TaskStatusCountPerUser extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $user_id
+     *           Deprecated: Use worker instead.
      *     @type int $pending
      *     @type int $awaiting_review
      *     @type int $success
      *     @type int $review_denied
      *     @type int $awaiting_consensus_review
+     *     @type \Clarifai\Api\Worker $worker
      * }
      */
     public function __construct($data = NULL) {
@@ -61,21 +71,29 @@ class TaskStatusCountPerUser extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 1;</code>
+     * Deprecated: Use worker instead.
+     *
+     * Generated from protobuf field <code>string user_id = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getUserId()
     {
+        @trigger_error('user_id is deprecated.', E_USER_DEPRECATED);
         return $this->user_id;
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 1;</code>
+     * Deprecated: Use worker instead.
+     *
+     * Generated from protobuf field <code>string user_id = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setUserId($var)
     {
+        @trigger_error('user_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
 
@@ -188,6 +206,38 @@ class TaskStatusCountPerUser extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->awaiting_consensus_review = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Worker worker = 7;</code>
+     * @return \Clarifai\Api\Worker|null
+     */
+    public function getWorker()
+    {
+        return $this->worker;
+    }
+
+    public function hasWorker()
+    {
+        return isset($this->worker);
+    }
+
+    public function clearWorker()
+    {
+        unset($this->worker);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Worker worker = 7;</code>
+     * @param \Clarifai\Api\Worker $var
+     * @return $this
+     */
+    public function setWorker($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Worker::class);
+        $this->worker = $var;
 
         return $this;
     }

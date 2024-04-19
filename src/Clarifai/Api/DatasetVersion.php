@@ -108,6 +108,13 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string embed_model_version_ids = 14;</code>
      */
     private $embed_model_version_ids;
+    /**
+     * Read Only. Cannot be Set
+     * Origin of request for new dataset version
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionRequestOrigin request_origin = 20;</code>
+     */
+    protected $request_origin = 0;
     protected $data_config;
 
     /**
@@ -157,6 +164,9 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
      *           also be publicly visible.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $embed_model_version_ids
      *           The embedding models to return embeddings for. If empty, no embeddings are returned.
+     *     @type int $request_origin
+     *           Read Only. Cannot be Set
+     *           Origin of request for new dataset version
      * }
      */
     public function __construct($data = NULL) {
@@ -674,6 +684,34 @@ class DatasetVersion extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->embed_model_version_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Read Only. Cannot be Set
+     * Origin of request for new dataset version
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionRequestOrigin request_origin = 20;</code>
+     * @return int
+     */
+    public function getRequestOrigin()
+    {
+        return $this->request_origin;
+    }
+
+    /**
+     * Read Only. Cannot be Set
+     * Origin of request for new dataset version
+     *
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersionRequestOrigin request_origin = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRequestOrigin($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\DatasetVersionRequestOrigin::class);
+        $this->request_origin = $var;
 
         return $this;
     }

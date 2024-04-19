@@ -20,19 +20,31 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_app_id = null;
     /**
+     * The particular runner that processed the work.
+     *
      * Generated from protobuf field <code>string runner_id = 2;</code>
      */
     protected $runner_id = '';
     /**
-     * Generated from protobuf field <code>string item_id = 3;</code>
+     * The particular item of work processed.
+     *
+     * Generated from protobuf field <code>string runner_item_id = 3;</code>
      */
-    protected $item_id = '';
+    protected $runner_item_id = '';
     /**
      * This allows you to create one or more runner by posting it to the API.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
      */
     private $runner_item_outputs;
+    /**
+     * This request has a status so that it can communicate to the API from runners and
+     * communicate status, errors, etc. This is on the request since runners operate
+     * in a reverse protocol.
+     *
+     * Generated from protobuf field <code>.clarifai.api.status.Status status = 5;</code>
+     */
+    protected $status = null;
 
     /**
      * Constructor.
@@ -42,9 +54,15 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $runner_id
-     *     @type string $item_id
+     *           The particular runner that processed the work.
+     *     @type string $runner_item_id
+     *           The particular item of work processed.
      *     @type array<\Clarifai\Api\RunnerItemOutput>|\Google\Protobuf\Internal\RepeatedField $runner_item_outputs
      *           This allows you to create one or more runner by posting it to the API.
+     *     @type \Clarifai\Api\Status\Status $status
+     *           This request has a status so that it can communicate to the API from runners and
+     *           communicate status, errors, etc. This is on the request since runners operate
+     *           in a reverse protocol.
      * }
      */
     public function __construct($data = NULL) {
@@ -85,6 +103,8 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The particular runner that processed the work.
+     *
      * Generated from protobuf field <code>string runner_id = 2;</code>
      * @return string
      */
@@ -94,6 +114,8 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The particular runner that processed the work.
+     *
      * Generated from protobuf field <code>string runner_id = 2;</code>
      * @param string $var
      * @return $this
@@ -107,23 +129,27 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string item_id = 3;</code>
+     * The particular item of work processed.
+     *
+     * Generated from protobuf field <code>string runner_item_id = 3;</code>
      * @return string
      */
-    public function getItemId()
+    public function getRunnerItemId()
     {
-        return $this->item_id;
+        return $this->runner_item_id;
     }
 
     /**
-     * Generated from protobuf field <code>string item_id = 3;</code>
+     * The particular item of work processed.
+     *
+     * Generated from protobuf field <code>string runner_item_id = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setItemId($var)
+    public function setRunnerItemId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->item_id = $var;
+        $this->runner_item_id = $var;
 
         return $this;
     }
@@ -150,6 +176,46 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\RunnerItemOutput::class);
         $this->runner_item_outputs = $arr;
+
+        return $this;
+    }
+
+    /**
+     * This request has a status so that it can communicate to the API from runners and
+     * communicate status, errors, etc. This is on the request since runners operate
+     * in a reverse protocol.
+     *
+     * Generated from protobuf field <code>.clarifai.api.status.Status status = 5;</code>
+     * @return \Clarifai\Api\Status\Status|null
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
+    }
+
+    /**
+     * This request has a status so that it can communicate to the API from runners and
+     * communicate status, errors, etc. This is on the request since runners operate
+     * in a reverse protocol.
+     *
+     * Generated from protobuf field <code>.clarifai.api.status.Status status = 5;</code>
+     * @param \Clarifai\Api\Status\Status $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Status\Status::class);
+        $this->status = $var;
 
         return $this;
     }

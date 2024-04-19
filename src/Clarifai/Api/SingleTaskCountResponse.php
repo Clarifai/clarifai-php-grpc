@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * SingleTaskCountResponse represent counts of annotations or inputs(anchor annotations) for labelers in given task
+ * SingleTaskCountResponse represents counts of task annotations or inputs (i.e. task assignments) for labelers in given task
  *
  * Generated from protobuf message <code>clarifai.api.SingleTaskCountResponse</code>
  */

@@ -13,13 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class RunnerItemOutput extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * The output of the first task type.
-     * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
-     *
-     * Generated from protobuf field <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
-     */
-    protected $multi_output_response = null;
+    protected $response;
 
     /**
      * Constructor.
@@ -28,8 +22,7 @@ class RunnerItemOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\MultiOutputResponse $multi_output_response
-     *           The output of the first task type.
-     *           TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+     *           The output of a model prediction request.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,30 +31,23 @@ class RunnerItemOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The output of the first task type.
-     * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+     * The output of a model prediction request.
      *
      * Generated from protobuf field <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
      * @return \Clarifai\Api\MultiOutputResponse|null
      */
     public function getMultiOutputResponse()
     {
-        return $this->multi_output_response;
+        return $this->readOneof(1);
     }
 
     public function hasMultiOutputResponse()
     {
-        return isset($this->multi_output_response);
-    }
-
-    public function clearMultiOutputResponse()
-    {
-        unset($this->multi_output_response);
+        return $this->hasOneof(1);
     }
 
     /**
-     * The output of the first task type.
-     * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+     * The output of a model prediction request.
      *
      * Generated from protobuf field <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
      * @param \Clarifai\Api\MultiOutputResponse $var
@@ -70,9 +56,17 @@ class RunnerItemOutput extends \Google\Protobuf\Internal\Message
     public function setMultiOutputResponse($var)
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\MultiOutputResponse::class);
-        $this->multi_output_response = $var;
+        $this->writeOneof(1, $var);
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getResponse()
+    {
+        return $this->whichOneof("response");
     }
 
 }

@@ -20,7 +20,7 @@ class GetAppRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_app_id = null;
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      *
      * Generated from protobuf field <code>repeated string additional_fields = 2;</code>
      */
@@ -34,7 +34,7 @@ class GetAppRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
-     *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * }
      */
     public function __construct($data = NULL) {
@@ -75,7 +75,7 @@ class GetAppRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      *
      * Generated from protobuf field <code>repeated string additional_fields = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -86,7 +86,7 @@ class GetAppRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      *
      * Generated from protobuf field <code>repeated string additional_fields = 2;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var

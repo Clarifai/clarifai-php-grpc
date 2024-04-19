@@ -11,7 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * GetTaskCountRequest can be used for fetching -
  * 1. Task annotation count per user, per status
- * 1. Task input (anchor annotations) count per user, per status
+ * 1. Task input count per user (i.e. task assignment count), per status
  *
  * Generated from protobuf message <code>clarifai.api.GetTaskCountRequest</code>
  */
@@ -28,11 +28,32 @@ class GetTaskCountRequest extends \Google\Protobuf\Internal\Message
      */
     protected $task_id = '';
     /**
-     * for given task_id, user_ids to filter on (optional)
+     * Only return counts for these user IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) counts in the results.
      *
      * Generated from protobuf field <code>repeated string user_ids = 3;</code>
      */
     private $user_ids;
+    /**
+     * Only return counts for these model version IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) counts in the results.
+     *
+     * Generated from protobuf field <code>repeated string model_version_ids = 4;</code>
+     */
+    private $model_version_ids;
+    /**
+     * Only return counts for these workflow version IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) counts in the results.
+     *
+     * Generated from protobuf field <code>repeated string workflow_version_ids = 5;</code>
+     */
+    private $workflow_version_ids;
 
     /**
      * Constructor.
@@ -44,7 +65,20 @@ class GetTaskCountRequest extends \Google\Protobuf\Internal\Message
      *     @type string $task_id
      *           task_id for which count per user per status is needed
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $user_ids
-     *           for given task_id, user_ids to filter on (optional)
+     *           Only return counts for these user IDs, effectively operating as an
+     *           OR among them to filter down the results.
+     *           If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+     *           we want the union of all worker (user, model or workflow) counts in the results.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $model_version_ids
+     *           Only return counts for these model version IDs, effectively operating as an
+     *           OR among them to filter down the results.
+     *           If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+     *           we want the union of all worker (user, model or workflow) counts in the results.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $workflow_version_ids
+     *           Only return counts for these workflow version IDs, effectively operating as an
+     *           OR among them to filter down the results.
+     *           If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+     *           we want the union of all worker (user, model or workflow) counts in the results.
      * }
      */
     public function __construct($data = NULL) {
@@ -111,7 +145,10 @@ class GetTaskCountRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * for given task_id, user_ids to filter on (optional)
+     * Only return counts for these user IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) counts in the results.
      *
      * Generated from protobuf field <code>repeated string user_ids = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -122,7 +159,10 @@ class GetTaskCountRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * for given task_id, user_ids to filter on (optional)
+     * Only return counts for these user IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) counts in the results.
      *
      * Generated from protobuf field <code>repeated string user_ids = 3;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
@@ -132,6 +172,70 @@ class GetTaskCountRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->user_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Only return counts for these model version IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) counts in the results.
+     *
+     * Generated from protobuf field <code>repeated string model_version_ids = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getModelVersionIds()
+    {
+        return $this->model_version_ids;
+    }
+
+    /**
+     * Only return counts for these model version IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) counts in the results.
+     *
+     * Generated from protobuf field <code>repeated string model_version_ids = 4;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setModelVersionIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->model_version_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Only return counts for these workflow version IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) counts in the results.
+     *
+     * Generated from protobuf field <code>repeated string workflow_version_ids = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getWorkflowVersionIds()
+    {
+        return $this->workflow_version_ids;
+    }
+
+    /**
+     * Only return counts for these workflow version IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) counts in the results.
+     *
+     * Generated from protobuf field <code>repeated string workflow_version_ids = 5;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setWorkflowVersionIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->workflow_version_ids = $arr;
 
         return $this;
     }

@@ -356,6 +356,9 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * Patch annotations status by worker id and task id.
+     * Deprecated: Use PutTaskAssignments to update task annotations.
+     *   For example, you can use PutTaskAssignments with action REVIEW_APPROVE
+     *   to approve task assignments and associated annotations in bulk.
      * @param \Clarifai\Api\PatchAnnotationsStatusRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -643,22 +646,34 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * // TODO(zeiler): will need to
-     * // Single request but streaming resopnses.
-     * rpc GeneratePostModelOutputs (PostModelOutputsRequest) returns (stream MultiOutputResponse) {
-     *   option (google.api.http) = {
-     *     post: "/v2/users/{user_app_id.user_id}/apps/{user_app_id.app_id}/models/{model_id}/versions/{version_id}/outputs"
-     *     body: "*"
-     *   };
-     *   option (clarifai.auth.util.cl_auth_type) = KeyAuth;
-     *   option (clarifai.auth.util.cl_depending_scopes) = Apps_Get;
-     *   option (clarifai.auth.util.cl_depending_scopes) = Concepts_Get;
-     *   option (clarifai.auth.util.cl_depending_scopes) = Models_Get;
-     *   option (clarifai.auth.util.cl_depending_scopes) = Predict;
-     *   option (clarifai.auth.util.cl_depending_scopes) = Nodepools_Get;
-     *   option (clarifai.auth.util.cl_depending_scopes) = Deployments_Get;
-     * }
-     *
+     * TODO(zeiler): will need to
+     * Single request but streaming resopnses.
+     * @param \Clarifai\Api\PostModelOutputsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\ServerStreamingCall
+     */
+    public function GenerateModelOutputs(\Clarifai\Api\PostModelOutputsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_serverStreamRequest('/clarifai.api.V2/GenerateModelOutputs',
+        $argument,
+        ['\Clarifai\Api\MultiOutputResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Stream of requests and stream of responses
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\BidiStreamingCall
+     */
+    public function StreamModelOutputs($metadata = [], $options = []) {
+        return $this->_bidiRequest('/clarifai.api.V2/StreamModelOutputs',
+        ['\Clarifai\Api\MultiOutputResponse','decode'],
+        $metadata, $options);
+    }
+
+    /**
      * List all the datasets.
      * @param \Clarifai\Api\ListDatasetsRequest $argument input argument
      * @param array $metadata metadata
@@ -1175,6 +1190,7 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * Deprecated: Unmaintained and ideally replaced with usage of datasets
+     *   The server may refuse to accept requests to this endpoint.
      * @param \Clarifai\Api\ListModelInputsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1389,8 +1405,9 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Deprecated: Use GetEvaluation instead
      * Get the evaluation metrics for a model version.
+     * Deprecated: Use GetEvaluation instead
+     *   The server may refuse to accept requests to this endpoint.
      * @param \Clarifai\Api\GetModelVersionMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -2115,6 +2132,7 @@ class V2Client extends \Grpc\BaseStub {
      * Execute a new search and optionally save it.
      *
      * Deprecated: Use PostInputsSearches or PostAnnotationsSearches instead.
+     *  The server may refuse to accept requests to this endpoint.
      * @param \Clarifai\Api\PostSearchesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -3100,7 +3118,11 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * List next non-labeled and unassigned inputs from task's dataset
+     * Deprecated: Use PutTaskAssignments with action=LABEL_START.
+     *   This endpoint has initially been designed as a GET request,
+     *   but has been re-designed to serve a PUT logic.
+     *   In order to clearly highlight that this endpoint serves a PUT request,
+     *   this endpoint has been deprecated and replaced by PutTaskAssignments with action=LABEL_START.
      * @param \Clarifai\Api\ListNextTaskAssignmentsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -3432,6 +3454,24 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * This maintains a single request for asking the API if there is any work to be done, processing
+     * it and streaming back results.
+     * To do that first handshake the MultiRunnerItemOutputResponse will have RUNNER_STREAM_START
+     * status filled in so that the API knows to respond with a MultiRunnerItemResponse.
+     * For now there will only be one of those if the model prediction only has one request.
+     * NOTE(zeiler): downside of this is you can't use HTTP REST requests to do runner work.
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\BidiStreamingCall
+     */
+    public function ProcessRunnerItems($metadata = [], $options = []) {
+        return $this->_bidiRequest('/clarifai.api.V2/ProcessRunnerItems',
+        ['\Clarifai\Api\MultiRunnerItemResponse','decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Get the training time estimate based off train request and estimated input count.
      * @param \Clarifai\Api\PostModelVersionsTrainingTimeEstimateRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
