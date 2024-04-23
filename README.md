@@ -24,6 +24,8 @@ composer require clarifai/clarifai-php-grpc
 
 See also [how add gRPC to your PHP installation](https://grpc.io/docs/languages/php/quickstart/).
 
+You can also check [this guide](https://cloud.google.com/php/grpc). 
+
 ## Versioning
 
 This library doesn't use semantic versioning. The first two version numbers (`X.Y` out of `X.Y.Z`) follow the API (backend) versioning, and
