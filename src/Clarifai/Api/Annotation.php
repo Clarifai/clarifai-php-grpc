@@ -40,15 +40,17 @@ class Annotation extends \Google\Protobuf\Internal\Message
      */
     protected $annotation_info = null;
     /**
-     * ID of the user this annotation is created by
+     * DEPRECATED: Use worker.user.id instead.
      *
-     * Generated from protobuf field <code>string user_id = 15;</code>
+     * Generated from protobuf field <code>string user_id = 15 [deprecated = true];</code>
+     * @deprecated
      */
     protected $user_id = '';
     /**
-     * ID of the model version this annotation is created by
+     * DEPRECATED: Use worker.model.model_version.id instead
      *
-     * Generated from protobuf field <code>string model_version_id = 16;</code>
+     * Generated from protobuf field <code>string model_version_id = 16 [deprecated = true];</code>
+     * @deprecated
      */
     protected $model_version_id = '';
     /**
@@ -109,11 +111,11 @@ class Annotation extends \Google\Protobuf\Internal\Message
      */
     protected $task_id = '';
     /**
-     * ID of the workflow version this annotation is created by
+     * Worker is the worker that created the annotation.
      *
-     * Generated from protobuf field <code>string workflow_version_id = 20;</code>
+     * Generated from protobuf field <code>.clarifai.api.Worker worker = 21;</code>
      */
-    protected $workflow_version_id = '';
+    protected $worker = null;
 
     /**
      * Constructor.
@@ -130,9 +132,9 @@ class Annotation extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Struct $annotation_info
      *           task_id is deprecated in annotation_info. Use task_id
      *     @type string $user_id
-     *           ID of the user this annotation is created by
+     *           DEPRECATED: Use worker.user.id instead.
      *     @type string $model_version_id
-     *           ID of the model version this annotation is created by
+     *           DEPRECATED: Use worker.model.model_version.id instead
      *     @type string $embed_model_version_id
      *           DEPRECATED.
      *     @type \Clarifai\Api\Status\Status $status
@@ -156,8 +158,8 @@ class Annotation extends \Google\Protobuf\Internal\Message
      *           * id of annotation parent, in case the annotation was split from another annotation
      *     @type string $task_id
      *           The id of the task annotation belongs to
-     *     @type string $workflow_version_id
-     *           ID of the workflow version this annotation is created by
+     *     @type \Clarifai\Api\Worker $worker
+     *           Worker is the worker that created the annotation.
      * }
      */
     public function __construct($data = NULL) {
@@ -290,25 +292,29 @@ class Annotation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ID of the user this annotation is created by
+     * DEPRECATED: Use worker.user.id instead.
      *
-     * Generated from protobuf field <code>string user_id = 15;</code>
+     * Generated from protobuf field <code>string user_id = 15 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getUserId()
     {
+        @trigger_error('user_id is deprecated.', E_USER_DEPRECATED);
         return $this->user_id;
     }
 
     /**
-     * ID of the user this annotation is created by
+     * DEPRECATED: Use worker.user.id instead.
      *
-     * Generated from protobuf field <code>string user_id = 15;</code>
+     * Generated from protobuf field <code>string user_id = 15 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setUserId($var)
     {
+        @trigger_error('user_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
 
@@ -316,25 +322,29 @@ class Annotation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ID of the model version this annotation is created by
+     * DEPRECATED: Use worker.model.model_version.id instead
      *
-     * Generated from protobuf field <code>string model_version_id = 16;</code>
+     * Generated from protobuf field <code>string model_version_id = 16 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getModelVersionId()
     {
+        @trigger_error('model_version_id is deprecated.', E_USER_DEPRECATED);
         return $this->model_version_id;
     }
 
     /**
-     * ID of the model version this annotation is created by
+     * DEPRECATED: Use worker.model.model_version.id instead
      *
-     * Generated from protobuf field <code>string model_version_id = 16;</code>
+     * Generated from protobuf field <code>string model_version_id = 16 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setModelVersionId($var)
     {
+        @trigger_error('model_version_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->model_version_id = $var;
 
@@ -612,27 +622,37 @@ class Annotation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ID of the workflow version this annotation is created by
+     * Worker is the worker that created the annotation.
      *
-     * Generated from protobuf field <code>string workflow_version_id = 20;</code>
-     * @return string
+     * Generated from protobuf field <code>.clarifai.api.Worker worker = 21;</code>
+     * @return \Clarifai\Api\Worker|null
      */
-    public function getWorkflowVersionId()
+    public function getWorker()
     {
-        return $this->workflow_version_id;
+        return $this->worker;
+    }
+
+    public function hasWorker()
+    {
+        return isset($this->worker);
+    }
+
+    public function clearWorker()
+    {
+        unset($this->worker);
     }
 
     /**
-     * ID of the workflow version this annotation is created by
+     * Worker is the worker that created the annotation.
      *
-     * Generated from protobuf field <code>string workflow_version_id = 20;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.clarifai.api.Worker worker = 21;</code>
+     * @param \Clarifai\Api\Worker $var
      * @return $this
      */
-    public function setWorkflowVersionId($var)
+    public function setWorker($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->workflow_version_id = $var;
+        GPBUtil::checkMessage($var, \Clarifai\Api\Worker::class);
+        $this->worker = $var;
 
         return $this;
     }

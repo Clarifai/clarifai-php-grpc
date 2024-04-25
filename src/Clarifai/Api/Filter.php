@@ -31,11 +31,11 @@ class Filter extends \Google\Protobuf\Internal\Message
      *  - model_version_id
      *  - task_id
      *  - user_id
-     *  - workflow_version_id
+     *  # Filter by worker fields such as model, workflow and user IDs
+     *  - worker.model.model_version.id
+     *  - worker.user.id
+     *  - worker.workflow.version.id
      *  # Filter by other top-level fields
-     *  - annotation_info                         - allows searching by empty annotation-info, i.e. `{"data": "annotation_info": {}}`;
-     *                                              note that searching by empty annotation-info will actually not influence the search results.
-     *                                              however, in order to be user-friendly, we still support searching by empty annotation-info.
      *  - annotation_info.fields                  - filter by annotation info
      *  - input_level                             - filter only input-level annotations
      *  - status.code                             - filter by annotation status code
@@ -68,9 +68,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      *  - data.geo.geo_limit.value
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
-     *  - data.metadata                           - allow search with empty metadata, i.e. `{"data": "metadata": {}}`;
-     *                                              note that searching by empty metadata will actually not influence the search results;
-     *                                              however, in order to be user-friendly, we still support searching by empty metadata.
      *  - data.metadata.fields                    - filter by metadata
      *                                            - Important to note: metadata key&value fields are OR-ed.
      *                                            - example with 1 metadata key: searching by
@@ -152,11 +149,11 @@ class Filter extends \Google\Protobuf\Internal\Message
      *            - model_version_id
      *            - task_id
      *            - user_id
-     *            - workflow_version_id
+     *            # Filter by worker fields such as model, workflow and user IDs
+     *            - worker.model.model_version.id
+     *            - worker.user.id
+     *            - worker.workflow.version.id
      *            # Filter by other top-level fields
-     *            - annotation_info                         - allows searching by empty annotation-info, i.e. `{"data": "annotation_info": {}}`;
-     *                                                        note that searching by empty annotation-info will actually not influence the search results.
-     *                                                        however, in order to be user-friendly, we still support searching by empty annotation-info.
      *            - annotation_info.fields                  - filter by annotation info
      *            - input_level                             - filter only input-level annotations
      *            - status.code                             - filter by annotation status code
@@ -189,9 +186,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      *            - data.geo.geo_limit.value
      *            - data.geo.geo_point.latitude
      *            - data.geo.geo_point.longitude
-     *            - data.metadata                           - allow search with empty metadata, i.e. `{"data": "metadata": {}}`;
-     *                                                        note that searching by empty metadata will actually not influence the search results;
-     *                                                        however, in order to be user-friendly, we still support searching by empty metadata.
      *            - data.metadata.fields                    - filter by metadata
      *                                                      - Important to note: metadata key&value fields are OR-ed.
      *                                                      - example with 1 metadata key: searching by
@@ -286,11 +280,11 @@ class Filter extends \Google\Protobuf\Internal\Message
      *  - model_version_id
      *  - task_id
      *  - user_id
-     *  - workflow_version_id
+     *  # Filter by worker fields such as model, workflow and user IDs
+     *  - worker.model.model_version.id
+     *  - worker.user.id
+     *  - worker.workflow.version.id
      *  # Filter by other top-level fields
-     *  - annotation_info                         - allows searching by empty annotation-info, i.e. `{"data": "annotation_info": {}}`;
-     *                                              note that searching by empty annotation-info will actually not influence the search results.
-     *                                              however, in order to be user-friendly, we still support searching by empty annotation-info.
      *  - annotation_info.fields                  - filter by annotation info
      *  - input_level                             - filter only input-level annotations
      *  - status.code                             - filter by annotation status code
@@ -323,9 +317,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      *  - data.geo.geo_limit.value
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
-     *  - data.metadata                           - allow search with empty metadata, i.e. `{"data": "metadata": {}}`;
-     *                                              note that searching by empty metadata will actually not influence the search results;
-     *                                              however, in order to be user-friendly, we still support searching by empty metadata.
      *  - data.metadata.fields                    - filter by metadata
      *                                            - Important to note: metadata key&value fields are OR-ed.
      *                                            - example with 1 metadata key: searching by
@@ -387,11 +378,11 @@ class Filter extends \Google\Protobuf\Internal\Message
      *  - model_version_id
      *  - task_id
      *  - user_id
-     *  - workflow_version_id
+     *  # Filter by worker fields such as model, workflow and user IDs
+     *  - worker.model.model_version.id
+     *  - worker.user.id
+     *  - worker.workflow.version.id
      *  # Filter by other top-level fields
-     *  - annotation_info                         - allows searching by empty annotation-info, i.e. `{"data": "annotation_info": {}}`;
-     *                                              note that searching by empty annotation-info will actually not influence the search results.
-     *                                              however, in order to be user-friendly, we still support searching by empty annotation-info.
      *  - annotation_info.fields                  - filter by annotation info
      *  - input_level                             - filter only input-level annotations
      *  - status.code                             - filter by annotation status code
@@ -424,9 +415,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      *  - data.geo.geo_limit.value
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
-     *  - data.metadata                           - allow search with empty metadata, i.e. `{"data": "metadata": {}}`;
-     *                                              note that searching by empty metadata will actually not influence the search results;
-     *                                              however, in order to be user-friendly, we still support searching by empty metadata.
      *  - data.metadata.fields                    - filter by metadata
      *                                            - Important to note: metadata key&value fields are OR-ed.
      *                                            - example with 1 metadata key: searching by
