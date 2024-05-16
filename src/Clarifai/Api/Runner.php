@@ -17,26 +17,26 @@ use Google\Protobuf\Internal\GPBUtil;
 class Runner extends \Google\Protobuf\Internal\Message
 {
     /**
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
     /**
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      *
      * Generated from protobuf field <code>string description = 2;</code>
      */
     protected $description = '';
     /**
-     * When the app module was created.
+     * When the runner was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
      */
     protected $created_at = null;
     /**
-     * When the app module was last modified.
+     * When the runner was last modified.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 4;</code>
      */
@@ -92,14 +92,14 @@ class Runner extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *           A unique ID for this app module.
+     *           A unique ID for this runner.
      *           This is a UUID since runners can be automatically orchestrated.
      *     @type string $description
-     *           A short description for this app module to be used in grids of modules.
+     *           short description about the runner.
      *     @type \Google\Protobuf\Timestamp $created_at
-     *           When the app module was created.
+     *           When the runner was created.
      *     @type \Google\Protobuf\Timestamp $modified_at
-     *           When the app module was last modified.
+     *           When the runner was last modified.
      *     @type \Google\Protobuf\Struct $metadata
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
@@ -133,7 +133,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      *
      * Generated from protobuf field <code>string id = 1;</code>
@@ -145,7 +145,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      *
      * Generated from protobuf field <code>string id = 1;</code>
@@ -161,7 +161,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      *
      * Generated from protobuf field <code>string description = 2;</code>
      * @return string
@@ -172,7 +172,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      *
      * Generated from protobuf field <code>string description = 2;</code>
      * @param string $var
@@ -187,7 +187,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When the app module was created.
+     * When the runner was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -208,7 +208,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When the app module was created.
+     * When the runner was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -223,7 +223,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When the app module was last modified.
+     * When the runner was last modified.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 4;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -244,7 +244,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When the app module was last modified.
+     * When the runner was last modified.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 4;</code>
      * @param \Google\Protobuf\Timestamp $var

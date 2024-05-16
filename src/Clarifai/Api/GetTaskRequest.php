@@ -31,6 +31,8 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      * - review.users
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
+     * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_percent_estimated
      *
      * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
      */
@@ -52,6 +54,8 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      *           - review.users
      *           - metrics.work.inputs_count_estimated
      *           - metrics.work.inputs_percent_estimated
+     *           - metrics.review.inputs_count_estimated
+     *           - metrics.review.inputs_percent_estimated
      * }
      */
     public function __construct($data = NULL) {
@@ -121,6 +125,8 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      * - review.users
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
+     * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_percent_estimated
      *
      * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -138,6 +144,8 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      * - review.users
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
+     * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_percent_estimated
      *
      * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var

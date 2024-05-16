@@ -66,6 +66,8 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      * - review.users
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
+     * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_percent_estimated
      *
      * Generated from protobuf field <code>repeated string additional_fields = 7;</code>
      */
@@ -107,6 +109,8 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      *           - review.users
      *           - metrics.work.inputs_count_estimated
      *           - metrics.work.inputs_percent_estimated
+     *           - metrics.review.inputs_count_estimated
+     *           - metrics.review.inputs_percent_estimated
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
      *           (optional) task IDs to filter on
      * }
@@ -318,6 +322,8 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      * - review.users
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
+     * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_percent_estimated
      *
      * Generated from protobuf field <code>repeated string additional_fields = 7;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -335,6 +341,8 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      * - review.users
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
+     * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_percent_estimated
      *
      * Generated from protobuf field <code>repeated string additional_fields = 7;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
