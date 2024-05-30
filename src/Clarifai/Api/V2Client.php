@@ -3485,4 +3485,152 @@ class V2Client extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * TODO(zeiler): i mocked these up bu tleft them commented for now because they will build all the
+     * handlers and we have to stub those out. Me/Sai will do that in follow up PRs, i just want to
+     * check in the protos so we can start using them first work through some of the routing stuff.
+     *
+     * // ListCloudAgentInformation with special auth.
+     * rpc ListCloudAgentInformation (ListCloudAgentInformationRequest) returns (MultiCloudAgentInformationResponse) {
+     *   option (google.api.http) = {
+     *     get: "/v2/cloud_agent_info"
+     *   };
+     *   option (clarifai.auth.util.cl_auth_type) = CloudAgentAuth;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Apps_Get;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Models_Get;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Runners_Get;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Nodepools_Get;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Deployments_Get;
+     *   option (clarifai.auth.util.cl_depending_scopes) = Keys_Get;
+     * }
+     *
+     * ComputeCluster CRUD
+     * @param \Clarifai\Api\GetComputeClusterRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetComputeCluster(\Clarifai\Api\GetComputeClusterRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetComputeCluster',
+        $argument,
+        ['\Clarifai\Api\SingleComputeClusterResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\ListComputeClustersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListComputeClusters(\Clarifai\Api\ListComputeClustersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListComputeClusters',
+        $argument,
+        ['\Clarifai\Api\MultiComputeClusterResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PostComputeClustersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostComputeClusters(\Clarifai\Api\PostComputeClustersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostComputeClusters',
+        $argument,
+        ['\Clarifai\Api\MultiComputeClusterResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete multiple compute_clusters in one request.
+     * @param \Clarifai\Api\DeleteComputeClustersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteComputeClusters(\Clarifai\Api\DeleteComputeClustersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteComputeClusters',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Nodepools CRUD
+     * @param \Clarifai\Api\GetNodepoolRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetNodepool(\Clarifai\Api\GetNodepoolRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetNodepool',
+        $argument,
+        ['\Clarifai\Api\SingleNodepoolResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\ListNodepoolsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListNodepools(\Clarifai\Api\ListNodepoolsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListNodepools',
+        $argument,
+        ['\Clarifai\Api\MultiNodepoolResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PostNodepoolsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostNodepools(\Clarifai\Api\PostNodepoolsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostNodepools',
+        $argument,
+        ['\Clarifai\Api\MultiNodepoolResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PatchNodepoolsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchNodepools(\Clarifai\Api\PatchNodepoolsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchNodepools',
+        $argument,
+        ['\Clarifai\Api\MultiNodepoolResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete multiple nodepools in one request.
+     * @param \Clarifai\Api\DeleteNodepoolsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteNodepools(\Clarifai\Api\DeleteNodepoolsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteNodepools',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

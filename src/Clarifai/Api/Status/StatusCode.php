@@ -187,6 +187,24 @@ class StatusCode
      */
     const MODEL_TRAINING_FAILED = 21106;
     /**
+     * For new V3 DockerInternalType models which are built images
+     *
+     * Generated from protobuf enum <code>MODEL_BUILDING = 21107;</code>
+     */
+    const MODEL_BUILDING = 21107;
+    /**
+     * Failed to build image for model.
+     *
+     * Generated from protobuf enum <code>MODEL_BUILDING_FAILED = 21108;</code>
+     */
+    const MODEL_BUILDING_FAILED = 21108;
+    /**
+     * Failed to build image for model.
+     *
+     * Generated from protobuf enum <code>MODEL_BUILD_UNEXPECTED_ERROR = 21109;</code>
+     */
+    const MODEL_BUILD_UNEXPECTED_ERROR = 21109;
+    /**
      * Custom model training had no data.  FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
      *
      * Generated from protobuf enum <code>MODEL_TRAINING_NO_DATA = 21110;</code>
@@ -718,6 +736,34 @@ class StatusCode
      * Generated from protobuf enum <code>RUNNER_PROCESSING_FAILED = 25608;</code>
      */
     const RUNNER_PROCESSING_FAILED = 25608;
+    /**
+     * Nodepool related codes 257xx
+     *
+     * Generated from protobuf enum <code>NODEPOOL_DOES_NOT_EXIST = 25700;</code>
+     */
+    const NODEPOOL_DOES_NOT_EXIST = 25700;
+    /**
+     * Generated from protobuf enum <code>NODEPOOL_INVALID_ARGUMENT = 25701;</code>
+     */
+    const NODEPOOL_INVALID_ARGUMENT = 25701;
+    /**
+     * Generated from protobuf enum <code>NODEPOOL_INVALID_REQUEST = 25702;</code>
+     */
+    const NODEPOOL_INVALID_REQUEST = 25702;
+    /**
+     * ComputeCluster related codes 258xx
+     *
+     * Generated from protobuf enum <code>COMPUTE_CLUSTER_DOES_NOT_EXIST = 25800;</code>
+     */
+    const COMPUTE_CLUSTER_DOES_NOT_EXIST = 25800;
+    /**
+     * Generated from protobuf enum <code>COMPUTE_CLUSTER_INVALID_ARGUMENT = 25801;</code>
+     */
+    const COMPUTE_CLUSTER_INVALID_ARGUMENT = 25801;
+    /**
+     * Generated from protobuf enum <code>COMPUTE_CLUSTER_INVALID_REQUEST = 25802;</code>
+     */
+    const COMPUTE_CLUSTER_INVALID_REQUEST = 25802;
     /**
      * Input:Image related 30xxx
      *
@@ -1746,6 +1792,9 @@ class StatusCode
         self::MODEL_UPLOADING => 'MODEL_UPLOADING',
         self::MODEL_UPLOADING_FAILED => 'MODEL_UPLOADING_FAILED',
         self::MODEL_TRAINING_FAILED => 'MODEL_TRAINING_FAILED',
+        self::MODEL_BUILDING => 'MODEL_BUILDING',
+        self::MODEL_BUILDING_FAILED => 'MODEL_BUILDING_FAILED',
+        self::MODEL_BUILD_UNEXPECTED_ERROR => 'MODEL_BUILD_UNEXPECTED_ERROR',
         self::MODEL_TRAINING_NO_DATA => 'MODEL_TRAINING_NO_DATA',
         self::MODEL_TRAINING_NO_POSITIVES => 'MODEL_TRAINING_NO_POSITIVES',
         self::MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS => 'MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS',
@@ -1860,6 +1909,12 @@ class StatusCode
         self::RUNNER_STREAM_END => 'RUNNER_STREAM_END',
         self::RUNNER_ITEM_CANCELLED => 'RUNNER_ITEM_CANCELLED',
         self::RUNNER_PROCESSING_FAILED => 'RUNNER_PROCESSING_FAILED',
+        self::NODEPOOL_DOES_NOT_EXIST => 'NODEPOOL_DOES_NOT_EXIST',
+        self::NODEPOOL_INVALID_ARGUMENT => 'NODEPOOL_INVALID_ARGUMENT',
+        self::NODEPOOL_INVALID_REQUEST => 'NODEPOOL_INVALID_REQUEST',
+        self::COMPUTE_CLUSTER_DOES_NOT_EXIST => 'COMPUTE_CLUSTER_DOES_NOT_EXIST',
+        self::COMPUTE_CLUSTER_INVALID_ARGUMENT => 'COMPUTE_CLUSTER_INVALID_ARGUMENT',
+        self::COMPUTE_CLUSTER_INVALID_REQUEST => 'COMPUTE_CLUSTER_INVALID_REQUEST',
         self::INPUT_DOWNLOAD_SUCCESS => 'INPUT_DOWNLOAD_SUCCESS',
         self::INPUT_DOWNLOAD_PENDING => 'INPUT_DOWNLOAD_PENDING',
         self::INPUT_DOWNLOAD_FAILED => 'INPUT_DOWNLOAD_FAILED',

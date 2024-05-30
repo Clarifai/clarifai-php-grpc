@@ -20,21 +20,27 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_app_id = null;
     /**
+     * The particular nodepool that runner belongs to
+     *
+     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     */
+    protected $nodepool_id = '';
+    /**
      * The particular runner that processed the work.
      *
-     * Generated from protobuf field <code>string runner_id = 2;</code>
+     * Generated from protobuf field <code>string runner_id = 3;</code>
      */
     protected $runner_id = '';
     /**
      * The particular item of work processed.
      *
-     * Generated from protobuf field <code>string runner_item_id = 3;</code>
+     * Generated from protobuf field <code>string runner_item_id = 4;</code>
      */
     protected $runner_item_id = '';
     /**
      * This allows you to create one or more runner by posting it to the API.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     private $runner_item_outputs;
     /**
@@ -42,7 +48,7 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
      * communicate status, errors, etc. This is on the request since runners operate
      * in a reverse protocol.
      *
-     * Generated from protobuf field <code>.clarifai.api.status.Status status = 5;</code>
+     * Generated from protobuf field <code>.clarifai.api.status.Status status = 6;</code>
      */
     protected $status = null;
 
@@ -53,6 +59,8 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
+     *     @type string $nodepool_id
+     *           The particular nodepool that runner belongs to
      *     @type string $runner_id
      *           The particular runner that processed the work.
      *     @type string $runner_item_id
@@ -103,9 +111,35 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The particular nodepool that runner belongs to
+     *
+     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * @return string
+     */
+    public function getNodepoolId()
+    {
+        return $this->nodepool_id;
+    }
+
+    /**
+     * The particular nodepool that runner belongs to
+     *
+     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNodepoolId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->nodepool_id = $var;
+
+        return $this;
+    }
+
+    /**
      * The particular runner that processed the work.
      *
-     * Generated from protobuf field <code>string runner_id = 2;</code>
+     * Generated from protobuf field <code>string runner_id = 3;</code>
      * @return string
      */
     public function getRunnerId()
@@ -116,7 +150,7 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The particular runner that processed the work.
      *
-     * Generated from protobuf field <code>string runner_id = 2;</code>
+     * Generated from protobuf field <code>string runner_id = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -131,7 +165,7 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The particular item of work processed.
      *
-     * Generated from protobuf field <code>string runner_item_id = 3;</code>
+     * Generated from protobuf field <code>string runner_item_id = 4;</code>
      * @return string
      */
     public function getRunnerItemId()
@@ -142,7 +176,7 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The particular item of work processed.
      *
-     * Generated from protobuf field <code>string runner_item_id = 3;</code>
+     * Generated from protobuf field <code>string runner_item_id = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -157,7 +191,7 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     /**
      * This allows you to create one or more runner by posting it to the API.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getRunnerItemOutputs()
@@ -168,7 +202,7 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     /**
      * This allows you to create one or more runner by posting it to the API.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      * @param array<\Clarifai\Api\RunnerItemOutput>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -185,7 +219,7 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
      * communicate status, errors, etc. This is on the request since runners operate
      * in a reverse protocol.
      *
-     * Generated from protobuf field <code>.clarifai.api.status.Status status = 5;</code>
+     * Generated from protobuf field <code>.clarifai.api.status.Status status = 6;</code>
      * @return \Clarifai\Api\Status\Status|null
      */
     public function getStatus()
@@ -208,7 +242,7 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
      * communicate status, errors, etc. This is on the request since runners operate
      * in a reverse protocol.
      *
-     * Generated from protobuf field <code>.clarifai.api.status.Status status = 5;</code>
+     * Generated from protobuf field <code>.clarifai.api.status.Status status = 6;</code>
      * @param \Clarifai\Api\Status\Status $var
      * @return $this
      */

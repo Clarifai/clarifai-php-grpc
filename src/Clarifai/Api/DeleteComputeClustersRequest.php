@@ -9,24 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * GetRunnerRequest
- *
- * Generated from protobuf message <code>clarifai.api.GetRunnerRequest</code>
+ * Generated from protobuf message <code>clarifai.api.DeleteComputeClustersRequest</code>
  */
-class GetRunnerRequest extends \Google\Protobuf\Internal\Message
+class DeleteComputeClustersRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Only the user_id is used from this.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * List of nodepool ids to be deleted
+     *
+     * Generated from protobuf field <code>repeated string ids = 2;</code>
      */
-    protected $nodepool_id = '';
-    /**
-     * Generated from protobuf field <code>string runner_id = 3;</code>
-     */
-    protected $runner_id = '';
+    private $ids;
 
     /**
      * Constructor.
@@ -35,8 +33,9 @@ class GetRunnerRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string $nodepool_id
-     *     @type string $runner_id
+     *           Only the user_id is used from this.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
+     *           List of nodepool ids to be deleted
      * }
      */
     public function __construct($data = NULL) {
@@ -45,6 +44,8 @@ class GetRunnerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Only the user_id is used from this.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @return \Clarifai\Api\UserAppIDSet|null
      */
@@ -64,6 +65,8 @@ class GetRunnerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Only the user_id is used from this.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @param \Clarifai\Api\UserAppIDSet $var
      * @return $this
@@ -77,45 +80,27 @@ class GetRunnerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
-     * @return string
+     * List of nodepool ids to be deleted
+     *
+     * Generated from protobuf field <code>repeated string ids = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getNodepoolId()
+    public function getIds()
     {
-        return $this->nodepool_id;
+        return $this->ids;
     }
 
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
-     * @param string $var
+     * List of nodepool ids to be deleted
+     *
+     * Generated from protobuf field <code>repeated string ids = 2;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setNodepoolId($var)
+    public function setIds($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->nodepool_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string runner_id = 3;</code>
-     * @return string
-     */
-    public function getRunnerId()
-    {
-        return $this->runner_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string runner_id = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRunnerId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->runner_id = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->ids = $arr;
 
         return $this;
     }

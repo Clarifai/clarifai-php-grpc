@@ -9,32 +9,28 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * ListRunnersRequest
- *
- * Generated from protobuf message <code>clarifai.api.ListRunnersRequest</code>
+ * Generated from protobuf message <code>clarifai.api.ListComputeClustersRequest</code>
  */
-class ListRunnersRequest extends \Google\Protobuf\Internal\Message
+class ListComputeClustersRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Only the user_id is used from this.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
-     */
-    protected $nodepool_id = '';
-    /**
      * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
      * Defaults to 1.
      *
-     * Generated from protobuf field <code>uint32 page = 3;</code>
+     * Generated from protobuf field <code>uint32 page = 2;</code>
      */
     protected $page = 0;
     /**
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
      * to 128.
      *
-     * Generated from protobuf field <code>uint32 per_page = 4;</code>
+     * Generated from protobuf field <code>uint32 per_page = 3;</code>
      */
     protected $per_page = 0;
 
@@ -45,7 +41,7 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string $nodepool_id
+     *           Only the user_id is used from this.
      *     @type int $page
      *           (optional URL parameter) The page number. Pagination is used to split the results into chunks.
      *           Defaults to 1.
@@ -60,6 +56,8 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Only the user_id is used from this.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @return \Clarifai\Api\UserAppIDSet|null
      */
@@ -79,6 +77,8 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Only the user_id is used from this.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @param \Clarifai\Api\UserAppIDSet $var
      * @return $this
@@ -92,32 +92,10 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
-     * @return string
-     */
-    public function getNodepoolId()
-    {
-        return $this->nodepool_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setNodepoolId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->nodepool_id = $var;
-
-        return $this;
-    }
-
-    /**
      * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
      * Defaults to 1.
      *
-     * Generated from protobuf field <code>uint32 page = 3;</code>
+     * Generated from protobuf field <code>uint32 page = 2;</code>
      * @return int
      */
     public function getPage()
@@ -129,7 +107,7 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
      * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
      * Defaults to 1.
      *
-     * Generated from protobuf field <code>uint32 page = 3;</code>
+     * Generated from protobuf field <code>uint32 page = 2;</code>
      * @param int $var
      * @return $this
      */
@@ -145,7 +123,7 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
      * to 128.
      *
-     * Generated from protobuf field <code>uint32 per_page = 4;</code>
+     * Generated from protobuf field <code>uint32 per_page = 3;</code>
      * @return int
      */
     public function getPerPage()
@@ -157,7 +135,7 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
      * to 128.
      *
-     * Generated from protobuf field <code>uint32 per_page = 4;</code>
+     * Generated from protobuf field <code>uint32 per_page = 3;</code>
      * @param int $var
      * @return $this
      */

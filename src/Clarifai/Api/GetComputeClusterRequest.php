@@ -9,24 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * GetRunnerRequest
+ * ComputeCLuster CRUD requests and responses
  *
- * Generated from protobuf message <code>clarifai.api.GetRunnerRequest</code>
+ * Generated from protobuf message <code>clarifai.api.GetComputeClusterRequest</code>
  */
-class GetRunnerRequest extends \Google\Protobuf\Internal\Message
+class GetComputeClusterRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Only the user_id is used from this.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * Generated from protobuf field <code>string compute_cluster_id = 2;</code>
      */
-    protected $nodepool_id = '';
-    /**
-     * Generated from protobuf field <code>string runner_id = 3;</code>
-     */
-    protected $runner_id = '';
+    protected $compute_cluster_id = '';
 
     /**
      * Constructor.
@@ -35,8 +33,8 @@ class GetRunnerRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string $nodepool_id
-     *     @type string $runner_id
+     *           Only the user_id is used from this.
+     *     @type string $compute_cluster_id
      * }
      */
     public function __construct($data = NULL) {
@@ -45,6 +43,8 @@ class GetRunnerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Only the user_id is used from this.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @return \Clarifai\Api\UserAppIDSet|null
      */
@@ -64,6 +64,8 @@ class GetRunnerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Only the user_id is used from this.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @param \Clarifai\Api\UserAppIDSet $var
      * @return $this
@@ -77,45 +79,23 @@ class GetRunnerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * Generated from protobuf field <code>string compute_cluster_id = 2;</code>
      * @return string
      */
-    public function getNodepoolId()
+    public function getComputeClusterId()
     {
-        return $this->nodepool_id;
+        return $this->compute_cluster_id;
     }
 
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * Generated from protobuf field <code>string compute_cluster_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setNodepoolId($var)
+    public function setComputeClusterId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->nodepool_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string runner_id = 3;</code>
-     * @return string
-     */
-    public function getRunnerId()
-    {
-        return $this->runner_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string runner_id = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRunnerId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->runner_id = $var;
+        $this->compute_cluster_id = $var;
 
         return $this;
     }

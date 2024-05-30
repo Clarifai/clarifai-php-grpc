@@ -9,20 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * ListRunnersRequest
- *
- * Generated from protobuf message <code>clarifai.api.ListRunnersRequest</code>
+ * Generated from protobuf message <code>clarifai.api.ListNodepoolsRequest</code>
  */
-class ListRunnersRequest extends \Google\Protobuf\Internal\Message
+class ListNodepoolsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * Generated from protobuf field <code>string compute_cluster_id = 2;</code>
      */
-    protected $nodepool_id = '';
+    protected $compute_cluster_id = '';
     /**
      * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
      * Defaults to 1.
@@ -45,7 +43,7 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string $nodepool_id
+     *     @type string $compute_cluster_id
      *     @type int $page
      *           (optional URL parameter) The page number. Pagination is used to split the results into chunks.
      *           Defaults to 1.
@@ -92,23 +90,23 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * Generated from protobuf field <code>string compute_cluster_id = 2;</code>
      * @return string
      */
-    public function getNodepoolId()
+    public function getComputeClusterId()
     {
-        return $this->nodepool_id;
+        return $this->compute_cluster_id;
     }
 
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * Generated from protobuf field <code>string compute_cluster_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setNodepoolId($var)
+    public function setComputeClusterId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->nodepool_id = $var;
+        $this->compute_cluster_id = $var;
 
         return $this;
     }

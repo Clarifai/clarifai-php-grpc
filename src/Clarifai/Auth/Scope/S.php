@@ -551,6 +551,34 @@ class S
      * Generated from protobuf enum <code>RunnerItems_Add = 135 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = RunnerItems_Get];</code>
      */
     const RunnerItems_Add = 135;
+    /**
+     * Pools of compute resources.
+     *
+     * Generated from protobuf enum <code>Nodepools_Get = 136 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const Nodepools_Get = 136;
+    /**
+     * Generated from protobuf enum <code>Nodepools_Add = 137 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Nodepools_Get];</code>
+     */
+    const Nodepools_Add = 137;
+    /**
+     * Generated from protobuf enum <code>Nodepools_Delete = 138 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Nodepools_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Nodepools_Add];</code>
+     */
+    const Nodepools_Delete = 138;
+    /**
+     * Cluster of machines in a region of cloud
+     *
+     * Generated from protobuf enum <code>ComputeClusters_Get = 139 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const ComputeClusters_Get = 139;
+    /**
+     * Generated from protobuf enum <code>ComputeClusters_Add = 140 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = ComputeClusters_Get];</code>
+     */
+    const ComputeClusters_Add = 140;
+    /**
+     * Generated from protobuf enum <code>ComputeClusters_Delete = 141 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = ComputeClusters_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = ComputeClusters_Add];</code>
+     */
+    const ComputeClusters_Delete = 141;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -643,6 +671,12 @@ class S
         self::Runners_Delete => 'Runners_Delete',
         self::RunnerItems_Get => 'RunnerItems_Get',
         self::RunnerItems_Add => 'RunnerItems_Add',
+        self::Nodepools_Get => 'Nodepools_Get',
+        self::Nodepools_Add => 'Nodepools_Add',
+        self::Nodepools_Delete => 'Nodepools_Delete',
+        self::ComputeClusters_Get => 'ComputeClusters_Get',
+        self::ComputeClusters_Add => 'ComputeClusters_Add',
+        self::ComputeClusters_Delete => 'ComputeClusters_Delete',
     ];
 
     public static function name($value)

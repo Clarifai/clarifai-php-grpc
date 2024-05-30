@@ -9,24 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request to delete several things by the list of ids.
- *
- * Generated from protobuf message <code>clarifai.api.DeleteRunnersRequest</code>
+ * Generated from protobuf message <code>clarifai.api.PostComputeClustersRequest</code>
  */
-class DeleteRunnersRequest extends \Google\Protobuf\Internal\Message
+class PostComputeClustersRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Only the user_id is used from this.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * This allows you to create one or more compute_clusters by posting it to the API.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.ComputeCluster compute_clusters = 2;</code>
      */
-    protected $nodepool_id = '';
-    /**
-     * Generated from protobuf field <code>repeated string ids = 3;</code>
-     */
-    private $ids;
+    private $compute_clusters;
 
     /**
      * Constructor.
@@ -35,8 +33,9 @@ class DeleteRunnersRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string $nodepool_id
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
+     *           Only the user_id is used from this.
+     *     @type array<\Clarifai\Api\ComputeCluster>|\Google\Protobuf\Internal\RepeatedField $compute_clusters
+     *           This allows you to create one or more compute_clusters by posting it to the API.
      * }
      */
     public function __construct($data = NULL) {
@@ -45,6 +44,8 @@ class DeleteRunnersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Only the user_id is used from this.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @return \Clarifai\Api\UserAppIDSet|null
      */
@@ -64,6 +65,8 @@ class DeleteRunnersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Only the user_id is used from this.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @param \Clarifai\Api\UserAppIDSet $var
      * @return $this
@@ -77,45 +80,27 @@ class DeleteRunnersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
-     * @return string
-     */
-    public function getNodepoolId()
-    {
-        return $this->nodepool_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setNodepoolId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->nodepool_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string ids = 3;</code>
+     * This allows you to create one or more compute_clusters by posting it to the API.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.ComputeCluster compute_clusters = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getIds()
+    public function getComputeClusters()
     {
-        return $this->ids;
+        return $this->compute_clusters;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string ids = 3;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * This allows you to create one or more compute_clusters by posting it to the API.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.ComputeCluster compute_clusters = 2;</code>
+     * @param array<\Clarifai\Api\ComputeCluster>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setIds($var)
+    public function setComputeClusters($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->ids = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\ComputeCluster::class);
+        $this->compute_clusters = $arr;
 
         return $this;
     }

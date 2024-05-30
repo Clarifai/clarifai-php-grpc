@@ -17,6 +17,10 @@ class TaskMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
      */
     protected $work = null;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+     */
+    protected $review = null;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class TaskMetrics extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\TaskWorkMetrics $work
+     *     @type \Clarifai\Api\TaskReviewMetrics $review
      * }
      */
     public function __construct($data = NULL) {
@@ -60,6 +65,38 @@ class TaskMetrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\TaskWorkMetrics::class);
         $this->work = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+     * @return \Clarifai\Api\TaskReviewMetrics|null
+     */
+    public function getReview()
+    {
+        return $this->review;
+    }
+
+    public function hasReview()
+    {
+        return isset($this->review);
+    }
+
+    public function clearReview()
+    {
+        unset($this->review);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+     * @param \Clarifai\Api\TaskReviewMetrics $var
+     * @return $this
+     */
+    public function setReview($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\TaskReviewMetrics::class);
+        $this->review = $var;
 
         return $this;
     }

@@ -24,31 +24,45 @@ class Nodepool extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Short description about the nodepool.
+     *
+     * Generated from protobuf field <code>string description = 2;</code>
+     */
+    protected $description = '';
+    /**
+     * When the nodepool was created.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    protected $created_at = null;
+    /**
+     * When the nodepool was last modified.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 4;</code>
+     */
+    protected $modified_at = null;
+    /**
      * The user/org that this nodepool belongs to.
      *
-     * Generated from protobuf field <code>string user_id = 2;</code>
+     * Generated from protobuf field <code>string user_id = 5;</code>
      */
     protected $user_id = '';
     /**
-     * Which cloud region this nodepool is within.
+     * Which cluster this nodepool is within.
      *
-     * Generated from protobuf field <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
+     * Generated from protobuf field <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
      */
-    protected $cloud_region = null;
+    protected $compute_cluster = null;
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
+     * Generated from protobuf field <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
      */
-    private $capacity_types;
+    protected $node_capacity_type = null;
     /**
-     *&#47;///////////////////////////////////
-     * The instance types that will be available in this pool of nodes.
-     * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-     *
-     * Generated from protobuf field <code>repeated string instance_types = 8;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
      */
     private $instance_types;
     /**
-     * Minimum number of instances in this nodepool. This allows the nodeool to scale down to this
+     * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
      * amount. A nodepool needs a minimum of 1 instance.
      *
      * Generated from protobuf field <code>uint32 min_instances = 9;</code>
@@ -61,6 +75,21 @@ class Nodepool extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 max_instances = 10;</code>
      */
     protected $max_instances = 0;
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 11;</code>
+     */
+    protected $visibility = null;
+    /**
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 12;</code>
+     */
+    protected $metadata = null;
 
     /**
      * Constructor.
@@ -70,21 +99,31 @@ class Nodepool extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           The user defined ID of the nodepool.
+     *     @type string $description
+     *           Short description about the nodepool.
+     *     @type \Google\Protobuf\Timestamp $created_at
+     *           When the nodepool was created.
+     *     @type \Google\Protobuf\Timestamp $modified_at
+     *           When the nodepool was last modified.
      *     @type string $user_id
      *           The user/org that this nodepool belongs to.
-     *     @type \Clarifai\Api\CloudRegion $cloud_region
-     *           Which cloud region this nodepool is within.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $capacity_types
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $instance_types
-     *          &#47;///////////////////////////////////
-     *           The instance types that will be available in this pool of nodes.
-     *           Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
+     *     @type \Clarifai\Api\ComputeCluster $compute_cluster
+     *           Which cluster this nodepool is within.
+     *     @type \Clarifai\Api\NodeCapacityType $node_capacity_type
+     *     @type array<\Clarifai\Api\InstanceType>|\Google\Protobuf\Internal\RepeatedField $instance_types
      *     @type int $min_instances
-     *           Minimum number of instances in this nodepool. This allows the nodeool to scale down to this
+     *           Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
      *           amount. A nodepool needs a minimum of 1 instance.
      *     @type int $max_instances
      *           An upper limit on the number of instances in this nodepool. This allows the nodepool to scale
      *           up to this amount.
+     *     @type \Clarifai\Api\Visibility $visibility
+     *           The visibility field represents whether this message is privately/publicly visible.
+     *           To be visible to the public the App that contains it AND the User that contains the App must
+     *           also be publicly visible.
+     *     @type \Google\Protobuf\Struct $metadata
+     *           To handle arbitrary json metadata:
+     *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      * }
      */
     public function __construct($data = NULL) {
@@ -119,9 +158,107 @@ class Nodepool extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Short description about the nodepool.
+     *
+     * Generated from protobuf field <code>string description = 2;</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Short description about the nodepool.
+     *
+     * Generated from protobuf field <code>string description = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * When the nodepool was created.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
+    }
+
+    /**
+     * When the nodepool was created.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * When the nodepool was last modified.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 4;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getModifiedAt()
+    {
+        return $this->modified_at;
+    }
+
+    public function hasModifiedAt()
+    {
+        return isset($this->modified_at);
+    }
+
+    public function clearModifiedAt()
+    {
+        unset($this->modified_at);
+    }
+
+    /**
+     * When the nodepool was last modified.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 4;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setModifiedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->modified_at = $var;
+
+        return $this;
+    }
+
+    /**
      * The user/org that this nodepool belongs to.
      *
-     * Generated from protobuf field <code>string user_id = 2;</code>
+     * Generated from protobuf field <code>string user_id = 5;</code>
      * @return string
      */
     public function getUserId()
@@ -132,7 +269,7 @@ class Nodepool extends \Google\Protobuf\Internal\Message
     /**
      * The user/org that this nodepool belongs to.
      *
-     * Generated from protobuf field <code>string user_id = 2;</code>
+     * Generated from protobuf field <code>string user_id = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -145,69 +282,75 @@ class Nodepool extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Which cloud region this nodepool is within.
+     * Which cluster this nodepool is within.
      *
-     * Generated from protobuf field <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
-     * @return \Clarifai\Api\CloudRegion|null
+     * Generated from protobuf field <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
+     * @return \Clarifai\Api\ComputeCluster|null
      */
-    public function getCloudRegion()
+    public function getComputeCluster()
     {
-        return $this->cloud_region;
+        return $this->compute_cluster;
     }
 
-    public function hasCloudRegion()
+    public function hasComputeCluster()
     {
-        return isset($this->cloud_region);
+        return isset($this->compute_cluster);
     }
 
-    public function clearCloudRegion()
+    public function clearComputeCluster()
     {
-        unset($this->cloud_region);
+        unset($this->compute_cluster);
     }
 
     /**
-     * Which cloud region this nodepool is within.
+     * Which cluster this nodepool is within.
      *
-     * Generated from protobuf field <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
-     * @param \Clarifai\Api\CloudRegion $var
+     * Generated from protobuf field <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
+     * @param \Clarifai\Api\ComputeCluster $var
      * @return $this
      */
-    public function setCloudRegion($var)
+    public function setComputeCluster($var)
     {
-        GPBUtil::checkMessage($var, \Clarifai\Api\CloudRegion::class);
-        $this->cloud_region = $var;
+        GPBUtil::checkMessage($var, \Clarifai\Api\ComputeCluster::class);
+        $this->compute_cluster = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
+     * @return \Clarifai\Api\NodeCapacityType|null
      */
-    public function getCapacityTypes()
+    public function getNodeCapacityType()
     {
-        return $this->capacity_types;
+        return $this->node_capacity_type;
+    }
+
+    public function hasNodeCapacityType()
+    {
+        return isset($this->node_capacity_type);
+    }
+
+    public function clearNodeCapacityType()
+    {
+        unset($this->node_capacity_type);
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
+     * @param \Clarifai\Api\NodeCapacityType $var
      * @return $this
      */
-    public function setCapacityTypes($var)
+    public function setNodeCapacityType($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Clarifai\Api\Nodepool\CapacityType::class);
-        $this->capacity_types = $arr;
+        GPBUtil::checkMessage($var, \Clarifai\Api\NodeCapacityType::class);
+        $this->node_capacity_type = $var;
 
         return $this;
     }
 
     /**
-     *&#47;///////////////////////////////////
-     * The instance types that will be available in this pool of nodes.
-     * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-     *
-     * Generated from protobuf field <code>repeated string instance_types = 8;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getInstanceTypes()
@@ -216,24 +359,20 @@ class Nodepool extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *&#47;///////////////////////////////////
-     * The instance types that will be available in this pool of nodes.
-     * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-     *
-     * Generated from protobuf field <code>repeated string instance_types = 8;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
+     * @param array<\Clarifai\Api\InstanceType>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setInstanceTypes($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\InstanceType::class);
         $this->instance_types = $arr;
 
         return $this;
     }
 
     /**
-     * Minimum number of instances in this nodepool. This allows the nodeool to scale down to this
+     * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
      * amount. A nodepool needs a minimum of 1 instance.
      *
      * Generated from protobuf field <code>uint32 min_instances = 9;</code>
@@ -245,7 +384,7 @@ class Nodepool extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Minimum number of instances in this nodepool. This allows the nodeool to scale down to this
+     * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
      * amount. A nodepool needs a minimum of 1 instance.
      *
      * Generated from protobuf field <code>uint32 min_instances = 9;</code>
@@ -284,6 +423,84 @@ class Nodepool extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->max_instances = $var;
+
+        return $this;
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 11;</code>
+     * @return \Clarifai\Api\Visibility|null
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 11;</code>
+     * @param \Clarifai\Api\Visibility $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
+        $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 12;</code>
+     * @return \Google\Protobuf\Struct|null
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    public function hasMetadata()
+    {
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        unset($this->metadata);
+    }
+
+    /**
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 12;</code>
+     * @param \Google\Protobuf\Struct $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->metadata = $var;
 
         return $this;
     }
