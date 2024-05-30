@@ -28,18 +28,20 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
      */
     protected $language = '';
     /**
-     * The id of workflow. If no id is provided, then application base workflow is used.
+     * Deprecated: Use workflow.id instead.
      *
-     * Generated from protobuf field <code>string workflow_id = 3;</code>
+     * Generated from protobuf field <code>string workflow_id = 3 [deprecated = true];</code>
+     * @deprecated
      */
     protected $workflow_id = '';
     /**
-     * The concepts must belong to workflow models with specified use cases.
+     * The concepts must belong to models with specified use cases.
      * Multiple values are joined using an OR condition.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
      */
     private $use_cases;
+    protected $source;
 
     /**
      * Constructor.
@@ -52,10 +54,12 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
      *     @type string $language
      *           The language of the concept name in a search. Defaults to English.
      *     @type string $workflow_id
-     *           The id of workflow. If no id is provided, then application base workflow is used.
+     *           Deprecated: Use workflow.id instead.
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $use_cases
-     *           The concepts must belong to workflow models with specified use cases.
+     *           The concepts must belong to models with specified use cases.
      *           Multiple values are joined using an OR condition.
+     *     @type \Clarifai\Api\Model $model
+     *     @type \Clarifai\Api\Workflow $workflow
      * }
      */
     public function __construct($data = NULL) {
@@ -116,25 +120,29 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The id of workflow. If no id is provided, then application base workflow is used.
+     * Deprecated: Use workflow.id instead.
      *
-     * Generated from protobuf field <code>string workflow_id = 3;</code>
+     * Generated from protobuf field <code>string workflow_id = 3 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getWorkflowId()
     {
+        @trigger_error('workflow_id is deprecated.', E_USER_DEPRECATED);
         return $this->workflow_id;
     }
 
     /**
-     * The id of workflow. If no id is provided, then application base workflow is used.
+     * Deprecated: Use workflow.id instead.
      *
-     * Generated from protobuf field <code>string workflow_id = 3;</code>
+     * Generated from protobuf field <code>string workflow_id = 3 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setWorkflowId($var)
     {
+        @trigger_error('workflow_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->workflow_id = $var;
 
@@ -142,7 +150,7 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The concepts must belong to workflow models with specified use cases.
+     * The concepts must belong to models with specified use cases.
      * Multiple values are joined using an OR condition.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
@@ -154,7 +162,7 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The concepts must belong to workflow models with specified use cases.
+     * The concepts must belong to models with specified use cases.
      * Multiple values are joined using an OR condition.
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
@@ -167,6 +175,68 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
         $this->use_cases = $arr;
 
         return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Model model = 5;</code>
+     * @return \Clarifai\Api\Model|null
+     */
+    public function getModel()
+    {
+        return $this->readOneof(5);
+    }
+
+    public function hasModel()
+    {
+        return $this->hasOneof(5);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Model model = 5;</code>
+     * @param \Clarifai\Api\Model $var
+     * @return $this
+     */
+    public function setModel($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Model::class);
+        $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Workflow workflow = 6;</code>
+     * @return \Clarifai\Api\Workflow|null
+     */
+    public function getWorkflow()
+    {
+        return $this->readOneof(6);
+    }
+
+    public function hasWorkflow()
+    {
+        return $this->hasOneof(6);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Workflow workflow = 6;</code>
+     * @param \Clarifai\Api\Workflow $var
+     * @return $this
+     */
+    public function setWorkflow($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Workflow::class);
+        $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->whichOneof("source");
     }
 
 }

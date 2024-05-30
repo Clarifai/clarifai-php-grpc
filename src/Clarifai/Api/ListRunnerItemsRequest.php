@@ -18,7 +18,11 @@ class ListRunnerItemsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>string runner_id = 2;</code>
+     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     */
+    protected $nodepool_id = '';
+    /**
+     * Generated from protobuf field <code>string runner_id = 3;</code>
      */
     protected $runner_id = '';
 
@@ -29,6 +33,7 @@ class ListRunnerItemsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
+     *     @type string $nodepool_id
      *     @type string $runner_id
      * }
      */
@@ -70,7 +75,29 @@ class ListRunnerItemsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string runner_id = 2;</code>
+     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * @return string
+     */
+    public function getNodepoolId()
+    {
+        return $this->nodepool_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNodepoolId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->nodepool_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string runner_id = 3;</code>
      * @return string
      */
     public function getRunnerId()
@@ -79,7 +106,7 @@ class ListRunnerItemsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string runner_id = 2;</code>
+     * Generated from protobuf field <code>string runner_id = 3;</code>
      * @param string $var
      * @return $this
      */

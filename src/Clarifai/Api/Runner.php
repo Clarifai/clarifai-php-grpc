@@ -17,26 +17,26 @@ use Google\Protobuf\Internal\GPBUtil;
 class Runner extends \Google\Protobuf\Internal\Message
 {
     /**
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
     /**
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      *
      * Generated from protobuf field <code>string description = 2;</code>
      */
     protected $description = '';
     /**
-     * When the app module was created.
+     * When the runner was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
      */
     protected $created_at = null;
     /**
-     * When the app module was last modified.
+     * When the runner was last modified.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 4;</code>
      */
@@ -63,11 +63,19 @@ class Runner extends \Google\Protobuf\Internal\Message
      */
     private $labels;
     /**
+     * Instead of just matching on labels we might want to have more explicit matching of what
+     * work this runner is looking for.
+     * The thing that the autoscaling config applies to for this nodepool.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Worker worker = 8;</code>
+     */
+    protected $worker = null;
+    /**
      * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
      * to be provided when creating a Runner.
      * This nodepool must be accessible to you or an org you are part of.
      *
-     * Generated from protobuf field <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * Generated from protobuf field <code>.clarifai.api.Nodepool nodepool = 9;</code>
      */
     protected $nodepool = null;
     /**
@@ -80,10 +88,9 @@ class Runner extends \Google\Protobuf\Internal\Message
      * requirements on those object, which may be less than what the Runner allocates (as a safety
      * margin for the runner to for sure run the resource).
      *
-     * Generated from protobuf field <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * Generated from protobuf field <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
      */
     protected $compute_info = null;
-    protected $object;
 
     /**
      * Constructor.
@@ -92,14 +99,14 @@ class Runner extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *           A unique ID for this app module.
+     *           A unique ID for this runner.
      *           This is a UUID since runners can be automatically orchestrated.
      *     @type string $description
-     *           A short description for this app module to be used in grids of modules.
+     *           short description about the runner.
      *     @type \Google\Protobuf\Timestamp $created_at
-     *           When the app module was created.
+     *           When the runner was created.
      *     @type \Google\Protobuf\Timestamp $modified_at
-     *           When the app module was last modified.
+     *           When the runner was last modified.
      *     @type \Google\Protobuf\Struct $metadata
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
@@ -108,10 +115,10 @@ class Runner extends \Google\Protobuf\Internal\Message
      *           The owner of the runner. Runners belong to a user/org account.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *           Labels to match in order to find work.
-     *     @type \Clarifai\Api\Model $model
-     *           Model: match work to only a specific model.
-     *     @type \Clarifai\Api\Workflow $workflow
-     *           Workflow: match work to only a specific workflow.
+     *     @type \Clarifai\Api\Worker $worker
+     *           Instead of just matching on labels we might want to have more explicit matching of what
+     *           work this runner is looking for.
+     *           The thing that the autoscaling config applies to for this nodepool.
      *     @type \Clarifai\Api\Nodepool $nodepool
      *           Runners are defined within nodepools so this field needs the id and user_id of the nodepool
      *           to be provided when creating a Runner.
@@ -133,7 +140,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      *
      * Generated from protobuf field <code>string id = 1;</code>
@@ -145,7 +152,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      *
      * Generated from protobuf field <code>string id = 1;</code>
@@ -161,7 +168,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      *
      * Generated from protobuf field <code>string description = 2;</code>
      * @return string
@@ -172,7 +179,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      *
      * Generated from protobuf field <code>string description = 2;</code>
      * @param string $var
@@ -187,7 +194,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When the app module was created.
+     * When the runner was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -208,7 +215,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When the app module was created.
+     * When the runner was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -223,7 +230,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When the app module was last modified.
+     * When the runner was last modified.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 4;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -244,7 +251,7 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When the app module was last modified.
+     * When the runner was last modified.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 4;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -355,63 +362,41 @@ class Runner extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Model: match work to only a specific model.
+     * Instead of just matching on labels we might want to have more explicit matching of what
+     * work this runner is looking for.
+     * The thing that the autoscaling config applies to for this nodepool.
      *
-     * Generated from protobuf field <code>.clarifai.api.Model model = 9;</code>
-     * @return \Clarifai\Api\Model|null
+     * Generated from protobuf field <code>.clarifai.api.Worker worker = 8;</code>
+     * @return \Clarifai\Api\Worker|null
      */
-    public function getModel()
+    public function getWorker()
     {
-        return $this->readOneof(9);
+        return $this->worker;
     }
 
-    public function hasModel()
+    public function hasWorker()
     {
-        return $this->hasOneof(9);
+        return isset($this->worker);
+    }
+
+    public function clearWorker()
+    {
+        unset($this->worker);
     }
 
     /**
-     * Model: match work to only a specific model.
+     * Instead of just matching on labels we might want to have more explicit matching of what
+     * work this runner is looking for.
+     * The thing that the autoscaling config applies to for this nodepool.
      *
-     * Generated from protobuf field <code>.clarifai.api.Model model = 9;</code>
-     * @param \Clarifai\Api\Model $var
+     * Generated from protobuf field <code>.clarifai.api.Worker worker = 8;</code>
+     * @param \Clarifai\Api\Worker $var
      * @return $this
      */
-    public function setModel($var)
+    public function setWorker($var)
     {
-        GPBUtil::checkMessage($var, \Clarifai\Api\Model::class);
-        $this->writeOneof(9, $var);
-
-        return $this;
-    }
-
-    /**
-     * Workflow: match work to only a specific workflow.
-     *
-     * Generated from protobuf field <code>.clarifai.api.Workflow workflow = 10;</code>
-     * @return \Clarifai\Api\Workflow|null
-     */
-    public function getWorkflow()
-    {
-        return $this->readOneof(10);
-    }
-
-    public function hasWorkflow()
-    {
-        return $this->hasOneof(10);
-    }
-
-    /**
-     * Workflow: match work to only a specific workflow.
-     *
-     * Generated from protobuf field <code>.clarifai.api.Workflow workflow = 10;</code>
-     * @param \Clarifai\Api\Workflow $var
-     * @return $this
-     */
-    public function setWorkflow($var)
-    {
-        GPBUtil::checkMessage($var, \Clarifai\Api\Workflow::class);
-        $this->writeOneof(10, $var);
+        GPBUtil::checkMessage($var, \Clarifai\Api\Worker::class);
+        $this->worker = $var;
 
         return $this;
     }
@@ -421,7 +406,7 @@ class Runner extends \Google\Protobuf\Internal\Message
      * to be provided when creating a Runner.
      * This nodepool must be accessible to you or an org you are part of.
      *
-     * Generated from protobuf field <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * Generated from protobuf field <code>.clarifai.api.Nodepool nodepool = 9;</code>
      * @return \Clarifai\Api\Nodepool|null
      */
     public function getNodepool()
@@ -444,7 +429,7 @@ class Runner extends \Google\Protobuf\Internal\Message
      * to be provided when creating a Runner.
      * This nodepool must be accessible to you or an org you are part of.
      *
-     * Generated from protobuf field <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * Generated from protobuf field <code>.clarifai.api.Nodepool nodepool = 9;</code>
      * @param \Clarifai\Api\Nodepool $var
      * @return $this
      */
@@ -466,7 +451,7 @@ class Runner extends \Google\Protobuf\Internal\Message
      * requirements on those object, which may be less than what the Runner allocates (as a safety
      * margin for the runner to for sure run the resource).
      *
-     * Generated from protobuf field <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * Generated from protobuf field <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
      * @return \Clarifai\Api\ComputeInfo|null
      */
     public function getComputeInfo()
@@ -494,7 +479,7 @@ class Runner extends \Google\Protobuf\Internal\Message
      * requirements on those object, which may be less than what the Runner allocates (as a safety
      * margin for the runner to for sure run the resource).
      *
-     * Generated from protobuf field <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * Generated from protobuf field <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
      * @param \Clarifai\Api\ComputeInfo $var
      * @return $this
      */
@@ -504,14 +489,6 @@ class Runner extends \Google\Protobuf\Internal\Message
         $this->compute_info = $var;
 
         return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getObject()
-    {
-        return $this->whichOneof("object");
     }
 
 }

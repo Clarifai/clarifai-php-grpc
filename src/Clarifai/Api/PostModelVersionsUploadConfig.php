@@ -18,23 +18,29 @@ class PostModelVersionsUploadConfig extends \Google\Protobuf\Internal\Message
      */
     protected $user_app_id = null;
     /**
-     * model to create version of
+     * Model to create version for
      *
      * Generated from protobuf field <code>string model_id = 2;</code>
      */
     protected $model_id = '';
     /**
-     * specification for the model version to be uploaded
+     * Specification for the model version to be uploaded
      *
      * Generated from protobuf field <code>.clarifai.api.ModelVersion model_version = 3;</code>
      */
     protected $model_version = null;
     /**
-     * number of bytes in the model files to be uploaded
+     * Number of bytes in the model files to be uploaded
      *
      * Generated from protobuf field <code>uint64 total_size = 4;</code>
      */
     protected $total_size = 0;
+    /**
+     * Whether the uploaded package will be a .tar.gz which contains a Dockerfile or the standard .zip
+     *
+     * Generated from protobuf field <code>bool is_v3 = 5;</code>
+     */
+    protected $is_v3 = false;
 
     /**
      * Constructor.
@@ -44,11 +50,13 @@ class PostModelVersionsUploadConfig extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $model_id
-     *           model to create version of
+     *           Model to create version for
      *     @type \Clarifai\Api\ModelVersion $model_version
-     *           specification for the model version to be uploaded
+     *           Specification for the model version to be uploaded
      *     @type int|string $total_size
-     *           number of bytes in the model files to be uploaded
+     *           Number of bytes in the model files to be uploaded
+     *     @type bool $is_v3
+     *           Whether the uploaded package will be a .tar.gz which contains a Dockerfile or the standard .zip
      * }
      */
     public function __construct($data = NULL) {
@@ -89,7 +97,7 @@ class PostModelVersionsUploadConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * model to create version of
+     * Model to create version for
      *
      * Generated from protobuf field <code>string model_id = 2;</code>
      * @return string
@@ -100,7 +108,7 @@ class PostModelVersionsUploadConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * model to create version of
+     * Model to create version for
      *
      * Generated from protobuf field <code>string model_id = 2;</code>
      * @param string $var
@@ -115,7 +123,7 @@ class PostModelVersionsUploadConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * specification for the model version to be uploaded
+     * Specification for the model version to be uploaded
      *
      * Generated from protobuf field <code>.clarifai.api.ModelVersion model_version = 3;</code>
      * @return \Clarifai\Api\ModelVersion|null
@@ -136,7 +144,7 @@ class PostModelVersionsUploadConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * specification for the model version to be uploaded
+     * Specification for the model version to be uploaded
      *
      * Generated from protobuf field <code>.clarifai.api.ModelVersion model_version = 3;</code>
      * @param \Clarifai\Api\ModelVersion $var
@@ -151,7 +159,7 @@ class PostModelVersionsUploadConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * number of bytes in the model files to be uploaded
+     * Number of bytes in the model files to be uploaded
      *
      * Generated from protobuf field <code>uint64 total_size = 4;</code>
      * @return int|string
@@ -162,7 +170,7 @@ class PostModelVersionsUploadConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * number of bytes in the model files to be uploaded
+     * Number of bytes in the model files to be uploaded
      *
      * Generated from protobuf field <code>uint64 total_size = 4;</code>
      * @param int|string $var
@@ -172,6 +180,32 @@ class PostModelVersionsUploadConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint64($var);
         $this->total_size = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether the uploaded package will be a .tar.gz which contains a Dockerfile or the standard .zip
+     *
+     * Generated from protobuf field <code>bool is_v3 = 5;</code>
+     * @return bool
+     */
+    public function getIsV3()
+    {
+        return $this->is_v3;
+    }
+
+    /**
+     * Whether the uploaded package will be a .tar.gz which contains a Dockerfile or the standard .zip
+     *
+     * Generated from protobuf field <code>bool is_v3 = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsV3($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_v3 = $var;
 
         return $this;
     }

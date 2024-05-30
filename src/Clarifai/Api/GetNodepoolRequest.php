@@ -9,26 +9,25 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * PostRunnersRequest
+ * TODO(zeiler): these might not be 100% correct and will be updated as we uncomment the endpoints.
+ * Nodepool CRUD requests and responses
  *
- * Generated from protobuf message <code>clarifai.api.PostRunnersRequest</code>
+ * Generated from protobuf message <code>clarifai.api.GetNodepoolRequest</code>
  */
-class PostRunnersRequest extends \Google\Protobuf\Internal\Message
+class GetNodepoolRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * Generated from protobuf field <code>string compute_cluster_id = 2;</code>
+     */
+    protected $compute_cluster_id = '';
+    /**
+     * Generated from protobuf field <code>string nodepool_id = 3;</code>
      */
     protected $nodepool_id = '';
-    /**
-     * This allows you to create one or more runner by posting it to the API.
-     *
-     * Generated from protobuf field <code>repeated .clarifai.api.Runner runners = 3;</code>
-     */
-    private $runners;
 
     /**
      * Constructor.
@@ -37,9 +36,8 @@ class PostRunnersRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
+     *     @type string $compute_cluster_id
      *     @type string $nodepool_id
-     *     @type array<\Clarifai\Api\Runner>|\Google\Protobuf\Internal\RepeatedField $runners
-     *           This allows you to create one or more runner by posting it to the API.
      * }
      */
     public function __construct($data = NULL) {
@@ -80,7 +78,29 @@ class PostRunnersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * Generated from protobuf field <code>string compute_cluster_id = 2;</code>
+     * @return string
+     */
+    public function getComputeClusterId()
+    {
+        return $this->compute_cluster_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string compute_cluster_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setComputeClusterId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->compute_cluster_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string nodepool_id = 3;</code>
      * @return string
      */
     public function getNodepoolId()
@@ -89,7 +109,7 @@ class PostRunnersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * Generated from protobuf field <code>string nodepool_id = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -97,32 +117,6 @@ class PostRunnersRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->nodepool_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * This allows you to create one or more runner by posting it to the API.
-     *
-     * Generated from protobuf field <code>repeated .clarifai.api.Runner runners = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getRunners()
-    {
-        return $this->runners;
-    }
-
-    /**
-     * This allows you to create one or more runner by posting it to the API.
-     *
-     * Generated from protobuf field <code>repeated .clarifai.api.Runner runners = 3;</code>
-     * @param array<\Clarifai\Api\Runner>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setRunners($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Runner::class);
-        $this->runners = $arr;
 
         return $this;
     }

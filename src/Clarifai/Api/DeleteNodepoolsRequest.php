@@ -9,26 +9,26 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * PostRunnersRequest
- *
- * Generated from protobuf message <code>clarifai.api.PostRunnersRequest</code>
+ * Generated from protobuf message <code>clarifai.api.DeleteNodepoolsRequest</code>
  */
-class PostRunnersRequest extends \Google\Protobuf\Internal\Message
+class DeleteNodepoolsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Only the user_id is used from this.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * Generated from protobuf field <code>string compute_cluster_id = 2;</code>
      */
-    protected $nodepool_id = '';
+    protected $compute_cluster_id = '';
     /**
-     * This allows you to create one or more runner by posting it to the API.
+     * List of nodepool ids to be deleted
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.Runner runners = 3;</code>
+     * Generated from protobuf field <code>repeated string ids = 3;</code>
      */
-    private $runners;
+    private $ids;
 
     /**
      * Constructor.
@@ -37,9 +37,10 @@ class PostRunnersRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string $nodepool_id
-     *     @type array<\Clarifai\Api\Runner>|\Google\Protobuf\Internal\RepeatedField $runners
-     *           This allows you to create one or more runner by posting it to the API.
+     *           Only the user_id is used from this.
+     *     @type string $compute_cluster_id
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
+     *           List of nodepool ids to be deleted
      * }
      */
     public function __construct($data = NULL) {
@@ -48,6 +49,8 @@ class PostRunnersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Only the user_id is used from this.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @return \Clarifai\Api\UserAppIDSet|null
      */
@@ -67,6 +70,8 @@ class PostRunnersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Only the user_id is used from this.
+     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @param \Clarifai\Api\UserAppIDSet $var
      * @return $this
@@ -80,49 +85,49 @@ class PostRunnersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * Generated from protobuf field <code>string compute_cluster_id = 2;</code>
      * @return string
      */
-    public function getNodepoolId()
+    public function getComputeClusterId()
     {
-        return $this->nodepool_id;
+        return $this->compute_cluster_id;
     }
 
     /**
-     * Generated from protobuf field <code>string nodepool_id = 2;</code>
+     * Generated from protobuf field <code>string compute_cluster_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setNodepoolId($var)
+    public function setComputeClusterId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->nodepool_id = $var;
+        $this->compute_cluster_id = $var;
 
         return $this;
     }
 
     /**
-     * This allows you to create one or more runner by posting it to the API.
+     * List of nodepool ids to be deleted
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.Runner runners = 3;</code>
+     * Generated from protobuf field <code>repeated string ids = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getRunners()
+    public function getIds()
     {
-        return $this->runners;
+        return $this->ids;
     }
 
     /**
-     * This allows you to create one or more runner by posting it to the API.
+     * List of nodepool ids to be deleted
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.Runner runners = 3;</code>
-     * @param array<\Clarifai\Api\Runner>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated string ids = 3;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setRunners($var)
+    public function setIds($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Runner::class);
-        $this->runners = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->ids = $arr;
 
         return $this;
     }

@@ -51,6 +51,12 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $intention = '';
     /**
+     * This specifies how one got to know about clarifai
+     *
+     * Generated from protobuf field <code>string referral_source = 25;</code>
+     */
+    protected $referral_source = '';
+    /**
      * Generated from protobuf field <code>string bill_type = 7 [deprecated = true];</code>
      * @deprecated
      */
@@ -154,6 +160,8 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type string $job_role
      *     @type string $intention
      *           This specifies user intent when registering on clarifai
+     *     @type string $referral_source
+     *           This specifies how one got to know about clarifai
      *     @type string $bill_type
      *     @type \Google\Protobuf\Timestamp $created_at
      *           When the user was created. We follow the XXXX timestamp
@@ -372,6 +380,32 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->intention = $var;
+
+        return $this;
+    }
+
+    /**
+     * This specifies how one got to know about clarifai
+     *
+     * Generated from protobuf field <code>string referral_source = 25;</code>
+     * @return string
+     */
+    public function getReferralSource()
+    {
+        return $this->referral_source;
+    }
+
+    /**
+     * This specifies how one got to know about clarifai
+     *
+     * Generated from protobuf field <code>string referral_source = 25;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setReferralSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->referral_source = $var;
 
         return $this;
     }

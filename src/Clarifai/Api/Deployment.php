@@ -51,6 +51,21 @@ class Deployment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Deployment.SchedulingChoice scheduling_choice = 7;</code>
      */
     protected $scheduling_choice = 0;
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 8;</code>
+     */
+    protected $visibility = null;
+    /**
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 9;</code>
+     */
+    protected $metadata = null;
     protected $object;
 
     /**
@@ -78,6 +93,13 @@ class Deployment extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Workflow $workflow
      *           Workflow
      *     @type int $scheduling_choice
+     *     @type \Clarifai\Api\Visibility $visibility
+     *           The visibility field represents whether this message is privately/publicly visible.
+     *           To be visible to the public the App that contains it AND the User that contains the App must
+     *           also be publicly visible.
+     *     @type \Google\Protobuf\Struct $metadata
+     *           To handle arbitrary json metadata:
+     *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      * }
      */
     public function __construct($data = NULL) {
@@ -291,6 +313,84 @@ class Deployment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Clarifai\Api\Deployment\SchedulingChoice::class);
         $this->scheduling_choice = $var;
+
+        return $this;
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 8;</code>
+     * @return \Clarifai\Api\Visibility|null
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 8;</code>
+     * @param \Clarifai\Api\Visibility $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
+        $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 9;</code>
+     * @return \Google\Protobuf\Struct|null
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    public function hasMetadata()
+    {
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        unset($this->metadata);
+    }
+
+    /**
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 9;</code>
+     * @param \Google\Protobuf\Struct $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->metadata = $var;
 
         return $this;
     }
