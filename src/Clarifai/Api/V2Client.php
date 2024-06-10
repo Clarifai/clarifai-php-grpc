@@ -280,21 +280,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Start concept mapping jobs.
-     * @param \Clarifai\Api\PostConceptMappingJobsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PostConceptMappingJobs(\Clarifai\Api\PostConceptMappingJobsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PostConceptMappingJobs',
-        $argument,
-        ['\Clarifai\Api\MultiConceptMappingJobResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * Get a specific annotation from an app.
      * @param \Clarifai\Api\GetAnnotationRequest $argument input argument
      * @param array $metadata metadata
@@ -3628,6 +3613,78 @@ class V2Client extends \Grpc\BaseStub {
     public function DeleteNodepools(\Clarifai\Api\DeleteNodepoolsRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/clarifai.api.V2/DeleteNodepools',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Deployments CRUD
+     * @param \Clarifai\Api\GetDeploymentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetDeployment(\Clarifai\Api\GetDeploymentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetDeployment',
+        $argument,
+        ['\Clarifai\Api\SingleDeploymentResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\ListDeploymentsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListDeployments(\Clarifai\Api\ListDeploymentsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListDeployments',
+        $argument,
+        ['\Clarifai\Api\MultiDeploymentResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PostDeploymentsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostDeployments(\Clarifai\Api\PostDeploymentsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostDeployments',
+        $argument,
+        ['\Clarifai\Api\MultiDeploymentResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PatchDeploymentsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchDeployments(\Clarifai\Api\PatchDeploymentsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchDeployments',
+        $argument,
+        ['\Clarifai\Api\MultiDeploymentResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete multiple deployments in one request.
+     * @param \Clarifai\Api\DeleteDeploymentsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteDeployments(\Clarifai\Api\DeleteDeploymentsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteDeployments',
         $argument,
         ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);

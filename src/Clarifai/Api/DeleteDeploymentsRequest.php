@@ -9,20 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * MultiConceptMappingJobResponse
- *
- * Generated from protobuf message <code>clarifai.api.MultiConceptMappingJobResponse</code>
+ * Generated from protobuf message <code>clarifai.api.DeleteDeploymentsRequest</code>
  */
-class MultiConceptMappingJobResponse extends \Google\Protobuf\Internal\Message
+class DeleteDeploymentsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The response status.
+     * Only the user_id is used from this.
      *
-     * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
+     * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
-    protected $status = null;
+    protected $user_app_id = null;
     /**
-     * The ids of the concept mapping jobs underway.
+     * List of deployment ids to be deleted
      *
      * Generated from protobuf field <code>repeated string ids = 2;</code>
      */
@@ -34,10 +32,10 @@ class MultiConceptMappingJobResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Clarifai\Api\Status\Status $status
-     *           The response status.
+     *     @type \Clarifai\Api\UserAppIDSet $user_app_id
+     *           Only the user_id is used from this.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
-     *           The ids of the concept mapping jobs underway.
+     *           List of deployment ids to be deleted
      * }
      */
     public function __construct($data = NULL) {
@@ -46,43 +44,43 @@ class MultiConceptMappingJobResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The response status.
+     * Only the user_id is used from this.
      *
-     * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @return \Clarifai\Api\Status\Status|null
+     * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return \Clarifai\Api\UserAppIDSet|null
      */
-    public function getStatus()
+    public function getUserAppId()
     {
-        return $this->status;
+        return $this->user_app_id;
     }
 
-    public function hasStatus()
+    public function hasUserAppId()
     {
-        return isset($this->status);
+        return isset($this->user_app_id);
     }
 
-    public function clearStatus()
+    public function clearUserAppId()
     {
-        unset($this->status);
+        unset($this->user_app_id);
     }
 
     /**
-     * The response status.
+     * Only the user_id is used from this.
      *
-     * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
-     * @param \Clarifai\Api\Status\Status $var
+     * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @param \Clarifai\Api\UserAppIDSet $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setUserAppId($var)
     {
-        GPBUtil::checkMessage($var, \Clarifai\Api\Status\Status::class);
-        $this->status = $var;
+        GPBUtil::checkMessage($var, \Clarifai\Api\UserAppIDSet::class);
+        $this->user_app_id = $var;
 
         return $this;
     }
 
     /**
-     * The ids of the concept mapping jobs underway.
+     * List of deployment ids to be deleted
      *
      * Generated from protobuf field <code>repeated string ids = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -93,7 +91,7 @@ class MultiConceptMappingJobResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ids of the concept mapping jobs underway.
+     * List of deployment ids to be deleted
      *
      * Generated from protobuf field <code>repeated string ids = 2;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var

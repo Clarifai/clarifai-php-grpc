@@ -10,6 +10,11 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * PostRunnerItemOutputsRequest
+ * This is the message that runners send to the API to communicate.
+ * At the end of the request it will have the RunnerItemOutput filled in
+ * with results of the workload the runner is processing. Other messages
+ * from the runner use this same proto to communicate over to the API
+ * and do handshakes.
  *
  * Generated from protobuf message <code>clarifai.api.PostRunnerItemOutputsRequest</code>
  */
@@ -46,11 +51,19 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     /**
      * This request has a status so that it can communicate to the API from runners and
      * communicate status, errors, etc. This is on the request since runners operate
-     * in a reverse protocol.
+     * in a reverse protocol. This status is also used to initiate the
+     * ProcessRunnerItems request with RUNNER_STREAM_START code.
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 6;</code>
      */
     protected $status = null;
+    /**
+     * A unique ID to represent the runner. This may be tied to an underlying compute instance
+     * information or just an UUID.
+     *
+     * Generated from protobuf field <code>string runner_replica_id = 7;</code>
+     */
+    protected $runner_replica_id = '';
 
     /**
      * Constructor.
@@ -70,7 +83,11 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Status\Status $status
      *           This request has a status so that it can communicate to the API from runners and
      *           communicate status, errors, etc. This is on the request since runners operate
-     *           in a reverse protocol.
+     *           in a reverse protocol. This status is also used to initiate the
+     *           ProcessRunnerItems request with RUNNER_STREAM_START code.
+     *     @type string $runner_replica_id
+     *           A unique ID to represent the runner. This may be tied to an underlying compute instance
+     *           information or just an UUID.
      * }
      */
     public function __construct($data = NULL) {
@@ -217,7 +234,8 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     /**
      * This request has a status so that it can communicate to the API from runners and
      * communicate status, errors, etc. This is on the request since runners operate
-     * in a reverse protocol.
+     * in a reverse protocol. This status is also used to initiate the
+     * ProcessRunnerItems request with RUNNER_STREAM_START code.
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 6;</code>
      * @return \Clarifai\Api\Status\Status|null
@@ -240,7 +258,8 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     /**
      * This request has a status so that it can communicate to the API from runners and
      * communicate status, errors, etc. This is on the request since runners operate
-     * in a reverse protocol.
+     * in a reverse protocol. This status is also used to initiate the
+     * ProcessRunnerItems request with RUNNER_STREAM_START code.
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 6;</code>
      * @param \Clarifai\Api\Status\Status $var
@@ -250,6 +269,34 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Status\Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * A unique ID to represent the runner. This may be tied to an underlying compute instance
+     * information or just an UUID.
+     *
+     * Generated from protobuf field <code>string runner_replica_id = 7;</code>
+     * @return string
+     */
+    public function getRunnerReplicaId()
+    {
+        return $this->runner_replica_id;
+    }
+
+    /**
+     * A unique ID to represent the runner. This may be tied to an underlying compute instance
+     * information or just an UUID.
+     *
+     * Generated from protobuf field <code>string runner_replica_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRunnerReplicaId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->runner_replica_id = $var;
 
         return $this;
     }

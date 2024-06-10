@@ -9,24 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Start concept mapping jobs
- *
- * Generated from protobuf message <code>clarifai.api.PostConceptMappingJobsRequest</code>
+ * Generated from protobuf message <code>clarifai.api.PostDeploymentsRequest</code>
  */
-class PostConceptMappingJobsRequest extends \Google\Protobuf\Internal\Message
+class PostDeploymentsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The user_id and app_id information.
+     * Only the user_id is used from this.
      *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    private $concept_mapping_jobs;
+    private $deployments;
 
     /**
      * Constructor.
@@ -35,9 +33,9 @@ class PostConceptMappingJobsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *           The user_id and app_id information.
-     *     @type array<\Clarifai\Api\ConceptMappingJob>|\Google\Protobuf\Internal\RepeatedField $concept_mapping_jobs
-     *           The concept mapping jobs that are being started
+     *           Only the user_id is used from this.
+     *     @type array<\Clarifai\Api\Deployment>|\Google\Protobuf\Internal\RepeatedField $deployments
+     *           This allows you to create one or more deployments by posting it to the API.
      * }
      */
     public function __construct($data = NULL) {
@@ -46,7 +44,7 @@ class PostConceptMappingJobsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The user_id and app_id information.
+     * Only the user_id is used from this.
      *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @return \Clarifai\Api\UserAppIDSet|null
@@ -67,7 +65,7 @@ class PostConceptMappingJobsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The user_id and app_id information.
+     * Only the user_id is used from this.
      *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @param \Clarifai\Api\UserAppIDSet $var
@@ -82,27 +80,27 @@ class PostConceptMappingJobsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getConceptMappingJobs()
+    public function getDeployments()
     {
-        return $this->concept_mapping_jobs;
+        return $this->deployments;
     }
 
     /**
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
-     * @param array<\Clarifai\Api\ConceptMappingJob>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .clarifai.api.Deployment deployments = 2;</code>
+     * @param array<\Clarifai\Api\Deployment>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setConceptMappingJobs($var)
+    public function setDeployments($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\ConceptMappingJob::class);
-        $this->concept_mapping_jobs = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Deployment::class);
+        $this->deployments = $arr;
 
         return $this;
     }

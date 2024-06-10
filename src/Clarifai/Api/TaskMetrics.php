@@ -21,6 +21,10 @@ class TaskMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
      */
     protected $review = null;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+     */
+    protected $input_source = null;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class TaskMetrics extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\TaskWorkMetrics $work
      *     @type \Clarifai\Api\TaskReviewMetrics $review
+     *     @type \Clarifai\Api\TaskInputSourceMetrics $input_source
      * }
      */
     public function __construct($data = NULL) {
@@ -97,6 +102,38 @@ class TaskMetrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\TaskReviewMetrics::class);
         $this->review = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+     * @return \Clarifai\Api\TaskInputSourceMetrics|null
+     */
+    public function getInputSource()
+    {
+        return $this->input_source;
+    }
+
+    public function hasInputSource()
+    {
+        return isset($this->input_source);
+    }
+
+    public function clearInputSource()
+    {
+        unset($this->input_source);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+     * @param \Clarifai\Api\TaskInputSourceMetrics $var
+     * @return $this
+     */
+    public function setInputSource($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\TaskInputSourceMetrics::class);
+        $this->input_source = $var;
 
         return $this;
     }

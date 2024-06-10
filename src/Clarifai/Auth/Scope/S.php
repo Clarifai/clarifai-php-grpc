@@ -579,6 +579,20 @@ class S
      * Generated from protobuf enum <code>ComputeClusters_Delete = 141 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = ComputeClusters_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = ComputeClusters_Add];</code>
      */
     const ComputeClusters_Delete = 141;
+    /**
+     * How to autoscale resources within nodepools.
+     *
+     * Generated from protobuf enum <code>Deployments_Get = 144 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const Deployments_Get = 144;
+    /**
+     * Generated from protobuf enum <code>Deployments_Add = 145 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Deployments_Get];</code>
+     */
+    const Deployments_Add = 145;
+    /**
+     * Generated from protobuf enum <code>Deployments_Delete = 146 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Deployments_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Deployments_Add];</code>
+     */
+    const Deployments_Delete = 146;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -677,6 +691,9 @@ class S
         self::ComputeClusters_Get => 'ComputeClusters_Get',
         self::ComputeClusters_Add => 'ComputeClusters_Add',
         self::ComputeClusters_Delete => 'ComputeClusters_Delete',
+        self::Deployments_Get => 'Deployments_Get',
+        self::Deployments_Add => 'Deployments_Add',
+        self::Deployments_Delete => 'Deployments_Delete',
     ];
 
     public static function name($value)

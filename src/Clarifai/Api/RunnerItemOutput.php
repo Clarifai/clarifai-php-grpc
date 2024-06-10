@@ -9,6 +9,10 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * This contains the response of the user's request once processing is done.
+ * The runner should fill in the matching output to the RunnerItem.request
+ * oneof field. This is sent to the API within PostRunnerItemOutputsRequest
+ *
  * Generated from protobuf message <code>clarifai.api.RunnerItemOutput</code>
  */
 class RunnerItemOutput extends \Google\Protobuf\Internal\Message

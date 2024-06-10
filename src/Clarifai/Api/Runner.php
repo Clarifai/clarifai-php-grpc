@@ -91,6 +91,13 @@ class Runner extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
      */
     protected $compute_info = null;
+    /**
+     * Number of replicas that this runner should have up.
+     * We keep it separate from ComputeInfo which defines how many resources each replica needs.
+     *
+     * Generated from protobuf field <code>uint32 num_replicas = 11;</code>
+     */
+    protected $num_replicas = 0;
 
     /**
      * Constructor.
@@ -132,6 +139,9 @@ class Runner extends \Google\Protobuf\Internal\Message
      *           Having this on the underlying object like Model and Workflow allows us to represent the minimum
      *           requirements on those object, which may be less than what the Runner allocates (as a safety
      *           margin for the runner to for sure run the resource).
+     *     @type int $num_replicas
+     *           Number of replicas that this runner should have up.
+     *           We keep it separate from ComputeInfo which defines how many resources each replica needs.
      * }
      */
     public function __construct($data = NULL) {
@@ -487,6 +497,34 @@ class Runner extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\ComputeInfo::class);
         $this->compute_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Number of replicas that this runner should have up.
+     * We keep it separate from ComputeInfo which defines how many resources each replica needs.
+     *
+     * Generated from protobuf field <code>uint32 num_replicas = 11;</code>
+     * @return int
+     */
+    public function getNumReplicas()
+    {
+        return $this->num_replicas;
+    }
+
+    /**
+     * Number of replicas that this runner should have up.
+     * We keep it separate from ComputeInfo which defines how many resources each replica needs.
+     *
+     * Generated from protobuf field <code>uint32 num_replicas = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setNumReplicas($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->num_replicas = $var;
 
         return $this;
     }

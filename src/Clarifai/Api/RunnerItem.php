@@ -9,7 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * This is a piece of work for a runner to process.
+ * This is a unit of work for a runner to process. This comes from the API
+ * in the MultiRunnerItemResponse and contains the user's requests
+ * to process.
  *
  * Generated from protobuf message <code>clarifai.api.RunnerItem</code>
  */

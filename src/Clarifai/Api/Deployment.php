@@ -66,7 +66,31 @@ class Deployment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 9;</code>
      */
     protected $metadata = null;
-    protected $object;
+    /**
+     * Short description of deployment.
+     *
+     * Generated from protobuf field <code>string description = 10;</code>
+     */
+    protected $description = '';
+    /**
+     * The thing that the autoscaling config applies to for this nodepool.
+     * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+     *
+     * Generated from protobuf field <code>.clarifai.api.Worker worker = 11;</code>
+     */
+    protected $worker = null;
+    /**
+     * When the deployment was created.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 12;</code>
+     */
+    protected $created_at = null;
+    /**
+     * When the deployment was last modified.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 13;</code>
+     */
+    protected $modified_at = null;
 
     /**
      * Constructor.
@@ -88,10 +112,6 @@ class Deployment extends \Google\Protobuf\Internal\Message
      *           NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
      *           we need a way to rank scheduling choices when we don't know how to decide (like a model
      *           supports
-     *     @type \Clarifai\Api\Model $model
-     *           Model
-     *     @type \Clarifai\Api\Workflow $workflow
-     *           Workflow
      *     @type int $scheduling_choice
      *     @type \Clarifai\Api\Visibility $visibility
      *           The visibility field represents whether this message is privately/publicly visible.
@@ -100,6 +120,15 @@ class Deployment extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Struct $metadata
      *           To handle arbitrary json metadata:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *     @type string $description
+     *           Short description of deployment.
+     *     @type \Clarifai\Api\Worker $worker
+     *           The thing that the autoscaling config applies to for this nodepool.
+     *           For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+     *     @type \Google\Protobuf\Timestamp $created_at
+     *           When the deployment was created.
+     *     @type \Google\Protobuf\Timestamp $modified_at
+     *           When the deployment was last modified.
      * }
      */
     public function __construct($data = NULL) {
@@ -234,68 +263,6 @@ class Deployment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Model
-     *
-     * Generated from protobuf field <code>.clarifai.api.Model model = 5;</code>
-     * @return \Clarifai\Api\Model|null
-     */
-    public function getModel()
-    {
-        return $this->readOneof(5);
-    }
-
-    public function hasModel()
-    {
-        return $this->hasOneof(5);
-    }
-
-    /**
-     * Model
-     *
-     * Generated from protobuf field <code>.clarifai.api.Model model = 5;</code>
-     * @param \Clarifai\Api\Model $var
-     * @return $this
-     */
-    public function setModel($var)
-    {
-        GPBUtil::checkMessage($var, \Clarifai\Api\Model::class);
-        $this->writeOneof(5, $var);
-
-        return $this;
-    }
-
-    /**
-     * Workflow
-     *
-     * Generated from protobuf field <code>.clarifai.api.Workflow workflow = 6;</code>
-     * @return \Clarifai\Api\Workflow|null
-     */
-    public function getWorkflow()
-    {
-        return $this->readOneof(6);
-    }
-
-    public function hasWorkflow()
-    {
-        return $this->hasOneof(6);
-    }
-
-    /**
-     * Workflow
-     *
-     * Generated from protobuf field <code>.clarifai.api.Workflow workflow = 6;</code>
-     * @param \Clarifai\Api\Workflow $var
-     * @return $this
-     */
-    public function setWorkflow($var)
-    {
-        GPBUtil::checkMessage($var, \Clarifai\Api\Workflow::class);
-        $this->writeOneof(6, $var);
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>.clarifai.api.Deployment.SchedulingChoice scheduling_choice = 7;</code>
      * @return int
      */
@@ -396,11 +363,139 @@ class Deployment extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Short description of deployment.
+     *
+     * Generated from protobuf field <code>string description = 10;</code>
      * @return string
      */
-    public function getObject()
+    public function getDescription()
     {
-        return $this->whichOneof("object");
+        return $this->description;
+    }
+
+    /**
+     * Short description of deployment.
+     *
+     * Generated from protobuf field <code>string description = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * The thing that the autoscaling config applies to for this nodepool.
+     * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+     *
+     * Generated from protobuf field <code>.clarifai.api.Worker worker = 11;</code>
+     * @return \Clarifai\Api\Worker|null
+     */
+    public function getWorker()
+    {
+        return $this->worker;
+    }
+
+    public function hasWorker()
+    {
+        return isset($this->worker);
+    }
+
+    public function clearWorker()
+    {
+        unset($this->worker);
+    }
+
+    /**
+     * The thing that the autoscaling config applies to for this nodepool.
+     * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+     *
+     * Generated from protobuf field <code>.clarifai.api.Worker worker = 11;</code>
+     * @param \Clarifai\Api\Worker $var
+     * @return $this
+     */
+    public function setWorker($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Worker::class);
+        $this->worker = $var;
+
+        return $this;
+    }
+
+    /**
+     * When the deployment was created.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 12;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
+    }
+
+    /**
+     * When the deployment was created.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 12;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * When the deployment was last modified.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 13;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getModifiedAt()
+    {
+        return $this->modified_at;
+    }
+
+    public function hasModifiedAt()
+    {
+        return isset($this->modified_at);
+    }
+
+    public function clearModifiedAt()
+    {
+        unset($this->modified_at);
+    }
+
+    /**
+     * When the deployment was last modified.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 13;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setModifiedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->modified_at = $var;
+
+        return $this;
     }
 
 }

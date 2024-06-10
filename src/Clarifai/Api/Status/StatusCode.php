@@ -765,6 +765,20 @@ class StatusCode
      */
     const COMPUTE_CLUSTER_INVALID_REQUEST = 25802;
     /**
+     * Deployment related codes 259xx
+     *
+     * Generated from protobuf enum <code>DEPLOYMENT_DOES_NOT_EXIST = 25900;</code>
+     */
+    const DEPLOYMENT_DOES_NOT_EXIST = 25900;
+    /**
+     * Generated from protobuf enum <code>DEPLOYMENT_INVALID_ARGUMENT = 25901;</code>
+     */
+    const DEPLOYMENT_INVALID_ARGUMENT = 25901;
+    /**
+     * Generated from protobuf enum <code>DEPLOYMENT_INVALID_REQUEST = 25902;</code>
+     */
+    const DEPLOYMENT_INVALID_REQUEST = 25902;
+    /**
      * Input:Image related 30xxx
      *
      * Generated from protobuf enum <code>INPUT_DOWNLOAD_SUCCESS = 30000;</code>
@@ -1915,6 +1929,9 @@ class StatusCode
         self::COMPUTE_CLUSTER_DOES_NOT_EXIST => 'COMPUTE_CLUSTER_DOES_NOT_EXIST',
         self::COMPUTE_CLUSTER_INVALID_ARGUMENT => 'COMPUTE_CLUSTER_INVALID_ARGUMENT',
         self::COMPUTE_CLUSTER_INVALID_REQUEST => 'COMPUTE_CLUSTER_INVALID_REQUEST',
+        self::DEPLOYMENT_DOES_NOT_EXIST => 'DEPLOYMENT_DOES_NOT_EXIST',
+        self::DEPLOYMENT_INVALID_ARGUMENT => 'DEPLOYMENT_INVALID_ARGUMENT',
+        self::DEPLOYMENT_INVALID_REQUEST => 'DEPLOYMENT_INVALID_REQUEST',
         self::INPUT_DOWNLOAD_SUCCESS => 'INPUT_DOWNLOAD_SUCCESS',
         self::INPUT_DOWNLOAD_PENDING => 'INPUT_DOWNLOAD_PENDING',
         self::INPUT_DOWNLOAD_FAILED => 'INPUT_DOWNLOAD_FAILED',

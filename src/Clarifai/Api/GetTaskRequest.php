@@ -29,6 +29,7 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      * - all
      * - worker.users
      * - review.users
+     * - metrics.input_source.inputs_count_estimated
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
      * - metrics.review.inputs_count_estimated
@@ -52,6 +53,7 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      *           - all
      *           - worker.users
      *           - review.users
+     *           - metrics.input_source.inputs_count_estimated
      *           - metrics.work.inputs_count_estimated
      *           - metrics.work.inputs_percent_estimated
      *           - metrics.review.inputs_count_estimated
@@ -123,6 +125,7 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      * - all
      * - worker.users
      * - review.users
+     * - metrics.input_source.inputs_count_estimated
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
      * - metrics.review.inputs_count_estimated
@@ -142,6 +145,7 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      * - all
      * - worker.users
      * - review.users
+     * - metrics.input_source.inputs_count_estimated
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
      * - metrics.review.inputs_count_estimated
