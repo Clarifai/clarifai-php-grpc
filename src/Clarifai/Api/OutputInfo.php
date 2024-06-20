@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
  * our JSON REST APIs). This allows each ModelType to define the set of fields, their default values
  * and description of each field so that we can display those in Portal and make the creation of
  * Model's very extensible. The OutputConfig object will eventually go away in favor of
- * infer_params struct.
+ * output_info.params struct.
  *
  * Generated from protobuf message <code>clarifai.api.OutputInfo</code>
  */
@@ -29,7 +29,7 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
      */
     protected $data = null;
     /**
-     * Model configuration...going away in favor of infer_params and train_params over time.
+     * Model configuration...going away in favor of output_info.params and train_params over time.
      * TO BE DEPRECATED
      *
      * Generated from protobuf field <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -70,7 +70,7 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Data $data
      *           List of concepts or other output related data for the model.
      *     @type \Clarifai\Api\OutputConfig $output_config
-     *           Model configuration...going away in favor of infer_params and train_params over time.
+     *           Model configuration...going away in favor of output_info.params and train_params over time.
      *           TO BE DEPRECATED
      *     @type string $message
      *           For returning where to look for the Output info if not returning it.
@@ -126,7 +126,7 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Model configuration...going away in favor of infer_params and train_params over time.
+     * Model configuration...going away in favor of output_info.params and train_params over time.
      * TO BE DEPRECATED
      *
      * Generated from protobuf field <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -148,7 +148,7 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Model configuration...going away in favor of infer_params and train_params over time.
+     * Model configuration...going away in favor of output_info.params and train_params over time.
      * TO BE DEPRECATED
      *
      * Generated from protobuf field <code>.clarifai.api.OutputConfig output_config = 2;</code>
