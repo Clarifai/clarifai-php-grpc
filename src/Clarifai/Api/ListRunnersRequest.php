@@ -37,6 +37,10 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 per_page = 4;</code>
      */
     protected $per_page = 0;
+    /**
+     * Generated from protobuf field <code>string compute_cluster_id = 5;</code>
+     */
+    protected $compute_cluster_id = '';
 
     /**
      * Constructor.
@@ -52,6 +56,7 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
+     *     @type string $compute_cluster_id
      * }
      */
     public function __construct($data = NULL) {
@@ -165,6 +170,28 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->per_page = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string compute_cluster_id = 5;</code>
+     * @return string
+     */
+    public function getComputeClusterId()
+    {
+        return $this->compute_cluster_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string compute_cluster_id = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setComputeClusterId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->compute_cluster_id = $var;
 
         return $this;
     }

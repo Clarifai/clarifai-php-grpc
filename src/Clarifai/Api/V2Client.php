@@ -1994,6 +1994,22 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Allows to Patch only the below fields in one or more apps.
+     * Allowed fields are notes, description and image
+     * @param \Clarifai\Api\PatchAppsDetailsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchAppsDetails(\Clarifai\Api\PatchAppsDetailsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchAppsDetails',
+        $argument,
+        ['\Clarifai\Api\MultiAppResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Patch apps ids.
      * @param \Clarifai\Api\PatchAppsIdsRequest $argument input argument
      * @param array $metadata metadata

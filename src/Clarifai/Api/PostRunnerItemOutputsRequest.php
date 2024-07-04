@@ -64,6 +64,10 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string runner_replica_id = 7;</code>
      */
     protected $runner_replica_id = '';
+    /**
+     * Generated from protobuf field <code>string compute_cluster_id = 8;</code>
+     */
+    protected $compute_cluster_id = '';
 
     /**
      * Constructor.
@@ -88,6 +92,7 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $runner_replica_id
      *           A unique ID to represent the runner. This may be tied to an underlying compute instance
      *           information or just an UUID.
+     *     @type string $compute_cluster_id
      * }
      */
     public function __construct($data = NULL) {
@@ -297,6 +302,28 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->runner_replica_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string compute_cluster_id = 8;</code>
+     * @return string
+     */
+    public function getComputeClusterId()
+    {
+        return $this->compute_cluster_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string compute_cluster_id = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setComputeClusterId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->compute_cluster_id = $var;
 
         return $this;
     }

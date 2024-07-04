@@ -56,6 +56,8 @@ class PutTaskAssignmentsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $action
      *           Action to perform on selected task.
      *     @type \Clarifai\Api\LabelSubmitConfig $label_submit_config
+     *              LabelStartConfig label_start_config = 5; // no config for label start action
+     *     @type \Clarifai\Api\ReviewStartConfig $review_start_config
      *     @type \Clarifai\Api\ReviewApproveConfig $review_approve_config
      *     @type \Clarifai\Api\ReviewRequestChangesConfig $review_request_changes_config
      *     @type \Clarifai\Api\ReviewRejectConfig $review_reject_config
@@ -179,6 +181,8 @@ class PutTaskAssignmentsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *    LabelStartConfig label_start_config = 5; // no config for label start action
+     *
      * Generated from protobuf field <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
      * @return \Clarifai\Api\LabelSubmitConfig|null
      */
@@ -193,6 +197,8 @@ class PutTaskAssignmentsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *    LabelStartConfig label_start_config = 5; // no config for label start action
+     *
      * Generated from protobuf field <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
      * @param \Clarifai\Api\LabelSubmitConfig $var
      * @return $this
@@ -201,6 +207,33 @@ class PutTaskAssignmentsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\LabelSubmitConfig::class);
         $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+     * @return \Clarifai\Api\ReviewStartConfig|null
+     */
+    public function getReviewStartConfig()
+    {
+        return $this->readOneof(10);
+    }
+
+    public function hasReviewStartConfig()
+    {
+        return $this->hasOneof(10);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+     * @param \Clarifai\Api\ReviewStartConfig $var
+     * @return $this
+     */
+    public function setReviewStartConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ReviewStartConfig::class);
+        $this->writeOneof(10, $var);
 
         return $this;
     }

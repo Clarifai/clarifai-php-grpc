@@ -29,6 +29,10 @@ class PostRunnersRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.Runner runners = 3;</code>
      */
     private $runners;
+    /**
+     * Generated from protobuf field <code>string compute_cluster_id = 4;</code>
+     */
+    protected $compute_cluster_id = '';
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class PostRunnersRequest extends \Google\Protobuf\Internal\Message
      *     @type string $nodepool_id
      *     @type array<\Clarifai\Api\Runner>|\Google\Protobuf\Internal\RepeatedField $runners
      *           This allows you to create one or more runner by posting it to the API.
+     *     @type string $compute_cluster_id
      * }
      */
     public function __construct($data = NULL) {
@@ -123,6 +128,28 @@ class PostRunnersRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Runner::class);
         $this->runners = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string compute_cluster_id = 4;</code>
+     * @return string
+     */
+    public function getComputeClusterId()
+    {
+        return $this->compute_cluster_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string compute_cluster_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setComputeClusterId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->compute_cluster_id = $var;
 
         return $this;
     }

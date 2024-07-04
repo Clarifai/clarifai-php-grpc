@@ -42,12 +42,6 @@ class Nodepool extends \Google\Protobuf\Internal\Message
      */
     protected $modified_at = null;
     /**
-     * The user/org that this nodepool belongs to.
-     *
-     * Generated from protobuf field <code>string user_id = 5;</code>
-     */
-    protected $user_id = '';
-    /**
      * Which cluster this nodepool is within.
      *
      * Generated from protobuf field <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
@@ -105,8 +99,6 @@ class Nodepool extends \Google\Protobuf\Internal\Message
      *           When the nodepool was created.
      *     @type \Google\Protobuf\Timestamp $modified_at
      *           When the nodepool was last modified.
-     *     @type string $user_id
-     *           The user/org that this nodepool belongs to.
      *     @type \Clarifai\Api\ComputeCluster $compute_cluster
      *           Which cluster this nodepool is within.
      *     @type \Clarifai\Api\NodeCapacityType $node_capacity_type
@@ -251,32 +243,6 @@ class Nodepool extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->modified_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * The user/org that this nodepool belongs to.
-     *
-     * Generated from protobuf field <code>string user_id = 5;</code>
-     * @return string
-     */
-    public function getUserId()
-    {
-        return $this->user_id;
-    }
-
-    /**
-     * The user/org that this nodepool belongs to.
-     *
-     * Generated from protobuf field <code>string user_id = 5;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUserId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->user_id = $var;
 
         return $this;
     }

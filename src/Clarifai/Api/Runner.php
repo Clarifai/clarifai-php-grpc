@@ -50,12 +50,6 @@ class Runner extends \Google\Protobuf\Internal\Message
      */
     protected $metadata = null;
     /**
-     * The owner of the runner. Runners belong to a user/org account.
-     *
-     * Generated from protobuf field <code>string user_id = 6;</code>
-     */
-    protected $user_id = '';
-    /**
      * Labels to match in order to find work.
      *
      * Generated from protobuf field <code>repeated string labels = 7 [deprecated = true];</code>
@@ -118,8 +112,6 @@ class Runner extends \Google\Protobuf\Internal\Message
      *           To handle arbitrary json metadata you can use a struct field:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *           This is an optional arg.
-     *     @type string $user_id
-     *           The owner of the runner. Runners belong to a user/org account.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *           Labels to match in order to find work.
      *     @type \Clarifai\Api\Worker $worker
@@ -311,32 +303,6 @@ class Runner extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->metadata = $var;
-
-        return $this;
-    }
-
-    /**
-     * The owner of the runner. Runners belong to a user/org account.
-     *
-     * Generated from protobuf field <code>string user_id = 6;</code>
-     * @return string
-     */
-    public function getUserId()
-    {
-        return $this->user_id;
-    }
-
-    /**
-     * The owner of the runner. Runners belong to a user/org account.
-     *
-     * Generated from protobuf field <code>string user_id = 6;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUserId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->user_id = $var;
 
         return $this;
     }

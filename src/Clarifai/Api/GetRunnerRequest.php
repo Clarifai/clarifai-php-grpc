@@ -27,6 +27,10 @@ class GetRunnerRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string runner_id = 3;</code>
      */
     protected $runner_id = '';
+    /**
+     * Generated from protobuf field <code>string compute_cluster_id = 4;</code>
+     */
+    protected $compute_cluster_id = '';
 
     /**
      * Constructor.
@@ -37,6 +41,7 @@ class GetRunnerRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $nodepool_id
      *     @type string $runner_id
+     *     @type string $compute_cluster_id
      * }
      */
     public function __construct($data = NULL) {
@@ -116,6 +121,28 @@ class GetRunnerRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->runner_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string compute_cluster_id = 4;</code>
+     * @return string
+     */
+    public function getComputeClusterId()
+    {
+        return $this->compute_cluster_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string compute_cluster_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setComputeClusterId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->compute_cluster_id = $var;
 
         return $this;
     }

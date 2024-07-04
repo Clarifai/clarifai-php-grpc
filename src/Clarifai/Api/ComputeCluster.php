@@ -58,6 +58,14 @@ class ComputeCluster extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 7;</code>
      */
     protected $modified_at = null;
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 8;</code>
+     */
+    protected $visibility = null;
 
     /**
      * Constructor.
@@ -78,6 +86,10 @@ class ComputeCluster extends \Google\Protobuf\Internal\Message
      *           When the compute cluster was created.
      *     @type \Google\Protobuf\Timestamp $modified_at
      *           When the compute cluster was last modified.
+     *     @type \Clarifai\Api\Visibility $visibility
+     *           The visibility field represents whether this message is privately/publicly visible.
+     *           To be visible to the public the App that contains it AND the User that contains the App must
+     *           also be publicly visible.
      * }
      */
     public function __construct($data = NULL) {
@@ -287,6 +299,46 @@ class ComputeCluster extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->modified_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 8;</code>
+     * @return \Clarifai\Api\Visibility|null
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
+    }
+
+    /**
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 8;</code>
+     * @param \Clarifai\Api\Visibility $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }
