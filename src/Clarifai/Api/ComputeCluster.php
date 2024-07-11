@@ -30,6 +30,9 @@ class ComputeCluster extends \Google\Protobuf\Internal\Message
      */
     protected $description = '';
     /**
+     * The cloud provider where this cluster is hosted.
+     * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+     *
      * Generated from protobuf field <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
      */
     protected $cloud_provider = null;
@@ -66,6 +69,38 @@ class ComputeCluster extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 8;</code>
      */
     protected $visibility = null;
+    /**
+     * We offer different types of compute clusters such as:
+     * 'serverless' which only Clarifai can create.
+     * 'dedicated' where you're in control of defining the nodepools within the cluster
+     * 'local-dev' which means you're responsible for starting runners manually which is great for local
+     * development but not recommended for production use cases.
+     *
+     * Generated from protobuf field <code>string cluster_type = 9;</code>
+     */
+    protected $cluster_type = '';
+    /**
+     * Managed by represents who is responsible for the cluster.
+     * This is currently either "clarifai" where we fully manage the infrastructure.
+     * Or, "user" where the user is responsible for the underlying infrastructure.
+     *
+     * Generated from protobuf field <code>string managed_by = 10;</code>
+     */
+    protected $managed_by = '';
+    /**
+     * Key to use within the compute cluster for all requests to the API.
+     * You can post with the key.id filled in to set the key for the compute cluster.
+     * The responses will intentionaly only return the description of the key for security
+     * purposes since you may have other people through orgs/teams having access to this compute
+     * cluster who should not view your key.
+     * This must be a valid key created before creating the ComputeCluster.
+     * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+     * will lose connection to the API, so delete keys at your own risk.
+     * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Key key = 11;</code>
+     */
+    protected $key = null;
 
     /**
      * Constructor.
@@ -77,6 +112,8 @@ class ComputeCluster extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *           Short description of cluster region.
      *     @type \Clarifai\Api\CloudProvider $cloud_provider
+     *           The cloud provider where this cluster is hosted.
+     *           Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
      *     @type string $region
      *           The region. The naming here depends on the cluster choice above and will be validated
      *           against which clusters+regions that Clarifai currently supports.
@@ -90,6 +127,26 @@ class ComputeCluster extends \Google\Protobuf\Internal\Message
      *           The visibility field represents whether this message is privately/publicly visible.
      *           To be visible to the public the App that contains it AND the User that contains the App must
      *           also be publicly visible.
+     *     @type string $cluster_type
+     *           We offer different types of compute clusters such as:
+     *           'serverless' which only Clarifai can create.
+     *           'dedicated' where you're in control of defining the nodepools within the cluster
+     *           'local-dev' which means you're responsible for starting runners manually which is great for local
+     *           development but not recommended for production use cases.
+     *     @type string $managed_by
+     *           Managed by represents who is responsible for the cluster.
+     *           This is currently either "clarifai" where we fully manage the infrastructure.
+     *           Or, "user" where the user is responsible for the underlying infrastructure.
+     *     @type \Clarifai\Api\Key $key
+     *           Key to use within the compute cluster for all requests to the API.
+     *           You can post with the key.id filled in to set the key for the compute cluster.
+     *           The responses will intentionaly only return the description of the key for security
+     *           purposes since you may have other people through orgs/teams having access to this compute
+     *           cluster who should not view your key.
+     *           This must be a valid key created before creating the ComputeCluster.
+     *           Deleting this key will not be prevented, which means all resources in this ComputeCluster
+     *           will lose connection to the API, so delete keys at your own risk.
+     *           The user_id who owns the key must match the user_id provided in the ComputeCluster.
      * }
      */
     public function __construct($data = NULL) {
@@ -146,6 +203,9 @@ class ComputeCluster extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The cloud provider where this cluster is hosted.
+     * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+     *
      * Generated from protobuf field <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
      * @return \Clarifai\Api\CloudProvider|null
      */
@@ -165,6 +225,9 @@ class ComputeCluster extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The cloud provider where this cluster is hosted.
+     * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+     *
      * Generated from protobuf field <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
      * @param \Clarifai\Api\CloudProvider $var
      * @return $this
@@ -339,6 +402,122 @@ class ComputeCluster extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * We offer different types of compute clusters such as:
+     * 'serverless' which only Clarifai can create.
+     * 'dedicated' where you're in control of defining the nodepools within the cluster
+     * 'local-dev' which means you're responsible for starting runners manually which is great for local
+     * development but not recommended for production use cases.
+     *
+     * Generated from protobuf field <code>string cluster_type = 9;</code>
+     * @return string
+     */
+    public function getClusterType()
+    {
+        return $this->cluster_type;
+    }
+
+    /**
+     * We offer different types of compute clusters such as:
+     * 'serverless' which only Clarifai can create.
+     * 'dedicated' where you're in control of defining the nodepools within the cluster
+     * 'local-dev' which means you're responsible for starting runners manually which is great for local
+     * development but not recommended for production use cases.
+     *
+     * Generated from protobuf field <code>string cluster_type = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setClusterType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->cluster_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Managed by represents who is responsible for the cluster.
+     * This is currently either "clarifai" where we fully manage the infrastructure.
+     * Or, "user" where the user is responsible for the underlying infrastructure.
+     *
+     * Generated from protobuf field <code>string managed_by = 10;</code>
+     * @return string
+     */
+    public function getManagedBy()
+    {
+        return $this->managed_by;
+    }
+
+    /**
+     * Managed by represents who is responsible for the cluster.
+     * This is currently either "clarifai" where we fully manage the infrastructure.
+     * Or, "user" where the user is responsible for the underlying infrastructure.
+     *
+     * Generated from protobuf field <code>string managed_by = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setManagedBy($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->managed_by = $var;
+
+        return $this;
+    }
+
+    /**
+     * Key to use within the compute cluster for all requests to the API.
+     * You can post with the key.id filled in to set the key for the compute cluster.
+     * The responses will intentionaly only return the description of the key for security
+     * purposes since you may have other people through orgs/teams having access to this compute
+     * cluster who should not view your key.
+     * This must be a valid key created before creating the ComputeCluster.
+     * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+     * will lose connection to the API, so delete keys at your own risk.
+     * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Key key = 11;</code>
+     * @return \Clarifai\Api\Key|null
+     */
+    public function getKey()
+    {
+        return $this->key;
+    }
+
+    public function hasKey()
+    {
+        return isset($this->key);
+    }
+
+    public function clearKey()
+    {
+        unset($this->key);
+    }
+
+    /**
+     * Key to use within the compute cluster for all requests to the API.
+     * You can post with the key.id filled in to set the key for the compute cluster.
+     * The responses will intentionaly only return the description of the key for security
+     * purposes since you may have other people through orgs/teams having access to this compute
+     * cluster who should not view your key.
+     * This must be a valid key created before creating the ComputeCluster.
+     * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+     * will lose connection to the API, so delete keys at your own risk.
+     * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Key key = 11;</code>
+     * @param \Clarifai\Api\Key $var
+     * @return $this
+     */
+    public function setKey($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Key::class);
+        $this->key = $var;
 
         return $this;
     }
