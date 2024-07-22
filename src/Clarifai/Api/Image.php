@@ -44,11 +44,18 @@ class Image extends \Google\Protobuf\Internal\Message
      */
     protected $hosted = null;
     /**
-     * image info
+     * image info for original size. for image info for other sizes, use hosted_image_info
      *
      * Generated from protobuf field <code>.clarifai.api.ImageInfo image_info = 6;</code>
      */
     protected $image_info = null;
+    /**
+     * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+     * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+     *
+     * Generated from protobuf field <code>map<string, .clarifai.api.ImageInfo> hosted_image_info = 7;</code>
+     */
+    private $hosted_image_info;
 
     /**
      * Constructor.
@@ -70,7 +77,10 @@ class Image extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\HostedURL $hosted
      *           The hosted field lists images in different sizes hosted in Clarifai storage.
      *     @type \Clarifai\Api\ImageInfo $image_info
-     *           image info
+     *           image info for original size. for image info for other sizes, use hosted_image_info
+     *     @type array|\Google\Protobuf\Internal\MapField $hosted_image_info
+     *           The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+     *           Note: keys(hosted_image_info) = hosted.sizes - "orig"
      * }
      */
     public function __construct($data = NULL) {
@@ -201,7 +211,7 @@ class Image extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * image info
+     * image info for original size. for image info for other sizes, use hosted_image_info
      *
      * Generated from protobuf field <code>.clarifai.api.ImageInfo image_info = 6;</code>
      * @return \Clarifai\Api\ImageInfo|null
@@ -222,7 +232,7 @@ class Image extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * image info
+     * image info for original size. for image info for other sizes, use hosted_image_info
      *
      * Generated from protobuf field <code>.clarifai.api.ImageInfo image_info = 6;</code>
      * @param \Clarifai\Api\ImageInfo $var
@@ -232,6 +242,34 @@ class Image extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\ImageInfo::class);
         $this->image_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+     * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+     *
+     * Generated from protobuf field <code>map<string, .clarifai.api.ImageInfo> hosted_image_info = 7;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getHostedImageInfo()
+    {
+        return $this->hosted_image_info;
+    }
+
+    /**
+     * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+     * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+     *
+     * Generated from protobuf field <code>map<string, .clarifai.api.ImageInfo> hosted_image_info = 7;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setHostedImageInfo($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\ImageInfo::class);
+        $this->hosted_image_info = $arr;
 
         return $this;
     }

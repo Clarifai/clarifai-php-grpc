@@ -19,19 +19,22 @@ use Google\Protobuf\Internal\GPBUtil;
 class ComputeInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Number of CPUs.
+     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      *
-     * Generated from protobuf field <code>uint32 num_cpus = 1;</code>
+     * Generated from protobuf field <code>string cpu_limit = 6;</code>
      */
-    protected $num_cpus = 0;
+    protected $cpu_limit = '';
     /**
-     * Amount of CPU memory to use as a minimum.
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      *
      * Generated from protobuf field <code>string cpu_memory = 2;</code>
      */
     protected $cpu_memory = '';
     /**
-     * Number of accelerators (typically GPUs, TPUs, etc. not CPUs) for this resource.
+     * Amount of GPU/TPUs to use.
      *
      * Generated from protobuf field <code>uint32 num_accelerators = 3;</code>
      */
@@ -40,6 +43,7 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
      * Amount of accelerator/GPU memory to use as a minimum.
      * This is defined per accelerator.
      * This follows the format used by kubernetes like 1Ki, 2Mi, 3Gi, 4Ti.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      *
      * Generated from protobuf field <code>string accelerator_memory = 4;</code>
      */
@@ -58,16 +62,20 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $num_cpus
-     *           Number of CPUs.
+     *     @type string $cpu_limit
+     *           Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     *           See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      *     @type string $cpu_memory
-     *           Amount of CPU memory to use as a minimum.
+     *           Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     *           1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     *           See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      *     @type int $num_accelerators
-     *           Number of accelerators (typically GPUs, TPUs, etc. not CPUs) for this resource.
+     *           Amount of GPU/TPUs to use.
      *     @type string $accelerator_memory
      *           Amount of accelerator/GPU memory to use as a minimum.
      *           This is defined per accelerator.
      *           This follows the format used by kubernetes like 1Ki, 2Mi, 3Gi, 4Ti.
+     *           See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $accelerator_type
      *           Or should it be removed completely and use the nodepool accelerator type itself.
      *           These are the supported accelerators that the model can run on.
@@ -79,33 +87,37 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of CPUs.
+     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      *
-     * Generated from protobuf field <code>uint32 num_cpus = 1;</code>
-     * @return int
+     * Generated from protobuf field <code>string cpu_limit = 6;</code>
+     * @return string
      */
-    public function getNumCpus()
+    public function getCpuLimit()
     {
-        return $this->num_cpus;
+        return $this->cpu_limit;
     }
 
     /**
-     * Number of CPUs.
+     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      *
-     * Generated from protobuf field <code>uint32 num_cpus = 1;</code>
-     * @param int $var
+     * Generated from protobuf field <code>string cpu_limit = 6;</code>
+     * @param string $var
      * @return $this
      */
-    public function setNumCpus($var)
+    public function setCpuLimit($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->num_cpus = $var;
+        GPBUtil::checkString($var, True);
+        $this->cpu_limit = $var;
 
         return $this;
     }
 
     /**
-     * Amount of CPU memory to use as a minimum.
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      *
      * Generated from protobuf field <code>string cpu_memory = 2;</code>
      * @return string
@@ -116,7 +128,9 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Amount of CPU memory to use as a minimum.
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      *
      * Generated from protobuf field <code>string cpu_memory = 2;</code>
      * @param string $var
@@ -131,7 +145,7 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of accelerators (typically GPUs, TPUs, etc. not CPUs) for this resource.
+     * Amount of GPU/TPUs to use.
      *
      * Generated from protobuf field <code>uint32 num_accelerators = 3;</code>
      * @return int
@@ -142,7 +156,7 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of accelerators (typically GPUs, TPUs, etc. not CPUs) for this resource.
+     * Amount of GPU/TPUs to use.
      *
      * Generated from protobuf field <code>uint32 num_accelerators = 3;</code>
      * @param int $var
@@ -160,6 +174,7 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
      * Amount of accelerator/GPU memory to use as a minimum.
      * This is defined per accelerator.
      * This follows the format used by kubernetes like 1Ki, 2Mi, 3Gi, 4Ti.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      *
      * Generated from protobuf field <code>string accelerator_memory = 4;</code>
      * @return string
@@ -173,6 +188,7 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
      * Amount of accelerator/GPU memory to use as a minimum.
      * This is defined per accelerator.
      * This follows the format used by kubernetes like 1Ki, 2Mi, 3Gi, 4Ti.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      *
      * Generated from protobuf field <code>string accelerator_memory = 4;</code>
      * @param string $var

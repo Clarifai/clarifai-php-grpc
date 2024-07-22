@@ -593,6 +593,10 @@ class S
      * Generated from protobuf enum <code>Deployments_Delete = 146 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Deployments_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Deployments_Add];</code>
      */
     const Deployments_Delete = 146;
+    /**
+     * Generated from protobuf enum <code>InstanceTypes_Get = 148 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const InstanceTypes_Get = 148;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -694,6 +698,7 @@ class S
         self::Deployments_Get => 'Deployments_Get',
         self::Deployments_Add => 'Deployments_Add',
         self::Deployments_Delete => 'Deployments_Delete',
+        self::InstanceTypes_Get => 'InstanceTypes_Get',
     ];
 
     public static function name($value)

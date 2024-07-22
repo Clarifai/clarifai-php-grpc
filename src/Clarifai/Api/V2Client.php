@@ -3487,6 +3487,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Get InstanceTypes given Cloud Provider and Region
+     * @param \Clarifai\Api\ListInstanceTypesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListInstanceTypes(\Clarifai\Api\ListInstanceTypesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListInstanceTypes',
+        $argument,
+        ['\Clarifai\Api\MultiInstanceTypeResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * ComputeCluster CRUD
      * @param \Clarifai\Api\GetComputeClusterRequest $argument input argument
      * @param array $metadata metadata

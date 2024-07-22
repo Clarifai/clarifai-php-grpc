@@ -779,6 +779,20 @@ class StatusCode
      */
     const DEPLOYMENT_INVALID_REQUEST = 25902;
     /**
+     * InstanceType related codes 260xx
+     *
+     * Generated from protobuf enum <code>INSTANCE_TYPE_DOES_NOT_EXIST = 26000;</code>
+     */
+    const INSTANCE_TYPE_DOES_NOT_EXIST = 26000;
+    /**
+     * Generated from protobuf enum <code>INSTANCE_TYPE_INVALID_ARGUMENT = 26001;</code>
+     */
+    const INSTANCE_TYPE_INVALID_ARGUMENT = 26001;
+    /**
+     * Generated from protobuf enum <code>INSTANCE_TYPE_INVALID_REQUEST = 26002;</code>
+     */
+    const INSTANCE_TYPE_INVALID_REQUEST = 26002;
+    /**
      * Input:Image related 30xxx
      *
      * Generated from protobuf enum <code>INPUT_DOWNLOAD_SUCCESS = 30000;</code>
@@ -1932,6 +1946,9 @@ class StatusCode
         self::DEPLOYMENT_DOES_NOT_EXIST => 'DEPLOYMENT_DOES_NOT_EXIST',
         self::DEPLOYMENT_INVALID_ARGUMENT => 'DEPLOYMENT_INVALID_ARGUMENT',
         self::DEPLOYMENT_INVALID_REQUEST => 'DEPLOYMENT_INVALID_REQUEST',
+        self::INSTANCE_TYPE_DOES_NOT_EXIST => 'INSTANCE_TYPE_DOES_NOT_EXIST',
+        self::INSTANCE_TYPE_INVALID_ARGUMENT => 'INSTANCE_TYPE_INVALID_ARGUMENT',
+        self::INSTANCE_TYPE_INVALID_REQUEST => 'INSTANCE_TYPE_INVALID_REQUEST',
         self::INPUT_DOWNLOAD_SUCCESS => 'INPUT_DOWNLOAD_SUCCESS',
         self::INPUT_DOWNLOAD_PENDING => 'INPUT_DOWNLOAD_PENDING',
         self::INPUT_DOWNLOAD_FAILED => 'INPUT_DOWNLOAD_FAILED',
