@@ -166,6 +166,12 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * @deprecated
      */
     protected $filter_by_user_id = false;
+    /**
+     * Filter by the model version ids. If set, only return the model of these versions.
+     *
+     * Generated from protobuf field <code>repeated string model_version_ids = 28;</code>
+     */
+    private $model_version_ids;
     protected $sort_by;
 
     /**
@@ -250,6 +256,8 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *     @type bool $filter_by_user_id
      *           Extends the name filter to include the user_id of the application owner that the model belongs to.
      *           Deprecated: use search instead of name.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $model_version_ids
+     *           Filter by the model version ids. If set, only return the model of these versions.
      * }
      */
     public function __construct($data = NULL) {
@@ -1022,6 +1030,32 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
         @trigger_error('filter_by_user_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->filter_by_user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by the model version ids. If set, only return the model of these versions.
+     *
+     * Generated from protobuf field <code>repeated string model_version_ids = 28;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getModelVersionIds()
+    {
+        return $this->model_version_ids;
+    }
+
+    /**
+     * Filter by the model version ids. If set, only return the model of these versions.
+     *
+     * Generated from protobuf field <code>repeated string model_version_ids = 28;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setModelVersionIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->model_version_ids = $arr;
 
         return $this;
     }

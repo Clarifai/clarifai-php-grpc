@@ -18,21 +18,31 @@ class TaskWorkerStrategy
     /**
      * The inputs will be partitioned in several partitions.
      * Each worker will label one or more input partitions.
+     * All inputs are assigned at task creation.
      *
      * Generated from protobuf enum <code>PARTITIONED = 2;</code>
      */
     const PARTITIONED = 2;
     /**
      * Each worker will label all inputs from input source.
+     * All inputs are assigned at task creation.
      *
      * Generated from protobuf enum <code>FULL = 3;</code>
      */
     const FULL = 3;
+    /**
+     * Each worker will dynamically get 10 inputs assigned at a time.
+     * No inputs are assigned at task creation.
+     *
+     * Generated from protobuf enum <code>DYNAMIC = 4;</code>
+     */
+    const DYNAMIC = 4;
 
     private static $valueToName = [
         self::WORKER_STRATEGY_NOT_SET => 'WORKER_STRATEGY_NOT_SET',
         self::PARTITIONED => 'PARTITIONED',
         self::FULL => 'FULL',
+        self::DYNAMIC => 'DYNAMIC',
     ];
 
     public static function name($value)
