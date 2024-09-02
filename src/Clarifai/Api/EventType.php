@@ -7,14 +7,14 @@ namespace Clarifai\Api;
 use UnexpectedValueException;
 
 /**
- * Protobuf type <code>clarifai.api.AuditOperationType</code>
+ * Protobuf type <code>clarifai.api.EventType</code>
  */
-class AuditOperationType
+class EventType
 {
     /**
-     * Generated from protobuf enum <code>AUDIT_OPERATION_TYPE_NOT_SET = 0;</code>
+     * Generated from protobuf enum <code>EVENT_TYPE_NOT_SET = 0;</code>
      */
-    const AUDIT_OPERATION_TYPE_NOT_SET = 0;
+    const EVENT_TYPE_NOT_SET = 0;
     /**
      * APPLICATION event types : 100 - 199
      *
@@ -23,7 +23,7 @@ class AuditOperationType
     const APPLICATION_CREATE = 100;
 
     private static $valueToName = [
-        self::AUDIT_OPERATION_TYPE_NOT_SET => 'AUDIT_OPERATION_TYPE_NOT_SET',
+        self::EVENT_TYPE_NOT_SET => 'EVENT_TYPE_NOT_SET',
         self::APPLICATION_CREATE => 'APPLICATION_CREATE',
     ];
 

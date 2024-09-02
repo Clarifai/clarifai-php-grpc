@@ -3718,4 +3718,18 @@ class V2Client extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Clarifai\Api\PostAuditLogSearchesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostAuditLogSearches(\Clarifai\Api\PostAuditLogSearchesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostAuditLogSearches',
+        $argument,
+        ['\Clarifai\Api\MultiAuditLogSearchResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

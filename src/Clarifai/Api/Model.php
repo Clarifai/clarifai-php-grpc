@@ -200,6 +200,22 @@ class Model extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Image image = 34;</code>
      */
     protected $image = null;
+    /**
+     * License Type
+     *
+     * Generated from protobuf field <code>.clarifai.api.LicenseType license_type = 35;</code>
+     */
+    protected $license_type = 0;
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Model.Source source = 36;</code>
+     */
+    protected $source = 0;
+    /**
+     * Creator of Model
+     *
+     * Generated from protobuf field <code>string creator = 37;</code>
+     */
+    protected $creator = '';
 
     /**
      * Constructor.
@@ -273,6 +289,11 @@ class Model extends \Google\Protobuf\Internal\Message
      *           Info in this field will allow you to find/access original model.
      *     @type \Clarifai\Api\Image $image
      *           Representative image for this model
+     *     @type int $license_type
+     *           License Type
+     *     @type int $source
+     *     @type string $creator
+     *           Creator of Model
      * }
      */
     public function __construct($data = NULL) {
@@ -1149,6 +1170,80 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Image::class);
         $this->image = $var;
+
+        return $this;
+    }
+
+    /**
+     * License Type
+     *
+     * Generated from protobuf field <code>.clarifai.api.LicenseType license_type = 35;</code>
+     * @return int
+     */
+    public function getLicenseType()
+    {
+        return $this->license_type;
+    }
+
+    /**
+     * License Type
+     *
+     * Generated from protobuf field <code>.clarifai.api.LicenseType license_type = 35;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setLicenseType($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\LicenseType::class);
+        $this->license_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Model.Source source = 36;</code>
+     * @return int
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Model.Source source = 36;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\Model\Source::class);
+        $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Creator of Model
+     *
+     * Generated from protobuf field <code>string creator = 37;</code>
+     * @return string
+     */
+    public function getCreator()
+    {
+        return $this->creator;
+    }
+
+    /**
+     * Creator of Model
+     *
+     * Generated from protobuf field <code>string creator = 37;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCreator($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->creator = $var;
 
         return $this;
     }

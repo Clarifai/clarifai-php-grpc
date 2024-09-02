@@ -56,6 +56,13 @@ class Task extends \Google\Protobuf\Internal\Message
      */
     protected $worker = null;
     /**
+     * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+     * If set, worker must have be set accordingly to either human worker or model/workflow worker
+     *
+     * Generated from protobuf field <code>.clarifai.api.Task.WorkerType worker_type = 22;</code>
+     */
+    protected $worker_type = 0;
+    /**
      * List of concept ids used in the work of this task.
      * DEPRECATED: Use task.concepts instead.
      *
@@ -171,6 +178,9 @@ class Task extends \Google\Protobuf\Internal\Message
      *           Description of the task.
      *     @type \Clarifai\Api\TaskWorker $worker
      *           Worker details.
+     *     @type int $worker_type
+     *           Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+     *           If set, worker must have be set accordingly to either human worker or model/workflow worker
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $concept_ids
      *           List of concept ids used in the work of this task.
      *           DEPRECATED: Use task.concepts instead.
@@ -401,6 +411,34 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\TaskWorker::class);
         $this->worker = $var;
+
+        return $this;
+    }
+
+    /**
+     * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+     * If set, worker must have be set accordingly to either human worker or model/workflow worker
+     *
+     * Generated from protobuf field <code>.clarifai.api.Task.WorkerType worker_type = 22;</code>
+     * @return int
+     */
+    public function getWorkerType()
+    {
+        return $this->worker_type;
+    }
+
+    /**
+     * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+     * If set, worker must have be set accordingly to either human worker or model/workflow worker
+     *
+     * Generated from protobuf field <code>.clarifai.api.Task.WorkerType worker_type = 22;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setWorkerType($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\Task\WorkerType::class);
+        $this->worker_type = $var;
 
         return $this;
     }

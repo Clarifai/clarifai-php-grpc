@@ -172,6 +172,24 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string model_version_ids = 28;</code>
      */
     private $model_version_ids;
+    /**
+     * Filter by LicenseType
+     *
+     * Generated from protobuf field <code>.clarifai.api.LicenseType license_type = 29;</code>
+     */
+    protected $license_type = 0;
+    /**
+     * Filter by Source
+     *
+     * Generated from protobuf field <code>uint32 source = 30;</code>
+     */
+    protected $source = 0;
+    /**
+     * Filter by Creator
+     *
+     * Generated from protobuf field <code>string creator = 31;</code>
+     */
+    protected $creator = '';
     protected $sort_by;
 
     /**
@@ -258,6 +276,12 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           Deprecated: use search instead of name.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $model_version_ids
      *           Filter by the model version ids. If set, only return the model of these versions.
+     *     @type int $license_type
+     *           Filter by LicenseType
+     *     @type int $source
+     *           Filter by Source
+     *     @type string $creator
+     *           Filter by Creator
      * }
      */
     public function __construct($data = NULL) {
@@ -1056,6 +1080,84 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->model_version_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Filter by LicenseType
+     *
+     * Generated from protobuf field <code>.clarifai.api.LicenseType license_type = 29;</code>
+     * @return int
+     */
+    public function getLicenseType()
+    {
+        return $this->license_type;
+    }
+
+    /**
+     * Filter by LicenseType
+     *
+     * Generated from protobuf field <code>.clarifai.api.LicenseType license_type = 29;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setLicenseType($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\LicenseType::class);
+        $this->license_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by Source
+     *
+     * Generated from protobuf field <code>uint32 source = 30;</code>
+     * @return int
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * Filter by Source
+     *
+     * Generated from protobuf field <code>uint32 source = 30;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by Creator
+     *
+     * Generated from protobuf field <code>string creator = 31;</code>
+     * @return string
+     */
+    public function getCreator()
+    {
+        return $this->creator;
+    }
+
+    /**
+     * Filter by Creator
+     *
+     * Generated from protobuf field <code>string creator = 31;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCreator($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->creator = $var;
 
         return $this;
     }

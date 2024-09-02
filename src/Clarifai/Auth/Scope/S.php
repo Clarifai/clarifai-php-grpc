@@ -162,6 +162,12 @@ class S
      */
     const ModelExports_Add = 143;
     /**
+     * To pull the model version's image
+     *
+     * Generated from protobuf enum <code>Models_Pull = 150 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Models_Get];</code>
+     */
+    const Models_Pull = 150;
+    /**
      * Write to the workflows DB table.
      *
      * Generated from protobuf enum <code>Workflows_Add = 18 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Workflows_Get];</code>
@@ -597,6 +603,10 @@ class S
      * Generated from protobuf enum <code>InstanceTypes_Get = 148 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const InstanceTypes_Get = 148;
+    /**
+     * Generated from protobuf enum <code>AuditLogs_Get = 149 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const AuditLogs_Get = 149;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -619,6 +629,7 @@ class S
         self::Models_Sync => 'Models_Sync',
         self::ModelExports_Get => 'ModelExports_Get',
         self::ModelExports_Add => 'ModelExports_Add',
+        self::Models_Pull => 'Models_Pull',
         self::Workflows_Add => 'Workflows_Add',
         self::Workflows_Get => 'Workflows_Get',
         self::Workflows_Patch => 'Workflows_Patch',
@@ -699,6 +710,7 @@ class S
         self::Deployments_Add => 'Deployments_Add',
         self::Deployments_Delete => 'Deployments_Delete',
         self::InstanceTypes_Get => 'InstanceTypes_Get',
+        self::AuditLogs_Get => 'AuditLogs_Get',
     ];
 
     public static function name($value)
