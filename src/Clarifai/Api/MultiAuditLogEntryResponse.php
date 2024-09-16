@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>clarifai.api.MultiAuditLogSearchResponse</code>
+ * Generated from protobuf message <code>clarifai.api.MultiAuditLogEntryResponse</code>
  */
-class MultiAuditLogSearchResponse extends \Google\Protobuf\Internal\Message
+class MultiAuditLogEntryResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>

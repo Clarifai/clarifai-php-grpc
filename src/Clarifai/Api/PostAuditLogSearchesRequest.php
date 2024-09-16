@@ -20,9 +20,9 @@ class PostAuditLogSearchesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
+     * Generated from protobuf field <code>.clarifai.api.AuditLogQuery query = 2;</code>
      */
-    protected $audit_log_query = null;
+    protected $query = null;
     /**
      * Sorting options:
      * Whether to sort by timestamp in ascending order. If false, will order in descending order.
@@ -43,7 +43,7 @@ class PostAuditLogSearchesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *           Only the user_id is used from this.
-     *     @type \Clarifai\Api\AuditLogQuery $audit_log_query
+     *     @type \Clarifai\Api\AuditLogQuery $query
      *     @type bool $sort_ascending
      *           Sorting options:
      *           Whether to sort by timestamp in ascending order. If false, will order in descending order.
@@ -92,33 +92,33 @@ class PostAuditLogSearchesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
+     * Generated from protobuf field <code>.clarifai.api.AuditLogQuery query = 2;</code>
      * @return \Clarifai\Api\AuditLogQuery|null
      */
-    public function getAuditLogQuery()
+    public function getQuery()
     {
-        return $this->audit_log_query;
+        return $this->query;
     }
 
-    public function hasAuditLogQuery()
+    public function hasQuery()
     {
-        return isset($this->audit_log_query);
+        return isset($this->query);
     }
 
-    public function clearAuditLogQuery()
+    public function clearQuery()
     {
-        unset($this->audit_log_query);
+        unset($this->query);
     }
 
     /**
-     * Generated from protobuf field <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
+     * Generated from protobuf field <code>.clarifai.api.AuditLogQuery query = 2;</code>
      * @param \Clarifai\Api\AuditLogQuery $var
      * @return $this
      */
-    public function setAuditLogQuery($var)
+    public function setQuery($var)
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\AuditLogQuery::class);
-        $this->audit_log_query = $var;
+        $this->query = $var;
 
         return $this;
     }

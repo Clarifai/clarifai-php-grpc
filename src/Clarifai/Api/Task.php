@@ -155,6 +155,12 @@ class Task extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.TaskMetrics metrics = 21;</code>
      */
     protected $metrics = null;
+    /**
+     * Priority of the task
+     *
+     * Generated from protobuf field <code>.clarifai.api.Task.TaskPriority priority = 23;</code>
+     */
+    protected $priority = 0;
 
     /**
      * Constructor.
@@ -214,6 +220,8 @@ class Task extends \Google\Protobuf\Internal\Message
      *           with the specified Concept from the selected Model or Workflow should deleted before executing the Task
      *     @type \Clarifai\Api\TaskMetrics $metrics
      *           Tasks metrics are filled in upon user-request.
+     *     @type int $priority
+     *           Priority of the task
      * }
      */
     public function __construct($data = NULL) {
@@ -907,6 +915,32 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\TaskMetrics::class);
         $this->metrics = $var;
+
+        return $this;
+    }
+
+    /**
+     * Priority of the task
+     *
+     * Generated from protobuf field <code>.clarifai.api.Task.TaskPriority priority = 23;</code>
+     * @return int
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    /**
+     * Priority of the task
+     *
+     * Generated from protobuf field <code>.clarifai.api.Task.TaskPriority priority = 23;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPriority($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\Task\TaskPriority::class);
+        $this->priority = $var;
 
         return $this;
     }

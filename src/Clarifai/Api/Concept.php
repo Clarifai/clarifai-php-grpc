@@ -98,6 +98,13 @@ class Concept extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.ConceptExtraInfo extra_info = 12;</code>
      */
     protected $extra_info = null;
+    /**
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 13;</code>
+     */
+    protected $metadata = null;
 
     /**
      * Constructor.
@@ -140,6 +147,9 @@ class Concept extends \Google\Protobuf\Internal\Message
      *           Information about keypoints for this concept
      *     @type \Clarifai\Api\ConceptExtraInfo $extra_info
      *           Optional extra info.
+     *     @type \Google\Protobuf\Struct $metadata
+     *           To handle arbitrary json metadata:
+     *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      * }
      */
     public function __construct($data = NULL) {
@@ -517,6 +527,44 @@ class Concept extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\ConceptExtraInfo::class);
         $this->extra_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 13;</code>
+     * @return \Google\Protobuf\Struct|null
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    public function hasMetadata()
+    {
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        unset($this->metadata);
+    }
+
+    /**
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 13;</code>
+     * @param \Google\Protobuf\Struct $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->metadata = $var;
 
         return $this;
     }

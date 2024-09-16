@@ -1697,21 +1697,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Compare embeddings distances using a workflow
-     * @param \Clarifai\Api\PostWorkflowResultsSimilarityRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PostWorkflowResultsSimilarity(\Clarifai\Api\PostWorkflowResultsSimilarityRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PostWorkflowResultsSimilarity',
-        $argument,
-        ['\Clarifai\Api\PostWorkflowResultsSimilarityResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * List workflow versions.
      * @param \Clarifai\Api\ListWorkflowVersionsRequest $argument input argument
      * @param array $metadata metadata
@@ -3728,7 +3713,7 @@ class V2Client extends \Grpc\BaseStub {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/clarifai.api.V2/PostAuditLogSearches',
         $argument,
-        ['\Clarifai\Api\MultiAuditLogSearchResponse', 'decode'],
+        ['\Clarifai\Api\MultiAuditLogEntryResponse', 'decode'],
         $metadata, $options);
     }
 

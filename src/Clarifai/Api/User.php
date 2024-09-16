@@ -144,6 +144,12 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.UserDetail user_detail = 18;</code>
      */
     protected $user_detail = null;
+    /**
+     * Representative image for this User (a.k.a. Profile or cover photo) 
+     *
+     * Generated from protobuf field <code>.clarifai.api.Image image = 26;</code>
+     */
+    protected $image = null;
 
     /**
      * Constructor.
@@ -193,6 +199,8 @@ class User extends \Google\Protobuf\Internal\Message
      *           This is all the personal information of a user. GetUser/ListUsers will not return this
      *           information unless the caller has the UserAccounts_Get scope on their key or is the user
      *           themselves.
+     *     @type \Clarifai\Api\Image $image
+     *           Representative image for this User (a.k.a. Profile or cover photo) 
      * }
      */
     public function __construct($data = NULL) {
@@ -886,6 +894,42 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\UserDetail::class);
         $this->user_detail = $var;
+
+        return $this;
+    }
+
+    /**
+     * Representative image for this User (a.k.a. Profile or cover photo) 
+     *
+     * Generated from protobuf field <code>.clarifai.api.Image image = 26;</code>
+     * @return \Clarifai\Api\Image|null
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function hasImage()
+    {
+        return isset($this->image);
+    }
+
+    public function clearImage()
+    {
+        unset($this->image);
+    }
+
+    /**
+     * Representative image for this User (a.k.a. Profile or cover photo) 
+     *
+     * Generated from protobuf field <code>.clarifai.api.Image image = 26;</code>
+     * @param \Clarifai\Api\Image $var
+     * @return $this
+     */
+    public function setImage($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Image::class);
+        $this->image = $var;
 
         return $this;
     }
