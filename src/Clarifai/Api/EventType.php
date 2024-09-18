@@ -18,7 +18,7 @@ class EventType
     /**
      * APPLICATION event types : 100 - 199
      *
-     * Generated from protobuf enum <code>APPLICATION_CREATE = 100;</code>
+     * Generated from protobuf enum <code>APPLICATION_CREATE = 100 [(.clarifai.api.utils.description) = "Operation to create an Application"];</code>
      */
     const APPLICATION_CREATE = 100;
 
