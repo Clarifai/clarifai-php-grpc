@@ -145,7 +145,7 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $user_detail = null;
     /**
-     * Representative image for this User (a.k.a. Profile or cover photo) 
+     * Representative image for this User (a.k.a. Profile or cover photo)
      *
      * Generated from protobuf field <code>.clarifai.api.Image image = 26;</code>
      */
@@ -200,7 +200,7 @@ class User extends \Google\Protobuf\Internal\Message
      *           information unless the caller has the UserAccounts_Get scope on their key or is the user
      *           themselves.
      *     @type \Clarifai\Api\Image $image
-     *           Representative image for this User (a.k.a. Profile or cover photo) 
+     *           Representative image for this User (a.k.a. Profile or cover photo)
      * }
      */
     public function __construct($data = NULL) {
@@ -899,7 +899,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Representative image for this User (a.k.a. Profile or cover photo) 
+     * Representative image for this User (a.k.a. Profile or cover photo)
      *
      * Generated from protobuf field <code>.clarifai.api.Image image = 26;</code>
      * @return \Clarifai\Api\Image|null
@@ -920,7 +920,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Representative image for this User (a.k.a. Profile or cover photo) 
+     * Representative image for this User (a.k.a. Profile or cover photo)
      *
      * Generated from protobuf field <code>.clarifai.api.Image image = 26;</code>
      * @param \Clarifai\Api\Image $var

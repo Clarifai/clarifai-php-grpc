@@ -42,7 +42,7 @@ class PostModelOutputsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $model = null;
     /**
-     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
      *
      * Generated from protobuf field <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
      */
@@ -62,7 +62,7 @@ class PostModelOutputsRequest extends \Google\Protobuf\Internal\Message
      *           This allows you to specify config options for the model such as
      *           the language which appear's in the model's output_info.
      *     @type \Clarifai\Api\RunnerSelector $runner_selector
-     *           Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     *           Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
      * }
      */
     public function __construct($data = NULL) {
@@ -207,7 +207,7 @@ class PostModelOutputsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
      *
      * Generated from protobuf field <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
      * @return \Clarifai\Api\RunnerSelector|null
@@ -228,7 +228,7 @@ class PostModelOutputsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
      *
      * Generated from protobuf field <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
      * @param \Clarifai\Api\RunnerSelector $var

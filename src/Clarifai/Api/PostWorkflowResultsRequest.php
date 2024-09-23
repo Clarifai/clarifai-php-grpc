@@ -63,6 +63,22 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
      */
     protected $workflow_state = null;
+    /**
+     * Specify which compute to use for processing each node of the workflow:
+     * The key is the node.id from the loaded workflow.
+     * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+     * that you'd like that node to run on.
+     * This allows for use cases like some light models could run on a CPU-only nodepool
+     * while other models in the workflow require large GPUs.
+     * If node.id is not in the provided map, it will fall back to searching for
+     * an adequate deployment the model owner owns or fall back to
+     * the serverless nodepools provided by Clarifai.
+     * We recommend you specify these RunnerSelectors so that you have better understanding of where
+     * processing occurs.
+     *
+     * Generated from protobuf field <code>map<string, .clarifai.api.RunnerSelector> node_runner_selectors = 8;</code>
+     */
+    private $node_runner_selectors;
 
     /**
      * Constructor.
@@ -92,6 +108,18 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
      *           A workflow state to be maintained across PostWorkflowResults requests/responses.
      *           If it is not sent in the initial request with workflow_state.id = "init" then no
      *           state will be saved or returned in PostWorkflowResultsResponse.
+     *     @type array|\Google\Protobuf\Internal\MapField $node_runner_selectors
+     *           Specify which compute to use for processing each node of the workflow:
+     *           The key is the node.id from the loaded workflow.
+     *           The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+     *           that you'd like that node to run on.
+     *           This allows for use cases like some light models could run on a CPU-only nodepool
+     *           while other models in the workflow require large GPUs.
+     *           If node.id is not in the provided map, it will fall back to searching for
+     *           an adequate deployment the model owner owns or fall back to
+     *           the serverless nodepools provided by Clarifai.
+     *           We recommend you specify these RunnerSelectors so that you have better understanding of where
+     *           processing occurs.
      * }
      */
     public function __construct($data = NULL) {
@@ -319,6 +347,52 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\WorkflowState::class);
         $this->workflow_state = $var;
+
+        return $this;
+    }
+
+    /**
+     * Specify which compute to use for processing each node of the workflow:
+     * The key is the node.id from the loaded workflow.
+     * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+     * that you'd like that node to run on.
+     * This allows for use cases like some light models could run on a CPU-only nodepool
+     * while other models in the workflow require large GPUs.
+     * If node.id is not in the provided map, it will fall back to searching for
+     * an adequate deployment the model owner owns or fall back to
+     * the serverless nodepools provided by Clarifai.
+     * We recommend you specify these RunnerSelectors so that you have better understanding of where
+     * processing occurs.
+     *
+     * Generated from protobuf field <code>map<string, .clarifai.api.RunnerSelector> node_runner_selectors = 8;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getNodeRunnerSelectors()
+    {
+        return $this->node_runner_selectors;
+    }
+
+    /**
+     * Specify which compute to use for processing each node of the workflow:
+     * The key is the node.id from the loaded workflow.
+     * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+     * that you'd like that node to run on.
+     * This allows for use cases like some light models could run on a CPU-only nodepool
+     * while other models in the workflow require large GPUs.
+     * If node.id is not in the provided map, it will fall back to searching for
+     * an adequate deployment the model owner owns or fall back to
+     * the serverless nodepools provided by Clarifai.
+     * We recommend you specify these RunnerSelectors so that you have better understanding of where
+     * processing occurs.
+     *
+     * Generated from protobuf field <code>map<string, .clarifai.api.RunnerSelector> node_runner_selectors = 8;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setNodeRunnerSelectors($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\RunnerSelector::class);
+        $this->node_runner_selectors = $arr;
 
         return $this;
     }
