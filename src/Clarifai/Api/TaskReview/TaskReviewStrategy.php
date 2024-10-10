@@ -17,18 +17,20 @@ class TaskReviewStrategy
     const TASK_REVIEW_STRATEGY_NOT_SET = 0;
     /**
      * No review is needed.
+     * When a labeler labels an input, the annotations are immediately approved.
      *
      * Generated from protobuf enum <code>NONE = 1;</code>
      */
     const NONE = 1;
     /**
-     * Manual review strategy.
+     * Human reviewers will review the work done by labelers.
      *
      * Generated from protobuf enum <code>MANUAL = 2;</code>
      */
     const MANUAL = 2;
     /**
-     * Consensus review strategy.
+     * Automatically approve inputs when labelers reach consensus.
+     * If consensus is not reached, then it will fallback to human reviewers.
      *
      * Generated from protobuf enum <code>CONSENSUS = 3;</code>
      */

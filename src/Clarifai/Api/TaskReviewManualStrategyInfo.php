@@ -21,6 +21,16 @@ class TaskReviewManualStrategyInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>float sample_percentage = 1;</code>
      */
     protected $sample_percentage = 0.0;
+    /**
+     * The number of reviewers that need to agree in order to approve an input.
+     * Currently, the only allowed values are:
+     * 0  - when not set, it defaults to 1
+     * 1  - only a single reviewer needs to approve each labeled input
+     * -1 - an input will be approved when all reviewers approve it
+     *
+     * Generated from protobuf field <code>int32 approval_threshold = 2;</code>
+     */
+    protected $approval_threshold = 0;
 
     /**
      * Constructor.
@@ -30,6 +40,12 @@ class TaskReviewManualStrategyInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type float $sample_percentage
      *           This field represents the percentage of inputs that will be reviewed by reviewers. It is a value between 0 and 1.
+     *     @type int $approval_threshold
+     *           The number of reviewers that need to agree in order to approve an input.
+     *           Currently, the only allowed values are:
+     *           0  - when not set, it defaults to 1
+     *           1  - only a single reviewer needs to approve each labeled input
+     *           -1 - an input will be approved when all reviewers approve it
      * }
      */
     public function __construct($data = NULL) {
@@ -59,6 +75,40 @@ class TaskReviewManualStrategyInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->sample_percentage = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of reviewers that need to agree in order to approve an input.
+     * Currently, the only allowed values are:
+     * 0  - when not set, it defaults to 1
+     * 1  - only a single reviewer needs to approve each labeled input
+     * -1 - an input will be approved when all reviewers approve it
+     *
+     * Generated from protobuf field <code>int32 approval_threshold = 2;</code>
+     * @return int
+     */
+    public function getApprovalThreshold()
+    {
+        return $this->approval_threshold;
+    }
+
+    /**
+     * The number of reviewers that need to agree in order to approve an input.
+     * Currently, the only allowed values are:
+     * 0  - when not set, it defaults to 1
+     * 1  - only a single reviewer needs to approve each labeled input
+     * -1 - an input will be approved when all reviewers approve it
+     *
+     * Generated from protobuf field <code>int32 approval_threshold = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setApprovalThreshold($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->approval_threshold = $var;
 
         return $this;
     }

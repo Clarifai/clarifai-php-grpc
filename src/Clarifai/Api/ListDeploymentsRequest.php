@@ -37,6 +37,18 @@ class ListDeploymentsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 per_page = 4;</code>
      */
     protected $per_page = 0;
+    /**
+     * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+     *
+     * Generated from protobuf field <code>repeated string model_version_ids = 5;</code>
+     */
+    private $model_version_ids;
+    /**
+     * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+     *
+     * Generated from protobuf field <code>repeated string workflow_version_ids = 6;</code>
+     */
+    private $workflow_version_ids;
 
     /**
      * Constructor.
@@ -53,6 +65,10 @@ class ListDeploymentsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $model_version_ids
+     *           (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $workflow_version_ids
+     *           (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
      * }
      */
     public function __construct($data = NULL) {
@@ -170,6 +186,58 @@ class ListDeploymentsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->per_page = $var;
+
+        return $this;
+    }
+
+    /**
+     * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+     *
+     * Generated from protobuf field <code>repeated string model_version_ids = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getModelVersionIds()
+    {
+        return $this->model_version_ids;
+    }
+
+    /**
+     * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+     *
+     * Generated from protobuf field <code>repeated string model_version_ids = 5;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setModelVersionIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->model_version_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+     *
+     * Generated from protobuf field <code>repeated string workflow_version_ids = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getWorkflowVersionIds()
+    {
+        return $this->workflow_version_ids;
+    }
+
+    /**
+     * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+     *
+     * Generated from protobuf field <code>repeated string workflow_version_ids = 6;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setWorkflowVersionIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->workflow_version_ids = $arr;
 
         return $this;
     }

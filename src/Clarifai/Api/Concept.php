@@ -105,6 +105,12 @@ class Concept extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 13;</code>
      */
     protected $metadata = null;
+    /**
+     * Representative image for the concept
+     *
+     * Generated from protobuf field <code>.clarifai.api.Image image = 22;</code>
+     */
+    protected $image = null;
 
     /**
      * Constructor.
@@ -150,6 +156,8 @@ class Concept extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Struct $metadata
      *           To handle arbitrary json metadata:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *     @type \Clarifai\Api\Image $image
+     *           Representative image for the concept
      * }
      */
     public function __construct($data = NULL) {
@@ -565,6 +573,42 @@ class Concept extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * Representative image for the concept
+     *
+     * Generated from protobuf field <code>.clarifai.api.Image image = 22;</code>
+     * @return \Clarifai\Api\Image|null
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function hasImage()
+    {
+        return isset($this->image);
+    }
+
+    public function clearImage()
+    {
+        unset($this->image);
+    }
+
+    /**
+     * Representative image for the concept
+     *
+     * Generated from protobuf field <code>.clarifai.api.Image image = 22;</code>
+     * @param \Clarifai\Api\Image $var
+     * @return $this
+     */
+    public function setImage($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Image::class);
+        $this->image = $var;
 
         return $this;
     }

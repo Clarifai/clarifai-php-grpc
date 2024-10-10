@@ -464,7 +464,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Get a specific input from an app.
      * @param \Clarifai\Api\GetInputSamplesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -3132,9 +3131,8 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * PutTaskAssignments performs an action for the task assignments in given task.
-     * All the actions are theoretically idempotent, but practically, in the current implementation,
-     * the REVIEW_START action is not idempotent. See PutTaskAssignmentsRequestAction for more details.
+     * PutTaskAssignments performs an idempotent action for the task assignments in given task.
+     * See PutTaskAssignmentsRequestAction for more details about possible actions.
      * @param \Clarifai\Api\PutTaskAssignmentsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -3714,6 +3712,20 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/PostAuditLogSearches',
         $argument,
         ['\Clarifai\Api\MultiAuditLogEntryResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\ListWorkflowEvaluationTemplatesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListWorkflowEvaluationTemplates(\Clarifai\Api\ListWorkflowEvaluationTemplatesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListWorkflowEvaluationTemplates',
+        $argument,
+        ['\Clarifai\Api\MultiWorkflowEvaluationTemplateResponse', 'decode'],
         $metadata, $options);
     }
 

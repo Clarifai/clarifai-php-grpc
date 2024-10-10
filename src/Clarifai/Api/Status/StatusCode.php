@@ -1428,6 +1428,8 @@ class StatusCode
      */
     const TASK_PERMISSION_DENIED = 54103;
     /**
+     * Task Assignments 542xx
+     *
      * Generated from protobuf enum <code>TASK_ASSIGNMENT_SUCCESS = 54200;</code>
      */
     const TASK_ASSIGNMENT_SUCCESS = 54200;
@@ -1444,9 +1446,23 @@ class StatusCode
      */
     const TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW = 54203;
     /**
-     * Generated from protobuf enum <code>TASK_ASSIGNMENT_REVIEW_DENIED = 54204;</code>
+     * Generated from protobuf enum <code>TASK_ASSIGNMENT_REJECTED = 54204;</code>
      */
-    const TASK_ASSIGNMENT_REVIEW_DENIED = 54204;
+    const TASK_ASSIGNMENT_REJECTED = 54204;
+    /**
+     * Task Assignment Reviews 543xx
+     *
+     * Generated from protobuf enum <code>TASK_ASSIGNMENT_REVIEW_SUCCESS = 54300;</code>
+     */
+    const TASK_ASSIGNMENT_REVIEW_SUCCESS = 54300;
+    /**
+     * Generated from protobuf enum <code>TASK_ASSIGNMENT_REVIEW_PENDING = 54301;</code>
+     */
+    const TASK_ASSIGNMENT_REVIEW_PENDING = 54301;
+    /**
+     * Generated from protobuf enum <code>TASK_ASSIGNMENT_REVIEW_DISMISSED = 54302;</code>
+     */
+    const TASK_ASSIGNMENT_REVIEW_DISMISSED = 54302;
     /**
      * Label Order Related Status Code 55xxx
      *
@@ -2096,7 +2112,10 @@ class StatusCode
         self::TASK_ASSIGNMENT_PENDING => 'TASK_ASSIGNMENT_PENDING',
         self::TASK_ASSIGNMENT_AWAITING_REVIEW => 'TASK_ASSIGNMENT_AWAITING_REVIEW',
         self::TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW => 'TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW',
-        self::TASK_ASSIGNMENT_REVIEW_DENIED => 'TASK_ASSIGNMENT_REVIEW_DENIED',
+        self::TASK_ASSIGNMENT_REJECTED => 'TASK_ASSIGNMENT_REJECTED',
+        self::TASK_ASSIGNMENT_REVIEW_SUCCESS => 'TASK_ASSIGNMENT_REVIEW_SUCCESS',
+        self::TASK_ASSIGNMENT_REVIEW_PENDING => 'TASK_ASSIGNMENT_REVIEW_PENDING',
+        self::TASK_ASSIGNMENT_REVIEW_DISMISSED => 'TASK_ASSIGNMENT_REVIEW_DISMISSED',
         self::LABEL_ORDER_PENDING => 'LABEL_ORDER_PENDING',
         self::LABEL_ORDER_IN_PROGRESS => 'LABEL_ORDER_IN_PROGRESS',
         self::LABEL_ORDER_SUCCESS => 'LABEL_ORDER_SUCCESS',

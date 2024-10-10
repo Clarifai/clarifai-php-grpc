@@ -51,6 +51,13 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.Worker workers = 7;</code>
      */
     private $workers;
+    /**
+     * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+     * If set, worker must have be set accordingly to either human worker or model/workflow worker
+     *
+     * Generated from protobuf field <code>.clarifai.api.TaskWorker.WorkerType type = 8;</code>
+     */
+    protected $type = 0;
     protected $strategy_info;
 
     /**
@@ -78,6 +85,9 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
      *           For manual labeling Tasks:
      *             the workers can only be users;
      *             no limitation on number of workers.
+     *     @type int $type
+     *           Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+     *           If set, worker must have be set accordingly to either human worker or model/workflow worker
      * }
      */
     public function __construct($data = NULL) {
@@ -240,6 +250,34 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Worker::class);
         $this->workers = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+     * If set, worker must have be set accordingly to either human worker or model/workflow worker
+     *
+     * Generated from protobuf field <code>.clarifai.api.TaskWorker.WorkerType type = 8;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+     * If set, worker must have be set accordingly to either human worker or model/workflow worker
+     *
+     * Generated from protobuf field <code>.clarifai.api.TaskWorker.WorkerType type = 8;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\TaskWorker\WorkerType::class);
+        $this->type = $var;
 
         return $this;
     }
