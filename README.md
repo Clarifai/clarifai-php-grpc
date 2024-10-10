@@ -1,4 +1,5 @@
-![Clarifai logo](docs/logo.png)
+![image](https://github.com/user-attachments/assets/895da6c0-874d-45f0-a3b7-26ad07f14a37)
+
 
 # Clarifai PHP gRPC Client
 
