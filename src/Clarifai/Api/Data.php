@@ -112,6 +112,20 @@ class Data extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.Image heatmaps = 18;</code>
      */
     private $heatmaps;
+    /**
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    private $parts;
+    /**
+     * A proto representation for numpy arrays, useful to pass information from python SDK to a
+     * python based model implementation.
+     *
+     * Generated from protobuf field <code>.clarifai.api.NDArray ndarray = 20;</code>
+     */
+    protected $ndarray = null;
 
     /**
      * Constructor.
@@ -152,6 +166,12 @@ class Data extends \Google\Protobuf\Internal\Message
      *           Holds score, rank, and user, app, input IDs and search hit data
      *     @type array<\Clarifai\Api\Image>|\Google\Protobuf\Internal\RepeatedField $heatmaps
      *           Heatmap as 2d image
+     *     @type array<\Clarifai\Api\Part>|\Google\Protobuf\Internal\RepeatedField $parts
+     *           For data messages that have multiple parts such as multi-modal
+     *           requests, we allow you to specify those as a list of Data objects.
+     *     @type \Clarifai\Api\NDArray $ndarray
+     *           A proto representation for numpy arrays, useful to pass information from python SDK to a
+     *           python based model implementation.
      * }
      */
     public function __construct($data = NULL) {
@@ -633,6 +653,72 @@ class Data extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Image::class);
         $this->heatmaps = $arr;
+
+        return $this;
+    }
+
+    /**
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Part parts = 19;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getParts()
+    {
+        return $this->parts;
+    }
+
+    /**
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.Part parts = 19;</code>
+     * @param array<\Clarifai\Api\Part>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setParts($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Part::class);
+        $this->parts = $arr;
+
+        return $this;
+    }
+
+    /**
+     * A proto representation for numpy arrays, useful to pass information from python SDK to a
+     * python based model implementation.
+     *
+     * Generated from protobuf field <code>.clarifai.api.NDArray ndarray = 20;</code>
+     * @return \Clarifai\Api\NDArray|null
+     */
+    public function getNdarray()
+    {
+        return $this->ndarray;
+    }
+
+    public function hasNdarray()
+    {
+        return isset($this->ndarray);
+    }
+
+    public function clearNdarray()
+    {
+        unset($this->ndarray);
+    }
+
+    /**
+     * A proto representation for numpy arrays, useful to pass information from python SDK to a
+     * python based model implementation.
+     *
+     * Generated from protobuf field <code>.clarifai.api.NDArray ndarray = 20;</code>
+     * @param \Clarifai\Api\NDArray $var
+     * @return $this
+     */
+    public function setNdarray($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\NDArray::class);
+        $this->ndarray = $var;
 
         return $this;
     }

@@ -607,6 +607,10 @@ class S
      * Generated from protobuf enum <code>AuditLogs_Get = 149 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const AuditLogs_Get = 149;
+    /**
+     * Generated from protobuf enum <code>LogEntries_Get = 151 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const LogEntries_Get = 151;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -711,6 +715,7 @@ class S
         self::Deployments_Delete => 'Deployments_Delete',
         self::InstanceTypes_Get => 'InstanceTypes_Get',
         self::AuditLogs_Get => 'AuditLogs_Get',
+        self::LogEntries_Get => 'LogEntries_Get',
     ];
 
     public static function name($value)

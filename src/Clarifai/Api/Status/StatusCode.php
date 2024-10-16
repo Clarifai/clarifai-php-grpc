@@ -1712,6 +1712,12 @@ class StatusCode
      */
     const BILLING_INVALID_INFO = 69000;
     /**
+     * Logs related issues: 70000;
+     *
+     * Generated from protobuf enum <code>LOG_ENTRIES_INVALID_REQUEST = 70000;</code>
+     */
+    const LOG_ENTRIES_INVALID_REQUEST = 70000;
+    /**
      * Internal issues: 98xxx
      *
      * Generated from protobuf enum <code>INTERNAL_SERVER_ISSUE = 98004;</code>
@@ -2166,6 +2172,7 @@ class StatusCode
         self::UPLOAD_CANCELED => 'UPLOAD_CANCELED',
         self::UPLOAD_CONFLICT => 'UPLOAD_CONFLICT',
         self::BILLING_INVALID_INFO => 'BILLING_INVALID_INFO',
+        self::LOG_ENTRIES_INVALID_REQUEST => 'LOG_ENTRIES_INVALID_REQUEST',
         self::INTERNAL_SERVER_ISSUE => 'INTERNAL_SERVER_ISSUE',
         self::INTERNAL_FETCHING_ISSUE => 'INTERNAL_FETCHING_ISSUE',
         self::INTERNAL_DATABASE_ISSUE => 'INTERNAL_DATABASE_ISSUE',
