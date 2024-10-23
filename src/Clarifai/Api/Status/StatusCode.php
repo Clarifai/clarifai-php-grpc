@@ -521,10 +521,14 @@ class StatusCode
      */
     const ANNOTATION_PERMISSION_DENIED = 24156;
     /**
+     * Annotation is awaiting review from task REVIEWERS.
+     *
      * Generated from protobuf enum <code>ANNOTATION_AWAITING_REVIEW = 24157;</code>
      */
     const ANNOTATION_AWAITING_REVIEW = 24157;
     /**
+     * Annotation is awaiting consensus review from task LABELERS.
+     *
      * Generated from protobuf enum <code>ANNOTATION_AWAITING_CONSENSUS_REVIEW = 24159;</code>
      */
     const ANNOTATION_AWAITING_CONSENSUS_REVIEW = 24159;

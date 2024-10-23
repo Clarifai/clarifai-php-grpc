@@ -16,11 +16,32 @@ use Google\Protobuf\Internal\GPBUtil;
 class TaskReviewConsensusStrategyInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The number of labelers that need to agree in order to automatically approve an annotation.
+     * Deprecated: Use approval_threshold_labelers.
      *
-     * Generated from protobuf field <code>uint32 approval_threshold = 2;</code>
+     * Generated from protobuf field <code>uint32 approval_threshold = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $approval_threshold = 0;
+    /**
+     * The number of labelers that need to agree in order to automatically approve an annotation.
+     * When 0, labelers consensus is disabled.
+     * When 1, the labels are automatically approved once a single labeler labels the input.
+     * When greater than 1, the labels are automatically approved when the specified number of labelers agree.
+     * If the number of labelers that agree is less than the specified number, then the input will reviewed by reviewers.
+     *
+     * Generated from protobuf field <code>uint32 approval_threshold_labelers = 3;</code>
+     */
+    protected $approval_threshold_labelers = 0;
+    /**
+     * The number of reviewers that need to agree in order to approve an input.
+     * Currently, the only allowed values are:
+     * 0  - when not set, it defaults to 1
+     * 1  - only a single reviewer needs to approve each labeled input
+     * -1 - an input will be approved when all reviewers approve it
+     *
+     * Generated from protobuf field <code>int32 approval_threshold_reviewers = 4;</code>
+     */
+    protected $approval_threshold_reviewers = 0;
 
     /**
      * Constructor.
@@ -29,7 +50,19 @@ class TaskReviewConsensusStrategyInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $approval_threshold
+     *           Deprecated: Use approval_threshold_labelers.
+     *     @type int $approval_threshold_labelers
      *           The number of labelers that need to agree in order to automatically approve an annotation.
+     *           When 0, labelers consensus is disabled.
+     *           When 1, the labels are automatically approved once a single labeler labels the input.
+     *           When greater than 1, the labels are automatically approved when the specified number of labelers agree.
+     *           If the number of labelers that agree is less than the specified number, then the input will reviewed by reviewers.
+     *     @type int $approval_threshold_reviewers
+     *           The number of reviewers that need to agree in order to approve an input.
+     *           Currently, the only allowed values are:
+     *           0  - when not set, it defaults to 1
+     *           1  - only a single reviewer needs to approve each labeled input
+     *           -1 - an input will be approved when all reviewers approve it
      * }
      */
     public function __construct($data = NULL) {
@@ -38,27 +71,99 @@ class TaskReviewConsensusStrategyInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of labelers that need to agree in order to automatically approve an annotation.
+     * Deprecated: Use approval_threshold_labelers.
      *
-     * Generated from protobuf field <code>uint32 approval_threshold = 2;</code>
+     * Generated from protobuf field <code>uint32 approval_threshold = 2 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getApprovalThreshold()
     {
+        @trigger_error('approval_threshold is deprecated.', E_USER_DEPRECATED);
         return $this->approval_threshold;
     }
 
     /**
-     * The number of labelers that need to agree in order to automatically approve an annotation.
+     * Deprecated: Use approval_threshold_labelers.
      *
-     * Generated from protobuf field <code>uint32 approval_threshold = 2;</code>
+     * Generated from protobuf field <code>uint32 approval_threshold = 2 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setApprovalThreshold($var)
     {
+        @trigger_error('approval_threshold is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkUint32($var);
         $this->approval_threshold = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of labelers that need to agree in order to automatically approve an annotation.
+     * When 0, labelers consensus is disabled.
+     * When 1, the labels are automatically approved once a single labeler labels the input.
+     * When greater than 1, the labels are automatically approved when the specified number of labelers agree.
+     * If the number of labelers that agree is less than the specified number, then the input will reviewed by reviewers.
+     *
+     * Generated from protobuf field <code>uint32 approval_threshold_labelers = 3;</code>
+     * @return int
+     */
+    public function getApprovalThresholdLabelers()
+    {
+        return $this->approval_threshold_labelers;
+    }
+
+    /**
+     * The number of labelers that need to agree in order to automatically approve an annotation.
+     * When 0, labelers consensus is disabled.
+     * When 1, the labels are automatically approved once a single labeler labels the input.
+     * When greater than 1, the labels are automatically approved when the specified number of labelers agree.
+     * If the number of labelers that agree is less than the specified number, then the input will reviewed by reviewers.
+     *
+     * Generated from protobuf field <code>uint32 approval_threshold_labelers = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setApprovalThresholdLabelers($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->approval_threshold_labelers = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of reviewers that need to agree in order to approve an input.
+     * Currently, the only allowed values are:
+     * 0  - when not set, it defaults to 1
+     * 1  - only a single reviewer needs to approve each labeled input
+     * -1 - an input will be approved when all reviewers approve it
+     *
+     * Generated from protobuf field <code>int32 approval_threshold_reviewers = 4;</code>
+     * @return int
+     */
+    public function getApprovalThresholdReviewers()
+    {
+        return $this->approval_threshold_reviewers;
+    }
+
+    /**
+     * The number of reviewers that need to agree in order to approve an input.
+     * Currently, the only allowed values are:
+     * 0  - when not set, it defaults to 1
+     * 1  - only a single reviewer needs to approve each labeled input
+     * -1 - an input will be approved when all reviewers approve it
+     *
+     * Generated from protobuf field <code>int32 approval_threshold_reviewers = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setApprovalThresholdReviewers($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->approval_threshold_reviewers = $var;
 
         return $this;
     }
