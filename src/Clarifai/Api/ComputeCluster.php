@@ -71,7 +71,7 @@ class ComputeCluster extends \Google\Protobuf\Internal\Message
     protected $visibility = null;
     /**
      * We offer different types of compute clusters such as:
-     * 'serverless' which only Clarifai can create.
+     * 'shared' which only Clarifai can create.
      * 'dedicated' where you're in control of defining the nodepools within the cluster
      * 'local-dev' which means you're responsible for starting runners manually which is great for local
      * development but not recommended for production use cases.
@@ -129,7 +129,7 @@ class ComputeCluster extends \Google\Protobuf\Internal\Message
      *           also be publicly visible.
      *     @type string $cluster_type
      *           We offer different types of compute clusters such as:
-     *           'serverless' which only Clarifai can create.
+     *           'shared' which only Clarifai can create.
      *           'dedicated' where you're in control of defining the nodepools within the cluster
      *           'local-dev' which means you're responsible for starting runners manually which is great for local
      *           development but not recommended for production use cases.
@@ -408,7 +408,7 @@ class ComputeCluster extends \Google\Protobuf\Internal\Message
 
     /**
      * We offer different types of compute clusters such as:
-     * 'serverless' which only Clarifai can create.
+     * 'shared' which only Clarifai can create.
      * 'dedicated' where you're in control of defining the nodepools within the cluster
      * 'local-dev' which means you're responsible for starting runners manually which is great for local
      * development but not recommended for production use cases.
@@ -423,7 +423,7 @@ class ComputeCluster extends \Google\Protobuf\Internal\Message
 
     /**
      * We offer different types of compute clusters such as:
-     * 'serverless' which only Clarifai can create.
+     * 'shared' which only Clarifai can create.
      * 'dedicated' where you're in control of defining the nodepools within the cluster
      * 'local-dev' which means you're responsible for starting runners manually which is great for local
      * development but not recommended for production use cases.

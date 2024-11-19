@@ -57,7 +57,7 @@ class AuditLogEntry extends \Google\Protobuf\Internal\Message
     /**
      * Was the operation successful?
      *
-     * Generated from protobuf field <code>bool success = 7;</code>
+     * Generated from protobuf field <code>bool success = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     protected $success = false;
     /**
@@ -292,7 +292,7 @@ class AuditLogEntry extends \Google\Protobuf\Internal\Message
     /**
      * Was the operation successful?
      *
-     * Generated from protobuf field <code>bool success = 7;</code>
+     * Generated from protobuf field <code>bool success = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return bool
      */
     public function getSuccess()
@@ -303,7 +303,7 @@ class AuditLogEntry extends \Google\Protobuf\Internal\Message
     /**
      * Was the operation successful?
      *
-     * Generated from protobuf field <code>bool success = 7;</code>
+     * Generated from protobuf field <code>bool success = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @param bool $var
      * @return $this
      */

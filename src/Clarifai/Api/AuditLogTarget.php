@@ -24,8 +24,9 @@ class AuditLogTarget extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Clarifai\Api\User $member
-     *           An organization member, only used in org audit logs.
+     *     @type \Clarifai\Api\User $user
+     *     @type \Clarifai\Api\Role $role
+     *     @type \Clarifai\Api\Team $team
      * }
      */
     public function __construct($data = NULL) {
@@ -34,32 +35,82 @@ class AuditLogTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An organization member, only used in org audit logs.
-     *
-     * Generated from protobuf field <code>.clarifai.api.User member = 1;</code>
+     * Generated from protobuf field <code>.clarifai.api.User user = 1;</code>
      * @return \Clarifai\Api\User|null
      */
-    public function getMember()
+    public function getUser()
     {
         return $this->readOneof(1);
     }
 
-    public function hasMember()
+    public function hasUser()
     {
         return $this->hasOneof(1);
     }
 
     /**
-     * An organization member, only used in org audit logs.
-     *
-     * Generated from protobuf field <code>.clarifai.api.User member = 1;</code>
+     * Generated from protobuf field <code>.clarifai.api.User user = 1;</code>
      * @param \Clarifai\Api\User $var
      * @return $this
      */
-    public function setMember($var)
+    public function setUser($var)
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\User::class);
         $this->writeOneof(1, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Role role = 2;</code>
+     * @return \Clarifai\Api\Role|null
+     */
+    public function getRole()
+    {
+        return $this->readOneof(2);
+    }
+
+    public function hasRole()
+    {
+        return $this->hasOneof(2);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Role role = 2;</code>
+     * @param \Clarifai\Api\Role $var
+     * @return $this
+     */
+    public function setRole($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Role::class);
+        $this->writeOneof(2, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Team team = 3;</code>
+     * @return \Clarifai\Api\Team|null
+     */
+    public function getTeam()
+    {
+        return $this->readOneof(3);
+    }
+
+    public function hasTeam()
+    {
+        return $this->hasOneof(3);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Team team = 3;</code>
+     * @param \Clarifai\Api\Team $var
+     * @return $this
+     */
+    public function setTeam($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Team::class);
+        $this->writeOneof(3, $var);
 
         return $this;
     }

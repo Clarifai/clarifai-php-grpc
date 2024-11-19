@@ -127,7 +127,7 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      *           Sorting options:
      *           Whether to sort in ascending order. If false, will order in descending order.
      *     @type bool $sort_by_name
-     *           Whether to order by the name
+     *           Whether to order by the name.
      *     @type bool $sort_by_modified_at
      *           Whether to order by the modified_at time.
      *           If none of the sort options is set to true, will sort by modified_at.
@@ -135,6 +135,8 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      *           Whether to order by the created_at time.
      *     @type bool $sort_by_star_count
      *           Whether to order by the number of users stared the app
+     *     @type bool $sort_by_id
+     *           Whether to order by the id
      *     @type bool $featured_only
      *           Filtering options:
      *           If true, we only return apps that are handpicked by clarifai staff
@@ -314,7 +316,7 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether to order by the name
+     * Whether to order by the name.
      *
      * Generated from protobuf field <code>bool sort_by_name = 6;</code>
      * @return bool
@@ -330,7 +332,7 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether to order by the name
+     * Whether to order by the name.
      *
      * Generated from protobuf field <code>bool sort_by_name = 6;</code>
      * @param bool $var
@@ -435,6 +437,37 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->writeOneof(13, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by the id
+     *
+     * Generated from protobuf field <code>bool sort_by_id = 17;</code>
+     * @return bool
+     */
+    public function getSortById()
+    {
+        return $this->readOneof(17);
+    }
+
+    public function hasSortById()
+    {
+        return $this->hasOneof(17);
+    }
+
+    /**
+     * Whether to order by the id
+     *
+     * Generated from protobuf field <code>bool sort_by_id = 17;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortById($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(17, $var);
 
         return $this;
     }

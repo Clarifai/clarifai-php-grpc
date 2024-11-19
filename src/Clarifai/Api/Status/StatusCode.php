@@ -143,6 +143,12 @@ class StatusCode
      */
     const CONN_NO_GDPR_CONSENT = 11104;
     /**
+     * when invalid range of a resource is requested
+     *
+     * Generated from protobuf enum <code>CONN_INVALID_RANGE = 11105;</code>
+     */
+    const CONN_INVALID_RANGE = 11105;
+    /**
      * authentication method is disabled
      *
      * Generated from protobuf enum <code>CONN_AUTH_METHOD_DISABLED = 11200;</code>
@@ -1838,6 +1844,7 @@ class StatusCode
         self::CONN_INVALID_REQUEST => 'CONN_INVALID_REQUEST',
         self::CONN_METHOD_NOT_ALLOWED => 'CONN_METHOD_NOT_ALLOWED',
         self::CONN_NO_GDPR_CONSENT => 'CONN_NO_GDPR_CONSENT',
+        self::CONN_INVALID_RANGE => 'CONN_INVALID_RANGE',
         self::CONN_AUTH_METHOD_DISABLED => 'CONN_AUTH_METHOD_DISABLED',
         self::MODEL_TRAINED => 'MODEL_TRAINED',
         self::MODEL_TRAINING => 'MODEL_TRAINING',

@@ -41,6 +41,12 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string compute_cluster_id = 5;</code>
      */
     protected $compute_cluster_id = '';
+    /**
+     * Only return runners whose replicas are >= min_replicas.
+     *
+     * Generated from protobuf field <code>uint32 min_replicas = 6;</code>
+     */
+    protected $min_replicas = 0;
 
     /**
      * Constructor.
@@ -57,6 +63,8 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
      *     @type string $compute_cluster_id
+     *     @type int $min_replicas
+     *           Only return runners whose replicas are >= min_replicas.
      * }
      */
     public function __construct($data = NULL) {
@@ -192,6 +200,32 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->compute_cluster_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Only return runners whose replicas are >= min_replicas.
+     *
+     * Generated from protobuf field <code>uint32 min_replicas = 6;</code>
+     * @return int
+     */
+    public function getMinReplicas()
+    {
+        return $this->min_replicas;
+    }
+
+    /**
+     * Only return runners whose replicas are >= min_replicas.
+     *
+     * Generated from protobuf field <code>uint32 min_replicas = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMinReplicas($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->min_replicas = $var;
 
         return $this;
     }

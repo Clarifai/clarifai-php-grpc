@@ -138,6 +138,13 @@ class App extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
      */
     protected $extra_info = null;
+    /**
+     * Where app embeddings are stored
+     * postgres (default), qdrant
+     *
+     * Generated from protobuf field <code>.clarifai.api.App.EmbeddingsStorage embeddings_storage = 26;</code>
+     */
+    protected $embeddings_storage = 0;
 
     /**
      * Constructor.
@@ -193,6 +200,9 @@ class App extends \Google\Protobuf\Internal\Message
      *           An app marked as a template can be duplicated by any user that can see it,
      *           including all visible resources within it.
      *     @type \Clarifai\Api\AppExtraInfo $extra_info
+     *     @type int $embeddings_storage
+     *           Where app embeddings are stored
+     *           postgres (default), qdrant
      * }
      */
     public function __construct($data = NULL) {
@@ -831,6 +841,34 @@ class App extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\AppExtraInfo::class);
         $this->extra_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Where app embeddings are stored
+     * postgres (default), qdrant
+     *
+     * Generated from protobuf field <code>.clarifai.api.App.EmbeddingsStorage embeddings_storage = 26;</code>
+     * @return int
+     */
+    public function getEmbeddingsStorage()
+    {
+        return $this->embeddings_storage;
+    }
+
+    /**
+     * Where app embeddings are stored
+     * postgres (default), qdrant
+     *
+     * Generated from protobuf field <code>.clarifai.api.App.EmbeddingsStorage embeddings_storage = 26;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEmbeddingsStorage($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\App\EmbeddingsStorage::class);
+        $this->embeddings_storage = $var;
 
         return $this;
     }

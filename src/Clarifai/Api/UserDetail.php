@@ -67,6 +67,10 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string state = 12;</code>
      */
     protected $state = '';
+    /**
+     * Generated from protobuf field <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+     */
+    protected $commitment_value = null;
 
     /**
      * Constructor.
@@ -88,6 +92,7 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      *     @type int $teams_count
      *     @type string $country
      *     @type string $state
+     *     @type \Clarifai\Api\CommitmentValue $commitment_value
      * }
      */
     public function __construct($data = NULL) {
@@ -411,6 +416,38 @@ class UserDetail extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->state = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+     * @return \Clarifai\Api\CommitmentValue|null
+     */
+    public function getCommitmentValue()
+    {
+        return $this->commitment_value;
+    }
+
+    public function hasCommitmentValue()
+    {
+        return isset($this->commitment_value);
+    }
+
+    public function clearCommitmentValue()
+    {
+        unset($this->commitment_value);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+     * @param \Clarifai\Api\CommitmentValue $var
+     * @return $this
+     */
+    public function setCommitmentValue($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\CommitmentValue::class);
+        $this->commitment_value = $var;
 
         return $this;
     }

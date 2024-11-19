@@ -41,6 +41,16 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
      */
     private $use_cases;
+    /**
+     * By default, we return app concepts combined with source (model or workflow) concepts.
+     * If source is not set, then we only return app concepts.
+     * If ignore_app_concepts is true, then we only return source concepts.
+     * When use_cases are set, then ignore_app_concepts is always true, because
+     * concept use cases can only be determined in relation to a model or a workflow.
+     *
+     * Generated from protobuf field <code>bool ignore_app_concepts = 7;</code>
+     */
+    protected $ignore_app_concepts = false;
     protected $source;
 
     /**
@@ -60,6 +70,12 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
      *           Multiple values are joined using an OR condition.
      *     @type \Clarifai\Api\Model $model
      *     @type \Clarifai\Api\Workflow $workflow
+     *     @type bool $ignore_app_concepts
+     *           By default, we return app concepts combined with source (model or workflow) concepts.
+     *           If source is not set, then we only return app concepts.
+     *           If ignore_app_concepts is true, then we only return source concepts.
+     *           When use_cases are set, then ignore_app_concepts is always true, because
+     *           concept use cases can only be determined in relation to a model or a workflow.
      * }
      */
     public function __construct($data = NULL) {
@@ -227,6 +243,40 @@ class ConceptQuery extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Workflow::class);
         $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * By default, we return app concepts combined with source (model or workflow) concepts.
+     * If source is not set, then we only return app concepts.
+     * If ignore_app_concepts is true, then we only return source concepts.
+     * When use_cases are set, then ignore_app_concepts is always true, because
+     * concept use cases can only be determined in relation to a model or a workflow.
+     *
+     * Generated from protobuf field <code>bool ignore_app_concepts = 7;</code>
+     * @return bool
+     */
+    public function getIgnoreAppConcepts()
+    {
+        return $this->ignore_app_concepts;
+    }
+
+    /**
+     * By default, we return app concepts combined with source (model or workflow) concepts.
+     * If source is not set, then we only return app concepts.
+     * If ignore_app_concepts is true, then we only return source concepts.
+     * When use_cases are set, then ignore_app_concepts is always true, because
+     * concept use cases can only be determined in relation to a model or a workflow.
+     *
+     * Generated from protobuf field <code>bool ignore_app_concepts = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIgnoreAppConcepts($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->ignore_app_concepts = $var;
 
         return $this;
     }

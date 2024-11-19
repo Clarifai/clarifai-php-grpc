@@ -2762,36 +2762,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Increase the view metric for a detail view
-     * @param \Clarifai\Api\PostTrendingMetricsViewRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PostTrendingMetricsView(\Clarifai\Api\PostTrendingMetricsViewRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PostTrendingMetricsView',
-        $argument,
-        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * List the view metrics for a detail view
-     * @param \Clarifai\Api\ListTrendingMetricsViewsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function ListTrendingMetricsViews(\Clarifai\Api\ListTrendingMetricsViewsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/ListTrendingMetricsViews',
-        $argument,
-        ['\Clarifai\Api\MultiTrendingMetricsViewResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * Get a specific module from an app.
      * @param \Clarifai\Api\GetModuleRequest $argument input argument
      * @param array $metadata metadata

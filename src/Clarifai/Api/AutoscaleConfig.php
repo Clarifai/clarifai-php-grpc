@@ -54,9 +54,9 @@ class AutoscaleConfig extends \Google\Protobuf\Internal\Message
      * Depending on your plan you may be able to enable packing of resources into a single node
      * for more compute and cost efficiency.
      *
-     * Generated from protobuf field <code>bool enable_packing = 6;</code>
+     * Generated from protobuf field <code>bool disable_packing = 7;</code>
      */
-    protected $enable_packing = false;
+    protected $disable_packing = false;
 
     /**
      * Constructor.
@@ -76,7 +76,7 @@ class AutoscaleConfig extends \Google\Protobuf\Internal\Message
      *           The time to wait before scaling down after the last request.
      *     @type int $scale_up_delay_seconds
      *           The time to wait between scaling up replicas without burst traffic.
-     *     @type bool $enable_packing
+     *     @type bool $disable_packing
      *           Depending on your plan you may be able to enable packing of resources into a single node
      *           for more compute and cost efficiency.
      * }
@@ -224,26 +224,26 @@ class AutoscaleConfig extends \Google\Protobuf\Internal\Message
      * Depending on your plan you may be able to enable packing of resources into a single node
      * for more compute and cost efficiency.
      *
-     * Generated from protobuf field <code>bool enable_packing = 6;</code>
+     * Generated from protobuf field <code>bool disable_packing = 7;</code>
      * @return bool
      */
-    public function getEnablePacking()
+    public function getDisablePacking()
     {
-        return $this->enable_packing;
+        return $this->disable_packing;
     }
 
     /**
      * Depending on your plan you may be able to enable packing of resources into a single node
      * for more compute and cost efficiency.
      *
-     * Generated from protobuf field <code>bool enable_packing = 6;</code>
+     * Generated from protobuf field <code>bool disable_packing = 7;</code>
      * @param bool $var
      * @return $this
      */
-    public function setEnablePacking($var)
+    public function setDisablePacking($var)
     {
         GPBUtil::checkBool($var);
-        $this->enable_packing = $var;
+        $this->disable_packing = $var;
 
         return $this;
     }
