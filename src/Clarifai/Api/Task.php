@@ -154,6 +154,13 @@ class Task extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Task.TaskPriority priority = 23;</code>
      */
     protected $priority = 0;
+    /**
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 24;</code>
+     */
+    protected $metadata = null;
 
     /**
      * Constructor.
@@ -212,6 +219,9 @@ class Task extends \Google\Protobuf\Internal\Message
      *           Tasks metrics are filled in upon user-request.
      *     @type int $priority
      *           Priority of the task
+     *     @type \Google\Protobuf\Struct $metadata
+     *           To handle arbitrary json metadata you can use a struct field:
+     *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      * }
      */
     public function __construct($data = NULL) {
@@ -903,6 +913,44 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Clarifai\Api\Task\TaskPriority::class);
         $this->priority = $var;
+
+        return $this;
+    }
+
+    /**
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 24;</code>
+     * @return \Google\Protobuf\Struct|null
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    public function hasMetadata()
+    {
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        unset($this->metadata);
+    }
+
+    /**
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 24;</code>
+     * @param \Google\Protobuf\Struct $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->metadata = $var;
 
         return $this;
     }
