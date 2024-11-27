@@ -28,6 +28,12 @@ class ProcessingInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 2;</code>
      */
     protected $status = null;
+    /**
+     * Internal field to track processing. Runners will not have access to this.
+     *
+     * Generated from protobuf field <code>string processing_id = 3;</code>
+     */
+    protected $processing_id = '';
 
     /**
      * Constructor.
@@ -40,6 +46,8 @@ class ProcessingInfo extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Status\Status $status
      *           A status of the processing. We use this for signalling end of a request stream, a runner
      *           item's processing should be cancelled, etc.
+     *     @type string $processing_id
+     *           Internal field to track processing. Runners will not have access to this.
      * }
      */
     public function __construct($data = NULL) {
@@ -107,6 +115,32 @@ class ProcessingInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Status\Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Internal field to track processing. Runners will not have access to this.
+     *
+     * Generated from protobuf field <code>string processing_id = 3;</code>
+     * @return string
+     */
+    public function getProcessingId()
+    {
+        return $this->processing_id;
+    }
+
+    /**
+     * Internal field to track processing. Runners will not have access to this.
+     *
+     * Generated from protobuf field <code>string processing_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProcessingId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->processing_id = $var;
 
         return $this;
     }
