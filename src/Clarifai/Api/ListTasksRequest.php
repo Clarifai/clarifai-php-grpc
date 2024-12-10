@@ -79,6 +79,18 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string ids = 9;</code>
      */
     private $ids;
+    /**
+     * (optional) input source type to filter
+     *
+     * Generated from protobuf field <code>.clarifai.api.TaskInputSource.TaskInputSourceType input_source_type = 10;</code>
+     */
+    protected $input_source_type = 0;
+    /**
+     * (optional) ids of input source to be filtered
+     *
+     * Generated from protobuf field <code>repeated string input_source_ids = 11;</code>
+     */
+    private $input_source_ids;
 
     /**
      * Constructor.
@@ -115,6 +127,10 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      *           - metrics.review.inputs_percent_estimated
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
      *           (optional) task IDs to filter on
+     *     @type int $input_source_type
+     *           (optional) input source type to filter
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $input_source_ids
+     *           (optional) ids of input source to be filtered
      * }
      */
     public function __construct($data = NULL) {
@@ -382,6 +398,58 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * (optional) input source type to filter
+     *
+     * Generated from protobuf field <code>.clarifai.api.TaskInputSource.TaskInputSourceType input_source_type = 10;</code>
+     * @return int
+     */
+    public function getInputSourceType()
+    {
+        return $this->input_source_type;
+    }
+
+    /**
+     * (optional) input source type to filter
+     *
+     * Generated from protobuf field <code>.clarifai.api.TaskInputSource.TaskInputSourceType input_source_type = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInputSourceType($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\TaskInputSource\TaskInputSourceType::class);
+        $this->input_source_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * (optional) ids of input source to be filtered
+     *
+     * Generated from protobuf field <code>repeated string input_source_ids = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getInputSourceIds()
+    {
+        return $this->input_source_ids;
+    }
+
+    /**
+     * (optional) ids of input source to be filtered
+     *
+     * Generated from protobuf field <code>repeated string input_source_ids = 11;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setInputSourceIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->input_source_ids = $arr;
 
         return $this;
     }

@@ -216,6 +216,10 @@ class Model extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string creator = 37;</code>
      */
     protected $creator = '';
+    /**
+     * Generated from protobuf field <code>int32 version_count = 38;</code>
+     */
+    protected $version_count = 0;
 
     /**
      * Constructor.
@@ -294,6 +298,7 @@ class Model extends \Google\Protobuf\Internal\Message
      *     @type int $source
      *     @type string $creator
      *           Creator of Model
+     *     @type int $version_count
      * }
      */
     public function __construct($data = NULL) {
@@ -1244,6 +1249,28 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->creator = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 version_count = 38;</code>
+     * @return int
+     */
+    public function getVersionCount()
+    {
+        return $this->version_count;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 version_count = 38;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVersionCount($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->version_count = $var;
 
         return $this;
     }

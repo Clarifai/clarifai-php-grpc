@@ -3455,6 +3455,36 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * List Available Cloud Providers
+     * @param \Clarifai\Api\ListCloudProvidersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListCloudProviders(\Clarifai\Api\ListCloudProvidersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListCloudProviders',
+        $argument,
+        ['\Clarifai\Api\MultiCloudProviderResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List Regions for given Cloud Provider
+     * @param \Clarifai\Api\ListCloudRegionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListCloudRegions(\Clarifai\Api\ListCloudRegionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListCloudRegions',
+        $argument,
+        ['\Clarifai\Api\MultiCloudRegionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Get InstanceTypes given Cloud Provider and Region
      * @param \Clarifai\Api\ListInstanceTypesRequest $argument input argument
      * @param array $metadata metadata
@@ -3696,6 +3726,20 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/ListWorkflowEvaluationTemplates',
         $argument,
         ['\Clarifai\Api\MultiWorkflowEvaluationTemplateResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\ListLogEntriesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListLogEntries(\Clarifai\Api\ListLogEntriesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListLogEntries',
+        $argument,
+        ['\Clarifai\Api\MultiLogEntryResponse', 'decode'],
         $metadata, $options);
     }
 

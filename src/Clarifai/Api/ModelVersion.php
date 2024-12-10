@@ -46,6 +46,10 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      */
     protected $total_input_count = 0;
     /**
+     * When a model has already been trained externally, you can upload
+     * it directly to the platform as a model version directly by
+     * setting the PretrainedModelConfig
+     *
      * Generated from protobuf field <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
      */
     protected $pretrained_model_config = null;
@@ -160,6 +164,9 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *     @type int $total_input_count
      *           number of inputs in the model version
      *     @type \Clarifai\Api\PretrainedModelConfig $pretrained_model_config
+     *           When a model has already been trained externally, you can upload
+     *           it directly to the platform as a model version directly by
+     *           setting the PretrainedModelConfig
      *     @type \Google\Protobuf\Timestamp $completed_at
      *           When training of this version was completed.
      *     @type string $description
@@ -377,6 +384,10 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * When a model has already been trained externally, you can upload
+     * it directly to the platform as a model version directly by
+     * setting the PretrainedModelConfig
+     *
      * Generated from protobuf field <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
      * @return \Clarifai\Api\PretrainedModelConfig|null
      */
@@ -396,6 +407,10 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * When a model has already been trained externally, you can upload
+     * it directly to the platform as a model version directly by
+     * setting the PretrainedModelConfig
+     *
      * Generated from protobuf field <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
      * @param \Clarifai\Api\PretrainedModelConfig $var
      * @return $this

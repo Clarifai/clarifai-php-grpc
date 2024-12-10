@@ -36,6 +36,15 @@ class PretrainedModelConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string model_zip_url = 6;</code>
      */
     protected $model_zip_url = '';
+    /**
+     * Whether to overwrite the model for the existing internal id
+     * If this is a local dev model that runs external to the platform, set this to true.
+     * This helps during development of models before uploading them to the platform.
+     * These models MUST run in an associated compute cluster with cluster_type = "local-dev"
+     *
+     * Generated from protobuf field <code>bool local_dev = 8;</code>
+     */
+    protected $local_dev = false;
 
     /**
      * Constructor.
@@ -52,6 +61,11 @@ class PretrainedModelConfig extends \Google\Protobuf\Internal\Message
      *           Url to a zipped up model in triton format with the following files and folders at the root:
      *            config.pbtxt
      *            version 1 folder that contains model files (onnx graph, torch script, python BE model, and etc.)
+     *     @type bool $local_dev
+     *           Whether to overwrite the model for the existing internal id
+     *           If this is a local dev model that runs external to the platform, set this to true.
+     *           This helps during development of models before uploading them to the platform.
+     *           These models MUST run in an associated compute cluster with cluster_type = "local-dev"
      * }
      */
     public function __construct($data = NULL) {
@@ -159,6 +173,38 @@ class PretrainedModelConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->model_zip_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether to overwrite the model for the existing internal id
+     * If this is a local dev model that runs external to the platform, set this to true.
+     * This helps during development of models before uploading them to the platform.
+     * These models MUST run in an associated compute cluster with cluster_type = "local-dev"
+     *
+     * Generated from protobuf field <code>bool local_dev = 8;</code>
+     * @return bool
+     */
+    public function getLocalDev()
+    {
+        return $this->local_dev;
+    }
+
+    /**
+     * Whether to overwrite the model for the existing internal id
+     * If this is a local dev model that runs external to the platform, set this to true.
+     * This helps during development of models before uploading them to the platform.
+     * These models MUST run in an associated compute cluster with cluster_type = "local-dev"
+     *
+     * Generated from protobuf field <code>bool local_dev = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setLocalDev($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->local_dev = $var;
 
         return $this;
     }

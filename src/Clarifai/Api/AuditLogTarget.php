@@ -27,6 +27,9 @@ class AuditLogTarget extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\User $user
      *     @type \Clarifai\Api\Role $role
      *     @type \Clarifai\Api\Team $team
+     *     @type \Clarifai\Api\App $app
+     *     @type \Clarifai\Api\Module $module
+     *     @type \Clarifai\Api\ModuleVersion $module_version
      * }
      */
     public function __construct($data = NULL) {
@@ -111,6 +114,87 @@ class AuditLogTarget extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Team::class);
         $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.App app = 4;</code>
+     * @return \Clarifai\Api\App|null
+     */
+    public function getApp()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasApp()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.App app = 4;</code>
+     * @param \Clarifai\Api\App $var
+     * @return $this
+     */
+    public function setApp($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\App::class);
+        $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Module module = 5;</code>
+     * @return \Clarifai\Api\Module|null
+     */
+    public function getModule()
+    {
+        return $this->readOneof(5);
+    }
+
+    public function hasModule()
+    {
+        return $this->hasOneof(5);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Module module = 5;</code>
+     * @param \Clarifai\Api\Module $var
+     * @return $this
+     */
+    public function setModule($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Module::class);
+        $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ModuleVersion module_version = 6;</code>
+     * @return \Clarifai\Api\ModuleVersion|null
+     */
+    public function getModuleVersion()
+    {
+        return $this->readOneof(6);
+    }
+
+    public function hasModuleVersion()
+    {
+        return $this->hasOneof(6);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ModuleVersion module_version = 6;</code>
+     * @param \Clarifai\Api\ModuleVersion $var
+     * @return $this
+     */
+    public function setModuleVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ModuleVersion::class);
+        $this->writeOneof(6, $var);
 
         return $this;
     }

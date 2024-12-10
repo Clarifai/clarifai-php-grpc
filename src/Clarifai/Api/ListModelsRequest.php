@@ -34,7 +34,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $per_page = 0;
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets, counts
      *
      * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
      */
@@ -206,7 +206,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
-     *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets, counts
      *     @type bool $sort_ascending
      *           Sorting options:
      *           Whether to sort in ascending order. If false, will order in descending order.
@@ -378,7 +378,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets, counts
      *
      * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -389,7 +389,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets, counts
      *
      * Generated from protobuf field <code>repeated string additional_fields = 19;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
