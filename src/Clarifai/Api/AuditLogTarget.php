@@ -30,6 +30,8 @@ class AuditLogTarget extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\App $app
      *     @type \Clarifai\Api\Module $module
      *     @type \Clarifai\Api\ModuleVersion $module_version
+     *     @type \Clarifai\Api\Workflow $workflow
+     *     @type \Clarifai\Api\WorkflowVersion $workflow_version
      * }
      */
     public function __construct($data = NULL) {
@@ -195,6 +197,60 @@ class AuditLogTarget extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\ModuleVersion::class);
         $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Workflow workflow = 7;</code>
+     * @return \Clarifai\Api\Workflow|null
+     */
+    public function getWorkflow()
+    {
+        return $this->readOneof(7);
+    }
+
+    public function hasWorkflow()
+    {
+        return $this->hasOneof(7);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Workflow workflow = 7;</code>
+     * @param \Clarifai\Api\Workflow $var
+     * @return $this
+     */
+    public function setWorkflow($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Workflow::class);
+        $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.WorkflowVersion workflow_version = 8;</code>
+     * @return \Clarifai\Api\WorkflowVersion|null
+     */
+    public function getWorkflowVersion()
+    {
+        return $this->readOneof(8);
+    }
+
+    public function hasWorkflowVersion()
+    {
+        return $this->hasOneof(8);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.WorkflowVersion workflow_version = 8;</code>
+     * @param \Clarifai\Api\WorkflowVersion $var
+     * @return $this
+     */
+    public function setWorkflowVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\WorkflowVersion::class);
+        $this->writeOneof(8, $var);
 
         return $this;
     }

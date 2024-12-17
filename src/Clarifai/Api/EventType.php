@@ -99,6 +99,46 @@ class EventType
      * Generated from protobuf enum <code>MODULE_VERSION_DELETE = 205 [(.clarifai.api.utils.description) = "Module versions deleted"];</code>
      */
     const MODULE_VERSION_DELETE = 205;
+    /**
+     * Event types related to workflows: 400 - 499
+     *
+     * Generated from protobuf enum <code>WORKFLOW_CREATE = 400 [(.clarifai.api.utils.description) = "Workflows created"];</code>
+     */
+    const WORKFLOW_CREATE = 400;
+    /**
+     * Generated from protobuf enum <code>WORKFLOW_UPDATE = 401 [(.clarifai.api.utils.description) = "Workflows updated"];</code>
+     */
+    const WORKFLOW_UPDATE = 401;
+    /**
+     * Generated from protobuf enum <code>WORKFLOW_DELETE = 402 [(.clarifai.api.utils.description) = "Workflows deleted"];</code>
+     */
+    const WORKFLOW_DELETE = 402;
+    /**
+     * Generated from protobuf enum <code>WORKFLOW_VERSION_CREATE = 403 [(.clarifai.api.utils.description) = "Workflow versions created"];</code>
+     */
+    const WORKFLOW_VERSION_CREATE = 403;
+    /**
+     * Generated from protobuf enum <code>WORKFLOW_VERSION_UPDATE = 404 [(.clarifai.api.utils.description) = "Workflow versions updated"];</code>
+     */
+    const WORKFLOW_VERSION_UPDATE = 404;
+    /**
+     * Generated from protobuf enum <code>WORKFLOW_VERSION_DELETE = 405 [(.clarifai.api.utils.description) = "Workflow versions deleted"];</code>
+     */
+    const WORKFLOW_VERSION_DELETE = 405;
+    /**
+     * Event types related to collaborators: 700 - 799
+     *
+     * Generated from protobuf enum <code>COLLABORATOR_ADD = 700 [(.clarifai.api.utils.description) = "Collaborators added"];</code>
+     */
+    const COLLABORATOR_ADD = 700;
+    /**
+     * Generated from protobuf enum <code>COLLABORATOR_UPDATE = 701 [(.clarifai.api.utils.description) = "Collaborators updated"];</code>
+     */
+    const COLLABORATOR_UPDATE = 701;
+    /**
+     * Generated from protobuf enum <code>COLLABORATOR_REMOVE = 702 [(.clarifai.api.utils.description) = "Collaborators removed"];</code>
+     */
+    const COLLABORATOR_REMOVE = 702;
 
     private static $valueToName = [
         self::EVENT_TYPE_NOT_SET => 'EVENT_TYPE_NOT_SET',
@@ -122,6 +162,15 @@ class EventType
         self::MODULE_VERSION_CREATE => 'MODULE_VERSION_CREATE',
         self::MODULE_VERSION_UPDATE => 'MODULE_VERSION_UPDATE',
         self::MODULE_VERSION_DELETE => 'MODULE_VERSION_DELETE',
+        self::WORKFLOW_CREATE => 'WORKFLOW_CREATE',
+        self::WORKFLOW_UPDATE => 'WORKFLOW_UPDATE',
+        self::WORKFLOW_DELETE => 'WORKFLOW_DELETE',
+        self::WORKFLOW_VERSION_CREATE => 'WORKFLOW_VERSION_CREATE',
+        self::WORKFLOW_VERSION_UPDATE => 'WORKFLOW_VERSION_UPDATE',
+        self::WORKFLOW_VERSION_DELETE => 'WORKFLOW_VERSION_DELETE',
+        self::COLLABORATOR_ADD => 'COLLABORATOR_ADD',
+        self::COLLABORATOR_UPDATE => 'COLLABORATOR_UPDATE',
+        self::COLLABORATOR_REMOVE => 'COLLABORATOR_REMOVE',
     ];
 
     public static function name($value)

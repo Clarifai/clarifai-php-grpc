@@ -1782,6 +1782,10 @@ class StatusCode
      */
     const INTERNAL_AZURE_UNCATEGORIZED = 98017;
     /**
+     * Generated from protobuf enum <code>INTERNAL_VECTORDB_UNCATEGORIZED = 98018;</code>
+     */
+    const INTERNAL_VECTORDB_UNCATEGORIZED = 98018;
+    /**
      * Uncategorized: 99xxx: move off as soon as known
      *
      * Generated from protobuf enum <code>CONN_UNCATEGORIZED = 99001;</code>
@@ -2197,6 +2201,7 @@ class StatusCode
         self::INTERNAL_REDIS_UNCATEGORIZED => 'INTERNAL_REDIS_UNCATEGORIZED',
         self::INTERNAL_AWS_UNCATEGORIZED => 'INTERNAL_AWS_UNCATEGORIZED',
         self::INTERNAL_AZURE_UNCATEGORIZED => 'INTERNAL_AZURE_UNCATEGORIZED',
+        self::INTERNAL_VECTORDB_UNCATEGORIZED => 'INTERNAL_VECTORDB_UNCATEGORIZED',
         self::CONN_UNCATEGORIZED => 'CONN_UNCATEGORIZED',
         self::MODEL_UNCATEGORIZED => 'MODEL_UNCATEGORIZED',
         self::INPUT_UNCATEGORIZED => 'INPUT_UNCATEGORIZED',
