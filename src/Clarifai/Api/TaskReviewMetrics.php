@@ -14,14 +14,31 @@ use Google\Protobuf\Internal\GPBUtil;
 class TaskReviewMetrics extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Estimated number of reviewed inputs.
+     * Estimated number of reviewed inputs by at least one reviewer.
      *
      * Generated from protobuf field <code>uint64 inputs_count_estimated = 1;</code>
      */
     protected $inputs_count_estimated = 0;
     /**
-     * Estimated percent of inputs that were reviewed. Calculated as count of reviewed inputs / total task inputs
+     * Estimated number of reviewed inputs per reviewer index.
+     * The reviewer indexes are based on task.review.users.
+     * An input is considered reviewed by a reviewer if:
+     * * the reviewer approved the input
+     * * ANY reviewer rejected the input (as rejection is final)
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * The reviewer will have to review the input again after work has been completed.
+     * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+     *
+     * Generated from protobuf field <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+     */
+    private $inputs_count_estimated_per_reviewer;
+    /**
+     * Estimated percent of review work that was finished.
      * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
+     * The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
+     * The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
+     * the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
      *
      * Generated from protobuf field <code>uint32 inputs_percent_estimated = 2;</code>
      */
@@ -34,10 +51,23 @@ class TaskReviewMetrics extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $inputs_count_estimated
-     *           Estimated number of reviewed inputs.
+     *           Estimated number of reviewed inputs by at least one reviewer.
+     *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $inputs_count_estimated_per_reviewer
+     *           Estimated number of reviewed inputs per reviewer index.
+     *           The reviewer indexes are based on task.review.users.
+     *           An input is considered reviewed by a reviewer if:
+     *           * the reviewer approved the input
+     *           * ANY reviewer rejected the input (as rejection is final)
+     *           Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     *           The reviewer will have to review the input again after work has been completed.
+     *           As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
      *     @type int $inputs_percent_estimated
-     *           Estimated percent of inputs that were reviewed. Calculated as count of reviewed inputs / total task inputs
+     *           Estimated percent of review work that was finished.
      *           This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     *           Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
+     *           The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
+     *           The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
+     *           the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
      * }
      */
     public function __construct($data = NULL) {
@@ -46,7 +76,7 @@ class TaskReviewMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated number of reviewed inputs.
+     * Estimated number of reviewed inputs by at least one reviewer.
      *
      * Generated from protobuf field <code>uint64 inputs_count_estimated = 1;</code>
      * @return int|string
@@ -57,7 +87,7 @@ class TaskReviewMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated number of reviewed inputs.
+     * Estimated number of reviewed inputs by at least one reviewer.
      *
      * Generated from protobuf field <code>uint64 inputs_count_estimated = 1;</code>
      * @param int|string $var
@@ -72,8 +102,52 @@ class TaskReviewMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated percent of inputs that were reviewed. Calculated as count of reviewed inputs / total task inputs
+     * Estimated number of reviewed inputs per reviewer index.
+     * The reviewer indexes are based on task.review.users.
+     * An input is considered reviewed by a reviewer if:
+     * * the reviewer approved the input
+     * * ANY reviewer rejected the input (as rejection is final)
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * The reviewer will have to review the input again after work has been completed.
+     * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+     *
+     * Generated from protobuf field <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getInputsCountEstimatedPerReviewer()
+    {
+        return $this->inputs_count_estimated_per_reviewer;
+    }
+
+    /**
+     * Estimated number of reviewed inputs per reviewer index.
+     * The reviewer indexes are based on task.review.users.
+     * An input is considered reviewed by a reviewer if:
+     * * the reviewer approved the input
+     * * ANY reviewer rejected the input (as rejection is final)
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * The reviewer will have to review the input again after work has been completed.
+     * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+     *
+     * Generated from protobuf field <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+     * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setInputsCountEstimatedPerReviewer($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT64);
+        $this->inputs_count_estimated_per_reviewer = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Estimated percent of review work that was finished.
      * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
+     * The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
+     * The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
+     * the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
      *
      * Generated from protobuf field <code>uint32 inputs_percent_estimated = 2;</code>
      * @return int
@@ -84,8 +158,12 @@ class TaskReviewMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated percent of inputs that were reviewed. Calculated as count of reviewed inputs / total task inputs
+     * Estimated percent of review work that was finished.
      * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
+     * The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
+     * The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
+     * the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
      *
      * Generated from protobuf field <code>uint32 inputs_percent_estimated = 2;</code>
      * @param int $var

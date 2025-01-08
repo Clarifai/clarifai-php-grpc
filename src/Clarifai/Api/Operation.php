@@ -14,6 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class Operation extends \Google\Protobuf\Internal\Message
 {
     protected $operation;
+    protected $annotation_operation;
 
     /**
      * Constructor.
@@ -30,6 +31,7 @@ class Operation extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\DeleteFromDataset $delete_from_dataset
      *     @type \Clarifai\Api\AddToDataset $add_to_dataset
      *     @type \Clarifai\Api\SplitIntoDatasets $split_into_datasets
+     *     @type \Clarifai\Api\DeleteAnnotations $delete_annotations
      * }
      */
     public function __construct($data = NULL) {
@@ -281,11 +283,46 @@ class Operation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+     * @return \Clarifai\Api\DeleteAnnotations|null
+     */
+    public function getDeleteAnnotations()
+    {
+        return $this->readOneof(10);
+    }
+
+    public function hasDeleteAnnotations()
+    {
+        return $this->hasOneof(10);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+     * @param \Clarifai\Api\DeleteAnnotations $var
+     * @return $this
+     */
+    public function setDeleteAnnotations($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\DeleteAnnotations::class);
+        $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getOperation()
     {
         return $this->whichOneof("operation");
+    }
+
+    /**
+     * @return string
+     */
+    public function getAnnotationOperation()
+    {
+        return $this->whichOneof("annotation_operation");
     }
 
 }

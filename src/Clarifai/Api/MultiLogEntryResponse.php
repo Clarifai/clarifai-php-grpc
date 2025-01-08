@@ -23,6 +23,18 @@ class MultiLogEntryResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.LogEntry log_entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     private $log_entries;
+    /**
+     * The page the log entries are from. If the request's page was omitted or greater than the total pages, then this is set to the last page.
+     *
+     * Generated from protobuf field <code>uint32 page = 4;</code>
+     */
+    protected $page = 0;
+    /**
+     * The number of results contained in each page.
+     *
+     * Generated from protobuf field <code>uint32 per_page = 5;</code>
+     */
+    protected $per_page = 0;
 
     /**
      * Constructor.
@@ -33,6 +45,10 @@ class MultiLogEntryResponse extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Status\Status $status
      *     @type array<\Clarifai\Api\LogEntry>|\Google\Protobuf\Internal\RepeatedField $log_entries
      *           Log entries.
+     *     @type int $page
+     *           The page the log entries are from. If the request's page was omitted or greater than the total pages, then this is set to the last page.
+     *     @type int $per_page
+     *           The number of results contained in each page.
      * }
      */
     public function __construct($data = NULL) {
@@ -94,6 +110,58 @@ class MultiLogEntryResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\LogEntry::class);
         $this->log_entries = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The page the log entries are from. If the request's page was omitted or greater than the total pages, then this is set to the last page.
+     *
+     * Generated from protobuf field <code>uint32 page = 4;</code>
+     * @return int
+     */
+    public function getPage()
+    {
+        return $this->page;
+    }
+
+    /**
+     * The page the log entries are from. If the request's page was omitted or greater than the total pages, then this is set to the last page.
+     *
+     * Generated from protobuf field <code>uint32 page = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->page = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of results contained in each page.
+     *
+     * Generated from protobuf field <code>uint32 per_page = 5;</code>
+     * @return int
+     */
+    public function getPerPage()
+    {
+        return $this->per_page;
+    }
+
+    /**
+     * The number of results contained in each page.
+     *
+     * Generated from protobuf field <code>uint32 per_page = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPerPage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->per_page = $var;
 
         return $this;
     }

@@ -33,6 +33,7 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
      * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_count_estimated_per_reviewer
      * - metrics.review.inputs_percent_estimated
      *
      * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
@@ -57,6 +58,7 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      *           - metrics.work.inputs_count_estimated
      *           - metrics.work.inputs_percent_estimated
      *           - metrics.review.inputs_count_estimated
+     *           - metrics.review.inputs_count_estimated_per_reviewer
      *           - metrics.review.inputs_percent_estimated
      * }
      */
@@ -129,6 +131,7 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
      * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_count_estimated_per_reviewer
      * - metrics.review.inputs_percent_estimated
      *
      * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
@@ -149,6 +152,7 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
      * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_count_estimated_per_reviewer
      * - metrics.review.inputs_percent_estimated
      *
      * Generated from protobuf field <code>repeated string additional_fields = 3;</code>

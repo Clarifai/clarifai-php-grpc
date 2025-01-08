@@ -385,6 +385,16 @@ class StatusCode
      */
     const MODEL_NOT_DEPLOYED = 21353;
     /**
+     * Generated from protobuf enum <code>MODEL_BUSY_PLEASE_RETRY = 21354;</code>
+     */
+    const MODEL_BUSY_PLEASE_RETRY = 21354;
+    /**
+     * Used when the model pod is running, but not yet ready to serve requests.
+     *
+     * Generated from protobuf enum <code>MODEL_LOADING = 21355;</code>
+     */
+    const MODEL_LOADING = 21355;
+    /**
      * Used when a model reference field is not set properly
      *
      * Generated from protobuf enum <code>MODEL_REFERENCE_INVALID_ARGUMENT = 21400;</code>
@@ -805,23 +815,42 @@ class StatusCode
     /**
      * Input:Image related 30xxx
      *
-     * Generated from protobuf enum <code>INPUT_DOWNLOAD_SUCCESS = 30000;</code>
+     * Generated from protobuf enum <code>INPUT_SUCCESS = 30000;</code>
      */
-    const INPUT_DOWNLOAD_SUCCESS = 30000;
+    const INPUT_SUCCESS = 30000;
     /**
      * when things are async, this is the default status.
      *
-     * Generated from protobuf enum <code>INPUT_DOWNLOAD_PENDING = 30001;</code>
+     * Generated from protobuf enum <code>INPUT_PENDING = 30001;</code>
      */
-    const INPUT_DOWNLOAD_PENDING = 30001;
+    const INPUT_PENDING = 30001;
     /**
      * any type of error downloading and processing
      *
-     * Generated from protobuf enum <code>INPUT_DOWNLOAD_FAILED = 30002;</code>
+     * Generated from protobuf enum <code>INPUT_FAILED = 30002;</code>
+     */
+    const INPUT_FAILED = 30002;
+    /**
+     * Generated from protobuf enum <code>INPUT_IN_PROGRESS = 30003;</code>
+     */
+    const INPUT_IN_PROGRESS = 30003;
+    /**
+     * use INPUT_SUCCESS, INPUT_PENDING, INPUT_FAILED, INPUT_IN_PROGRESS instead
+     * DOWNLOAD is no longer correct, but keep old statuses for backward compatibility
+     *
+     * Generated from protobuf enum <code>INPUT_DOWNLOAD_SUCCESS = 30000 [deprecated = true];</code>
+     */
+    const INPUT_DOWNLOAD_SUCCESS = 30000;
+    /**
+     * Generated from protobuf enum <code>INPUT_DOWNLOAD_PENDING = 30001 [deprecated = true];</code>
+     */
+    const INPUT_DOWNLOAD_PENDING = 30001;
+    /**
+     * Generated from protobuf enum <code>INPUT_DOWNLOAD_FAILED = 30002 [deprecated = true];</code>
      */
     const INPUT_DOWNLOAD_FAILED = 30002;
     /**
-     * Generated from protobuf enum <code>INPUT_DOWNLOAD_IN_PROGRESS = 30003;</code>
+     * Generated from protobuf enum <code>INPUT_DOWNLOAD_IN_PROGRESS = 30003 [deprecated = true];</code>
      */
     const INPUT_DOWNLOAD_IN_PROGRESS = 30003;
     /**
@@ -1893,6 +1922,8 @@ class StatusCode
         self::MODEL_DEPLOYING => 'MODEL_DEPLOYING',
         self::MODEL_QUEUED_FOR_DEPLOYMENT => 'MODEL_QUEUED_FOR_DEPLOYMENT',
         self::MODEL_NOT_DEPLOYED => 'MODEL_NOT_DEPLOYED',
+        self::MODEL_BUSY_PLEASE_RETRY => 'MODEL_BUSY_PLEASE_RETRY',
+        self::MODEL_LOADING => 'MODEL_LOADING',
         self::MODEL_REFERENCE_INVALID_ARGUMENT => 'MODEL_REFERENCE_INVALID_ARGUMENT',
         self::MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT => 'MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT',
         self::MODEL_EXPORTED => 'MODEL_EXPORTED',
@@ -1986,6 +2017,10 @@ class StatusCode
         self::INSTANCE_TYPE_DOES_NOT_EXIST => 'INSTANCE_TYPE_DOES_NOT_EXIST',
         self::INSTANCE_TYPE_INVALID_ARGUMENT => 'INSTANCE_TYPE_INVALID_ARGUMENT',
         self::INSTANCE_TYPE_INVALID_REQUEST => 'INSTANCE_TYPE_INVALID_REQUEST',
+        self::INPUT_SUCCESS => 'INPUT_SUCCESS',
+        self::INPUT_PENDING => 'INPUT_PENDING',
+        self::INPUT_FAILED => 'INPUT_FAILED',
+        self::INPUT_IN_PROGRESS => 'INPUT_IN_PROGRESS',
         self::INPUT_DOWNLOAD_SUCCESS => 'INPUT_DOWNLOAD_SUCCESS',
         self::INPUT_DOWNLOAD_PENDING => 'INPUT_DOWNLOAD_PENDING',
         self::INPUT_DOWNLOAD_FAILED => 'INPUT_DOWNLOAD_FAILED',

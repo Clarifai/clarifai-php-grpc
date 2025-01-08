@@ -37,6 +37,12 @@ class ImageInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string color_mode = 4;</code>
      */
     protected $color_mode = '';
+    /**
+     * mode (when used for decoded_bytes) (RGB, RGBA, P, L, etc.)
+     *
+     * Generated from protobuf field <code>string mode = 5;</code>
+     */
+    protected $mode = '';
 
     /**
      * Constructor.
@@ -52,6 +58,8 @@ class ImageInfo extends \Google\Protobuf\Internal\Message
      *           image format
      *     @type string $color_mode
      *           image color mode
+     *     @type string $mode
+     *           mode (when used for decoded_bytes) (RGB, RGBA, P, L, etc.)
      * }
      */
     public function __construct($data = NULL) {
@@ -159,6 +167,32 @@ class ImageInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->color_mode = $var;
+
+        return $this;
+    }
+
+    /**
+     * mode (when used for decoded_bytes) (RGB, RGBA, P, L, etc.)
+     *
+     * Generated from protobuf field <code>string mode = 5;</code>
+     * @return string
+     */
+    public function getMode()
+    {
+        return $this->mode;
+    }
+
+    /**
+     * mode (when used for decoded_bytes) (RGB, RGBA, P, L, etc.)
+     *
+     * Generated from protobuf field <code>string mode = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->mode = $var;
 
         return $this;
     }

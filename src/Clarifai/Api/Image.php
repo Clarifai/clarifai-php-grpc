@@ -56,6 +56,12 @@ class Image extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, .clarifai.api.ImageInfo> hosted_image_info = 7;</code>
      */
     private $hosted_image_info;
+    /**
+     * For internal processing of already decoded bytes.
+     *
+     * Generated from protobuf field <code>bytes decoded_bytes = 8;</code>
+     */
+    protected $decoded_bytes = '';
 
     /**
      * Constructor.
@@ -81,6 +87,8 @@ class Image extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $hosted_image_info
      *           The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
      *           Note: keys(hosted_image_info) = hosted.sizes - "orig"
+     *     @type string $decoded_bytes
+     *           For internal processing of already decoded bytes.
      * }
      */
     public function __construct($data = NULL) {
@@ -270,6 +278,32 @@ class Image extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\ImageInfo::class);
         $this->hosted_image_info = $arr;
+
+        return $this;
+    }
+
+    /**
+     * For internal processing of already decoded bytes.
+     *
+     * Generated from protobuf field <code>bytes decoded_bytes = 8;</code>
+     * @return string
+     */
+    public function getDecodedBytes()
+    {
+        return $this->decoded_bytes;
+    }
+
+    /**
+     * For internal processing of already decoded bytes.
+     *
+     * Generated from protobuf field <code>bytes decoded_bytes = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDecodedBytes($var)
+    {
+        GPBUtil::checkString($var, False);
+        $this->decoded_bytes = $var;
 
         return $this;
     }

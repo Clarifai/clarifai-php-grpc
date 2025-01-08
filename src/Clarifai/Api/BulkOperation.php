@@ -66,6 +66,7 @@ class BulkOperation extends \Google\Protobuf\Internal\Message
      */
     protected $last_modified_at = null;
     protected $input_source;
+    protected $annotation_source;
 
     /**
      * Constructor.
@@ -78,6 +79,7 @@ class BulkOperation extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\InputIDs $input_ids
      *     @type \Clarifai\Api\Search $search
      *     @type \Clarifai\Api\Dataset $dataset
+     *     @type \Clarifai\Api\Search $annotation_search
      *     @type \Clarifai\Api\Operation $operation
      *           Operation to perform
      *     @type string $app_id
@@ -206,6 +208,33 @@ class BulkOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Dataset::class);
         $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Search annotation_search = 12;</code>
+     * @return \Clarifai\Api\Search|null
+     */
+    public function getAnnotationSearch()
+    {
+        return $this->readOneof(12);
+    }
+
+    public function hasAnnotationSearch()
+    {
+        return $this->hasOneof(12);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Search annotation_search = 12;</code>
+     * @param \Clarifai\Api\Search $var
+     * @return $this
+     */
+    public function setAnnotationSearch($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Search::class);
+        $this->writeOneof(12, $var);
 
         return $this;
     }
@@ -456,6 +485,14 @@ class BulkOperation extends \Google\Protobuf\Internal\Message
     public function getInputSource()
     {
         return $this->whichOneof("input_source");
+    }
+
+    /**
+     * @return string
+     */
+    public function getAnnotationSource()
+    {
+        return $this->whichOneof("annotation_source");
     }
 
 }

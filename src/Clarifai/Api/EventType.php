@@ -126,6 +126,20 @@ class EventType
      */
     const WORKFLOW_VERSION_DELETE = 405;
     /**
+     * Event types related to applications: 600 - 699
+     *
+     * Generated from protobuf enum <code>APPLICATION_CREATE = 600 [(.clarifai.api.utils.description) = "Applications created"];</code>
+     */
+    const APPLICATION_CREATE = 600;
+    /**
+     * Generated from protobuf enum <code>APPLICATION_UPDATE = 601 [(.clarifai.api.utils.description) = "Applications updated"];</code>
+     */
+    const APPLICATION_UPDATE = 601;
+    /**
+     * Generated from protobuf enum <code>APPLICATION_DELETE = 602 [(.clarifai.api.utils.description) = "Applications deleted"];</code>
+     */
+    const APPLICATION_DELETE = 602;
+    /**
      * Event types related to collaborators: 700 - 799
      *
      * Generated from protobuf enum <code>COLLABORATOR_ADD = 700 [(.clarifai.api.utils.description) = "Collaborators added"];</code>
@@ -168,6 +182,9 @@ class EventType
         self::WORKFLOW_VERSION_CREATE => 'WORKFLOW_VERSION_CREATE',
         self::WORKFLOW_VERSION_UPDATE => 'WORKFLOW_VERSION_UPDATE',
         self::WORKFLOW_VERSION_DELETE => 'WORKFLOW_VERSION_DELETE',
+        self::APPLICATION_CREATE => 'APPLICATION_CREATE',
+        self::APPLICATION_UPDATE => 'APPLICATION_UPDATE',
+        self::APPLICATION_DELETE => 'APPLICATION_DELETE',
         self::COLLABORATOR_ADD => 'COLLABORATOR_ADD',
         self::COLLABORATOR_UPDATE => 'COLLABORATOR_UPDATE',
         self::COLLABORATOR_REMOVE => 'COLLABORATOR_REMOVE',

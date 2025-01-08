@@ -15,14 +15,14 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
-     * Defaults to 1.
+     * Defaults to last page.
      *
      * Generated from protobuf field <code>uint32 page = 1;</code>
      */
     protected $page = 0;
     /**
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 128.
+     * to 32.
      *
      * Generated from protobuf field <code>uint32 per_page = 2;</code>
      */
@@ -81,10 +81,10 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int $page
      *           (optional URL parameter) The page number. Pagination is used to split the results into chunks.
-     *           Defaults to 1.
+     *           Defaults to last page.
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
-     *           to 128.
+     *           to 32.
      *     @type string $log_type
      *           The type of log entry. Examples: model, agent, build, training.
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
@@ -109,7 +109,7 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
-     * Defaults to 1.
+     * Defaults to last page.
      *
      * Generated from protobuf field <code>uint32 page = 1;</code>
      * @return int
@@ -121,7 +121,7 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
-     * Defaults to 1.
+     * Defaults to last page.
      *
      * Generated from protobuf field <code>uint32 page = 1;</code>
      * @param int $var
@@ -137,7 +137,7 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 128.
+     * to 32.
      *
      * Generated from protobuf field <code>uint32 per_page = 2;</code>
      * @return int
@@ -149,7 +149,7 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 128.
+     * to 32.
      *
      * Generated from protobuf field <code>uint32 per_page = 2;</code>
      * @param int $var
