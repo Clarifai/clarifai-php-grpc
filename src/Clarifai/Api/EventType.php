@@ -100,6 +100,32 @@ class EventType
      */
     const MODULE_VERSION_DELETE = 205;
     /**
+     * Event types related to models: 300 - 399
+     *
+     * Generated from protobuf enum <code>MODEL_CREATE = 300 [(.clarifai.api.utils.description) = "Models created"];</code>
+     */
+    const MODEL_CREATE = 300;
+    /**
+     * Generated from protobuf enum <code>MODEL_UPDATE = 301 [(.clarifai.api.utils.description) = "Models updated"];</code>
+     */
+    const MODEL_UPDATE = 301;
+    /**
+     * Generated from protobuf enum <code>MODEL_DELETE = 302 [(.clarifai.api.utils.description) = "Models deleted"];</code>
+     */
+    const MODEL_DELETE = 302;
+    /**
+     * Generated from protobuf enum <code>MODEL_VERSION_CREATE = 303 [(.clarifai.api.utils.description) = "Model versions created"];</code>
+     */
+    const MODEL_VERSION_CREATE = 303;
+    /**
+     * Generated from protobuf enum <code>MODEL_VERSION_UPDATE = 304 [(.clarifai.api.utils.description) = "Model versions updated"];</code>
+     */
+    const MODEL_VERSION_UPDATE = 304;
+    /**
+     * Generated from protobuf enum <code>MODEL_VERSION_DELETE = 305 [(.clarifai.api.utils.description) = "Model versions deleted"];</code>
+     */
+    const MODEL_VERSION_DELETE = 305;
+    /**
      * Event types related to workflows: 400 - 499
      *
      * Generated from protobuf enum <code>WORKFLOW_CREATE = 400 [(.clarifai.api.utils.description) = "Workflows created"];</code>
@@ -153,6 +179,12 @@ class EventType
      * Generated from protobuf enum <code>COLLABORATOR_REMOVE = 702 [(.clarifai.api.utils.description) = "Collaborators removed"];</code>
      */
     const COLLABORATOR_REMOVE = 702;
+    /**
+     * Event types related to users: 800 - 899
+     *
+     * Generated from protobuf enum <code>USER_UPDATE = 800 [(.clarifai.api.utils.description) = "Users updated"];</code>
+     */
+    const USER_UPDATE = 800;
 
     private static $valueToName = [
         self::EVENT_TYPE_NOT_SET => 'EVENT_TYPE_NOT_SET',
@@ -176,6 +208,12 @@ class EventType
         self::MODULE_VERSION_CREATE => 'MODULE_VERSION_CREATE',
         self::MODULE_VERSION_UPDATE => 'MODULE_VERSION_UPDATE',
         self::MODULE_VERSION_DELETE => 'MODULE_VERSION_DELETE',
+        self::MODEL_CREATE => 'MODEL_CREATE',
+        self::MODEL_UPDATE => 'MODEL_UPDATE',
+        self::MODEL_DELETE => 'MODEL_DELETE',
+        self::MODEL_VERSION_CREATE => 'MODEL_VERSION_CREATE',
+        self::MODEL_VERSION_UPDATE => 'MODEL_VERSION_UPDATE',
+        self::MODEL_VERSION_DELETE => 'MODEL_VERSION_DELETE',
         self::WORKFLOW_CREATE => 'WORKFLOW_CREATE',
         self::WORKFLOW_UPDATE => 'WORKFLOW_UPDATE',
         self::WORKFLOW_DELETE => 'WORKFLOW_DELETE',
@@ -188,6 +226,7 @@ class EventType
         self::COLLABORATOR_ADD => 'COLLABORATOR_ADD',
         self::COLLABORATOR_UPDATE => 'COLLABORATOR_UPDATE',
         self::COLLABORATOR_REMOVE => 'COLLABORATOR_REMOVE',
+        self::USER_UPDATE => 'USER_UPDATE',
     ];
 
     public static function name($value)

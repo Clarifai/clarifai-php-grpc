@@ -32,6 +32,8 @@ class AuditLogTarget extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\ModuleVersion $module_version
      *     @type \Clarifai\Api\Workflow $workflow
      *     @type \Clarifai\Api\WorkflowVersion $workflow_version
+     *     @type \Clarifai\Api\Model $model
+     *     @type \Clarifai\Api\ModelVersion $model_version
      * }
      */
     public function __construct($data = NULL) {
@@ -251,6 +253,60 @@ class AuditLogTarget extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\WorkflowVersion::class);
         $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Model model = 9;</code>
+     * @return \Clarifai\Api\Model|null
+     */
+    public function getModel()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasModel()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Model model = 9;</code>
+     * @param \Clarifai\Api\Model $var
+     * @return $this
+     */
+    public function setModel($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Model::class);
+        $this->writeOneof(9, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ModelVersion model_version = 10;</code>
+     * @return \Clarifai\Api\ModelVersion|null
+     */
+    public function getModelVersion()
+    {
+        return $this->readOneof(10);
+    }
+
+    public function hasModelVersion()
+    {
+        return $this->hasOneof(10);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ModelVersion model_version = 10;</code>
+     * @param \Clarifai\Api\ModelVersion $var
+     * @return $this
+     */
+    public function setModelVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ModelVersion::class);
+        $this->writeOneof(10, $var);
 
         return $this;
     }
