@@ -41,6 +41,12 @@ class PostModelVersionsUploadConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_v3 = 5;</code>
      */
     protected $is_v3 = false;
+    /**
+     * Number of bytes requested for the build process.
+     *
+     * Generated from protobuf field <code>uint64 storage_request_size = 6;</code>
+     */
+    protected $storage_request_size = 0;
 
     /**
      * Constructor.
@@ -57,6 +63,8 @@ class PostModelVersionsUploadConfig extends \Google\Protobuf\Internal\Message
      *           Number of bytes in the model files to be uploaded
      *     @type bool $is_v3
      *           Whether the uploaded package will be a .tar.gz which contains a Dockerfile or the standard .zip
+     *     @type int|string $storage_request_size
+     *           Number of bytes requested for the build process.
      * }
      */
     public function __construct($data = NULL) {
@@ -206,6 +214,32 @@ class PostModelVersionsUploadConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_v3 = $var;
+
+        return $this;
+    }
+
+    /**
+     * Number of bytes requested for the build process.
+     *
+     * Generated from protobuf field <code>uint64 storage_request_size = 6;</code>
+     * @return int|string
+     */
+    public function getStorageRequestSize()
+    {
+        return $this->storage_request_size;
+    }
+
+    /**
+     * Number of bytes requested for the build process.
+     *
+     * Generated from protobuf field <code>uint64 storage_request_size = 6;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setStorageRequestSize($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->storage_request_size = $var;
 
         return $this;
     }

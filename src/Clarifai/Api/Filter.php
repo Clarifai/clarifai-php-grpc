@@ -55,6 +55,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"polygon":{}}}]}}`
      *  - data.regions[].region_info.span         - filter only span annotations
      *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"span":{}}}]}}`
+     *  - data.regions[].track_id                 - filter annotations by track_id
+     *                                            - in order to enable this, you need to provide "track_id_value" i.e. `{"data": {"regions": [{"track_id" : "track_id_value"}]}}`
      *  - data.time_segments[].time_info          - filter only time-segment annotations
      *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"time_segments": [{"time_info": {}}]}}`
      *  # Filter by other data fields
@@ -173,6 +175,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *                                                      - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"polygon":{}}}]}}`
      *            - data.regions[].region_info.span         - filter only span annotations
      *                                                      - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"span":{}}}]}}`
+     *            - data.regions[].track_id                 - filter annotations by track_id
+     *                                                      - in order to enable this, you need to provide "track_id_value" i.e. `{"data": {"regions": [{"track_id" : "track_id_value"}]}}`
      *            - data.time_segments[].time_info          - filter only time-segment annotations
      *                                                      - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"time_segments": [{"time_info": {}}]}}`
      *            # Filter by other data fields
@@ -304,6 +308,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"polygon":{}}}]}}`
      *  - data.regions[].region_info.span         - filter only span annotations
      *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"span":{}}}]}}`
+     *  - data.regions[].track_id                 - filter annotations by track_id
+     *                                            - in order to enable this, you need to provide "track_id_value" i.e. `{"data": {"regions": [{"track_id" : "track_id_value"}]}}`
      *  - data.time_segments[].time_info          - filter only time-segment annotations
      *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"time_segments": [{"time_info": {}}]}}`
      *  # Filter by other data fields
@@ -402,6 +408,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"polygon":{}}}]}}`
      *  - data.regions[].region_info.span         - filter only span annotations
      *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"regions": [{"region_info": {"span":{}}}]}}`
+     *  - data.regions[].track_id                 - filter annotations by track_id
+     *                                            - in order to enable this, you need to provide "track_id_value" i.e. `{"data": {"regions": [{"track_id" : "track_id_value"}]}}`
      *  - data.time_segments[].time_info          - filter only time-segment annotations
      *                                            - in order to enable this, you need to set the field to an empty object, i.e. `{"data": {"time_segments": [{"time_info": {}}]}}`
      *  # Filter by other data fields

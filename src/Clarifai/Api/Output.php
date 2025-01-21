@@ -55,6 +55,18 @@ class Output extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Data data = 6;</code>
      */
     protected $data = null;
+    /**
+     * Number of prompt tokens as reported by the model or third-party API.
+     *
+     * Generated from protobuf field <code>uint32 prompt_tokens = 7;</code>
+     */
+    protected $prompt_tokens = 0;
+    /**
+     * Number of completion tokens as reported by the model or third-party API.
+     *
+     * Generated from protobuf field <code>uint32 completion_tokens = 8;</code>
+     */
+    protected $completion_tokens = 0;
 
     /**
      * Constructor.
@@ -79,6 +91,10 @@ class Output extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Data $data
      *           The output data for this Output. For example if we have a concept model then the predicted
      *           concepts will appear here.
+     *     @type int $prompt_tokens
+     *           Number of prompt tokens as reported by the model or third-party API.
+     *     @type int $completion_tokens
+     *           Number of completion tokens as reported by the model or third-party API.
      * }
      */
     public function __construct($data = NULL) {
@@ -296,6 +312,58 @@ class Output extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Data::class);
         $this->data = $var;
+
+        return $this;
+    }
+
+    /**
+     * Number of prompt tokens as reported by the model or third-party API.
+     *
+     * Generated from protobuf field <code>uint32 prompt_tokens = 7;</code>
+     * @return int
+     */
+    public function getPromptTokens()
+    {
+        return $this->prompt_tokens;
+    }
+
+    /**
+     * Number of prompt tokens as reported by the model or third-party API.
+     *
+     * Generated from protobuf field <code>uint32 prompt_tokens = 7;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPromptTokens($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->prompt_tokens = $var;
+
+        return $this;
+    }
+
+    /**
+     * Number of completion tokens as reported by the model or third-party API.
+     *
+     * Generated from protobuf field <code>uint32 completion_tokens = 8;</code>
+     * @return int
+     */
+    public function getCompletionTokens()
+    {
+        return $this->completion_tokens;
+    }
+
+    /**
+     * Number of completion tokens as reported by the model or third-party API.
+     *
+     * Generated from protobuf field <code>uint32 completion_tokens = 8;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCompletionTokens($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->completion_tokens = $var;
 
         return $this;
     }
