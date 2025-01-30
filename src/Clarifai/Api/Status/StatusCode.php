@@ -813,6 +813,12 @@ class StatusCode
      */
     const INSTANCE_TYPE_INVALID_REQUEST = 26002;
     /**
+     * Compute plane related codes 261xx
+     *
+     * Generated from protobuf enum <code>COMPUTE_PLANE_METRICS_INVALID_REQUEST = 26100;</code>
+     */
+    const COMPUTE_PLANE_METRICS_INVALID_REQUEST = 26100;
+    /**
      * Input:Image related 30xxx
      *
      * Generated from protobuf enum <code>INPUT_SUCCESS = 30000;</code>
@@ -2017,6 +2023,7 @@ class StatusCode
         self::INSTANCE_TYPE_DOES_NOT_EXIST => 'INSTANCE_TYPE_DOES_NOT_EXIST',
         self::INSTANCE_TYPE_INVALID_ARGUMENT => 'INSTANCE_TYPE_INVALID_ARGUMENT',
         self::INSTANCE_TYPE_INVALID_REQUEST => 'INSTANCE_TYPE_INVALID_REQUEST',
+        self::COMPUTE_PLANE_METRICS_INVALID_REQUEST => 'COMPUTE_PLANE_METRICS_INVALID_REQUEST',
         self::INPUT_SUCCESS => 'INPUT_SUCCESS',
         self::INPUT_PENDING => 'INPUT_PENDING',
         self::INPUT_FAILED => 'INPUT_FAILED',

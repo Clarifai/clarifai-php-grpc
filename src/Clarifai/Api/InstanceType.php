@@ -30,6 +30,10 @@ class InstanceType extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.ComputeInfo compute_info = 3;</code>
      */
     protected $compute_info = null;
+    /**
+     * Generated from protobuf field <code>string price = 4;</code>
+     */
+    protected $price = '';
 
     /**
      * Constructor.
@@ -41,6 +45,7 @@ class InstanceType extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *           Short description of instance type.
      *     @type \Clarifai\Api\ComputeInfo $compute_info
+     *     @type string $price
      * }
      */
     public function __construct($data = NULL) {
@@ -124,6 +129,28 @@ class InstanceType extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\ComputeInfo::class);
         $this->compute_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price = 4;</code>
+     * @return string
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPrice($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->price = $var;
 
         return $this;
     }

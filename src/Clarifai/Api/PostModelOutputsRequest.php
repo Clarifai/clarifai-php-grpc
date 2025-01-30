@@ -47,6 +47,12 @@ class PostModelOutputsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
      */
     protected $runner_selector = null;
+    /**
+     * Configure the prediction cache to avoid expensive compute for predict requests
+     *
+     * Generated from protobuf field <code>bool use_predict_cache = 7;</code>
+     */
+    protected $use_predict_cache = false;
 
     /**
      * Constructor.
@@ -63,6 +69,8 @@ class PostModelOutputsRequest extends \Google\Protobuf\Internal\Message
      *           the language which appear's in the model's output_info.
      *     @type \Clarifai\Api\RunnerSelector $runner_selector
      *           Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
+     *     @type bool $use_predict_cache
+     *           Configure the prediction cache to avoid expensive compute for predict requests
      * }
      */
     public function __construct($data = NULL) {
@@ -238,6 +246,32 @@ class PostModelOutputsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\RunnerSelector::class);
         $this->runner_selector = $var;
+
+        return $this;
+    }
+
+    /**
+     * Configure the prediction cache to avoid expensive compute for predict requests
+     *
+     * Generated from protobuf field <code>bool use_predict_cache = 7;</code>
+     * @return bool
+     */
+    public function getUsePredictCache()
+    {
+        return $this->use_predict_cache;
+    }
+
+    /**
+     * Configure the prediction cache to avoid expensive compute for predict requests
+     *
+     * Generated from protobuf field <code>bool use_predict_cache = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUsePredictCache($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->use_predict_cache = $var;
 
         return $this;
     }
