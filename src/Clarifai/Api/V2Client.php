@@ -3730,6 +3730,20 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Clarifai\Api\PostLogEntriesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostLogEntries(\Clarifai\Api\PostLogEntriesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostLogEntries',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Clarifai\Api\ListLogEntriesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -3740,6 +3754,34 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/ListLogEntries',
         $argument,
         ['\Clarifai\Api\MultiLogEntryResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\StreamLogEntriesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\ServerStreamingCall
+     */
+    public function StreamLogEntries(\Clarifai\Api\StreamLogEntriesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_serverStreamRequest('/clarifai.api.V2/StreamLogEntries',
+        $argument,
+        ['\Clarifai\Api\MultiLogEntryResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PostComputePlaneMetricsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostComputePlaneMetrics(\Clarifai\Api\PostComputePlaneMetricsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostComputePlaneMetrics',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);
     }
 
