@@ -220,6 +220,10 @@ class Model extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 version_count = 38;</code>
      */
     protected $version_count = 0;
+    /**
+     * Generated from protobuf field <code>bool uses_tokens = 39;</code>
+     */
+    protected $uses_tokens = false;
 
     /**
      * Constructor.
@@ -299,6 +303,7 @@ class Model extends \Google\Protobuf\Internal\Message
      *     @type string $creator
      *           Creator of Model
      *     @type int $version_count
+     *     @type bool $uses_tokens
      * }
      */
     public function __construct($data = NULL) {
@@ -1271,6 +1276,28 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->version_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool uses_tokens = 39;</code>
+     * @return bool
+     */
+    public function getUsesTokens()
+    {
+        return $this->uses_tokens;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool uses_tokens = 39;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUsesTokens($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->uses_tokens = $var;
 
         return $this;
     }

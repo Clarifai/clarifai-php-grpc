@@ -126,6 +126,36 @@ class Data extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.NDArray ndarray = 20;</code>
      */
     protected $ndarray = null;
+    /**
+     * Input and output integer number 
+     *
+     * Generated from protobuf field <code>int64 int_value = 21;</code>
+     */
+    protected $int_value = 0;
+    /**
+     * Input and output floating number
+     *
+     * Generated from protobuf field <code>double float_value = 22;</code>
+     */
+    protected $float_value = 0.0;
+    /**
+     * Input and output bytes data
+     *
+     * Generated from protobuf field <code>bytes bytes_value = 23;</code>
+     */
+    protected $bytes_value = '';
+    /**
+     * Input and output bool data
+     *
+     * Generated from protobuf field <code>bool bool_value = 24;</code>
+     */
+    protected $bool_value = false;
+    /**
+     * Input and output string data
+     *
+     * Generated from protobuf field <code>string string_value = 25;</code>
+     */
+    protected $string_value = '';
 
     /**
      * Constructor.
@@ -172,6 +202,16 @@ class Data extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\NDArray $ndarray
      *           A proto representation for numpy arrays, useful to pass information from python SDK to a
      *           python based model implementation.
+     *     @type int|string $int_value
+     *           Input and output integer number 
+     *     @type float $float_value
+     *           Input and output floating number
+     *     @type string $bytes_value
+     *           Input and output bytes data
+     *     @type bool $bool_value
+     *           Input and output bool data
+     *     @type string $string_value
+     *           Input and output string data
      * }
      */
     public function __construct($data = NULL) {
@@ -719,6 +759,136 @@ class Data extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\NDArray::class);
         $this->ndarray = $var;
+
+        return $this;
+    }
+
+    /**
+     * Input and output integer number 
+     *
+     * Generated from protobuf field <code>int64 int_value = 21;</code>
+     * @return int|string
+     */
+    public function getIntValue()
+    {
+        return $this->int_value;
+    }
+
+    /**
+     * Input and output integer number 
+     *
+     * Generated from protobuf field <code>int64 int_value = 21;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setIntValue($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->int_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * Input and output floating number
+     *
+     * Generated from protobuf field <code>double float_value = 22;</code>
+     * @return float
+     */
+    public function getFloatValue()
+    {
+        return $this->float_value;
+    }
+
+    /**
+     * Input and output floating number
+     *
+     * Generated from protobuf field <code>double float_value = 22;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setFloatValue($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->float_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * Input and output bytes data
+     *
+     * Generated from protobuf field <code>bytes bytes_value = 23;</code>
+     * @return string
+     */
+    public function getBytesValue()
+    {
+        return $this->bytes_value;
+    }
+
+    /**
+     * Input and output bytes data
+     *
+     * Generated from protobuf field <code>bytes bytes_value = 23;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBytesValue($var)
+    {
+        GPBUtil::checkString($var, False);
+        $this->bytes_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * Input and output bool data
+     *
+     * Generated from protobuf field <code>bool bool_value = 24;</code>
+     * @return bool
+     */
+    public function getBoolValue()
+    {
+        return $this->bool_value;
+    }
+
+    /**
+     * Input and output bool data
+     *
+     * Generated from protobuf field <code>bool bool_value = 24;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setBoolValue($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->bool_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * Input and output string data
+     *
+     * Generated from protobuf field <code>string string_value = 25;</code>
+     * @return string
+     */
+    public function getStringValue()
+    {
+        return $this->string_value;
+    }
+
+    /**
+     * Input and output string data
+     *
+     * Generated from protobuf field <code>string string_value = 25;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStringValue($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->string_value = $var;
 
         return $this;
     }

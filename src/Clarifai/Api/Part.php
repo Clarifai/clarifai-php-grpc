@@ -21,6 +21,12 @@ class Part extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Data data = 1;</code>
      */
     protected $data = null;
+    /**
+     * A unique id for the part.
+     *
+     * Generated from protobuf field <code>string id = 2;</code>
+     */
+    protected $id = '';
 
     /**
      * Constructor.
@@ -30,6 +36,8 @@ class Part extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Data $data
      *           The data for this part.
+     *     @type string $id
+     *           A unique id for the part.
      * }
      */
     public function __construct($data = NULL) {
@@ -69,6 +77,32 @@ class Part extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Data::class);
         $this->data = $var;
+
+        return $this;
+    }
+
+    /**
+     * A unique id for the part.
+     *
+     * Generated from protobuf field <code>string id = 2;</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * A unique id for the part.
+     *
+     * Generated from protobuf field <code>string id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
 
         return $this;
     }
