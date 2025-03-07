@@ -221,9 +221,9 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     protected $version_count = 0;
     /**
-     * Generated from protobuf field <code>bool uses_tokens = 39;</code>
+     * Generated from protobuf field <code>.clarifai.api.Model.BillingType billing_type = 40;</code>
      */
-    protected $uses_tokens = false;
+    protected $billing_type = 0;
 
     /**
      * Constructor.
@@ -303,7 +303,7 @@ class Model extends \Google\Protobuf\Internal\Message
      *     @type string $creator
      *           Creator of Model
      *     @type int $version_count
-     *     @type bool $uses_tokens
+     *     @type int $billing_type
      * }
      */
     public function __construct($data = NULL) {
@@ -1281,23 +1281,23 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool uses_tokens = 39;</code>
-     * @return bool
+     * Generated from protobuf field <code>.clarifai.api.Model.BillingType billing_type = 40;</code>
+     * @return int
      */
-    public function getUsesTokens()
+    public function getBillingType()
     {
-        return $this->uses_tokens;
+        return $this->billing_type;
     }
 
     /**
-     * Generated from protobuf field <code>bool uses_tokens = 39;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.clarifai.api.Model.BillingType billing_type = 40;</code>
+     * @param int $var
      * @return $this
      */
-    public function setUsesTokens($var)
+    public function setBillingType($var)
     {
-        GPBUtil::checkBool($var);
-        $this->uses_tokens = $var;
+        GPBUtil::checkEnum($var, \Clarifai\Api\Model\BillingType::class);
+        $this->billing_type = $var;
 
         return $this;
     }

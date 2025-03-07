@@ -1366,6 +1366,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Kicks off conversion from the old Triton model format to the new Docker model format.
+     * @param \Clarifai\Api\PostModelMigrationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostModelMigration(\Clarifai\Api\PostModelMigrationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostModelMigration',
+        $argument,
+        ['\Clarifai\Api\SingleModelResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Export a model
      *
      * Export a model
@@ -3782,6 +3797,62 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/PostComputePlaneMetrics',
         $argument,
         ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PostWorkflowVersionEvaluationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostWorkflowVersionEvaluations(\Clarifai\Api\PostWorkflowVersionEvaluationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostWorkflowVersionEvaluations',
+        $argument,
+        ['\Clarifai\Api\MultiWorkflowVersionEvaluationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\GetWorkflowVersionEvaluationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetWorkflowVersionEvaluation(\Clarifai\Api\GetWorkflowVersionEvaluationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetWorkflowVersionEvaluation',
+        $argument,
+        ['\Clarifai\Api\SingleWorkflowVersionEvaluationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\ListWorkflowVersionEvaluationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListWorkflowVersionEvaluations(\Clarifai\Api\ListWorkflowVersionEvaluationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListWorkflowVersionEvaluations',
+        $argument,
+        ['\Clarifai\Api\MultiWorkflowVersionEvaluationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PatchWorkflowVersionEvaluationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchWorkflowVersionEvaluations(\Clarifai\Api\PatchWorkflowVersionEvaluationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchWorkflowVersionEvaluations',
+        $argument,
+        ['\Clarifai\Api\MultiWorkflowVersionEvaluationResponse', 'decode'],
         $metadata, $options);
     }
 

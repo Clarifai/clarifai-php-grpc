@@ -68,6 +68,18 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string compute_cluster_id = 8;</code>
      */
     protected $compute_cluster_id = '';
+    /**
+     * Used by agent runners to specify their cloud provider.
+     *
+     * Generated from protobuf field <code>string cloud_provider_id = 9;</code>
+     */
+    protected $cloud_provider_id = '';
+    /**
+     * Used by agent runners to specify their region.
+     *
+     * Generated from protobuf field <code>string region = 10;</code>
+     */
+    protected $region = '';
 
     /**
      * Constructor.
@@ -93,6 +105,10 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
      *           A unique ID to represent the runner. This may be tied to an underlying compute instance
      *           information or just an UUID.
      *     @type string $compute_cluster_id
+     *     @type string $cloud_provider_id
+     *           Used by agent runners to specify their cloud provider.
+     *     @type string $region
+     *           Used by agent runners to specify their region.
      * }
      */
     public function __construct($data = NULL) {
@@ -324,6 +340,58 @@ class PostRunnerItemOutputsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->compute_cluster_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Used by agent runners to specify their cloud provider.
+     *
+     * Generated from protobuf field <code>string cloud_provider_id = 9;</code>
+     * @return string
+     */
+    public function getCloudProviderId()
+    {
+        return $this->cloud_provider_id;
+    }
+
+    /**
+     * Used by agent runners to specify their cloud provider.
+     *
+     * Generated from protobuf field <code>string cloud_provider_id = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCloudProviderId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->cloud_provider_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Used by agent runners to specify their region.
+     *
+     * Generated from protobuf field <code>string region = 10;</code>
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    /**
+     * Used by agent runners to specify their region.
+     *
+     * Generated from protobuf field <code>string region = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->region = $var;
 
         return $this;
     }

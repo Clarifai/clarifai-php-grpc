@@ -127,7 +127,7 @@ class Data extends \Google\Protobuf\Internal\Message
      */
     protected $ndarray = null;
     /**
-     * Input and output integer number 
+     * Input and output integer number
      *
      * Generated from protobuf field <code>int64 int_value = 21;</code>
      */
@@ -203,7 +203,7 @@ class Data extends \Google\Protobuf\Internal\Message
      *           A proto representation for numpy arrays, useful to pass information from python SDK to a
      *           python based model implementation.
      *     @type int|string $int_value
-     *           Input and output integer number 
+     *           Input and output integer number
      *     @type float $float_value
      *           Input and output floating number
      *     @type string $bytes_value
@@ -764,7 +764,7 @@ class Data extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input and output integer number 
+     * Input and output integer number
      *
      * Generated from protobuf field <code>int64 int_value = 21;</code>
      * @return int|string
@@ -775,7 +775,7 @@ class Data extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input and output integer number 
+     * Input and output integer number
      *
      * Generated from protobuf field <code>int64 int_value = 21;</code>
      * @param int|string $var

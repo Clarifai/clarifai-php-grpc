@@ -388,12 +388,6 @@ class S
      */
     const LabelOrders_Delete = 69;
     /**
-     * Read from user_feature_configs table
-     *
-     * Generated from protobuf enum <code>UserFeatureConfigs_Get = 71 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
-     */
-    const UserFeatureConfigs_Get = 71;
-    /**
      * CRUD on FindDuplicateAnnotationsJobs table
      *
      * Generated from protobuf enum <code>FindDuplicateAnnotationsJobs_Add = 102 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
@@ -611,6 +605,14 @@ class S
      * Generated from protobuf enum <code>LogEntries_Get = 151 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const LogEntries_Get = 151;
+    /**
+     * Generated from protobuf enum <code>WorkflowVersionEvaluations_Get = 152 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const WorkflowVersionEvaluations_Get = 152;
+    /**
+     * Generated from protobuf enum <code>WorkflowVersionEvaluations_Add = 153 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowVersionEvaluations_Get];</code>
+     */
+    const WorkflowVersionEvaluations_Add = 153;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -671,7 +673,6 @@ class S
         self::LabelOrders_Get => 'LabelOrders_Get',
         self::LabelOrders_Add => 'LabelOrders_Add',
         self::LabelOrders_Delete => 'LabelOrders_Delete',
-        self::UserFeatureConfigs_Get => 'UserFeatureConfigs_Get',
         self::FindDuplicateAnnotationsJobs_Add => 'FindDuplicateAnnotationsJobs_Add',
         self::FindDuplicateAnnotationsJobs_Get => 'FindDuplicateAnnotationsJobs_Get',
         self::FindDuplicateAnnotationsJobs_Delete => 'FindDuplicateAnnotationsJobs_Delete',
@@ -716,6 +717,8 @@ class S
         self::InstanceTypes_Get => 'InstanceTypes_Get',
         self::AuditLogs_Get => 'AuditLogs_Get',
         self::LogEntries_Get => 'LogEntries_Get',
+        self::WorkflowVersionEvaluations_Get => 'WorkflowVersionEvaluations_Get',
+        self::WorkflowVersionEvaluations_Add => 'WorkflowVersionEvaluations_Add',
     ];
 
     public static function name($value)

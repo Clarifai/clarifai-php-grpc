@@ -40,6 +40,12 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.EvalInfo eval_info = 10;</code>
      */
     protected $eval_info = null;
+    /**
+     * When set to true, we will convert the model into a containerized model after training.
+     *
+     * Generated from protobuf field <code>bool do_migration = 11;</code>
+     */
+    protected $do_migration = false;
 
     /**
      * Constructor.
@@ -55,6 +61,8 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\EvalInfo $eval_info
      *           When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
      *           We will merge this with default_eval_info.
+     *     @type bool $do_migration
+     *           When set to true, we will convert the model into a containerized model after training.
      * }
      */
     public function __construct($data = NULL) {
@@ -198,6 +206,32 @@ class PostModelVersionsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\EvalInfo::class);
         $this->eval_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * When set to true, we will convert the model into a containerized model after training.
+     *
+     * Generated from protobuf field <code>bool do_migration = 11;</code>
+     * @return bool
+     */
+    public function getDoMigration()
+    {
+        return $this->do_migration;
+    }
+
+    /**
+     * When set to true, we will convert the model into a containerized model after training.
+     *
+     * Generated from protobuf field <code>bool do_migration = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDoMigration($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->do_migration = $var;
 
         return $this;
     }

@@ -57,6 +57,12 @@ class AutoscaleConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool disable_packing = 7;</code>
      */
     protected $disable_packing = false;
+    /**
+     * The idle time before scaling down to zero
+     *
+     * Generated from protobuf field <code>uint32 scale_to_zero_delay_seconds = 8;</code>
+     */
+    protected $scale_to_zero_delay_seconds = 0;
 
     /**
      * Constructor.
@@ -79,6 +85,8 @@ class AutoscaleConfig extends \Google\Protobuf\Internal\Message
      *     @type bool $disable_packing
      *           Depending on your plan you may be able to enable packing of resources into a single node
      *           for more compute and cost efficiency.
+     *     @type int $scale_to_zero_delay_seconds
+     *           The idle time before scaling down to zero
      * }
      */
     public function __construct($data = NULL) {
@@ -244,6 +252,32 @@ class AutoscaleConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->disable_packing = $var;
+
+        return $this;
+    }
+
+    /**
+     * The idle time before scaling down to zero
+     *
+     * Generated from protobuf field <code>uint32 scale_to_zero_delay_seconds = 8;</code>
+     * @return int
+     */
+    public function getScaleToZeroDelaySeconds()
+    {
+        return $this->scale_to_zero_delay_seconds;
+    }
+
+    /**
+     * The idle time before scaling down to zero
+     *
+     * Generated from protobuf field <code>uint32 scale_to_zero_delay_seconds = 8;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setScaleToZeroDelaySeconds($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->scale_to_zero_delay_seconds = $var;
 
         return $this;
     }

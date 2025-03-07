@@ -51,6 +51,8 @@ class RunnerItem extends \Google\Protobuf\Internal\Message
      *           Information on how to process the given RunnerItem.
      *     @type \Clarifai\Api\PostModelOutputsRequest $post_model_outputs_request
      *           Model prediction request from a user.
+     *     @type \Clarifai\Api\SyncStateRequest $sync_state_request
+     *           Agent sync request from control plane.
      * }
      */
     public function __construct($data = NULL) {
@@ -173,6 +175,37 @@ class RunnerItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\PostModelOutputsRequest::class);
         $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * Agent sync request from control plane.
+     *
+     * Generated from protobuf field <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+     * @return \Clarifai\Api\SyncStateRequest|null
+     */
+    public function getSyncStateRequest()
+    {
+        return $this->readOneof(5);
+    }
+
+    public function hasSyncStateRequest()
+    {
+        return $this->hasOneof(5);
+    }
+
+    /**
+     * Agent sync request from control plane.
+     *
+     * Generated from protobuf field <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+     * @param \Clarifai\Api\SyncStateRequest $var
+     * @return $this
+     */
+    public function setSyncStateRequest($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\SyncStateRequest::class);
+        $this->writeOneof(5, $var);
 
         return $this;
     }

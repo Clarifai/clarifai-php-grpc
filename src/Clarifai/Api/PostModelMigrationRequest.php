@@ -9,22 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>clarifai.api.DeleteComputeClustersRequest</code>
+ * Generated from protobuf message <code>clarifai.api.PostModelMigrationRequest</code>
  */
-class DeleteComputeClustersRequest extends \Google\Protobuf\Internal\Message
+class PostModelMigrationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Only the user_id is used from this.
-     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * List of compute cluster ids to be deleted
-     *
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
+     * Generated from protobuf field <code>string model_id = 2;</code>
      */
-    private $ids;
+    protected $model_id = '';
 
     /**
      * Constructor.
@@ -33,9 +29,7 @@ class DeleteComputeClustersRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *           Only the user_id is used from this.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
-     *           List of compute cluster ids to be deleted
+     *     @type string $model_id
      * }
      */
     public function __construct($data = NULL) {
@@ -44,8 +38,6 @@ class DeleteComputeClustersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Only the user_id is used from this.
-     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @return \Clarifai\Api\UserAppIDSet|null
      */
@@ -65,8 +57,6 @@ class DeleteComputeClustersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Only the user_id is used from this.
-     *
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @param \Clarifai\Api\UserAppIDSet $var
      * @return $this
@@ -80,27 +70,23 @@ class DeleteComputeClustersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of compute cluster ids to be deleted
-     *
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>string model_id = 2;</code>
+     * @return string
      */
-    public function getIds()
+    public function getModelId()
     {
-        return $this->ids;
+        return $this->model_id;
     }
 
     /**
-     * List of compute cluster ids to be deleted
-     *
-     * Generated from protobuf field <code>repeated string ids = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>string model_id = 2;</code>
+     * @param string $var
      * @return $this
      */
-    public function setIds($var)
+    public function setModelId($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->ids = $arr;
+        GPBUtil::checkString($var, True);
+        $this->model_id = $var;
 
         return $this;
     }
