@@ -35,6 +35,8 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      * - metrics.review.inputs_count_estimated
      * - metrics.review.inputs_count_estimated_per_reviewer
      * - metrics.review.inputs_percent_estimated
+     * - metrics.review.inputs_percent_estimated_per_reviewer
+     * - metrics.review.inputs_reviewable_count_estimated_per_reviewer
      *
      * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
      */
@@ -60,6 +62,8 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      *           - metrics.review.inputs_count_estimated
      *           - metrics.review.inputs_count_estimated_per_reviewer
      *           - metrics.review.inputs_percent_estimated
+     *           - metrics.review.inputs_percent_estimated_per_reviewer
+     *           - metrics.review.inputs_reviewable_count_estimated_per_reviewer
      * }
      */
     public function __construct($data = NULL) {
@@ -133,6 +137,8 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      * - metrics.review.inputs_count_estimated
      * - metrics.review.inputs_count_estimated_per_reviewer
      * - metrics.review.inputs_percent_estimated
+     * - metrics.review.inputs_percent_estimated_per_reviewer
+     * - metrics.review.inputs_reviewable_count_estimated_per_reviewer
      *
      * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -154,6 +160,8 @@ class GetTaskRequest extends \Google\Protobuf\Internal\Message
      * - metrics.review.inputs_count_estimated
      * - metrics.review.inputs_count_estimated_per_reviewer
      * - metrics.review.inputs_percent_estimated
+     * - metrics.review.inputs_percent_estimated_per_reviewer
+     * - metrics.review.inputs_reviewable_count_estimated_per_reviewer
      *
      * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var

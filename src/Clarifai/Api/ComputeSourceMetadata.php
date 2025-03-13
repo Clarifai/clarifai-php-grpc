@@ -53,6 +53,20 @@ class ComputeSourceMetadata extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string runner_id = 8;</code>
      */
     protected $runner_id = '';
+    /**
+     * Pipeline related data, if any
+     *
+     * Generated from protobuf field <code>string pipeline_id = 9;</code>
+     */
+    protected $pipeline_id = '';
+    /**
+     * Generated from protobuf field <code>string pipeline_version_id = 10;</code>
+     */
+    protected $pipeline_version_id = '';
+    /**
+     * Generated from protobuf field <code>string pipeline_version_run_id = 11;</code>
+     */
+    protected $pipeline_version_run_id = '';
 
     /**
      * Constructor.
@@ -72,6 +86,10 @@ class ComputeSourceMetadata extends \Google\Protobuf\Internal\Message
      *           Compute Cluster, Nodepool, Runner.
      *     @type string $nodepool_id
      *     @type string $runner_id
+     *     @type string $pipeline_id
+     *           Pipeline related data, if any
+     *     @type string $pipeline_version_id
+     *     @type string $pipeline_version_run_id
      * }
      */
     public function __construct($data = NULL) {
@@ -259,6 +277,76 @@ class ComputeSourceMetadata extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->runner_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Pipeline related data, if any
+     *
+     * Generated from protobuf field <code>string pipeline_id = 9;</code>
+     * @return string
+     */
+    public function getPipelineId()
+    {
+        return $this->pipeline_id;
+    }
+
+    /**
+     * Pipeline related data, if any
+     *
+     * Generated from protobuf field <code>string pipeline_id = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPipelineId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->pipeline_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string pipeline_version_id = 10;</code>
+     * @return string
+     */
+    public function getPipelineVersionId()
+    {
+        return $this->pipeline_version_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string pipeline_version_id = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPipelineVersionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->pipeline_version_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string pipeline_version_run_id = 11;</code>
+     * @return string
+     */
+    public function getPipelineVersionRunId()
+    {
+        return $this->pipeline_version_run_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string pipeline_version_run_id = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPipelineVersionRunId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->pipeline_version_run_id = $var;
 
         return $this;
     }

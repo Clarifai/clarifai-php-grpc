@@ -3391,6 +3391,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Patch runners of a user.
+     * @param \Clarifai\Api\PatchRunnersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchRunners(\Clarifai\Api\PatchRunnersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchRunners',
+        $argument,
+        ['\Clarifai\Api\MultiRunnerResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Delete multiple runners in one request.
      * @param \Clarifai\Api\DeleteRunnersRequest $argument input argument
      * @param array $metadata metadata

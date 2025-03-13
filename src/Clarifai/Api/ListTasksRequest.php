@@ -70,6 +70,8 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      * - metrics.review.inputs_count_estimated
      * - metrics.review.inputs_count_estimated_per_reviewer
      * - metrics.review.inputs_percent_estimated
+     * - metrics.review.inputs_percent_estimated_per_reviewer
+     * - metrics.review.inputs_reviewable_count_estimated_per_reviewer
      *
      * Generated from protobuf field <code>repeated string additional_fields = 7;</code>
      */
@@ -127,6 +129,8 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      *           - metrics.review.inputs_count_estimated
      *           - metrics.review.inputs_count_estimated_per_reviewer
      *           - metrics.review.inputs_percent_estimated
+     *           - metrics.review.inputs_percent_estimated_per_reviewer
+     *           - metrics.review.inputs_reviewable_count_estimated_per_reviewer
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
      *           (optional) task IDs to filter on
      *     @type int $input_source_type
@@ -346,6 +350,8 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      * - metrics.review.inputs_count_estimated
      * - metrics.review.inputs_count_estimated_per_reviewer
      * - metrics.review.inputs_percent_estimated
+     * - metrics.review.inputs_percent_estimated_per_reviewer
+     * - metrics.review.inputs_reviewable_count_estimated_per_reviewer
      *
      * Generated from protobuf field <code>repeated string additional_fields = 7;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -367,6 +373,8 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      * - metrics.review.inputs_count_estimated
      * - metrics.review.inputs_count_estimated_per_reviewer
      * - metrics.review.inputs_percent_estimated
+     * - metrics.review.inputs_percent_estimated_per_reviewer
+     * - metrics.review.inputs_reviewable_count_estimated_per_reviewer
      *
      * Generated from protobuf field <code>repeated string additional_fields = 7;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var

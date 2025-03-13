@@ -14,18 +14,32 @@ use Google\Protobuf\Internal\GPBUtil;
 class TaskReviewMetrics extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Estimated number of reviewed inputs by at least one reviewer.
+     * Estimated number of fully reviewed inputs.
+     * An input is considered fully reviewed if it has been reviewed by all necessary reviewers.
+     * Example: if task has no review, then an input is considered fully reviewed right after it's labeled (as review is skipped).
+     * Example: if task has manual review with single-reviewer per input, then an input is considered fully reviewed when 1 reviewer has approved/rejected it.
+     * Example: if task has consensus review with 3 reviewers per input, then an input is considered fully reviewed when 3 reviewers have approved it or 1 reviewer has rejected it.
      *
      * Generated from protobuf field <code>uint64 inputs_count_estimated = 1;</code>
      */
     protected $inputs_count_estimated = 0;
     /**
+     * Estimated percent of review work that was finished.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated/task.metrics.input_source.inputs_count_estimated.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     *
+     * Generated from protobuf field <code>uint32 inputs_percent_estimated = 2;</code>
+     */
+    protected $inputs_percent_estimated = 0;
+    /**
      * Estimated number of reviewed inputs per reviewer index.
      * The reviewer indexes are based on task.review.users.
      * An input is considered reviewed by a reviewer if:
      * * the reviewer approved the input
-     * * ANY reviewer rejected the input (as rejection is final)
-     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * * the reviewer rejected the input
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again, so the whole work & review process is restarted.
      * The reviewer will have to review the input again after work has been completed.
      * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
      *
@@ -33,16 +47,28 @@ class TaskReviewMetrics extends \Google\Protobuf\Internal\Message
      */
     private $inputs_count_estimated_per_reviewer;
     /**
-     * Estimated percent of review work that was finished.
-     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
-     * Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
-     * The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
-     * The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
-     * the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
+     * The number of inputs actually available for review for each reviewer.
+     * Most times, this equals task.metrics.input_source.inputs_count_estimated.
+     * Several situations may result in different values:
+     * * When task has no review, then this is 0 for each reviewer.
+     * * When task has auto-annotation, then this number equals the inputs that have been auto-annotated with AWAITING_REVIEW status. All other inputs are considered completed by the auto-annotation process.
+     * * When task has consensus review with approval_threshold_labelers > 0, then it's possible that labelers will approve inputs through consensus, which skips review. In this case, the number of inputs available for review is less than task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = 1, then all inputs are assigned only to one reviewer, so each reviewer will get only a part of the inputs to review. It's expected that the sum(inputs_reviewable_count_estimated) = task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = -1, then all inputs are assigned to all reviewers. However, if an input is rejected, then rejection is final and all other reviewers will not review it. In this case, the number of inputs available for review for other reviewers will be less than task.metrics.input_source.inputs_count_estimated.
      *
-     * Generated from protobuf field <code>uint32 inputs_percent_estimated = 2;</code>
+     * Generated from protobuf field <code>repeated uint64 inputs_reviewable_count_estimated_per_reviewer = 4;</code>
      */
-    protected $inputs_percent_estimated = 0;
+    private $inputs_reviewable_count_estimated_per_reviewer;
+    /**
+     * Estimated percent of review work that was finished per reviewer.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated_per_reviewer/inputs_reviewable_count_estimated_per_reviewer.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     *
+     * Generated from protobuf field <code>repeated uint32 inputs_percent_estimated_per_reviewer = 5;</code>
+     */
+    private $inputs_percent_estimated_per_reviewer;
 
     /**
      * Constructor.
@@ -51,23 +77,41 @@ class TaskReviewMetrics extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $inputs_count_estimated
-     *           Estimated number of reviewed inputs by at least one reviewer.
+     *           Estimated number of fully reviewed inputs.
+     *           An input is considered fully reviewed if it has been reviewed by all necessary reviewers.
+     *           Example: if task has no review, then an input is considered fully reviewed right after it's labeled (as review is skipped).
+     *           Example: if task has manual review with single-reviewer per input, then an input is considered fully reviewed when 1 reviewer has approved/rejected it.
+     *           Example: if task has consensus review with 3 reviewers per input, then an input is considered fully reviewed when 3 reviewers have approved it or 1 reviewer has rejected it.
+     *     @type int $inputs_percent_estimated
+     *           Estimated percent of review work that was finished.
+     *           This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     *           Calculated as inputs_count_estimated/task.metrics.input_source.inputs_count_estimated.
+     *           As the counts are estimated, the percentage is also estimated.
+     *           However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
      *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $inputs_count_estimated_per_reviewer
      *           Estimated number of reviewed inputs per reviewer index.
      *           The reviewer indexes are based on task.review.users.
      *           An input is considered reviewed by a reviewer if:
      *           * the reviewer approved the input
-     *           * ANY reviewer rejected the input (as rejection is final)
-     *           Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     *           * the reviewer rejected the input
+     *           Note that when a reviewer requests changes for an input, the input is sent to back to work again, so the whole work & review process is restarted.
      *           The reviewer will have to review the input again after work has been completed.
      *           As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
-     *     @type int $inputs_percent_estimated
-     *           Estimated percent of review work that was finished.
+     *     @type array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $inputs_reviewable_count_estimated_per_reviewer
+     *           The number of inputs actually available for review for each reviewer.
+     *           Most times, this equals task.metrics.input_source.inputs_count_estimated.
+     *           Several situations may result in different values:
+     *           * When task has no review, then this is 0 for each reviewer.
+     *           * When task has auto-annotation, then this number equals the inputs that have been auto-annotated with AWAITING_REVIEW status. All other inputs are considered completed by the auto-annotation process.
+     *           * When task has consensus review with approval_threshold_labelers > 0, then it's possible that labelers will approve inputs through consensus, which skips review. In this case, the number of inputs available for review is less than task.metrics.input_source.inputs_count_estimated.
+     *           * When task has consensus review with approval_threshold_reviewers = 1, then all inputs are assigned only to one reviewer, so each reviewer will get only a part of the inputs to review. It's expected that the sum(inputs_reviewable_count_estimated) = task.metrics.input_source.inputs_count_estimated.
+     *           * When task has consensus review with approval_threshold_reviewers = -1, then all inputs are assigned to all reviewers. However, if an input is rejected, then rejection is final and all other reviewers will not review it. In this case, the number of inputs available for review for other reviewers will be less than task.metrics.input_source.inputs_count_estimated.
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $inputs_percent_estimated_per_reviewer
+     *           Estimated percent of review work that was finished per reviewer.
      *           This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
-     *           Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
-     *           The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
-     *           The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
-     *           the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
+     *           Calculated as inputs_count_estimated_per_reviewer/inputs_reviewable_count_estimated_per_reviewer.
+     *           As the counts are estimated, the percentage is also estimated.
+     *           However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
      * }
      */
     public function __construct($data = NULL) {
@@ -76,7 +120,11 @@ class TaskReviewMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated number of reviewed inputs by at least one reviewer.
+     * Estimated number of fully reviewed inputs.
+     * An input is considered fully reviewed if it has been reviewed by all necessary reviewers.
+     * Example: if task has no review, then an input is considered fully reviewed right after it's labeled (as review is skipped).
+     * Example: if task has manual review with single-reviewer per input, then an input is considered fully reviewed when 1 reviewer has approved/rejected it.
+     * Example: if task has consensus review with 3 reviewers per input, then an input is considered fully reviewed when 3 reviewers have approved it or 1 reviewer has rejected it.
      *
      * Generated from protobuf field <code>uint64 inputs_count_estimated = 1;</code>
      * @return int|string
@@ -87,7 +135,11 @@ class TaskReviewMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated number of reviewed inputs by at least one reviewer.
+     * Estimated number of fully reviewed inputs.
+     * An input is considered fully reviewed if it has been reviewed by all necessary reviewers.
+     * Example: if task has no review, then an input is considered fully reviewed right after it's labeled (as review is skipped).
+     * Example: if task has manual review with single-reviewer per input, then an input is considered fully reviewed when 1 reviewer has approved/rejected it.
+     * Example: if task has consensus review with 3 reviewers per input, then an input is considered fully reviewed when 3 reviewers have approved it or 1 reviewer has rejected it.
      *
      * Generated from protobuf field <code>uint64 inputs_count_estimated = 1;</code>
      * @param int|string $var
@@ -102,12 +154,46 @@ class TaskReviewMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Estimated percent of review work that was finished.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated/task.metrics.input_source.inputs_count_estimated.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     *
+     * Generated from protobuf field <code>uint32 inputs_percent_estimated = 2;</code>
+     * @return int
+     */
+    public function getInputsPercentEstimated()
+    {
+        return $this->inputs_percent_estimated;
+    }
+
+    /**
+     * Estimated percent of review work that was finished.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated/task.metrics.input_source.inputs_count_estimated.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     *
+     * Generated from protobuf field <code>uint32 inputs_percent_estimated = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInputsPercentEstimated($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->inputs_percent_estimated = $var;
+
+        return $this;
+    }
+
+    /**
      * Estimated number of reviewed inputs per reviewer index.
      * The reviewer indexes are based on task.review.users.
      * An input is considered reviewed by a reviewer if:
      * * the reviewer approved the input
-     * * ANY reviewer rejected the input (as rejection is final)
-     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * * the reviewer rejected the input
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again, so the whole work & review process is restarted.
      * The reviewer will have to review the input again after work has been completed.
      * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
      *
@@ -124,8 +210,8 @@ class TaskReviewMetrics extends \Google\Protobuf\Internal\Message
      * The reviewer indexes are based on task.review.users.
      * An input is considered reviewed by a reviewer if:
      * * the reviewer approved the input
-     * * ANY reviewer rejected the input (as rejection is final)
-     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * * the reviewer rejected the input
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again, so the whole work & review process is restarted.
      * The reviewer will have to review the input again after work has been completed.
      * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
      *
@@ -142,37 +228,75 @@ class TaskReviewMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated percent of review work that was finished.
-     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
-     * Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
-     * The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
-     * The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
-     * the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
+     * The number of inputs actually available for review for each reviewer.
+     * Most times, this equals task.metrics.input_source.inputs_count_estimated.
+     * Several situations may result in different values:
+     * * When task has no review, then this is 0 for each reviewer.
+     * * When task has auto-annotation, then this number equals the inputs that have been auto-annotated with AWAITING_REVIEW status. All other inputs are considered completed by the auto-annotation process.
+     * * When task has consensus review with approval_threshold_labelers > 0, then it's possible that labelers will approve inputs through consensus, which skips review. In this case, the number of inputs available for review is less than task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = 1, then all inputs are assigned only to one reviewer, so each reviewer will get only a part of the inputs to review. It's expected that the sum(inputs_reviewable_count_estimated) = task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = -1, then all inputs are assigned to all reviewers. However, if an input is rejected, then rejection is final and all other reviewers will not review it. In this case, the number of inputs available for review for other reviewers will be less than task.metrics.input_source.inputs_count_estimated.
      *
-     * Generated from protobuf field <code>uint32 inputs_percent_estimated = 2;</code>
-     * @return int
+     * Generated from protobuf field <code>repeated uint64 inputs_reviewable_count_estimated_per_reviewer = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getInputsPercentEstimated()
+    public function getInputsReviewableCountEstimatedPerReviewer()
     {
-        return $this->inputs_percent_estimated;
+        return $this->inputs_reviewable_count_estimated_per_reviewer;
     }
 
     /**
-     * Estimated percent of review work that was finished.
-     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
-     * Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
-     * The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
-     * The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
-     * the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
+     * The number of inputs actually available for review for each reviewer.
+     * Most times, this equals task.metrics.input_source.inputs_count_estimated.
+     * Several situations may result in different values:
+     * * When task has no review, then this is 0 for each reviewer.
+     * * When task has auto-annotation, then this number equals the inputs that have been auto-annotated with AWAITING_REVIEW status. All other inputs are considered completed by the auto-annotation process.
+     * * When task has consensus review with approval_threshold_labelers > 0, then it's possible that labelers will approve inputs through consensus, which skips review. In this case, the number of inputs available for review is less than task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = 1, then all inputs are assigned only to one reviewer, so each reviewer will get only a part of the inputs to review. It's expected that the sum(inputs_reviewable_count_estimated) = task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = -1, then all inputs are assigned to all reviewers. However, if an input is rejected, then rejection is final and all other reviewers will not review it. In this case, the number of inputs available for review for other reviewers will be less than task.metrics.input_source.inputs_count_estimated.
      *
-     * Generated from protobuf field <code>uint32 inputs_percent_estimated = 2;</code>
-     * @param int $var
+     * Generated from protobuf field <code>repeated uint64 inputs_reviewable_count_estimated_per_reviewer = 4;</code>
+     * @param array<int>|array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setInputsPercentEstimated($var)
+    public function setInputsReviewableCountEstimatedPerReviewer($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->inputs_percent_estimated = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT64);
+        $this->inputs_reviewable_count_estimated_per_reviewer = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Estimated percent of review work that was finished per reviewer.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated_per_reviewer/inputs_reviewable_count_estimated_per_reviewer.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     *
+     * Generated from protobuf field <code>repeated uint32 inputs_percent_estimated_per_reviewer = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getInputsPercentEstimatedPerReviewer()
+    {
+        return $this->inputs_percent_estimated_per_reviewer;
+    }
+
+    /**
+     * Estimated percent of review work that was finished per reviewer.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated_per_reviewer/inputs_reviewable_count_estimated_per_reviewer.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     *
+     * Generated from protobuf field <code>repeated uint32 inputs_percent_estimated_per_reviewer = 5;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setInputsPercentEstimatedPerReviewer($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
+        $this->inputs_percent_estimated_per_reviewer = $arr;
 
         return $this;
     }

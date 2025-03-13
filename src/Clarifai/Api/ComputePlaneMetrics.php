@@ -82,6 +82,12 @@ class ComputePlaneMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string hostname = 11;</code>
      */
     protected $hostname = '';
+    /**
+     * CPU metrics.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    private $cpu_metrics;
 
     /**
      * Constructor.
@@ -111,6 +117,8 @@ class ComputePlaneMetrics extends \Google\Protobuf\Internal\Message
      *           GPU metrics.
      *     @type string $hostname
      *           Hostname of the node.
+     *     @type array<\Clarifai\Api\CpuMetrics>|\Google\Protobuf\Internal\RepeatedField $cpu_metrics
+     *           CPU metrics.
      * }
      */
     public function __construct($data = NULL) {
@@ -420,6 +428,32 @@ class ComputePlaneMetrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->hostname = $var;
+
+        return $this;
+    }
+
+    /**
+     * CPU metrics.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCpuMetrics()
+    {
+        return $this->cpu_metrics;
+    }
+
+    /**
+     * CPU metrics.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     * @param array<\Clarifai\Api\CpuMetrics>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCpuMetrics($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\CpuMetrics::class);
+        $this->cpu_metrics = $arr;
 
         return $this;
     }
