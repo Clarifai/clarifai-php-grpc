@@ -57,6 +57,10 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
      */
     protected $params = null;
     /**
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     private $params_specs;
@@ -82,6 +86,9 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
      *           that the ModelTypeField defines. During inference, the settings contained within are sent
      *           to the model predictor to alter predictions from this Model.
      *     @type array<\Clarifai\Api\ModelTypeField>|\Google\Protobuf\Internal\RepeatedField $params_specs
+     *           These allow you to specifcy addition fields that a specific model supports beyond those defined
+     *           in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     *           proto.
      * }
      */
     public function __construct($data = NULL) {
@@ -268,6 +275,10 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -277,6 +288,10 @@ class OutputInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     *
      * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      * @param array<\Clarifai\Api\ModelTypeField>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this

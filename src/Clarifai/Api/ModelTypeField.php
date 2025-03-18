@@ -29,7 +29,8 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
      */
     protected $path = '';
     /**
-     * The field for this field.
+     * The field for this field. This is often used for displaying the field in the UI whereas
+     * the DataType enum below defines the specific type of datain the Python function.
      *
      * Generated from protobuf field <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
      */
@@ -79,6 +80,39 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
      */
     protected $model_type_range_info = null;
+    /**
+     * name of method signature argument
+     *
+     * Generated from protobuf field <code>string name = 10;</code>
+     */
+    protected $name = '';
+    /**
+     * The type of the argument.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ModelTypeField.DataType type = 11;</code>
+     */
+    protected $type = 0;
+    /**
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    private $type_args;
+    /**
+     * this will be use to define whether the method argument supports streaming as an iterator.
+     *
+     * Generated from protobuf field <code>bool iterator = 13;</code>
+     */
+    protected $iterator = false;
+    /**
+     * This specify the default value of the method argument. We define this as a string
+     * because the default value can be a string, int, float, bool, or a complex object like a JSON
+     * The default_value field above should not also be used.
+     *
+     * Generated from protobuf field <code>string default = 14;</code>
+     */
+    protected $default = '';
 
     /**
      * Constructor.
@@ -96,7 +130,8 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
      *           "train_info.params" is in the params struct within TrainInfo.
      *           and so on.
      *     @type int $field_type
-     *           The field for this field.
+     *           The field for this field. This is often used for displaying the field in the UI whereas
+     *           the DataType enum below defines the specific type of datain the Python function.
      *     @type \Google\Protobuf\Value $default_value
      *           A default value. We use the Value field because we want to have structured data (just like
      *           google.protobuf.Struct but this is just a single value).
@@ -114,6 +149,19 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
      *           default_value will be used for this field.
      *     @type \Clarifai\Api\ModelTypeRangeInfo $model_type_range_info
      *           If the field_type is RANGE, this must be filled in.
+     *     @type string $name
+     *           name of method signature argument
+     *     @type int $type
+     *           The type of the argument.
+     *     @type array<\Clarifai\Api\ModelTypeField>|\Google\Protobuf\Internal\RepeatedField $type_args
+     *           type enum, and recursively set type_args with
+     *           the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     *     @type bool $iterator
+     *           this will be use to define whether the method argument supports streaming as an iterator.
+     *     @type string $default
+     *           This specify the default value of the method argument. We define this as a string
+     *           because the default value can be a string, int, float, bool, or a complex object like a JSON
+     *           The default_value field above should not also be used.
      * }
      */
     public function __construct($data = NULL) {
@@ -162,7 +210,8 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The field for this field.
+     * The field for this field. This is often used for displaying the field in the UI whereas
+     * the DataType enum below defines the specific type of datain the Python function.
      *
      * Generated from protobuf field <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
      * @return int
@@ -173,7 +222,8 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The field for this field.
+     * The field for this field. This is often used for displaying the field in the UI whereas
+     * the DataType enum below defines the specific type of datain the Python function.
      *
      * Generated from protobuf field <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
      * @param int $var
@@ -391,6 +441,142 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\ModelTypeRangeInfo::class);
         $this->model_type_range_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * name of method signature argument
+     *
+     * Generated from protobuf field <code>string name = 10;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * name of method signature argument
+     *
+     * Generated from protobuf field <code>string name = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * The type of the argument.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ModelTypeField.DataType type = 11;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * The type of the argument.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ModelTypeField.DataType type = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\ModelTypeField\DataType::class);
+        $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTypeArgs()
+    {
+        return $this->type_args;
+    }
+
+    /**
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     * @param array<\Clarifai\Api\ModelTypeField>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTypeArgs($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\ModelTypeField::class);
+        $this->type_args = $arr;
+
+        return $this;
+    }
+
+    /**
+     * this will be use to define whether the method argument supports streaming as an iterator.
+     *
+     * Generated from protobuf field <code>bool iterator = 13;</code>
+     * @return bool
+     */
+    public function getIterator()
+    {
+        return $this->iterator;
+    }
+
+    /**
+     * this will be use to define whether the method argument supports streaming as an iterator.
+     *
+     * Generated from protobuf field <code>bool iterator = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIterator($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->iterator = $var;
+
+        return $this;
+    }
+
+    /**
+     * This specify the default value of the method argument. We define this as a string
+     * because the default value can be a string, int, float, bool, or a complex object like a JSON
+     * The default_value field above should not also be used.
+     *
+     * Generated from protobuf field <code>string default = 14;</code>
+     * @return string
+     */
+    public function getDefault()
+    {
+        return $this->default;
+    }
+
+    /**
+     * This specify the default value of the method argument. We define this as a string
+     * because the default value can be a string, int, float, bool, or a complex object like a JSON
+     * The default_value field above should not also be used.
+     *
+     * Generated from protobuf field <code>string default = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDefault($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->default = $var;
 
         return $this;
     }

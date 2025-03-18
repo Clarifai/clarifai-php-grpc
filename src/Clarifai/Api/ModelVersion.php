@@ -147,6 +147,12 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.BuildInfo build_info = 25;</code>
      */
     protected $build_info = null;
+    /**
+     * Model signature information for the model version
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     */
+    private $method_signature;
 
     /**
      * Constructor.
@@ -202,6 +208,8 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *           The minimum required compute resource for this model for inference.
      *     @type \Clarifai\Api\BuildInfo $build_info
      *           Build information for the model version
+     *     @type array<\Clarifai\Api\MethodSignature>|\Google\Protobuf\Internal\RepeatedField $method_signature
+     *           Model signature information for the model version
      * }
      */
     public function __construct($data = NULL) {
@@ -917,6 +925,32 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\BuildInfo::class);
         $this->build_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Model signature information for the model version
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getMethodSignature()
+    {
+        return $this->method_signature;
+    }
+
+    /**
+     * Model signature information for the model version
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * @param array<\Clarifai\Api\MethodSignature>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setMethodSignature($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\MethodSignature::class);
+        $this->method_signature = $arr;
 
         return $this;
     }

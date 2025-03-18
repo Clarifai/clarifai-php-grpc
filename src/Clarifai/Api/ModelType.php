@@ -97,6 +97,14 @@ class ModelType extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
      */
     protected $evaluation_type = 0;
+    /**
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    private $method_signatures;
 
     /**
      * Constructor.
@@ -133,6 +141,10 @@ class ModelType extends \Google\Protobuf\Internal\Message
      *           Expected output layers of an uploaded model
      *     @type int $evaluation_type
      *           What type of evaluation is supported for this model type.
+     *     @type array<\Clarifai\Api\MethodSignature>|\Google\Protobuf\Internal\RepeatedField $method_signatures
+     *           method signature for this model type
+     *           This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     *           as it can define any python function call.
      * }
      */
     public function __construct($data = NULL) {
@@ -480,6 +492,36 @@ class ModelType extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Clarifai\Api\EvaluationType::class);
         $this->evaluation_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getMethodSignatures()
+    {
+        return $this->method_signatures;
+    }
+
+    /**
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     * @param array<\Clarifai\Api\MethodSignature>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setMethodSignatures($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\MethodSignature::class);
+        $this->method_signatures = $arr;
 
         return $this;
     }
