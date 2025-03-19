@@ -1587,6 +1587,10 @@ class StatusCode
      */
     const FEATUREFLAG_BLOCKED = 62002;
     /**
+     * Generated from protobuf enum <code>FEATUREFLAG_NOT_FOUND = 62003;</code>
+     */
+    const FEATUREFLAG_NOT_FOUND = 62003;
+    /**
      * Maintenance status code
      *
      * Generated from protobuf enum <code>MAINTENANCE_SUCCESS = 63000;</code>
@@ -2196,6 +2200,7 @@ class StatusCode
         self::FEATUREFLAG_CONFIG_NOT_FOUND => 'FEATUREFLAG_CONFIG_NOT_FOUND',
         self::FEATUREFLAG_INVALID_ARGUMENT => 'FEATUREFLAG_INVALID_ARGUMENT',
         self::FEATUREFLAG_BLOCKED => 'FEATUREFLAG_BLOCKED',
+        self::FEATUREFLAG_NOT_FOUND => 'FEATUREFLAG_NOT_FOUND',
         self::MAINTENANCE_SUCCESS => 'MAINTENANCE_SUCCESS',
         self::MAINTENANCE_FAILED => 'MAINTENANCE_FAILED',
         self::DATASET_VERSION_PENDING => 'DATASET_VERSION_PENDING',
