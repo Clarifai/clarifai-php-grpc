@@ -85,6 +85,12 @@ class WorkflowVersionEvaluation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 12;</code>
      */
     protected $modified_at = null;
+    /**
+     * The ID of the node that is being evaluated.
+     *
+     * Generated from protobuf field <code>string target_node_id = 13;</code>
+     */
+    protected $target_node_id = '';
 
     /**
      * Constructor.
@@ -116,6 +122,8 @@ class WorkflowVersionEvaluation extends \Google\Protobuf\Internal\Message
      *           When the workflow version evaluation was created.
      *     @type \Google\Protobuf\Timestamp $modified_at
      *           When the workflow version evaluation was modified.
+     *     @type string $target_node_id
+     *           The ID of the node that is being evaluated.
      * }
      */
     public function __construct($data = NULL) {
@@ -471,6 +479,32 @@ class WorkflowVersionEvaluation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->modified_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * The ID of the node that is being evaluated.
+     *
+     * Generated from protobuf field <code>string target_node_id = 13;</code>
+     * @return string
+     */
+    public function getTargetNodeId()
+    {
+        return $this->target_node_id;
+    }
+
+    /**
+     * The ID of the node that is being evaluated.
+     *
+     * Generated from protobuf field <code>string target_node_id = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTargetNodeId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->target_node_id = $var;
 
         return $this;
     }

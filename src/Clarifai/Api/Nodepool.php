@@ -57,18 +57,30 @@ class Nodepool extends \Google\Protobuf\Internal\Message
     private $instance_types;
     /**
      * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
-     * amount.
+     * amount. This is the user desired minimum.
      *
      * Generated from protobuf field <code>uint32 min_instances = 9;</code>
      */
     protected $min_instances = 0;
     /**
      * An upper limit on the number of instances in this nodepool. This allows the nodepool to scale
-     * up to this amount.
+     * up to this amount. This is the user desired maximum.
      *
      * Generated from protobuf field <code>uint32 max_instances = 10;</code>
      */
     protected $max_instances = 0;
+    /**
+     * The actual minimum number of instances. Enforced by the user's plan limits.
+     *
+     * Generated from protobuf field <code>uint32 enforced_min_instances = 13;</code>
+     */
+    protected $enforced_min_instances = 0;
+    /**
+     * The actual maximum number of instances. Enforced by the user's plan limits.
+     *
+     * Generated from protobuf field <code>uint32 enforced_max_instances = 14;</code>
+     */
+    protected $enforced_max_instances = 0;
     /**
      * The visibility field represents whether this message is privately/publicly visible.
      * To be visible to the public the App that contains it AND the User that contains the App must
@@ -105,10 +117,14 @@ class Nodepool extends \Google\Protobuf\Internal\Message
      *     @type array<\Clarifai\Api\InstanceType>|\Google\Protobuf\Internal\RepeatedField $instance_types
      *     @type int $min_instances
      *           Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
-     *           amount.
+     *           amount. This is the user desired minimum.
      *     @type int $max_instances
      *           An upper limit on the number of instances in this nodepool. This allows the nodepool to scale
-     *           up to this amount.
+     *           up to this amount. This is the user desired maximum.
+     *     @type int $enforced_min_instances
+     *           The actual minimum number of instances. Enforced by the user's plan limits.
+     *     @type int $enforced_max_instances
+     *           The actual maximum number of instances. Enforced by the user's plan limits.
      *     @type \Clarifai\Api\Visibility $visibility
      *           The visibility field represents whether this message is privately/publicly visible.
      *           To be visible to the public the App that contains it AND the User that contains the App must
@@ -339,7 +355,7 @@ class Nodepool extends \Google\Protobuf\Internal\Message
 
     /**
      * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
-     * amount.
+     * amount. This is the user desired minimum.
      *
      * Generated from protobuf field <code>uint32 min_instances = 9;</code>
      * @return int
@@ -351,7 +367,7 @@ class Nodepool extends \Google\Protobuf\Internal\Message
 
     /**
      * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
-     * amount.
+     * amount. This is the user desired minimum.
      *
      * Generated from protobuf field <code>uint32 min_instances = 9;</code>
      * @param int $var
@@ -367,7 +383,7 @@ class Nodepool extends \Google\Protobuf\Internal\Message
 
     /**
      * An upper limit on the number of instances in this nodepool. This allows the nodepool to scale
-     * up to this amount.
+     * up to this amount. This is the user desired maximum.
      *
      * Generated from protobuf field <code>uint32 max_instances = 10;</code>
      * @return int
@@ -379,7 +395,7 @@ class Nodepool extends \Google\Protobuf\Internal\Message
 
     /**
      * An upper limit on the number of instances in this nodepool. This allows the nodepool to scale
-     * up to this amount.
+     * up to this amount. This is the user desired maximum.
      *
      * Generated from protobuf field <code>uint32 max_instances = 10;</code>
      * @param int $var
@@ -389,6 +405,58 @@ class Nodepool extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->max_instances = $var;
+
+        return $this;
+    }
+
+    /**
+     * The actual minimum number of instances. Enforced by the user's plan limits.
+     *
+     * Generated from protobuf field <code>uint32 enforced_min_instances = 13;</code>
+     * @return int
+     */
+    public function getEnforcedMinInstances()
+    {
+        return $this->enforced_min_instances;
+    }
+
+    /**
+     * The actual minimum number of instances. Enforced by the user's plan limits.
+     *
+     * Generated from protobuf field <code>uint32 enforced_min_instances = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEnforcedMinInstances($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->enforced_min_instances = $var;
+
+        return $this;
+    }
+
+    /**
+     * The actual maximum number of instances. Enforced by the user's plan limits.
+     *
+     * Generated from protobuf field <code>uint32 enforced_max_instances = 14;</code>
+     * @return int
+     */
+    public function getEnforcedMaxInstances()
+    {
+        return $this->enforced_max_instances;
+    }
+
+    /**
+     * The actual maximum number of instances. Enforced by the user's plan limits.
+     *
+     * Generated from protobuf field <code>uint32 enforced_max_instances = 14;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEnforcedMaxInstances($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->enforced_max_instances = $var;
 
         return $this;
     }

@@ -613,6 +613,17 @@ class S
      * Generated from protobuf enum <code>WorkflowVersionEvaluations_Add = 153 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowVersionEvaluations_Get];</code>
      */
     const WorkflowVersionEvaluations_Add = 153;
+    /**
+     * Pipelines feature is in development, this shouldn't be exposed yet.
+     * TODO: Expose this scope when the feature is ready.
+     *
+     * Generated from protobuf enum <code>Pipeline_Get = 154 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const Pipeline_Get = 154;
+    /**
+     * Generated from protobuf enum <code>Pipeline_Add = 155 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipeline_Get];</code>
+     */
+    const Pipeline_Add = 155;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -719,6 +730,8 @@ class S
         self::LogEntries_Get => 'LogEntries_Get',
         self::WorkflowVersionEvaluations_Get => 'WorkflowVersionEvaluations_Get',
         self::WorkflowVersionEvaluations_Add => 'WorkflowVersionEvaluations_Add',
+        self::Pipeline_Get => 'Pipeline_Get',
+        self::Pipeline_Add => 'Pipeline_Add',
     ];
 
     public static function name($value)

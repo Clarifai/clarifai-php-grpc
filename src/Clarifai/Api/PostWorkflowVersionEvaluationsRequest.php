@@ -31,10 +31,15 @@ class PostWorkflowVersionEvaluationsRequest extends \Google\Protobuf\Internal\Me
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
      */
     private $workflow_version_evaluations;
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    private $runner_selectors;
 
     /**
      * Constructor.
@@ -51,6 +56,8 @@ class PostWorkflowVersionEvaluationsRequest extends \Google\Protobuf\Internal\Me
      *           - ground_truth_dataset_id
      *           - ground_truth_dataset_version_id
      *           - id
+     *           - target_node_id
+     *     @type array<\Clarifai\Api\RunnerSelector>|\Google\Protobuf\Internal\RepeatedField $runner_selectors
      * }
      */
     public function __construct($data = NULL) {
@@ -140,6 +147,7 @@ class PostWorkflowVersionEvaluationsRequest extends \Google\Protobuf\Internal\Me
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -155,6 +163,7 @@ class PostWorkflowVersionEvaluationsRequest extends \Google\Protobuf\Internal\Me
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
      * @param array<\Clarifai\Api\WorkflowVersionEvaluation>|\Google\Protobuf\Internal\RepeatedField $var
@@ -164,6 +173,28 @@ class PostWorkflowVersionEvaluationsRequest extends \Google\Protobuf\Internal\Me
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\WorkflowVersionEvaluation::class);
         $this->workflow_version_evaluations = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRunnerSelectors()
+    {
+        return $this->runner_selectors;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     * @param array<\Clarifai\Api\RunnerSelector>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRunnerSelectors($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\RunnerSelector::class);
+        $this->runner_selectors = $arr;
 
         return $this;
     }

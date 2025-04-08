@@ -41,8 +41,10 @@ class PostInputsDataSourcesRequest extends \Google\Protobuf\Internal\Message
     protected $call_back_url = '';
     /**
      * Personal Access Token to the application to which inputs are added
+     * Deprecated: No need to send app_pat, it will be generated internally if not present
      *
-     * Generated from protobuf field <code>string app_pat = 4;</code>
+     * Generated from protobuf field <code>string app_pat = 4 [deprecated = true];</code>
+     * @deprecated
      */
     protected $app_pat = '';
 
@@ -58,6 +60,7 @@ class PostInputsDataSourcesRequest extends \Google\Protobuf\Internal\Message
      *           If call back url is set, we will send a Post request to this endpoint with job status.
      *     @type string $app_pat
      *           Personal Access Token to the application to which inputs are added
+     *           Deprecated: No need to send app_pat, it will be generated internally if not present
      * }
      */
     public function __construct($data = NULL) {
@@ -147,24 +150,30 @@ class PostInputsDataSourcesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Personal Access Token to the application to which inputs are added
+     * Deprecated: No need to send app_pat, it will be generated internally if not present
      *
-     * Generated from protobuf field <code>string app_pat = 4;</code>
+     * Generated from protobuf field <code>string app_pat = 4 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getAppPat()
     {
+        @trigger_error('app_pat is deprecated.', E_USER_DEPRECATED);
         return $this->app_pat;
     }
 
     /**
      * Personal Access Token to the application to which inputs are added
+     * Deprecated: No need to send app_pat, it will be generated internally if not present
      *
-     * Generated from protobuf field <code>string app_pat = 4;</code>
+     * Generated from protobuf field <code>string app_pat = 4 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setAppPat($var)
     {
+        @trigger_error('app_pat is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->app_pat = $var;
 
