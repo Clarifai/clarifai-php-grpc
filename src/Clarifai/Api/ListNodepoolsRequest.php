@@ -35,6 +35,13 @@ class ListNodepoolsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 per_page = 4;</code>
      */
     protected $per_page = 0;
+    /**
+     * Only return nodepools that are actively being used (having runners with
+     * replicas >= threshold and pipeline versions scheduled to run)
+     *
+     * Generated from protobuf field <code>bool active_usage = 5;</code>
+     */
+    protected $active_usage = false;
 
     /**
      * Constructor.
@@ -50,6 +57,9 @@ class ListNodepoolsRequest extends \Google\Protobuf\Internal\Message
      *     @type int $per_page
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
+     *     @type bool $active_usage
+     *           Only return nodepools that are actively being used (having runners with
+     *           replicas >= threshold and pipeline versions scheduled to run)
      * }
      */
     public function __construct($data = NULL) {
@@ -163,6 +173,34 @@ class ListNodepoolsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->per_page = $var;
+
+        return $this;
+    }
+
+    /**
+     * Only return nodepools that are actively being used (having runners with
+     * replicas >= threshold and pipeline versions scheduled to run)
+     *
+     * Generated from protobuf field <code>bool active_usage = 5;</code>
+     * @return bool
+     */
+    public function getActiveUsage()
+    {
+        return $this->active_usage;
+    }
+
+    /**
+     * Only return nodepools that are actively being used (having runners with
+     * replicas >= threshold and pipeline versions scheduled to run)
+     *
+     * Generated from protobuf field <code>bool active_usage = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setActiveUsage($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->active_usage = $var;
 
         return $this;
     }
