@@ -224,6 +224,14 @@ class Model extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Model.BillingType billing_type = 40;</code>
      */
     protected $billing_type = 0;
+    /**
+     * Whether the model should be featured, and if so, the order in which it should be featured.
+     * The order is relative to other models that are also featured.
+     * Models with a higher order will be featured first.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value featured_order = 41;</code>
+     */
+    protected $featured_order = null;
 
     /**
      * Constructor.
@@ -304,6 +312,10 @@ class Model extends \Google\Protobuf\Internal\Message
      *           Creator of Model
      *     @type int $version_count
      *     @type int $billing_type
+     *     @type \Google\Protobuf\Int32Value $featured_order
+     *           Whether the model should be featured, and if so, the order in which it should be featured.
+     *           The order is relative to other models that are also featured.
+     *           Models with a higher order will be featured first.
      * }
      */
     public function __construct($data = NULL) {
@@ -1301,6 +1313,77 @@ class Model extends \Google\Protobuf\Internal\Message
 
         return $this;
     }
+
+    /**
+     * Whether the model should be featured, and if so, the order in which it should be featured.
+     * The order is relative to other models that are also featured.
+     * Models with a higher order will be featured first.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value featured_order = 41;</code>
+     * @return \Google\Protobuf\Int32Value|null
+     */
+    public function getFeaturedOrder()
+    {
+        return $this->featured_order;
+    }
+
+    public function hasFeaturedOrder()
+    {
+        return isset($this->featured_order);
+    }
+
+    public function clearFeaturedOrder()
+    {
+        unset($this->featured_order);
+    }
+
+    /**
+     * Returns the unboxed value from <code>getFeaturedOrder()</code>
+
+     * Whether the model should be featured, and if so, the order in which it should be featured.
+     * The order is relative to other models that are also featured.
+     * Models with a higher order will be featured first.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value featured_order = 41;</code>
+     * @return int|null
+     */
+    public function getFeaturedOrderUnwrapped()
+    {
+        return $this->readWrapperValue("featured_order");
+    }
+
+    /**
+     * Whether the model should be featured, and if so, the order in which it should be featured.
+     * The order is relative to other models that are also featured.
+     * Models with a higher order will be featured first.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value featured_order = 41;</code>
+     * @param \Google\Protobuf\Int32Value $var
+     * @return $this
+     */
+    public function setFeaturedOrder($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int32Value::class);
+        $this->featured_order = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
+
+     * Whether the model should be featured, and if so, the order in which it should be featured.
+     * The order is relative to other models that are also featured.
+     * Models with a higher order will be featured first.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value featured_order = 41;</code>
+     * @param int|null $var
+     * @return $this
+     */
+    public function setFeaturedOrderUnwrapped($var)
+    {
+        $this->writeWrapperValue("featured_order", $var);
+        return $this;}
 
 }
 
