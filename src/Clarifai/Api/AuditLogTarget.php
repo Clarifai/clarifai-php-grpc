@@ -34,6 +34,9 @@ class AuditLogTarget extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\WorkflowVersion $workflow_version
      *     @type \Clarifai\Api\Model $model
      *     @type \Clarifai\Api\ModelVersion $model_version
+     *     @type \Clarifai\Api\ComputeCluster $compute_cluster
+     *     @type \Clarifai\Api\Nodepool $nodepool
+     *     @type \Clarifai\Api\Deployment $deployment
      * }
      */
     public function __construct($data = NULL) {
@@ -307,6 +310,87 @@ class AuditLogTarget extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\ModelVersion::class);
         $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+     * @return \Clarifai\Api\ComputeCluster|null
+     */
+    public function getComputeCluster()
+    {
+        return $this->readOneof(11);
+    }
+
+    public function hasComputeCluster()
+    {
+        return $this->hasOneof(11);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+     * @param \Clarifai\Api\ComputeCluster $var
+     * @return $this
+     */
+    public function setComputeCluster($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ComputeCluster::class);
+        $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * @return \Clarifai\Api\Nodepool|null
+     */
+    public function getNodepool()
+    {
+        return $this->readOneof(12);
+    }
+
+    public function hasNodepool()
+    {
+        return $this->hasOneof(12);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * @param \Clarifai\Api\Nodepool $var
+     * @return $this
+     */
+    public function setNodepool($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Nodepool::class);
+        $this->writeOneof(12, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Deployment deployment = 13;</code>
+     * @return \Clarifai\Api\Deployment|null
+     */
+    public function getDeployment()
+    {
+        return $this->readOneof(13);
+    }
+
+    public function hasDeployment()
+    {
+        return $this->hasOneof(13);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Deployment deployment = 13;</code>
+     * @param \Clarifai\Api\Deployment $var
+     * @return $this
+     */
+    public function setDeployment($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Deployment::class);
+        $this->writeOneof(13, $var);
 
         return $this;
     }

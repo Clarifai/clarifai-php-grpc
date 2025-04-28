@@ -20,49 +20,49 @@ class WorkflowVersionEvaluation extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * The ID of the workflow that is used for evaluation.
+     * Workflow version that is being evaluated.
      *
-     * Generated from protobuf field <code>string workflow_id = 2;</code>
+     * Generated from protobuf field <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
      */
-    protected $workflow_id = '';
+    protected $workflow_version = null;
     /**
-     * The version of the workflow that is used for evaluation.
+     * The target node id that is being evaluated.
      *
-     * Generated from protobuf field <code>string workflow_version_id = 3;</code>
+     * Generated from protobuf field <code>string target_node_id = 3;</code>
      */
-    protected $workflow_version_id = '';
+    protected $target_node_id = '';
     /**
-     * The ID of the ground-truth dataset that is used for evaluation.
+     * The dataset version that contains the ground-truth and is used for evaluation.
      *
-     * Generated from protobuf field <code>string ground_truth_dataset_id = 4;</code>
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
      */
-    protected $ground_truth_dataset_id = '';
+    protected $ground_truth_dataset_version = null;
     /**
-     * The version ID of the ground-truth dataset that is used for evaluation.
+     * The dataset version that contains the predictions and is used for evaluation.
      *
-     * Generated from protobuf field <code>string ground_truth_dataset_version_id = 5;</code>
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
      */
-    protected $ground_truth_dataset_version_id = '';
+    protected $predictions_dataset_version = null;
     /**
-     * The ID of the prediction dataset that is used for evaluation.
+     * Evaluation template that is used for evaluation.
      *
-     * Generated from protobuf field <code>string predictions_dataset_id = 6;</code>
+     * Generated from protobuf field <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
      */
-    protected $predictions_dataset_id = '';
+    protected $workflow_version_evaluation_template = null;
     /**
-     * The version ID of the prediction dataset that is used for evaluation.
+     * The user the workflow version evaluation belongs to.
      *
-     * Generated from protobuf field <code>string predictions_dataset_version_id = 7;</code>
+     * Generated from protobuf field <code>string user_id = 7;</code>
      */
-    protected $predictions_dataset_version_id = '';
+    protected $user_id = '';
     /**
-     * Evaluation Template ID
+     * The app the workflow version evaluation belongs to.
      *
-     * Generated from protobuf field <code>string evaluation_template_id = 8;</code>
+     * Generated from protobuf field <code>string app_id = 8;</code>
      */
-    protected $evaluation_template_id = '';
+    protected $app_id = '';
     /**
-     * The evaluation results
+     * Results of the evaluation.
      *
      * Generated from protobuf field <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
      */
@@ -85,12 +85,6 @@ class WorkflowVersionEvaluation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 12;</code>
      */
     protected $modified_at = null;
-    /**
-     * The ID of the node that is being evaluated.
-     *
-     * Generated from protobuf field <code>string target_node_id = 13;</code>
-     */
-    protected $target_node_id = '';
 
     /**
      * Constructor.
@@ -100,30 +94,28 @@ class WorkflowVersionEvaluation extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           Customer-Facing / External ID of the workflow version evaluation.
-     *     @type string $workflow_id
-     *           The ID of the workflow that is used for evaluation.
-     *     @type string $workflow_version_id
-     *           The version of the workflow that is used for evaluation.
-     *     @type string $ground_truth_dataset_id
-     *           The ID of the ground-truth dataset that is used for evaluation.
-     *     @type string $ground_truth_dataset_version_id
-     *           The version ID of the ground-truth dataset that is used for evaluation.
-     *     @type string $predictions_dataset_id
-     *           The ID of the prediction dataset that is used for evaluation.
-     *     @type string $predictions_dataset_version_id
-     *           The version ID of the prediction dataset that is used for evaluation.
-     *     @type string $evaluation_template_id
-     *           Evaluation Template ID
+     *     @type \Clarifai\Api\WorkflowVersion $workflow_version
+     *           Workflow version that is being evaluated.
+     *     @type string $target_node_id
+     *           The target node id that is being evaluated.
+     *     @type \Clarifai\Api\DatasetVersion $ground_truth_dataset_version
+     *           The dataset version that contains the ground-truth and is used for evaluation.
+     *     @type \Clarifai\Api\DatasetVersion $predictions_dataset_version
+     *           The dataset version that contains the predictions and is used for evaluation.
+     *     @type \Clarifai\Api\WorkflowVersionEvaluationTemplate $workflow_version_evaluation_template
+     *           Evaluation template that is used for evaluation.
+     *     @type string $user_id
+     *           The user the workflow version evaluation belongs to.
+     *     @type string $app_id
+     *           The app the workflow version evaluation belongs to.
      *     @type \Clarifai\Api\WorkflowEvaluationResult $workflow_evaluation_result
-     *           The evaluation results
+     *           Results of the evaluation.
      *     @type \Clarifai\Api\Status\Status $status
      *           Status of the evaluation
      *     @type \Google\Protobuf\Timestamp $created_at
      *           When the workflow version evaluation was created.
      *     @type \Google\Protobuf\Timestamp $modified_at
      *           When the workflow version evaluation was modified.
-     *     @type string $target_node_id
-     *           The ID of the node that is being evaluated.
      * }
      */
     public function __construct($data = NULL) {
@@ -158,189 +150,229 @@ class WorkflowVersionEvaluation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the workflow that is used for evaluation.
+     * Workflow version that is being evaluated.
      *
-     * Generated from protobuf field <code>string workflow_id = 2;</code>
-     * @return string
+     * Generated from protobuf field <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+     * @return \Clarifai\Api\WorkflowVersion|null
      */
-    public function getWorkflowId()
+    public function getWorkflowVersion()
     {
-        return $this->workflow_id;
+        return $this->workflow_version;
+    }
+
+    public function hasWorkflowVersion()
+    {
+        return isset($this->workflow_version);
+    }
+
+    public function clearWorkflowVersion()
+    {
+        unset($this->workflow_version);
     }
 
     /**
-     * The ID of the workflow that is used for evaluation.
+     * Workflow version that is being evaluated.
      *
-     * Generated from protobuf field <code>string workflow_id = 2;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+     * @param \Clarifai\Api\WorkflowVersion $var
      * @return $this
      */
-    public function setWorkflowId($var)
+    public function setWorkflowVersion($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->workflow_id = $var;
+        GPBUtil::checkMessage($var, \Clarifai\Api\WorkflowVersion::class);
+        $this->workflow_version = $var;
 
         return $this;
     }
 
     /**
-     * The version of the workflow that is used for evaluation.
+     * The target node id that is being evaluated.
      *
-     * Generated from protobuf field <code>string workflow_version_id = 3;</code>
+     * Generated from protobuf field <code>string target_node_id = 3;</code>
      * @return string
      */
-    public function getWorkflowVersionId()
+    public function getTargetNodeId()
     {
-        return $this->workflow_version_id;
+        return $this->target_node_id;
     }
 
     /**
-     * The version of the workflow that is used for evaluation.
+     * The target node id that is being evaluated.
      *
-     * Generated from protobuf field <code>string workflow_version_id = 3;</code>
+     * Generated from protobuf field <code>string target_node_id = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setWorkflowVersionId($var)
+    public function setTargetNodeId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->workflow_version_id = $var;
+        $this->target_node_id = $var;
 
         return $this;
     }
 
     /**
-     * The ID of the ground-truth dataset that is used for evaluation.
+     * The dataset version that contains the ground-truth and is used for evaluation.
      *
-     * Generated from protobuf field <code>string ground_truth_dataset_id = 4;</code>
-     * @return string
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+     * @return \Clarifai\Api\DatasetVersion|null
      */
-    public function getGroundTruthDatasetId()
+    public function getGroundTruthDatasetVersion()
     {
-        return $this->ground_truth_dataset_id;
+        return $this->ground_truth_dataset_version;
+    }
+
+    public function hasGroundTruthDatasetVersion()
+    {
+        return isset($this->ground_truth_dataset_version);
+    }
+
+    public function clearGroundTruthDatasetVersion()
+    {
+        unset($this->ground_truth_dataset_version);
     }
 
     /**
-     * The ID of the ground-truth dataset that is used for evaluation.
+     * The dataset version that contains the ground-truth and is used for evaluation.
      *
-     * Generated from protobuf field <code>string ground_truth_dataset_id = 4;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+     * @param \Clarifai\Api\DatasetVersion $var
      * @return $this
      */
-    public function setGroundTruthDatasetId($var)
+    public function setGroundTruthDatasetVersion($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->ground_truth_dataset_id = $var;
+        GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersion::class);
+        $this->ground_truth_dataset_version = $var;
 
         return $this;
     }
 
     /**
-     * The version ID of the ground-truth dataset that is used for evaluation.
+     * The dataset version that contains the predictions and is used for evaluation.
      *
-     * Generated from protobuf field <code>string ground_truth_dataset_version_id = 5;</code>
-     * @return string
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+     * @return \Clarifai\Api\DatasetVersion|null
      */
-    public function getGroundTruthDatasetVersionId()
+    public function getPredictionsDatasetVersion()
     {
-        return $this->ground_truth_dataset_version_id;
+        return $this->predictions_dataset_version;
+    }
+
+    public function hasPredictionsDatasetVersion()
+    {
+        return isset($this->predictions_dataset_version);
+    }
+
+    public function clearPredictionsDatasetVersion()
+    {
+        unset($this->predictions_dataset_version);
     }
 
     /**
-     * The version ID of the ground-truth dataset that is used for evaluation.
+     * The dataset version that contains the predictions and is used for evaluation.
      *
-     * Generated from protobuf field <code>string ground_truth_dataset_version_id = 5;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+     * @param \Clarifai\Api\DatasetVersion $var
      * @return $this
      */
-    public function setGroundTruthDatasetVersionId($var)
+    public function setPredictionsDatasetVersion($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->ground_truth_dataset_version_id = $var;
+        GPBUtil::checkMessage($var, \Clarifai\Api\DatasetVersion::class);
+        $this->predictions_dataset_version = $var;
 
         return $this;
     }
 
     /**
-     * The ID of the prediction dataset that is used for evaluation.
+     * Evaluation template that is used for evaluation.
      *
-     * Generated from protobuf field <code>string predictions_dataset_id = 6;</code>
-     * @return string
+     * Generated from protobuf field <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+     * @return \Clarifai\Api\WorkflowVersionEvaluationTemplate|null
      */
-    public function getPredictionsDatasetId()
+    public function getWorkflowVersionEvaluationTemplate()
     {
-        return $this->predictions_dataset_id;
+        return $this->workflow_version_evaluation_template;
+    }
+
+    public function hasWorkflowVersionEvaluationTemplate()
+    {
+        return isset($this->workflow_version_evaluation_template);
+    }
+
+    public function clearWorkflowVersionEvaluationTemplate()
+    {
+        unset($this->workflow_version_evaluation_template);
     }
 
     /**
-     * The ID of the prediction dataset that is used for evaluation.
+     * Evaluation template that is used for evaluation.
      *
-     * Generated from protobuf field <code>string predictions_dataset_id = 6;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+     * @param \Clarifai\Api\WorkflowVersionEvaluationTemplate $var
      * @return $this
      */
-    public function setPredictionsDatasetId($var)
+    public function setWorkflowVersionEvaluationTemplate($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->predictions_dataset_id = $var;
+        GPBUtil::checkMessage($var, \Clarifai\Api\WorkflowVersionEvaluationTemplate::class);
+        $this->workflow_version_evaluation_template = $var;
 
         return $this;
     }
 
     /**
-     * The version ID of the prediction dataset that is used for evaluation.
+     * The user the workflow version evaluation belongs to.
      *
-     * Generated from protobuf field <code>string predictions_dataset_version_id = 7;</code>
+     * Generated from protobuf field <code>string user_id = 7;</code>
      * @return string
      */
-    public function getPredictionsDatasetVersionId()
+    public function getUserId()
     {
-        return $this->predictions_dataset_version_id;
+        return $this->user_id;
     }
 
     /**
-     * The version ID of the prediction dataset that is used for evaluation.
+     * The user the workflow version evaluation belongs to.
      *
-     * Generated from protobuf field <code>string predictions_dataset_version_id = 7;</code>
+     * Generated from protobuf field <code>string user_id = 7;</code>
      * @param string $var
      * @return $this
      */
-    public function setPredictionsDatasetVersionId($var)
+    public function setUserId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->predictions_dataset_version_id = $var;
+        $this->user_id = $var;
 
         return $this;
     }
 
     /**
-     * Evaluation Template ID
+     * The app the workflow version evaluation belongs to.
      *
-     * Generated from protobuf field <code>string evaluation_template_id = 8;</code>
+     * Generated from protobuf field <code>string app_id = 8;</code>
      * @return string
      */
-    public function getEvaluationTemplateId()
+    public function getAppId()
     {
-        return $this->evaluation_template_id;
+        return $this->app_id;
     }
 
     /**
-     * Evaluation Template ID
+     * The app the workflow version evaluation belongs to.
      *
-     * Generated from protobuf field <code>string evaluation_template_id = 8;</code>
+     * Generated from protobuf field <code>string app_id = 8;</code>
      * @param string $var
      * @return $this
      */
-    public function setEvaluationTemplateId($var)
+    public function setAppId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->evaluation_template_id = $var;
+        $this->app_id = $var;
 
         return $this;
     }
 
     /**
-     * The evaluation results
+     * Results of the evaluation.
      *
      * Generated from protobuf field <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
      * @return \Clarifai\Api\WorkflowEvaluationResult|null
@@ -361,7 +393,7 @@ class WorkflowVersionEvaluation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The evaluation results
+     * Results of the evaluation.
      *
      * Generated from protobuf field <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
      * @param \Clarifai\Api\WorkflowEvaluationResult $var
@@ -479,32 +511,6 @@ class WorkflowVersionEvaluation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->modified_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * The ID of the node that is being evaluated.
-     *
-     * Generated from protobuf field <code>string target_node_id = 13;</code>
-     * @return string
-     */
-    public function getTargetNodeId()
-    {
-        return $this->target_node_id;
-    }
-
-    /**
-     * The ID of the node that is being evaluated.
-     *
-     * Generated from protobuf field <code>string target_node_id = 13;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTargetNodeId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->target_node_id = $var;
 
         return $this;
     }

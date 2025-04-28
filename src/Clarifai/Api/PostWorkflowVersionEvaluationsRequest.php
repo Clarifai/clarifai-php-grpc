@@ -27,11 +27,12 @@ class PostWorkflowVersionEvaluationsRequest extends \Google\Protobuf\Internal\Me
     protected $workflow_version_id = '';
     /**
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
      */
@@ -52,11 +53,12 @@ class PostWorkflowVersionEvaluationsRequest extends \Google\Protobuf\Internal\Me
      *     @type string $workflow_version_id
      *     @type array<\Clarifai\Api\WorkflowVersionEvaluation>|\Google\Protobuf\Internal\RepeatedField $workflow_version_evaluations
      *           ########## Supported fields ##########
-     *           - evaluation_template_id
-     *           - ground_truth_dataset_id
-     *           - ground_truth_dataset_version_id
+     *           - ground_truth_dataset_version.app_id
+     *           - ground_truth_dataset_version.dataset_id
+     *           - ground_truth_dataset_version.id
      *           - id
      *           - target_node_id
+     *           - workflow_version_evaluation_template.id
      *     @type array<\Clarifai\Api\RunnerSelector>|\Google\Protobuf\Internal\RepeatedField $runner_selectors
      * }
      */
@@ -143,11 +145,12 @@ class PostWorkflowVersionEvaluationsRequest extends \Google\Protobuf\Internal\Me
 
     /**
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -159,11 +162,12 @@ class PostWorkflowVersionEvaluationsRequest extends \Google\Protobuf\Internal\Me
 
     /**
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      *
      * Generated from protobuf field <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
      * @param array<\Clarifai\Api\WorkflowVersionEvaluation>|\Google\Protobuf\Internal\RepeatedField $var

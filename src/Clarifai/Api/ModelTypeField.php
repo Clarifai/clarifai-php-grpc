@@ -106,13 +106,21 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
      */
     protected $iterator = false;
     /**
-     * This specify the default value of the method argument. We define this as a string
+     * This specify the default value of the method argument 
+     * If this argument is not passed, the input is required. If it is explicitly set to None, the input is optional
+     * We define this as a string
      * because the default value can be a string, int, float, bool, or a complex object like a JSON
      * The default_value field above should not also be used.
      *
      * Generated from protobuf field <code>string default = 14;</code>
      */
     protected $default = '';
+    /**
+     * wheather it's a inference param or a modeltype field
+     *
+     * Generated from protobuf field <code>bool is_param = 15;</code>
+     */
+    protected $is_param = false;
 
     /**
      * Constructor.
@@ -159,9 +167,13 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
      *     @type bool $iterator
      *           this will be use to define whether the method argument supports streaming as an iterator.
      *     @type string $default
-     *           This specify the default value of the method argument. We define this as a string
+     *           This specify the default value of the method argument 
+     *           If this argument is not passed, the input is required. If it is explicitly set to None, the input is optional
+     *           We define this as a string
      *           because the default value can be a string, int, float, bool, or a complex object like a JSON
      *           The default_value field above should not also be used.
+     *     @type bool $is_param
+     *           wheather it's a inference param or a modeltype field
      * }
      */
     public function __construct($data = NULL) {
@@ -552,7 +564,9 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This specify the default value of the method argument. We define this as a string
+     * This specify the default value of the method argument 
+     * If this argument is not passed, the input is required. If it is explicitly set to None, the input is optional
+     * We define this as a string
      * because the default value can be a string, int, float, bool, or a complex object like a JSON
      * The default_value field above should not also be used.
      *
@@ -565,7 +579,9 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This specify the default value of the method argument. We define this as a string
+     * This specify the default value of the method argument 
+     * If this argument is not passed, the input is required. If it is explicitly set to None, the input is optional
+     * We define this as a string
      * because the default value can be a string, int, float, bool, or a complex object like a JSON
      * The default_value field above should not also be used.
      *
@@ -577,6 +593,32 @@ class ModelTypeField extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->default = $var;
+
+        return $this;
+    }
+
+    /**
+     * wheather it's a inference param or a modeltype field
+     *
+     * Generated from protobuf field <code>bool is_param = 15;</code>
+     * @return bool
+     */
+    public function getIsParam()
+    {
+        return $this->is_param;
+    }
+
+    /**
+     * wheather it's a inference param or a modeltype field
+     *
+     * Generated from protobuf field <code>bool is_param = 15;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsParam($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_param = $var;
 
         return $this;
     }

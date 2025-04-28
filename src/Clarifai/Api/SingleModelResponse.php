@@ -23,6 +23,10 @@ class SingleModelResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Model model = 2;</code>
      */
     protected $model = null;
+    /**
+     * Generated from protobuf field <code>int32 workflow_count = 4;</code>
+     */
+    protected $workflow_count = 0;
 
     /**
      * Constructor.
@@ -32,6 +36,7 @@ class SingleModelResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *     @type \Clarifai\Api\Model $model
+     *     @type int $workflow_count
      * }
      */
     public function __construct($data = NULL) {
@@ -99,6 +104,28 @@ class SingleModelResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Model::class);
         $this->model = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 workflow_count = 4;</code>
+     * @return int
+     */
+    public function getWorkflowCount()
+    {
+        return $this->workflow_count;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 workflow_count = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setWorkflowCount($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->workflow_count = $var;
 
         return $this;
     }

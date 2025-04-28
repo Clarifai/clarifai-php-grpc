@@ -28,8 +28,8 @@ class PatchWorkflowVersionEvaluationsRequest extends \Google\Protobuf\Internal\M
     /**
      * ########## Supported fields ##########
      * - id
-     * - predictions_dataset_id
-     * - predictions_dataset_version_id
+     * - predictions_dataset_version.dataset_id
+     * - predictions_dataset_version.id
      * - status.code
      * - status.details
      * - workflow_evaluation_result.summary.evaluation_metric_values[].evaluation_metric_id
@@ -61,8 +61,8 @@ class PatchWorkflowVersionEvaluationsRequest extends \Google\Protobuf\Internal\M
      *     @type array<\Clarifai\Api\WorkflowVersionEvaluation>|\Google\Protobuf\Internal\RepeatedField $workflow_version_evaluations
      *           ########## Supported fields ##########
      *           - id
-     *           - predictions_dataset_id
-     *           - predictions_dataset_version_id
+     *           - predictions_dataset_version.dataset_id
+     *           - predictions_dataset_version.id
      *           - status.code
      *           - status.details
      *           - workflow_evaluation_result.summary.evaluation_metric_values[].evaluation_metric_id
@@ -159,8 +159,8 @@ class PatchWorkflowVersionEvaluationsRequest extends \Google\Protobuf\Internal\M
     /**
      * ########## Supported fields ##########
      * - id
-     * - predictions_dataset_id
-     * - predictions_dataset_version_id
+     * - predictions_dataset_version.dataset_id
+     * - predictions_dataset_version.id
      * - status.code
      * - status.details
      * - workflow_evaluation_result.summary.evaluation_metric_values[].evaluation_metric_id
@@ -181,8 +181,8 @@ class PatchWorkflowVersionEvaluationsRequest extends \Google\Protobuf\Internal\M
     /**
      * ########## Supported fields ##########
      * - id
-     * - predictions_dataset_id
-     * - predictions_dataset_version_id
+     * - predictions_dataset_version.dataset_id
+     * - predictions_dataset_version.id
      * - status.code
      * - status.details
      * - workflow_evaluation_result.summary.evaluation_metric_values[].evaluation_metric_id
