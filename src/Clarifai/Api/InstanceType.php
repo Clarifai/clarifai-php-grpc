@@ -34,6 +34,24 @@ class InstanceType extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string price = 4;</code>
      */
     protected $price = '';
+    /**
+     * The cloud provider where this instance type is available, if any.
+     *
+     * Generated from protobuf field <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     */
+    protected $cloud_provider = null;
+    /**
+     * The region where this instance type is available, if any.
+     *
+     * Generated from protobuf field <code>string region = 6;</code>
+     */
+    protected $region = '';
+    /**
+     * The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+     *
+     * Generated from protobuf field <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
+     */
+    protected $allowed_capacity_types = null;
 
     /**
      * Constructor.
@@ -46,6 +64,12 @@ class InstanceType extends \Google\Protobuf\Internal\Message
      *           Short description of instance type.
      *     @type \Clarifai\Api\ComputeInfo $compute_info
      *     @type string $price
+     *     @type \Clarifai\Api\CloudProvider $cloud_provider
+     *           The cloud provider where this instance type is available, if any.
+     *     @type string $region
+     *           The region where this instance type is available, if any.
+     *     @type \Clarifai\Api\NodeCapacityType $allowed_capacity_types
+     *           The capacity types allowed for this instance type. If empty - all capacity types are allowed.
      * }
      */
     public function __construct($data = NULL) {
@@ -151,6 +175,104 @@ class InstanceType extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->price = $var;
+
+        return $this;
+    }
+
+    /**
+     * The cloud provider where this instance type is available, if any.
+     *
+     * Generated from protobuf field <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     * @return \Clarifai\Api\CloudProvider|null
+     */
+    public function getCloudProvider()
+    {
+        return $this->cloud_provider;
+    }
+
+    public function hasCloudProvider()
+    {
+        return isset($this->cloud_provider);
+    }
+
+    public function clearCloudProvider()
+    {
+        unset($this->cloud_provider);
+    }
+
+    /**
+     * The cloud provider where this instance type is available, if any.
+     *
+     * Generated from protobuf field <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     * @param \Clarifai\Api\CloudProvider $var
+     * @return $this
+     */
+    public function setCloudProvider($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\CloudProvider::class);
+        $this->cloud_provider = $var;
+
+        return $this;
+    }
+
+    /**
+     * The region where this instance type is available, if any.
+     *
+     * Generated from protobuf field <code>string region = 6;</code>
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    /**
+     * The region where this instance type is available, if any.
+     *
+     * Generated from protobuf field <code>string region = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->region = $var;
+
+        return $this;
+    }
+
+    /**
+     * The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+     *
+     * Generated from protobuf field <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
+     * @return \Clarifai\Api\NodeCapacityType|null
+     */
+    public function getAllowedCapacityTypes()
+    {
+        return $this->allowed_capacity_types;
+    }
+
+    public function hasAllowedCapacityTypes()
+    {
+        return isset($this->allowed_capacity_types);
+    }
+
+    public function clearAllowedCapacityTypes()
+    {
+        unset($this->allowed_capacity_types);
+    }
+
+    /**
+     * The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+     *
+     * Generated from protobuf field <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
+     * @param \Clarifai\Api\NodeCapacityType $var
+     * @return $this
+     */
+    public function setAllowedCapacityTypes($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\NodeCapacityType::class);
+        $this->allowed_capacity_types = $var;
 
         return $this;
     }

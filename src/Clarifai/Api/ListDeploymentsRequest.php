@@ -49,6 +49,12 @@ class ListDeploymentsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string workflow_version_ids = 6;</code>
      */
     private $workflow_version_ids;
+    /**
+     * (optional URL parameter) ComputeCluster ID. To list all deployed workers in a ComputeCluster
+     *
+     * Generated from protobuf field <code>string compute_cluster_id = 7;</code>
+     */
+    protected $compute_cluster_id = '';
 
     /**
      * Constructor.
@@ -69,6 +75,8 @@ class ListDeploymentsRequest extends \Google\Protobuf\Internal\Message
      *           (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $workflow_version_ids
      *           (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+     *     @type string $compute_cluster_id
+     *           (optional URL parameter) ComputeCluster ID. To list all deployed workers in a ComputeCluster
      * }
      */
     public function __construct($data = NULL) {
@@ -238,6 +246,32 @@ class ListDeploymentsRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->workflow_version_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * (optional URL parameter) ComputeCluster ID. To list all deployed workers in a ComputeCluster
+     *
+     * Generated from protobuf field <code>string compute_cluster_id = 7;</code>
+     * @return string
+     */
+    public function getComputeClusterId()
+    {
+        return $this->compute_cluster_id;
+    }
+
+    /**
+     * (optional URL parameter) ComputeCluster ID. To list all deployed workers in a ComputeCluster
+     *
+     * Generated from protobuf field <code>string compute_cluster_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setComputeClusterId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->compute_cluster_id = $var;
 
         return $this;
     }

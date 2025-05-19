@@ -25,6 +25,12 @@ class MultiOutputResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     private $outputs;
+    /**
+     * Information on where the computation is executed down to specific Deployment, Nodepool and ComputeCluster
+     *
+     * Generated from protobuf field <code>.clarifai.api.RunnerSelector runner_selector = 3;</code>
+     */
+    protected $runner_selector = null;
 
     /**
      * Constructor.
@@ -35,6 +41,8 @@ class MultiOutputResponse extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Status\Status $status
      *     @type array<\Clarifai\Api\Output>|\Google\Protobuf\Internal\RepeatedField $outputs
      *           For each input processed during model prediction we create one output.
+     *     @type \Clarifai\Api\RunnerSelector $runner_selector
+     *           Information on where the computation is executed down to specific Deployment, Nodepool and ComputeCluster
      * }
      */
     public function __construct($data = NULL) {
@@ -96,6 +104,42 @@ class MultiOutputResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Output::class);
         $this->outputs = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Information on where the computation is executed down to specific Deployment, Nodepool and ComputeCluster
+     *
+     * Generated from protobuf field <code>.clarifai.api.RunnerSelector runner_selector = 3;</code>
+     * @return \Clarifai\Api\RunnerSelector|null
+     */
+    public function getRunnerSelector()
+    {
+        return $this->runner_selector;
+    }
+
+    public function hasRunnerSelector()
+    {
+        return isset($this->runner_selector);
+    }
+
+    public function clearRunnerSelector()
+    {
+        unset($this->runner_selector);
+    }
+
+    /**
+     * Information on where the computation is executed down to specific Deployment, Nodepool and ComputeCluster
+     *
+     * Generated from protobuf field <code>.clarifai.api.RunnerSelector runner_selector = 3;</code>
+     * @param \Clarifai\Api\RunnerSelector $var
+     * @return $this
+     */
+    public function setRunnerSelector($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\RunnerSelector::class);
+        $this->runner_selector = $var;
 
         return $this;
     }

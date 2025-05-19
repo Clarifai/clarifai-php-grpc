@@ -67,6 +67,14 @@ class ComputeSourceMetadata extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string pipeline_version_run_id = 11;</code>
      */
     protected $pipeline_version_run_id = '';
+    /**
+     * Generated from protobuf field <code>string pipeline_step_id = 12;</code>
+     */
+    protected $pipeline_step_id = '';
+    /**
+     * Generated from protobuf field <code>string pipeline_step_version_id = 13;</code>
+     */
+    protected $pipeline_step_version_id = '';
 
     /**
      * Constructor.
@@ -90,6 +98,8 @@ class ComputeSourceMetadata extends \Google\Protobuf\Internal\Message
      *           Pipeline related data, if any
      *     @type string $pipeline_version_id
      *     @type string $pipeline_version_run_id
+     *     @type string $pipeline_step_id
+     *     @type string $pipeline_step_version_id
      * }
      */
     public function __construct($data = NULL) {
@@ -347,6 +357,50 @@ class ComputeSourceMetadata extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->pipeline_version_run_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string pipeline_step_id = 12;</code>
+     * @return string
+     */
+    public function getPipelineStepId()
+    {
+        return $this->pipeline_step_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string pipeline_step_id = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPipelineStepId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->pipeline_step_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string pipeline_step_version_id = 13;</code>
+     * @return string
+     */
+    public function getPipelineStepVersionId()
+    {
+        return $this->pipeline_step_version_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string pipeline_step_version_id = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPipelineStepVersionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->pipeline_step_version_id = $var;
 
         return $this;
     }

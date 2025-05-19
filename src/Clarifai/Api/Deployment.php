@@ -91,6 +91,12 @@ class Deployment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 13;</code>
      */
     protected $modified_at = null;
+    /**
+     * When to always deploy latest model version
+     *
+     * Generated from protobuf field <code>bool deploy_latest_version = 14;</code>
+     */
+    protected $deploy_latest_version = false;
 
     /**
      * Constructor.
@@ -129,6 +135,8 @@ class Deployment extends \Google\Protobuf\Internal\Message
      *           When the deployment was created.
      *     @type \Google\Protobuf\Timestamp $modified_at
      *           When the deployment was last modified.
+     *     @type bool $deploy_latest_version
+     *           When to always deploy latest model version
      * }
      */
     public function __construct($data = NULL) {
@@ -494,6 +502,32 @@ class Deployment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->modified_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * When to always deploy latest model version
+     *
+     * Generated from protobuf field <code>bool deploy_latest_version = 14;</code>
+     * @return bool
+     */
+    public function getDeployLatestVersion()
+    {
+        return $this->deploy_latest_version;
+    }
+
+    /**
+     * When to always deploy latest model version
+     *
+     * Generated from protobuf field <code>bool deploy_latest_version = 14;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDeployLatestVersion($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->deploy_latest_version = $var;
 
         return $this;
     }

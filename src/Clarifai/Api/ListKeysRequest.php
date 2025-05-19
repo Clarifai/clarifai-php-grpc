@@ -34,17 +34,30 @@ class ListKeysRequest extends \Google\Protobuf\Internal\Message
      */
     protected $per_page = 0;
     /**
+     * Filtering options:
+     * If true, only return keys that have not expired.
+     *
      * Generated from protobuf field <code>bool not_expired = 4;</code>
      */
     protected $not_expired = false;
     /**
+     * Only return keys that have the listed scopes.
+     *
      * Generated from protobuf field <code>repeated string scopes = 5;</code>
      */
     private $scopes;
     /**
+     * Only return keys that have the listed endpoints.
+     *
      * Generated from protobuf field <code>repeated string endpoints = 6;</code>
      */
     private $endpoints;
+    /**
+     * Only return keys with the listed type.
+     *
+     * Generated from protobuf field <code>string type = 7;</code>
+     */
+    protected $type = '';
 
     /**
      * Constructor.
@@ -60,8 +73,14 @@ class ListKeysRequest extends \Google\Protobuf\Internal\Message
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 128.
      *     @type bool $not_expired
+     *           Filtering options:
+     *           If true, only return keys that have not expired.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scopes
+     *           Only return keys that have the listed scopes.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $endpoints
+     *           Only return keys that have the listed endpoints.
+     *     @type string $type
+     *           Only return keys with the listed type.
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +177,9 @@ class ListKeysRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filtering options:
+     * If true, only return keys that have not expired.
+     *
      * Generated from protobuf field <code>bool not_expired = 4;</code>
      * @return bool
      */
@@ -167,6 +189,9 @@ class ListKeysRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filtering options:
+     * If true, only return keys that have not expired.
+     *
      * Generated from protobuf field <code>bool not_expired = 4;</code>
      * @param bool $var
      * @return $this
@@ -180,6 +205,8 @@ class ListKeysRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Only return keys that have the listed scopes.
+     *
      * Generated from protobuf field <code>repeated string scopes = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -189,6 +216,8 @@ class ListKeysRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Only return keys that have the listed scopes.
+     *
      * Generated from protobuf field <code>repeated string scopes = 5;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -202,6 +231,8 @@ class ListKeysRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Only return keys that have the listed endpoints.
+     *
      * Generated from protobuf field <code>repeated string endpoints = 6;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -211,6 +242,8 @@ class ListKeysRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Only return keys that have the listed endpoints.
+     *
      * Generated from protobuf field <code>repeated string endpoints = 6;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -219,6 +252,32 @@ class ListKeysRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->endpoints = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Only return keys with the listed type.
+     *
+     * Generated from protobuf field <code>string type = 7;</code>
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Only return keys with the listed type.
+     *
+     * Generated from protobuf field <code>string type = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->type = $var;
 
         return $this;
     }

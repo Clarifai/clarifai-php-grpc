@@ -190,6 +190,12 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string creator = 31;</code>
      */
     protected $creator = '';
+    /**
+     * Filter by model versions runners with replicas >= min_replicas.
+     *
+     * Generated from protobuf field <code>uint32 min_replicas = 33;</code>
+     */
+    protected $min_replicas = 0;
     protected $sort_by;
 
     /**
@@ -282,6 +288,8 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           Filter by Source
      *     @type string $creator
      *           Filter by Creator
+     *     @type int $min_replicas
+     *           Filter by model versions runners with replicas >= min_replicas.
      * }
      */
     public function __construct($data = NULL) {
@@ -1158,6 +1166,32 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->creator = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by model versions runners with replicas >= min_replicas.
+     *
+     * Generated from protobuf field <code>uint32 min_replicas = 33;</code>
+     * @return int
+     */
+    public function getMinReplicas()
+    {
+        return $this->min_replicas;
+    }
+
+    /**
+     * Filter by model versions runners with replicas >= min_replicas.
+     *
+     * Generated from protobuf field <code>uint32 min_replicas = 33;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMinReplicas($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->min_replicas = $var;
 
         return $this;
     }

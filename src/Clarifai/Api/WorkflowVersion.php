@@ -89,6 +89,13 @@ class WorkflowVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string license = 11;</code>
      */
     protected $license = '';
+    /**
+     * If a model version associated with the workflow version is deleted, the workflow version
+     * will be marked as deprecated.
+     *
+     * Generated from protobuf field <code>bool is_deprecated = 12;</code>
+     */
+    protected $is_deprecated = false;
 
     /**
      * Constructor.
@@ -126,6 +133,9 @@ class WorkflowVersion extends \Google\Protobuf\Internal\Message
      *           Short description about this workflow version
      *     @type string $license
      *           License associated to this workflow version
+     *     @type bool $is_deprecated
+     *           If a model version associated with the workflow version is deleted, the workflow version
+     *           will be marked as deprecated.
      * }
      */
     public function __construct($data = NULL) {
@@ -471,6 +481,34 @@ class WorkflowVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->license = $var;
+
+        return $this;
+    }
+
+    /**
+     * If a model version associated with the workflow version is deleted, the workflow version
+     * will be marked as deprecated.
+     *
+     * Generated from protobuf field <code>bool is_deprecated = 12;</code>
+     * @return bool
+     */
+    public function getIsDeprecated()
+    {
+        return $this->is_deprecated;
+    }
+
+    /**
+     * If a model version associated with the workflow version is deleted, the workflow version
+     * will be marked as deprecated.
+     *
+     * Generated from protobuf field <code>bool is_deprecated = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsDeprecated($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_deprecated = $var;
 
         return $this;
     }

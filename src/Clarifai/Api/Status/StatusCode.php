@@ -819,6 +819,44 @@ class StatusCode
      */
     const COMPUTE_PLANE_METRICS_INVALID_REQUEST = 26100;
     /**
+     * PipelineStep related codes 262xx
+     *
+     * Generated from protobuf enum <code>PIPELINE_STEP_DOES_NOT_EXIST = 26200;</code>
+     */
+    const PIPELINE_STEP_DOES_NOT_EXIST = 26200;
+    /**
+     * Generated from protobuf enum <code>PIPELINE_STEP_INVALID_ARGUMENT = 26201;</code>
+     */
+    const PIPELINE_STEP_INVALID_ARGUMENT = 26201;
+    /**
+     * Generated from protobuf enum <code>PIPELINE_STEP_INVALID_REQUEST = 26202;</code>
+     */
+    const PIPELINE_STEP_INVALID_REQUEST = 26202;
+    /**
+     * Generated from protobuf enum <code>PIPELINE_STEP_UPLOADING = 26203;</code>
+     */
+    const PIPELINE_STEP_UPLOADING = 26203;
+    /**
+     * Generated from protobuf enum <code>PIPELINE_STEP_UPLOADING_FAILED = 26204;</code>
+     */
+    const PIPELINE_STEP_UPLOADING_FAILED = 26204;
+    /**
+     * Generated from protobuf enum <code>PIPELINE_STEP_BUILDING = 26205;</code>
+     */
+    const PIPELINE_STEP_BUILDING = 26205;
+    /**
+     * Generated from protobuf enum <code>PIPELINE_STEP_BUILDING_FAILED = 26206;</code>
+     */
+    const PIPELINE_STEP_BUILDING_FAILED = 26206;
+    /**
+     * Generated from protobuf enum <code>PIPELINE_STEP_BUILD_UNEXPECTED_ERROR = 26207;</code>
+     */
+    const PIPELINE_STEP_BUILD_UNEXPECTED_ERROR = 26207;
+    /**
+     * Generated from protobuf enum <code>PIPELINE_STEP_READY = 26208;</code>
+     */
+    const PIPELINE_STEP_READY = 26208;
+    /**
      * Input:Image related 30xxx
      *
      * Generated from protobuf enum <code>INPUT_SUCCESS = 30000;</code>
@@ -1761,6 +1799,10 @@ class StatusCode
      */
     const BILLING_INVALID_INFO = 69000;
     /**
+     * Generated from protobuf enum <code>BILLING_MISSING_TOKENS = 69001;</code>
+     */
+    const BILLING_MISSING_TOKENS = 69001;
+    /**
      * Logs related issues: 70000;
      *
      * Generated from protobuf enum <code>LOG_ENTRIES_INVALID_REQUEST = 70000;</code>
@@ -1824,6 +1866,14 @@ class StatusCode
      * Generated from protobuf enum <code>INTERNAL_VECTORDB_UNCATEGORIZED = 98018;</code>
      */
     const INTERNAL_VECTORDB_UNCATEGORIZED = 98018;
+    /**
+     * Generated from protobuf enum <code>INTERNAL_ORACLE_UNCATEGORIZED = 98019;</code>
+     */
+    const INTERNAL_ORACLE_UNCATEGORIZED = 98019;
+    /**
+     * Generated from protobuf enum <code>INTERNAL_VULTR_UNCATEGORIZED = 98020;</code>
+     */
+    const INTERNAL_VULTR_UNCATEGORIZED = 98020;
     /**
      * Uncategorized: 99xxx: move off as soon as known
      *
@@ -2028,6 +2078,15 @@ class StatusCode
         self::INSTANCE_TYPE_INVALID_ARGUMENT => 'INSTANCE_TYPE_INVALID_ARGUMENT',
         self::INSTANCE_TYPE_INVALID_REQUEST => 'INSTANCE_TYPE_INVALID_REQUEST',
         self::COMPUTE_PLANE_METRICS_INVALID_REQUEST => 'COMPUTE_PLANE_METRICS_INVALID_REQUEST',
+        self::PIPELINE_STEP_DOES_NOT_EXIST => 'PIPELINE_STEP_DOES_NOT_EXIST',
+        self::PIPELINE_STEP_INVALID_ARGUMENT => 'PIPELINE_STEP_INVALID_ARGUMENT',
+        self::PIPELINE_STEP_INVALID_REQUEST => 'PIPELINE_STEP_INVALID_REQUEST',
+        self::PIPELINE_STEP_UPLOADING => 'PIPELINE_STEP_UPLOADING',
+        self::PIPELINE_STEP_UPLOADING_FAILED => 'PIPELINE_STEP_UPLOADING_FAILED',
+        self::PIPELINE_STEP_BUILDING => 'PIPELINE_STEP_BUILDING',
+        self::PIPELINE_STEP_BUILDING_FAILED => 'PIPELINE_STEP_BUILDING_FAILED',
+        self::PIPELINE_STEP_BUILD_UNEXPECTED_ERROR => 'PIPELINE_STEP_BUILD_UNEXPECTED_ERROR',
+        self::PIPELINE_STEP_READY => 'PIPELINE_STEP_READY',
         self::INPUT_SUCCESS => 'INPUT_SUCCESS',
         self::INPUT_PENDING => 'INPUT_PENDING',
         self::INPUT_FAILED => 'INPUT_FAILED',
@@ -2234,6 +2293,7 @@ class StatusCode
         self::UPLOAD_CANCELED => 'UPLOAD_CANCELED',
         self::UPLOAD_CONFLICT => 'UPLOAD_CONFLICT',
         self::BILLING_INVALID_INFO => 'BILLING_INVALID_INFO',
+        self::BILLING_MISSING_TOKENS => 'BILLING_MISSING_TOKENS',
         self::LOG_ENTRIES_INVALID_REQUEST => 'LOG_ENTRIES_INVALID_REQUEST',
         self::INTERNAL_SERVER_ISSUE => 'INTERNAL_SERVER_ISSUE',
         self::INTERNAL_FETCHING_ISSUE => 'INTERNAL_FETCHING_ISSUE',
@@ -2249,6 +2309,8 @@ class StatusCode
         self::INTERNAL_AWS_UNCATEGORIZED => 'INTERNAL_AWS_UNCATEGORIZED',
         self::INTERNAL_AZURE_UNCATEGORIZED => 'INTERNAL_AZURE_UNCATEGORIZED',
         self::INTERNAL_VECTORDB_UNCATEGORIZED => 'INTERNAL_VECTORDB_UNCATEGORIZED',
+        self::INTERNAL_ORACLE_UNCATEGORIZED => 'INTERNAL_ORACLE_UNCATEGORIZED',
+        self::INTERNAL_VULTR_UNCATEGORIZED => 'INTERNAL_VULTR_UNCATEGORIZED',
         self::CONN_UNCATEGORIZED => 'CONN_UNCATEGORIZED',
         self::MODEL_UNCATEGORIZED => 'MODEL_UNCATEGORIZED',
         self::INPUT_UNCATEGORIZED => 'INPUT_UNCATEGORIZED',

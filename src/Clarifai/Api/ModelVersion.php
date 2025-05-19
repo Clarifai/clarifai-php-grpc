@@ -125,8 +125,10 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     protected $train_info = null;
     /**
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: no longer support importing models from third party toolkits
      *
-     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
+     * @deprecated
      */
     protected $import_info = null;
     /**
@@ -202,6 +204,7 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *           Configuration for the training process of this model version.
      *     @type \Clarifai\Api\ImportInfo $import_info
      *           Configuration used to import model from third-party toolkits
+     *           DEPRECATED: no longer support importing models from third party toolkits
      *     @type string $train_log
      *           Contains the training logs if available
      *     @type \Clarifai\Api\ComputeInfo $inference_compute_info
@@ -797,34 +800,42 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
 
     /**
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: no longer support importing models from third party toolkits
      *
-     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
      * @return \Clarifai\Api\ImportInfo|null
+     * @deprecated
      */
     public function getImportInfo()
     {
+        @trigger_error('import_info is deprecated.', E_USER_DEPRECATED);
         return $this->import_info;
     }
 
     public function hasImportInfo()
     {
+        @trigger_error('import_info is deprecated.', E_USER_DEPRECATED);
         return isset($this->import_info);
     }
 
     public function clearImportInfo()
     {
+        @trigger_error('import_info is deprecated.', E_USER_DEPRECATED);
         unset($this->import_info);
     }
 
     /**
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: no longer support importing models from third party toolkits
      *
-     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * Generated from protobuf field <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
      * @param \Clarifai\Api\ImportInfo $var
      * @return $this
+     * @deprecated
      */
     public function setImportInfo($var)
     {
+        @trigger_error('import_info is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Clarifai\Api\ImportInfo::class);
         $this->import_info = $var;
 

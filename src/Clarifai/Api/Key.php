@@ -22,7 +22,7 @@ class Key extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * The type of key, it can be api_key or personal_access_token, the default value is api_key
+     * The type of key, it can be app_specific_key (default) or personal_access_token
      *
      * Generated from protobuf field <code>string type = 8;</code>
      */
@@ -84,7 +84,7 @@ class Key extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           The id of this key, it is used for authorization.
      *     @type string $type
-     *           The type of key, it can be api_key or personal_access_token, the default value is api_key
+     *           The type of key, it can be app_specific_key (default) or personal_access_token
      *     @type string $description
      *           The description
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scopes
@@ -138,7 +138,7 @@ class Key extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of key, it can be api_key or personal_access_token, the default value is api_key
+     * The type of key, it can be app_specific_key (default) or personal_access_token
      *
      * Generated from protobuf field <code>string type = 8;</code>
      * @return string
@@ -149,7 +149,7 @@ class Key extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of key, it can be api_key or personal_access_token, the default value is api_key
+     * The type of key, it can be app_specific_key (default) or personal_access_token
      *
      * Generated from protobuf field <code>string type = 8;</code>
      * @param string $var

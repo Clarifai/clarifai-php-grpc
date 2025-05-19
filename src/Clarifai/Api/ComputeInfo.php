@@ -19,20 +19,40 @@ use Google\Protobuf\Internal\GPBUtil;
 class ComputeInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * Amount of CPUs to use as a limit. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU count.
+     * For runners, this is the maximum amount of CPU that the runner pod can use.
      *
      * Generated from protobuf field <code>string cpu_limit = 6;</code>
      */
     protected $cpu_limit = '';
     /**
-     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * Amount of CPU memory to use as a limit. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU memory.
+     * For runners, this is the maximum amount of CPU memory that the runner pod can use.
      *
      * Generated from protobuf field <code>string cpu_memory = 2;</code>
      */
     protected $cpu_memory = '';
+    /**
+     * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For runners, this is the minimum amount of CPU requested for the runner pod.
+     *
+     * Generated from protobuf field <code>string cpu_requests = 7;</code>
+     */
+    protected $cpu_requests = '';
+    /**
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     *
+     * Generated from protobuf field <code>string cpu_memory_requests = 8;</code>
+     */
+    protected $cpu_memory_requests = '';
     /**
      * Amount of GPU/TPUs to use.
      *
@@ -63,12 +83,24 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $cpu_limit
-     *           Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     *           Amount of CPUs to use as a limit. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      *           See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     *           For instances, this is the instance's CPU count.
+     *           For runners, this is the maximum amount of CPU that the runner pod can use.
      *     @type string $cpu_memory
-     *           Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     *           Amount of CPU memory to use as a limit. This follows kubernetes notation like:
      *           1Ki, 1500Mi, 3Gi, 4Ti, etc.
      *           See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     *           For instances, this is the instance's CPU memory.
+     *           For runners, this is the maximum amount of CPU memory that the runner pod can use.
+     *     @type string $cpu_requests
+     *           Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     *           See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     *           For runners, this is the minimum amount of CPU requested for the runner pod.
+     *     @type string $cpu_memory_requests
+     *           Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     *           1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     *           For runners, this is the minimum amount of CPU memory requested for the runner pod.
      *     @type int $num_accelerators
      *           Amount of GPU/TPUs to use.
      *     @type string $accelerator_memory
@@ -87,8 +119,10 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * Amount of CPUs to use as a limit. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU count.
+     * For runners, this is the maximum amount of CPU that the runner pod can use.
      *
      * Generated from protobuf field <code>string cpu_limit = 6;</code>
      * @return string
@@ -99,8 +133,10 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * Amount of CPUs to use as a limit. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU count.
+     * For runners, this is the maximum amount of CPU that the runner pod can use.
      *
      * Generated from protobuf field <code>string cpu_limit = 6;</code>
      * @param string $var
@@ -115,9 +151,11 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * Amount of CPU memory to use as a limit. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU memory.
+     * For runners, this is the maximum amount of CPU memory that the runner pod can use.
      *
      * Generated from protobuf field <code>string cpu_memory = 2;</code>
      * @return string
@@ -128,9 +166,11 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * Amount of CPU memory to use as a limit. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU memory.
+     * For runners, this is the maximum amount of CPU memory that the runner pod can use.
      *
      * Generated from protobuf field <code>string cpu_memory = 2;</code>
      * @param string $var
@@ -140,6 +180,66 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->cpu_memory = $var;
+
+        return $this;
+    }
+
+    /**
+     * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For runners, this is the minimum amount of CPU requested for the runner pod.
+     *
+     * Generated from protobuf field <code>string cpu_requests = 7;</code>
+     * @return string
+     */
+    public function getCpuRequests()
+    {
+        return $this->cpu_requests;
+    }
+
+    /**
+     * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For runners, this is the minimum amount of CPU requested for the runner pod.
+     *
+     * Generated from protobuf field <code>string cpu_requests = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCpuRequests($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->cpu_requests = $var;
+
+        return $this;
+    }
+
+    /**
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     *
+     * Generated from protobuf field <code>string cpu_memory_requests = 8;</code>
+     * @return string
+     */
+    public function getCpuMemoryRequests()
+    {
+        return $this->cpu_memory_requests;
+    }
+
+    /**
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     *
+     * Generated from protobuf field <code>string cpu_memory_requests = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCpuMemoryRequests($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->cpu_memory_requests = $var;
 
         return $this;
     }

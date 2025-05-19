@@ -9,12 +9,15 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * DEPRECATED: no longer support importing models from third party toolkits
+ *
  * Generated from protobuf message <code>clarifai.api.ImportInfo</code>
  */
 class ImportInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Used to configure model imports from third-party toolkits.
+     * DEPRECATED: no longer support importing models from third party toolkits
      *
      * Generated from protobuf field <code>.google.protobuf.Struct params = 1;</code>
      */
@@ -28,6 +31,7 @@ class ImportInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Protobuf\Struct $params
      *           Used to configure model imports from third-party toolkits.
+     *           DEPRECATED: no longer support importing models from third party toolkits
      * }
      */
     public function __construct($data = NULL) {
@@ -37,6 +41,7 @@ class ImportInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Used to configure model imports from third-party toolkits.
+     * DEPRECATED: no longer support importing models from third party toolkits
      *
      * Generated from protobuf field <code>.google.protobuf.Struct params = 1;</code>
      * @return \Google\Protobuf\Struct|null
@@ -58,6 +63,7 @@ class ImportInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Used to configure model imports from third-party toolkits.
+     * DEPRECATED: no longer support importing models from third party toolkits
      *
      * Generated from protobuf field <code>.google.protobuf.Struct params = 1;</code>
      * @param \Google\Protobuf\Struct $var

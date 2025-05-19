@@ -107,21 +107,21 @@ class DataType
     /**
      * this can be used to store named fields with values similar to Dict
      *
-     * Generated from protobuf enum <code>NAMED_FIELDS = 20;</code>
+     * Generated from protobuf enum <code>NAMED_FIELDS = 15;</code>
      */
-    const NAMED_FIELDS = 20;
+    const NAMED_FIELDS = 15;
     /**
      * An arg that is a tuple.
      *
-     * Generated from protobuf enum <code>TUPLE = 21;</code>
+     * Generated from protobuf enum <code>TUPLE = 16;</code>
      */
-    const TUPLE = 21;
+    const TUPLE = 16;
     /**
      * An arg that is a list.
      *
-     * Generated from protobuf enum <code>LIST = 22;</code>
+     * Generated from protobuf enum <code>LIST = 17;</code>
      */
-    const PBLIST = 22;
+    const PBLIST = 17;
 
     private static $valueToName = [
         self::NOT_SET => 'NOT_SET',

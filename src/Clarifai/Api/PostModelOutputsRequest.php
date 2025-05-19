@@ -53,6 +53,12 @@ class PostModelOutputsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool use_predict_cache = 7;</code>
      */
     protected $use_predict_cache = false;
+    /**
+     * Configuration to provide logs summarization when request errors out
+     *
+     * Generated from protobuf field <code>bool enable_log_summary_on_error = 8;</code>
+     */
+    protected $enable_log_summary_on_error = false;
 
     /**
      * Constructor.
@@ -71,6 +77,8 @@ class PostModelOutputsRequest extends \Google\Protobuf\Internal\Message
      *           Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
      *     @type bool $use_predict_cache
      *           Configure the prediction cache to avoid expensive compute for predict requests
+     *     @type bool $enable_log_summary_on_error
+     *           Configuration to provide logs summarization when request errors out
      * }
      */
     public function __construct($data = NULL) {
@@ -272,6 +280,32 @@ class PostModelOutputsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->use_predict_cache = $var;
+
+        return $this;
+    }
+
+    /**
+     * Configuration to provide logs summarization when request errors out
+     *
+     * Generated from protobuf field <code>bool enable_log_summary_on_error = 8;</code>
+     * @return bool
+     */
+    public function getEnableLogSummaryOnError()
+    {
+        return $this->enable_log_summary_on_error;
+    }
+
+    /**
+     * Configuration to provide logs summarization when request errors out
+     *
+     * Generated from protobuf field <code>bool enable_log_summary_on_error = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableLogSummaryOnError($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_log_summary_on_error = $var;
 
         return $this;
     }

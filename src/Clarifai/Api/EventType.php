@@ -185,6 +185,44 @@ class EventType
      * Generated from protobuf enum <code>USER_UPDATE = 800 [(.clarifai.api.utils.description) = "Users updated"];</code>
      */
     const USER_UPDATE = 800;
+    /**
+     * Event types related to compute clusters: 900-999
+     *
+     * Generated from protobuf enum <code>COMPUTE_CLUSTER_CREATE = 900 [(.clarifai.api.utils.description) = "Compute clusters created"];</code>
+     */
+    const COMPUTE_CLUSTER_CREATE = 900;
+    /**
+     * Generated from protobuf enum <code>COMPUTE_CLUSTER_DELETE = 901 [(.clarifai.api.utils.description) = "Compute clusters deleted"];</code>
+     */
+    const COMPUTE_CLUSTER_DELETE = 901;
+    /**
+     * Event types related to nodepools: 1000-1099
+     *
+     * Generated from protobuf enum <code>NODEPOOL_CREATE = 1000 [(.clarifai.api.utils.description) = "Nodepools created"];</code>
+     */
+    const NODEPOOL_CREATE = 1000;
+    /**
+     * Generated from protobuf enum <code>NODEPOOL_UPDATE = 1001 [(.clarifai.api.utils.description) = "Nodepools updated"];</code>
+     */
+    const NODEPOOL_UPDATE = 1001;
+    /**
+     * Generated from protobuf enum <code>NODEPOOL_DELETE = 1002 [(.clarifai.api.utils.description) = "Nodepools deleted"];</code>
+     */
+    const NODEPOOL_DELETE = 1002;
+    /**
+     * Event types related to deployments: 1100-1199
+     *
+     * Generated from protobuf enum <code>DEPLOYMENT_CREATE = 1100 [(.clarifai.api.utils.description) = "Deployments created"];</code>
+     */
+    const DEPLOYMENT_CREATE = 1100;
+    /**
+     * Generated from protobuf enum <code>DEPLOYMENT_UPDATE = 1101 [(.clarifai.api.utils.description) = "Deployments updated"];</code>
+     */
+    const DEPLOYMENT_UPDATE = 1101;
+    /**
+     * Generated from protobuf enum <code>DEPLOYMENT_DELETE = 1102 [(.clarifai.api.utils.description) = "Deployments deleted"];</code>
+     */
+    const DEPLOYMENT_DELETE = 1102;
 
     private static $valueToName = [
         self::EVENT_TYPE_NOT_SET => 'EVENT_TYPE_NOT_SET',
@@ -227,6 +265,14 @@ class EventType
         self::COLLABORATOR_UPDATE => 'COLLABORATOR_UPDATE',
         self::COLLABORATOR_REMOVE => 'COLLABORATOR_REMOVE',
         self::USER_UPDATE => 'USER_UPDATE',
+        self::COMPUTE_CLUSTER_CREATE => 'COMPUTE_CLUSTER_CREATE',
+        self::COMPUTE_CLUSTER_DELETE => 'COMPUTE_CLUSTER_DELETE',
+        self::NODEPOOL_CREATE => 'NODEPOOL_CREATE',
+        self::NODEPOOL_UPDATE => 'NODEPOOL_UPDATE',
+        self::NODEPOOL_DELETE => 'NODEPOOL_DELETE',
+        self::DEPLOYMENT_CREATE => 'DEPLOYMENT_CREATE',
+        self::DEPLOYMENT_UPDATE => 'DEPLOYMENT_UPDATE',
+        self::DEPLOYMENT_DELETE => 'DEPLOYMENT_DELETE',
     ];
 
     public static function name($value)

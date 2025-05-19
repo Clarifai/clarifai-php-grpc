@@ -640,7 +640,7 @@ class V2Client extends \Grpc\BaseStub {
 
     /**
      * TODO(zeiler): will need to
-     * Single request but streaming resopnses.
+     * Single request but streaming responses.
      * @param \Clarifai\Api\PostModelOutputsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

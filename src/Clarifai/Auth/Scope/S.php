@@ -614,9 +614,6 @@ class S
      */
     const WorkflowVersionEvaluations_Add = 153;
     /**
-     * Pipelines feature is in development, this shouldn't be exposed yet.
-     * TODO: Expose this scope when the feature is ready.
-     *
      * Generated from protobuf enum <code>Pipeline_Get = 154 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const Pipeline_Get = 154;
@@ -624,6 +621,20 @@ class S
      * Generated from protobuf enum <code>Pipeline_Add = 155 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipeline_Get];</code>
      */
     const Pipeline_Add = 155;
+    /**
+     * Generated from protobuf enum <code>PipelineStep_Get = 157 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const PipelineStep_Get = 157;
+    /**
+     * Generated from protobuf enum <code>PipelineStep_Add = 158 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineStep_Get];</code>
+     */
+    const PipelineStep_Add = 158;
+    /**
+     * To pull the pipeline step version's image
+     *
+     * Generated from protobuf enum <code>PipelineStep_Pull = 159 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineStep_Get];</code>
+     */
+    const PipelineStep_Pull = 159;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -732,6 +743,9 @@ class S
         self::WorkflowVersionEvaluations_Add => 'WorkflowVersionEvaluations_Add',
         self::Pipeline_Get => 'Pipeline_Get',
         self::Pipeline_Add => 'Pipeline_Add',
+        self::PipelineStep_Get => 'PipelineStep_Get',
+        self::PipelineStep_Add => 'PipelineStep_Add',
+        self::PipelineStep_Pull => 'PipelineStep_Pull',
     ];
 
     public static function name($value)
