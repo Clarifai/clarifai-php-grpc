@@ -46,12 +46,15 @@ class StatusCode
      */
     const MOVED = 10050;
     /**
-     *SUCCESS_WARNING_API_DEPRECATED = 10001;
-     *SUCCESS_WARNING_CLIENT_DEPRECATED = 10002;
-     *
      * Generated from protobuf enum <code>TEAPOT = 10060;</code>
      */
     const TEAPOT = 10060;
+    /**
+     * Request has been accepted. Respond with Http status 202.
+     *
+     * Generated from protobuf enum <code>ACCEPTED = 10070;</code>
+     */
+    const ACCEPTED = 10070;
     /**
      * Clarifai Connection Codes: 11xxx
      *
@@ -856,6 +859,10 @@ class StatusCode
      * Generated from protobuf enum <code>PIPELINE_STEP_READY = 26208;</code>
      */
     const PIPELINE_STEP_READY = 26208;
+    /**
+     * Generated from protobuf enum <code>PIPELINE_STEP_NOT_READY = 26209;</code>
+     */
+    const PIPELINE_STEP_NOT_READY = 26209;
     /**
      * Input:Image related 30xxx
      *
@@ -1922,6 +1929,7 @@ class StatusCode
         self::NOT_IMPLEMENTED => 'NOT_IMPLEMENTED',
         self::MOVED => 'MOVED',
         self::TEAPOT => 'TEAPOT',
+        self::ACCEPTED => 'ACCEPTED',
         self::CONN_ACCOUNT_ISSUES => 'CONN_ACCOUNT_ISSUES',
         self::CONN_TOKEN_INVALID => 'CONN_TOKEN_INVALID',
         self::CONN_CREDENTIALS_INVALID => 'CONN_CREDENTIALS_INVALID',
@@ -2087,6 +2095,7 @@ class StatusCode
         self::PIPELINE_STEP_BUILDING_FAILED => 'PIPELINE_STEP_BUILDING_FAILED',
         self::PIPELINE_STEP_BUILD_UNEXPECTED_ERROR => 'PIPELINE_STEP_BUILD_UNEXPECTED_ERROR',
         self::PIPELINE_STEP_READY => 'PIPELINE_STEP_READY',
+        self::PIPELINE_STEP_NOT_READY => 'PIPELINE_STEP_NOT_READY',
         self::INPUT_SUCCESS => 'INPUT_SUCCESS',
         self::INPUT_PENDING => 'INPUT_PENDING',
         self::INPUT_FAILED => 'INPUT_FAILED',

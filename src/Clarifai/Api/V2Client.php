@@ -3871,4 +3871,36 @@ class V2Client extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * The GET request to start an MCP session.
+     * Currently not supported in our API.
+     * @param \Clarifai\Api\MCPRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetMCP(\Clarifai\Api\MCPRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetMCP',
+        $argument,
+        ['\Clarifai\Api\SingleMCPResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * The POST request for interacting with MCP tools.
+     * This is the simplest form of MCP tool calls with stateless execution for now.
+     * @param \Clarifai\Api\MCPRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostMCP(\Clarifai\Api\MCPRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostMCP',
+        $argument,
+        ['\Clarifai\Api\SingleMCPResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

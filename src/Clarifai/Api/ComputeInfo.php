@@ -41,6 +41,7 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
      * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * For runners, this is the minimum amount of CPU requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      *
      * Generated from protobuf field <code>string cpu_requests = 7;</code>
      */
@@ -49,6 +50,7 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
      * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      *
      * Generated from protobuf field <code>string cpu_memory_requests = 8;</code>
      */
@@ -97,10 +99,12 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
      *           Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      *           See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      *           For runners, this is the minimum amount of CPU requested for the runner pod.
+     *           Optional. If unspecified, a small default is used.
      *     @type string $cpu_memory_requests
      *           Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
      *           1Ki, 1500Mi, 3Gi, 4Ti, etc.
      *           For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     *           Optional. If unspecified, a small default is used.
      *     @type int $num_accelerators
      *           Amount of GPU/TPUs to use.
      *     @type string $accelerator_memory
@@ -188,6 +192,7 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
      * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * For runners, this is the minimum amount of CPU requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      *
      * Generated from protobuf field <code>string cpu_requests = 7;</code>
      * @return string
@@ -201,6 +206,7 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
      * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * For runners, this is the minimum amount of CPU requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      *
      * Generated from protobuf field <code>string cpu_requests = 7;</code>
      * @param string $var
@@ -218,6 +224,7 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
      * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      *
      * Generated from protobuf field <code>string cpu_memory_requests = 8;</code>
      * @return string
@@ -231,6 +238,7 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
      * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      *
      * Generated from protobuf field <code>string cpu_memory_requests = 8;</code>
      * @param string $var
