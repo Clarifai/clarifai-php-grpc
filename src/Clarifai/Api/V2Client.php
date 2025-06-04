@@ -3871,4 +3871,90 @@ class V2Client extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Clarifai\Api\PostPipelineStepsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostPipelineSteps(\Clarifai\Api\PostPipelineStepsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostPipelineSteps',
+        $argument,
+        ['\Clarifai\Api\MultiPipelineStepResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\GetPipelineStepRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetPipelineStep(\Clarifai\Api\GetPipelineStepRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetPipelineStep',
+        $argument,
+        ['\Clarifai\Api\SinglePipelineStepResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\ListPipelineStepsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListPipelineSteps(\Clarifai\Api\ListPipelineStepsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListPipelineSteps',
+        $argument,
+        ['\Clarifai\Api\MultiPipelineStepResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * This is a streaming endpoint, the request has a field, upload_data, which can either be the config for the upload or the actual data to upload.
+     * The config must be sent first before the pipeline_step_bytes can be uploaded.
+     * Once the config has been sent, the server will respond with a confirmation containing the pipeline_step_version_id.
+     * This is so that if your upload is interrupted, you can resume the upload by sending the config again with the pipeline_step_version_id specified for your pipeline_step_version.
+     * The actual upload will be done via a multipart upload, the latest successful part_id will be sent from the server in the response to the pipeline_step_bytes.
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\BidiStreamingCall
+     */
+    public function PostPipelineStepVersionsUpload($metadata = [], $options = []) {
+        return $this->_bidiRequest('/clarifai.api.V2/PostPipelineStepVersionsUpload',
+        ['\Clarifai\Api\PostPipelineStepVersionsUploadResponse','decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\ListPipelineStepVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListPipelineStepVersions(\Clarifai\Api\ListPipelineStepVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListPipelineStepVersions',
+        $argument,
+        ['\Clarifai\Api\MultiPipelineStepVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\GetPipelineStepVersionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetPipelineStepVersion(\Clarifai\Api\GetPipelineStepVersionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetPipelineStepVersion',
+        $argument,
+        ['\Clarifai\Api\SinglePipelineStepVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

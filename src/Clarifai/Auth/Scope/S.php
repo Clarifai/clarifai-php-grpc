@@ -614,27 +614,27 @@ class S
      */
     const WorkflowVersionEvaluations_Add = 153;
     /**
-     * Generated from protobuf enum <code>Pipeline_Get = 154 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     * Generated from protobuf enum <code>Pipelines_Get = 154 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
-    const Pipeline_Get = 154;
+    const Pipelines_Get = 154;
     /**
-     * Generated from protobuf enum <code>Pipeline_Add = 155 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipeline_Get];</code>
+     * Generated from protobuf enum <code>Pipelines_Add = 155 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipelines_Get];</code>
      */
-    const Pipeline_Add = 155;
+    const Pipelines_Add = 155;
     /**
-     * Generated from protobuf enum <code>PipelineStep_Get = 157 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     * Generated from protobuf enum <code>PipelineSteps_Get = 157 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
-    const PipelineStep_Get = 157;
+    const PipelineSteps_Get = 157;
     /**
-     * Generated from protobuf enum <code>PipelineStep_Add = 158 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineStep_Get];</code>
+     * Generated from protobuf enum <code>PipelineSteps_Add = 158 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineSteps_Get];</code>
      */
-    const PipelineStep_Add = 158;
+    const PipelineSteps_Add = 158;
     /**
      * To pull the pipeline step version's image
      *
-     * Generated from protobuf enum <code>PipelineStep_Pull = 159 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineStep_Get];</code>
+     * Generated from protobuf enum <code>PipelineSteps_Pull = 159 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineSteps_Get];</code>
      */
-    const PipelineStep_Pull = 159;
+    const PipelineSteps_Pull = 159;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -741,11 +741,11 @@ class S
         self::LogEntries_Get => 'LogEntries_Get',
         self::WorkflowVersionEvaluations_Get => 'WorkflowVersionEvaluations_Get',
         self::WorkflowVersionEvaluations_Add => 'WorkflowVersionEvaluations_Add',
-        self::Pipeline_Get => 'Pipeline_Get',
-        self::Pipeline_Add => 'Pipeline_Add',
-        self::PipelineStep_Get => 'PipelineStep_Get',
-        self::PipelineStep_Add => 'PipelineStep_Add',
-        self::PipelineStep_Pull => 'PipelineStep_Pull',
+        self::Pipelines_Get => 'Pipelines_Get',
+        self::Pipelines_Add => 'Pipelines_Add',
+        self::PipelineSteps_Get => 'PipelineSteps_Get',
+        self::PipelineSteps_Add => 'PipelineSteps_Add',
+        self::PipelineSteps_Pull => 'PipelineSteps_Pull',
     ];
 
     public static function name($value)
