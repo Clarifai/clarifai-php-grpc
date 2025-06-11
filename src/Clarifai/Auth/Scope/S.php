@@ -622,6 +622,10 @@ class S
      */
     const Pipelines_Add = 155;
     /**
+     * Generated from protobuf enum <code>Pipelines_Delete = 156 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipelines_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipelines_Add];</code>
+     */
+    const Pipelines_Delete = 156;
+    /**
      * Generated from protobuf enum <code>PipelineSteps_Get = 157 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const PipelineSteps_Get = 157;
@@ -743,6 +747,7 @@ class S
         self::WorkflowVersionEvaluations_Add => 'WorkflowVersionEvaluations_Add',
         self::Pipelines_Get => 'Pipelines_Get',
         self::Pipelines_Add => 'Pipelines_Add',
+        self::Pipelines_Delete => 'Pipelines_Delete',
         self::PipelineSteps_Get => 'PipelineSteps_Get',
         self::PipelineSteps_Add => 'PipelineSteps_Add',
         self::PipelineSteps_Pull => 'PipelineSteps_Pull',
