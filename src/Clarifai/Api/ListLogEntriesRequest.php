@@ -73,8 +73,7 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $runner_id = '';
     /**
-     * Pipelines that produced the logs for a given pipeline run with log_type: pipeline.version.run
-     * Must include user_app_id with user_id and app_id as well.
+     * Pipelines that produced the logs.
      *
      * Generated from protobuf field <code>string pipeline_id = 12;</code>
      */
@@ -87,16 +86,6 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string pipeline_version_run_id = 14;</code>
      */
     protected $pipeline_version_run_id = '';
-    /**
-     * During pipeline step build provide these IDs.
-     *
-     * Generated from protobuf field <code>string pipeline_step_id = 15;</code>
-     */
-    protected $pipeline_step_id = '';
-    /**
-     * Generated from protobuf field <code>string pipeline_step_version_id = 16;</code>
-     */
-    protected $pipeline_step_version_id = '';
 
     /**
      * Constructor.
@@ -126,13 +115,9 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
      *     @type string $nodepool_id
      *     @type string $runner_id
      *     @type string $pipeline_id
-     *           Pipelines that produced the logs for a given pipeline run with log_type: pipeline.version.run
-     *           Must include user_app_id with user_id and app_id as well.
+     *           Pipelines that produced the logs.
      *     @type string $pipeline_version_id
      *     @type string $pipeline_version_run_id
-     *     @type string $pipeline_step_id
-     *           During pipeline step build provide these IDs.
-     *     @type string $pipeline_step_version_id
      * }
      */
     public function __construct($data = NULL) {
@@ -409,8 +394,7 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Pipelines that produced the logs for a given pipeline run with log_type: pipeline.version.run
-     * Must include user_app_id with user_id and app_id as well.
+     * Pipelines that produced the logs.
      *
      * Generated from protobuf field <code>string pipeline_id = 12;</code>
      * @return string
@@ -421,8 +405,7 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Pipelines that produced the logs for a given pipeline run with log_type: pipeline.version.run
-     * Must include user_app_id with user_id and app_id as well.
+     * Pipelines that produced the logs.
      *
      * Generated from protobuf field <code>string pipeline_id = 12;</code>
      * @param string $var
@@ -476,54 +459,6 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->pipeline_version_run_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * During pipeline step build provide these IDs.
-     *
-     * Generated from protobuf field <code>string pipeline_step_id = 15;</code>
-     * @return string
-     */
-    public function getPipelineStepId()
-    {
-        return $this->pipeline_step_id;
-    }
-
-    /**
-     * During pipeline step build provide these IDs.
-     *
-     * Generated from protobuf field <code>string pipeline_step_id = 15;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPipelineStepId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->pipeline_step_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string pipeline_step_version_id = 16;</code>
-     * @return string
-     */
-    public function getPipelineStepVersionId()
-    {
-        return $this->pipeline_step_version_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string pipeline_step_version_id = 16;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPipelineStepVersionId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->pipeline_step_version_id = $var;
 
         return $this;
     }

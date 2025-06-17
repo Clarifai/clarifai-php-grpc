@@ -1882,10 +1882,6 @@ class StatusCode
      */
     const INTERNAL_VULTR_UNCATEGORIZED = 98020;
     /**
-     * Generated from protobuf enum <code>INTERNAL_GCP_UNCATEGORIZED = 98021;</code>
-     */
-    const INTERNAL_GCP_UNCATEGORIZED = 98021;
-    /**
      * Uncategorized: 99xxx: move off as soon as known
      *
      * Generated from protobuf enum <code>CONN_UNCATEGORIZED = 99001;</code>
@@ -2324,7 +2320,6 @@ class StatusCode
         self::INTERNAL_VECTORDB_UNCATEGORIZED => 'INTERNAL_VECTORDB_UNCATEGORIZED',
         self::INTERNAL_ORACLE_UNCATEGORIZED => 'INTERNAL_ORACLE_UNCATEGORIZED',
         self::INTERNAL_VULTR_UNCATEGORIZED => 'INTERNAL_VULTR_UNCATEGORIZED',
-        self::INTERNAL_GCP_UNCATEGORIZED => 'INTERNAL_GCP_UNCATEGORIZED',
         self::CONN_UNCATEGORIZED => 'CONN_UNCATEGORIZED',
         self::MODEL_UNCATEGORIZED => 'MODEL_UNCATEGORIZED',
         self::INPUT_UNCATEGORIZED => 'INPUT_UNCATEGORIZED',

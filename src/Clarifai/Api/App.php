@@ -28,10 +28,9 @@ class App extends \Google\Protobuf\Internal\Message
      */
     protected $default_language = '';
     /**
-     * Deprecated, use default_workflow instead.
+     * Default workflow id deprecated in favor of default_workflow
      *
-     * Generated from protobuf field <code>string default_workflow_id = 4 [deprecated = true];</code>
-     * @deprecated
+     * Generated from protobuf field <code>string default_workflow_id = 4;</code>
      */
     protected $default_workflow_id = '';
     /**
@@ -157,7 +156,7 @@ class App extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $default_language
      *     @type string $default_workflow_id
-     *           Deprecated, use default_workflow instead.
+     *           Default workflow id deprecated in favor of default_workflow
      *     @type \Clarifai\Api\Workflow $default_workflow
      *     @type string $user_id
      *           why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already
@@ -278,29 +277,25 @@ class App extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated, use default_workflow instead.
+     * Default workflow id deprecated in favor of default_workflow
      *
-     * Generated from protobuf field <code>string default_workflow_id = 4 [deprecated = true];</code>
+     * Generated from protobuf field <code>string default_workflow_id = 4;</code>
      * @return string
-     * @deprecated
      */
     public function getDefaultWorkflowId()
     {
-        @trigger_error('default_workflow_id is deprecated.', E_USER_DEPRECATED);
         return $this->default_workflow_id;
     }
 
     /**
-     * Deprecated, use default_workflow instead.
+     * Default workflow id deprecated in favor of default_workflow
      *
-     * Generated from protobuf field <code>string default_workflow_id = 4 [deprecated = true];</code>
+     * Generated from protobuf field <code>string default_workflow_id = 4;</code>
      * @param string $var
      * @return $this
-     * @deprecated
      */
     public function setDefaultWorkflowId($var)
     {
-        @trigger_error('default_workflow_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->default_workflow_id = $var;
 

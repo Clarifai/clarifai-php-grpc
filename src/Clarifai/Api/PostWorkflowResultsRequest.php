@@ -52,8 +52,7 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Use this flag to look into clarifai published workflows first for a Workflow ID
      *
-     * Generated from protobuf field <code>bool favor_clarifai_workflows = 5 [deprecated = true];</code>
-     * @deprecated
+     * Generated from protobuf field <code>bool favor_clarifai_workflows = 5;</code>
      */
     protected $favor_clarifai_workflows = false;
     /**
@@ -289,27 +288,23 @@ class PostWorkflowResultsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Use this flag to look into clarifai published workflows first for a Workflow ID
      *
-     * Generated from protobuf field <code>bool favor_clarifai_workflows = 5 [deprecated = true];</code>
+     * Generated from protobuf field <code>bool favor_clarifai_workflows = 5;</code>
      * @return bool
-     * @deprecated
      */
     public function getFavorClarifaiWorkflows()
     {
-        @trigger_error('favor_clarifai_workflows is deprecated.', E_USER_DEPRECATED);
         return $this->favor_clarifai_workflows;
     }
 
     /**
      * Use this flag to look into clarifai published workflows first for a Workflow ID
      *
-     * Generated from protobuf field <code>bool favor_clarifai_workflows = 5 [deprecated = true];</code>
+     * Generated from protobuf field <code>bool favor_clarifai_workflows = 5;</code>
      * @param bool $var
      * @return $this
-     * @deprecated
      */
     public function setFavorClarifaiWorkflows($var)
     {
-        @trigger_error('favor_clarifai_workflows is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->favor_clarifai_workflows = $var;
 

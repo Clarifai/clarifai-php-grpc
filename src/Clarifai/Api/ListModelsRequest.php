@@ -114,8 +114,7 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
      * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
      *
-     * Generated from protobuf field <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
-     * @deprecated
+     * Generated from protobuf field <code>bool dont_fetch_from_main = 23;</code>
      */
     protected $dont_fetch_from_main = false;
     /**
@@ -869,13 +868,11 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
      * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
      *
-     * Generated from protobuf field <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
+     * Generated from protobuf field <code>bool dont_fetch_from_main = 23;</code>
      * @return bool
-     * @deprecated
      */
     public function getDontFetchFromMain()
     {
-        @trigger_error('dont_fetch_from_main is deprecated.', E_USER_DEPRECATED);
         return $this->dont_fetch_from_main;
     }
 
@@ -883,14 +880,12 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
      * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
      *
-     * Generated from protobuf field <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
+     * Generated from protobuf field <code>bool dont_fetch_from_main = 23;</code>
      * @param bool $var
      * @return $this
-     * @deprecated
      */
     public function setDontFetchFromMain($var)
     {
-        @trigger_error('dont_fetch_from_main is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->dont_fetch_from_main = $var;
 

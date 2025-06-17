@@ -27,7 +27,6 @@ class StreamLogEntriesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_app_id = null;
     /**
-     * For models if you set log_type to "builder" then you get the model build logs.
      * The Model ID, if a model produced the logs.
      *
      * Generated from protobuf field <code>string model_id = 3;</code>
@@ -60,8 +59,7 @@ class StreamLogEntriesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $runner_id = '';
     /**
-     * Pipelines that produced the logs with log_type: pipeline.version.run
-     * Must include user_app_id with user_id and app_id as well.
+     * Pipelines that produced the logs.
      *
      * Generated from protobuf field <code>string pipeline_id = 12;</code>
      */
@@ -74,17 +72,6 @@ class StreamLogEntriesRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string pipeline_version_run_id = 14;</code>
      */
     protected $pipeline_version_run_id = '';
-    /**
-     * During pipeline step build provide these IDs with log_type: builder
-     * Must include user_app_id with user_id and app_id as well.
-     *
-     * Generated from protobuf field <code>string pipeline_step_id = 15;</code>
-     */
-    protected $pipeline_step_id = '';
-    /**
-     * Generated from protobuf field <code>string pipeline_step_version_id = 16;</code>
-     */
-    protected $pipeline_step_version_id = '';
 
     /**
      * Constructor.
@@ -98,7 +85,6 @@ class StreamLogEntriesRequest extends \Google\Protobuf\Internal\Message
      *           Who the logs are for.
      *           The user app id, if a user produced the logs.
      *     @type string $model_id
-     *           For models if you set log_type to "builder" then you get the model build logs.
      *           The Model ID, if a model produced the logs.
      *     @type string $model_version_id
      *           The Version ID, if a model version produced the logs.
@@ -109,14 +95,9 @@ class StreamLogEntriesRequest extends \Google\Protobuf\Internal\Message
      *     @type string $nodepool_id
      *     @type string $runner_id
      *     @type string $pipeline_id
-     *           Pipelines that produced the logs with log_type: pipeline.version.run
-     *           Must include user_app_id with user_id and app_id as well.
+     *           Pipelines that produced the logs.
      *     @type string $pipeline_version_id
      *     @type string $pipeline_version_run_id
-     *     @type string $pipeline_step_id
-     *           During pipeline step build provide these IDs with log_type: builder
-     *           Must include user_app_id with user_id and app_id as well.
-     *     @type string $pipeline_step_version_id
      * }
      */
     public function __construct($data = NULL) {
@@ -189,7 +170,6 @@ class StreamLogEntriesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * For models if you set log_type to "builder" then you get the model build logs.
      * The Model ID, if a model produced the logs.
      *
      * Generated from protobuf field <code>string model_id = 3;</code>
@@ -201,7 +181,6 @@ class StreamLogEntriesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * For models if you set log_type to "builder" then you get the model build logs.
      * The Model ID, if a model produced the logs.
      *
      * Generated from protobuf field <code>string model_id = 3;</code>
@@ -339,8 +318,7 @@ class StreamLogEntriesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Pipelines that produced the logs with log_type: pipeline.version.run
-     * Must include user_app_id with user_id and app_id as well.
+     * Pipelines that produced the logs.
      *
      * Generated from protobuf field <code>string pipeline_id = 12;</code>
      * @return string
@@ -351,8 +329,7 @@ class StreamLogEntriesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Pipelines that produced the logs with log_type: pipeline.version.run
-     * Must include user_app_id with user_id and app_id as well.
+     * Pipelines that produced the logs.
      *
      * Generated from protobuf field <code>string pipeline_id = 12;</code>
      * @param string $var
@@ -406,56 +383,6 @@ class StreamLogEntriesRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->pipeline_version_run_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * During pipeline step build provide these IDs with log_type: builder
-     * Must include user_app_id with user_id and app_id as well.
-     *
-     * Generated from protobuf field <code>string pipeline_step_id = 15;</code>
-     * @return string
-     */
-    public function getPipelineStepId()
-    {
-        return $this->pipeline_step_id;
-    }
-
-    /**
-     * During pipeline step build provide these IDs with log_type: builder
-     * Must include user_app_id with user_id and app_id as well.
-     *
-     * Generated from protobuf field <code>string pipeline_step_id = 15;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPipelineStepId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->pipeline_step_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string pipeline_step_version_id = 16;</code>
-     * @return string
-     */
-    public function getPipelineStepVersionId()
-    {
-        return $this->pipeline_step_version_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string pipeline_step_version_id = 16;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPipelineStepVersionId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->pipeline_step_version_id = $var;
 
         return $this;
     }

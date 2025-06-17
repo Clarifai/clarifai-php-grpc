@@ -47,18 +47,6 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string app_id = 6;</code>
      */
     protected $app_id = '';
-    /**
-     * When the pipeline was created
-     *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 7;</code>
-     */
-    protected $created_at = null;
-    /**
-     * When the pipeline was last modified
-     *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 8;</code>
-     */
-    protected $modified_at = null;
 
     /**
      * Constructor.
@@ -77,10 +65,6 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
      *           The user the pipeline belongs to
      *     @type string $app_id
      *           The app the pipeline belongs to
-     *     @type \Google\Protobuf\Timestamp $created_at
-     *           When the pipeline was created
-     *     @type \Google\Protobuf\Timestamp $modified_at
-     *           When the pipeline was last modified
      * }
      */
     public function __construct($data = NULL) {
@@ -256,78 +240,6 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->app_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * When the pipeline was created
-     *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 7;</code>
-     * @return \Google\Protobuf\Timestamp|null
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-
-    public function hasCreatedAt()
-    {
-        return isset($this->created_at);
-    }
-
-    public function clearCreatedAt()
-    {
-        unset($this->created_at);
-    }
-
-    /**
-     * When the pipeline was created
-     *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 7;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
-     */
-    public function setCreatedAt($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->created_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * When the pipeline was last modified
-     *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 8;</code>
-     * @return \Google\Protobuf\Timestamp|null
-     */
-    public function getModifiedAt()
-    {
-        return $this->modified_at;
-    }
-
-    public function hasModifiedAt()
-    {
-        return isset($this->modified_at);
-    }
-
-    public function clearModifiedAt()
-    {
-        unset($this->modified_at);
-    }
-
-    /**
-     * When the pipeline was last modified
-     *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 8;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
-     */
-    public function setModifiedAt($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->modified_at = $var;
 
         return $this;
     }
