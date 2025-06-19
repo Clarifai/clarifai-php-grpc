@@ -20,9 +20,14 @@ class TaskAIAssistant extends \Google\Protobuf\Internal\Message
      * This field is the workflow id which is used to assist the worker with predictions.
      * If empty, then AI assistant is disabled.
      *
-     * Generated from protobuf field <code>string workflow_id = 1;</code>
+     * Generated from protobuf field <code>string workflow_id = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $workflow_id = '';
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Workflow workflow = 2;</code>
+     */
+    protected $workflow = null;
 
     /**
      * Constructor.
@@ -34,6 +39,7 @@ class TaskAIAssistant extends \Google\Protobuf\Internal\Message
      *           The worker is helped by an AI assistant.
      *           This field is the workflow id which is used to assist the worker with predictions.
      *           If empty, then AI assistant is disabled.
+     *     @type \Clarifai\Api\Workflow $workflow
      * }
      */
     public function __construct($data = NULL) {
@@ -46,11 +52,13 @@ class TaskAIAssistant extends \Google\Protobuf\Internal\Message
      * This field is the workflow id which is used to assist the worker with predictions.
      * If empty, then AI assistant is disabled.
      *
-     * Generated from protobuf field <code>string workflow_id = 1;</code>
+     * Generated from protobuf field <code>string workflow_id = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getWorkflowId()
     {
+        @trigger_error('workflow_id is deprecated.', E_USER_DEPRECATED);
         return $this->workflow_id;
     }
 
@@ -59,14 +67,48 @@ class TaskAIAssistant extends \Google\Protobuf\Internal\Message
      * This field is the workflow id which is used to assist the worker with predictions.
      * If empty, then AI assistant is disabled.
      *
-     * Generated from protobuf field <code>string workflow_id = 1;</code>
+     * Generated from protobuf field <code>string workflow_id = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setWorkflowId($var)
     {
+        @trigger_error('workflow_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->workflow_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Workflow workflow = 2;</code>
+     * @return \Clarifai\Api\Workflow|null
+     */
+    public function getWorkflow()
+    {
+        return $this->workflow;
+    }
+
+    public function hasWorkflow()
+    {
+        return isset($this->workflow);
+    }
+
+    public function clearWorkflow()
+    {
+        unset($this->workflow);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Workflow workflow = 2;</code>
+     * @param \Clarifai\Api\Workflow $var
+     * @return $this
+     */
+    public function setWorkflow($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Workflow::class);
+        $this->workflow = $var;
 
         return $this;
     }

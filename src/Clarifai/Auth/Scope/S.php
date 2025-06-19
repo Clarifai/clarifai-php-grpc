@@ -622,6 +622,10 @@ class S
      */
     const Pipelines_Add = 155;
     /**
+     * Generated from protobuf enum <code>Pipelines_Delete = 156 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipelines_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipelines_Add];</code>
+     */
+    const Pipelines_Delete = 156;
+    /**
      * Generated from protobuf enum <code>PipelineSteps_Get = 157 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const PipelineSteps_Get = 157;
@@ -635,6 +639,18 @@ class S
      * Generated from protobuf enum <code>PipelineSteps_Pull = 159 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineSteps_Get];</code>
      */
     const PipelineSteps_Pull = 159;
+    /**
+     * Generated from protobuf enum <code>Secrets_Get = 160 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const Secrets_Get = 160;
+    /**
+     * Generated from protobuf enum <code>Secrets_Add = 161 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Secrets_Get];</code>
+     */
+    const Secrets_Add = 161;
+    /**
+     * Generated from protobuf enum <code>Secrets_Delete = 162 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Secrets_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Secrets_Add];</code>
+     */
+    const Secrets_Delete = 162;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -743,9 +759,13 @@ class S
         self::WorkflowVersionEvaluations_Add => 'WorkflowVersionEvaluations_Add',
         self::Pipelines_Get => 'Pipelines_Get',
         self::Pipelines_Add => 'Pipelines_Add',
+        self::Pipelines_Delete => 'Pipelines_Delete',
         self::PipelineSteps_Get => 'PipelineSteps_Get',
         self::PipelineSteps_Add => 'PipelineSteps_Add',
         self::PipelineSteps_Pull => 'PipelineSteps_Pull',
+        self::Secrets_Get => 'Secrets_Get',
+        self::Secrets_Add => 'Secrets_Add',
+        self::Secrets_Delete => 'Secrets_Delete',
     ];
 
     public static function name($value)

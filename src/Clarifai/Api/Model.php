@@ -232,6 +232,12 @@ class Model extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int32Value featured_order = 41;</code>
      */
     protected $featured_order = null;
+    /**
+     * Deploy restriction for the model.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DeployRestriction deploy_restriction = 42;</code>
+     */
+    protected $deploy_restriction = 0;
 
     /**
      * Constructor.
@@ -316,6 +322,8 @@ class Model extends \Google\Protobuf\Internal\Message
      *           Whether the model should be featured, and if so, the order in which it should be featured.
      *           The order is relative to other models that are also featured.
      *           Models with a higher order will be featured first.
+     *     @type int $deploy_restriction
+     *           Deploy restriction for the model.
      * }
      */
     public function __construct($data = NULL) {
@@ -1384,6 +1392,32 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         $this->writeWrapperValue("featured_order", $var);
         return $this;}
+
+    /**
+     * Deploy restriction for the model.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DeployRestriction deploy_restriction = 42;</code>
+     * @return int
+     */
+    public function getDeployRestriction()
+    {
+        return $this->deploy_restriction;
+    }
+
+    /**
+     * Deploy restriction for the model.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DeployRestriction deploy_restriction = 42;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDeployRestriction($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\DeployRestriction::class);
+        $this->deploy_restriction = $var;
+
+        return $this;
+    }
 
 }
 

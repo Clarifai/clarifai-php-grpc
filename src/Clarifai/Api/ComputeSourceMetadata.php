@@ -68,6 +68,8 @@ class ComputeSourceMetadata extends \Google\Protobuf\Internal\Message
      */
     protected $pipeline_version_run_id = '';
     /**
+     * Pipeline step related data for pipeline step builds.
+     *
      * Generated from protobuf field <code>string pipeline_step_id = 12;</code>
      */
     protected $pipeline_step_id = '';
@@ -99,6 +101,7 @@ class ComputeSourceMetadata extends \Google\Protobuf\Internal\Message
      *     @type string $pipeline_version_id
      *     @type string $pipeline_version_run_id
      *     @type string $pipeline_step_id
+     *           Pipeline step related data for pipeline step builds.
      *     @type string $pipeline_step_version_id
      * }
      */
@@ -362,6 +365,8 @@ class ComputeSourceMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Pipeline step related data for pipeline step builds.
+     *
      * Generated from protobuf field <code>string pipeline_step_id = 12;</code>
      * @return string
      */
@@ -371,6 +376,8 @@ class ComputeSourceMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Pipeline step related data for pipeline step builds.
+     *
      * Generated from protobuf field <code>string pipeline_step_id = 12;</code>
      * @param string $var
      * @return $this
