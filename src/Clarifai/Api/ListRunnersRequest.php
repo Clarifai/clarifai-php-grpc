@@ -47,6 +47,12 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 min_replicas = 6;</code>
      */
     protected $min_replicas = 0;
+    /**
+     * (optional URL parameter) ModelVersion IDs. To list all runners for the model version
+     *
+     * Generated from protobuf field <code>repeated string model_version_ids = 7;</code>
+     */
+    private $model_version_ids;
 
     /**
      * Constructor.
@@ -65,6 +71,8 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
      *     @type string $compute_cluster_id
      *     @type int $min_replicas
      *           Only return runners whose replicas are >= min_replicas.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $model_version_ids
+     *           (optional URL parameter) ModelVersion IDs. To list all runners for the model version
      * }
      */
     public function __construct($data = NULL) {
@@ -226,6 +234,32 @@ class ListRunnersRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->min_replicas = $var;
+
+        return $this;
+    }
+
+    /**
+     * (optional URL parameter) ModelVersion IDs. To list all runners for the model version
+     *
+     * Generated from protobuf field <code>repeated string model_version_ids = 7;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getModelVersionIds()
+    {
+        return $this->model_version_ids;
+    }
+
+    /**
+     * (optional URL parameter) ModelVersion IDs. To list all runners for the model version
+     *
+     * Generated from protobuf field <code>repeated string model_version_ids = 7;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setModelVersionIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->model_version_ids = $arr;
 
         return $this;
     }

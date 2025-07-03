@@ -3901,6 +3901,20 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Clarifai\Api\PostWorkflowVersionEvaluationDataRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostWorkflowVersionEvaluationData(\Clarifai\Api\PostWorkflowVersionEvaluationDataRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostWorkflowVersionEvaluationData',
+        $argument,
+        ['\Clarifai\Api\MultiListWorkflowVersionEvaluationDataResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Clarifai\Api\PostPipelinesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

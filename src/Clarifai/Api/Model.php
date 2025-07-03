@@ -238,6 +238,13 @@ class Model extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.DeployRestriction deploy_restriction = 42;</code>
      */
     protected $deploy_restriction = 0;
+    /**
+     * replica_count indicates the number of deployed model replicas.
+     * This field is populated when `show_replicas` is true in ListModelsRequest.
+     *
+     * Generated from protobuf field <code>uint32 replica_count = 43;</code>
+     */
+    protected $replica_count = 0;
 
     /**
      * Constructor.
@@ -324,6 +331,9 @@ class Model extends \Google\Protobuf\Internal\Message
      *           Models with a higher order will be featured first.
      *     @type int $deploy_restriction
      *           Deploy restriction for the model.
+     *     @type int $replica_count
+     *           replica_count indicates the number of deployed model replicas.
+     *           This field is populated when `show_replicas` is true in ListModelsRequest.
      * }
      */
     public function __construct($data = NULL) {
@@ -1415,6 +1425,34 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Clarifai\Api\DeployRestriction::class);
         $this->deploy_restriction = $var;
+
+        return $this;
+    }
+
+    /**
+     * replica_count indicates the number of deployed model replicas.
+     * This field is populated when `show_replicas` is true in ListModelsRequest.
+     *
+     * Generated from protobuf field <code>uint32 replica_count = 43;</code>
+     * @return int
+     */
+    public function getReplicaCount()
+    {
+        return $this->replica_count;
+    }
+
+    /**
+     * replica_count indicates the number of deployed model replicas.
+     * This field is populated when `show_replicas` is true in ListModelsRequest.
+     *
+     * Generated from protobuf field <code>uint32 replica_count = 43;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setReplicaCount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->replica_count = $var;
 
         return $this;
     }

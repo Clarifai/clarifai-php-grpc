@@ -197,6 +197,12 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 min_replicas = 33;</code>
      */
     protected $min_replicas = 0;
+    /**
+     * If true, show replica counts for models.
+     *
+     * Generated from protobuf field <code>bool show_replicas = 34;</code>
+     */
+    protected $show_replicas = false;
     protected $sort_by;
 
     /**
@@ -291,6 +297,8 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           Filter by Creator
      *     @type int $min_replicas
      *           Filter by model versions runners with replicas >= min_replicas.
+     *     @type bool $show_replicas
+     *           If true, show replica counts for models.
      * }
      */
     public function __construct($data = NULL) {
@@ -1197,6 +1205,32 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->min_replicas = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, show replica counts for models.
+     *
+     * Generated from protobuf field <code>bool show_replicas = 34;</code>
+     * @return bool
+     */
+    public function getShowReplicas()
+    {
+        return $this->show_replicas;
+    }
+
+    /**
+     * If true, show replica counts for models.
+     *
+     * Generated from protobuf field <code>bool show_replicas = 34;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setShowReplicas($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->show_replicas = $var;
 
         return $this;
     }
