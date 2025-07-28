@@ -66,6 +66,12 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $template_only = false;
     /**
+     * Filter by visibility of the app. If set, only return apps with the specified visibility.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 18;</code>
+     */
+    protected $visibility = null;
+    /**
      * Searching options:
      * Specify a search parameter in order to perform keyword search on the
      * following fields of the application:
@@ -144,6 +150,8 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      *           If true, we only return apps that are starred by the requesting user
      *     @type bool $template_only
      *           If true, we only return apps that are marked as a template by the app owner.
+     *     @type \Clarifai\Api\Visibility $visibility
+     *           Filter by visibility of the app. If set, only return apps with the specified visibility.
      *     @type string $search
      *           Searching options:
      *           Specify a search parameter in order to perform keyword search on the
@@ -548,6 +556,42 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->template_only = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by visibility of the app. If set, only return apps with the specified visibility.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 18;</code>
+     * @return \Clarifai\Api\Visibility|null
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
+    }
+
+    /**
+     * Filter by visibility of the app. If set, only return apps with the specified visibility.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 18;</code>
+     * @param \Clarifai\Api\Visibility $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }

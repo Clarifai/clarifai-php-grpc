@@ -87,6 +87,12 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
      * @deprecated
      */
     protected $filter_by_user_id = false;
+    /**
+     * Filter by visibility of the modules. If set, only return modules with the specified visibility.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 15;</code>
+     */
+    protected $visibility = null;
     protected $sort_by;
 
     /**
@@ -135,6 +141,8 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
      *     @type bool $filter_by_user_id
      *           Filter by the application owner whose this module belongs to
      *           Deprecated: use search instead of name.
+     *     @type \Clarifai\Api\Visibility $visibility
+     *           Filter by visibility of the modules. If set, only return modules with the specified visibility.
      * }
      */
     public function __construct($data = NULL) {
@@ -560,6 +568,42 @@ class ListModulesRequest extends \Google\Protobuf\Internal\Message
         @trigger_error('filter_by_user_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->filter_by_user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by visibility of the modules. If set, only return modules with the specified visibility.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 15;</code>
+     * @return \Clarifai\Api\Visibility|null
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
+    }
+
+    /**
+     * Filter by visibility of the modules. If set, only return modules with the specified visibility.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 15;</code>
+     * @param \Clarifai\Api\Visibility $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }

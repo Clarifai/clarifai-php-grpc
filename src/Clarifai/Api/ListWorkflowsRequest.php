@@ -66,6 +66,12 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $bookmark = false;
     /**
+     * Filter by visibility of the workflow. If set, only return workflows with the specified visibility.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 17;</code>
+     */
+    protected $visibility = null;
+    /**
      * Searching options:
      * Specify a search parameter in order to perform keyword search on the
      * following fields of the workflow:
@@ -141,6 +147,8 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      *           If true, we only return workflows that are starred by the requesting user
      *     @type bool $bookmark
      *           Filter workflows by bookmark. If set, only return bookmarked workflows. Otherwise none bookmarked workflows only.
+     *     @type \Clarifai\Api\Visibility $visibility
+     *           Filter by visibility of the workflow. If set, only return workflows with the specified visibility.
      *     @type string $search
      *           Searching options:
      *           Specify a search parameter in order to perform keyword search on the
@@ -513,6 +521,42 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->bookmark = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by visibility of the workflow. If set, only return workflows with the specified visibility.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 17;</code>
+     * @return \Clarifai\Api\Visibility|null
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
+    }
+
+    /**
+     * Filter by visibility of the workflow. If set, only return workflows with the specified visibility.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 17;</code>
+     * @param \Clarifai\Api\Visibility $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }

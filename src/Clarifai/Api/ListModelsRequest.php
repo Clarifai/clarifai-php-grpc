@@ -203,6 +203,12 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool show_replicas = 34;</code>
      */
     protected $show_replicas = false;
+    /**
+     * Filter by visibility of the model. If set, only return models with the specified visibility.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 35;</code>
+     */
+    protected $visibility = null;
     protected $sort_by;
 
     /**
@@ -299,6 +305,8 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           Filter by model versions runners with replicas >= min_replicas.
      *     @type bool $show_replicas
      *           If true, show replica counts for models.
+     *     @type \Clarifai\Api\Visibility $visibility
+     *           Filter by visibility of the model. If set, only return models with the specified visibility.
      * }
      */
     public function __construct($data = NULL) {
@@ -1231,6 +1239,42 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->show_replicas = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by visibility of the model. If set, only return models with the specified visibility.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 35;</code>
+     * @return \Clarifai\Api\Visibility|null
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
+    }
+
+    /**
+     * Filter by visibility of the model. If set, only return models with the specified visibility.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 35;</code>
+     * @param \Clarifai\Api\Visibility $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }
