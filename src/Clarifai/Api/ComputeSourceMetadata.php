@@ -42,6 +42,10 @@ class ComputeSourceMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Compute Cluster, Nodepool, Runner.
      *
+     * Generated from protobuf field <code>string compute_cluster_user_id = 14;</code>
+     */
+    protected $compute_cluster_user_id = '';
+    /**
      * Generated from protobuf field <code>string compute_cluster_id = 6;</code>
      */
     protected $compute_cluster_id = '';
@@ -92,8 +96,9 @@ class ComputeSourceMetadata extends \Google\Protobuf\Internal\Message
      *           The Version ID, if any.
      *     @type string $workflow_id
      *           Workflow Id, if any.
-     *     @type string $compute_cluster_id
+     *     @type string $compute_cluster_user_id
      *           Compute Cluster, Nodepool, Runner.
+     *     @type string $compute_cluster_id
      *     @type string $nodepool_id
      *     @type string $runner_id
      *     @type string $pipeline_id
@@ -227,6 +232,30 @@ class ComputeSourceMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Compute Cluster, Nodepool, Runner.
      *
+     * Generated from protobuf field <code>string compute_cluster_user_id = 14;</code>
+     * @return string
+     */
+    public function getComputeClusterUserId()
+    {
+        return $this->compute_cluster_user_id;
+    }
+
+    /**
+     * Compute Cluster, Nodepool, Runner.
+     *
+     * Generated from protobuf field <code>string compute_cluster_user_id = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setComputeClusterUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->compute_cluster_user_id = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string compute_cluster_id = 6;</code>
      * @return string
      */
@@ -236,8 +265,6 @@ class ComputeSourceMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Compute Cluster, Nodepool, Runner.
-     *
      * Generated from protobuf field <code>string compute_cluster_id = 6;</code>
      * @param string $var
      * @return $this

@@ -388,6 +388,66 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * List all the annotation tracks.
+     * @param \Clarifai\Api\ListAnnotationTracksRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListAnnotationTracks(\Clarifai\Api\ListAnnotationTracksRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListAnnotationTracks',
+        $argument,
+        ['\Clarifai\Api\MultiAnnotationTrackResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Post annotation tracks.
+     * @param \Clarifai\Api\PostAnnotationTracksRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostAnnotationTracks(\Clarifai\Api\PostAnnotationTracksRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostAnnotationTracks',
+        $argument,
+        ['\Clarifai\Api\MultiAnnotationTrackResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Patch one or more annotation tracks.
+     * @param \Clarifai\Api\PatchAnnotationTracksRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchAnnotationTracks(\Clarifai\Api\PatchAnnotationTracksRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchAnnotationTracks',
+        $argument,
+        ['\Clarifai\Api\MultiAnnotationTrackResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete multiple annotation tracks in one request.
+     * @param \Clarifai\Api\DeleteAnnotationTracksRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteAnnotationTracks(\Clarifai\Api\DeleteAnnotationTracksRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteAnnotationTracks',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Patch saved annotations searches by ids.
      * @param \Clarifai\Api\PatchAnnotationsSearchesRequest $argument input argument
      * @param array $metadata metadata

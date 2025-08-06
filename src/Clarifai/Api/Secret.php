@@ -14,23 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class Secret extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the secret.
+     * The name of the secret, corresponds to id in model_version.output_info.params.secrets
      *
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
     /**
-     * The app the secret belongs to.
+     * The user the secret belongs to.
      *
-     * Generated from protobuf field <code>string app_id = 2;</code>
+     * Generated from protobuf field <code>string user_id = 11;</code>
      */
-    protected $app_id = '';
-    /**
-     * The name of the secret, corresponds to secret_name in model_version.output_info.params.secrets
-     *
-     * Generated from protobuf field <code>string name = 3;</code>
-     */
-    protected $name = '';
+    protected $user_id = '';
     /**
      * The value of the secret.
      *
@@ -62,14 +56,6 @@ class Secret extends \Google\Protobuf\Internal\Message
      */
     protected $modified_at = null;
     /**
-     * The visibility field represents whether this message is privately/publicly visible.
-     * To be visible to the public the App that contains it AND the User that contains the App must
-     * also be publicly visible.
-     *
-     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 9;</code>
-     */
-    protected $visibility = null;
-    /**
      * When the secret will expire.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 10;</code>
@@ -83,11 +69,9 @@ class Secret extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *           The ID of the secret.
-     *     @type string $app_id
-     *           The app the secret belongs to.
-     *     @type string $name
-     *           The name of the secret, corresponds to secret_name in model_version.output_info.params.secrets
+     *           The name of the secret, corresponds to id in model_version.output_info.params.secrets
+     *     @type string $user_id
+     *           The user the secret belongs to.
      *     @type string $value
      *           The value of the secret.
      *     @type int $version
@@ -98,10 +82,6 @@ class Secret extends \Google\Protobuf\Internal\Message
      *           When the secret was created.
      *     @type \Google\Protobuf\Timestamp $modified_at
      *           When the secret was last modified.
-     *     @type \Clarifai\Api\Visibility $visibility
-     *           The visibility field represents whether this message is privately/publicly visible.
-     *           To be visible to the public the App that contains it AND the User that contains the App must
-     *           also be publicly visible.
      *     @type \Google\Protobuf\Timestamp $expires_at
      *           When the secret will expire.
      * }
@@ -112,7 +92,7 @@ class Secret extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the secret.
+     * The name of the secret, corresponds to id in model_version.output_info.params.secrets
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @return string
@@ -123,7 +103,7 @@ class Secret extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the secret.
+     * The name of the secret, corresponds to id in model_version.output_info.params.secrets
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
@@ -138,53 +118,27 @@ class Secret extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The app the secret belongs to.
+     * The user the secret belongs to.
      *
-     * Generated from protobuf field <code>string app_id = 2;</code>
+     * Generated from protobuf field <code>string user_id = 11;</code>
      * @return string
      */
-    public function getAppId()
+    public function getUserId()
     {
-        return $this->app_id;
+        return $this->user_id;
     }
 
     /**
-     * The app the secret belongs to.
+     * The user the secret belongs to.
      *
-     * Generated from protobuf field <code>string app_id = 2;</code>
+     * Generated from protobuf field <code>string user_id = 11;</code>
      * @param string $var
      * @return $this
      */
-    public function setAppId($var)
+    public function setUserId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->app_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * The name of the secret, corresponds to secret_name in model_version.output_info.params.secrets
-     *
-     * Generated from protobuf field <code>string name = 3;</code>
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * The name of the secret, corresponds to secret_name in model_version.output_info.params.secrets
-     *
-     * Generated from protobuf field <code>string name = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->name = $var;
+        $this->user_id = $var;
 
         return $this;
     }
@@ -335,46 +289,6 @@ class Secret extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->modified_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * The visibility field represents whether this message is privately/publicly visible.
-     * To be visible to the public the App that contains it AND the User that contains the App must
-     * also be publicly visible.
-     *
-     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 9;</code>
-     * @return \Clarifai\Api\Visibility|null
-     */
-    public function getVisibility()
-    {
-        return $this->visibility;
-    }
-
-    public function hasVisibility()
-    {
-        return isset($this->visibility);
-    }
-
-    public function clearVisibility()
-    {
-        unset($this->visibility);
-    }
-
-    /**
-     * The visibility field represents whether this message is privately/publicly visible.
-     * To be visible to the public the App that contains it AND the User that contains the App must
-     * also be publicly visible.
-     *
-     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 9;</code>
-     * @param \Clarifai\Api\Visibility $var
-     * @return $this
-     */
-    public function setVisibility($var)
-    {
-        GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
-        $this->visibility = $var;
 
         return $this;
     }

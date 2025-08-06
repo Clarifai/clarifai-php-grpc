@@ -48,6 +48,10 @@ class StreamLogEntriesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Where the logs came from.
      *
+     * Generated from protobuf field <code>string compute_cluster_user_id = 17;</code>
+     */
+    protected $compute_cluster_user_id = '';
+    /**
      * Generated from protobuf field <code>string compute_cluster_id = 6;</code>
      */
     protected $compute_cluster_id = '';
@@ -104,8 +108,9 @@ class StreamLogEntriesRequest extends \Google\Protobuf\Internal\Message
      *           The Version ID, if a model version produced the logs.
      *     @type string $workflow_id
      *           Workflow Id, if a workflow produced the logs.
-     *     @type string $compute_cluster_id
+     *     @type string $compute_cluster_user_id
      *           Where the logs came from.
+     *     @type string $compute_cluster_id
      *     @type string $nodepool_id
      *     @type string $runner_id
      *     @type string $pipeline_id
@@ -271,6 +276,30 @@ class StreamLogEntriesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Where the logs came from.
      *
+     * Generated from protobuf field <code>string compute_cluster_user_id = 17;</code>
+     * @return string
+     */
+    public function getComputeClusterUserId()
+    {
+        return $this->compute_cluster_user_id;
+    }
+
+    /**
+     * Where the logs came from.
+     *
+     * Generated from protobuf field <code>string compute_cluster_user_id = 17;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setComputeClusterUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->compute_cluster_user_id = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string compute_cluster_id = 6;</code>
      * @return string
      */
@@ -280,8 +309,6 @@ class StreamLogEntriesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Where the logs came from.
-     *
      * Generated from protobuf field <code>string compute_cluster_id = 6;</code>
      * @param string $var
      * @return $this

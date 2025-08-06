@@ -20,9 +20,9 @@ class GetSecretRequest extends \Google\Protobuf\Internal\Message
     /**
      * The id of the secret to get
      *
-     * Generated from protobuf field <code>string secret_id = 2;</code>
+     * Generated from protobuf field <code>string id = 2;</code>
      */
-    protected $secret_id = '';
+    protected $id = '';
 
     /**
      * Constructor.
@@ -31,7 +31,7 @@ class GetSecretRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string $secret_id
+     *     @type string $id
      *           The id of the secret to get
      * }
      */
@@ -75,25 +75,25 @@ class GetSecretRequest extends \Google\Protobuf\Internal\Message
     /**
      * The id of the secret to get
      *
-     * Generated from protobuf field <code>string secret_id = 2;</code>
+     * Generated from protobuf field <code>string id = 2;</code>
      * @return string
      */
-    public function getSecretId()
+    public function getId()
     {
-        return $this->secret_id;
+        return $this->id;
     }
 
     /**
      * The id of the secret to get
      *
-     * Generated from protobuf field <code>string secret_id = 2;</code>
+     * Generated from protobuf field <code>string id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setSecretId($var)
+    public function setId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->secret_id = $var;
+        $this->id = $var;
 
         return $this;
     }

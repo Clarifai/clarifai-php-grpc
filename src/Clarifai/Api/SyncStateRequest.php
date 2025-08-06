@@ -40,6 +40,10 @@ class SyncStateRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.PipelineVersionRun pipeline_version_runs = 5;</code>
      */
     private $pipeline_version_runs;
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    private $secrets;
 
     /**
      * Constructor.
@@ -54,6 +58,7 @@ class SyncStateRequest extends \Google\Protobuf\Internal\Message
      *     @type array<\Clarifai\Api\Nodepool>|\Google\Protobuf\Internal\RepeatedField $nodepools
      *     @type array<\Clarifai\Api\Runner>|\Google\Protobuf\Internal\RepeatedField $runners
      *     @type array<\Clarifai\Api\PipelineVersionRun>|\Google\Protobuf\Internal\RepeatedField $pipeline_version_runs
+     *     @type array<\Clarifai\Api\Secret>|\Google\Protobuf\Internal\RepeatedField $secrets
      * }
      */
     public function __construct($data = NULL) {
@@ -175,6 +180,28 @@ class SyncStateRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\PipelineVersionRun::class);
         $this->pipeline_version_runs = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSecrets()
+    {
+        return $this->secrets;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     * @param array<\Clarifai\Api\Secret>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSecrets($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Secret::class);
+        $this->secrets = $arr;
 
         return $this;
     }

@@ -9,20 +9,28 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>clarifai.api.PatchSecretsRequest</code>
+ * PatchAnnotationTracksRequest
+ *
+ * Generated from protobuf message <code>clarifai.api.PatchAnnotationTracksRequest</code>
  */
-class PatchSecretsRequest extends \Google\Protobuf\Internal\Message
+class PatchAnnotationTracksRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.Secret secret = 5;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.AnnotationTrack annotation_tracks = 2;</code>
      */
-    private $secret;
+    private $annotation_tracks;
     /**
-     * Generated from protobuf field <code>string action = 8;</code>
+     * Generated from protobuf field <code>string input_id = 3;</code>
+     */
+    protected $input_id = '';
+    /**
+     * Use always 'overwrite'
+     *
+     * Generated from protobuf field <code>string action = 4;</code>
      */
     protected $action = '';
 
@@ -33,8 +41,10 @@ class PatchSecretsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type array<\Clarifai\Api\Secret>|\Google\Protobuf\Internal\RepeatedField $secret
+     *     @type array<\Clarifai\Api\AnnotationTrack>|\Google\Protobuf\Internal\RepeatedField $annotation_tracks
+     *     @type string $input_id
      *     @type string $action
+     *           Use always 'overwrite'
      * }
      */
     public function __construct($data = NULL) {
@@ -75,29 +85,53 @@ class PatchSecretsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.Secret secret = 5;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.AnnotationTrack annotation_tracks = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getSecret()
+    public function getAnnotationTracks()
     {
-        return $this->secret;
+        return $this->annotation_tracks;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.Secret secret = 5;</code>
-     * @param array<\Clarifai\Api\Secret>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .clarifai.api.AnnotationTrack annotation_tracks = 2;</code>
+     * @param array<\Clarifai\Api\AnnotationTrack>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setSecret($var)
+    public function setAnnotationTracks($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Secret::class);
-        $this->secret = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\AnnotationTrack::class);
+        $this->annotation_tracks = $arr;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string action = 8;</code>
+     * Generated from protobuf field <code>string input_id = 3;</code>
+     * @return string
+     */
+    public function getInputId()
+    {
+        return $this->input_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string input_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInputId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->input_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Use always 'overwrite'
+     *
+     * Generated from protobuf field <code>string action = 4;</code>
      * @return string
      */
     public function getAction()
@@ -106,7 +140,9 @@ class PatchSecretsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string action = 8;</code>
+     * Use always 'overwrite'
+     *
+     * Generated from protobuf field <code>string action = 4;</code>
      * @param string $var
      * @return $this
      */

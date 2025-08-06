@@ -568,6 +568,31 @@ class StatusCode
      */
     const ANNOTATION_MODIFY_FAILED = 24252;
     /**
+     * Annotation (video) tracks are groups of annotations per frame
+     * IDLE -> PROCESSING --> PENDING --> APPROVED --> (DELETED)
+     * PROCESSING --> FAILED --> (DELETED)
+     * PROCESSING --> (DELETED)
+     *
+     * Generated from protobuf enum <code>ANNOTATION_TRACK_IDLE = 24300;</code>
+     */
+    const ANNOTATION_TRACK_IDLE = 24300;
+    /**
+     * Generated from protobuf enum <code>ANNOTATION_TRACK_IN_PROGRESS = 24301;</code>
+     */
+    const ANNOTATION_TRACK_IN_PROGRESS = 24301;
+    /**
+     * Generated from protobuf enum <code>ANNOTATION_TRACK_PENDING = 24302;</code>
+     */
+    const ANNOTATION_TRACK_PENDING = 24302;
+    /**
+     * Generated from protobuf enum <code>ANNOTATION_TRACK_APPROVED = 24303;</code>
+     */
+    const ANNOTATION_TRACK_APPROVED = 24303;
+    /**
+     * Generated from protobuf enum <code>ANNOTATION_TRACK_FAILED = 24304;</code>
+     */
+    const ANNOTATION_TRACK_FAILED = 24304;
+    /**
      * Metadata related 249xx
      *
      * Generated from protobuf enum <code>METADATA_INVALID_PATCH_ARGUMENTS = 24900;</code>
@@ -863,6 +888,20 @@ class StatusCode
      * Generated from protobuf enum <code>PIPELINE_STEP_NOT_READY = 26209;</code>
      */
     const PIPELINE_STEP_NOT_READY = 26209;
+    /**
+     * Pipeline related codes 263xx
+     *
+     * Generated from protobuf enum <code>PIPELINE_DOES_NOT_EXIST = 26300;</code>
+     */
+    const PIPELINE_DOES_NOT_EXIST = 26300;
+    /**
+     * Generated from protobuf enum <code>PIPELINE_INVALID_ARGUMENT = 26301;</code>
+     */
+    const PIPELINE_INVALID_ARGUMENT = 26301;
+    /**
+     * Generated from protobuf enum <code>PIPELINE_INVALID_REQUEST = 26302;</code>
+     */
+    const PIPELINE_INVALID_REQUEST = 26302;
     /**
      * Input:Image related 30xxx
      *
@@ -2033,6 +2072,11 @@ class StatusCode
         self::ANNOTATION_MODIFY_SUCCESS => 'ANNOTATION_MODIFY_SUCCESS',
         self::ANNOTATION_MODIFY_PENDING => 'ANNOTATION_MODIFY_PENDING',
         self::ANNOTATION_MODIFY_FAILED => 'ANNOTATION_MODIFY_FAILED',
+        self::ANNOTATION_TRACK_IDLE => 'ANNOTATION_TRACK_IDLE',
+        self::ANNOTATION_TRACK_IN_PROGRESS => 'ANNOTATION_TRACK_IN_PROGRESS',
+        self::ANNOTATION_TRACK_PENDING => 'ANNOTATION_TRACK_PENDING',
+        self::ANNOTATION_TRACK_APPROVED => 'ANNOTATION_TRACK_APPROVED',
+        self::ANNOTATION_TRACK_FAILED => 'ANNOTATION_TRACK_FAILED',
         self::METADATA_INVALID_PATCH_ARGUMENTS => 'METADATA_INVALID_PATCH_ARGUMENTS',
         self::METADATA_PARSING_ISSUE => 'METADATA_PARSING_ISSUE',
         self::METADATA_MANIPULATION_ISSUE => 'METADATA_MANIPULATION_ISSUE',
@@ -2100,6 +2144,9 @@ class StatusCode
         self::PIPELINE_STEP_BUILD_UNEXPECTED_ERROR => 'PIPELINE_STEP_BUILD_UNEXPECTED_ERROR',
         self::PIPELINE_STEP_READY => 'PIPELINE_STEP_READY',
         self::PIPELINE_STEP_NOT_READY => 'PIPELINE_STEP_NOT_READY',
+        self::PIPELINE_DOES_NOT_EXIST => 'PIPELINE_DOES_NOT_EXIST',
+        self::PIPELINE_INVALID_ARGUMENT => 'PIPELINE_INVALID_ARGUMENT',
+        self::PIPELINE_INVALID_REQUEST => 'PIPELINE_INVALID_REQUEST',
         self::INPUT_SUCCESS => 'INPUT_SUCCESS',
         self::INPUT_PENDING => 'INPUT_PENDING',
         self::INPUT_FAILED => 'INPUT_FAILED',

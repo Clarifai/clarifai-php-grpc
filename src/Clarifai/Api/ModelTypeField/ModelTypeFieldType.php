@@ -139,6 +139,12 @@ class ModelTypeFieldType
      * Generated from protobuf enum <code>CHECKPOINT_MODEL = 22;</code>
      */
     const CHECKPOINT_MODEL = 22;
+    /**
+     * For model secrets
+     *
+     * Generated from protobuf enum <code>ARRAY_OF_SECRETS = 23;</code>
+     */
+    const ARRAY_OF_SECRETS = 23;
 
     private static $valueToName = [
         self::INVALID_MODEL_TYPE_FIELD_TYPE => 'INVALID_MODEL_TYPE_FIELD_TYPE',
@@ -163,6 +169,7 @@ class ModelTypeFieldType
         self::DATASET_VERSION => 'DATASET_VERSION',
         self::ENCRYPTED_STRING => 'ENCRYPTED_STRING',
         self::CHECKPOINT_MODEL => 'CHECKPOINT_MODEL',
+        self::ARRAY_OF_SECRETS => 'ARRAY_OF_SECRETS',
     ];
 
     public static function name($value)

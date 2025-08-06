@@ -9,22 +9,24 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>clarifai.api.PatchSecretsRequest</code>
+ * DeleteAnnotationTracksRequest
+ *
+ * Generated from protobuf message <code>clarifai.api.DeleteAnnotationTracksRequest</code>
  */
-class PatchSecretsRequest extends \Google\Protobuf\Internal\Message
+class DeleteAnnotationTracksRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.Secret secret = 5;</code>
+     * Generated from protobuf field <code>repeated string ids = 2;</code>
      */
-    private $secret;
+    private $ids;
     /**
-     * Generated from protobuf field <code>string action = 8;</code>
+     * Generated from protobuf field <code>string input_id = 3;</code>
      */
-    protected $action = '';
+    protected $input_id = '';
 
     /**
      * Constructor.
@@ -33,8 +35,8 @@ class PatchSecretsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type array<\Clarifai\Api\Secret>|\Google\Protobuf\Internal\RepeatedField $secret
-     *     @type string $action
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type string $input_id
      * }
      */
     public function __construct($data = NULL) {
@@ -75,45 +77,45 @@ class PatchSecretsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.Secret secret = 5;</code>
+     * Generated from protobuf field <code>repeated string ids = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getSecret()
+    public function getIds()
     {
-        return $this->secret;
+        return $this->ids;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .clarifai.api.Secret secret = 5;</code>
-     * @param array<\Clarifai\Api\Secret>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated string ids = 2;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setSecret($var)
+    public function setIds($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Secret::class);
-        $this->secret = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->ids = $arr;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string action = 8;</code>
+     * Generated from protobuf field <code>string input_id = 3;</code>
      * @return string
      */
-    public function getAction()
+    public function getInputId()
     {
-        return $this->action;
+        return $this->input_id;
     }
 
     /**
-     * Generated from protobuf field <code>string action = 8;</code>
+     * Generated from protobuf field <code>string input_id = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setAction($var)
+    public function setInputId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->action = $var;
+        $this->input_id = $var;
 
         return $this;
     }
