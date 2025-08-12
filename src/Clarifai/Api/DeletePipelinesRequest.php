@@ -18,9 +18,9 @@ class DeletePipelinesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>repeated string pipeline_ids = 2;</code>
+     * Generated from protobuf field <code>repeated string ids = 2;</code>
      */
-    private $pipeline_ids;
+    private $ids;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class DeletePipelinesRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $pipeline_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
      * }
      */
     public function __construct($data = NULL) {
@@ -70,23 +70,23 @@ class DeletePipelinesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string pipeline_ids = 2;</code>
+     * Generated from protobuf field <code>repeated string ids = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getPipelineIds()
+    public function getIds()
     {
-        return $this->pipeline_ids;
+        return $this->ids;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string pipeline_ids = 2;</code>
+     * Generated from protobuf field <code>repeated string ids = 2;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setPipelineIds($var)
+    public function setIds($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->pipeline_ids = $arr;
+        $this->ids = $arr;
 
         return $this;
     }

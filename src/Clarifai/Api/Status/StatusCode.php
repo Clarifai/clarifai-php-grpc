@@ -1372,6 +1372,10 @@ class StatusCode
      */
     const STRIPE_EVENT_ERROR = 44001;
     /**
+     * Generated from protobuf enum <code>STRIPE_UNEXPECTED_ERROR = 44002;</code>
+     */
+    const STRIPE_UNEXPECTED_ERROR = 44002;
+    /**
      * Redis/Cache 45xxx
      *
      * Generated from protobuf enum <code>CACHE_MISS = 45001;</code>
@@ -1407,6 +1411,14 @@ class StatusCode
      * Generated from protobuf enum <code>FILETYPE_UNSUPPORTED = 46003;</code>
      */
     const FILETYPE_UNSUPPORTED = 46003;
+    /**
+     * Generated from protobuf enum <code>LOGIN_EVENT_ERROR = 46004;</code>
+     */
+    const LOGIN_EVENT_ERROR = 46004;
+    /**
+     * Generated from protobuf enum <code>SIFT_UNCATEGORIZED_ERROR = 46005;</code>
+     */
+    const SIFT_UNCATEGORIZED_ERROR = 46005;
     /**
      * Application counts related errors 470xx
      *
@@ -2257,6 +2269,7 @@ class StatusCode
         self::EVALUATION_UNEXPECTED_ERROR => 'EVALUATION_UNEXPECTED_ERROR',
         self::EVALUATION_MIXED => 'EVALUATION_MIXED',
         self::STRIPE_EVENT_ERROR => 'STRIPE_EVENT_ERROR',
+        self::STRIPE_UNEXPECTED_ERROR => 'STRIPE_UNEXPECTED_ERROR',
         self::CACHE_MISS => 'CACHE_MISS',
         self::REDIS_SCRIPT_EXITED_WITH_FAILURE => 'REDIS_SCRIPT_EXITED_WITH_FAILURE',
         self::REDIS_STREAM_ERR => 'REDIS_STREAM_ERR',
@@ -2265,6 +2278,8 @@ class StatusCode
         self::SIGNUP_EVENT_ERROR => 'SIGNUP_EVENT_ERROR',
         self::SIGNUP_FLAGGED => 'SIGNUP_FLAGGED',
         self::FILETYPE_UNSUPPORTED => 'FILETYPE_UNSUPPORTED',
+        self::LOGIN_EVENT_ERROR => 'LOGIN_EVENT_ERROR',
+        self::SIFT_UNCATEGORIZED_ERROR => 'SIFT_UNCATEGORIZED_ERROR',
         self::APP_COUNT_INVALID_MESSAGE => 'APP_COUNT_INVALID_MESSAGE',
         self::APP_COUNT_UPDATE_INCREMENT_FAILED => 'APP_COUNT_UPDATE_INCREMENT_FAILED',
         self::APP_COUNT_REBUILD_FAILED => 'APP_COUNT_REBUILD_FAILED',

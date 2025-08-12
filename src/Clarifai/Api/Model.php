@@ -245,6 +245,12 @@ class Model extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 replica_count = 43;</code>
      */
     protected $replica_count = 0;
+    /**
+     * OpenRouter Info for the model
+     *
+     * Generated from protobuf field <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+     */
+    protected $open_router_info = null;
 
     /**
      * Constructor.
@@ -334,6 +340,8 @@ class Model extends \Google\Protobuf\Internal\Message
      *     @type int $replica_count
      *           replica_count indicates the number of deployed model replicas.
      *           This field is populated when `show_replicas` is true in ListModelsRequest.
+     *     @type \Clarifai\Api\OpenRouterInfo $open_router_info
+     *           OpenRouter Info for the model
      * }
      */
     public function __construct($data = NULL) {
@@ -1453,6 +1461,42 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->replica_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * OpenRouter Info for the model
+     *
+     * Generated from protobuf field <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+     * @return \Clarifai\Api\OpenRouterInfo|null
+     */
+    public function getOpenRouterInfo()
+    {
+        return $this->open_router_info;
+    }
+
+    public function hasOpenRouterInfo()
+    {
+        return isset($this->open_router_info);
+    }
+
+    public function clearOpenRouterInfo()
+    {
+        unset($this->open_router_info);
+    }
+
+    /**
+     * OpenRouter Info for the model
+     *
+     * Generated from protobuf field <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+     * @param \Clarifai\Api\OpenRouterInfo $var
+     * @return $this
+     */
+    public function setOpenRouterInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\OpenRouterInfo::class);
+        $this->open_router_info = $var;
 
         return $this;
     }

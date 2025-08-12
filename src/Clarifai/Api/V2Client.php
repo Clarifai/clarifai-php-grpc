@@ -4040,7 +4040,7 @@ class V2Client extends \Grpc\BaseStub {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/clarifai.api.V2/DeletePipelines',
         $argument,
-        ['\Clarifai\Api\MultiPipelineResponse', 'decode'],
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -4096,7 +4096,7 @@ class V2Client extends \Grpc\BaseStub {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/clarifai.api.V2/DeletePipelineVersions',
         $argument,
-        ['\Clarifai\Api\MultiPipelineVersionResponse', 'decode'],
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);
     }
 
