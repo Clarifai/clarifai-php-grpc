@@ -28,7 +28,7 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $per_page = 0;
     /**
-     * The type of log entry. Examples: model, agent, build, training.
+     * The type of log entry. Choose from [agent, builder, builder.events, runner, runner.events, pipeline.version.run]
      *
      * Generated from protobuf field <code>string log_type = 3;</code>
      */
@@ -115,7 +115,7 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
      *           (optional URL parameter) The number of results that will be contained in each page. Defaults
      *           to 32.
      *     @type string $log_type
-     *           The type of log entry. Examples: model, agent, build, training.
+     *           The type of log entry. Choose from [agent, builder, builder.events, runner, runner.events, pipeline.version.run]
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *           Who the logs are for.
      *           The user app id, if a user produced the logs.
@@ -202,7 +202,7 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of log entry. Examples: model, agent, build, training.
+     * The type of log entry. Choose from [agent, builder, builder.events, runner, runner.events, pipeline.version.run]
      *
      * Generated from protobuf field <code>string log_type = 3;</code>
      * @return string
@@ -213,7 +213,7 @@ class ListLogEntriesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of log entry. Examples: model, agent, build, training.
+     * The type of log entry. Choose from [agent, builder, builder.events, runner, runner.events, pipeline.version.run]
      *
      * Generated from protobuf field <code>string log_type = 3;</code>
      * @param string $var

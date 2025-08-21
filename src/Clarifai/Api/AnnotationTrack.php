@@ -22,12 +22,6 @@ class AnnotationTrack extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * ID of the application this annotation track is tied to
-     *
-     * Generated from protobuf field <code>string app_id = 2;</code>
-     */
-    protected $app_id = '';
-    /**
      * ID of the asset this annotation track is tied to
      *
      * Generated from protobuf field <code>string input_id = 3;</code>
@@ -40,29 +34,35 @@ class AnnotationTrack extends \Google\Protobuf\Internal\Message
      */
     protected $concept = null;
     /**
-     * The user the track belongs to (app owner)
-     *
-     * Generated from protobuf field <code>string user_id = 5;</code>
-     */
-    protected $user_id = '';
-    /**
      * AnnotationTrack Status
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 6;</code>
      */
     protected $status = null;
     /**
-     * Start frame of the annotation track
+     * Start frame number (in original video) of the annotation track, inclusive.
      *
-     * Generated from protobuf field <code>uint32 start_frame = 7;</code>
+     * Generated from protobuf field <code>uint32 start_frame_nr = 16;</code>
      */
-    protected $start_frame = 0;
+    protected $start_frame_nr = 0;
     /**
-     * End frame of the annotation track
+     * End frame number (in original video) of the annotation track, inclusive.
      *
-     * Generated from protobuf field <code>uint32 end_frame = 8;</code>
+     * Generated from protobuf field <code>uint32 end_frame_nr = 17;</code>
      */
-    protected $end_frame = 0;
+    protected $end_frame_nr = 0;
+    /**
+     * Start time (in milliseconds of original video) of the annotation track, inclusive.
+     *
+     * Generated from protobuf field <code>uint32 start_frame_ms = 14;</code>
+     */
+    protected $start_frame_ms = 0;
+    /**
+     * End time (in milliseconds of original video) of the annotation track, inclusive.
+     *
+     * Generated from protobuf field <code>uint32 end_frame_ms = 15;</code>
+     */
+    protected $end_frame_ms = 0;
     /**
      * When the annotation track was created.
      *
@@ -76,14 +76,22 @@ class AnnotationTrack extends \Google\Protobuf\Internal\Message
      */
     protected $modified_at = null;
     /**
-     * Frame rate of the video track.
-     * 1 means it matches the original video FPS.
-     * 2 means every second frame, etc.
-     * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+     * Sampling rate of the annotation track in milliseconds.
      *
-     * Generated from protobuf field <code>uint32 frame_rate = 11;</code>
+     * Generated from protobuf field <code>uint32 sample_rate_ms = 12;</code>
      */
-    protected $frame_rate = 0;
+    protected $sample_rate_ms = 0;
+    /**
+     * Sampling frame rate of the video track in frame number increments
+     * increment of 1 means it matches the original video FPS
+     * increment of 2 means every second frame is sampled, etc.
+     * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+     * Useful if client relies on simple frame access.
+     * Useful if video has variable frame rate (VFR), then annotations are also sampled with VFR in mind
+     *
+     * Generated from protobuf field <code>uint32 sample_rate_frame = 13;</code>
+     */
+    protected $sample_rate_frame = 0;
 
     /**
      * Constructor.
@@ -93,29 +101,33 @@ class AnnotationTrack extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           The ID for the annotation track
-     *     @type string $app_id
-     *           ID of the application this annotation track is tied to
      *     @type string $input_id
      *           ID of the asset this annotation track is tied to
      *     @type \Clarifai\Api\Concept $concept
      *           Concept this annotation track
-     *     @type string $user_id
-     *           The user the track belongs to (app owner)
      *     @type \Clarifai\Api\Status\Status $status
      *           AnnotationTrack Status
-     *     @type int $start_frame
-     *           Start frame of the annotation track
-     *     @type int $end_frame
-     *           End frame of the annotation track
+     *     @type int $start_frame_nr
+     *           Start frame number (in original video) of the annotation track, inclusive.
+     *     @type int $end_frame_nr
+     *           End frame number (in original video) of the annotation track, inclusive.
+     *     @type int $start_frame_ms
+     *           Start time (in milliseconds of original video) of the annotation track, inclusive.
+     *     @type int $end_frame_ms
+     *           End time (in milliseconds of original video) of the annotation track, inclusive.
      *     @type \Google\Protobuf\Timestamp $created_at
      *           When the annotation track was created.
      *     @type \Google\Protobuf\Timestamp $modified_at
      *           When the annotation track was modified.
-     *     @type int $frame_rate
-     *           Frame rate of the video track.
-     *           1 means it matches the original video FPS.
-     *           2 means every second frame, etc.
+     *     @type int $sample_rate_ms
+     *           Sampling rate of the annotation track in milliseconds.
+     *     @type int $sample_rate_frame
+     *           Sampling frame rate of the video track in frame number increments
+     *           increment of 1 means it matches the original video FPS
+     *           increment of 2 means every second frame is sampled, etc.
      *           So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+     *           Useful if client relies on simple frame access.
+     *           Useful if video has variable frame rate (VFR), then annotations are also sampled with VFR in mind
      * }
      */
     public function __construct($data = NULL) {
@@ -145,32 +157,6 @@ class AnnotationTrack extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * ID of the application this annotation track is tied to
-     *
-     * Generated from protobuf field <code>string app_id = 2;</code>
-     * @return string
-     */
-    public function getAppId()
-    {
-        return $this->app_id;
-    }
-
-    /**
-     * ID of the application this annotation track is tied to
-     *
-     * Generated from protobuf field <code>string app_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAppId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->app_id = $var;
 
         return $this;
     }
@@ -238,32 +224,6 @@ class AnnotationTrack extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The user the track belongs to (app owner)
-     *
-     * Generated from protobuf field <code>string user_id = 5;</code>
-     * @return string
-     */
-    public function getUserId()
-    {
-        return $this->user_id;
-    }
-
-    /**
-     * The user the track belongs to (app owner)
-     *
-     * Generated from protobuf field <code>string user_id = 5;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUserId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->user_id = $var;
-
-        return $this;
-    }
-
-    /**
      * AnnotationTrack Status
      *
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 6;</code>
@@ -300,53 +260,105 @@ class AnnotationTrack extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Start frame of the annotation track
+     * Start frame number (in original video) of the annotation track, inclusive.
      *
-     * Generated from protobuf field <code>uint32 start_frame = 7;</code>
+     * Generated from protobuf field <code>uint32 start_frame_nr = 16;</code>
      * @return int
      */
-    public function getStartFrame()
+    public function getStartFrameNr()
     {
-        return $this->start_frame;
+        return $this->start_frame_nr;
     }
 
     /**
-     * Start frame of the annotation track
+     * Start frame number (in original video) of the annotation track, inclusive.
      *
-     * Generated from protobuf field <code>uint32 start_frame = 7;</code>
+     * Generated from protobuf field <code>uint32 start_frame_nr = 16;</code>
      * @param int $var
      * @return $this
      */
-    public function setStartFrame($var)
+    public function setStartFrameNr($var)
     {
         GPBUtil::checkUint32($var);
-        $this->start_frame = $var;
+        $this->start_frame_nr = $var;
 
         return $this;
     }
 
     /**
-     * End frame of the annotation track
+     * End frame number (in original video) of the annotation track, inclusive.
      *
-     * Generated from protobuf field <code>uint32 end_frame = 8;</code>
+     * Generated from protobuf field <code>uint32 end_frame_nr = 17;</code>
      * @return int
      */
-    public function getEndFrame()
+    public function getEndFrameNr()
     {
-        return $this->end_frame;
+        return $this->end_frame_nr;
     }
 
     /**
-     * End frame of the annotation track
+     * End frame number (in original video) of the annotation track, inclusive.
      *
-     * Generated from protobuf field <code>uint32 end_frame = 8;</code>
+     * Generated from protobuf field <code>uint32 end_frame_nr = 17;</code>
      * @param int $var
      * @return $this
      */
-    public function setEndFrame($var)
+    public function setEndFrameNr($var)
     {
         GPBUtil::checkUint32($var);
-        $this->end_frame = $var;
+        $this->end_frame_nr = $var;
+
+        return $this;
+    }
+
+    /**
+     * Start time (in milliseconds of original video) of the annotation track, inclusive.
+     *
+     * Generated from protobuf field <code>uint32 start_frame_ms = 14;</code>
+     * @return int
+     */
+    public function getStartFrameMs()
+    {
+        return $this->start_frame_ms;
+    }
+
+    /**
+     * Start time (in milliseconds of original video) of the annotation track, inclusive.
+     *
+     * Generated from protobuf field <code>uint32 start_frame_ms = 14;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStartFrameMs($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->start_frame_ms = $var;
+
+        return $this;
+    }
+
+    /**
+     * End time (in milliseconds of original video) of the annotation track, inclusive.
+     *
+     * Generated from protobuf field <code>uint32 end_frame_ms = 15;</code>
+     * @return int
+     */
+    public function getEndFrameMs()
+    {
+        return $this->end_frame_ms;
+    }
+
+    /**
+     * End time (in milliseconds of original video) of the annotation track, inclusive.
+     *
+     * Generated from protobuf field <code>uint32 end_frame_ms = 15;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEndFrameMs($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->end_frame_ms = $var;
 
         return $this;
     }
@@ -424,33 +436,63 @@ class AnnotationTrack extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Frame rate of the video track.
-     * 1 means it matches the original video FPS.
-     * 2 means every second frame, etc.
-     * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+     * Sampling rate of the annotation track in milliseconds.
      *
-     * Generated from protobuf field <code>uint32 frame_rate = 11;</code>
+     * Generated from protobuf field <code>uint32 sample_rate_ms = 12;</code>
      * @return int
      */
-    public function getFrameRate()
+    public function getSampleRateMs()
     {
-        return $this->frame_rate;
+        return $this->sample_rate_ms;
     }
 
     /**
-     * Frame rate of the video track.
-     * 1 means it matches the original video FPS.
-     * 2 means every second frame, etc.
-     * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+     * Sampling rate of the annotation track in milliseconds.
      *
-     * Generated from protobuf field <code>uint32 frame_rate = 11;</code>
+     * Generated from protobuf field <code>uint32 sample_rate_ms = 12;</code>
      * @param int $var
      * @return $this
      */
-    public function setFrameRate($var)
+    public function setSampleRateMs($var)
     {
         GPBUtil::checkUint32($var);
-        $this->frame_rate = $var;
+        $this->sample_rate_ms = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sampling frame rate of the video track in frame number increments
+     * increment of 1 means it matches the original video FPS
+     * increment of 2 means every second frame is sampled, etc.
+     * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+     * Useful if client relies on simple frame access.
+     * Useful if video has variable frame rate (VFR), then annotations are also sampled with VFR in mind
+     *
+     * Generated from protobuf field <code>uint32 sample_rate_frame = 13;</code>
+     * @return int
+     */
+    public function getSampleRateFrame()
+    {
+        return $this->sample_rate_frame;
+    }
+
+    /**
+     * Sampling frame rate of the video track in frame number increments
+     * increment of 1 means it matches the original video FPS
+     * increment of 2 means every second frame is sampled, etc.
+     * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+     * Useful if client relies on simple frame access.
+     * Useful if video has variable frame rate (VFR), then annotations are also sampled with VFR in mind
+     *
+     * Generated from protobuf field <code>uint32 sample_rate_frame = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSampleRateFrame($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->sample_rate_frame = $var;
 
         return $this;
     }
