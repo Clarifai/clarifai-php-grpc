@@ -4300,4 +4300,32 @@ class V2Client extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Clarifai\Api\PostMetricsQueryRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostMetricsQuery(\Clarifai\Api\PostMetricsQueryRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostMetricsQuery',
+        $argument,
+        ['\Clarifai\Api\MetricsQueryResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\ListMetricLabelsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListMetricLabels(\Clarifai\Api\ListMetricLabelsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListMetricLabels',
+        $argument,
+        ['\Clarifai\Api\MultiMetricLabelsResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

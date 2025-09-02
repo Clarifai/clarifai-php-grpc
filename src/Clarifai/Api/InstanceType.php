@@ -52,6 +52,12 @@ class InstanceType extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
      */
     protected $allowed_capacity_types = null;
+    /**
+     * The feature flag group associated with this instance type.
+     *
+     * Generated from protobuf field <code>string feature_flag_group = 8;</code>
+     */
+    protected $feature_flag_group = '';
 
     /**
      * Constructor.
@@ -70,6 +76,8 @@ class InstanceType extends \Google\Protobuf\Internal\Message
      *           The region where this instance type is available, if any.
      *     @type \Clarifai\Api\NodeCapacityType $allowed_capacity_types
      *           The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+     *     @type string $feature_flag_group
+     *           The feature flag group associated with this instance type.
      * }
      */
     public function __construct($data = NULL) {
@@ -273,6 +281,32 @@ class InstanceType extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\NodeCapacityType::class);
         $this->allowed_capacity_types = $var;
+
+        return $this;
+    }
+
+    /**
+     * The feature flag group associated with this instance type.
+     *
+     * Generated from protobuf field <code>string feature_flag_group = 8;</code>
+     * @return string
+     */
+    public function getFeatureFlagGroup()
+    {
+        return $this->feature_flag_group;
+    }
+
+    /**
+     * The feature flag group associated with this instance type.
+     *
+     * Generated from protobuf field <code>string feature_flag_group = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFeatureFlagGroup($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->feature_flag_group = $var;
 
         return $this;
     }

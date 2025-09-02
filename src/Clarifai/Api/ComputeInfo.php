@@ -77,6 +77,15 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string accelerator_type = 5;</code>
      */
     private $accelerator_type;
+    /**
+     * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+     * Corresponds to the tpu.googleapis.com/topology annotation.
+     * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+     * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+     *
+     * Generated from protobuf field <code>repeated string accelerator_topology = 10;</code>
+     */
+    private $accelerator_topology;
 
     /**
      * Constructor.
@@ -115,6 +124,11 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $accelerator_type
      *           Or should it be removed completely and use the nodepool accelerator type itself.
      *           These are the supported accelerators that the model can run on.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $accelerator_topology
+     *           For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+     *           Corresponds to the tpu.googleapis.com/topology annotation.
+     *           Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+     *           Leave empty for single-host accelerators like GPUs or non-slice TPUs.
      * }
      */
     public function __construct($data = NULL) {
@@ -334,6 +348,38 @@ class ComputeInfo extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->accelerator_type = $arr;
+
+        return $this;
+    }
+
+    /**
+     * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+     * Corresponds to the tpu.googleapis.com/topology annotation.
+     * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+     * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+     *
+     * Generated from protobuf field <code>repeated string accelerator_topology = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAcceleratorTopology()
+    {
+        return $this->accelerator_topology;
+    }
+
+    /**
+     * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+     * Corresponds to the tpu.googleapis.com/topology annotation.
+     * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+     * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+     *
+     * Generated from protobuf field <code>repeated string accelerator_topology = 10;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAcceleratorTopology($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->accelerator_topology = $arr;
 
         return $this;
     }

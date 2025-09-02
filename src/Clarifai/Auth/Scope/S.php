@@ -651,6 +651,10 @@ class S
      * Generated from protobuf enum <code>Secrets_Delete = 162 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Secrets_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Secrets_Add];</code>
      */
     const Secrets_Delete = 162;
+    /**
+     * Generated from protobuf enum <code>UserMetrics_Get = 163 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const UserMetrics_Get = 163;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -766,6 +770,7 @@ class S
         self::Secrets_Get => 'Secrets_Get',
         self::Secrets_Add => 'Secrets_Add',
         self::Secrets_Delete => 'Secrets_Delete',
+        self::UserMetrics_Get => 'UserMetrics_Get',
     ];
 
     public static function name($value)
