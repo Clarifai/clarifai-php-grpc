@@ -74,6 +74,12 @@ class Key extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string authorized_idp_ids = 9;</code>
      */
     private $authorized_idp_ids;
+    /**
+     * The organization associated with the key, if any. This is applicable only for PAT keys.
+     *
+     * Generated from protobuf field <code>string organization_id = 10;</code>
+     */
+    protected $organization_id = '';
 
     /**
      * Constructor.
@@ -104,6 +110,8 @@ class Key extends \Google\Protobuf\Internal\Message
      *           When does the key expires, the key won't expire if this is empty
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $authorized_idp_ids
      *           list of idp ids at which key is currently authorized
+     *     @type string $organization_id
+     *           The organization associated with the key, if any. This is applicable only for PAT keys.
      * }
      */
     public function __construct($data = NULL) {
@@ -371,6 +379,32 @@ class Key extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->authorized_idp_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The organization associated with the key, if any. This is applicable only for PAT keys.
+     *
+     * Generated from protobuf field <code>string organization_id = 10;</code>
+     * @return string
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * The organization associated with the key, if any. This is applicable only for PAT keys.
+     *
+     * Generated from protobuf field <code>string organization_id = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->organization_id = $var;
 
         return $this;
     }
