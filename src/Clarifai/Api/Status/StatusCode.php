@@ -785,6 +785,10 @@ class StatusCode
      */
     const RUNNER_PROCESSING_FAILED = 25608;
     /**
+     * Generated from protobuf enum <code>RUNNER_SPECIAL_HANDLING_NOT_COMPLETE = 25609;</code>
+     */
+    const RUNNER_SPECIAL_HANDLING_NOT_COMPLETE = 25609;
+    /**
      * Nodepool related codes 257xx
      *
      * Generated from protobuf enum <code>NODEPOOL_DOES_NOT_EXIST = 25700;</code>
@@ -2133,6 +2137,7 @@ class StatusCode
         self::RUNNER_STREAM_END => 'RUNNER_STREAM_END',
         self::RUNNER_ITEM_CANCELLED => 'RUNNER_ITEM_CANCELLED',
         self::RUNNER_PROCESSING_FAILED => 'RUNNER_PROCESSING_FAILED',
+        self::RUNNER_SPECIAL_HANDLING_NOT_COMPLETE => 'RUNNER_SPECIAL_HANDLING_NOT_COMPLETE',
         self::NODEPOOL_DOES_NOT_EXIST => 'NODEPOOL_DOES_NOT_EXIST',
         self::NODEPOOL_INVALID_ARGUMENT => 'NODEPOOL_INVALID_ARGUMENT',
         self::NODEPOOL_INVALID_REQUEST => 'NODEPOOL_INVALID_REQUEST',

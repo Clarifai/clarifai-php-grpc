@@ -92,6 +92,12 @@ class Runner extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 num_replicas = 11;</code>
      */
     protected $num_replicas = 0;
+    /**
+     * List of special handling instructions for this runner.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 12;</code>
+     */
+    private $special_handling;
 
     /**
      * Constructor.
@@ -134,6 +140,8 @@ class Runner extends \Google\Protobuf\Internal\Message
      *     @type int $num_replicas
      *           Number of replicas that this runner should have up.
      *           We keep it separate from ComputeInfo which defines how many resources each replica needs.
+     *     @type array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $special_handling
+     *           List of special handling instructions for this runner.
      * }
      */
     public function __construct($data = NULL) {
@@ -491,6 +499,32 @@ class Runner extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->num_replicas = $var;
+
+        return $this;
+    }
+
+    /**
+     * List of special handling instructions for this runner.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 12;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSpecialHandling()
+    {
+        return $this->special_handling;
+    }
+
+    /**
+     * List of special handling instructions for this runner.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 12;</code>
+     * @param array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSpecialHandling($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\SpecialHandling::class);
+        $this->special_handling = $arr;
 
         return $this;
     }

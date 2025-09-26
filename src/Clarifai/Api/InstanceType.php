@@ -58,6 +58,12 @@ class InstanceType extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string feature_flag_group = 8;</code>
      */
     protected $feature_flag_group = '';
+    /**
+     * List of special handling instructions for this instance type.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 9;</code>
+     */
+    private $special_handling;
 
     /**
      * Constructor.
@@ -78,6 +84,8 @@ class InstanceType extends \Google\Protobuf\Internal\Message
      *           The capacity types allowed for this instance type. If empty - all capacity types are allowed.
      *     @type string $feature_flag_group
      *           The feature flag group associated with this instance type.
+     *     @type array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $special_handling
+     *           List of special handling instructions for this instance type.
      * }
      */
     public function __construct($data = NULL) {
@@ -307,6 +315,32 @@ class InstanceType extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->feature_flag_group = $var;
+
+        return $this;
+    }
+
+    /**
+     * List of special handling instructions for this instance type.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSpecialHandling()
+    {
+        return $this->special_handling;
+    }
+
+    /**
+     * List of special handling instructions for this instance type.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 9;</code>
+     * @param array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSpecialHandling($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\SpecialHandling::class);
+        $this->special_handling = $arr;
 
         return $this;
     }

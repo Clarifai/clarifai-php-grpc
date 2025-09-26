@@ -97,6 +97,12 @@ class Deployment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool deploy_latest_version = 14;</code>
      */
     protected $deploy_latest_version = false;
+    /**
+     * List of special handling instructions for this deployment.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 15;</code>
+     */
+    private $special_handling;
 
     /**
      * Constructor.
@@ -137,6 +143,8 @@ class Deployment extends \Google\Protobuf\Internal\Message
      *           When the deployment was last modified.
      *     @type bool $deploy_latest_version
      *           When to always deploy latest model version
+     *     @type array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $special_handling
+     *           List of special handling instructions for this deployment.
      * }
      */
     public function __construct($data = NULL) {
@@ -528,6 +536,32 @@ class Deployment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->deploy_latest_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * List of special handling instructions for this deployment.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 15;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSpecialHandling()
+    {
+        return $this->special_handling;
+    }
+
+    /**
+     * List of special handling instructions for this deployment.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 15;</code>
+     * @param array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSpecialHandling($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\SpecialHandling::class);
+        $this->special_handling = $arr;
 
         return $this;
     }

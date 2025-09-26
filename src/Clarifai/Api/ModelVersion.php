@@ -155,6 +155,12 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
     private $method_signatures;
+    /**
+     * List of special handling instructions for this model version.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    private $special_handling;
 
     /**
      * Constructor.
@@ -213,6 +219,8 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *           Build information for the model version
      *     @type array<\Clarifai\Api\MethodSignature>|\Google\Protobuf\Internal\RepeatedField $method_signatures
      *           Model signature information for the model version
+     *     @type array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $special_handling
+     *           List of special handling instructions for this model version.
      * }
      */
     public function __construct($data = NULL) {
@@ -962,6 +970,32 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\MethodSignature::class);
         $this->method_signatures = $arr;
+
+        return $this;
+    }
+
+    /**
+     * List of special handling instructions for this model version.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSpecialHandling()
+    {
+        return $this->special_handling;
+    }
+
+    /**
+     * List of special handling instructions for this model version.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     * @param array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSpecialHandling($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\SpecialHandling::class);
+        $this->special_handling = $arr;
 
         return $this;
     }

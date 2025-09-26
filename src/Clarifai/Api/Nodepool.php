@@ -96,6 +96,12 @@ class Nodepool extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 12;</code>
      */
     protected $metadata = null;
+    /**
+     * List of special handling instructions for this nodepool.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 15;</code>
+     */
+    private $special_handling;
 
     /**
      * Constructor.
@@ -132,6 +138,8 @@ class Nodepool extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Struct $metadata
      *           To handle arbitrary json metadata:
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     *     @type array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $special_handling
+     *           List of special handling instructions for this nodepool.
      * }
      */
     public function __construct($data = NULL) {
@@ -535,6 +543,32 @@ class Nodepool extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * List of special handling instructions for this nodepool.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 15;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSpecialHandling()
+    {
+        return $this->special_handling;
+    }
+
+    /**
+     * List of special handling instructions for this nodepool.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 15;</code>
+     * @param array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSpecialHandling($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\SpecialHandling::class);
+        $this->special_handling = $arr;
 
         return $this;
     }
