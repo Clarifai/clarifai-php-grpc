@@ -98,6 +98,13 @@ class Runner extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 12;</code>
      */
     private $special_handling;
+    /**
+     * Metrics and status for the underlying k8s deployment.
+     * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+     *
+     * Generated from protobuf field <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+     */
+    protected $runner_metrics = null;
 
     /**
      * Constructor.
@@ -142,6 +149,9 @@ class Runner extends \Google\Protobuf\Internal\Message
      *           We keep it separate from ComputeInfo which defines how many resources each replica needs.
      *     @type array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $special_handling
      *           List of special handling instructions for this runner.
+     *     @type \Clarifai\Api\RunnerMetrics $runner_metrics
+     *           Metrics and status for the underlying k8s deployment.
+     *           Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
      * }
      */
     public function __construct($data = NULL) {
@@ -525,6 +535,44 @@ class Runner extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\SpecialHandling::class);
         $this->special_handling = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Metrics and status for the underlying k8s deployment.
+     * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+     *
+     * Generated from protobuf field <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+     * @return \Clarifai\Api\RunnerMetrics|null
+     */
+    public function getRunnerMetrics()
+    {
+        return $this->runner_metrics;
+    }
+
+    public function hasRunnerMetrics()
+    {
+        return isset($this->runner_metrics);
+    }
+
+    public function clearRunnerMetrics()
+    {
+        unset($this->runner_metrics);
+    }
+
+    /**
+     * Metrics and status for the underlying k8s deployment.
+     * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+     *
+     * Generated from protobuf field <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+     * @param \Clarifai\Api\RunnerMetrics $var
+     * @return $this
+     */
+    public function setRunnerMetrics($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\RunnerMetrics::class);
+        $this->runner_metrics = $var;
 
         return $this;
     }

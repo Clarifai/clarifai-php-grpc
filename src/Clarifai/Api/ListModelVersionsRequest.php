@@ -51,18 +51,18 @@ class ListModelVersionsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $trained_only = false;
     /**
+     * Filter by model versions runners with replicas >= min_replicas.
+     *
+     * Generated from protobuf field <code>uint32 min_replicas = 12;</code>
+     */
+    protected $min_replicas = 0;
+    /**
      * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      *
      * Generated from protobuf field <code>bool sort_ascending = 7;</code>
      */
     protected $sort_ascending = false;
-    /**
-     * Filter by model versions runners with replicas >= min_replicas.
-     *
-     * Generated from protobuf field <code>uint32 min_replicas = 12;</code>
-     */
-    protected $min_replicas = 0;
     protected $sort_by;
 
     /**
@@ -84,6 +84,8 @@ class ListModelVersionsRequest extends \Google\Protobuf\Internal\Message
      *           To list only the model versions that have these concept ids present in them.
      *     @type bool $trained_only
      *           To list only the model versions that have been trained.
+     *     @type int $min_replicas
+     *           Filter by model versions runners with replicas >= min_replicas.
      *     @type bool $sort_ascending
      *           Sorting options:
      *           Whether to sort in ascending order. If false, will order in descending order.
@@ -96,8 +98,6 @@ class ListModelVersionsRequest extends \Google\Protobuf\Internal\Message
      *     @type bool $sort_by_created_at
      *           Whether to order by the created_at time
      *           If neither sort option is set to true, will sort by created_at.
-     *     @type int $min_replicas
-     *           Filter by model versions runners with replicas >= min_replicas.
      * }
      */
     public function __construct($data = NULL) {
@@ -270,6 +270,32 @@ class ListModelVersionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filter by model versions runners with replicas >= min_replicas.
+     *
+     * Generated from protobuf field <code>uint32 min_replicas = 12;</code>
+     * @return int
+     */
+    public function getMinReplicas()
+    {
+        return $this->min_replicas;
+    }
+
+    /**
+     * Filter by model versions runners with replicas >= min_replicas.
+     *
+     * Generated from protobuf field <code>uint32 min_replicas = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMinReplicas($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->min_replicas = $var;
+
+        return $this;
+    }
+
+    /**
      * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      *
@@ -419,32 +445,6 @@ class ListModelVersionsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->writeOneof(11, $var);
-
-        return $this;
-    }
-
-    /**
-     * Filter by model versions runners with replicas >= min_replicas.
-     *
-     * Generated from protobuf field <code>uint32 min_replicas = 12;</code>
-     * @return int
-     */
-    public function getMinReplicas()
-    {
-        return $this->min_replicas;
-    }
-
-    /**
-     * Filter by model versions runners with replicas >= min_replicas.
-     *
-     * Generated from protobuf field <code>uint32 min_replicas = 12;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setMinReplicas($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->min_replicas = $var;
 
         return $this;
     }

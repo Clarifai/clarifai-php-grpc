@@ -32,6 +32,13 @@ class FrameInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     protected $time = 0;
+    /**
+     * The absolute number of the frame in the (original) video
+     * Different from index. Index is just the order in which frames were processed for search (and can be 0 for manual annotations)
+     *
+     * Generated from protobuf field <code>uint32 number = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    protected $number = 0;
 
     /**
      * Constructor.
@@ -47,6 +54,9 @@ class FrameInfo extends \Google\Protobuf\Internal\Message
      *     @type int $time
      *           time in the video in milliseconds. This is independent of the sampling rates used during
      *           processing.
+     *     @type int $number
+     *           The absolute number of the frame in the (original) video
+     *           Different from index. Index is just the order in which frames were processed for search (and can be 0 for manual annotations)
      * }
      */
     public function __construct($data = NULL) {
@@ -114,6 +124,34 @@ class FrameInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->time = $var;
+
+        return $this;
+    }
+
+    /**
+     * The absolute number of the frame in the (original) video
+     * Different from index. Index is just the order in which frames were processed for search (and can be 0 for manual annotations)
+     *
+     * Generated from protobuf field <code>uint32 number = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return int
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * The absolute number of the frame in the (original) video
+     * Different from index. Index is just the order in which frames were processed for search (and can be 0 for manual annotations)
+     *
+     * Generated from protobuf field <code>uint32 number = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setNumber($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->number = $var;
 
         return $this;
     }

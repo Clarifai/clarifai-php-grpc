@@ -107,6 +107,8 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
      *           If neither sort option is set to true, will sort by modified_at.
      *     @type bool $sort_by_id
      *           Whether to order by the external id
+     *     @type bool $sort_by_relevance
+     *           Whether to order by search query relevance. Can only be used if search is not empty.
      *     @type bool $starred_only
      *           Filtering options:
      *     @type bool $bookmark
@@ -391,6 +393,37 @@ class ListDatasetsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     *
+     * Generated from protobuf field <code>bool sort_by_relevance = 14;</code>
+     * @return bool
+     */
+    public function getSortByRelevance()
+    {
+        return $this->readOneof(14);
+    }
+
+    public function hasSortByRelevance()
+    {
+        return $this->hasOneof(14);
+    }
+
+    /**
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     *
+     * Generated from protobuf field <code>bool sort_by_relevance = 14;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByRelevance($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(14, $var);
 
         return $this;
     }

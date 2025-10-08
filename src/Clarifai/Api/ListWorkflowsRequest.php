@@ -140,6 +140,8 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
      *           Whether to order by the created_at time.
      *     @type bool $sort_by_star_count
      *           Whether to order by the number of users stared the workflow
+     *     @type bool $sort_by_relevance
+     *           Whether to order by search query relevance. Can only be used if search is not empty.
      *     @type bool $featured_only
      *           Filtering options:
      *           If true, we only return workflows that are handpicked by clarifai staff
@@ -441,6 +443,37 @@ class ListWorkflowsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->writeOneof(14, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     *
+     * Generated from protobuf field <code>bool sort_by_relevance = 18;</code>
+     * @return bool
+     */
+    public function getSortByRelevance()
+    {
+        return $this->readOneof(18);
+    }
+
+    public function hasSortByRelevance()
+    {
+        return $this->hasOneof(18);
+    }
+
+    /**
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     *
+     * Generated from protobuf field <code>bool sort_by_relevance = 18;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByRelevance($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(18, $var);
 
         return $this;
     }

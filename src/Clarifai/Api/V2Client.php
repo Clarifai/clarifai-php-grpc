@@ -310,6 +310,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * List video track annotations for a specific input.
+     * @param \Clarifai\Api\PostTrackAnnotationsSearchesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostTrackAnnotationsSearches(\Clarifai\Api\PostTrackAnnotationsSearchesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostTrackAnnotationsSearches',
+        $argument,
+        ['\Clarifai\Api\MultiAnnotationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Post annotations.
      * @param \Clarifai\Api\PostAnnotationsRequest $argument input argument
      * @param array $metadata metadata

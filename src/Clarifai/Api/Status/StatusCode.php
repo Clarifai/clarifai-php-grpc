@@ -1424,6 +1424,10 @@ class StatusCode
      */
     const SIFT_UNCATEGORIZED_ERROR = 46005;
     /**
+     * Generated from protobuf enum <code>USER_FLAGGED = 46006;</code>
+     */
+    const USER_FLAGGED = 46006;
+    /**
      * Application counts related errors 470xx
      *
      * Generated from protobuf enum <code>APP_COUNT_INVALID_MESSAGE = 47001;</code>
@@ -2285,6 +2289,7 @@ class StatusCode
         self::FILETYPE_UNSUPPORTED => 'FILETYPE_UNSUPPORTED',
         self::LOGIN_EVENT_ERROR => 'LOGIN_EVENT_ERROR',
         self::SIFT_UNCATEGORIZED_ERROR => 'SIFT_UNCATEGORIZED_ERROR',
+        self::USER_FLAGGED => 'USER_FLAGGED',
         self::APP_COUNT_INVALID_MESSAGE => 'APP_COUNT_INVALID_MESSAGE',
         self::APP_COUNT_UPDATE_INCREMENT_FAILED => 'APP_COUNT_UPDATE_INCREMENT_FAILED',
         self::APP_COUNT_REBUILD_FAILED => 'APP_COUNT_REBUILD_FAILED',

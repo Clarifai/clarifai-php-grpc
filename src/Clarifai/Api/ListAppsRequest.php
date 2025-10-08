@@ -143,6 +143,8 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
      *           Whether to order by the number of users stared the app
      *     @type bool $sort_by_id
      *           Whether to order by the id
+     *     @type bool $sort_by_relevance
+     *           Whether to order by search query relevance. Can only be used if search is not empty.
      *     @type bool $featured_only
      *           Filtering options:
      *           If true, we only return apps that are handpicked by clarifai staff
@@ -476,6 +478,37 @@ class ListAppsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->writeOneof(17, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     *
+     * Generated from protobuf field <code>bool sort_by_relevance = 19;</code>
+     * @return bool
+     */
+    public function getSortByRelevance()
+    {
+        return $this->readOneof(19);
+    }
+
+    public function hasSortByRelevance()
+    {
+        return $this->hasOneof(19);
+    }
+
+    /**
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     *
+     * Generated from protobuf field <code>bool sort_by_relevance = 19;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByRelevance($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(19, $var);
 
         return $this;
     }

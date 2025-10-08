@@ -40,6 +40,12 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      */
     private $additional_fields;
     /**
+     * If true, show replica counts for models.
+     *
+     * Generated from protobuf field <code>bool show_replicas = 34;</code>
+     */
+    protected $show_replicas = false;
+    /**
      * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      *
@@ -127,6 +133,42 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $bookmark = false;
     /**
+     * Filter by the model version ids. If set, only return the model of these versions.
+     *
+     * Generated from protobuf field <code>repeated string model_version_ids = 28;</code>
+     */
+    private $model_version_ids;
+    /**
+     * Filter by LicenseType
+     *
+     * Generated from protobuf field <code>.clarifai.api.LicenseType license_type = 29;</code>
+     */
+    protected $license_type = 0;
+    /**
+     * Filter by Source
+     *
+     * Generated from protobuf field <code>uint32 source = 30;</code>
+     */
+    protected $source = 0;
+    /**
+     * Filter by Creator
+     *
+     * Generated from protobuf field <code>string creator = 31;</code>
+     */
+    protected $creator = '';
+    /**
+     * Filter by model versions runners with replicas >= min_replicas.
+     *
+     * Generated from protobuf field <code>uint32 min_replicas = 33;</code>
+     */
+    protected $min_replicas = 0;
+    /**
+     * Filter by visibility of the model. If set, only return models with the specified visibility.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 35;</code>
+     */
+    protected $visibility = null;
+    /**
      * Searching options:
      * Specify a search parameter in order to perform keyword search on the
      * following fields of the model:
@@ -167,48 +209,6 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      * @deprecated
      */
     protected $filter_by_user_id = false;
-    /**
-     * Filter by the model version ids. If set, only return the model of these versions.
-     *
-     * Generated from protobuf field <code>repeated string model_version_ids = 28;</code>
-     */
-    private $model_version_ids;
-    /**
-     * Filter by LicenseType
-     *
-     * Generated from protobuf field <code>.clarifai.api.LicenseType license_type = 29;</code>
-     */
-    protected $license_type = 0;
-    /**
-     * Filter by Source
-     *
-     * Generated from protobuf field <code>uint32 source = 30;</code>
-     */
-    protected $source = 0;
-    /**
-     * Filter by Creator
-     *
-     * Generated from protobuf field <code>string creator = 31;</code>
-     */
-    protected $creator = '';
-    /**
-     * Filter by model versions runners with replicas >= min_replicas.
-     *
-     * Generated from protobuf field <code>uint32 min_replicas = 33;</code>
-     */
-    protected $min_replicas = 0;
-    /**
-     * If true, show replica counts for models.
-     *
-     * Generated from protobuf field <code>bool show_replicas = 34;</code>
-     */
-    protected $show_replicas = false;
-    /**
-     * Filter by visibility of the model. If set, only return models with the specified visibility.
-     *
-     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 35;</code>
-     */
-    protected $visibility = null;
     protected $sort_by;
 
     /**
@@ -226,6 +226,8 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           to 128.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
      *           (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets, counts
+     *     @type bool $show_replicas
+     *           If true, show replica counts for models.
      *     @type bool $sort_ascending
      *           Sorting options:
      *           Whether to sort in ascending order. If false, will order in descending order.
@@ -240,6 +242,8 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           Whether to order by the created_at
      *     @type bool $sort_by_star_count
      *           Whether to order by count of stars
+     *     @type bool $sort_by_relevance
+     *           Whether to order by search query relevance. Can only be used if search is not empty.
      *     @type string $model_type_id
      *           Filtering options:
      *           Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
@@ -271,6 +275,18 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *           Filter models by bookmark. If set, only return bookmarked models. Otherwise none bookmarked models only.
      *           Note: you can not filter `trained_only` and bookmark at the same time.
      *           When filter by bookmark, we will return trained and untrained models.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $model_version_ids
+     *           Filter by the model version ids. If set, only return the model of these versions.
+     *     @type int $license_type
+     *           Filter by LicenseType
+     *     @type int $source
+     *           Filter by Source
+     *     @type string $creator
+     *           Filter by Creator
+     *     @type int $min_replicas
+     *           Filter by model versions runners with replicas >= min_replicas.
+     *     @type \Clarifai\Api\Visibility $visibility
+     *           Filter by visibility of the model. If set, only return models with the specified visibility.
      *     @type string $search
      *           Searching options:
      *           Specify a search parameter in order to perform keyword search on the
@@ -293,20 +309,6 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
      *     @type bool $filter_by_user_id
      *           Extends the name filter to include the user_id of the application owner that the model belongs to.
      *           Deprecated: use search instead of name.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $model_version_ids
-     *           Filter by the model version ids. If set, only return the model of these versions.
-     *     @type int $license_type
-     *           Filter by LicenseType
-     *     @type int $source
-     *           Filter by Source
-     *     @type string $creator
-     *           Filter by Creator
-     *     @type int $min_replicas
-     *           Filter by model versions runners with replicas >= min_replicas.
-     *     @type bool $show_replicas
-     *           If true, show replica counts for models.
-     *     @type \Clarifai\Api\Visibility $visibility
-     *           Filter by visibility of the model. If set, only return models with the specified visibility.
      * }
      */
     public function __construct($data = NULL) {
@@ -424,6 +426,32 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->additional_fields = $arr;
+
+        return $this;
+    }
+
+    /**
+     * If true, show replica counts for models.
+     *
+     * Generated from protobuf field <code>bool show_replicas = 34;</code>
+     * @return bool
+     */
+    public function getShowReplicas()
+    {
+        return $this->show_replicas;
+    }
+
+    /**
+     * If true, show replica counts for models.
+     *
+     * Generated from protobuf field <code>bool show_replicas = 34;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setShowReplicas($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->show_replicas = $var;
 
         return $this;
     }
@@ -609,6 +637,37 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->writeOneof(25, $var);
+
+        return $this;
+    }
+
+    /**
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     *
+     * Generated from protobuf field <code>bool sort_by_relevance = 36;</code>
+     * @return bool
+     */
+    public function getSortByRelevance()
+    {
+        return $this->readOneof(36);
+    }
+
+    public function hasSortByRelevance()
+    {
+        return $this->hasOneof(36);
+    }
+
+    /**
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     *
+     * Generated from protobuf field <code>bool sort_by_relevance = 36;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortByRelevance($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(36, $var);
 
         return $this;
     }
@@ -944,6 +1003,172 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filter by the model version ids. If set, only return the model of these versions.
+     *
+     * Generated from protobuf field <code>repeated string model_version_ids = 28;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getModelVersionIds()
+    {
+        return $this->model_version_ids;
+    }
+
+    /**
+     * Filter by the model version ids. If set, only return the model of these versions.
+     *
+     * Generated from protobuf field <code>repeated string model_version_ids = 28;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setModelVersionIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->model_version_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Filter by LicenseType
+     *
+     * Generated from protobuf field <code>.clarifai.api.LicenseType license_type = 29;</code>
+     * @return int
+     */
+    public function getLicenseType()
+    {
+        return $this->license_type;
+    }
+
+    /**
+     * Filter by LicenseType
+     *
+     * Generated from protobuf field <code>.clarifai.api.LicenseType license_type = 29;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setLicenseType($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\LicenseType::class);
+        $this->license_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by Source
+     *
+     * Generated from protobuf field <code>uint32 source = 30;</code>
+     * @return int
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * Filter by Source
+     *
+     * Generated from protobuf field <code>uint32 source = 30;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by Creator
+     *
+     * Generated from protobuf field <code>string creator = 31;</code>
+     * @return string
+     */
+    public function getCreator()
+    {
+        return $this->creator;
+    }
+
+    /**
+     * Filter by Creator
+     *
+     * Generated from protobuf field <code>string creator = 31;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCreator($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->creator = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by model versions runners with replicas >= min_replicas.
+     *
+     * Generated from protobuf field <code>uint32 min_replicas = 33;</code>
+     * @return int
+     */
+    public function getMinReplicas()
+    {
+        return $this->min_replicas;
+    }
+
+    /**
+     * Filter by model versions runners with replicas >= min_replicas.
+     *
+     * Generated from protobuf field <code>uint32 min_replicas = 33;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMinReplicas($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->min_replicas = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter by visibility of the model. If set, only return models with the specified visibility.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 35;</code>
+     * @return \Clarifai\Api\Visibility|null
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
+    }
+
+    /**
+     * Filter by visibility of the model. If set, only return models with the specified visibility.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 35;</code>
+     * @param \Clarifai\Api\Visibility $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
+        $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
      * Searching options:
      * Specify a search parameter in order to perform keyword search on the
      * following fields of the model:
@@ -1083,198 +1308,6 @@ class ListModelsRequest extends \Google\Protobuf\Internal\Message
         @trigger_error('filter_by_user_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->filter_by_user_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Filter by the model version ids. If set, only return the model of these versions.
-     *
-     * Generated from protobuf field <code>repeated string model_version_ids = 28;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getModelVersionIds()
-    {
-        return $this->model_version_ids;
-    }
-
-    /**
-     * Filter by the model version ids. If set, only return the model of these versions.
-     *
-     * Generated from protobuf field <code>repeated string model_version_ids = 28;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setModelVersionIds($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->model_version_ids = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Filter by LicenseType
-     *
-     * Generated from protobuf field <code>.clarifai.api.LicenseType license_type = 29;</code>
-     * @return int
-     */
-    public function getLicenseType()
-    {
-        return $this->license_type;
-    }
-
-    /**
-     * Filter by LicenseType
-     *
-     * Generated from protobuf field <code>.clarifai.api.LicenseType license_type = 29;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setLicenseType($var)
-    {
-        GPBUtil::checkEnum($var, \Clarifai\Api\LicenseType::class);
-        $this->license_type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Filter by Source
-     *
-     * Generated from protobuf field <code>uint32 source = 30;</code>
-     * @return int
-     */
-    public function getSource()
-    {
-        return $this->source;
-    }
-
-    /**
-     * Filter by Source
-     *
-     * Generated from protobuf field <code>uint32 source = 30;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setSource($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->source = $var;
-
-        return $this;
-    }
-
-    /**
-     * Filter by Creator
-     *
-     * Generated from protobuf field <code>string creator = 31;</code>
-     * @return string
-     */
-    public function getCreator()
-    {
-        return $this->creator;
-    }
-
-    /**
-     * Filter by Creator
-     *
-     * Generated from protobuf field <code>string creator = 31;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCreator($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->creator = $var;
-
-        return $this;
-    }
-
-    /**
-     * Filter by model versions runners with replicas >= min_replicas.
-     *
-     * Generated from protobuf field <code>uint32 min_replicas = 33;</code>
-     * @return int
-     */
-    public function getMinReplicas()
-    {
-        return $this->min_replicas;
-    }
-
-    /**
-     * Filter by model versions runners with replicas >= min_replicas.
-     *
-     * Generated from protobuf field <code>uint32 min_replicas = 33;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setMinReplicas($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->min_replicas = $var;
-
-        return $this;
-    }
-
-    /**
-     * If true, show replica counts for models.
-     *
-     * Generated from protobuf field <code>bool show_replicas = 34;</code>
-     * @return bool
-     */
-    public function getShowReplicas()
-    {
-        return $this->show_replicas;
-    }
-
-    /**
-     * If true, show replica counts for models.
-     *
-     * Generated from protobuf field <code>bool show_replicas = 34;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setShowReplicas($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->show_replicas = $var;
-
-        return $this;
-    }
-
-    /**
-     * Filter by visibility of the model. If set, only return models with the specified visibility.
-     *
-     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 35;</code>
-     * @return \Clarifai\Api\Visibility|null
-     */
-    public function getVisibility()
-    {
-        return $this->visibility;
-    }
-
-    public function hasVisibility()
-    {
-        return isset($this->visibility);
-    }
-
-    public function clearVisibility()
-    {
-        unset($this->visibility);
-    }
-
-    /**
-     * Filter by visibility of the model. If set, only return models with the specified visibility.
-     *
-     * Generated from protobuf field <code>.clarifai.api.Visibility visibility = 35;</code>
-     * @param \Clarifai\Api\Visibility $var
-     * @return $this
-     */
-    public function setVisibility($var)
-    {
-        GPBUtil::checkMessage($var, \Clarifai\Api\Visibility::class);
-        $this->visibility = $var;
 
         return $this;
     }
