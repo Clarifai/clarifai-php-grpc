@@ -142,29 +142,29 @@ class Model extends \Google\Protobuf\Internal\Message
     /**
      * Tags from toolkits category
      *
-     * Generated from protobuf field <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated string toolkits = 20;</code>
      */
     private $toolkits;
     /**
      * Tags from use_cases category
      *
-     * Generated from protobuf field <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated string use_cases = 21;</code>
      */
     private $use_cases;
     /**
      * Tags from languages category.
      *
-     * Generated from protobuf field <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated string languages = 25;</code>
      */
     private $languages;
     /**
      * Tags from languages category with names, only used in responses.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     private $languages_full;
     /**
-     * Generated from protobuf field <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated string check_consents = 32;</code>
      */
     private $check_consents;
     /**
@@ -906,7 +906,7 @@ class Model extends \Google\Protobuf\Internal\Message
     /**
      * Tags from toolkits category
      *
-     * Generated from protobuf field <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated string toolkits = 20;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getToolkits()
@@ -917,7 +917,7 @@ class Model extends \Google\Protobuf\Internal\Message
     /**
      * Tags from toolkits category
      *
-     * Generated from protobuf field <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated string toolkits = 20;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -932,7 +932,7 @@ class Model extends \Google\Protobuf\Internal\Message
     /**
      * Tags from use_cases category
      *
-     * Generated from protobuf field <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated string use_cases = 21;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getUseCases()
@@ -943,7 +943,7 @@ class Model extends \Google\Protobuf\Internal\Message
     /**
      * Tags from use_cases category
      *
-     * Generated from protobuf field <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated string use_cases = 21;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -958,7 +958,7 @@ class Model extends \Google\Protobuf\Internal\Message
     /**
      * Tags from languages category.
      *
-     * Generated from protobuf field <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated string languages = 25;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLanguages()
@@ -969,7 +969,7 @@ class Model extends \Google\Protobuf\Internal\Message
     /**
      * Tags from languages category.
      *
-     * Generated from protobuf field <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated string languages = 25;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -984,7 +984,7 @@ class Model extends \Google\Protobuf\Internal\Message
     /**
      * Tags from languages category with names, only used in responses.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLanguagesFull()
@@ -995,7 +995,7 @@ class Model extends \Google\Protobuf\Internal\Message
     /**
      * Tags from languages category with names, only used in responses.
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      * @param array<\Clarifai\Api\FullTag>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -1008,7 +1008,7 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated string check_consents = 32;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getCheckConsents()
@@ -1017,7 +1017,7 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated string check_consents = 32;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

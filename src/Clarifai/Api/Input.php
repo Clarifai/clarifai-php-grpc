@@ -60,6 +60,12 @@ class Input extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string dataset_ids = 7;</code>
      */
     private $dataset_ids;
+    /**
+     * Global settings for annotation tracks.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputSettings settings = 8;</code>
+     */
+    protected $settings = null;
 
     /**
      * Constructor.
@@ -88,6 +94,8 @@ class Input extends \Google\Protobuf\Internal\Message
      *           * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
      *           * to add inputs to dataset(s) in `PostInputs` endpoint.
      *           Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
+     *     @type \Clarifai\Api\InputSettings $settings
+     *           Global settings for annotation tracks.
      * }
      */
     public function __construct($data = NULL) {
@@ -305,6 +313,42 @@ class Input extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->dataset_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Global settings for annotation tracks.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputSettings settings = 8;</code>
+     * @return \Clarifai\Api\InputSettings|null
+     */
+    public function getSettings()
+    {
+        return $this->settings;
+    }
+
+    public function hasSettings()
+    {
+        return isset($this->settings);
+    }
+
+    public function clearSettings()
+    {
+        unset($this->settings);
+    }
+
+    /**
+     * Global settings for annotation tracks.
+     *
+     * Generated from protobuf field <code>.clarifai.api.InputSettings settings = 8;</code>
+     * @param \Clarifai\Api\InputSettings $var
+     * @return $this
+     */
+    public function setSettings($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\InputSettings::class);
+        $this->settings = $var;
 
         return $this;
     }
