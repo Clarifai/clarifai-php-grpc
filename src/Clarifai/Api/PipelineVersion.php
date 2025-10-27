@@ -74,6 +74,12 @@ class PipelineVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 10;</code>
      */
     protected $modified_at = null;
+    /**
+     * Pipeline version configuration including step secrets
+     *
+     * Generated from protobuf field <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+     */
+    protected $config = null;
 
     /**
      * Constructor.
@@ -103,6 +109,8 @@ class PipelineVersion extends \Google\Protobuf\Internal\Message
      *           When the pipeline was created
      *     @type \Google\Protobuf\Timestamp $modified_at
      *           When the pipeline was last modified
+     *     @type \Clarifai\Api\PipelineVersionConfig $config
+     *           Pipeline version configuration including step secrets
      * }
      */
     public function __construct($data = NULL) {
@@ -418,6 +426,42 @@ class PipelineVersion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->modified_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Pipeline version configuration including step secrets
+     *
+     * Generated from protobuf field <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+     * @return \Clarifai\Api\PipelineVersionConfig|null
+     */
+    public function getConfig()
+    {
+        return $this->config;
+    }
+
+    public function hasConfig()
+    {
+        return isset($this->config);
+    }
+
+    public function clearConfig()
+    {
+        unset($this->config);
+    }
+
+    /**
+     * Pipeline version configuration including step secrets
+     *
+     * Generated from protobuf field <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+     * @param \Clarifai\Api\PipelineVersionConfig $var
+     * @return $this
+     */
+    public function setConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\PipelineVersionConfig::class);
+        $this->config = $var;
 
         return $this;
     }

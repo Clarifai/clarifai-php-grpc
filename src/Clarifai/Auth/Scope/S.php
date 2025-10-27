@@ -655,6 +655,18 @@ class S
      * Generated from protobuf enum <code>UserMetrics_Get = 163 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const UserMetrics_Get = 163;
+    /**
+     * Generated from protobuf enum <code>AnnotationTracks_Get = 166 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const AnnotationTracks_Get = 166;
+    /**
+     * Generated from protobuf enum <code>AnnotationTracks_Add = 167 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const AnnotationTracks_Add = 167;
+    /**
+     * Generated from protobuf enum <code>AnnotationTracks_Delete = 168 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const AnnotationTracks_Delete = 168;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -771,6 +783,9 @@ class S
         self::Secrets_Add => 'Secrets_Add',
         self::Secrets_Delete => 'Secrets_Delete',
         self::UserMetrics_Get => 'UserMetrics_Get',
+        self::AnnotationTracks_Get => 'AnnotationTracks_Get',
+        self::AnnotationTracks_Add => 'AnnotationTracks_Add',
+        self::AnnotationTracks_Delete => 'AnnotationTracks_Delete',
     ];
 
     public static function name($value)

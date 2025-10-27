@@ -34,9 +34,9 @@ class InputSettings extends \Google\Protobuf\Internal\Message
     /**
      * Pinned concept ids
      *
-     * Generated from protobuf field <code>repeated string pinned_concept_ids = 4;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
      */
-    private $pinned_concept_ids;
+    private $pinned_concepts;
 
     /**
      * Constructor.
@@ -51,7 +51,7 @@ class InputSettings extends \Google\Protobuf\Internal\Message
      *     @type int $sample_rate_ms
      *           Sampling settings used
      *     @type int $sample_rate_frame
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $pinned_concept_ids
+     *     @type array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $pinned_concepts
      *           Pinned concept ids
      * }
      */
@@ -151,25 +151,25 @@ class InputSettings extends \Google\Protobuf\Internal\Message
     /**
      * Pinned concept ids
      *
-     * Generated from protobuf field <code>repeated string pinned_concept_ids = 4;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getPinnedConceptIds()
+    public function getPinnedConcepts()
     {
-        return $this->pinned_concept_ids;
+        return $this->pinned_concepts;
     }
 
     /**
      * Pinned concept ids
      *
-     * Generated from protobuf field <code>repeated string pinned_concept_ids = 4;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
+     * @param array<\Clarifai\Api\Concept>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setPinnedConceptIds($var)
+    public function setPinnedConcepts($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->pinned_concept_ids = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Concept::class);
+        $this->pinned_concepts = $arr;
 
         return $this;
     }

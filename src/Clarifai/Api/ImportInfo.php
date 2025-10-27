@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * DEPRECATED: no longer support importing models from third party toolkits
+ * DEPRECATED: no longer support importing models from third-party toolkits
  *
  * Generated from protobuf message <code>clarifai.api.ImportInfo</code>
  */
