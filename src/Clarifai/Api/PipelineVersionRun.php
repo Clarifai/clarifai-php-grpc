@@ -59,6 +59,18 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp modified_at = 8;</code>
      */
     protected $modified_at = null;
+    /**
+     * Optional: Overrides to input arguments for the orchestration system.
+     *
+     * Generated from protobuf field <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+     */
+    protected $input_args_override = null;
+    /**
+     * Final merged orchestration spec snapshot submitted to backend.
+     *
+     * Generated from protobuf field <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+     */
+    protected $orchestration_spec = null;
 
     /**
      * Constructor.
@@ -81,6 +93,10 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
      *           When the pipeline was created
      *     @type \Google\Protobuf\Timestamp $modified_at
      *           When the pipeline was last modified
+     *     @type \Clarifai\Api\OrchestrationArgsOverride $input_args_override
+     *           Optional: Overrides to input arguments for the orchestration system.
+     *     @type \Clarifai\Api\OrchestrationSpec $orchestration_spec
+     *           Final merged orchestration spec snapshot submitted to backend.
      * }
      */
     public function __construct($data = NULL) {
@@ -328,6 +344,78 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->modified_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional: Overrides to input arguments for the orchestration system.
+     *
+     * Generated from protobuf field <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+     * @return \Clarifai\Api\OrchestrationArgsOverride|null
+     */
+    public function getInputArgsOverride()
+    {
+        return $this->input_args_override;
+    }
+
+    public function hasInputArgsOverride()
+    {
+        return isset($this->input_args_override);
+    }
+
+    public function clearInputArgsOverride()
+    {
+        unset($this->input_args_override);
+    }
+
+    /**
+     * Optional: Overrides to input arguments for the orchestration system.
+     *
+     * Generated from protobuf field <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+     * @param \Clarifai\Api\OrchestrationArgsOverride $var
+     * @return $this
+     */
+    public function setInputArgsOverride($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\OrchestrationArgsOverride::class);
+        $this->input_args_override = $var;
+
+        return $this;
+    }
+
+    /**
+     * Final merged orchestration spec snapshot submitted to backend.
+     *
+     * Generated from protobuf field <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+     * @return \Clarifai\Api\OrchestrationSpec|null
+     */
+    public function getOrchestrationSpec()
+    {
+        return $this->orchestration_spec;
+    }
+
+    public function hasOrchestrationSpec()
+    {
+        return isset($this->orchestration_spec);
+    }
+
+    public function clearOrchestrationSpec()
+    {
+        unset($this->orchestration_spec);
+    }
+
+    /**
+     * Final merged orchestration spec snapshot submitted to backend.
+     *
+     * Generated from protobuf field <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+     * @param \Clarifai\Api\OrchestrationSpec $var
+     * @return $this
+     */
+    public function setOrchestrationSpec($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\OrchestrationSpec::class);
+        $this->orchestration_spec = $var;
 
         return $this;
     }
