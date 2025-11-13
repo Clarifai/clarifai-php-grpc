@@ -3678,6 +3678,20 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Clarifai\Api\PatchComputeClustersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PatchComputeClusters(\Clarifai\Api\PatchComputeClustersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PatchComputeClusters',
+        $argument,
+        ['\Clarifai\Api\MultiComputeClusterResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Nodepools CRUD
      * @param \Clarifai\Api\GetNodepoolRequest $argument input argument
      * @param array $metadata metadata

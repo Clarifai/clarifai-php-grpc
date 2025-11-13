@@ -67,6 +67,7 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
     protected $input_args_override = null;
     /**
      * Final merged orchestration spec snapshot submitted to backend.
+     * This field is read-only and cannot be set during creation.
      *
      * Generated from protobuf field <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
      */
@@ -97,6 +98,7 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
      *           Optional: Overrides to input arguments for the orchestration system.
      *     @type \Clarifai\Api\OrchestrationSpec $orchestration_spec
      *           Final merged orchestration spec snapshot submitted to backend.
+     *           This field is read-only and cannot be set during creation.
      * }
      */
     public function __construct($data = NULL) {
@@ -386,6 +388,7 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
 
     /**
      * Final merged orchestration spec snapshot submitted to backend.
+     * This field is read-only and cannot be set during creation.
      *
      * Generated from protobuf field <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
      * @return \Clarifai\Api\OrchestrationSpec|null
@@ -407,6 +410,7 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
 
     /**
      * Final merged orchestration spec snapshot submitted to backend.
+     * This field is read-only and cannot be set during creation.
      *
      * Generated from protobuf field <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
      * @param \Clarifai\Api\OrchestrationSpec $var

@@ -14,12 +14,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class PipelineVersionConfig extends \Google\Protobuf\Internal\Message
 {
     /**
-     * StepVersionSecrets maps step version references to their secret configurations
-     * The outer map key is the step version reference (e.g. "step1" or the step version ID)
-     * The inner map key is the secret name (e.g. "EMAIL_PROVIDER_API_KEY")
-     * The inner map value is the secret reference (e.g. "users/1/secrets/secret-1")
+     * StepVersionSecrets maps step names to their secret configurations
+     * Using google.protobuf.Struct to create the desired flat JSON structure
+     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
+     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
      *
-     * Generated from protobuf field <code>map<string, .clarifai.api.StepSecretConfig> step_version_secrets = 1;</code>
+     * Generated from protobuf field <code>map<string, .google.protobuf.Struct> step_version_secrets = 1;</code>
      */
     private $step_version_secrets;
 
@@ -30,10 +30,10 @@ class PipelineVersionConfig extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array|\Google\Protobuf\Internal\MapField $step_version_secrets
-     *           StepVersionSecrets maps step version references to their secret configurations
-     *           The outer map key is the step version reference (e.g. "step1" or the step version ID)
-     *           The inner map key is the secret name (e.g. "EMAIL_PROVIDER_API_KEY")
-     *           The inner map value is the secret reference (e.g. "users/1/secrets/secret-1")
+     *           StepVersionSecrets maps step names to their secret configurations
+     *           Using google.protobuf.Struct to create the desired flat JSON structure
+     *           This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
+     *           example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
      * }
      */
     public function __construct($data = NULL) {
@@ -42,12 +42,12 @@ class PipelineVersionConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * StepVersionSecrets maps step version references to their secret configurations
-     * The outer map key is the step version reference (e.g. "step1" or the step version ID)
-     * The inner map key is the secret name (e.g. "EMAIL_PROVIDER_API_KEY")
-     * The inner map value is the secret reference (e.g. "users/1/secrets/secret-1")
+     * StepVersionSecrets maps step names to their secret configurations
+     * Using google.protobuf.Struct to create the desired flat JSON structure
+     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
+     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
      *
-     * Generated from protobuf field <code>map<string, .clarifai.api.StepSecretConfig> step_version_secrets = 1;</code>
+     * Generated from protobuf field <code>map<string, .google.protobuf.Struct> step_version_secrets = 1;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getStepVersionSecrets()
@@ -56,18 +56,18 @@ class PipelineVersionConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * StepVersionSecrets maps step version references to their secret configurations
-     * The outer map key is the step version reference (e.g. "step1" or the step version ID)
-     * The inner map key is the secret name (e.g. "EMAIL_PROVIDER_API_KEY")
-     * The inner map value is the secret reference (e.g. "users/1/secrets/secret-1")
+     * StepVersionSecrets maps step names to their secret configurations
+     * Using google.protobuf.Struct to create the desired flat JSON structure
+     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
+     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
      *
-     * Generated from protobuf field <code>map<string, .clarifai.api.StepSecretConfig> step_version_secrets = 1;</code>
+     * Generated from protobuf field <code>map<string, .google.protobuf.Struct> step_version_secrets = 1;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
     public function setStepVersionSecrets($var)
     {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\StepSecretConfig::class);
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Protobuf\Struct::class);
         $this->step_version_secrets = $arr;
 
         return $this;
