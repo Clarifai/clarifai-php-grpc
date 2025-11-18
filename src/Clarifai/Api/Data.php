@@ -156,6 +156,12 @@ class Data extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string string_value = 25;</code>
      */
     protected $string_value = '';
+    /**
+     * To handle Input and output json
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct struct_value = 26;</code>
+     */
+    protected $struct_value = null;
 
     /**
      * Constructor.
@@ -212,6 +218,8 @@ class Data extends \Google\Protobuf\Internal\Message
      *           Input and output bool data
      *     @type string $string_value
      *           Input and output string data
+     *     @type \Google\Protobuf\Struct $struct_value
+     *           To handle Input and output json
      * }
      */
     public function __construct($data = NULL) {
@@ -889,6 +897,42 @@ class Data extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->string_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * To handle Input and output json
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct struct_value = 26;</code>
+     * @return \Google\Protobuf\Struct|null
+     */
+    public function getStructValue()
+    {
+        return $this->struct_value;
+    }
+
+    public function hasStructValue()
+    {
+        return isset($this->struct_value);
+    }
+
+    public function clearStructValue()
+    {
+        unset($this->struct_value);
+    }
+
+    /**
+     * To handle Input and output json
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct struct_value = 26;</code>
+     * @param \Google\Protobuf\Struct $var
+     * @return $this
+     */
+    public function setStructValue($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->struct_value = $var;
 
         return $this;
     }

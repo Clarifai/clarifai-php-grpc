@@ -1632,6 +1632,7 @@ class StatusCode
     const LABEL_ORDER_CANCELED = 55004;
     /**
      * License Related Status Code 600xx
+     * DEPRECATED: License feature is fully deprecated now.
      *
      * Generated from protobuf enum <code>LICENSE_ACTIVE = 60000;</code>
      */

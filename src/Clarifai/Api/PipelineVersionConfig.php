@@ -16,8 +16,8 @@ class PipelineVersionConfig extends \Google\Protobuf\Internal\Message
     /**
      * StepVersionSecrets maps step names to their secret configurations
      * Using google.protobuf.Struct to create the desired flat JSON structure
-     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
-     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
+     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}}
+     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}}
      *
      * Generated from protobuf field <code>map<string, .google.protobuf.Struct> step_version_secrets = 1;</code>
      */
@@ -32,8 +32,8 @@ class PipelineVersionConfig extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $step_version_secrets
      *           StepVersionSecrets maps step names to their secret configurations
      *           Using google.protobuf.Struct to create the desired flat JSON structure
-     *           This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
-     *           example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
+     *           This produces: {stepName: {secretName: "users/user-name/secrets/key"}}
+     *           example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}}
      * }
      */
     public function __construct($data = NULL) {
@@ -44,8 +44,8 @@ class PipelineVersionConfig extends \Google\Protobuf\Internal\Message
     /**
      * StepVersionSecrets maps step names to their secret configurations
      * Using google.protobuf.Struct to create the desired flat JSON structure
-     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
-     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
+     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}}
+     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}}
      *
      * Generated from protobuf field <code>map<string, .google.protobuf.Struct> step_version_secrets = 1;</code>
      * @return \Google\Protobuf\Internal\MapField
@@ -58,8 +58,8 @@ class PipelineVersionConfig extends \Google\Protobuf\Internal\Message
     /**
      * StepVersionSecrets maps step names to their secret configurations
      * Using google.protobuf.Struct to create the desired flat JSON structure
-     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
-     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
+     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}}
+     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}}
      *
      * Generated from protobuf field <code>map<string, .google.protobuf.Struct> step_version_secrets = 1;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
