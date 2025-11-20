@@ -2246,66 +2246,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Evaluate the results of two search requests
-     * @param \Clarifai\Api\PostAnnotationSearchMetricsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PostAnnotationSearchMetrics(\Clarifai\Api\PostAnnotationSearchMetricsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PostAnnotationSearchMetrics',
-        $argument,
-        ['\Clarifai\Api\MultiAnnotationSearchMetricsResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Get the evaluation results between two search requests
-     * @param \Clarifai\Api\GetAnnotationSearchMetricsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function GetAnnotationSearchMetrics(\Clarifai\Api\GetAnnotationSearchMetricsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/GetAnnotationSearchMetrics',
-        $argument,
-        ['\Clarifai\Api\MultiAnnotationSearchMetricsResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * List the evaluation results between two search requests
-     * @param \Clarifai\Api\ListAnnotationSearchMetricsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function ListAnnotationSearchMetrics(\Clarifai\Api\ListAnnotationSearchMetricsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/ListAnnotationSearchMetrics',
-        $argument,
-        ['\Clarifai\Api\MultiAnnotationSearchMetricsResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * DeleteAnnotationSearchMetrics
-     * @param \Clarifai\Api\DeleteAnnotationSearchMetricsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function DeleteAnnotationSearchMetrics(\Clarifai\Api\DeleteAnnotationSearchMetricsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/DeleteAnnotationSearchMetrics',
-        $argument,
-        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * Delete a saved search.
      * @param \Clarifai\Api\DeleteSearchRequest $argument input argument
      * @param array $metadata metadata

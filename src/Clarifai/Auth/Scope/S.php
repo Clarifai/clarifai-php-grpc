@@ -193,6 +193,8 @@ class S
      */
     const Workflows_Delete = 21;
     /**
+     * DEPRECATED
+     *
      * Generated from protobuf enum <code>WorkflowMetrics_Get = 96 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const WorkflowMetrics_Get = 96;
@@ -389,6 +391,7 @@ class S
     const LabelOrders_Delete = 69;
     /**
      * CRUD on FindDuplicateAnnotationsJobs table
+     * DEPRECATED
      *
      * Generated from protobuf enum <code>FindDuplicateAnnotationsJobs_Add = 102 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
      */

@@ -57,10 +57,6 @@ class MetricsSummary extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>float mean_avg_precision_iou_range = 11;</code>
      */
     protected $mean_avg_precision_iou_range = 0.0;
-    /**
-     * Generated from protobuf field <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    private $lopq_metrics;
 
     /**
      * Constructor.
@@ -78,7 +74,6 @@ class MetricsSummary extends \Google\Protobuf\Internal\Message
      *     @type float $macro_avg_recall
      *     @type float $mean_avg_precision_iou_50
      *     @type float $mean_avg_precision_iou_range
-     *     @type array<\Clarifai\Api\LOPQEvalResult>|\Google\Protobuf\Internal\RepeatedField $lopq_metrics
      * }
      */
     public function __construct($data = NULL) {
@@ -310,28 +305,6 @@ class MetricsSummary extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->mean_avg_precision_iou_range = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getLopqMetrics()
-    {
-        return $this->lopq_metrics;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     * @param array<\Clarifai\Api\LOPQEvalResult>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setLopqMetrics($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\LOPQEvalResult::class);
-        $this->lopq_metrics = $arr;
 
         return $this;
     }
