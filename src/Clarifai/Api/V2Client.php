@@ -325,6 +325,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Stream video track annotations for a specific input one-by-one.
+     * @param \Clarifai\Api\StreamTrackAnnotationsSearchesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\ServerStreamingCall
+     */
+    public function StreamTrackAnnotationsSearches(\Clarifai\Api\StreamTrackAnnotationsSearchesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_serverStreamRequest('/clarifai.api.V2/StreamTrackAnnotationsSearches',
+        $argument,
+        ['\Clarifai\Api\SingleAnnotationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Post annotations.
      * @param \Clarifai\Api\PostAnnotationsRequest $argument input argument
      * @param array $metadata metadata
@@ -4196,6 +4211,148 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/GetPipelineStepVersion',
         $argument,
         ['\Clarifai\Api\SinglePipelineStepVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\DeletePipelineStepsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeletePipelineSteps(\Clarifai\Api\DeletePipelineStepsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeletePipelineSteps',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\DeletePipelineStepVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeletePipelineStepVersions(\Clarifai\Api\DeletePipelineStepVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeletePipelineStepVersions',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\PostArtifactsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostArtifacts(\Clarifai\Api\PostArtifactsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostArtifacts',
+        $argument,
+        ['\Clarifai\Api\MultiArtifactResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\GetArtifactRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetArtifact(\Clarifai\Api\GetArtifactRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetArtifact',
+        $argument,
+        ['\Clarifai\Api\SingleArtifactResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\ListArtifactsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListArtifacts(\Clarifai\Api\ListArtifactsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListArtifacts',
+        $argument,
+        ['\Clarifai\Api\MultiArtifactResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\DeleteArtifactRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteArtifact(\Clarifai\Api\DeleteArtifactRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteArtifact',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * This is a streaming endpoint, the request has a field, upload_data, which can either be the config for the upload or the actual data to upload.
+     * The config must be sent first before the artifact_bytes can be uploaded.
+     * Once the config has been sent, the server will respond with a confirmation containing the artifact_version_id.
+     * This is so that if your upload is interrupted, you can resume the upload by sending the config again with the artifact_version_id specified for your artifact_version.
+     * The actual upload will be done via a multipart upload, the latest successful part_id will be sent from the server in the response to the artifact_bytes.
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\BidiStreamingCall
+     */
+    public function PostArtifactVersionsUpload($metadata = [], $options = []) {
+        return $this->_bidiRequest('/clarifai.api.V2/PostArtifactVersionsUpload',
+        ['\Clarifai\Api\PostArtifactVersionsUploadResponse','decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\ListArtifactVersionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListArtifactVersions(\Clarifai\Api\ListArtifactVersionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListArtifactVersions',
+        $argument,
+        ['\Clarifai\Api\MultiArtifactVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\GetArtifactVersionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetArtifactVersion(\Clarifai\Api\GetArtifactVersionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/GetArtifactVersion',
+        $argument,
+        ['\Clarifai\Api\SingleArtifactVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Clarifai\Api\DeleteArtifactVersionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteArtifactVersion(\Clarifai\Api\DeleteArtifactVersionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteArtifactVersion',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);
     }
 

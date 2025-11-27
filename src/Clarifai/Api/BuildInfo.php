@@ -31,6 +31,12 @@ class BuildInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string docker_image_digest = 3;</code>
      */
     protected $docker_image_digest = '';
+    /**
+     * Platform(s) the model was built for (e.g., "linux/amd64,linux/arm64")
+     *
+     * Generated from protobuf field <code>string platform = 4;</code>
+     */
+    protected $platform = '';
 
     /**
      * Constructor.
@@ -44,6 +50,8 @@ class BuildInfo extends \Google\Protobuf\Internal\Message
      *           Docker image tag
      *     @type string $docker_image_digest
      *           Docker image digest
+     *     @type string $platform
+     *           Platform(s) the model was built for (e.g., "linux/amd64,linux/arm64")
      * }
      */
     public function __construct($data = NULL) {
@@ -125,6 +133,32 @@ class BuildInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->docker_image_digest = $var;
+
+        return $this;
+    }
+
+    /**
+     * Platform(s) the model was built for (e.g., "linux/amd64,linux/arm64")
+     *
+     * Generated from protobuf field <code>string platform = 4;</code>
+     * @return string
+     */
+    public function getPlatform()
+    {
+        return $this->platform;
+    }
+
+    /**
+     * Platform(s) the model was built for (e.g., "linux/amd64,linux/arm64")
+     *
+     * Generated from protobuf field <code>string platform = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPlatform($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->platform = $var;
 
         return $this;
     }

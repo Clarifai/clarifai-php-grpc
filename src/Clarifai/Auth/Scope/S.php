@@ -670,6 +670,22 @@ class S
      * Generated from protobuf enum <code>AnnotationTracks_Delete = 168 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const AnnotationTracks_Delete = 168;
+    /**
+     * Generated from protobuf enum <code>PipelineSteps_Delete = 169 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineSteps_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineSteps_Add];</code>
+     */
+    const PipelineSteps_Delete = 169;
+    /**
+     * Generated from protobuf enum <code>Artifacts_Get = 170 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const Artifacts_Get = 170;
+    /**
+     * Generated from protobuf enum <code>Artifacts_Add = 171 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Artifacts_Get];</code>
+     */
+    const Artifacts_Add = 171;
+    /**
+     * Generated from protobuf enum <code>Artifacts_Delete = 172 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Artifacts_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Artifacts_Add];</code>
+     */
+    const Artifacts_Delete = 172;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -789,6 +805,10 @@ class S
         self::AnnotationTracks_Get => 'AnnotationTracks_Get',
         self::AnnotationTracks_Add => 'AnnotationTracks_Add',
         self::AnnotationTracks_Delete => 'AnnotationTracks_Delete',
+        self::PipelineSteps_Delete => 'PipelineSteps_Delete',
+        self::Artifacts_Get => 'Artifacts_Get',
+        self::Artifacts_Add => 'Artifacts_Add',
+        self::Artifacts_Delete => 'Artifacts_Delete',
     ];
 
     public static function name($value)

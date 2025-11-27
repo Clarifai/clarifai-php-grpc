@@ -907,6 +907,32 @@ class StatusCode
      */
     const PIPELINE_INVALID_REQUEST = 26302;
     /**
+     * Artifact related codes 264xx
+     *
+     * Generated from protobuf enum <code>ARTIFACT_DOES_NOT_EXIST = 26400;</code>
+     */
+    const ARTIFACT_DOES_NOT_EXIST = 26400;
+    /**
+     * Generated from protobuf enum <code>ARTIFACT_INVALID_ARGUMENT = 26401;</code>
+     */
+    const ARTIFACT_INVALID_ARGUMENT = 26401;
+    /**
+     * Generated from protobuf enum <code>ARTIFACT_INVALID_REQUEST = 26402;</code>
+     */
+    const ARTIFACT_INVALID_REQUEST = 26402;
+    /**
+     * Generated from protobuf enum <code>ARTIFACT_VERSION_DOES_NOT_EXIST = 26403;</code>
+     */
+    const ARTIFACT_VERSION_DOES_NOT_EXIST = 26403;
+    /**
+     * Generated from protobuf enum <code>ARTIFACT_VERSION_INVALID_ARGUMENT = 26404;</code>
+     */
+    const ARTIFACT_VERSION_INVALID_ARGUMENT = 26404;
+    /**
+     * Generated from protobuf enum <code>ARTIFACT_VERSION_INVALID_REQUEST = 26405;</code>
+     */
+    const ARTIFACT_VERSION_INVALID_REQUEST = 26405;
+    /**
      * Input:Image related 30xxx
      *
      * Generated from protobuf enum <code>INPUT_SUCCESS = 30000;</code>
@@ -2169,6 +2195,12 @@ class StatusCode
         self::PIPELINE_DOES_NOT_EXIST => 'PIPELINE_DOES_NOT_EXIST',
         self::PIPELINE_INVALID_ARGUMENT => 'PIPELINE_INVALID_ARGUMENT',
         self::PIPELINE_INVALID_REQUEST => 'PIPELINE_INVALID_REQUEST',
+        self::ARTIFACT_DOES_NOT_EXIST => 'ARTIFACT_DOES_NOT_EXIST',
+        self::ARTIFACT_INVALID_ARGUMENT => 'ARTIFACT_INVALID_ARGUMENT',
+        self::ARTIFACT_INVALID_REQUEST => 'ARTIFACT_INVALID_REQUEST',
+        self::ARTIFACT_VERSION_DOES_NOT_EXIST => 'ARTIFACT_VERSION_DOES_NOT_EXIST',
+        self::ARTIFACT_VERSION_INVALID_ARGUMENT => 'ARTIFACT_VERSION_INVALID_ARGUMENT',
+        self::ARTIFACT_VERSION_INVALID_REQUEST => 'ARTIFACT_VERSION_INVALID_REQUEST',
         self::INPUT_SUCCESS => 'INPUT_SUCCESS',
         self::INPUT_PENDING => 'INPUT_PENDING',
         self::INPUT_FAILED => 'INPUT_FAILED',

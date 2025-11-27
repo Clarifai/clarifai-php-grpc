@@ -64,6 +64,12 @@ class InstanceType extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 9;</code>
      */
     private $special_handling;
+    /**
+     * Hardware architecture of the instance type (e.g., "linux/amd64", "linux/arm64").
+     *
+     * Generated from protobuf field <code>string architecture = 10;</code>
+     */
+    protected $architecture = '';
 
     /**
      * Constructor.
@@ -86,6 +92,8 @@ class InstanceType extends \Google\Protobuf\Internal\Message
      *           The feature flag group associated with this instance type.
      *     @type array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $special_handling
      *           List of special handling instructions for this instance type.
+     *     @type string $architecture
+     *           Hardware architecture of the instance type (e.g., "linux/amd64", "linux/arm64").
      * }
      */
     public function __construct($data = NULL) {
@@ -341,6 +349,32 @@ class InstanceType extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\SpecialHandling::class);
         $this->special_handling = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Hardware architecture of the instance type (e.g., "linux/amd64", "linux/arm64").
+     *
+     * Generated from protobuf field <code>string architecture = 10;</code>
+     * @return string
+     */
+    public function getArchitecture()
+    {
+        return $this->architecture;
+    }
+
+    /**
+     * Hardware architecture of the instance type (e.g., "linux/amd64", "linux/arm64").
+     *
+     * Generated from protobuf field <code>string architecture = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setArchitecture($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->architecture = $var;
 
         return $this;
     }
