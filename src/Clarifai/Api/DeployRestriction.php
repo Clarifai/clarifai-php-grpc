@@ -35,12 +35,19 @@ class DeployRestriction
      * Generated from protobuf enum <code>DEDICATED_COMPUTE_ONLY = 3;</code>
      */
     const DEDICATED_COMPUTE_ONLY = 3;
+    /**
+     * Model can only be used on dedicated compute resources owned by the model owner.
+     *
+     * Generated from protobuf enum <code>MODEL_OWNER_DEDICATED_COMPUTE_ONLY = 4;</code>
+     */
+    const MODEL_OWNER_DEDICATED_COMPUTE_ONLY = 4;
 
     private static $valueToName = [
         self::USAGE_RESTRICTION_NOT_SET => 'USAGE_RESTRICTION_NOT_SET',
         self::NO_LIMITS => 'NO_LIMITS',
         self::SHARED_COMPUTE_ONLY => 'SHARED_COMPUTE_ONLY',
         self::DEDICATED_COMPUTE_ONLY => 'DEDICATED_COMPUTE_ONLY',
+        self::MODEL_OWNER_DEDICATED_COMPUTE_ONLY => 'MODEL_OWNER_DEDICATED_COMPUTE_ONLY',
     ];
 
     public static function name($value)

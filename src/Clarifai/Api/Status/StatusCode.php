@@ -1902,6 +1902,32 @@ class StatusCode
      */
     const LOG_ENTRIES_INVALID_REQUEST = 70000;
     /**
+     *Twilio related issues: 71xxx
+     *
+     * Generated from protobuf enum <code>TWILIO_UNCATEGORIZED_ERROR = 71001;</code>
+     */
+    const TWILIO_UNCATEGORIZED_ERROR = 71001;
+    /**
+     * Generated from protobuf enum <code>TWILIO_INVALID_ARGUMENT = 71002;</code>
+     */
+    const TWILIO_INVALID_ARGUMENT = 71002;
+    /**
+     * Generated from protobuf enum <code>TWILIO_MAX_VERIFICATION_BEGIN_EXCEEDED = 71003;</code>
+     */
+    const TWILIO_MAX_VERIFICATION_BEGIN_EXCEEDED = 71003;
+    /**
+     * Generated from protobuf enum <code>TWILIO_MAX_VERIFICATION_CHECK_EXCEEDED = 71004;</code>
+     */
+    const TWILIO_MAX_VERIFICATION_CHECK_EXCEEDED = 71004;
+    /**
+     * Generated from protobuf enum <code>TWILIO_RESOURCE_NOT_FOUND = 71005;</code>
+     */
+    const TWILIO_RESOURCE_NOT_FOUND = 71005;
+    /**
+     * Generated from protobuf enum <code>TWILIO_CLIENT_NOT_INITIALIZED = 71006;</code>
+     */
+    const TWILIO_CLIENT_NOT_INITIALIZED = 71006;
+    /**
      * Internal issues: 98xxx
      *
      * Generated from protobuf enum <code>INTERNAL_SERVER_ISSUE = 98004;</code>
@@ -2413,6 +2439,12 @@ class StatusCode
         self::BILLING_INVALID_INFO => 'BILLING_INVALID_INFO',
         self::BILLING_MISSING_TOKENS => 'BILLING_MISSING_TOKENS',
         self::LOG_ENTRIES_INVALID_REQUEST => 'LOG_ENTRIES_INVALID_REQUEST',
+        self::TWILIO_UNCATEGORIZED_ERROR => 'TWILIO_UNCATEGORIZED_ERROR',
+        self::TWILIO_INVALID_ARGUMENT => 'TWILIO_INVALID_ARGUMENT',
+        self::TWILIO_MAX_VERIFICATION_BEGIN_EXCEEDED => 'TWILIO_MAX_VERIFICATION_BEGIN_EXCEEDED',
+        self::TWILIO_MAX_VERIFICATION_CHECK_EXCEEDED => 'TWILIO_MAX_VERIFICATION_CHECK_EXCEEDED',
+        self::TWILIO_RESOURCE_NOT_FOUND => 'TWILIO_RESOURCE_NOT_FOUND',
+        self::TWILIO_CLIENT_NOT_INITIALIZED => 'TWILIO_CLIENT_NOT_INITIALIZED',
         self::INTERNAL_SERVER_ISSUE => 'INTERNAL_SERVER_ISSUE',
         self::INTERNAL_FETCHING_ISSUE => 'INTERNAL_FETCHING_ISSUE',
         self::INTERNAL_DATABASE_ISSUE => 'INTERNAL_DATABASE_ISSUE',
