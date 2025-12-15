@@ -80,6 +80,10 @@ class Deployment extends \Google\Protobuf\Internal\Message
      */
     protected $worker = null;
     /**
+     * Generated from protobuf field <code>.clarifai.api.Worker desired_worker = 16;</code>
+     */
+    protected $desired_worker = null;
+    /**
      * When the deployment was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 12;</code>
@@ -137,6 +141,7 @@ class Deployment extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\Worker $worker
      *           The thing that the autoscaling config applies to for this nodepool.
      *           For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+     *     @type \Clarifai\Api\Worker $desired_worker
      *     @type \Google\Protobuf\Timestamp $created_at
      *           When the deployment was created.
      *     @type \Google\Protobuf\Timestamp $modified_at
@@ -438,6 +443,38 @@ class Deployment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Worker::class);
         $this->worker = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Worker desired_worker = 16;</code>
+     * @return \Clarifai\Api\Worker|null
+     */
+    public function getDesiredWorker()
+    {
+        return $this->desired_worker;
+    }
+
+    public function hasDesiredWorker()
+    {
+        return isset($this->desired_worker);
+    }
+
+    public function clearDesiredWorker()
+    {
+        unset($this->desired_worker);
+    }
+
+    /**
+     * Generated from protobuf field <code>.clarifai.api.Worker desired_worker = 16;</code>
+     * @param \Clarifai\Api\Worker $var
+     * @return $this
+     */
+    public function setDesiredWorker($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Worker::class);
+        $this->desired_worker = $var;
 
         return $this;
     }

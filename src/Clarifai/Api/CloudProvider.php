@@ -28,6 +28,12 @@ class CloudProvider extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 2;</code>
      */
     protected $name = '';
+    /**
+     * List of special handling instructions for this cloud provider.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     */
+    private $special_handling;
 
     /**
      * Constructor.
@@ -39,6 +45,8 @@ class CloudProvider extends \Google\Protobuf\Internal\Message
      *           Unique identifier of the cloud provider.
      *     @type string $name
      *           Name of the cloud provider.
+     *     @type array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $special_handling
+     *           List of special handling instructions for this cloud provider.
      * }
      */
     public function __construct($data = NULL) {
@@ -94,6 +102,32 @@ class CloudProvider extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * List of special handling instructions for this cloud provider.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSpecialHandling()
+    {
+        return $this->special_handling;
+    }
+
+    /**
+     * List of special handling instructions for this cloud provider.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * @param array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSpecialHandling($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\SpecialHandling::class);
+        $this->special_handling = $arr;
 
         return $this;
     }

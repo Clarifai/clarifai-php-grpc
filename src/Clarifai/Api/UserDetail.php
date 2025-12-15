@@ -71,6 +71,12 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
      */
     protected $commitment_value = null;
+    /**
+     * For phone number verification, true if the phone number has been verified
+     *
+     * Generated from protobuf field <code>bool phone_verified = 15;</code>
+     */
+    protected $phone_verified = false;
 
     /**
      * Constructor.
@@ -93,6 +99,8 @@ class UserDetail extends \Google\Protobuf\Internal\Message
      *     @type string $country
      *     @type string $state
      *     @type \Clarifai\Api\CommitmentValue $commitment_value
+     *     @type bool $phone_verified
+     *           For phone number verification, true if the phone number has been verified
      * }
      */
     public function __construct($data = NULL) {
@@ -448,6 +456,32 @@ class UserDetail extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\CommitmentValue::class);
         $this->commitment_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * For phone number verification, true if the phone number has been verified
+     *
+     * Generated from protobuf field <code>bool phone_verified = 15;</code>
+     * @return bool
+     */
+    public function getPhoneVerified()
+    {
+        return $this->phone_verified;
+    }
+
+    /**
+     * For phone number verification, true if the phone number has been verified
+     *
+     * Generated from protobuf field <code>bool phone_verified = 15;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setPhoneVerified($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->phone_verified = $var;
 
         return $this;
     }

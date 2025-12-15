@@ -70,6 +70,13 @@ class InstanceType extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string architecture = 10;</code>
      */
     protected $architecture = '';
+    /**
+     * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+     * This represents the actual resources available for user workloads.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+     */
+    protected $available_compute_info = null;
 
     /**
      * Constructor.
@@ -94,6 +101,9 @@ class InstanceType extends \Google\Protobuf\Internal\Message
      *           List of special handling instructions for this instance type.
      *     @type string $architecture
      *           Hardware architecture of the instance type (e.g., "linux/amd64", "linux/arm64").
+     *     @type \Clarifai\Api\ComputeInfo $available_compute_info
+     *           Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+     *           This represents the actual resources available for user workloads.
      * }
      */
     public function __construct($data = NULL) {
@@ -375,6 +385,44 @@ class InstanceType extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->architecture = $var;
+
+        return $this;
+    }
+
+    /**
+     * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+     * This represents the actual resources available for user workloads.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+     * @return \Clarifai\Api\ComputeInfo|null
+     */
+    public function getAvailableComputeInfo()
+    {
+        return $this->available_compute_info;
+    }
+
+    public function hasAvailableComputeInfo()
+    {
+        return isset($this->available_compute_info);
+    }
+
+    public function clearAvailableComputeInfo()
+    {
+        unset($this->available_compute_info);
+    }
+
+    /**
+     * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+     * This represents the actual resources available for user workloads.
+     *
+     * Generated from protobuf field <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+     * @param \Clarifai\Api\ComputeInfo $var
+     * @return $this
+     */
+    public function setAvailableComputeInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\ComputeInfo::class);
+        $this->available_compute_info = $var;
 
         return $this;
     }

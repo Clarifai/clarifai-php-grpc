@@ -18,9 +18,14 @@ class MultiCloudRegionResponse extends \Google\Protobuf\Internal\Message
      */
     protected $status = null;
     /**
-     * Generated from protobuf field <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @deprecated
      */
     private $regions;
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    private $cloud_regions;
 
     /**
      * Constructor.
@@ -30,6 +35,7 @@ class MultiCloudRegionResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\Status\Status $status
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $regions
+     *     @type array<\Clarifai\Api\CloudRegion>|\Google\Protobuf\Internal\RepeatedField $cloud_regions
      * }
      */
     public function __construct($data = NULL) {
@@ -70,23 +76,49 @@ class MultiCloudRegionResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getRegions()
     {
+        @trigger_error('regions is deprecated.', E_USER_DEPRECATED);
         return $this->regions;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setRegions($var)
     {
+        @trigger_error('regions is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->regions = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCloudRegions()
+    {
+        return $this->cloud_regions;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param array<\Clarifai\Api\CloudRegion>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCloudRegions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\CloudRegion::class);
+        $this->cloud_regions = $arr;
 
         return $this;
     }

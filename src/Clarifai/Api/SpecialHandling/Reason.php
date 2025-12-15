@@ -19,10 +19,15 @@ class Reason
      * Generated from protobuf enum <code>CONTACT_SALES = 1;</code>
      */
     const CONTACT_SALES = 1;
+    /**
+     * Generated from protobuf enum <code>INTERNAL_ONLY = 2;</code>
+     */
+    const INTERNAL_ONLY = 2;
 
     private static $valueToName = [
         self::REASON_NOT_SET => 'REASON_NOT_SET',
         self::CONTACT_SALES => 'CONTACT_SALES',
+        self::INTERNAL_ONLY => 'INTERNAL_ONLY',
     ];
 
     public static function name($value)
