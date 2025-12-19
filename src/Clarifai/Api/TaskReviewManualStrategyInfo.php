@@ -17,14 +17,17 @@ class TaskReviewManualStrategyInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * This field represents the percentage of inputs that will be reviewed by reviewers. It is a value between 0 and 1.
+     * Deprecated: Not used.
      *
-     * Generated from protobuf field <code>float sample_percentage = 1;</code>
+     * Generated from protobuf field <code>float sample_percentage = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $sample_percentage = 0.0;
     /**
      * Deprecated: Use consensus_strategy_info.approval_threshold_reviewers.
      *
-     * Generated from protobuf field <code>int32 approval_threshold = 2;</code>
+     * Generated from protobuf field <code>int32 approval_threshold = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $approval_threshold = 0;
 
@@ -36,6 +39,7 @@ class TaskReviewManualStrategyInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type float $sample_percentage
      *           This field represents the percentage of inputs that will be reviewed by reviewers. It is a value between 0 and 1.
+     *           Deprecated: Not used.
      *     @type int $approval_threshold
      *           Deprecated: Use consensus_strategy_info.approval_threshold_reviewers.
      * }
@@ -47,24 +51,30 @@ class TaskReviewManualStrategyInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * This field represents the percentage of inputs that will be reviewed by reviewers. It is a value between 0 and 1.
+     * Deprecated: Not used.
      *
-     * Generated from protobuf field <code>float sample_percentage = 1;</code>
+     * Generated from protobuf field <code>float sample_percentage = 1 [deprecated = true];</code>
      * @return float
+     * @deprecated
      */
     public function getSamplePercentage()
     {
+        @trigger_error('sample_percentage is deprecated.', E_USER_DEPRECATED);
         return $this->sample_percentage;
     }
 
     /**
      * This field represents the percentage of inputs that will be reviewed by reviewers. It is a value between 0 and 1.
+     * Deprecated: Not used.
      *
-     * Generated from protobuf field <code>float sample_percentage = 1;</code>
+     * Generated from protobuf field <code>float sample_percentage = 1 [deprecated = true];</code>
      * @param float $var
      * @return $this
+     * @deprecated
      */
     public function setSamplePercentage($var)
     {
+        @trigger_error('sample_percentage is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkFloat($var);
         $this->sample_percentage = $var;
 
@@ -74,23 +84,27 @@ class TaskReviewManualStrategyInfo extends \Google\Protobuf\Internal\Message
     /**
      * Deprecated: Use consensus_strategy_info.approval_threshold_reviewers.
      *
-     * Generated from protobuf field <code>int32 approval_threshold = 2;</code>
+     * Generated from protobuf field <code>int32 approval_threshold = 2 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getApprovalThreshold()
     {
+        @trigger_error('approval_threshold is deprecated.', E_USER_DEPRECATED);
         return $this->approval_threshold;
     }
 
     /**
      * Deprecated: Use consensus_strategy_info.approval_threshold_reviewers.
      *
-     * Generated from protobuf field <code>int32 approval_threshold = 2;</code>
+     * Generated from protobuf field <code>int32 approval_threshold = 2 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setApprovalThreshold($var)
     {
+        @trigger_error('approval_threshold is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkInt32($var);
         $this->approval_threshold = $var;
 

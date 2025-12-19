@@ -33,12 +33,19 @@ class TaskInputSourceType
      * Generated from protobuf enum <code>DATASET = 3;</code>
      */
     const DATASET = 3;
+    /**
+     * Single input (e.g. video livestream input)
+     *
+     * Generated from protobuf enum <code>INPUT = 4;</code>
+     */
+    const INPUT = 4;
 
     private static $valueToName = [
         self::INPUT_SOURCE_TYPE_NOT_SET => 'INPUT_SOURCE_TYPE_NOT_SET',
         self::ALL_INPUTS => 'ALL_INPUTS',
         self::SAVED_SEARCH => 'SAVED_SEARCH',
         self::DATASET => 'DATASET',
+        self::INPUT => 'INPUT',
     ];
 
     public static function name($value)

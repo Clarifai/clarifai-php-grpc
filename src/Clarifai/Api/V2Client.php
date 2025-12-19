@@ -335,7 +335,7 @@ class V2Client extends \Grpc\BaseStub {
       $metadata = [], $options = []) {
         return $this->_serverStreamRequest('/clarifai.api.V2/StreamTrackAnnotationsSearches',
         $argument,
-        ['\Clarifai\Api\SingleAnnotationResponse', 'decode'],
+        ['\Clarifai\Api\SingleStreamTrackAnnotationResponse', 'decode'],
         $metadata, $options);
     }
 

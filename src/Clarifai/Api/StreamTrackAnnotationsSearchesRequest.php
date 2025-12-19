@@ -26,11 +26,11 @@ class StreamTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Me
      */
     protected $input_id = '';
     /**
-     * Filter annotations by track_id
+     * Filter annotations by track_ids
      *
-     * Generated from protobuf field <code>string track_id = 3;</code>
+     * Generated from protobuf field <code>repeated string track_ids = 3;</code>
      */
-    protected $track_id = '';
+    private $track_ids;
     /**
      * Filter annotations starting from this frame number (inclusive)
      *
@@ -50,10 +50,17 @@ class StreamTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Me
      */
     protected $annotation_type = 0;
     /**
+     * Maximum number of frames to return. Returns annotations from frames in range [frame_number_start, frame_number_start + max_frames - 1] (inclusive on both ends).
+     * For example: frame_number_start=5, max_frames=3 returns frames 5, 6, and 7.
+     * Default and max: 10800 frames (3 minutes at 60 FPS)
+     *
      * Generated from protobuf field <code>uint32 max_frames = 7;</code>
      */
     protected $max_frames = 0;
     /**
+     * Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
+     * Default and max: 180000 ms (3 minutes)
+     *
      * Generated from protobuf field <code>uint32 max_duration = 8;</code>
      */
     protected $max_duration = 0;
@@ -75,8 +82,8 @@ class StreamTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Me
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $input_id
      *           The input ID containing the video track annotations to stream
-     *     @type string $track_id
-     *           Filter annotations by track_id
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $track_ids
+     *           Filter annotations by track_ids
      *     @type int $frame_number_start
      *           Filter annotations starting from this frame number (inclusive)
      *     @type int $frame_time_start
@@ -84,7 +91,12 @@ class StreamTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Me
      *     @type int $annotation_type
      *           Filter by annotation type (e.g., "bounding_box", "point", "mask")
      *     @type int $max_frames
+     *           Maximum number of frames to return. Returns annotations from frames in range [frame_number_start, frame_number_start + max_frames - 1] (inclusive on both ends).
+     *           For example: frame_number_start=5, max_frames=3 returns frames 5, 6, and 7.
+     *           Default and max: 10800 frames (3 minutes at 60 FPS)
      *     @type int $max_duration
+     *           Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
+     *           Default and max: 180000 ms (3 minutes)
      *     @type \Clarifai\Api\Worker $worker
      *           Filtering by model version ID within a worker (optional).
      *           Point annotations don't need filtering by worker.
@@ -155,27 +167,27 @@ class StreamTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Filter annotations by track_id
+     * Filter annotations by track_ids
      *
-     * Generated from protobuf field <code>string track_id = 3;</code>
-     * @return string
+     * Generated from protobuf field <code>repeated string track_ids = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getTrackId()
+    public function getTrackIds()
     {
-        return $this->track_id;
+        return $this->track_ids;
     }
 
     /**
-     * Filter annotations by track_id
+     * Filter annotations by track_ids
      *
-     * Generated from protobuf field <code>string track_id = 3;</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated string track_ids = 3;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setTrackId($var)
+    public function setTrackIds($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->track_id = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->track_ids = $arr;
 
         return $this;
     }
@@ -259,6 +271,10 @@ class StreamTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * Maximum number of frames to return. Returns annotations from frames in range [frame_number_start, frame_number_start + max_frames - 1] (inclusive on both ends).
+     * For example: frame_number_start=5, max_frames=3 returns frames 5, 6, and 7.
+     * Default and max: 10800 frames (3 minutes at 60 FPS)
+     *
      * Generated from protobuf field <code>uint32 max_frames = 7;</code>
      * @return int
      */
@@ -268,6 +284,10 @@ class StreamTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * Maximum number of frames to return. Returns annotations from frames in range [frame_number_start, frame_number_start + max_frames - 1] (inclusive on both ends).
+     * For example: frame_number_start=5, max_frames=3 returns frames 5, 6, and 7.
+     * Default and max: 10800 frames (3 minutes at 60 FPS)
+     *
      * Generated from protobuf field <code>uint32 max_frames = 7;</code>
      * @param int $var
      * @return $this
@@ -281,6 +301,9 @@ class StreamTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
+     * Default and max: 180000 ms (3 minutes)
+     *
      * Generated from protobuf field <code>uint32 max_duration = 8;</code>
      * @return int
      */
@@ -290,6 +313,9 @@ class StreamTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
+     * Default and max: 180000 ms (3 minutes)
+     *
      * Generated from protobuf field <code>uint32 max_duration = 8;</code>
      * @param int $var
      * @return $this

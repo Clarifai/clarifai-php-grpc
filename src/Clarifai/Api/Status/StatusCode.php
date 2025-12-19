@@ -1573,7 +1573,10 @@ class StatusCode
      */
     const TASK_FAILED = 54005;
     /**
-     * When an Auto Annotation task job has finished processing its last batch and is waiting for more dataset assets.
+     * Task is waiting for user action.
+     * Examples:
+     * - When an Auto Annotation task job has finished processing its last batch and is waiting for more dataset assets.
+     * - When an Auto Annotation task job for a video livestream input is waiting for user to create a task deployment.
      *
      * Generated from protobuf enum <code>TASK_IDLE = 54006;</code>
      */
@@ -1841,6 +1844,10 @@ class StatusCode
      * Generated from protobuf enum <code>JOB_CONFLICT = 64007;</code>
      */
     const JOB_CONFLICT = 64007;
+    /**
+     * Generated from protobuf enum <code>JOB_PAUSED = 64008;</code>
+     */
+    const JOB_PAUSED = 64008;
     /**
      *auth issues
      *
@@ -2426,6 +2433,7 @@ class StatusCode
         self::JOB_CANCELLED => 'JOB_CANCELLED',
         self::JOB_UNEXPECTED_ERROR => 'JOB_UNEXPECTED_ERROR',
         self::JOB_CONFLICT => 'JOB_CONFLICT',
+        self::JOB_PAUSED => 'JOB_PAUSED',
         self::AUTH_MISSING_IDP_ASSOC => 'AUTH_MISSING_IDP_ASSOC',
         self::LIST_OBJECTS_FAILED => 'LIST_OBJECTS_FAILED',
         self::ARCHIVE_EXTRACT_FAILED => 'ARCHIVE_EXTRACT_FAILED',
