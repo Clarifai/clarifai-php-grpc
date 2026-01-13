@@ -58,6 +58,14 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.TaskWorker.WorkerType type = 8;</code>
      */
     protected $type = 0;
+    /**
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    private $runner_selectors;
     protected $strategy_info;
 
     /**
@@ -88,6 +96,10 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
      *     @type int $type
      *           Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
      *           If set, worker must have be set accordingly to either human worker or model/workflow worker
+     *     @type array<\Clarifai\Api\RunnerSelector>|\Google\Protobuf\Internal\RepeatedField $runner_selectors
+     *           Runner selectors is used to select specific runners for the workers of this task.
+     *           The index of runner_selectors corresponds to the index of workers.
+     *           In other words: runner_selectors[i] is the runner selector for workers[i].
      * }
      */
     public function __construct($data = NULL) {
@@ -278,6 +290,36 @@ class TaskWorker extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Clarifai\Api\TaskWorker\WorkerType::class);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRunnerSelectors()
+    {
+        return $this->runner_selectors;
+    }
+
+    /**
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     * @param array<\Clarifai\Api\RunnerSelector>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRunnerSelectors($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\RunnerSelector::class);
+        $this->runner_selectors = $arr;
 
         return $this;
     }

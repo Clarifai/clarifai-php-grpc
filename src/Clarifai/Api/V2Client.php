@@ -4129,6 +4129,20 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Clarifai\Api\ListPipelineVersionRunStatusLogsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListPipelineVersionRunStatusLogs(\Clarifai\Api\ListPipelineVersionRunStatusLogsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListPipelineVersionRunStatusLogs',
+        $argument,
+        ['\Clarifai\Api\MultiPipelineVersionRunStatusLogResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Clarifai\Api\PostPipelineStepsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

@@ -72,6 +72,24 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
      */
     protected $orchestration_spec = null;
+    /**
+     * When the pipeline run started executing (first JOB_RUNNING status)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 11;</code>
+     */
+    protected $started_at = null;
+    /**
+     * When the pipeline run finished executing (terminal status)  
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 12;</code>
+     */
+    protected $ended_at = null;
+    /**
+     * Total cumulative run duration excluding pause time
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration total_run_duration = 13;</code>
+     */
+    protected $total_run_duration = null;
 
     /**
      * Constructor.
@@ -99,6 +117,12 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\OrchestrationSpec $orchestration_spec
      *           Final merged orchestration spec snapshot submitted to backend.
      *           This field is read-only and cannot be set during creation.
+     *     @type \Google\Protobuf\Timestamp $started_at
+     *           When the pipeline run started executing (first JOB_RUNNING status)
+     *     @type \Google\Protobuf\Timestamp $ended_at
+     *           When the pipeline run finished executing (terminal status)  
+     *     @type \Google\Protobuf\Duration $total_run_duration
+     *           Total cumulative run duration excluding pause time
      * }
      */
     public function __construct($data = NULL) {
@@ -420,6 +444,114 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\OrchestrationSpec::class);
         $this->orchestration_spec = $var;
+
+        return $this;
+    }
+
+    /**
+     * When the pipeline run started executing (first JOB_RUNNING status)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 11;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getStartedAt()
+    {
+        return $this->started_at;
+    }
+
+    public function hasStartedAt()
+    {
+        return isset($this->started_at);
+    }
+
+    public function clearStartedAt()
+    {
+        unset($this->started_at);
+    }
+
+    /**
+     * When the pipeline run started executing (first JOB_RUNNING status)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 11;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setStartedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->started_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * When the pipeline run finished executing (terminal status)  
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 12;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getEndedAt()
+    {
+        return $this->ended_at;
+    }
+
+    public function hasEndedAt()
+    {
+        return isset($this->ended_at);
+    }
+
+    public function clearEndedAt()
+    {
+        unset($this->ended_at);
+    }
+
+    /**
+     * When the pipeline run finished executing (terminal status)  
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 12;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setEndedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->ended_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Total cumulative run duration excluding pause time
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration total_run_duration = 13;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getTotalRunDuration()
+    {
+        return $this->total_run_duration;
+    }
+
+    public function hasTotalRunDuration()
+    {
+        return isset($this->total_run_duration);
+    }
+
+    public function clearTotalRunDuration()
+    {
+        unset($this->total_run_duration);
+    }
+
+    /**
+     * Total cumulative run duration excluding pause time
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration total_run_duration = 13;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setTotalRunDuration($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
+        $this->total_run_duration = $var;
 
         return $this;
     }

@@ -686,6 +686,12 @@ class S
      * Generated from protobuf enum <code>Artifacts_Delete = 172 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Artifacts_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Artifacts_Add];</code>
      */
     const Artifacts_Delete = 172;
+    /**
+     * Pipeline version run status logs (audit trail)
+     *
+     * Generated from protobuf enum <code>PipelineVersionRunStatusLogs_Get = 173 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     */
+    const PipelineVersionRunStatusLogs_Get = 173;
 
     private static $valueToName = [
         self::undef => 'undef',
@@ -809,6 +815,7 @@ class S
         self::Artifacts_Get => 'Artifacts_Get',
         self::Artifacts_Add => 'Artifacts_Add',
         self::Artifacts_Delete => 'Artifacts_Delete',
+        self::PipelineVersionRunStatusLogs_Get => 'PipelineVersionRunStatusLogs_Get',
     ];
 
     public static function name($value)

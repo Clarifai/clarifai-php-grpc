@@ -31,13 +31,13 @@ class RunnerSelector extends \Google\Protobuf\Internal\Message
      */
     protected $nodepool = null;
     /**
-     * Optionally a partcular runner within the nodepool.
+     * Optionally a particular runner within the nodepool.
      *
      * Generated from protobuf field <code>.clarifai.api.Runner runner = 2;</code>
      */
     protected $runner = null;
     /**
-     * Optionally a partcular deployment within the nodepool.
+     * Optionally a particular deployment within the nodepool.
      *
      * Generated from protobuf field <code>.clarifai.api.Deployment deployment = 3;</code>
      */
@@ -55,9 +55,9 @@ class RunnerSelector extends \Google\Protobuf\Internal\Message
      *           resource to be run. There should not be more than one deployment in this nodepool for the
      *           particular resource to run. If no deployments then default autoscaling will be used.
      *     @type \Clarifai\Api\Runner $runner
-     *           Optionally a partcular runner within the nodepool.
+     *           Optionally a particular runner within the nodepool.
      *     @type \Clarifai\Api\Deployment $deployment
-     *           Optionally a partcular deployment within the nodepool.
+     *           Optionally a particular deployment within the nodepool.
      * }
      */
     public function __construct($data = NULL) {
@@ -108,7 +108,7 @@ class RunnerSelector extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optionally a partcular runner within the nodepool.
+     * Optionally a particular runner within the nodepool.
      *
      * Generated from protobuf field <code>.clarifai.api.Runner runner = 2;</code>
      * @return \Clarifai\Api\Runner|null
@@ -129,7 +129,7 @@ class RunnerSelector extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optionally a partcular runner within the nodepool.
+     * Optionally a particular runner within the nodepool.
      *
      * Generated from protobuf field <code>.clarifai.api.Runner runner = 2;</code>
      * @param \Clarifai\Api\Runner $var
@@ -144,7 +144,7 @@ class RunnerSelector extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optionally a partcular deployment within the nodepool.
+     * Optionally a particular deployment within the nodepool.
      *
      * Generated from protobuf field <code>.clarifai.api.Deployment deployment = 3;</code>
      * @return \Clarifai\Api\Deployment|null
@@ -165,7 +165,7 @@ class RunnerSelector extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optionally a partcular deployment within the nodepool.
+     * Optionally a particular deployment within the nodepool.
      *
      * Generated from protobuf field <code>.clarifai.api.Deployment deployment = 3;</code>
      * @param \Clarifai\Api\Deployment $var
