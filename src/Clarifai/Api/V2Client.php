@@ -325,17 +325,33 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Stream video track annotations for a specific input one-by-one.
-     * @param \Clarifai\Api\StreamTrackAnnotationsSearchesRequest $argument input argument
+     * Stream annotations for a specific input one-by-one.
+     * @param \Clarifai\Api\StreamAnnotationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\ServerStreamingCall
      */
-    public function StreamTrackAnnotationsSearches(\Clarifai\Api\StreamTrackAnnotationsSearchesRequest $argument,
+    public function StreamAnnotations(\Clarifai\Api\StreamAnnotationsRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_serverStreamRequest('/clarifai.api.V2/StreamTrackAnnotationsSearches',
+        return $this->_serverStreamRequest('/clarifai.api.V2/StreamAnnotations',
         $argument,
-        ['\Clarifai\Api\SingleStreamTrackAnnotationResponse', 'decode'],
+        ['\Clarifai\Api\SingleStreamAnnotationResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Stream live video annotations as they are being created by the runner.
+     * This endpoint reads from Redis instead of the database for real-time streaming.
+     * @param \Clarifai\Api\StreamLivestreamAnnotationsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\ServerStreamingCall
+     */
+    public function StreamLivestreamAnnotations(\Clarifai\Api\StreamLivestreamAnnotationsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_serverStreamRequest('/clarifai.api.V2/StreamLivestreamAnnotations',
+        $argument,
+        ['\Clarifai\Api\SingleStreamAnnotationResponse', 'decode'],
         $metadata, $options);
     }
 

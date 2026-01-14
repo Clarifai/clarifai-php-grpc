@@ -53,6 +53,8 @@ class RunnerItem extends \Google\Protobuf\Internal\Message
      *           Model prediction request from a user.
      *     @type \Clarifai\Api\SyncStateRequest $sync_state_request
      *           Agent sync request from control plane.
+     *     @type \Clarifai\Api\AutoAnnotationRequest $auto_annotation_request
+     *           Auto annotation request from a user.
      * }
      */
     public function __construct($data = NULL) {
@@ -206,6 +208,37 @@ class RunnerItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\SyncStateRequest::class);
         $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * Auto annotation request from a user.
+     *
+     * Generated from protobuf field <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+     * @return \Clarifai\Api\AutoAnnotationRequest|null
+     */
+    public function getAutoAnnotationRequest()
+    {
+        return $this->readOneof(6);
+    }
+
+    public function hasAutoAnnotationRequest()
+    {
+        return $this->hasOneof(6);
+    }
+
+    /**
+     * Auto annotation request from a user.
+     *
+     * Generated from protobuf field <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+     * @param \Clarifai\Api\AutoAnnotationRequest $var
+     * @return $this
+     */
+    public function setAutoAnnotationRequest($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\AutoAnnotationRequest::class);
+        $this->writeOneof(6, $var);
 
         return $this;
     }

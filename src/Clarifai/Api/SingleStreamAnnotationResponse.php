@@ -9,11 +9,11 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * SingleStreamTrackAnnotationResponse similar to SingleAnnotationResponse but with an extra field
+ * SingleStreamAnnotationResponse similar to SingleAnnotationResponse but with an extra field
  *
- * Generated from protobuf message <code>clarifai.api.SingleStreamTrackAnnotationResponse</code>
+ * Generated from protobuf message <code>clarifai.api.SingleStreamAnnotationResponse</code>
  */
-class SingleStreamTrackAnnotationResponse extends \Google\Protobuf\Internal\Message
+class SingleStreamAnnotationResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.status.Status status = 1;</code>
