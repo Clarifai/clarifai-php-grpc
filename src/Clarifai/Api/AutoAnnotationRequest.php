@@ -14,15 +14,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class AutoAnnotationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+     * Perform prediction request and call PostAnnotations endpoint using prediction results.
      *
      * Generated from protobuf field <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
      */
     protected $post_model_outputs_request = null;
     /**
-     * Generated from protobuf field <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
+     * Task used to create annotations .
+     *
+     * Generated from protobuf field <code>.clarifai.api.Task task = 2;</code>
      */
-    protected $post_annotations_info = null;
+    protected $task = null;
+    /**
+     * Authorization value to be used when calling PostAnnotations endpoint.
+     *
+     * Generated from protobuf field <code>string authorization_value = 3;</code>
+     */
+    protected $authorization_value = '';
 
     /**
      * Constructor.
@@ -31,8 +39,11 @@ class AutoAnnotationRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\PostModelOutputsRequest $post_model_outputs_request
-     *           Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
-     *     @type \Clarifai\Api\AutoAnnotationRequest\PostAnnotationsInfo $post_annotations_info
+     *           Perform prediction request and call PostAnnotations endpoint using prediction results.
+     *     @type \Clarifai\Api\Task $task
+     *           Task used to create annotations .
+     *     @type string $authorization_value
+     *           Authorization value to be used when calling PostAnnotations endpoint.
      * }
      */
     public function __construct($data = NULL) {
@@ -41,7 +52,7 @@ class AutoAnnotationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+     * Perform prediction request and call PostAnnotations endpoint using prediction results.
      *
      * Generated from protobuf field <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
      * @return \Clarifai\Api\PostModelOutputsRequest|null
@@ -62,7 +73,7 @@ class AutoAnnotationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+     * Perform prediction request and call PostAnnotations endpoint using prediction results.
      *
      * Generated from protobuf field <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
      * @param \Clarifai\Api\PostModelOutputsRequest $var
@@ -77,33 +88,63 @@ class AutoAnnotationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
-     * @return \Clarifai\Api\AutoAnnotationRequest\PostAnnotationsInfo|null
+     * Task used to create annotations .
+     *
+     * Generated from protobuf field <code>.clarifai.api.Task task = 2;</code>
+     * @return \Clarifai\Api\Task|null
      */
-    public function getPostAnnotationsInfo()
+    public function getTask()
     {
-        return $this->post_annotations_info;
+        return $this->task;
     }
 
-    public function hasPostAnnotationsInfo()
+    public function hasTask()
     {
-        return isset($this->post_annotations_info);
+        return isset($this->task);
     }
 
-    public function clearPostAnnotationsInfo()
+    public function clearTask()
     {
-        unset($this->post_annotations_info);
+        unset($this->task);
     }
 
     /**
-     * Generated from protobuf field <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
-     * @param \Clarifai\Api\AutoAnnotationRequest\PostAnnotationsInfo $var
+     * Task used to create annotations .
+     *
+     * Generated from protobuf field <code>.clarifai.api.Task task = 2;</code>
+     * @param \Clarifai\Api\Task $var
      * @return $this
      */
-    public function setPostAnnotationsInfo($var)
+    public function setTask($var)
     {
-        GPBUtil::checkMessage($var, \Clarifai\Api\AutoAnnotationRequest\PostAnnotationsInfo::class);
-        $this->post_annotations_info = $var;
+        GPBUtil::checkMessage($var, \Clarifai\Api\Task::class);
+        $this->task = $var;
+
+        return $this;
+    }
+
+    /**
+     * Authorization value to be used when calling PostAnnotations endpoint.
+     *
+     * Generated from protobuf field <code>string authorization_value = 3;</code>
+     * @return string
+     */
+    public function getAuthorizationValue()
+    {
+        return $this->authorization_value;
+    }
+
+    /**
+     * Authorization value to be used when calling PostAnnotations endpoint.
+     *
+     * Generated from protobuf field <code>string authorization_value = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAuthorizationValue($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->authorization_value = $var;
 
         return $this;
     }

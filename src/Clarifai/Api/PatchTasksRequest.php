@@ -24,8 +24,11 @@ class PatchTasksRequest extends \Google\Protobuf\Internal\Message
      */
     private $tasks;
     /**
-     * The action to perform on the patched objects
-     * For now, only 'overwrite' action is supported
+     * The action to perform on the patched tasks
+     * Supported operations:
+     * * 'overwrite' - overwrite the task with the fields provided in the request
+     * * 'merge' - update only the fields provided in the request, leave other fields unchanged
+     * For now, the 'merge' operation only supports updating task status.
      *
      * Generated from protobuf field <code>string action = 3;</code>
      */
@@ -40,8 +43,11 @@ class PatchTasksRequest extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type array<\Clarifai\Api\Task>|\Google\Protobuf\Internal\RepeatedField $tasks
      *     @type string $action
-     *           The action to perform on the patched objects
-     *           For now, only 'overwrite' action is supported
+     *           The action to perform on the patched tasks
+     *           Supported operations:
+     *           * 'overwrite' - overwrite the task with the fields provided in the request
+     *           * 'merge' - update only the fields provided in the request, leave other fields unchanged
+     *           For now, the 'merge' operation only supports updating task status.
      * }
      */
     public function __construct($data = NULL) {
@@ -104,8 +110,11 @@ class PatchTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The action to perform on the patched objects
-     * For now, only 'overwrite' action is supported
+     * The action to perform on the patched tasks
+     * Supported operations:
+     * * 'overwrite' - overwrite the task with the fields provided in the request
+     * * 'merge' - update only the fields provided in the request, leave other fields unchanged
+     * For now, the 'merge' operation only supports updating task status.
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @return string
@@ -116,8 +125,11 @@ class PatchTasksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The action to perform on the patched objects
-     * For now, only 'overwrite' action is supported
+     * The action to perform on the patched tasks
+     * Supported operations:
+     * * 'overwrite' - overwrite the task with the fields provided in the request
+     * * 'merge' - update only the fields provided in the request, leave other fields unchanged
+     * For now, the 'merge' operation only supports updating task status.
      *
      * Generated from protobuf field <code>string action = 3;</code>
      * @param string $var
