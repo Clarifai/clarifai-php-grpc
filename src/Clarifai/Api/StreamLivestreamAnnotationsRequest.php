@@ -26,24 +26,6 @@ class StreamLivestreamAnnotationsRequest extends \Google\Protobuf\Internal\Messa
      * Generated from protobuf field <code>string input_id = 2;</code>
      */
     protected $input_id = '';
-    /**
-     * (Optional) Filter by specific task ID if known
-     *
-     * Generated from protobuf field <code>string task_id = 3;</code>
-     */
-    protected $task_id = '';
-    /**
-     * (Optional) Filter annotations by track_ids
-     *
-     * Generated from protobuf field <code>repeated string track_ids = 4;</code>
-     */
-    private $track_ids;
-    /**
-     * (Optional) Filter by annotation type (e.g., "bounding_box", "point", "mask")
-     *
-     * Generated from protobuf field <code>.clarifai.api.AnnotationDataType annotation_type = 5;</code>
-     */
-    protected $annotation_type = 0;
 
     /**
      * Constructor.
@@ -54,12 +36,6 @@ class StreamLivestreamAnnotationsRequest extends \Google\Protobuf\Internal\Messa
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $input_id
      *           The input ID containing the video being processed
-     *     @type string $task_id
-     *           (Optional) Filter by specific task ID if known
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $track_ids
-     *           (Optional) Filter annotations by track_ids
-     *     @type int $annotation_type
-     *           (Optional) Filter by annotation type (e.g., "bounding_box", "point", "mask")
      * }
      */
     public function __construct($data = NULL) {
@@ -121,84 +97,6 @@ class StreamLivestreamAnnotationsRequest extends \Google\Protobuf\Internal\Messa
     {
         GPBUtil::checkString($var, True);
         $this->input_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * (Optional) Filter by specific task ID if known
-     *
-     * Generated from protobuf field <code>string task_id = 3;</code>
-     * @return string
-     */
-    public function getTaskId()
-    {
-        return $this->task_id;
-    }
-
-    /**
-     * (Optional) Filter by specific task ID if known
-     *
-     * Generated from protobuf field <code>string task_id = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTaskId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->task_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * (Optional) Filter annotations by track_ids
-     *
-     * Generated from protobuf field <code>repeated string track_ids = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getTrackIds()
-    {
-        return $this->track_ids;
-    }
-
-    /**
-     * (Optional) Filter annotations by track_ids
-     *
-     * Generated from protobuf field <code>repeated string track_ids = 4;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setTrackIds($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->track_ids = $arr;
-
-        return $this;
-    }
-
-    /**
-     * (Optional) Filter by annotation type (e.g., "bounding_box", "point", "mask")
-     *
-     * Generated from protobuf field <code>.clarifai.api.AnnotationDataType annotation_type = 5;</code>
-     * @return int
-     */
-    public function getAnnotationType()
-    {
-        return $this->annotation_type;
-    }
-
-    /**
-     * (Optional) Filter by annotation type (e.g., "bounding_box", "point", "mask")
-     *
-     * Generated from protobuf field <code>.clarifai.api.AnnotationDataType annotation_type = 5;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setAnnotationType($var)
-    {
-        GPBUtil::checkEnum($var, \Clarifai\Api\AnnotationDataType::class);
-        $this->annotation_type = $var;
 
         return $this;
     }

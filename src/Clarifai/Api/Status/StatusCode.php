@@ -1428,6 +1428,10 @@ class StatusCode
      */
     const REDIS_STREAM_BACKOFF = 45005;
     /**
+     * Generated from protobuf enum <code>REDIS_CHANNEL_ERR = 45006;</code>
+     */
+    const REDIS_CHANNEL_ERR = 45006;
+    /**
      * Sift Science 46xxx
      *
      * Generated from protobuf enum <code>SIGNUP_EVENT_ERROR = 46001;</code>
@@ -2334,6 +2338,7 @@ class StatusCode
         self::REDIS_STREAM_ERR => 'REDIS_STREAM_ERR',
         self::REDIS_NO_CONSUMERS => 'REDIS_NO_CONSUMERS',
         self::REDIS_STREAM_BACKOFF => 'REDIS_STREAM_BACKOFF',
+        self::REDIS_CHANNEL_ERR => 'REDIS_CHANNEL_ERR',
         self::SIGNUP_EVENT_ERROR => 'SIGNUP_EVENT_ERROR',
         self::SIGNUP_FLAGGED => 'SIGNUP_FLAGGED',
         self::FILETYPE_UNSUPPORTED => 'FILETYPE_UNSUPPORTED',
