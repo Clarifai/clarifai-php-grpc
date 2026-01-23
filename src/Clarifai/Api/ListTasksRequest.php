@@ -35,8 +35,10 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
     protected $per_page = 0;
     /**
      * Get tasks that have ANY user from this list assigned as worker.
+     * Deprecated: Use worker_ids.
      *
-     * Generated from protobuf field <code>repeated string worker_user_ids = 4;</code>
+     * Generated from protobuf field <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+     * @deprecated
      */
     private $worker_user_ids;
     /**
@@ -94,6 +96,10 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string input_source_ids = 11;</code>
      */
     private $input_source_ids;
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    private $worker_ids;
 
     /**
      * Constructor.
@@ -110,6 +116,7 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      *           to 128.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $worker_user_ids
      *           Get tasks that have ANY user from this list assigned as worker.
+     *           Deprecated: Use worker_ids.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $review_user_ids
      *           Get tasks that have ANY user from this list assigned as reviewer.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $label_order_ids
@@ -137,6 +144,7 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
      *           (optional) input source type to filter
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $input_source_ids
      *           (optional) ids of input source to be filtered
+     *     @type array<\Clarifai\Api\WorkerIDSet>|\Google\Protobuf\Internal\RepeatedField $worker_ids
      * }
      */
     public function __construct($data = NULL) {
@@ -234,24 +242,30 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Get tasks that have ANY user from this list assigned as worker.
+     * Deprecated: Use worker_ids.
      *
-     * Generated from protobuf field <code>repeated string worker_user_ids = 4;</code>
+     * Generated from protobuf field <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getWorkerUserIds()
     {
+        @trigger_error('worker_user_ids is deprecated.', E_USER_DEPRECATED);
         return $this->worker_user_ids;
     }
 
     /**
      * Get tasks that have ANY user from this list assigned as worker.
+     * Deprecated: Use worker_ids.
      *
-     * Generated from protobuf field <code>repeated string worker_user_ids = 4;</code>
+     * Generated from protobuf field <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setWorkerUserIds($var)
     {
+        @trigger_error('worker_user_ids is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->worker_user_ids = $arr;
 
@@ -462,6 +476,28 @@ class ListTasksRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->input_source_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getWorkerIds()
+    {
+        return $this->worker_ids;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     * @param array<\Clarifai\Api\WorkerIDSet>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setWorkerIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\WorkerIDSet::class);
+        $this->worker_ids = $arr;
 
         return $this;
     }

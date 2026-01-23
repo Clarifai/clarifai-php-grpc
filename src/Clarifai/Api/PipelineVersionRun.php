@@ -79,7 +79,7 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
      */
     protected $started_at = null;
     /**
-     * When the pipeline run finished executing (terminal status)  
+     * When the pipeline run finished executing (terminal status)
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 12;</code>
      */
@@ -120,7 +120,7 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $started_at
      *           When the pipeline run started executing (first JOB_RUNNING status)
      *     @type \Google\Protobuf\Timestamp $ended_at
-     *           When the pipeline run finished executing (terminal status)  
+     *           When the pipeline run finished executing (terminal status)
      *     @type \Google\Protobuf\Duration $total_run_duration
      *           Total cumulative run duration excluding pause time
      * }
@@ -485,7 +485,7 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When the pipeline run finished executing (terminal status)  
+     * When the pipeline run finished executing (terminal status)
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 12;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -506,7 +506,7 @@ class PipelineVersionRun extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When the pipeline run finished executing (terminal status)  
+     * When the pipeline run finished executing (terminal status)
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 12;</code>
      * @param \Google\Protobuf\Timestamp $var
