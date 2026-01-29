@@ -27,9 +27,9 @@ class FrameInfo extends \Google\Protobuf\Internal\Message
     protected $index = 0;
     /**
      * time in the video in milliseconds. This is independent of the sampling rates used during
-     * processing.
+     * processing. Changed from uint32 to uint64 to support video livestreams longer than 49.7 days.
      *
-     * Generated from protobuf field <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * Generated from protobuf field <code>uint64 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     protected $time = 0;
     /**
@@ -51,9 +51,9 @@ class FrameInfo extends \Google\Protobuf\Internal\Message
      *           The index of the frame, informational and optional.
      *           Depends on the sampling rate used during processing
      *           May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
-     *     @type int $time
+     *     @type int|string $time
      *           time in the video in milliseconds. This is independent of the sampling rates used during
-     *           processing.
+     *           processing. Changed from uint32 to uint64 to support video livestreams longer than 49.7 days.
      *     @type int $number
      *           The absolute number of the frame in the (original) video
      *           Different from index. Index is just the order in which frames were processed for search (and can be 0 for manual annotations)
@@ -102,10 +102,10 @@ class FrameInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * time in the video in milliseconds. This is independent of the sampling rates used during
-     * processing.
+     * processing. Changed from uint32 to uint64 to support video livestreams longer than 49.7 days.
      *
-     * Generated from protobuf field <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @return int
+     * Generated from protobuf field <code>uint64 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return int|string
      */
     public function getTime()
     {
@@ -114,15 +114,15 @@ class FrameInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * time in the video in milliseconds. This is independent of the sampling rates used during
-     * processing.
+     * processing. Changed from uint32 to uint64 to support video livestreams longer than 49.7 days.
      *
-     * Generated from protobuf field <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param int $var
+     * Generated from protobuf field <code>uint64 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param int|string $var
      * @return $this
      */
     public function setTime($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkUint64($var);
         $this->time = $var;
 
         return $this;

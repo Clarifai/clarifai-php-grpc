@@ -161,6 +161,12 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
      */
     private $special_handling;
+    /**
+     * The number of threads to use for this model version.
+     *
+     * Generated from protobuf field <code>int32 num_threads = 28;</code>
+     */
+    protected $num_threads = 0;
 
     /**
      * Constructor.
@@ -221,6 +227,8 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
      *           Model signature information for the model version
      *     @type array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $special_handling
      *           List of special handling instructions for this model version.
+     *     @type int $num_threads
+     *           The number of threads to use for this model version.
      * }
      */
     public function __construct($data = NULL) {
@@ -996,6 +1004,32 @@ class ModelVersion extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\SpecialHandling::class);
         $this->special_handling = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The number of threads to use for this model version.
+     *
+     * Generated from protobuf field <code>int32 num_threads = 28;</code>
+     * @return int
+     */
+    public function getNumThreads()
+    {
+        return $this->num_threads;
+    }
+
+    /**
+     * The number of threads to use for this model version.
+     *
+     * Generated from protobuf field <code>int32 num_threads = 28;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setNumThreads($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->num_threads = $var;
 
         return $this;
     }
