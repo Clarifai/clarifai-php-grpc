@@ -1487,6 +1487,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Reverts a model migration from Docker format back to Triton format.
+     * @param \Clarifai\Api\DeleteModelMigrationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteModelMigration(\Clarifai\Api\DeleteModelMigrationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/DeleteModelMigration',
+        $argument,
+        ['\Clarifai\Api\SingleModelResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Export a model
      *
      * Export a model
