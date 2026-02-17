@@ -21,6 +21,10 @@ class PostModelMigrationRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string model_id = 2;</code>
      */
     protected $model_id = '';
+    /**
+     * Generated from protobuf field <code>string version_id = 3;</code>
+     */
+    protected $version_id = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class PostModelMigrationRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $model_id
+     *     @type string $version_id
      * }
      */
     public function __construct($data = NULL) {
@@ -87,6 +92,28 @@ class PostModelMigrationRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->model_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string version_id = 3;</code>
+     * @return string
+     */
+    public function getVersionId()
+    {
+        return $this->version_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string version_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVersionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->version_id = $var;
 
         return $this;
     }
