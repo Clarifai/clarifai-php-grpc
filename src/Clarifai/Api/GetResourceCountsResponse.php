@@ -32,10 +32,6 @@ class GetResourceCountsResponse extends \Google\Protobuf\Internal\Message
      */
     protected $workflows = 0;
     /**
-     * Generated from protobuf field <code>int64 modules = 5;</code>
-     */
-    protected $modules = 0;
-    /**
      * Generated from protobuf field <code>int64 inputs = 6;</code>
      */
     protected $inputs = 0;
@@ -54,7 +50,6 @@ class GetResourceCountsResponse extends \Google\Protobuf\Internal\Message
      *     @type int|string $datasets
      *     @type int|string $models
      *     @type int|string $workflows
-     *     @type int|string $modules
      *     @type int|string $inputs
      *     @type int|string $pipelines
      * }
@@ -158,28 +153,6 @@ class GetResourceCountsResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->workflows = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 modules = 5;</code>
-     * @return int|string
-     */
-    public function getModules()
-    {
-        return $this->modules;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 modules = 5;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setModules($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->modules = $var;
 
         return $this;
     }

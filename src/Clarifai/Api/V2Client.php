@@ -340,8 +340,8 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Stream live video annotations as they are being created by the runner.
-     * This endpoint reads from Redis instead of the database for real-time streaming.
+     * Stream live video annotations as soon as they are available.
+     * This endpoint will NOT replay old annotations, but only stream new annotations that are generated after the stream is opened.
      * @param \Clarifai\Api\StreamLivestreamAnnotationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1502,8 +1502,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Export a model
-     *
      * Export a model
      * @param \Clarifai\Api\PutModelVersionExportsRequest $argument input argument
      * @param array $metadata metadata
@@ -2838,249 +2836,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Get a specific module from an app.
-     * @param \Clarifai\Api\GetModuleRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function GetModule(\Clarifai\Api\GetModuleRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/GetModule',
-        $argument,
-        ['\Clarifai\Api\SingleModuleResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * List all the modules in community, by user or by app.
-     * @param \Clarifai\Api\ListModulesRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function ListModules(\Clarifai\Api\ListModulesRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/ListModules',
-        $argument,
-        ['\Clarifai\Api\MultiModuleResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Add a modules to an app.
-     * @param \Clarifai\Api\PostModulesRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PostModules(\Clarifai\Api\PostModulesRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PostModules',
-        $argument,
-        ['\Clarifai\Api\MultiModuleResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Patch one or more modules.
-     * @param \Clarifai\Api\PatchModulesRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PatchModules(\Clarifai\Api\PatchModulesRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PatchModules',
-        $argument,
-        ['\Clarifai\Api\MultiModuleResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Delete multiple modules in one request.
-     * @param \Clarifai\Api\DeleteModulesRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function DeleteModules(\Clarifai\Api\DeleteModulesRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/DeleteModules',
-        $argument,
-        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Get a specific module version for a module.
-     * @param \Clarifai\Api\GetModuleVersionRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function GetModuleVersion(\Clarifai\Api\GetModuleVersionRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/GetModuleVersion',
-        $argument,
-        ['\Clarifai\Api\SingleModuleVersionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * List all the modules versions for a given module.
-     * @param \Clarifai\Api\ListModuleVersionsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function ListModuleVersions(\Clarifai\Api\ListModuleVersionsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/ListModuleVersions',
-        $argument,
-        ['\Clarifai\Api\MultiModuleVersionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Create a new module version to trigger training of the module.
-     * @param \Clarifai\Api\PostModuleVersionsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PostModuleVersions(\Clarifai\Api\PostModuleVersionsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PostModuleVersions',
-        $argument,
-        ['\Clarifai\Api\MultiModuleVersionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Modify details of an existing module version.
-     * @param \Clarifai\Api\PatchModuleVersionsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PatchModuleVersions(\Clarifai\Api\PatchModuleVersionsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PatchModuleVersions',
-        $argument,
-        ['\Clarifai\Api\MultiModuleVersionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Delete a multiple module version.
-     * @param \Clarifai\Api\DeleteModuleVersionsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function DeleteModuleVersions(\Clarifai\Api\DeleteModuleVersionsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/DeleteModuleVersions',
-        $argument,
-        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Get usage count for specific module version.
-     * @param \Clarifai\Api\GetModuleVersionUsageCountRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function GetModuleVersionUsageCount(\Clarifai\Api\GetModuleVersionUsageCountRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/GetModuleVersionUsageCount',
-        $argument,
-        ['\Clarifai\Api\SingleModuleVersionUsageCountResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Get installed modules vesrions for an app.
-     * @param \Clarifai\Api\GetInstalledModuleVersionRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function GetInstalledModuleVersion(\Clarifai\Api\GetInstalledModuleVersionRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/GetInstalledModuleVersion',
-        $argument,
-        ['\Clarifai\Api\SingleInstalledModuleVersionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * List installed modules vesrions for an app.
-     * @param \Clarifai\Api\ListInstalledModuleVersionsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function ListInstalledModuleVersions(\Clarifai\Api\ListInstalledModuleVersionsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/ListInstalledModuleVersions',
-        $argument,
-        ['\Clarifai\Api\MultiInstalledModuleVersionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Install a new module version which will deploy the specific ModuleVersion to the app in the url.
-     * @param \Clarifai\Api\PostInstalledModuleVersionsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PostInstalledModuleVersions(\Clarifai\Api\PostInstalledModuleVersionsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PostInstalledModuleVersions',
-        $argument,
-        ['\Clarifai\Api\MultiInstalledModuleVersionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Uninstall an installed module version which will deploy the specific ModuleVersion to the app
-     * in the url.
-     * This cleaned up any associated caller keys so needs the Keys_Delete scope.
-     * @param \Clarifai\Api\DeleteInstalledModuleVersionsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function DeleteInstalledModuleVersions(\Clarifai\Api\DeleteInstalledModuleVersionsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/DeleteInstalledModuleVersions',
-        $argument,
-        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Assign a key that the caller owns to be used when accessing this installed module version
-     * If this endpoint is called with a different key then it overwrites what is there.
-     * @param \Clarifai\Api\PostInstalledModuleVersionsKeyRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PostInstalledModuleVersionsKey(\Clarifai\Api\PostInstalledModuleVersionsKeyRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PostInstalledModuleVersionsKey',
-        $argument,
-        ['\Clarifai\Api\SingleKeyResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * Perform bulk operations on a list of inputs based on input source.
      * Operation include add, update, delete of concepts, metadata and geo data.
      * This is an Asynchronous process. Use ListBulkOperations or GetBulkOperation to check the status.
@@ -3900,6 +3655,21 @@ class V2Client extends \Grpc\BaseStub {
     public function PostComputePlaneMetrics(\Clarifai\Api\PostComputePlaneMetricsRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/clarifai.api.V2/PostComputePlaneMetrics',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Post task metrics from runner replicas.
+     * @param \Clarifai\Api\PostRunnerReplicaTaskMetricsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostRunnerReplicaTaskMetrics(\Clarifai\Api\PostRunnerReplicaTaskMetricsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostRunnerReplicaTaskMetrics',
         $argument,
         ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);

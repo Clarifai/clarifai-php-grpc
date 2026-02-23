@@ -9,24 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * GetModuleRequest
- *
- * Generated from protobuf message <code>clarifai.api.GetModuleRequest</code>
+ * Generated from protobuf message <code>clarifai.api.PostRunnerReplicaTaskMetricsRequest</code>
  */
-class GetModuleRequest extends \Google\Protobuf\Internal\Message
+class PostRunnerReplicaTaskMetricsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     protected $user_app_id = null;
     /**
-     * Generated from protobuf field <code>string module_id = 2;</code>
+     * List of task metrics reported by runner replicas.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    protected $module_id = '';
-    /**
-     * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
-     */
-    private $additional_fields;
+    private $runner_replica_task_metrics;
 
     /**
      * Constructor.
@@ -35,8 +31,8 @@ class GetModuleRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
-     *     @type string $module_id
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $additional_fields
+     *     @type array<\Clarifai\Api\RunnerReplicaTaskMetrics>|\Google\Protobuf\Internal\RepeatedField $runner_replica_task_metrics
+     *           List of task metrics reported by runner replicas.
      * }
      */
     public function __construct($data = NULL) {
@@ -77,45 +73,27 @@ class GetModuleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string module_id = 2;</code>
-     * @return string
-     */
-    public function getModuleId()
-    {
-        return $this->module_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string module_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setModuleId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->module_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
+     * List of task metrics reported by runner replicas.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getAdditionalFields()
+    public function getRunnerReplicaTaskMetrics()
     {
-        return $this->additional_fields;
+        return $this->runner_replica_task_metrics;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string additional_fields = 3;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * List of task metrics reported by runner replicas.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
+     * @param array<\Clarifai\Api\RunnerReplicaTaskMetrics>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setAdditionalFields($var)
+    public function setRunnerReplicaTaskMetrics($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->additional_fields = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\RunnerReplicaTaskMetrics::class);
+        $this->runner_replica_task_metrics = $arr;
 
         return $this;
     }

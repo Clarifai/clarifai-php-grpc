@@ -24,6 +24,13 @@ class RunnerMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 pods_running = 2;</code>
      */
     protected $pods_running = 0;
+    /**
+     * Cumulative total time (in seconds) that pods have been running for this runner.
+     * This accumulates across scale-up/down cycles and is reported by the agent.
+     *
+     * Generated from protobuf field <code>uint32 total_pods_running_time_s = 3;</code>
+     */
+    protected $total_pods_running_time_s = 0;
 
     /**
      * Constructor.
@@ -33,6 +40,9 @@ class RunnerMetrics extends \Google\Protobuf\Internal\Message
      *
      *     @type int $pods_total
      *     @type int $pods_running
+     *     @type int $total_pods_running_time_s
+     *           Cumulative total time (in seconds) that pods have been running for this runner.
+     *           This accumulates across scale-up/down cycles and is reported by the agent.
      * }
      */
     public function __construct($data = NULL) {
@@ -80,6 +90,34 @@ class RunnerMetrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->pods_running = $var;
+
+        return $this;
+    }
+
+    /**
+     * Cumulative total time (in seconds) that pods have been running for this runner.
+     * This accumulates across scale-up/down cycles and is reported by the agent.
+     *
+     * Generated from protobuf field <code>uint32 total_pods_running_time_s = 3;</code>
+     * @return int
+     */
+    public function getTotalPodsRunningTimeS()
+    {
+        return $this->total_pods_running_time_s;
+    }
+
+    /**
+     * Cumulative total time (in seconds) that pods have been running for this runner.
+     * This accumulates across scale-up/down cycles and is reported by the agent.
+     *
+     * Generated from protobuf field <code>uint32 total_pods_running_time_s = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTotalPodsRunningTimeS($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->total_pods_running_time_s = $var;
 
         return $this;
     }

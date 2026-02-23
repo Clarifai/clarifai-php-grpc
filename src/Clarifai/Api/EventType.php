@@ -74,32 +74,6 @@ class EventType
      */
     const ORGANIZATION_TEAM_APP_REMOVE = 113;
     /**
-     * Event types related to modules: 200 - 299
-     *
-     * Generated from protobuf enum <code>MODULE_CREATE = 200 [(.clarifai.api.utils.description) = "Modules created"];</code>
-     */
-    const MODULE_CREATE = 200;
-    /**
-     * Generated from protobuf enum <code>MODULE_UPDATE = 201 [(.clarifai.api.utils.description) = "Modules updated"];</code>
-     */
-    const MODULE_UPDATE = 201;
-    /**
-     * Generated from protobuf enum <code>MODULE_DELETE = 202 [(.clarifai.api.utils.description) = "Modules deleted"];</code>
-     */
-    const MODULE_DELETE = 202;
-    /**
-     * Generated from protobuf enum <code>MODULE_VERSION_CREATE = 203 [(.clarifai.api.utils.description) = "Module versions created"];</code>
-     */
-    const MODULE_VERSION_CREATE = 203;
-    /**
-     * Generated from protobuf enum <code>MODULE_VERSION_UPDATE = 204 [(.clarifai.api.utils.description) = "Module versions updated"];</code>
-     */
-    const MODULE_VERSION_UPDATE = 204;
-    /**
-     * Generated from protobuf enum <code>MODULE_VERSION_DELETE = 205 [(.clarifai.api.utils.description) = "Module versions deleted"];</code>
-     */
-    const MODULE_VERSION_DELETE = 205;
-    /**
      * Event types related to models: 300 - 399
      *
      * Generated from protobuf enum <code>MODEL_CREATE = 300 [(.clarifai.api.utils.description) = "Models created"];</code>
@@ -240,12 +214,6 @@ class EventType
         self::ORGANIZATION_TEAM_MEMBER_REMOVE => 'ORGANIZATION_TEAM_MEMBER_REMOVE',
         self::ORGANIZATION_TEAM_APP_ADD => 'ORGANIZATION_TEAM_APP_ADD',
         self::ORGANIZATION_TEAM_APP_REMOVE => 'ORGANIZATION_TEAM_APP_REMOVE',
-        self::MODULE_CREATE => 'MODULE_CREATE',
-        self::MODULE_UPDATE => 'MODULE_UPDATE',
-        self::MODULE_DELETE => 'MODULE_DELETE',
-        self::MODULE_VERSION_CREATE => 'MODULE_VERSION_CREATE',
-        self::MODULE_VERSION_UPDATE => 'MODULE_VERSION_UPDATE',
-        self::MODULE_VERSION_DELETE => 'MODULE_VERSION_DELETE',
         self::MODEL_CREATE => 'MODEL_CREATE',
         self::MODEL_UPDATE => 'MODEL_UPDATE',
         self::MODEL_DELETE => 'MODEL_DELETE',

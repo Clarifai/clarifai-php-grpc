@@ -102,6 +102,13 @@ class Nodepool extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 15;</code>
      */
     private $special_handling;
+    /**
+     * The current number of nodes in this nodepool. This value is queried from Prometheus metrics
+     * and represents the most recent node count reported by the compute plane.
+     *
+     * Generated from protobuf field <code>uint32 node_count = 16;</code>
+     */
+    protected $node_count = 0;
 
     /**
      * Constructor.
@@ -140,6 +147,9 @@ class Nodepool extends \Google\Protobuf\Internal\Message
      *           https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      *     @type array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $special_handling
      *           List of special handling instructions for this nodepool.
+     *     @type int $node_count
+     *           The current number of nodes in this nodepool. This value is queried from Prometheus metrics
+     *           and represents the most recent node count reported by the compute plane.
      * }
      */
     public function __construct($data = NULL) {
@@ -569,6 +579,34 @@ class Nodepool extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\SpecialHandling::class);
         $this->special_handling = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The current number of nodes in this nodepool. This value is queried from Prometheus metrics
+     * and represents the most recent node count reported by the compute plane.
+     *
+     * Generated from protobuf field <code>uint32 node_count = 16;</code>
+     * @return int
+     */
+    public function getNodeCount()
+    {
+        return $this->node_count;
+    }
+
+    /**
+     * The current number of nodes in this nodepool. This value is queried from Prometheus metrics
+     * and represents the most recent node count reported by the compute plane.
+     *
+     * Generated from protobuf field <code>uint32 node_count = 16;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setNodeCount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->node_count = $var;
 
         return $this;
     }

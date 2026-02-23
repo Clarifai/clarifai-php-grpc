@@ -96,7 +96,7 @@ class Deployment extends \Google\Protobuf\Internal\Message
      */
     protected $modified_at = null;
     /**
-     * When to always deploy latest model version
+     * Whether to always deploy latest model version
      *
      * Generated from protobuf field <code>bool deploy_latest_version = 14;</code>
      */
@@ -107,6 +107,20 @@ class Deployment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.SpecialHandling special_handling = 15;</code>
      */
     private $special_handling;
+    /**
+     * Duration after which to send a reminder email if pods are still running.
+     * If set, users will receive a one-time email notification when any runner
+     * under this deployment has been running longer than this duration.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+     */
+    protected $email_reminder_after = null;
+    /**
+     * Whether to gracefully deploy a new worker
+     *
+     * Generated from protobuf field <code>bool graceful_deploy = 18;</code>
+     */
+    protected $graceful_deploy = false;
 
     /**
      * Constructor.
@@ -147,9 +161,15 @@ class Deployment extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $modified_at
      *           When the deployment was last modified.
      *     @type bool $deploy_latest_version
-     *           When to always deploy latest model version
+     *           Whether to always deploy latest model version
      *     @type array<\Clarifai\Api\SpecialHandling>|\Google\Protobuf\Internal\RepeatedField $special_handling
      *           List of special handling instructions for this deployment.
+     *     @type \Google\Protobuf\Duration $email_reminder_after
+     *           Duration after which to send a reminder email if pods are still running.
+     *           If set, users will receive a one-time email notification when any runner
+     *           under this deployment has been running longer than this duration.
+     *     @type bool $graceful_deploy
+     *           Whether to gracefully deploy a new worker
      * }
      */
     public function __construct($data = NULL) {
@@ -552,7 +572,7 @@ class Deployment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When to always deploy latest model version
+     * Whether to always deploy latest model version
      *
      * Generated from protobuf field <code>bool deploy_latest_version = 14;</code>
      * @return bool
@@ -563,7 +583,7 @@ class Deployment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When to always deploy latest model version
+     * Whether to always deploy latest model version
      *
      * Generated from protobuf field <code>bool deploy_latest_version = 14;</code>
      * @param bool $var
@@ -599,6 +619,72 @@ class Deployment extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\SpecialHandling::class);
         $this->special_handling = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Duration after which to send a reminder email if pods are still running.
+     * If set, users will receive a one-time email notification when any runner
+     * under this deployment has been running longer than this duration.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getEmailReminderAfter()
+    {
+        return $this->email_reminder_after;
+    }
+
+    public function hasEmailReminderAfter()
+    {
+        return isset($this->email_reminder_after);
+    }
+
+    public function clearEmailReminderAfter()
+    {
+        unset($this->email_reminder_after);
+    }
+
+    /**
+     * Duration after which to send a reminder email if pods are still running.
+     * If set, users will receive a one-time email notification when any runner
+     * under this deployment has been running longer than this duration.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setEmailReminderAfter($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
+        $this->email_reminder_after = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether to gracefully deploy a new worker
+     *
+     * Generated from protobuf field <code>bool graceful_deploy = 18;</code>
+     * @return bool
+     */
+    public function getGracefulDeploy()
+    {
+        return $this->graceful_deploy;
+    }
+
+    /**
+     * Whether to gracefully deploy a new worker
+     *
+     * Generated from protobuf field <code>bool graceful_deploy = 18;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setGracefulDeploy($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->graceful_deploy = $var;
 
         return $this;
     }

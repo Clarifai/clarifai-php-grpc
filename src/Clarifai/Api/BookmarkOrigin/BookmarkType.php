@@ -27,17 +27,12 @@ class BookmarkType
      * Generated from protobuf enum <code>dataset = 3;</code>
      */
     const dataset = 3;
-    /**
-     * Generated from protobuf enum <code>module = 4;</code>
-     */
-    const module = 4;
 
     private static $valueToName = [
         self::unknown => 'unknown',
         self::model => 'model',
         self::workflow => 'workflow',
         self::dataset => 'dataset',
-        self::module => 'module',
     ];
 
     public static function name($value)

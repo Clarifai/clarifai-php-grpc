@@ -193,9 +193,7 @@ class S
      */
     const Workflows_Delete = 21;
     /**
-     * DEPRECATED
-     *
-     * Generated from protobuf enum <code>WorkflowMetrics_Get = 96 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     * Generated from protobuf enum <code>WorkflowMetrics_Get = 96 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const WorkflowMetrics_Get = 96;
     /**
@@ -391,9 +389,8 @@ class S
     const LabelOrders_Delete = 69;
     /**
      * CRUD on FindDuplicateAnnotationsJobs table
-     * DEPRECATED
      *
-     * Generated from protobuf enum <code>FindDuplicateAnnotationsJobs_Add = 102 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
+     * Generated from protobuf enum <code>FindDuplicateAnnotationsJobs_Add = 102 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
      */
     const FindDuplicateAnnotationsJobs_Add = 102;
     /**
@@ -419,37 +416,37 @@ class S
     /**
      * Write to the modules DB tables.
      *
-     * Generated from protobuf enum <code>Modules_Add = 108 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+     * Generated from protobuf enum <code>Modules_Add = 108 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
      */
     const Modules_Add = 108;
     /**
      * Read from the modules and modules versions DB tables.
      *
-     * Generated from protobuf enum <code>Modules_Get = 109 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     * Generated from protobuf enum <code>Modules_Get = 109 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const Modules_Get = 109;
     /**
      * To delete we need read/write.
      *
-     * Generated from protobuf enum <code>Modules_Delete = 110 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+     * Generated from protobuf enum <code>Modules_Delete = 110 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
      */
     const Modules_Delete = 110;
     /**
      * Write to the InstalledModuleVersions DB tables.
      *
-     * Generated from protobuf enum <code>InstalledModuleVersions_Add = 111 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+     * Generated from protobuf enum <code>InstalledModuleVersions_Add = 111 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
      */
     const InstalledModuleVersions_Add = 111;
     /**
      * Read from the InstalledModuleVersions and InstalledModuleVersions versions DB tables.
      *
-     * Generated from protobuf enum <code>InstalledModuleVersions_Get = 112 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+     * Generated from protobuf enum <code>InstalledModuleVersions_Get = 112 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
      */
     const InstalledModuleVersions_Get = 112;
     /**
      * To delete we need read/write.
      *
-     * Generated from protobuf enum <code>InstalledModuleVersions_Delete = 113 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+     * Generated from protobuf enum <code>InstalledModuleVersions_Delete = 113 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
      */
     const InstalledModuleVersions_Delete = 113;
     /**

@@ -40,7 +40,7 @@ class PostTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Mess
     /**
      * Filter annotations starting from this time in milliseconds (inclusive)
      *
-     * Generated from protobuf field <code>uint32 frame_time_start = 5;</code>
+     * Generated from protobuf field <code>uint64 frame_time_start = 5;</code>
      */
     protected $frame_time_start = 0;
     /**
@@ -58,7 +58,7 @@ class PostTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Mess
     /**
      * Maximum duration in milliseconds to return (default and max: 3000)
      *
-     * Generated from protobuf field <code>uint32 max_duration = 8;</code>
+     * Generated from protobuf field <code>uint64 max_duration = 8;</code>
      */
     protected $max_duration = 0;
     /**
@@ -83,13 +83,13 @@ class PostTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Mess
      *           Filter annotations by track_id
      *     @type int $frame_number_start
      *           Filter annotations starting from this frame number (inclusive)
-     *     @type int $frame_time_start
+     *     @type int|string $frame_time_start
      *           Filter annotations starting from this time in milliseconds (inclusive)
      *     @type int $annotation_type
      *           Filter by annotation type (e.g., "bounding_box", "point", "mask")
      *     @type int $max_frames
      *           Maximum number of frames to return (default and max: 60)
-     *     @type int $max_duration
+     *     @type int|string $max_duration
      *           Maximum duration in milliseconds to return (default and max: 3000)
      *     @type \Clarifai\Api\Worker $worker
      *           Filtering by model version ID within a worker (optional).
@@ -215,8 +215,8 @@ class PostTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Mess
     /**
      * Filter annotations starting from this time in milliseconds (inclusive)
      *
-     * Generated from protobuf field <code>uint32 frame_time_start = 5;</code>
-     * @return int
+     * Generated from protobuf field <code>uint64 frame_time_start = 5;</code>
+     * @return int|string
      */
     public function getFrameTimeStart()
     {
@@ -226,13 +226,13 @@ class PostTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Mess
     /**
      * Filter annotations starting from this time in milliseconds (inclusive)
      *
-     * Generated from protobuf field <code>uint32 frame_time_start = 5;</code>
-     * @param int $var
+     * Generated from protobuf field <code>uint64 frame_time_start = 5;</code>
+     * @param int|string $var
      * @return $this
      */
     public function setFrameTimeStart($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkUint64($var);
         $this->frame_time_start = $var;
 
         return $this;
@@ -293,8 +293,8 @@ class PostTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Mess
     /**
      * Maximum duration in milliseconds to return (default and max: 3000)
      *
-     * Generated from protobuf field <code>uint32 max_duration = 8;</code>
-     * @return int
+     * Generated from protobuf field <code>uint64 max_duration = 8;</code>
+     * @return int|string
      */
     public function getMaxDuration()
     {
@@ -304,13 +304,13 @@ class PostTrackAnnotationsSearchesRequest extends \Google\Protobuf\Internal\Mess
     /**
      * Maximum duration in milliseconds to return (default and max: 3000)
      *
-     * Generated from protobuf field <code>uint32 max_duration = 8;</code>
-     * @param int $var
+     * Generated from protobuf field <code>uint64 max_duration = 8;</code>
+     * @param int|string $var
      * @return $this
      */
     public function setMaxDuration($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkUint64($var);
         $this->max_duration = $var;
 
         return $this;

@@ -41,7 +41,7 @@ class StreamAnnotationsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Filter annotations starting from this time in milliseconds (inclusive)
      *
-     * Generated from protobuf field <code>uint32 frame_time_start = 5;</code>
+     * Generated from protobuf field <code>uint64 frame_time_start = 5;</code>
      */
     protected $frame_time_start = 0;
     /**
@@ -62,7 +62,7 @@ class StreamAnnotationsRequest extends \Google\Protobuf\Internal\Message
      * Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
      * Default and max: 3600000 ms (60 minutes)
      *
-     * Generated from protobuf field <code>uint32 max_duration = 8;</code>
+     * Generated from protobuf field <code>uint64 max_duration = 8;</code>
      */
     protected $max_duration = 0;
     /**
@@ -88,7 +88,7 @@ class StreamAnnotationsRequest extends \Google\Protobuf\Internal\Message
      *           This is useful for historical playback where you want to stream all annotations in a time range.
      *     @type int $frame_number_start
      *           Filter annotations starting from this frame number (inclusive)
-     *     @type int $frame_time_start
+     *     @type int|string $frame_time_start
      *           Filter annotations starting from this time in milliseconds (inclusive)
      *     @type int $annotation_type
      *           Filter by annotation type (e.g., "bounding_box", "point", "mask")
@@ -96,7 +96,7 @@ class StreamAnnotationsRequest extends \Google\Protobuf\Internal\Message
      *           Maximum number of frames to return. Returns annotations from frames in range [frame_number_start, frame_number_start + max_frames - 1] (inclusive on both ends).
      *           For example: frame_number_start=5, max_frames=3 returns frames 5, 6, and 7.
      *           Default and max: 216000 frames (60 minutes at 60 FPS)
-     *     @type int $max_duration
+     *     @type int|string $max_duration
      *           Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
      *           Default and max: 3600000 ms (60 minutes)
      *     @type \Clarifai\Api\Worker $worker
@@ -225,8 +225,8 @@ class StreamAnnotationsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Filter annotations starting from this time in milliseconds (inclusive)
      *
-     * Generated from protobuf field <code>uint32 frame_time_start = 5;</code>
-     * @return int
+     * Generated from protobuf field <code>uint64 frame_time_start = 5;</code>
+     * @return int|string
      */
     public function getFrameTimeStart()
     {
@@ -236,13 +236,13 @@ class StreamAnnotationsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Filter annotations starting from this time in milliseconds (inclusive)
      *
-     * Generated from protobuf field <code>uint32 frame_time_start = 5;</code>
-     * @param int $var
+     * Generated from protobuf field <code>uint64 frame_time_start = 5;</code>
+     * @param int|string $var
      * @return $this
      */
     public function setFrameTimeStart($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkUint64($var);
         $this->frame_time_start = $var;
 
         return $this;
@@ -308,8 +308,8 @@ class StreamAnnotationsRequest extends \Google\Protobuf\Internal\Message
      * Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
      * Default and max: 3600000 ms (60 minutes)
      *
-     * Generated from protobuf field <code>uint32 max_duration = 8;</code>
-     * @return int
+     * Generated from protobuf field <code>uint64 max_duration = 8;</code>
+     * @return int|string
      */
     public function getMaxDuration()
     {
@@ -320,13 +320,13 @@ class StreamAnnotationsRequest extends \Google\Protobuf\Internal\Message
      * Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
      * Default and max: 3600000 ms (60 minutes)
      *
-     * Generated from protobuf field <code>uint32 max_duration = 8;</code>
-     * @param int $var
+     * Generated from protobuf field <code>uint64 max_duration = 8;</code>
+     * @param int|string $var
      * @return $this
      */
     public function setMaxDuration($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkUint64($var);
         $this->max_duration = $var;
 
         return $this;
