@@ -3505,6 +3505,21 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Update nodepool status. Called by the agent to report nodepool health/errors.
+     * @param \Clarifai\Api\PostNodepoolStatusRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostNodepoolStatus(\Clarifai\Api\PostNodepoolStatusRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostNodepoolStatus',
+        $argument,
+        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Deployments CRUD
      * @param \Clarifai\Api\GetDeploymentRequest $argument input argument
      * @param array $metadata metadata
@@ -4054,6 +4069,37 @@ class V2Client extends \Grpc\BaseStub {
         return $this->_simpleRequest('/clarifai.api.V2/DeletePipelineStepVersions',
         $argument,
         ['\Clarifai\Api\Status\BaseResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Lists pipeline templates, which are ready-to-use templates that can simply be run on demand.
+     * @param \Clarifai\Api\ListPipelineTemplatesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListPipelineTemplates(\Clarifai\Api\ListPipelineTemplatesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/ListPipelineTemplates',
+        $argument,
+        ['\Clarifai\Api\MultiPipelineTemplateResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Creates a Pipeline, PipelineVersion, and PipelineVersionRun from a PipelineTemplate. 
+     * This is a convenience endpoint for users to quickly get started with running pipelines.
+     * @param \Clarifai\Api\PostPipelineVersionRunFromTemplateRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PostPipelineVersionRunFromTemplate(\Clarifai\Api\PostPipelineVersionRunFromTemplateRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/clarifai.api.V2/PostPipelineVersionRunFromTemplate',
+        $argument,
+        ['\Clarifai\Api\PostPipelineVersionRunFromTemplateResponse', 'decode'],
         $metadata, $options);
     }
 

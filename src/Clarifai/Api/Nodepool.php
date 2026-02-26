@@ -109,6 +109,18 @@ class Nodepool extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 node_count = 16;</code>
      */
     protected $node_count = 0;
+    /**
+     * Current status of the nodepool.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Nodepool.NodepoolStatus status = 17;</code>
+     */
+    protected $status = 0;
+    /**
+     * Human-readable status description. Contains error details when status is NODEPOOL_STATUS_ERROR.
+     *
+     * Generated from protobuf field <code>string status_description = 18;</code>
+     */
+    protected $status_description = '';
 
     /**
      * Constructor.
@@ -150,6 +162,10 @@ class Nodepool extends \Google\Protobuf\Internal\Message
      *     @type int $node_count
      *           The current number of nodes in this nodepool. This value is queried from Prometheus metrics
      *           and represents the most recent node count reported by the compute plane.
+     *     @type int $status
+     *           Current status of the nodepool.
+     *     @type string $status_description
+     *           Human-readable status description. Contains error details when status is NODEPOOL_STATUS_ERROR.
      * }
      */
     public function __construct($data = NULL) {
@@ -607,6 +623,58 @@ class Nodepool extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->node_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Current status of the nodepool.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Nodepool.NodepoolStatus status = 17;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Current status of the nodepool.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Nodepool.NodepoolStatus status = 17;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\Nodepool\NodepoolStatus::class);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Human-readable status description. Contains error details when status is NODEPOOL_STATUS_ERROR.
+     *
+     * Generated from protobuf field <code>string status_description = 18;</code>
+     * @return string
+     */
+    public function getStatusDescription()
+    {
+        return $this->status_description;
+    }
+
+    /**
+     * Human-readable status description. Contains error details when status is NODEPOOL_STATUS_ERROR.
+     *
+     * Generated from protobuf field <code>string status_description = 18;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatusDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status_description = $var;
 
         return $this;
     }
