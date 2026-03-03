@@ -36,15 +36,10 @@ class Deployment extends \Google\Protobuf\Internal\Message
      */
     protected $autoscale_config = null;
     /**
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
+     * @deprecated
      */
     private $nodepools;
     /**
@@ -121,6 +116,14 @@ class Deployment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool graceful_deploy = 18;</code>
      */
     protected $graceful_deploy = false;
+    /**
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    private $deployment_nodepools;
 
     /**
      * Constructor.
@@ -135,13 +138,7 @@ class Deployment extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\AutoscaleConfig $autoscale_config
      *           How to autoscale the object.
      *     @type array<\Clarifai\Api\Nodepool>|\Google\Protobuf\Internal\RepeatedField $nodepools
-     *           You can configure different autoscaling per nodepool(s).
-     *           These nodepools have to be also owned by the same user_id/org as this deployment.
-     *           If there is more than one nodepool we use the model's ComputeInfo to match
-     *           with what the nodepool provides to decide which one can handle it combined with the
-     *           NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     *           we need a way to rank scheduling choices when we don't know how to decide (like a model
-     *           supports
+     *           Use DeploymentNodepools field instead
      *     @type int $scheduling_choice
      *     @type \Clarifai\Api\Visibility $visibility
      *           The visibility field represents whether this message is privately/publicly visible.
@@ -170,6 +167,10 @@ class Deployment extends \Google\Protobuf\Internal\Message
      *           under this deployment has been running longer than this duration.
      *     @type bool $graceful_deploy
      *           Whether to gracefully deploy a new worker
+     *     @type array<\Clarifai\Api\DeploymentNodepool>|\Google\Protobuf\Internal\RepeatedField $deployment_nodepools
+     *           Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     *           When any priority value is non-zero, the response will populate this field instead
+     *           of 'nodepools'.
      * }
      */
     public function __construct($data = NULL) {
@@ -266,37 +267,29 @@ class Deployment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getNodepools()
     {
+        @trigger_error('nodepools is deprecated.', E_USER_DEPRECATED);
         return $this->nodepools;
     }
 
     /**
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      *
-     * Generated from protobuf field <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * Generated from protobuf field <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      * @param array<\Clarifai\Api\Nodepool>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setNodepools($var)
     {
+        @trigger_error('nodepools is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\Nodepool::class);
         $this->nodepools = $arr;
 
@@ -685,6 +678,36 @@ class Deployment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->graceful_deploy = $var;
+
+        return $this;
+    }
+
+    /**
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getDeploymentNodepools()
+    {
+        return $this->deployment_nodepools;
+    }
+
+    /**
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     * @param array<\Clarifai\Api\DeploymentNodepool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setDeploymentNodepools($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\DeploymentNodepool::class);
+        $this->deployment_nodepools = $arr;
 
         return $this;
     }
