@@ -124,6 +124,12 @@ class Deployment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
      */
     private $deployment_nodepools;
+    /**
+     * Real-time metrics for this deployment, including the desired and live replica counts.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+     */
+    protected $deployment_metrics = null;
 
     /**
      * Constructor.
@@ -171,6 +177,8 @@ class Deployment extends \Google\Protobuf\Internal\Message
      *           Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
      *           When any priority value is non-zero, the response will populate this field instead
      *           of 'nodepools'.
+     *     @type \Clarifai\Api\DeploymentMetrics $deployment_metrics
+     *           Real-time metrics for this deployment, including the desired and live replica counts.
      * }
      */
     public function __construct($data = NULL) {
@@ -708,6 +716,42 @@ class Deployment extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\DeploymentNodepool::class);
         $this->deployment_nodepools = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Real-time metrics for this deployment, including the desired and live replica counts.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+     * @return \Clarifai\Api\DeploymentMetrics|null
+     */
+    public function getDeploymentMetrics()
+    {
+        return $this->deployment_metrics;
+    }
+
+    public function hasDeploymentMetrics()
+    {
+        return isset($this->deployment_metrics);
+    }
+
+    public function clearDeploymentMetrics()
+    {
+        unset($this->deployment_metrics);
+    }
+
+    /**
+     * Real-time metrics for this deployment, including the desired and live replica counts.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+     * @param \Clarifai\Api\DeploymentMetrics $var
+     * @return $this
+     */
+    public function setDeploymentMetrics($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\DeploymentMetrics::class);
+        $this->deployment_metrics = $var;
 
         return $this;
     }
