@@ -831,6 +831,12 @@ class StatusCode
      */
     const DEPLOYMENT_INVALID_REQUEST = 25902;
     /**
+     * The deployment is disabled and cannot serve traffic.
+     *
+     * Generated from protobuf enum <code>DEPLOYMENT_DISABLED = 25903;</code>
+     */
+    const DEPLOYMENT_DISABLED = 25903;
+    /**
      * InstanceType related codes 260xx
      *
      * Generated from protobuf enum <code>INSTANCE_TYPE_DOES_NOT_EXIST = 26000;</code>
@@ -2199,6 +2205,7 @@ class StatusCode
         self::DEPLOYMENT_DOES_NOT_EXIST => 'DEPLOYMENT_DOES_NOT_EXIST',
         self::DEPLOYMENT_INVALID_ARGUMENT => 'DEPLOYMENT_INVALID_ARGUMENT',
         self::DEPLOYMENT_INVALID_REQUEST => 'DEPLOYMENT_INVALID_REQUEST',
+        self::DEPLOYMENT_DISABLED => 'DEPLOYMENT_DISABLED',
         self::INSTANCE_TYPE_DOES_NOT_EXIST => 'INSTANCE_TYPE_DOES_NOT_EXIST',
         self::INSTANCE_TYPE_INVALID_ARGUMENT => 'INSTANCE_TYPE_INVALID_ARGUMENT',
         self::INSTANCE_TYPE_INVALID_REQUEST => 'INSTANCE_TYPE_INVALID_REQUEST',

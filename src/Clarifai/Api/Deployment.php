@@ -130,6 +130,14 @@ class Deployment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
      */
     protected $deployment_metrics = null;
+    /**
+     * The current status of the deployment.
+     * When disabled, all infrastructure is scaled to zero and prediction requests are rejected.
+     * The autoscale_config is preserved for when the deployment is enabled.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Deployment.Status status = 21;</code>
+     */
+    protected $status = 0;
 
     /**
      * Constructor.
@@ -179,6 +187,10 @@ class Deployment extends \Google\Protobuf\Internal\Message
      *           of 'nodepools'.
      *     @type \Clarifai\Api\DeploymentMetrics $deployment_metrics
      *           Real-time metrics for this deployment, including the desired and live replica counts.
+     *     @type int $status
+     *           The current status of the deployment.
+     *           When disabled, all infrastructure is scaled to zero and prediction requests are rejected.
+     *           The autoscale_config is preserved for when the deployment is enabled.
      * }
      */
     public function __construct($data = NULL) {
@@ -752,6 +764,36 @@ class Deployment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\DeploymentMetrics::class);
         $this->deployment_metrics = $var;
+
+        return $this;
+    }
+
+    /**
+     * The current status of the deployment.
+     * When disabled, all infrastructure is scaled to zero and prediction requests are rejected.
+     * The autoscale_config is preserved for when the deployment is enabled.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Deployment.Status status = 21;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * The current status of the deployment.
+     * When disabled, all infrastructure is scaled to zero and prediction requests are rejected.
+     * The autoscale_config is preserved for when the deployment is enabled.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Deployment.Status status = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Clarifai\Api\Deployment\Status::class);
+        $this->status = $var;
 
         return $this;
     }
