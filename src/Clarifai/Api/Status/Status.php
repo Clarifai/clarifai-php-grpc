@@ -78,6 +78,12 @@ class Status extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string developer_notes = 10;</code>
      */
     protected $developer_notes = '';
+    /**
+     * The HTTP status code of the response.
+     *
+     * Generated from protobuf field <code>uint32 http_status_code = 11;</code>
+     */
+    protected $http_status_code = 0;
 
     /**
      * Constructor.
@@ -110,6 +116,8 @@ class Status extends \Google\Protobuf\Internal\Message
      *           Notes for developer.
      *           These notes are rather technical details for developers how to interpret the status,
      *           e.g. why an error occurred and how to avoid getting the error.
+     *     @type int $http_status_code
+     *           The HTTP status code of the response.
      * }
      */
     public function __construct($data = NULL) {
@@ -393,6 +401,32 @@ class Status extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->developer_notes = $var;
+
+        return $this;
+    }
+
+    /**
+     * The HTTP status code of the response.
+     *
+     * Generated from protobuf field <code>uint32 http_status_code = 11;</code>
+     * @return int
+     */
+    public function getHttpStatusCode()
+    {
+        return $this->http_status_code;
+    }
+
+    /**
+     * The HTTP status code of the response.
+     *
+     * Generated from protobuf field <code>uint32 http_status_code = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setHttpStatusCode($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->http_status_code = $var;
 
         return $this;
     }
