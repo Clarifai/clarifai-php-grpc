@@ -35,6 +35,20 @@ class TaskConceptAutoAnnotationConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.status.StatusCode status_code = 3;</code>
      */
     protected $status_code = 0;
+    /**
+     * Task auto annotation for this concept only applies to this time of day range.
+     * When out of range, the task will not generate annotations for the concept.
+     *
+     * Generated from protobuf field <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+     */
+    protected $time_of_day_range = null;
+    /**
+     * Filter out annotations that are out of this polygon.
+     * When it's set, only detection annotations that intersect the polygon will pass the filter.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Polygon polygon = 5;</code>
+     */
+    protected $polygon = null;
 
     /**
      * Constructor.
@@ -52,6 +66,12 @@ class TaskConceptAutoAnnotationConfig extends \Google\Protobuf\Internal\Message
      *           Only concepts that fit in the threshold will be used to generate annotations.
      *     @type int $status_code
      *           The output annotations will be created using this status code.
+     *     @type \Clarifai\Api\Utils\TimeOfDayRange $time_of_day_range
+     *           Task auto annotation for this concept only applies to this time of day range.
+     *           When out of range, the task will not generate annotations for the concept.
+     *     @type \Clarifai\Api\Polygon $polygon
+     *           Filter out annotations that are out of this polygon.
+     *           When it's set, only detection annotations that intersect the polygon will pass the filter.
      * }
      */
     public function __construct($data = NULL) {
@@ -151,6 +171,82 @@ class TaskConceptAutoAnnotationConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Clarifai\Api\Status\StatusCode::class);
         $this->status_code = $var;
+
+        return $this;
+    }
+
+    /**
+     * Task auto annotation for this concept only applies to this time of day range.
+     * When out of range, the task will not generate annotations for the concept.
+     *
+     * Generated from protobuf field <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+     * @return \Clarifai\Api\Utils\TimeOfDayRange|null
+     */
+    public function getTimeOfDayRange()
+    {
+        return $this->time_of_day_range;
+    }
+
+    public function hasTimeOfDayRange()
+    {
+        return isset($this->time_of_day_range);
+    }
+
+    public function clearTimeOfDayRange()
+    {
+        unset($this->time_of_day_range);
+    }
+
+    /**
+     * Task auto annotation for this concept only applies to this time of day range.
+     * When out of range, the task will not generate annotations for the concept.
+     *
+     * Generated from protobuf field <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+     * @param \Clarifai\Api\Utils\TimeOfDayRange $var
+     * @return $this
+     */
+    public function setTimeOfDayRange($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Utils\TimeOfDayRange::class);
+        $this->time_of_day_range = $var;
+
+        return $this;
+    }
+
+    /**
+     * Filter out annotations that are out of this polygon.
+     * When it's set, only detection annotations that intersect the polygon will pass the filter.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Polygon polygon = 5;</code>
+     * @return \Clarifai\Api\Polygon|null
+     */
+    public function getPolygon()
+    {
+        return $this->polygon;
+    }
+
+    public function hasPolygon()
+    {
+        return isset($this->polygon);
+    }
+
+    public function clearPolygon()
+    {
+        unset($this->polygon);
+    }
+
+    /**
+     * Filter out annotations that are out of this polygon.
+     * When it's set, only detection annotations that intersect the polygon will pass the filter.
+     *
+     * Generated from protobuf field <code>.clarifai.api.Polygon polygon = 5;</code>
+     * @param \Clarifai\Api\Polygon $var
+     * @return $this
+     */
+    public function setPolygon($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\Polygon::class);
+        $this->polygon = $var;
 
         return $this;
     }

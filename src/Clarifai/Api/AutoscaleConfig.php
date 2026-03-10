@@ -63,6 +63,16 @@ class AutoscaleConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 scale_to_zero_delay_seconds = 8;</code>
      */
     protected $scale_to_zero_delay_seconds = 0;
+    /**
+     * The soft minimum number of replicas for the runner.
+     * Unlike min_replicas (which is a hard floor the autoscaler never violates),
+     * soft_min_replicas is a target the autoscaler tries to maintain but can violate
+     * (e.g., scaling to zero during idle periods).
+     * A value of 0 means not set / disabled.
+     *
+     * Generated from protobuf field <code>uint32 soft_min_replicas = 9;</code>
+     */
+    protected $soft_min_replicas = 0;
 
     /**
      * Constructor.
@@ -87,6 +97,12 @@ class AutoscaleConfig extends \Google\Protobuf\Internal\Message
      *           for more compute and cost efficiency.
      *     @type int $scale_to_zero_delay_seconds
      *           The idle time before scaling down to zero
+     *     @type int $soft_min_replicas
+     *           The soft minimum number of replicas for the runner.
+     *           Unlike min_replicas (which is a hard floor the autoscaler never violates),
+     *           soft_min_replicas is a target the autoscaler tries to maintain but can violate
+     *           (e.g., scaling to zero during idle periods).
+     *           A value of 0 means not set / disabled.
      * }
      */
     public function __construct($data = NULL) {
@@ -278,6 +294,40 @@ class AutoscaleConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->scale_to_zero_delay_seconds = $var;
+
+        return $this;
+    }
+
+    /**
+     * The soft minimum number of replicas for the runner.
+     * Unlike min_replicas (which is a hard floor the autoscaler never violates),
+     * soft_min_replicas is a target the autoscaler tries to maintain but can violate
+     * (e.g., scaling to zero during idle periods).
+     * A value of 0 means not set / disabled.
+     *
+     * Generated from protobuf field <code>uint32 soft_min_replicas = 9;</code>
+     * @return int
+     */
+    public function getSoftMinReplicas()
+    {
+        return $this->soft_min_replicas;
+    }
+
+    /**
+     * The soft minimum number of replicas for the runner.
+     * Unlike min_replicas (which is a hard floor the autoscaler never violates),
+     * soft_min_replicas is a target the autoscaler tries to maintain but can violate
+     * (e.g., scaling to zero during idle periods).
+     * A value of 0 means not set / disabled.
+     *
+     * Generated from protobuf field <code>uint32 soft_min_replicas = 9;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSoftMinReplicas($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->soft_min_replicas = $var;
 
         return $this;
     }

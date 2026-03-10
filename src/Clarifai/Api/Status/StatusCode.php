@@ -1929,6 +1929,12 @@ class StatusCode
      */
     const TWILIO_MAX_VERIFICATION_CHECK_EXCEEDED = 71004;
     /**
+     * The provided phone number was rejected or blocked by Twilio.
+     *
+     * Generated from protobuf enum <code>TWILIO_PHONE_NUMBER_BLOCKED = 71005;</code>
+     */
+    const TWILIO_PHONE_NUMBER_BLOCKED = 71005;
+    /**
      * Internal issues: 98xxx
      *
      * Generated from protobuf enum <code>INTERNAL_SERVER_ISSUE = 98004;</code>
@@ -2445,6 +2451,7 @@ class StatusCode
         self::LOG_ENTRIES_INVALID_REQUEST => 'LOG_ENTRIES_INVALID_REQUEST',
         self::TWILIO_MAX_VERIFICATION_BEGIN_EXCEEDED => 'TWILIO_MAX_VERIFICATION_BEGIN_EXCEEDED',
         self::TWILIO_MAX_VERIFICATION_CHECK_EXCEEDED => 'TWILIO_MAX_VERIFICATION_CHECK_EXCEEDED',
+        self::TWILIO_PHONE_NUMBER_BLOCKED => 'TWILIO_PHONE_NUMBER_BLOCKED',
         self::INTERNAL_SERVER_ISSUE => 'INTERNAL_SERVER_ISSUE',
         self::INTERNAL_FETCHING_ISSUE => 'INTERNAL_FETCHING_ISSUE',
         self::INTERNAL_DATABASE_ISSUE => 'INTERNAL_DATABASE_ISSUE',
