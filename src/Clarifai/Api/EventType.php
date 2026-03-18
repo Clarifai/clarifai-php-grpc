@@ -166,6 +166,10 @@ class EventType
      */
     const COMPUTE_CLUSTER_CREATE = 900;
     /**
+     * Generated from protobuf enum <code>COMPUTE_CLUSTER_UPDATE = 902 [(.clarifai.api.utils.description) = "Compute clusters updated"];</code>
+     */
+    const COMPUTE_CLUSTER_UPDATE = 902;
+    /**
      * Generated from protobuf enum <code>COMPUTE_CLUSTER_DELETE = 901 [(.clarifai.api.utils.description) = "Compute clusters deleted"];</code>
      */
     const COMPUTE_CLUSTER_DELETE = 901;
@@ -234,6 +238,7 @@ class EventType
         self::COLLABORATOR_REMOVE => 'COLLABORATOR_REMOVE',
         self::USER_UPDATE => 'USER_UPDATE',
         self::COMPUTE_CLUSTER_CREATE => 'COMPUTE_CLUSTER_CREATE',
+        self::COMPUTE_CLUSTER_UPDATE => 'COMPUTE_CLUSTER_UPDATE',
         self::COMPUTE_CLUSTER_DELETE => 'COMPUTE_CLUSTER_DELETE',
         self::NODEPOOL_CREATE => 'NODEPOOL_CREATE',
         self::NODEPOOL_UPDATE => 'NODEPOOL_UPDATE',
