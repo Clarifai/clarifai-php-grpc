@@ -64,10 +64,9 @@ class AutoscaleConfig extends \Google\Protobuf\Internal\Message
      */
     protected $scale_to_zero_delay_seconds = 0;
     /**
-     * The soft minimum number of replicas for the runner.
-     * Unlike min_replicas (which is a hard floor the autoscaler never violates),
-     * soft_min_replicas is a target the autoscaler tries to maintain but can violate
-     * (e.g., scaling to zero during idle periods).
+     * Additional minimum replicas added on top of min_replicas. "Soft" refers to scheduling
+     * priority (preemptable), not to whether the floor is enforced. The orchestrator always
+     * maintains min_replicas + soft_min_replicas (capped to max_replicas).
      * A value of 0 means not set / disabled.
      *
      * Generated from protobuf field <code>uint32 soft_min_replicas = 9;</code>
@@ -98,10 +97,9 @@ class AutoscaleConfig extends \Google\Protobuf\Internal\Message
      *     @type int $scale_to_zero_delay_seconds
      *           The idle time before scaling down to zero
      *     @type int $soft_min_replicas
-     *           The soft minimum number of replicas for the runner.
-     *           Unlike min_replicas (which is a hard floor the autoscaler never violates),
-     *           soft_min_replicas is a target the autoscaler tries to maintain but can violate
-     *           (e.g., scaling to zero during idle periods).
+     *           Additional minimum replicas added on top of min_replicas. "Soft" refers to scheduling
+     *           priority (preemptable), not to whether the floor is enforced. The orchestrator always
+     *           maintains min_replicas + soft_min_replicas (capped to max_replicas).
      *           A value of 0 means not set / disabled.
      * }
      */
@@ -299,10 +297,9 @@ class AutoscaleConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The soft minimum number of replicas for the runner.
-     * Unlike min_replicas (which is a hard floor the autoscaler never violates),
-     * soft_min_replicas is a target the autoscaler tries to maintain but can violate
-     * (e.g., scaling to zero during idle periods).
+     * Additional minimum replicas added on top of min_replicas. "Soft" refers to scheduling
+     * priority (preemptable), not to whether the floor is enforced. The orchestrator always
+     * maintains min_replicas + soft_min_replicas (capped to max_replicas).
      * A value of 0 means not set / disabled.
      *
      * Generated from protobuf field <code>uint32 soft_min_replicas = 9;</code>
@@ -314,10 +311,9 @@ class AutoscaleConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The soft minimum number of replicas for the runner.
-     * Unlike min_replicas (which is a hard floor the autoscaler never violates),
-     * soft_min_replicas is a target the autoscaler tries to maintain but can violate
-     * (e.g., scaling to zero during idle periods).
+     * Additional minimum replicas added on top of min_replicas. "Soft" refers to scheduling
+     * priority (preemptable), not to whether the floor is enforced. The orchestrator always
+     * maintains min_replicas + soft_min_replicas (capped to max_replicas).
      * A value of 0 means not set / disabled.
      *
      * Generated from protobuf field <code>uint32 soft_min_replicas = 9;</code>

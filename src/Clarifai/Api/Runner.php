@@ -105,6 +105,13 @@ class Runner extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
      */
     protected $runner_metrics = null;
+    /**
+     * Hard minimum replicas from the deployment's autoscale config.
+     * The agent uses this to determine how many replicas are non-preemptable.
+     *
+     * Generated from protobuf field <code>uint32 min_replicas = 14;</code>
+     */
+    protected $min_replicas = 0;
 
     /**
      * Constructor.
@@ -152,6 +159,9 @@ class Runner extends \Google\Protobuf\Internal\Message
      *     @type \Clarifai\Api\RunnerMetrics $runner_metrics
      *           Metrics and status for the underlying k8s deployment.
      *           Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+     *     @type int $min_replicas
+     *           Hard minimum replicas from the deployment's autoscale config.
+     *           The agent uses this to determine how many replicas are non-preemptable.
      * }
      */
     public function __construct($data = NULL) {
@@ -573,6 +583,34 @@ class Runner extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\RunnerMetrics::class);
         $this->runner_metrics = $var;
+
+        return $this;
+    }
+
+    /**
+     * Hard minimum replicas from the deployment's autoscale config.
+     * The agent uses this to determine how many replicas are non-preemptable.
+     *
+     * Generated from protobuf field <code>uint32 min_replicas = 14;</code>
+     * @return int
+     */
+    public function getMinReplicas()
+    {
+        return $this->min_replicas;
+    }
+
+    /**
+     * Hard minimum replicas from the deployment's autoscale config.
+     * The agent uses this to determine how many replicas are non-preemptable.
+     *
+     * Generated from protobuf field <code>uint32 min_replicas = 14;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMinReplicas($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->min_replicas = $var;
 
         return $this;
     }
