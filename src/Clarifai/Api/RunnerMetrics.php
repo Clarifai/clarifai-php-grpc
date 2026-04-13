@@ -31,6 +31,13 @@ class RunnerMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 total_pods_running_time_s = 3;</code>
      */
     protected $total_pods_running_time_s = 0;
+    /**
+     * Cumulative count of pods that have been preempted by the k8s scheduler.
+     * This accumulates across reconcile cycles and is reported by the agent.
+     *
+     * Generated from protobuf field <code>uint32 pods_preempted_total = 4;</code>
+     */
+    protected $pods_preempted_total = 0;
 
     /**
      * Constructor.
@@ -43,6 +50,9 @@ class RunnerMetrics extends \Google\Protobuf\Internal\Message
      *     @type int $total_pods_running_time_s
      *           Cumulative total time (in seconds) that pods have been running for this runner.
      *           This accumulates across scale-up/down cycles and is reported by the agent.
+     *     @type int $pods_preempted_total
+     *           Cumulative count of pods that have been preempted by the k8s scheduler.
+     *           This accumulates across reconcile cycles and is reported by the agent.
      * }
      */
     public function __construct($data = NULL) {
@@ -118,6 +128,34 @@ class RunnerMetrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->total_pods_running_time_s = $var;
+
+        return $this;
+    }
+
+    /**
+     * Cumulative count of pods that have been preempted by the k8s scheduler.
+     * This accumulates across reconcile cycles and is reported by the agent.
+     *
+     * Generated from protobuf field <code>uint32 pods_preempted_total = 4;</code>
+     * @return int
+     */
+    public function getPodsPreemptedTotal()
+    {
+        return $this->pods_preempted_total;
+    }
+
+    /**
+     * Cumulative count of pods that have been preempted by the k8s scheduler.
+     * This accumulates across reconcile cycles and is reported by the agent.
+     *
+     * Generated from protobuf field <code>uint32 pods_preempted_total = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPodsPreemptedTotal($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->pods_preempted_total = $var;
 
         return $this;
     }

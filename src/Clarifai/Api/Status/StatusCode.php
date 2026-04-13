@@ -677,25 +677,25 @@ class StatusCode
      */
     const DATA_DUMP_EXPORT_UNEXPECTED_ERROR = 25174;
     /**
-     * Duplicate related 252xx
+     * Duplicate related 252xx - DEPRECATED: App duplication is no longer supported.
      *
-     * Generated from protobuf enum <code>APP_DUPLICATION_SUCCESS = 25200;</code>
+     * Generated from protobuf enum <code>APP_DUPLICATION_SUCCESS = 25200 [deprecated = true];</code>
      */
     const APP_DUPLICATION_SUCCESS = 25200;
     /**
-     * Generated from protobuf enum <code>APP_DUPLICATION_FAILED = 25201;</code>
+     * Generated from protobuf enum <code>APP_DUPLICATION_FAILED = 25201 [deprecated = true];</code>
      */
     const APP_DUPLICATION_FAILED = 25201;
     /**
-     * Generated from protobuf enum <code>APP_DUPLICATION_PENDING = 25202;</code>
+     * Generated from protobuf enum <code>APP_DUPLICATION_PENDING = 25202 [deprecated = true];</code>
      */
     const APP_DUPLICATION_PENDING = 25202;
     /**
-     * Generated from protobuf enum <code>APP_DUPLICATION_IN_PROGRESS = 25203;</code>
+     * Generated from protobuf enum <code>APP_DUPLICATION_IN_PROGRESS = 25203 [deprecated = true];</code>
      */
     const APP_DUPLICATION_IN_PROGRESS = 25203;
     /**
-     * Generated from protobuf enum <code>APP_DUPLICATION_INVALID_REQUEST = 25204;</code>
+     * Generated from protobuf enum <code>APP_DUPLICATION_INVALID_REQUEST = 25204 [deprecated = true];</code>
      */
     const APP_DUPLICATION_INVALID_REQUEST = 25204;
     /**
@@ -1534,24 +1534,6 @@ class StatusCode
      */
     const WORKER_INACTIVE = 51002;
     /**
-     * Collectors 52xxx
-     *
-     * Generated from protobuf enum <code>COLLECTOR_MISSING = 52000;</code>
-     */
-    const COLLECTOR_MISSING = 52000;
-    /**
-     * Generated from protobuf enum <code>COLLECTOR_ACTIVE = 52001;</code>
-     */
-    const COLLECTOR_ACTIVE = 52001;
-    /**
-     * Generated from protobuf enum <code>COLLECTOR_INACTIVE = 52002;</code>
-     */
-    const COLLECTOR_INACTIVE = 52002;
-    /**
-     * Generated from protobuf enum <code>COLLECTOR_POST_INPUT_FAILED = 52003;</code>
-     */
-    const COLLECTOR_POST_INPUT_FAILED = 52003;
-    /**
      * SSO 53xxx
      *
      * Generated from protobuf enum <code>SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST = 53001;</code>
@@ -2373,10 +2355,6 @@ class StatusCode
         self::WORKER_MISSING => 'WORKER_MISSING',
         self::WORKER_ACTIVE => 'WORKER_ACTIVE',
         self::WORKER_INACTIVE => 'WORKER_INACTIVE',
-        self::COLLECTOR_MISSING => 'COLLECTOR_MISSING',
-        self::COLLECTOR_ACTIVE => 'COLLECTOR_ACTIVE',
-        self::COLLECTOR_INACTIVE => 'COLLECTOR_INACTIVE',
-        self::COLLECTOR_POST_INPUT_FAILED => 'COLLECTOR_POST_INPUT_FAILED',
         self::SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST => 'SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST',
         self::TASK_IN_PROGRESS => 'TASK_IN_PROGRESS',
         self::TASK_DONE => 'TASK_DONE',

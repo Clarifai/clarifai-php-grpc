@@ -17,23 +17,38 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeploymentMetrics extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The number of replicas desired by the orchestrator.
+     * Deprecated: use aggregate instead.
      *
-     * Generated from protobuf field <code>uint32 desired_replicas = 1;</code>
+     * Generated from protobuf field <code>uint32 desired_replicas = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $desired_replicas = 0;
     /**
-     * The actual number of live replicas connected and ready to process requests.
+     * Deprecated: use aggregate instead.
      *
-     * Generated from protobuf field <code>uint32 live_replicas = 2;</code>
+     * Generated from protobuf field <code>uint32 live_replicas = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $live_replicas = 0;
     /**
-     * If true, the deployment is currently rolling out a new version.
+     * Deprecated: use aggregate instead.
      *
-     * Generated from protobuf field <code>bool rollout_in_progress = 3;</code>
+     * Generated from protobuf field <code>bool rollout_in_progress = 3 [deprecated = true];</code>
+     * @deprecated
      */
     protected $rollout_in_progress = false;
+    /**
+     * Per-nodepool breakdown of metrics.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    private $nodepool_metrics;
+    /**
+     * Aggregate metrics across all nodepools.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+     */
+    protected $aggregate = null;
 
     /**
      * Constructor.
@@ -42,11 +57,15 @@ class DeploymentMetrics extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $desired_replicas
-     *           The number of replicas desired by the orchestrator.
+     *           Deprecated: use aggregate instead.
      *     @type int $live_replicas
-     *           The actual number of live replicas connected and ready to process requests.
+     *           Deprecated: use aggregate instead.
      *     @type bool $rollout_in_progress
-     *           If true, the deployment is currently rolling out a new version.
+     *           Deprecated: use aggregate instead.
+     *     @type array<\Clarifai\Api\NodepoolDeploymentMetrics>|\Google\Protobuf\Internal\RepeatedField $nodepool_metrics
+     *           Per-nodepool breakdown of metrics.
+     *     @type \Clarifai\Api\DeploymentMetricsSummary $aggregate
+     *           Aggregate metrics across all nodepools.
      * }
      */
     public function __construct($data = NULL) {
@@ -55,25 +74,29 @@ class DeploymentMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of replicas desired by the orchestrator.
+     * Deprecated: use aggregate instead.
      *
-     * Generated from protobuf field <code>uint32 desired_replicas = 1;</code>
+     * Generated from protobuf field <code>uint32 desired_replicas = 1 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getDesiredReplicas()
     {
+        @trigger_error('desired_replicas is deprecated.', E_USER_DEPRECATED);
         return $this->desired_replicas;
     }
 
     /**
-     * The number of replicas desired by the orchestrator.
+     * Deprecated: use aggregate instead.
      *
-     * Generated from protobuf field <code>uint32 desired_replicas = 1;</code>
+     * Generated from protobuf field <code>uint32 desired_replicas = 1 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setDesiredReplicas($var)
     {
+        @trigger_error('desired_replicas is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkUint32($var);
         $this->desired_replicas = $var;
 
@@ -81,25 +104,29 @@ class DeploymentMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The actual number of live replicas connected and ready to process requests.
+     * Deprecated: use aggregate instead.
      *
-     * Generated from protobuf field <code>uint32 live_replicas = 2;</code>
+     * Generated from protobuf field <code>uint32 live_replicas = 2 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getLiveReplicas()
     {
+        @trigger_error('live_replicas is deprecated.', E_USER_DEPRECATED);
         return $this->live_replicas;
     }
 
     /**
-     * The actual number of live replicas connected and ready to process requests.
+     * Deprecated: use aggregate instead.
      *
-     * Generated from protobuf field <code>uint32 live_replicas = 2;</code>
+     * Generated from protobuf field <code>uint32 live_replicas = 2 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setLiveReplicas($var)
     {
+        @trigger_error('live_replicas is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkUint32($var);
         $this->live_replicas = $var;
 
@@ -107,27 +134,93 @@ class DeploymentMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If true, the deployment is currently rolling out a new version.
+     * Deprecated: use aggregate instead.
      *
-     * Generated from protobuf field <code>bool rollout_in_progress = 3;</code>
+     * Generated from protobuf field <code>bool rollout_in_progress = 3 [deprecated = true];</code>
      * @return bool
+     * @deprecated
      */
     public function getRolloutInProgress()
     {
+        @trigger_error('rollout_in_progress is deprecated.', E_USER_DEPRECATED);
         return $this->rollout_in_progress;
     }
 
     /**
-     * If true, the deployment is currently rolling out a new version.
+     * Deprecated: use aggregate instead.
      *
-     * Generated from protobuf field <code>bool rollout_in_progress = 3;</code>
+     * Generated from protobuf field <code>bool rollout_in_progress = 3 [deprecated = true];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setRolloutInProgress($var)
     {
+        @trigger_error('rollout_in_progress is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->rollout_in_progress = $var;
+
+        return $this;
+    }
+
+    /**
+     * Per-nodepool breakdown of metrics.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getNodepoolMetrics()
+    {
+        return $this->nodepool_metrics;
+    }
+
+    /**
+     * Per-nodepool breakdown of metrics.
+     *
+     * Generated from protobuf field <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     * @param array<\Clarifai\Api\NodepoolDeploymentMetrics>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setNodepoolMetrics($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\NodepoolDeploymentMetrics::class);
+        $this->nodepool_metrics = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Aggregate metrics across all nodepools.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+     * @return \Clarifai\Api\DeploymentMetricsSummary|null
+     */
+    public function getAggregate()
+    {
+        return $this->aggregate;
+    }
+
+    public function hasAggregate()
+    {
+        return isset($this->aggregate);
+    }
+
+    public function clearAggregate()
+    {
+        unset($this->aggregate);
+    }
+
+    /**
+     * Aggregate metrics across all nodepools.
+     *
+     * Generated from protobuf field <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+     * @param \Clarifai\Api\DeploymentMetricsSummary $var
+     * @return $this
+     */
+    public function setAggregate($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\DeploymentMetricsSummary::class);
+        $this->aggregate = $var;
 
         return $this;
     }

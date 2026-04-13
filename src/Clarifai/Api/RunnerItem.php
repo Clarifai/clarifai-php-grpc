@@ -35,6 +35,12 @@ class RunnerItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
      */
     protected $processing_info = null;
+    /**
+     * Metadata used for routing and other purposes.
+     *
+     * Generated from protobuf field <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+     */
+    protected $metadata = null;
     protected $request;
 
     /**
@@ -55,6 +61,8 @@ class RunnerItem extends \Google\Protobuf\Internal\Message
      *           Agent sync request from control plane.
      *     @type \Clarifai\Api\AutoAnnotationRequest $auto_annotation_request
      *           Auto annotation request from a user.
+     *     @type \Clarifai\Api\RunnerItemMetadata $metadata
+     *           Metadata used for routing and other purposes.
      * }
      */
     public function __construct($data = NULL) {
@@ -239,6 +247,42 @@ class RunnerItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\AutoAnnotationRequest::class);
         $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Metadata used for routing and other purposes.
+     *
+     * Generated from protobuf field <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+     * @return \Clarifai\Api\RunnerItemMetadata|null
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    public function hasMetadata()
+    {
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        unset($this->metadata);
+    }
+
+    /**
+     * Metadata used for routing and other purposes.
+     *
+     * Generated from protobuf field <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+     * @param \Clarifai\Api\RunnerItemMetadata $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Clarifai\Api\RunnerItemMetadata::class);
+        $this->metadata = $var;
 
         return $this;
     }

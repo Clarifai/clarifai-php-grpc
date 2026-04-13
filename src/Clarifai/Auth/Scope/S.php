@@ -25,10 +25,7 @@ use UnexpectedValueException;
  * also specify cl_depending_scopes for each API endpoint. Those cover cases where an endpoint
  * might need to access more than just that one resource type in order to operate (ie. API handlers
  * that make multiple DB calls of various resource types likely have more cl_depending_scopes than
- * the ones listed below). For example: PostCollectors to create a collector we make sure that you
- * can do model predictions, get concepts, etc. so that you don't have a collector that would be
- * useless at the end of that API handler but below you can see that the dependencies of Collector
- * scopes are only on other Collector scopes.
+ * the ones listed below).
  *
  * Protobuf type <code>clarifai.auth.scope.S</code>
  */
@@ -244,21 +241,17 @@ class S
      */
     const Annotations_Delete = 40;
     /**
-     * Write to the collectors DB table.
+     * Deprecated: collectors feature has been removed.
      *
-     * Generated from protobuf enum <code>Collectors_Add = 41 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
+     * Generated from protobuf enum <code>Collectors_Add = 41 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
      */
     const Collectors_Add = 41;
     /**
-     * Read from the collectors DB table.
-     *
-     * Generated from protobuf enum <code>Collectors_Get = 42 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+     * Generated from protobuf enum <code>Collectors_Get = 42 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true];</code>
      */
     const Collectors_Get = 42;
     /**
-     * To delete we need read/write.
-     *
-     * Generated from protobuf enum <code>Collectors_Delete = 43 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
+     * Generated from protobuf enum <code>Collectors_Delete = 43 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
      */
     const Collectors_Delete = 43;
     /**

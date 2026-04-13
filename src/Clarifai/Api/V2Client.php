@@ -2485,17 +2485,9 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Deprecated: App duplication is no longer supported.
      * PostAppDuplications starts async app duplication jobs which copy resources
-     * (inputs, annotations, models etc) from one application to another. It can
-     * also create the destination application if it does not exist, with fields
-     * (description, metadata etc) copied from the source application.
-     *
-     * A duplication job can be started by any user that can read from the source
-     * application (the target of this call) and can create and write to the
-     * destination application. The duplication is associated with the user that
-     * created it, so in order to read the status and progress of the job, that
-     * user's ID has to be used in the call to GetAppDuplication, which might be
-     * different to the source application owner ID in this call.
+     * (inputs, annotations, models etc) from one application to another.
      * @param \Clarifai\Api\PostAppDuplicationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -2510,6 +2502,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Deprecated: App duplication is no longer supported.
      * ListAppDuplications lists all app duplication jobs created by the user.
      * @param \Clarifai\Api\ListAppDuplicationsRequest $argument input argument
      * @param array $metadata metadata
@@ -2525,6 +2518,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
+     * Deprecated: App duplication is no longer supported.
      * GetAppDuplication returns an app duplication job created by the user.
      * @param \Clarifai\Api\GetAppDuplicationRequest $argument input argument
      * @param array $metadata metadata
@@ -2719,87 +2713,6 @@ class V2Client extends \Grpc\BaseStub {
     public function DeleteLabelOrders(\Clarifai\Api\DeleteLabelOrdersRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/clarifai.api.V2/DeleteLabelOrders',
-        $argument,
-        ['\Clarifai\Api\Status\BaseResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Add a list of Collectors to an app.
-     * In the handler of this endpoint we also check for all the scopes of the  POST /inputs
-     * endpoint.
-     * Those current scopes are listed here as a hard requirement.
-     * They are needed when adding the collectors just so we now that you have permission with
-     * that key at least to do the writing to this app with POST /inputs.
-     * @param \Clarifai\Api\PostCollectorsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PostCollectors(\Clarifai\Api\PostCollectorsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PostCollectors',
-        $argument,
-        ['\Clarifai\Api\MultiCollectorResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Get a specific collector from an app.
-     * @param \Clarifai\Api\GetCollectorRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function GetCollector(\Clarifai\Api\GetCollectorRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/GetCollector',
-        $argument,
-        ['\Clarifai\Api\SingleCollectorResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * List all the collectors.
-     * @param \Clarifai\Api\ListCollectorsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function ListCollectors(\Clarifai\Api\ListCollectorsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/ListCollectors',
-        $argument,
-        ['\Clarifai\Api\MultiCollectorResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Patch one or more collectors.
-     * @param \Clarifai\Api\PatchCollectorsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PatchCollectors(\Clarifai\Api\PatchCollectorsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PatchCollectors',
-        $argument,
-        ['\Clarifai\Api\MultiCollectorResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Delete multiple collectors in one request.
-     * This call is asynchronous. Use DeleteCollector if you want a synchronous version.
-     * @param \Clarifai\Api\DeleteCollectorsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function DeleteCollectors(\Clarifai\Api\DeleteCollectorsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/DeleteCollectors',
         $argument,
         ['\Clarifai\Api\Status\BaseResponse', 'decode'],
         $metadata, $options);
@@ -4088,7 +4001,7 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * Creates a Pipeline, PipelineVersion, and PipelineVersionRun from a PipelineTemplate. 
+     * Creates a Pipeline, PipelineVersion, and PipelineVersionRun from a PipelineTemplate.
      * This is a convenience endpoint for users to quickly get started with running pipelines.
      * @param \Clarifai\Api\PostPipelineVersionRunFromTemplateRequest $argument input argument
      * @param array $metadata metadata

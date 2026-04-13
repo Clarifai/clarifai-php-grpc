@@ -9,6 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Deprecated: App duplication is no longer supported.
  * Request to get an app duplication job.
  *
  * Generated from protobuf message <code>clarifai.api.GetAppDuplicationRequest</code>

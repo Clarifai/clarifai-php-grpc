@@ -67,6 +67,13 @@ class Output extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 completion_tokens = 8;</code>
      */
     protected $completion_tokens = 0;
+    /**
+     * Number of cached prompt tokens as reported by the model (subset of prompt_tokens).
+     * Cached tokens are prompt tokens served from the model's KV cache rather than recomputed.
+     *
+     * Generated from protobuf field <code>uint32 cached_tokens = 9;</code>
+     */
+    protected $cached_tokens = 0;
 
     /**
      * Constructor.
@@ -95,6 +102,9 @@ class Output extends \Google\Protobuf\Internal\Message
      *           Number of prompt tokens as reported by the model or third-party API.
      *     @type int $completion_tokens
      *           Number of completion tokens as reported by the model or third-party API.
+     *     @type int $cached_tokens
+     *           Number of cached prompt tokens as reported by the model (subset of prompt_tokens).
+     *           Cached tokens are prompt tokens served from the model's KV cache rather than recomputed.
      * }
      */
     public function __construct($data = NULL) {
@@ -364,6 +374,34 @@ class Output extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->completion_tokens = $var;
+
+        return $this;
+    }
+
+    /**
+     * Number of cached prompt tokens as reported by the model (subset of prompt_tokens).
+     * Cached tokens are prompt tokens served from the model's KV cache rather than recomputed.
+     *
+     * Generated from protobuf field <code>uint32 cached_tokens = 9;</code>
+     * @return int
+     */
+    public function getCachedTokens()
+    {
+        return $this->cached_tokens;
+    }
+
+    /**
+     * Number of cached prompt tokens as reported by the model (subset of prompt_tokens).
+     * Cached tokens are prompt tokens served from the model's KV cache rather than recomputed.
+     *
+     * Generated from protobuf field <code>uint32 cached_tokens = 9;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCachedTokens($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->cached_tokens = $var;
 
         return $this;
     }

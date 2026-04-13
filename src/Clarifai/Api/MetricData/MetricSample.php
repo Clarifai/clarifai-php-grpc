@@ -21,7 +21,7 @@ class MetricSample extends \Google\Protobuf\Internal\Message
      */
     protected $timestamp = null;
     /**
-     * Generated from protobuf field <code>double value = 2;</code>
+     * Generated from protobuf field <code>double value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     protected $value = 0.0;
 
@@ -81,7 +81,7 @@ class MetricSample extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>double value = 2;</code>
+     * Generated from protobuf field <code>double value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return float
      */
     public function getValue()
@@ -90,7 +90,7 @@ class MetricSample extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>double value = 2;</code>
+     * Generated from protobuf field <code>double value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @param float $var
      * @return $this
      */

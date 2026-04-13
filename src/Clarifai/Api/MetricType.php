@@ -16,18 +16,28 @@ class MetricType
      */
     const METRIC_TYPE_NOT_SET = 0;
     /**
-     * Generated from protobuf enum <code>MODEL_REQUEST_COUNT = 1;</code>
+     * Generated from protobuf enum <code>MODEL_TTFT = 1;</code>
      */
-    const MODEL_REQUEST_COUNT = 1;
+    const MODEL_TTFT = 1;
     /**
-     * Generated from protobuf enum <code>MODEL_LATENCY = 2;</code>
+     * Generated from protobuf enum <code>MODEL_THROUGHPUT = 2;</code>
      */
-    const MODEL_LATENCY = 2;
+    const MODEL_THROUGHPUT = 2;
+    /**
+     * Generated from protobuf enum <code>MODEL_PROMPT_TOKEN_THROUGHPUT = 3;</code>
+     */
+    const MODEL_PROMPT_TOKEN_THROUGHPUT = 3;
+    /**
+     * Generated from protobuf enum <code>MODEL_COMPLETION_TOKEN_THROUGHPUT = 4;</code>
+     */
+    const MODEL_COMPLETION_TOKEN_THROUGHPUT = 4;
 
     private static $valueToName = [
         self::METRIC_TYPE_NOT_SET => 'METRIC_TYPE_NOT_SET',
-        self::MODEL_REQUEST_COUNT => 'MODEL_REQUEST_COUNT',
-        self::MODEL_LATENCY => 'MODEL_LATENCY',
+        self::MODEL_TTFT => 'MODEL_TTFT',
+        self::MODEL_THROUGHPUT => 'MODEL_THROUGHPUT',
+        self::MODEL_PROMPT_TOKEN_THROUGHPUT => 'MODEL_PROMPT_TOKEN_THROUGHPUT',
+        self::MODEL_COMPLETION_TOKEN_THROUGHPUT => 'MODEL_COMPLETION_TOKEN_THROUGHPUT',
     ];
 
     public static function name($value)

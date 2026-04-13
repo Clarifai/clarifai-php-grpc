@@ -28,21 +28,16 @@ class MetricLabel
      */
     const MODEL_VERSION_ID = 3;
     /**
-     * Generated from protobuf enum <code>CALLER_USER_ID = 4;</code>
+     * Generated from protobuf enum <code>HTTP_STATUS = 4;</code>
      */
-    const CALLER_USER_ID = 4;
-    /**
-     * Generated from protobuf enum <code>WORKFLOW_ID = 5;</code>
-     */
-    const WORKFLOW_ID = 5;
+    const HTTP_STATUS = 4;
 
     private static $valueToName = [
         self::METRIC_LABEL_NOT_SET => 'METRIC_LABEL_NOT_SET',
         self::APP_ID => 'APP_ID',
         self::MODEL_ID => 'MODEL_ID',
         self::MODEL_VERSION_ID => 'MODEL_VERSION_ID',
-        self::CALLER_USER_ID => 'CALLER_USER_ID',
-        self::WORKFLOW_ID => 'WORKFLOW_ID',
+        self::HTTP_STATUS => 'HTTP_STATUS',
     ];
 
     public static function name($value)

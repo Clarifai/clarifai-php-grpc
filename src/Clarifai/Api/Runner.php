@@ -112,6 +112,14 @@ class Runner extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 min_replicas = 14;</code>
      */
     protected $min_replicas = 0;
+    /**
+     * The scheduling priority for this runner's k8s deployment.
+     * Valid values are 0-9, where higher values indicate higher priority.
+     * This value comes from the deployment nodepool's priority setting.
+     *
+     * Generated from protobuf field <code>uint32 priority = 15;</code>
+     */
+    protected $priority = 0;
 
     /**
      * Constructor.
@@ -162,6 +170,10 @@ class Runner extends \Google\Protobuf\Internal\Message
      *     @type int $min_replicas
      *           Hard minimum replicas from the deployment's autoscale config.
      *           The agent uses this to determine how many replicas are non-preemptable.
+     *     @type int $priority
+     *           The scheduling priority for this runner's k8s deployment.
+     *           Valid values are 0-9, where higher values indicate higher priority.
+     *           This value comes from the deployment nodepool's priority setting.
      * }
      */
     public function __construct($data = NULL) {
@@ -611,6 +623,36 @@ class Runner extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->min_replicas = $var;
+
+        return $this;
+    }
+
+    /**
+     * The scheduling priority for this runner's k8s deployment.
+     * Valid values are 0-9, where higher values indicate higher priority.
+     * This value comes from the deployment nodepool's priority setting.
+     *
+     * Generated from protobuf field <code>uint32 priority = 15;</code>
+     * @return int
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    /**
+     * The scheduling priority for this runner's k8s deployment.
+     * Valid values are 0-9, where higher values indicate higher priority.
+     * This value comes from the deployment nodepool's priority setting.
+     *
+     * Generated from protobuf field <code>uint32 priority = 15;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPriority($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->priority = $var;
 
         return $this;
     }

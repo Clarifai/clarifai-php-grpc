@@ -9,6 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Deprecated: App duplication is no longer supported.
  * AppDuplicationFilters
  *
  * Generated from protobuf message <code>clarifai.api.AppDuplicationFilters</code>
@@ -16,8 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Copy inputs. Requires that copy_concepts is also set.
-     * Note that this will still copy input-level annotations even if copy_annotations is not set.
+     * Copy inputs.
      *
      * Generated from protobuf field <code>bool copy_inputs = 1;</code>
      */
@@ -29,13 +29,13 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
      */
     protected $copy_concepts = false;
     /**
-     * Copy annotations. Requires that copy_inputs and copy_concepts are also set.
+     * Copy annotations.
      *
      * Generated from protobuf field <code>bool copy_annotations = 3;</code>
      */
     protected $copy_annotations = false;
     /**
-     * Copy models. Requires that copy_concepts is also set.
+     * Copy models.
      *
      * Generated from protobuf field <code>bool copy_models = 4;</code>
      */
@@ -54,14 +54,13 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $copy_inputs
-     *           Copy inputs. Requires that copy_concepts is also set.
-     *           Note that this will still copy input-level annotations even if copy_annotations is not set.
+     *           Copy inputs.
      *     @type bool $copy_concepts
      *           Copy concepts.
      *     @type bool $copy_annotations
-     *           Copy annotations. Requires that copy_inputs and copy_concepts are also set.
+     *           Copy annotations.
      *     @type bool $copy_models
-     *           Copy models. Requires that copy_concepts is also set.
+     *           Copy models.
      *     @type bool $copy_workflows
      *           Copy workflows.
      * }
@@ -72,8 +71,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy inputs. Requires that copy_concepts is also set.
-     * Note that this will still copy input-level annotations even if copy_annotations is not set.
+     * Copy inputs.
      *
      * Generated from protobuf field <code>bool copy_inputs = 1;</code>
      * @return bool
@@ -84,8 +82,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy inputs. Requires that copy_concepts is also set.
-     * Note that this will still copy input-level annotations even if copy_annotations is not set.
+     * Copy inputs.
      *
      * Generated from protobuf field <code>bool copy_inputs = 1;</code>
      * @param bool $var
@@ -126,7 +123,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy annotations. Requires that copy_inputs and copy_concepts are also set.
+     * Copy annotations.
      *
      * Generated from protobuf field <code>bool copy_annotations = 3;</code>
      * @return bool
@@ -137,7 +134,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy annotations. Requires that copy_inputs and copy_concepts are also set.
+     * Copy annotations.
      *
      * Generated from protobuf field <code>bool copy_annotations = 3;</code>
      * @param bool $var
@@ -152,7 +149,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy models. Requires that copy_concepts is also set.
+     * Copy models.
      *
      * Generated from protobuf field <code>bool copy_models = 4;</code>
      * @return bool
@@ -163,7 +160,7 @@ class AppDuplicationFilters extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Copy models. Requires that copy_concepts is also set.
+     * Copy models.
      *
      * Generated from protobuf field <code>bool copy_models = 4;</code>
      * @param bool $var
