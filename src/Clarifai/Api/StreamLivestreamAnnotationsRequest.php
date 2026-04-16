@@ -26,6 +26,15 @@ class StreamLivestreamAnnotationsRequest extends \Google\Protobuf\Internal\Messa
      * Generated from protobuf field <code>string input_id = 2;</code>
      */
     protected $input_id = '';
+    /**
+     * Optional minimum prediction confidence threshold (0.0 to 1.0).
+     * When set (> 0), only annotations with at least one concept (tag) having
+     * metadata.prediction_score >= this value are streamed.
+     * When unset (0), all annotations are streamed (backwards compatible).
+     *
+     * Generated from protobuf field <code>float min_prediction_score = 3;</code>
+     */
+    protected $min_prediction_score = 0.0;
 
     /**
      * Constructor.
@@ -36,6 +45,11 @@ class StreamLivestreamAnnotationsRequest extends \Google\Protobuf\Internal\Messa
      *     @type \Clarifai\Api\UserAppIDSet $user_app_id
      *     @type string $input_id
      *           The input ID containing the video being processed
+     *     @type float $min_prediction_score
+     *           Optional minimum prediction confidence threshold (0.0 to 1.0).
+     *           When set (> 0), only annotations with at least one concept (tag) having
+     *           metadata.prediction_score >= this value are streamed.
+     *           When unset (0), all annotations are streamed (backwards compatible).
      * }
      */
     public function __construct($data = NULL) {
@@ -97,6 +111,38 @@ class StreamLivestreamAnnotationsRequest extends \Google\Protobuf\Internal\Messa
     {
         GPBUtil::checkString($var, True);
         $this->input_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional minimum prediction confidence threshold (0.0 to 1.0).
+     * When set (> 0), only annotations with at least one concept (tag) having
+     * metadata.prediction_score >= this value are streamed.
+     * When unset (0), all annotations are streamed (backwards compatible).
+     *
+     * Generated from protobuf field <code>float min_prediction_score = 3;</code>
+     * @return float
+     */
+    public function getMinPredictionScore()
+    {
+        return $this->min_prediction_score;
+    }
+
+    /**
+     * Optional minimum prediction confidence threshold (0.0 to 1.0).
+     * When set (> 0), only annotations with at least one concept (tag) having
+     * metadata.prediction_score >= this value are streamed.
+     * When unset (0), all annotations are streamed (backwards compatible).
+     *
+     * Generated from protobuf field <code>float min_prediction_score = 3;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setMinPredictionScore($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->min_prediction_score = $var;
 
         return $this;
     }

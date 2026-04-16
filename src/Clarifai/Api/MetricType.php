@@ -31,6 +31,10 @@ class MetricType
      * Generated from protobuf enum <code>MODEL_COMPLETION_TOKEN_THROUGHPUT = 4;</code>
      */
     const MODEL_COMPLETION_TOKEN_THROUGHPUT = 4;
+    /**
+     * Generated from protobuf enum <code>MODEL_REQUEST_COUNT = 5;</code>
+     */
+    const MODEL_REQUEST_COUNT = 5;
 
     private static $valueToName = [
         self::METRIC_TYPE_NOT_SET => 'METRIC_TYPE_NOT_SET',
@@ -38,6 +42,7 @@ class MetricType
         self::MODEL_THROUGHPUT => 'MODEL_THROUGHPUT',
         self::MODEL_PROMPT_TOKEN_THROUGHPUT => 'MODEL_PROMPT_TOKEN_THROUGHPUT',
         self::MODEL_COMPLETION_TOKEN_THROUGHPUT => 'MODEL_COMPLETION_TOKEN_THROUGHPUT',
+        self::MODEL_REQUEST_COUNT => 'MODEL_REQUEST_COUNT',
     ];
 
     public static function name($value)

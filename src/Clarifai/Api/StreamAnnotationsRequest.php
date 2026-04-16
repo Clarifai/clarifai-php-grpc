@@ -73,6 +73,15 @@ class StreamAnnotationsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.clarifai.api.Worker worker = 9;</code>
      */
     protected $worker = null;
+    /**
+     * Optional minimum prediction confidence threshold (0.0 to 1.0).
+     * When set (> 0), only annotations with at least one concept (tag) having
+     * metadata.prediction_score >= this value are returned.
+     * When unset (0), all annotations are returned (backwards compatible).
+     *
+     * Generated from protobuf field <code>float min_prediction_score = 10;</code>
+     */
+    protected $min_prediction_score = 0.0;
 
     /**
      * Constructor.
@@ -103,6 +112,11 @@ class StreamAnnotationsRequest extends \Google\Protobuf\Internal\Message
      *           Filtering by model version ID within a worker (optional).
      *           Point annotations don't need filtering by worker.
      *           For non-point types, a model version ID must be provided.
+     *     @type float $min_prediction_score
+     *           Optional minimum prediction confidence threshold (0.0 to 1.0).
+     *           When set (> 0), only annotations with at least one concept (tag) having
+     *           metadata.prediction_score >= this value are returned.
+     *           When unset (0), all annotations are returned (backwards compatible).
      * }
      */
     public function __construct($data = NULL) {
@@ -368,6 +382,38 @@ class StreamAnnotationsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Clarifai\Api\Worker::class);
         $this->worker = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional minimum prediction confidence threshold (0.0 to 1.0).
+     * When set (> 0), only annotations with at least one concept (tag) having
+     * metadata.prediction_score >= this value are returned.
+     * When unset (0), all annotations are returned (backwards compatible).
+     *
+     * Generated from protobuf field <code>float min_prediction_score = 10;</code>
+     * @return float
+     */
+    public function getMinPredictionScore()
+    {
+        return $this->min_prediction_score;
+    }
+
+    /**
+     * Optional minimum prediction confidence threshold (0.0 to 1.0).
+     * When set (> 0), only annotations with at least one concept (tag) having
+     * metadata.prediction_score >= this value are returned.
+     * When unset (0), all annotations are returned (backwards compatible).
+     *
+     * Generated from protobuf field <code>float min_prediction_score = 10;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setMinPredictionScore($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->min_prediction_score = $var;
 
         return $this;
     }
