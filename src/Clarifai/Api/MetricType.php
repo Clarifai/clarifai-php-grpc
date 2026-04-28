@@ -16,6 +16,8 @@ class MetricType
      */
     const METRIC_TYPE_NOT_SET = 0;
     /**
+     * Model metrics: 1-50
+     *
      * Generated from protobuf enum <code>MODEL_TTFT = 1;</code>
      */
     const MODEL_TTFT = 1;
@@ -35,6 +37,36 @@ class MetricType
      * Generated from protobuf enum <code>MODEL_REQUEST_COUNT = 5;</code>
      */
     const MODEL_REQUEST_COUNT = 5;
+    /**
+     * Generated from protobuf enum <code>MODEL_E2E_LATENCY = 6;</code>
+     */
+    const MODEL_E2E_LATENCY = 6;
+    /**
+     * Nodepool metrics: 51-100
+     *
+     * Generated from protobuf enum <code>NODEPOOL_NODE_COUNT = 51;</code>
+     */
+    const NODEPOOL_NODE_COUNT = 51;
+    /**
+     * Generated from protobuf enum <code>NODEPOOL_GPU_UTILIZATION = 52;</code>
+     */
+    const NODEPOOL_GPU_UTILIZATION = 52;
+    /**
+     * Generated from protobuf enum <code>NODEPOOL_GPU_TENSOR_UTILIZATION = 53;</code>
+     */
+    const NODEPOOL_GPU_TENSOR_UTILIZATION = 53;
+    /**
+     * Generated from protobuf enum <code>NODEPOOL_GPU_MEMORY_UTILIZATION = 54;</code>
+     */
+    const NODEPOOL_GPU_MEMORY_UTILIZATION = 54;
+    /**
+     * Generated from protobuf enum <code>NODEPOOL_CPU_UTILIZATION = 55;</code>
+     */
+    const NODEPOOL_CPU_UTILIZATION = 55;
+    /**
+     * Generated from protobuf enum <code>NODEPOOL_MEMORY_UTILIZATION = 56;</code>
+     */
+    const NODEPOOL_MEMORY_UTILIZATION = 56;
 
     private static $valueToName = [
         self::METRIC_TYPE_NOT_SET => 'METRIC_TYPE_NOT_SET',
@@ -43,6 +75,13 @@ class MetricType
         self::MODEL_PROMPT_TOKEN_THROUGHPUT => 'MODEL_PROMPT_TOKEN_THROUGHPUT',
         self::MODEL_COMPLETION_TOKEN_THROUGHPUT => 'MODEL_COMPLETION_TOKEN_THROUGHPUT',
         self::MODEL_REQUEST_COUNT => 'MODEL_REQUEST_COUNT',
+        self::MODEL_E2E_LATENCY => 'MODEL_E2E_LATENCY',
+        self::NODEPOOL_NODE_COUNT => 'NODEPOOL_NODE_COUNT',
+        self::NODEPOOL_GPU_UTILIZATION => 'NODEPOOL_GPU_UTILIZATION',
+        self::NODEPOOL_GPU_TENSOR_UTILIZATION => 'NODEPOOL_GPU_TENSOR_UTILIZATION',
+        self::NODEPOOL_GPU_MEMORY_UTILIZATION => 'NODEPOOL_GPU_MEMORY_UTILIZATION',
+        self::NODEPOOL_CPU_UTILIZATION => 'NODEPOOL_CPU_UTILIZATION',
+        self::NODEPOOL_MEMORY_UTILIZATION => 'NODEPOOL_MEMORY_UTILIZATION',
     ];
 
     public static function name($value)

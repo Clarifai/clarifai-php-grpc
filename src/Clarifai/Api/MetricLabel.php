@@ -31,6 +31,14 @@ class MetricLabel
      * Generated from protobuf enum <code>HTTP_STATUS = 4;</code>
      */
     const HTTP_STATUS = 4;
+    /**
+     * Generated from protobuf enum <code>COMPUTE_CLUSTER_ID = 5;</code>
+     */
+    const COMPUTE_CLUSTER_ID = 5;
+    /**
+     * Generated from protobuf enum <code>NODEPOOL_ID = 6;</code>
+     */
+    const NODEPOOL_ID = 6;
 
     private static $valueToName = [
         self::METRIC_LABEL_NOT_SET => 'METRIC_LABEL_NOT_SET',
@@ -38,6 +46,8 @@ class MetricLabel
         self::MODEL_ID => 'MODEL_ID',
         self::MODEL_VERSION_ID => 'MODEL_VERSION_ID',
         self::HTTP_STATUS => 'HTTP_STATUS',
+        self::COMPUTE_CLUSTER_ID => 'COMPUTE_CLUSTER_ID',
+        self::NODEPOOL_ID => 'NODEPOOL_ID',
     ];
 
     public static function name($value)

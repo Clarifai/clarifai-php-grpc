@@ -55,6 +55,13 @@ class ListDeploymentsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string compute_cluster_id = 7;</code>
      */
     protected $compute_cluster_id = '';
+    /**
+     * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+     * provided scheduling priorities. Valid values are 0-9.
+     *
+     * Generated from protobuf field <code>repeated uint32 scheduling_priorities = 8;</code>
+     */
+    private $scheduling_priorities;
 
     /**
      * Constructor.
@@ -77,6 +84,9 @@ class ListDeploymentsRequest extends \Google\Protobuf\Internal\Message
      *           (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
      *     @type string $compute_cluster_id
      *           (optional URL parameter) ComputeCluster ID. To list all deployed workers in a ComputeCluster
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $scheduling_priorities
+     *           (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+     *           provided scheduling priorities. Valid values are 0-9.
      * }
      */
     public function __construct($data = NULL) {
@@ -272,6 +282,34 @@ class ListDeploymentsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->compute_cluster_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+     * provided scheduling priorities. Valid values are 0-9.
+     *
+     * Generated from protobuf field <code>repeated uint32 scheduling_priorities = 8;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSchedulingPriorities()
+    {
+        return $this->scheduling_priorities;
+    }
+
+    /**
+     * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+     * provided scheduling priorities. Valid values are 0-9.
+     *
+     * Generated from protobuf field <code>repeated uint32 scheduling_priorities = 8;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSchedulingPriorities($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
+        $this->scheduling_priorities = $arr;
 
         return $this;
     }

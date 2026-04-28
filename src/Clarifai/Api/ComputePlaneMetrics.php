@@ -88,6 +88,14 @@ class ComputePlaneMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
      */
     private $cpu_metrics;
+    /**
+     * When true, indicates this is the final metrics submission from a node that is being
+     * terminated. The handler should skip node count aggregation to avoid corrupting the
+     * count with a partial batch from the dying node.
+     *
+     * Generated from protobuf field <code>bool is_final_metrics = 13;</code>
+     */
+    protected $is_final_metrics = false;
 
     /**
      * Constructor.
@@ -119,6 +127,10 @@ class ComputePlaneMetrics extends \Google\Protobuf\Internal\Message
      *           Hostname of the node.
      *     @type array<\Clarifai\Api\CpuMetrics>|\Google\Protobuf\Internal\RepeatedField $cpu_metrics
      *           CPU metrics.
+     *     @type bool $is_final_metrics
+     *           When true, indicates this is the final metrics submission from a node that is being
+     *           terminated. The handler should skip node count aggregation to avoid corrupting the
+     *           count with a partial batch from the dying node.
      * }
      */
     public function __construct($data = NULL) {
@@ -454,6 +466,36 @@ class ComputePlaneMetrics extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Clarifai\Api\CpuMetrics::class);
         $this->cpu_metrics = $arr;
+
+        return $this;
+    }
+
+    /**
+     * When true, indicates this is the final metrics submission from a node that is being
+     * terminated. The handler should skip node count aggregation to avoid corrupting the
+     * count with a partial batch from the dying node.
+     *
+     * Generated from protobuf field <code>bool is_final_metrics = 13;</code>
+     * @return bool
+     */
+    public function getIsFinalMetrics()
+    {
+        return $this->is_final_metrics;
+    }
+
+    /**
+     * When true, indicates this is the final metrics submission from a node that is being
+     * terminated. The handler should skip node count aggregation to avoid corrupting the
+     * count with a partial batch from the dying node.
+     *
+     * Generated from protobuf field <code>bool is_final_metrics = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsFinalMetrics($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_final_metrics = $var;
 
         return $this;
     }

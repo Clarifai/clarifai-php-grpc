@@ -2719,36 +2719,6 @@ class V2Client extends \Grpc\BaseStub {
     }
 
     /**
-     * PostStatValues
-     * @param \Clarifai\Api\PostStatValuesRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PostStatValues(\Clarifai\Api\PostStatValuesRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PostStatValues',
-        $argument,
-        ['\Clarifai\Api\MultiStatValueResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * PostStatValuesAggregate
-     * @param \Clarifai\Api\PostStatValuesAggregateRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PostStatValuesAggregate(\Clarifai\Api\PostStatValuesAggregateRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/clarifai.api.V2/PostStatValuesAggregate',
-        $argument,
-        ['\Clarifai\Api\MultiStatValueAggregateResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * Perform bulk operations on a list of inputs based on input source.
      * Operation include add, update, delete of concepts, metadata and geo data.
      * This is an Asynchronous process. Use ListBulkOperations or GetBulkOperation to check the status.
