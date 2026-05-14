@@ -1,4 +1,4 @@
-FROM php:7.3
+FROM php:8.2
 
 RUN  apt-get update \
     && apt-get install -y --no-install-recommends wget git zlib1g-dev libzip-dev \
@@ -8,10 +8,10 @@ RUN curl --silent --show-error https://getcomposer.org/installer | \
     php -- --install-dir=/usr/local/bin --filename=composer
 
 RUN docker-php-ext-install bcmath zip
-RUN pecl install xdebug-3.1.0
+RUN pecl install xdebug-3.5.1
 RUN docker-php-ext-enable xdebug
 
-RUN pecl install grpc
+RUN pecl install grpc-1.80.0  # Also update grpc/grpc in composer.json when changing
 RUN docker-php-ext-enable grpc
 
 # Copy the composer.json file and do `composer install` before copying all the other files, to avoid
