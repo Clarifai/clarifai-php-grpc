@@ -82,6 +82,14 @@ class Nodepool extends \Google\Protobuf\Internal\Message
      */
     protected $enforced_max_instances = 0;
     /**
+     * Number of warm idle instances to keep in this nodepool.
+     * These allow the nodepool to have extra capacity ready for quickly scheduling additional runners.
+     * This is the user desired amount. See node_count for actual current number of nodes.
+     *
+     * Generated from protobuf field <code>uint32 warm_instances = 19;</code>
+     */
+    protected $warm_instances = 0;
+    /**
      * The visibility field represents whether this message is privately/publicly visible.
      * To be visible to the public the App that contains it AND the User that contains the App must
      * also be publicly visible.
@@ -150,6 +158,10 @@ class Nodepool extends \Google\Protobuf\Internal\Message
      *           The actual minimum number of instances. Enforced by the user's plan limits.
      *     @type int $enforced_max_instances
      *           The actual maximum number of instances. Enforced by the user's plan limits.
+     *     @type int $warm_instances
+     *           Number of warm idle instances to keep in this nodepool.
+     *           These allow the nodepool to have extra capacity ready for quickly scheduling additional runners.
+     *           This is the user desired amount. See node_count for actual current number of nodes.
      *     @type \Clarifai\Api\Visibility $visibility
      *           The visibility field represents whether this message is privately/publicly visible.
      *           To be visible to the public the App that contains it AND the User that contains the App must
@@ -491,6 +503,36 @@ class Nodepool extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->enforced_max_instances = $var;
+
+        return $this;
+    }
+
+    /**
+     * Number of warm idle instances to keep in this nodepool.
+     * These allow the nodepool to have extra capacity ready for quickly scheduling additional runners.
+     * This is the user desired amount. See node_count for actual current number of nodes.
+     *
+     * Generated from protobuf field <code>uint32 warm_instances = 19;</code>
+     * @return int
+     */
+    public function getWarmInstances()
+    {
+        return $this->warm_instances;
+    }
+
+    /**
+     * Number of warm idle instances to keep in this nodepool.
+     * These allow the nodepool to have extra capacity ready for quickly scheduling additional runners.
+     * This is the user desired amount. See node_count for actual current number of nodes.
+     *
+     * Generated from protobuf field <code>uint32 warm_instances = 19;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setWarmInstances($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->warm_instances = $var;
 
         return $this;
     }
